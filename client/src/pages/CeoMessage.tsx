@@ -126,28 +126,7 @@ export default function CeoMessage() {
                   </p>
                 </motion.div>
 
-                {/* Stats row */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: 0.5 }}
-                  className="grid grid-cols-3 gap-4 pt-6 border-t"
-                  style={{ borderColor: '#E6E6E6' }}
-                >
-                  <div>
-                    <p className="text-2xl lg:text-3xl font-bold" style={{ color: '#EE7501' }}>250+</p>
-                    <p className="text-xs lg:text-sm font-light mt-1" style={{ color: '#888' }}>Projetos</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl lg:text-3xl font-bold" style={{ color: '#2C7EB3' }}>16</p>
-                    <p className="text-xs lg:text-sm font-light mt-1" style={{ color: '#888' }}>Estados</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl lg:text-3xl font-bold" style={{ color: '#861720' }}>10+</p>
-                    <p className="text-xs lg:text-sm font-light mt-1" style={{ color: '#888' }}>Anos</p>
-                  </div>
-                </motion.div>
+
 
                 {/* CTA */}
                 <motion.div
