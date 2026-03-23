@@ -73,7 +73,7 @@ export default function Home() {
               src={ASSETS.logo10anos}
               alt="Grupo Arqueo — 10 Anos"
               className="mb-8"
-              style={{ height: '80px', width: 'auto', display: 'block' }}
+              style={{ height: '120px', width: 'auto', display: 'block', objectFit: 'contain', maxWidth: '400px' }}
             />
 
             <p className="text-[10px] xl:text-xs font-semibold tracking-[0.3em] uppercase mb-6 text-[#861720]">
