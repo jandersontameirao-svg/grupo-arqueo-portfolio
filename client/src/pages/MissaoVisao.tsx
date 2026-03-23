@@ -203,57 +203,57 @@ export default function MissaoVisao() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 30 }}
                 transition={{ duration: 0.5 }}
-                className="rounded-2xl lg:rounded-3xl overflow-hidden p-8 lg:p-12"
+                className="rounded-2xl lg:rounded-3xl overflow-hidden p-6 lg:p-10"
                 style={{
-                  background: 'rgba(255,255,255,0.06)',
+                  background: 'linear-gradient(135deg, rgba(42,42,42,0.95) 0%, rgba(42,42,42,0.85) 100%)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  border: '1px solid rgba(255,255,255,0.12)',
                 }}
               >
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+                {/* Header */}
+                <div className="text-center mb-6 lg:mb-8">
+                  <span className="text-xs font-semibold tracking-[0.3em] uppercase" style={{ color: '#EE7501' }}>Nossos Valores</span>
+                  <h3 className="text-xl lg:text-2xl font-bold text-white mt-2">Os pilares que <span style={{ color: '#EE7501' }}>sustentam</span> nossa atuação</h3>
+                </div>
+
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
                   {valores.map((valor, i) => {
                     const Icon = valor.icon;
                     const isActive = activeValor === i;
                     return (
                       <motion.div
                         key={i}
-                        initial={{ opacity: 0, scale: 0.85 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.4, delay: i * 0.07 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: i * 0.08 }}
                         onMouseEnter={() => setActiveValor(i)}
                         onMouseLeave={() => setActiveValor(null)}
-                        className="relative cursor-pointer transition-all duration-400"
-                        style={{ transform: isActive ? 'translateY(-4px)' : 'translateY(0)' }}
+                        className="relative cursor-pointer rounded-xl p-5 lg:p-6 text-center transition-all duration-300"
+                        style={{
+                          backgroundColor: isActive ? valor.color : 'rgba(255,255,255,0.06)',
+                          border: `1px solid ${isActive ? valor.color : 'rgba(255,255,255,0.1)'}`,
+                          transform: isActive ? 'translateY(-4px)' : 'translateY(0)',
+                          boxShadow: isActive ? `0 12px 30px ${valor.color}50` : 'none',
+                        }}
                       >
-                        {/* Hexagon shape */}
-                        <div className="relative flex flex-col items-center justify-center text-center"
-                          style={{ aspectRatio: '1/0.88' }}
+                        <div
+                          className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 transition-all duration-300"
+                          style={{
+                            backgroundColor: isActive ? 'rgba(255,255,255,0.2)' : `${valor.color}20`,
+                          }}
                         >
-                          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 200 176" preserveAspectRatio="xMidYMid meet">
-                            <polygon
-                              points="100,0 196,44 196,132 100,176 4,132 4,44"
-                              fill={isActive ? valor.color : `rgba(255,255,255,0.08)`}
-                              stroke={isActive ? valor.color : 'rgba(255,255,255,0.15)'}
-                              strokeWidth={isActive ? '2' : '1'}
-                              className="transition-all duration-400"
-                            />
-                          </svg>
-                          <div className="relative z-10 px-4">
-                            <Icon className="w-6 h-6 lg:w-7 lg:h-7 mx-auto mb-2 transition-colors duration-400"
-                              style={{ color: isActive ? '#FFFFFF' : valor.color }}
-                            />
-                            <h3 className="text-xs lg:text-sm font-bold mb-1 transition-colors duration-400"
-                              style={{ color: isActive ? '#FFFFFF' : 'rgba(255,255,255,0.9)' }}
-                            >
-                              {valor.title}
-                            </h3>
-                            <p className="text-[9px] lg:text-[10px] leading-snug font-light transition-colors duration-400 hidden sm:block"
-                              style={{ color: isActive ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.45)' }}
-                            >
-                              {valor.desc.length > 70 ? valor.desc.substring(0, 70) + '...' : valor.desc}
-                            </p>
-                          </div>
+                          <Icon className="w-6 h-6 transition-colors duration-300" style={{ color: isActive ? '#FFFFFF' : valor.color }} />
                         </div>
+                        <h4 className="text-sm lg:text-base font-bold mb-1.5 transition-colors duration-300"
+                          style={{ color: isActive ? '#FFFFFF' : '#FFFFFF' }}
+                        >
+                          {valor.title}
+                        </h4>
+                        <p className="text-[10px] lg:text-xs leading-snug font-light transition-colors duration-300"
+                          style={{ color: isActive ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.5)' }}
+                        >
+                          {valor.desc}
+                        </p>
                       </motion.div>
                     );
                   })}
