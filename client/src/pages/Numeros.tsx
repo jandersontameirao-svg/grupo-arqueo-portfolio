@@ -1,6 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
+import { ASSETS } from "@/lib/assets";
 import { useRef, useState, useEffect } from "react";
+
+/**
+ * NÚMEROS — Página 07
+ * Design: Hero section similar to Home with image background + gradient overlay
+ */
 
 function AnimatedCounter({ target, suffix = "", duration = 2000 }: { target: number; suffix?: string; duration?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -54,28 +60,48 @@ export default function Numeros() {
       nextPath="/cases"
       nextLabel="Cases"
     >
-      {/* Main numbers */}
-      <section className="py-16 lg:py-24">
-        <div className="container">
+      {/* Hero Section — Similar to Home */}
+      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">
+        {/* Background image + gradient overlay */}
+        <div className="absolute inset-0 -z-10">
+          <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to right, rgba(249,248,246,1) 0%, rgba(249,248,246,0.98) 20%, rgba(249,248,246,0.95) 40%, rgba(249,248,246,0.85) 60%, rgba(249,248,246,0.70) 80%, rgba(249,248,246,0.50) 100%)'
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="container relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-3xl mb-16"
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
               <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Impacto</span>
             </div>
-            <h2 className="text-2xl lg:text-4xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
+            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
               Nossos <span style={{ color: '#EE7501' }}>números</span> falam por nós
-            </h2>
-            <p className="text-sm lg:text-base font-light leading-relaxed" style={{ color: '#555' }}>
-              Uma década de resultados consistentes, construídos com competência técnica,
-              inovação e compromisso com a excelência.
+            </h1>
+            <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '600px' }}>
+              Uma década de resultados consistentes, construídos com competência técnica, inovação e compromisso com a excelência.
             </p>
           </motion.div>
+        </div>
+      </section>
 
+      {/* Divider */}
+      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
+
+      {/* Main numbers */}
+      <section className="py-16 lg:py-24">
+        <div className="container">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {mainNumbers.map((num, i) => (
               <motion.div

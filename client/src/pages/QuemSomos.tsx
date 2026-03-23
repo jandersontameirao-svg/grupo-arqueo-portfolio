@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
 
+/**
+ * QUEM SOMOS — Página 02
+ * Design: Hero section similar to Home with image background + gradient overlay
+ * Editorial layout with premium spacing
+ */
+
 export default function QuemSomos() {
   return (
     <PortfolioLayout
@@ -12,7 +18,47 @@ export default function QuemSomos() {
       nextPath="/missao-visao"
       nextLabel="Missão, Visão e Valores"
     >
-      {/* Intro */}
+      {/* Hero Section — Similar to Home */}
+      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">
+        {/* Background image + gradient overlay */}
+        <div className="absolute inset-0 -z-10">
+          <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to right, rgba(249,248,246,1) 0%, rgba(249,248,246,0.98) 20%, rgba(249,248,246,0.95) 40%, rgba(249,248,246,0.85) 60%, rgba(249,248,246,0.70) 80%, rgba(249,248,246,0.50) 100%)'
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
+              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Identidade</span>
+            </div>
+            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
+              Referência nacional em{' '}
+              <span style={{ color: '#EE7501' }}>consultoria arqueológica</span>
+            </h1>
+            <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '600px' }}>
+              O Grupo Arqueo é uma empresa de consultoria especializada em pesquisa e gestão do patrimônio sociocultural, com foco em licenciamento ambiental. Fundado em 2016, nascemos com a visão de oferecer soluções completas, integradas e tecnologicamente avançadas.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
+
+      {/* Content Section */}
       <section className="py-16 lg:py-24">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -21,31 +67,20 @@ export default function QuemSomos() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="space-y-6"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-                <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Identidade</span>
+              <div>
+                <h2 className="text-2xl lg:text-3xl font-bold mb-4" style={{ color: '#2A2A2A' }}>
+                  Nossa <span style={{ color: '#EE7501' }}>Estrutura</span>
+                </h2>
+                <p className="text-base font-light leading-relaxed" style={{ color: '#555' }}>
+                  Com sede em Brasília e escritórios em Natal e São Paulo, o Grupo Arqueo atua em todo o território nacional, atendendo aos maiores empreendimentos de infraestrutura, energia e recursos naturais do país.
+                </p>
               </div>
-              <h2 className="text-2xl lg:text-4xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-                Referência nacional em{' '}
-                <span style={{ color: '#EE7501' }}>consultoria arqueológica</span>
-              </h2>
-              <div className="space-y-4 text-sm lg:text-base font-light leading-relaxed" style={{ color: '#555' }}>
-                <p>
-                  O Grupo Arqueo é uma empresa de consultoria especializada em pesquisa e gestão do
-                  patrimônio sociocultural, com foco em licenciamento ambiental. Fundado em 2016,
-                  o grupo nasceu da visão de oferecer soluções completas, integradas e tecnologicamente
-                  avançadas para o setor.
-                </p>
-                <p>
-                  Com sede em Brasília e escritórios em Natal e São Paulo, o Grupo Arqueo atua em
-                  todo o território nacional, atendendo aos maiores empreendimentos de infraestrutura,
-                  energia e recursos naturais do país.
-                </p>
-                <p>
-                  Nossa equipe multidisciplinar é composta por arqueólogos, historiadores, geógrafos,
-                  biólogos, educadores e especialistas em tecnologia, todos comprometidos com a
-                  excelência técnica e a inovação contínua.
+              <div>
+                <h3 className="text-lg font-bold mb-3" style={{ color: '#2A2A2A' }}>Nossa Equipe</h3>
+                <p className="text-base font-light leading-relaxed" style={{ color: '#555' }}>
+                  Multidisciplinar, composta por arqueólogos, historiadores, geógrafos, biólogos, educadores e especialistas em tecnologia, todos comprometidos com a excelência técnica e a inovação contínua.
                 </p>
               </div>
             </motion.div>
@@ -57,17 +92,22 @@ export default function QuemSomos() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-6"
             >
-              <div className="aspect-[4/3] w-full" style={{ backgroundColor: '#E6E6E6' }}>
-                <img src={ASSETS.heroArqueologia} alt="Grupo Arqueo" className="w-full h-full object-cover" />
-              </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-5" style={{ backgroundColor: '#2A2A2A' }}>
-                  <span className="text-2xl font-bold" style={{ color: '#EE7501' }}>2016</span>
-                  <p className="text-xs font-light mt-1 text-white/60">Ano de fundação</p>
+                <div className="p-6 rounded-lg" style={{ backgroundColor: '#F3EFEA' }}>
+                  <span className="text-3xl font-bold" style={{ color: '#EE7501' }}>2016</span>
+                  <p className="text-xs font-medium mt-2" style={{ color: '#888' }}>Ano de fundação</p>
                 </div>
-                <div className="p-5" style={{ backgroundColor: '#2A2A2A' }}>
-                  <span className="text-2xl font-bold" style={{ color: '#EE7501' }}>3</span>
-                  <p className="text-xs font-light mt-1 text-white/60">Escritórios no Brasil</p>
+                <div className="p-6 rounded-lg" style={{ backgroundColor: '#F3EFEA' }}>
+                  <span className="text-3xl font-bold" style={{ color: '#2C7EB3' }}>3</span>
+                  <p className="text-xs font-medium mt-2" style={{ color: '#888' }}>Escritórios no Brasil</p>
+                </div>
+                <div className="p-6 rounded-lg" style={{ backgroundColor: '#F3EFEA' }}>
+                  <span className="text-3xl font-bold" style={{ color: '#861720' }}>16</span>
+                  <p className="text-xs font-medium mt-2" style={{ color: '#888' }}>Estados com atuação</p>
+                </div>
+                <div className="p-6 rounded-lg" style={{ backgroundColor: '#F3EFEA' }}>
+                  <span className="text-3xl font-bold" style={{ color: '#EE7501' }}>250+</span>
+                  <p className="text-xs font-medium mt-2" style={{ color: '#888' }}>Projetos gerenciados</p>
                 </div>
               </div>
             </motion.div>

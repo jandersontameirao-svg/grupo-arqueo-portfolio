@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
+import { ASSETS } from "@/lib/assets";
 import { Mail, Phone, MapPin, Globe, Linkedin, Instagram } from "lucide-react";
+
+/**
+ * CONTATO — Página 10 (Final)
+ * Design: Hero section similar to Home with image background + gradient overlay
+ */
 
 const offices = [
   {
@@ -28,6 +34,46 @@ export default function Contato() {
       prevPath="/territorio"
       prevLabel="Presenca Territorial"
     >
+      {/* Hero Section — Similar to Home */}
+      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">
+        {/* Background image + gradient overlay */}
+        <div className="absolute inset-0 -z-10">
+          <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to right, rgba(249,248,246,1) 0%, rgba(249,248,246,0.98) 20%, rgba(249,248,246,0.95) 40%, rgba(249,248,246,0.85) 60%, rgba(249,248,246,0.70) 80%, rgba(249,248,246,0.50) 100%)'
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
+              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Contato</span>
+            </div>
+            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
+              Fale com o <span style={{ color: '#EE7501' }}>Grupo Arqueo</span>
+            </h1>
+            <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '600px' }}>
+              Estamos prontos para atender as demandas do seu empreendimento com soluções técnicas especializadas em patrimônio sociocultural e licenciamento ambiental.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
+
+      {/* Contact Content */}
       <section className="py-16 lg:py-24">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -36,18 +82,6 @@ export default function Contato() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-                <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Contato</span>
-              </div>
-              <h2 className="text-2xl lg:text-4xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-                Fale com o <span style={{ color: '#EE7501' }}>Grupo Arqueo</span>
-              </h2>
-              <p className="text-sm lg:text-base font-light leading-relaxed mb-10" style={{ color: '#555' }}>
-                Estamos prontos para atender as demandas do seu empreendimento com solucoes
-                tecnicas especializadas em patrimonio sociocultural e licenciamento ambiental.
-              </p>
-
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: '#F3EFEA' }}>
@@ -138,6 +172,7 @@ export default function Contato() {
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="py-16 lg:py-20" style={{ backgroundColor: '#861720' }}>
         <div className="container text-center">
           <motion.div

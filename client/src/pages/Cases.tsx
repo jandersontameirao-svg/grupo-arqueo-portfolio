@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
+import { ASSETS } from "@/lib/assets";
 import { useState } from "react";
 import { MapPin, Calendar, Building2 } from "lucide-react";
+
+/**
+ * CASES — Página 08
+ * Design: Hero section similar to Home with image background + gradient overlay
+ */
 
 const cases = [
   {
@@ -75,28 +81,56 @@ export default function Cases() {
       nextPath="/territorio"
       nextLabel="Presença Territorial"
     >
-      {/* Intro + Filter */}
+      {/* Hero Section — Similar to Home */}
+      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">
+        {/* Background image + gradient overlay */}
+        <div className="absolute inset-0 -z-10">
+          <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to right, rgba(249,248,246,1) 0%, rgba(249,248,246,0.98) 20%, rgba(249,248,246,0.95) 40%, rgba(249,248,246,0.85) 60%, rgba(249,248,246,0.70) 80%, rgba(249,248,246,0.50) 100%)'
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
+              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Portfólio</span>
+            </div>
+            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
+              Projetos que demonstram nossa{' '}
+              <span style={{ color: '#EE7501' }}>capacidade</span>
+            </h1>
+            <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '600px' }}>
+              Seleção de projetos representativos da nossa atuação em diferentes setores e regiões do Brasil.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
+
+      {/* Cases + Filter */}
       <section className="py-16 lg:py-24">
         <div className="container">
+          {/* Filters */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-12"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Portfólio</span>
-            </div>
-            <h2 className="text-2xl lg:text-4xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-              Projetos que demonstram nossa{' '}
-              <span style={{ color: '#EE7501' }}>capacidade</span>
-            </h2>
-            <p className="text-sm lg:text-base font-light leading-relaxed mb-8" style={{ color: '#555' }}>
-              Seleção de projetos representativos da nossa atuação em diferentes setores e regiões do Brasil.
-            </p>
-
-            {/* Filters */}
             <div className="flex flex-wrap gap-2">
               {sectors.map((sector) => (
                 <button
