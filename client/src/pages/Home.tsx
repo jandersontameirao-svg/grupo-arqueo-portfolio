@@ -72,22 +72,22 @@ export default function Home() {
             <img
               src={ASSETS.logo10anos}
               alt="Grupo Arqueo — 10 Anos"
-              className="mb-4"
+              className="mb-8"
               style={{ height: '80px', width: 'auto', display: 'block' }}
             />
 
-            <p className="text-[10px] xl:text-xs font-semibold tracking-[0.3em] uppercase mb-4 text-[#861720]">
+            <p className="text-[10px] xl:text-xs font-semibold tracking-[0.3em] uppercase mb-6 text-[#861720]">
               Patrimônio Cultural e Arqueológico
             </p>
 
-            <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-[1.12] mb-4 text-[#2A2A2A]">
+            <h1 className="text-3xl xl:text-4xl 2xl:text-5xl font-bold leading-[1.15] mb-6 text-[#2A2A2A]">
               Consultoria estratégica{" "}
               <span className="text-[#EE7501]">em pesquisa</span>{" "}
               e gestão do patrimônio{" "}
               <span className="text-[#861720]">sociocultural</span>
             </h1>
 
-            <p className="text-sm font-light leading-relaxed mb-6 text-[#555] max-w-md">
+            <p className="text-base font-light leading-relaxed mb-8 text-[#555] max-w-md">
               Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
               e gestão estratégica para oferecer soluções completas em licenciamento
               sociocultural no Brasil.
