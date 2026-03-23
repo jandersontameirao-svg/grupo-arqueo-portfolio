@@ -45,7 +45,7 @@ export default function Home() {
 
 
       {/* ─── HERO SECTION ─── */}
-      <section className="relative min-h-screen flex items-end pb-16 lg:pb-24 pt-12 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pb-16 lg:pb-24 pt-12 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0">
           <img
@@ -59,75 +59,79 @@ export default function Home() {
         </div>
 
         <div className="container relative z-10">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={stagger}
-            className="max-w-4xl"
-          >
-            {/* Logo 10 anos no hero */}
+          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+            {/* Logo 10 anos — grande, lateral esquerda */}
             <motion.div
-              variants={fadeUp}
-              custom={0}
-              className="mb-8"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="flex-shrink-0 mb-10 lg:mb-0"
             >
               <img
                 src={ASSETS.logo10anos}
                 alt="Grupo Arqueo — 10 Anos"
-                className="h-16 lg:h-24 w-auto"
+                className="h-32 sm:h-40 lg:h-56 xl:h-64 w-auto"
               />
             </motion.div>
 
-            {/* Tagline */}
-            <motion.p
-              variants={fadeUp}
-              custom={1}
-              className="text-xs font-medium tracking-[0.3em] uppercase mb-6"
-              style={{ color: '#861720' }}
+            {/* Texto — lado direito */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={stagger}
+              className="max-w-3xl"
             >
-              Patrimônio Cultural e Arqueológico
-            </motion.p>
-
-            {/* Main headline */}
-            <motion.h1
-              variants={fadeUp}
-              custom={2}
-              className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] mb-8"
-              style={{ color: '#2A2A2A' }}
-            >
-              Consultoria estratégica{" "}
-              <span style={{ color: '#EE7501' }}>em pesquisa</span>{" "}
-              e gestão do patrimônio{" "}
-              <span style={{ color: '#861720' }}>sociocultural</span>
-            </motion.h1>
-
-            {/* Subtitle */}
-            <motion.p
-              variants={fadeUp}
-              custom={3}
-              className="text-base lg:text-lg font-light leading-relaxed max-w-2xl mb-12"
-              style={{ color: '#555' }}
-            >
-              Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
-              e gestão estratégica para oferecer soluções completas em licenciamento
-              sociocultural no Brasil.
-            </motion.p>
-
-            {/* CTA */}
-            <motion.div variants={fadeUp} custom={4} className="flex items-center gap-6">
-              <a
-                href="#indice"
-                className="inline-flex items-center gap-3 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
-                style={{ backgroundColor: '#EE7501' }}
+              {/* Tagline */}
+              <motion.p
+                variants={fadeUp}
+                custom={0}
+                className="text-xs font-medium tracking-[0.3em] uppercase mb-5"
+                style={{ color: '#861720' }}
               >
-                Explorar Portfólio
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <span className="text-xs font-light tracking-wider" style={{ color: '#888' }}>
-                10 capítulos
-              </span>
+                Patrimônio Cultural e Arqueológico
+              </motion.p>
+
+              {/* Main headline */}
+              <motion.h1
+                variants={fadeUp}
+                custom={1}
+                className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] mb-6"
+                style={{ color: '#2A2A2A' }}
+              >
+                Consultoria estratégica{" "}
+                <span style={{ color: '#EE7501' }}>em pesquisa</span>{" "}
+                e gestão do patrimônio{" "}
+                <span style={{ color: '#861720' }}>sociocultural</span>
+              </motion.h1>
+
+              {/* Subtitle */}
+              <motion.p
+                variants={fadeUp}
+                custom={2}
+                className="text-base lg:text-lg font-light leading-relaxed max-w-2xl mb-10"
+                style={{ color: '#555' }}
+              >
+                Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
+                e gestão estratégica para oferecer soluções completas em licenciamento
+                sociocultural no Brasil.
+              </motion.p>
+
+              {/* CTA */}
+              <motion.div variants={fadeUp} custom={3} className="flex items-center gap-6">
+                <a
+                  href="#indice"
+                  className="inline-flex items-center gap-3 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
+                  style={{ backgroundColor: '#EE7501' }}
+                >
+                  Explorar Portfólio
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <span className="text-xs font-light tracking-wider" style={{ color: '#888' }}>
+                  10 capítulos
+                </span>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
 
           {/* Scroll indicator */}
           <motion.div
