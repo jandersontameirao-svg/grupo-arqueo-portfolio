@@ -1,10 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ASSETS } from '@/lib/assets';
 
 export default function Ecossistema() {
   const [hoveredEmpresa, setHoveredEmpresa] = useState<number | null>(null);
+  const [diagramLoaded, setDiagramLoaded] = useState(false);
+  const diagramRef = useRef<HTMLDivElement>(null);
 
   // 6 empresas no ecossistema
   const empresas = [
@@ -64,6 +66,14 @@ export default function Ecossistema() {
     },
   ];
 
+  useEffect(() => {
+    // Trigger animation when component mounts
+    const timer = setTimeout(() => {
+      setDiagramLoaded(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Orbital Diagram Section */}
@@ -78,12 +88,21 @@ export default function Ecossistema() {
             </h2>
           </div>
 
-          {/* Orbital Diagram - Compact Image */}
-          <div className="flex justify-center mb-12">
+          {/* Orbital Diagram - Compact Image with Animation */}
+          <div 
+            ref={diagramRef}
+            className="flex justify-center mb-12"
+            style={{
+              opacity: diagramLoaded ? 1 : 0,
+              transform: diagramLoaded ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
+              transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+            }}
+          >
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-6_5e5eb982.webp"
               alt="Diagrama Orbital Grupo Arqueo"
               className="w-full max-w-2xl h-auto drop-shadow-lg"
+              onLoad={() => setDiagramLoaded(true)}
             />
           </div>
 
