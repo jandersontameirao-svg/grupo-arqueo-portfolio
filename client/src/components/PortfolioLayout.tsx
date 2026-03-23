@@ -51,21 +51,10 @@ export default function PortfolioLayout({
         <div className="h-px w-full" style={{ background: 'linear-gradient(to right, transparent, #E6E6E6, transparent)' }} />
       </header>
 
-      {/* CHAPTER HERO BANNER */}
-      <section className="pt-28 lg:pt-36 pb-12 lg:pb-16" style={{ backgroundColor: '#2A2A2A' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="text-6xl lg:text-8xl font-bold" style={{ color: 'rgba(238,117,1,0.15)' }}>
-              {chapterNum}
-            </span>
-            <div className="w-12 h-0.5 mt-4 mb-4" style={{ backgroundColor: '#EE7501' }} />
-            <h1 className="text-2xl lg:text-4xl font-bold text-white">{chapterTitle}</h1>
-          </motion.div>
-        </div>
-      </section>
+      {/* CHAPTER HERO BANNER — REMOVED */}
 
       {/* CONTENT */}
-      <main className="flex-1">
+      <main className="flex-1 pt-20 lg:pt-24">
         {children}
       </main>
 
