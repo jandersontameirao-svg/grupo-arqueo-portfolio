@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from 'react';
 import { ASSETS } from '@/lib/assets';
 
 export default function Ecossistema() {
-  const [hoveredEmpresa, setHoveredEmpresa] = useState<number | null>(null);
   const [diagramLoaded, setDiagramLoaded] = useState(false);
   const [selectedEmpresa, setSelectedEmpresa] = useState<string | null>(null);
   const diagramRef = useRef<HTMLDivElement>(null);
@@ -106,36 +105,29 @@ export default function Ecossistema() {
     .modal-content {
       animation: modalFadeIn 0.3s ease-out;
     }
-    .logo-clickable {
-      cursor: pointer;
-      transition: transform 0.2s ease, filter 0.2s ease;
-    }
-    .logo-clickable:hover {
-      transform: scale(1.05);
-      filter: brightness(1.1);
-    }
   `;
 
   return (
     <div className="min-h-screen bg-white">
       <style>{animationStyles}</style>
       
-      {/* Orbital Diagram Section */}
-      <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+      {/* Hero Grande - Orbital Diagram Section */}
+      <section className="min-h-screen flex flex-col items-center justify-center px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
+        <div className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center">
+          {/* Title */}
+          <div className="text-center mb-12 lg:mb-20">
             <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
               Estrutura Integrada
             </span>
-            <h2 className="text-2xl lg:text-3xl font-bold mt-3" style={{ color: '#1A1A1A' }}>
-              Um ecossistema, múltiplas especialidades
-            </h2>
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mt-4 leading-tight" style={{ color: '#1A1A1A' }}>
+              Um ecossistema,<br />múltiplas especialidades
+            </h1>
           </div>
 
           {/* Orbital Diagram - Compact Image with Animation */}
           <div 
             ref={diagramRef}
-            className="flex justify-center mb-12"
+            className="flex justify-center mb-16 lg:mb-24 w-full"
             style={{
               opacity: diagramLoaded ? 1 : 0,
               transform: diagramLoaded ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
@@ -145,14 +137,14 @@ export default function Ecossistema() {
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-6_5e5eb982.webp"
               alt="Diagrama Orbital Grupo Arqueo"
-              className="w-full max-w-2xl h-auto drop-shadow-lg"
+              className="w-full max-w-3xl h-auto drop-shadow-lg"
               onLoad={() => setDiagramLoaded(true)}
               style={{ pointerEvents: 'none' }}
             />
           </div>
 
           {/* Enterprise labels below diagram with staggered animation */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 max-w-3xl mx-auto text-center">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-4xl mx-auto text-center w-full">
             {empresas.map((emp, idx) => (
               <div 
                 key={emp.id} 
@@ -174,96 +166,6 @@ export default function Ecossistema() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Editorial Empresa Blocks */}
-      <section className="py-20 lg:py-32 px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto space-y-20">
-          {empresas.map((emp, idx) => (
-            <div 
-              key={emp.id}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}
-              onMouseEnter={() => setHoveredEmpresa(idx)}
-              onMouseLeave={() => setHoveredEmpresa(null)}
-            >
-              {/* Logo/Visual */}
-              <div 
-                className={`flex justify-center lg:justify-${idx % 2 === 1 ? 'end' : 'start'} ${idx % 2 === 1 ? 'lg:col-start-2' : ''}`}
-                style={{
-                  opacity: hoveredEmpresa === null || hoveredEmpresa === idx ? 1 : 0.5,
-                  transition: 'opacity 0.3s ease',
-                }}
-              >
-                <div 
-                  className="w-32 h-32 lg:w-40 lg:h-40 rounded-full flex items-center justify-center shadow-lg"
-                  style={{ backgroundColor: emp.color }}
-                >
-                  <img 
-                    src={emp.logo} 
-                    alt={emp.name}
-                    className="w-20 lg:w-24 h-20 lg:h-24 object-contain"
-                  />
-                </div>
-              </div>
-
-              {/* Content */}
-              <div 
-                style={{
-                  opacity: hoveredEmpresa === null || hoveredEmpresa === idx ? 1 : 0.5,
-                  transition: 'opacity 0.3s ease',
-                }}
-              >
-                <h3 className="text-2xl lg:text-3xl font-bold mb-2" style={{ color: emp.color }}>
-                  {emp.name}
-                </h3>
-                <p className="text-sm font-semibold tracking-widest uppercase mb-6" style={{ color: '#999999' }}>
-                  {emp.subtitle}
-                </p>
-                <p className="text-base lg:text-lg leading-relaxed mb-8" style={{ color: '#555555' }}>
-                  {emp.description}
-                </p>
-                
-                {/* Competências */}
-                <div>
-                  <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#999999' }}>
-                    Competências
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {emp.competencias.map((comp, cidx) => (
-                      <span
-                        key={cidx}
-                        className="px-3 py-1 rounded-full text-xs font-medium"
-                        style={{
-                          backgroundColor: `${emp.color}20`,
-                          color: emp.color,
-                          border: `1px solid ${emp.color}40`,
-                        }}
-                      >
-                        {comp}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Visit Button */}
-                <button
-                  className="mt-8 px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-lg"
-                  style={{
-                    backgroundColor: emp.color,
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
-                >
-                  Visitar
-                </button>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
