@@ -6,6 +6,7 @@ import { ASSETS } from '@/lib/assets';
 export default function Ecossistema() {
   const [hoveredEmpresa, setHoveredEmpresa] = useState<number | null>(null);
   const [diagramLoaded, setDiagramLoaded] = useState(false);
+  const [selectedEmpresa, setSelectedEmpresa] = useState<string | null>(null);
   const diagramRef = useRef<HTMLDivElement>(null);
 
   // 6 empresas no ecossistema
@@ -74,6 +75,9 @@ export default function Ecossistema() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Get selected empresa data
+  const selectedEmpresaData = empresas.find(emp => emp.id === selectedEmpresa);
+
   // CSS para animações
   const animationStyles = `
     @keyframes fadeInUp {
@@ -86,8 +90,29 @@ export default function Ecossistema() {
         transform: translateY(0);
       }
     }
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
     .logo-fade-in {
       animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .modal-content {
+      animation: modalFadeIn 0.3s ease-out;
+    }
+    .logo-clickable {
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    .logo-clickable:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
     }
   `;
 
@@ -107,7 +132,7 @@ export default function Ecossistema() {
             </h2>
           </div>
 
-          {/* Orbital Diagram - Compact Image with Animation and Rotation */}
+          {/* Orbital Diagram - Compact Image with Animation */}
           <div 
             ref={diagramRef}
             className="flex justify-center mb-12"
@@ -131,15 +156,19 @@ export default function Ecossistema() {
             {empresas.map((emp, idx) => (
               <div 
                 key={emp.id} 
-                className="flex flex-col items-center logo-fade-in"
+                className="flex flex-col items-center logo-fade-in cursor-pointer group"
                 style={{
                   animationDelay: `${0.1 + idx * 0.1}s`,
                 }}
+                onClick={() => setSelectedEmpresa(emp.id)}
               >
-                <p className="font-bold text-sm lg:text-base" style={{ color: emp.color }}>
+                <p 
+                  className="font-bold text-sm lg:text-base transition-all duration-300 group-hover:scale-110"
+                  style={{ color: emp.color }}
+                >
                   {emp.name}
                 </p>
-                <p className="text-xs lg:text-sm" style={{ color: '#999999' }}>
+                <p className="text-xs lg:text-sm transition-colors duration-300 group-hover:text-gray-700" style={{ color: '#999999' }}>
                   {emp.subtitle}
                 </p>
               </div>
@@ -292,6 +321,88 @@ export default function Ecossistema() {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      {selectedEmpresaData && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+          onClick={() => setSelectedEmpresa(null)}
+        >
+          <div 
+            className="modal-content bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div 
+              className="p-8 text-white rounded-t-2xl"
+              style={{ backgroundColor: selectedEmpresaData.color }}
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                  <img 
+                    src={selectedEmpresaData.logo} 
+                    alt={selectedEmpresaData.name}
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <button
+                  onClick={() => setSelectedEmpresa(null)}
+                  className="text-white hover:opacity-80 transition-opacity text-2xl"
+                >
+                  ✕
+                </button>
+              </div>
+              <h2 className="text-3xl font-bold">{selectedEmpresaData.name}</h2>
+              <p className="text-sm font-semibold tracking-widest uppercase mt-2 opacity-90">
+                {selectedEmpresaData.subtitle}
+              </p>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-8">
+              {/* Description */}
+              <div className="mb-8">
+                <p className="text-base leading-relaxed" style={{ color: '#555555' }}>
+                  {selectedEmpresaData.description}
+                </p>
+              </div>
+
+              {/* Competências */}
+              <div className="mb-8">
+                <h3 className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: '#999999' }}>
+                  Competências
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedEmpresaData.competencias.map((comp, idx) => (
+                    <span
+                      key={idx}
+                      className="px-4 py-2 rounded-full text-sm font-medium"
+                      style={{
+                        backgroundColor: `${selectedEmpresaData.color}15`,
+                        color: selectedEmpresaData.color,
+                        border: `1px solid ${selectedEmpresaData.color}40`,
+                      }}
+                    >
+                      {comp}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedEmpresa(null)}
+                className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-lg"
+                style={{
+                  backgroundColor: selectedEmpresaData.color,
+                }}
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
