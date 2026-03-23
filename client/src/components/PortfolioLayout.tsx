@@ -24,37 +24,8 @@ export default function PortfolioLayout({
 }: PortfolioLayoutProps) {
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F9F8F6' }}>
-      {/* HEADER */}
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md" style={{ backgroundColor: 'rgba(249,248,246,0.92)' }}>
-        <div className="container flex items-center justify-between h-16 lg:h-20">
-          <Link href="/">
-            <div className="flex items-center gap-3 cursor-pointer">
-              <img src={ASSETS.logoGrupoArqueo} alt="Grupo Arqueo" className="h-10 lg:h-14 w-auto" />
-            </div>
-          </Link>
-          <div className="flex items-center gap-4 lg:gap-6">
-            <span className="hidden md:block text-xs font-light" style={{ color: '#888' }}>
-              Capítulo {chapterNum}
-            </span>
-            <div className="hidden md:block w-px h-4" style={{ backgroundColor: '#E6E6E6' }} />
-            <span className="hidden md:block text-xs font-medium tracking-wider uppercase" style={{ color: '#2A2A2A' }}>
-              {chapterTitle}
-            </span>
-            <Link href="/">
-              <div className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium transition-colors duration-300 cursor-pointer hover:bg-[#EE7501] hover:text-white" style={{ border: '1px solid #E6E6E6', color: '#2A2A2A' }}>
-                <Home className="w-3 h-3" />
-                <span className="hidden sm:inline">Índice</span>
-              </div>
-            </Link>
-          </div>
-        </div>
-        <div className="h-px w-full" style={{ background: 'linear-gradient(to right, transparent, #E6E6E6, transparent)' }} />
-      </header>
-
-      {/* CHAPTER HERO BANNER — REMOVED */}
-
       {/* CONTENT */}
-      <main className="flex-1 pt-20 lg:pt-24">
+      <main className="flex-1">
         {children}
       </main>
 
