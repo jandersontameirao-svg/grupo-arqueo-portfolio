@@ -160,6 +160,22 @@ export default function QuemSomos() {
             <h2 className="text-3xl lg:text-5xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
               Uma década de <span style={{ color: '#EE7501' }}>crescimento</span>
             </h2>
+
+            {/* Logo 10 anos */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-8"
+            >
+              <img
+                src={ASSETS.logo10anos}
+                alt="Grupo Arqueo - 10 Anos"
+                className="h-16 lg:h-20 w-auto object-contain"
+                style={{ opacity: 0.9 }}
+              />
+            </motion.div>
           </motion.div>
 
           {/* Timeline circles row */}
