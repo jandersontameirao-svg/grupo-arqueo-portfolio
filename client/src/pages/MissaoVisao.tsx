@@ -253,6 +253,168 @@ export default function MissaoVisao() {
         </div>
       </section>
 
+      {/* ═══════════════════ COMPLIANCE SECTION ═══════════════════ */}
+      <section className="py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            {/* LEFT — Text */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
+                <span
+                  className="text-xs font-semibold tracking-widest uppercase"
+                  style={{ color: '#861720' }}
+                >
+                  Governança
+                </span>
+              </div>
+
+              <h2
+                className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-6"
+                style={{ color: '#1A1A1A' }}
+              >
+                Programa de{' '}
+                <span style={{ color: '#861720' }}>Compliance</span> e Integridade
+              </h2>
+
+              <p
+                className="text-base lg:text-lg leading-relaxed mb-8"
+                style={{ color: '#555' }}
+              >
+                Estamos comprometidos em atuar com{' '}
+                <strong style={{ color: '#1A1A1A' }}>ética, integridade</strong> e{' '}
+                <strong style={{ color: '#1A1A1A' }}>transparência</strong>, aprimorando nossos sistemas de conformidade e governança de acordo com as{' '}
+                <span style={{ color: '#861720' }} className="font-semibold">regras gerais de condutas éticas</span>.
+              </p>
+
+              {/* Pillar list */}
+              <div className="space-y-4">
+                {[
+                  { label: 'Código de Conduta Ética', color: '#EE7501' },
+                  { label: 'Política de Gestão de Terceiros', color: '#D4A843' },
+                  { label: 'Política de Treinamentos e Comunicação', color: '#2C7EB3' },
+                  { label: 'Política de Integridade', color: '#861720' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <div
+                      className="w-3 h-3 rounded-full flex-shrink-0"
+                      style={{ backgroundColor: item.color }}
+                    />
+                    <span className="text-sm lg:text-base font-medium" style={{ color: '#333' }}>
+                      {item.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT — Donut Chart SVG */}
+            <div className="flex items-center justify-center">
+              <div className="relative" style={{ width: '380px', height: '380px' }}>
+                <svg viewBox="0 0 400 400" className="w-full h-full" style={{ filter: 'drop-shadow(0 8px 30px rgba(0,0,0,0.1))' }}>
+                  {/* Donut segments — 4 equal parts */}
+                  {/* Segment 1: Código de Conduta Ética (top-left) — Laranja */}
+                  <path
+                    d="M200 40 A160 160 0 0 1 360 200 L280 200 A80 80 0 0 0 200 120 Z"
+                    fill="#EE7501"
+                  />
+                  {/* Segment 2: Política de Gestão de Terceiros (top-right) — Dourado */}
+                  <path
+                    d="M360 200 A160 160 0 0 1 200 360 L200 280 A80 80 0 0 0 280 200 Z"
+                    fill="#D4A843"
+                  />
+                  {/* Segment 3: Política de Treinamentos (bottom-left) — Azul */}
+                  <path
+                    d="M200 360 A160 160 0 0 1 40 200 L120 200 A80 80 0 0 0 200 280 Z"
+                    fill="#2C7EB3"
+                  />
+                  {/* Segment 4: Política de Integridade (bottom-right) — Vinho */}
+                  <path
+                    d="M40 200 A160 160 0 0 1 200 40 L200 120 A80 80 0 0 0 120 200 Z"
+                    fill="#861720"
+                  />
+
+                  {/* Center circle — white with logo */}
+                  <circle cx="200" cy="200" r="76" fill="#F0EFED" />
+
+                  {/* Segment labels — curved text */}
+                  {/* Top-right: Código de Conduta Ética */}
+                  <text
+                    x="295"
+                    y="115"
+                    fill="white"
+                    fontSize="11"
+                    fontWeight="600"
+                    textAnchor="middle"
+                    transform="rotate(45, 295, 115)"
+                  >
+                    <tspan x="295" dy="0">Código de</tspan>
+                    <tspan x="295" dy="14">Conduta Ética</tspan>
+                  </text>
+
+                  {/* Bottom-right: Política de Gestão de Terceiros */}
+                  <text
+                    x="305"
+                    y="285"
+                    fill="white"
+                    fontSize="10"
+                    fontWeight="600"
+                    textAnchor="middle"
+                    transform="rotate(-45, 305, 285)"
+                  >
+                    <tspan x="305" dy="0">Política de Gestão</tspan>
+                    <tspan x="305" dy="13">de Terceiros</tspan>
+                  </text>
+
+                  {/* Bottom-left: Política de Treinamentos */}
+                  <text
+                    x="105"
+                    y="290"
+                    fill="white"
+                    fontSize="10"
+                    fontWeight="600"
+                    textAnchor="middle"
+                    transform="rotate(45, 105, 290)"
+                  >
+                    <tspan x="105" dy="0">Política de</tspan>
+                    <tspan x="105" dy="13">Treinamentos e</tspan>
+                    <tspan x="105" dy="13">Comunicação</tspan>
+                  </text>
+
+                  {/* Top-left: Política de Integridade */}
+                  <text
+                    x="105"
+                    y="115"
+                    fill="white"
+                    fontSize="11"
+                    fontWeight="600"
+                    textAnchor="middle"
+                    transform="rotate(-45, 105, 115)"
+                  >
+                    <tspan x="105" dy="0">Política de</tspan>
+                    <tspan x="105" dy="14">Integridade</tspan>
+                  </text>
+                </svg>
+
+                {/* Center logo */}
+                <div
+                  className="absolute inset-0 flex flex-col items-center justify-center"
+                  style={{ pointerEvents: 'none' }}
+                >
+                  <img
+                    src={ASSETS.logoGrupoArqueo}
+                    alt="Grupo Arqueo"
+                    className="w-20 h-auto opacity-80"
+                  />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
     </PortfolioLayout>
   );
 }
