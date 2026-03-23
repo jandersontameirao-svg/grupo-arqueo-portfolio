@@ -235,7 +235,7 @@ export default function Home() {
                   }}
                 >
                   <img
-                    src={ASSETS.logoGrupoArqueo}
+                    src={ASSETS.logoGrupoArqueoColorido}
                     alt="Grupo Arqueo"
                     className="h-20 w-auto"
                   />
@@ -402,7 +402,7 @@ export default function Home() {
                 }}
               >
                 <img
-                  src={ASSETS.logoGrupoArqueo}
+                  src={ASSETS.logoGrupoArqueoColorido}
                   alt="Grupo Arqueo"
                   className="h-14 w-auto"
                 />

@@ -11,6 +11,7 @@ export const ASSETS = {
   numbersBackground: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/numbers-background-m6DiJd3MzdPudxVKexexJb.webp',
   logo10anos: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logo-10anos_474f247c.webp',
   logoGrupoArqueo: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logo-grupo-arqueo_ef49c8e5.png',
+  logoGrupoArqueoColorido: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logo-grupo-arqueo-colorido_4849b24c.png',
   logoArqueoproject: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logo-arqueoproject_33a2b072.png',
   logoArqueogis: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logo-arqueogis_ec9e6836.png',
   logoArqueocean: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logo-arqueocean_83b3af7e.png',
