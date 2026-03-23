@@ -79,16 +79,7 @@ export default function CeoMessage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:pt-12"
             >
-              {/* Quote icon */}
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="mb-6"
-              >
-                <Quote className="w-10 h-10 lg:w-14 lg:h-14" style={{ color: '#861720', opacity: 0.35 }} />
-              </motion.div>
+              {/* Quote icon removed */}
 
               {/* Main message */}
               <div className="space-y-6 lg:space-y-8">
