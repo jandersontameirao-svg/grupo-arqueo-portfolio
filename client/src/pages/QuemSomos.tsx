@@ -188,81 +188,57 @@ export default function QuemSomos() {
         </div>
       </section>
 
-      {/* ═══════════════════ STRUCTURE & TEAM SECTION ═══════════════════ */}
-      <section className="py-20 lg:py-28">
-        <div className="container">
+      {/* ═══════════════════ NOSSO TIME HERO SECTION ═══════════════════ */}
+      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden py-20 lg:py-28">
+        {/* Gradient background */}
+        <div className="absolute inset-0 -z-10" style={{
+          background: 'linear-gradient(135deg, #4A9B9E 0%, #2C7EB3 50%, #5BA4A7 100%)'
+        }} />
+
+        <div className="container relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16"
+            transition={{ duration: 0.9 }}
+            className="max-w-4xl mx-auto text-center"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
-              <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720' }}>Estrutura</span>
-            </div>
-            <h2 className="text-3xl lg:text-5xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
-              Nossa <span style={{ color: '#EE7501' }}>Estrutura</span> e <span style={{ color: '#861720' }}>Equipe</span>
-            </h2>
+            {/* Label */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex items-center justify-center gap-3 mb-8"
+            >
+              <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0.1))' }} />
+              <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: 'rgba(255,255,255,0.8)' }}>Equipe</span>
+              <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to left, rgba(255,255,255,0.3), rgba(255,255,255,0.1))' }} />
+            </motion.div>
+
+            {/* Title */}
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-8 text-white"
+            >
+              Nosso <span style={{ color: 'rgba(255,255,255,0.9)' }}>Time Multidisciplinar</span>
+            </motion.h2>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-lg lg:text-xl font-light leading-relaxed"
+              style={{ color: 'rgba(255,255,255,0.85)' }}
+            >
+              Composta por arqueólogos, historiadores, geógrafos, biólogos, educadores e especialistas em tecnologia, todos comprometidos com a excelência técnica e a inovação contínua.
+            </motion.p>
           </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Estrutura */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative p-8 lg:p-12 rounded-2xl"
-              style={{
-                backgroundColor: '#FFFFFF',
-                border: '1px solid rgba(230, 230, 230, 0.6)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-              }}
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-5" style={{ backgroundColor: '#EE7501' }} />
-              <div className="relative z-10">
-                <h3 className="text-2xl lg:text-3xl font-bold mb-6" style={{ color: '#2A2A2A' }}>
-                  Presença em <span style={{ color: '#EE7501' }}>todo Brasil</span>
-                </h3>
-                <p className="text-base lg:text-lg font-light leading-relaxed mb-8" style={{ color: '#555' }}>
-                  Com sede em Brasília e escritórios em Natal e São Paulo, o Grupo Arqueo atua em todo o território nacional, atendendo aos maiores empreendimentos de infraestrutura, energia e recursos naturais do país.
-                </p>
-                <div className="flex items-center gap-2 text-sm font-medium" style={{ color: '#861720' }}>
-                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#861720' }} />
-                  3 escritórios estratégicos
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Equipe */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="relative p-8 lg:p-12 rounded-2xl"
-              style={{
-                backgroundColor: '#FFFFFF',
-                border: '1px solid rgba(230, 230, 230, 0.6)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-              }}
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-5" style={{ backgroundColor: '#2C7EB3' }} />
-              <div className="relative z-10">
-                <h3 className="text-2xl lg:text-3xl font-bold mb-6" style={{ color: '#2A2A2A' }}>
-                  Equipe <span style={{ color: '#2C7EB3' }}>Multidisciplinar</span>
-                </h3>
-                <p className="text-base lg:text-lg font-light leading-relaxed mb-8" style={{ color: '#555' }}>
-                  Composta por arqueólogos, historiadores, geógrafos, biólogos, educadores e especialistas em tecnologia, todos comprometidos com a excelência técnica e a inovação contínua.
-                </p>
-                <div className="flex items-center gap-2 text-sm font-medium" style={{ color: '#2C7EB3' }}>
-                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#2C7EB3' }} />
-                  Expertise em múltiplas disciplinas
-                </div>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
 
