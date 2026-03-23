@@ -3,456 +3,337 @@ import { Link } from "wouter";
 import { ASSETS } from "@/lib/assets";
 import {
   User, Building2, Target, Globe, Lightbulb, Star,
-  BarChart3, FolderOpen, MapPin, Mail, ArrowRight, ChevronDown
+  BarChart3, FolderOpen, MapPin, Mail
 } from "lucide-react";
 import { useState } from "react";
 
 /**
  * HOME — Portfólio Digital Premium Grupo Arqueo
- * Design: "Estratos Editoriais" — Neo-Editorial Minimalista
- * Paleta: Laranja #EE7501, Vinho #861720, Azul #2C7EB3, Grafite #2A2A2A, Bege #F3EFEA
- * Tipografia: Montserrat (bold títulos, light corpo)
+ * Layout: Texto à esquerda + Menu orbital à direita, tudo no hero
  */
 
-const portfolioSections = [
-  { id: "ceo", num: "01", label: "Mensagem do CEO", desc: "Visão de liderança e propósito", icon: User, path: "/ceo", color: "#861720" },
-  { id: "quem-somos", num: "02", label: "Quem Somos", desc: "Trajetória, identidade e posicionamento", icon: Building2, path: "/quem-somos", color: "#2C7EB3" },
-  { id: "missao-visao", num: "03", label: "Missão, Visão e Valores", desc: "Os pilares que sustentam nossa atuação", icon: Target, path: "/missao-visao", color: "#EE7501" },
-  { id: "ecossistema", num: "04", label: "Ecossistema do Grupo", desc: "Empresas e plataformas integradas", icon: Globe, path: "/ecossistema", color: "#2C7EB3" },
-  { id: "solucoes", num: "05", label: "Soluções", desc: "Competências técnicas e serviços", icon: Lightbulb, path: "/solucoes", color: "#861720" },
-  { id: "diferenciais", num: "06", label: "Diferenciais", desc: "O que nos torna referência no setor", icon: Star, path: "/diferenciais", color: "#EE7501" },
-  { id: "numeros", num: "07", label: "Números", desc: "Impacto, alcance e resultados", icon: BarChart3, path: "/numeros", color: "#2C7EB3" },
-  { id: "cases", num: "08", label: "Cases", desc: "Projetos que demonstram nossa capacidade", icon: FolderOpen, path: "/cases", color: "#861720" },
-  { id: "territorio", num: "09", label: "Presença Territorial", desc: "Atuação em todo o Brasil", icon: MapPin, path: "/territorio", color: "#EE7501" },
-  { id: "contato", num: "10", label: "Contato", desc: "Fale com o Grupo Arqueo", icon: Mail, path: "/contato", color: "#2C7EB3" },
+const sections = [
+  { id: "ceo", num: "01", label: "Mensagem\ndo CEO", icon: User, path: "/ceo", color: "#861720" },
+  { id: "quem-somos", num: "02", label: "Quem\nSomos", icon: Building2, path: "/quem-somos", color: "#2C7EB3" },
+  { id: "missao-visao", num: "03", label: "Missão, Visão\ne Valores", icon: Target, path: "/missao-visao", color: "#EE7501" },
+  { id: "ecossistema", num: "04", label: "Ecossistema\ndo Grupo", icon: Globe, path: "/ecossistema", color: "#2C7EB3" },
+  { id: "solucoes", num: "05", label: "Soluções", icon: Lightbulb, path: "/solucoes", color: "#861720" },
+  { id: "diferenciais", num: "06", label: "Diferenciais", icon: Star, path: "/diferenciais", color: "#EE7501" },
+  { id: "numeros", num: "07", label: "Números", icon: BarChart3, path: "/numeros", color: "#2C7EB3" },
+  { id: "cases", num: "08", label: "Cases", icon: FolderOpen, path: "/cases", color: "#861720" },
+  { id: "territorio", num: "09", label: "Presença\nTerritorial", icon: MapPin, path: "/territorio", color: "#EE7501" },
+  { id: "contato", num: "10", label: "Contato", icon: Mail, path: "/contato", color: "#2C7EB3" },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.08 }
-  })
-};
-
-const stagger = {
-  visible: { transition: { staggerChildren: 0.08 } }
-};
-
 export default function Home() {
-  const [hoveredSection, setHoveredSection] = useState<number | null>(null);
+  const [hovered, setHovered] = useState<number | null>(null);
+
+  // Orbital positions: 10 items around a circle
+  const orbitalRadius = 42; // percentage of container
+  const centerX = 50;
+  const centerY = 50;
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F9F8F6' }}>
-
-      {/* ─── HERO SECTION ─── */}
-      <section className="relative min-h-screen flex items-center pb-16 lg:pb-24 pt-12 overflow-hidden">
-        {/* Background image */}
+    <div className="min-h-screen bg-[#F9F8F6]">
+      <section className="relative h-screen">
+        {/* Background */}
         <div className="absolute inset-0">
-          <img
-            src={ASSETS.heroArqueologia}
-            alt=""
-            className="w-full h-full object-cover"
+          <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to right, rgba(249,248,246,0.98) 0%, rgba(249,248,246,0.96) 35%, rgba(249,248,246,0.85) 50%, rgba(249,248,246,0.65) 65%, rgba(249,248,246,0.4) 80%, rgba(249,248,246,0.2) 100%)'
+            }}
           />
-          <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to bottom, rgba(249,248,246,0.3) 0%, rgba(249,248,246,0.6) 40%, rgba(249,248,246,0.95) 80%, rgba(249,248,246,1) 100%)'
-          }} />
         </div>
 
-        <div className="container relative z-10">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={stagger}
-            className="max-w-4xl"
-          >
-            {/* Logo 10 anos — grande, acima do texto */}
-            <motion.div
-              variants={fadeUp}
-              custom={0}
-              className="mb-10"
-            >
-              <img
-                src={ASSETS.logo10anos}
-                alt="Grupo Arqueo — 10 Anos"
-                className="h-28 sm:h-36 lg:h-48 w-auto"
-              />
-            </motion.div>
+        {/* Content grid: left text + right orbital */}
+        <div className="relative z-10 h-full hidden lg:grid lg:grid-cols-2 items-center max-w-[1400px] mx-auto px-8">
+          
+          {/* LEFT — Text */}
+          <div>
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              src={ASSETS.logo10anos}
+              alt="Grupo Arqueo — 10 Anos"
+              className="h-32 xl:h-40 w-auto mb-8"
+            />
 
-            {/* Tagline */}
             <motion.p
-              variants={fadeUp}
-              custom={1}
-              className="text-xs font-medium tracking-[0.3em] uppercase mb-5"
-              style={{ color: '#861720' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-xs font-medium tracking-[0.3em] uppercase mb-4 text-[#861720]"
             >
               Patrimônio Cultural e Arqueológico
             </motion.p>
 
-            {/* Main headline */}
             <motion.h1
-              variants={fadeUp}
-              custom={2}
-              className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] mb-8"
-              style={{ color: '#2A2A2A' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-3xl xl:text-5xl font-bold leading-[1.08] mb-6 text-[#2A2A2A]"
             >
               Consultoria estratégica{" "}
-              <span style={{ color: '#EE7501' }}>em pesquisa</span>{" "}
+              <span className="text-[#EE7501]">em pesquisa</span>{" "}
               e gestão do patrimônio{" "}
-              <span style={{ color: '#861720' }}>sociocultural</span>
+              <span className="text-[#861720]">sociocultural</span>
             </motion.h1>
 
-            {/* Subtitle */}
             <motion.p
-              variants={fadeUp}
-              custom={3}
-              className="text-base lg:text-lg font-light leading-relaxed max-w-2xl mb-10"
-              style={{ color: '#555' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-sm xl:text-base font-light leading-relaxed mb-8 text-[#555] max-w-lg"
             >
               Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
               e gestão estratégica para oferecer soluções completas em licenciamento
               sociocultural no Brasil.
             </motion.p>
 
-            {/* CTA */}
-            <motion.div variants={fadeUp} custom={4} className="flex items-center gap-6">
-              <a
-                href="#indice"
-                className="inline-flex items-center gap-3 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
-                style={{ backgroundColor: '#EE7501' }}
-              >
-                Explorar Portfólio
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <span className="text-xs font-light tracking-wider" style={{ color: '#888' }}>
-                10 capítulos
-              </span>
-            </motion.div>
-          </motion.div>
-
-          {/* Scroll indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 1 }}
-            className="absolute bottom-8 right-4 lg:right-8 flex flex-col items-center gap-2"
-          >
-            <span className="text-[10px] font-medium tracking-[0.2em] uppercase" style={{ color: '#888', writingMode: 'vertical-lr' }}>
-              Scroll
-            </span>
+            {/* Hovered section info */}
             <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="h-14"
             >
-              <ChevronDown className="w-4 h-4" style={{ color: '#888' }} />
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-
-      {/* ─── ORBITAL NAVIGATION INDEX ─── */}
-      <section id="indice" className="py-20 lg:py-32 overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
-        <div className="container">
-          {/* Section header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16 lg:mb-20"
-          >
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>
-                Índice
-              </span>
-              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-            </div>
-            <h2 className="text-3xl lg:text-5xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
-              Navegue pelo{" "}
-              <span style={{ color: '#EE7501' }}>portfólio</span>
-            </h2>
-            <p className="text-base font-light mt-4 max-w-xl mx-auto" style={{ color: '#666' }}>
-              Cada capítulo apresenta uma dimensão do Grupo Arqueo. Clique para explorar.
-            </p>
-          </motion.div>
-
-          {/* Orbital Navigation — Desktop */}
-          <div className="hidden lg:block">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative mx-auto"
-              style={{ width: '900px', height: '900px' }}
-            >
-              {/* Outer orbit ring */}
-              <div
-                className="absolute inset-0 rounded-full"
-                style={{ border: '1px solid rgba(238,117,1,0.12)' }}
-              />
-              {/* Middle orbit ring */}
-              <div
-                className="absolute rounded-full"
-                style={{
-                  top: '100px', left: '100px', right: '100px', bottom: '100px',
-                  border: '1px dashed rgba(42,42,42,0.08)'
-                }}
-              />
-              {/* Inner orbit ring */}
-              <div
-                className="absolute rounded-full"
-                style={{
-                  top: '250px', left: '250px', right: '250px', bottom: '250px',
-                  border: '1px solid rgba(238,117,1,0.08)'
-                }}
-              />
-
-              {/* Center — Logo Grupo Arqueo */}
-              <motion.div
-                className="absolute flex flex-col items-center justify-center"
-                style={{
-                  top: '50%', left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '200px', height: '200px',
-                }}
-                animate={{
-                  boxShadow: hoveredSection !== null
-                    ? '0 0 60px rgba(238,117,1,0.15)'
-                    : '0 0 40px rgba(42,42,42,0.06)'
-                }}
-                transition={{ duration: 0.4 }}
-              >
-                <div
-                  className="w-full h-full rounded-full flex flex-col items-center justify-center"
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '2px solid rgba(238,117,1,0.2)',
-                    boxShadow: '0 8px 40px rgba(42,42,42,0.08)'
-                  }}
+              {hovered !== null ? (
+                <motion.div
+                  key={hovered}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="flex items-center gap-3"
                 >
-                  <img
-                    src={ASSETS.logoGrupoArqueoColorido}
-                    alt="Grupo Arqueo"
-                    className="h-20 w-auto"
-                  />
-                </div>
-              </motion.div>
-
-              {/* Connection lines (SVG) */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 900 900">
-                {portfolioSections.map((section, i) => {
-                  const angle = (i * 36 - 90) * (Math.PI / 180);
-                  const radius = 370;
-                  const x = 450 + radius * Math.cos(angle);
-                  const y = 450 + radius * Math.sin(angle);
-                  const isHovered = hoveredSection === i;
-                  return (
-                    <line
-                      key={section.id}
-                      x1="450" y1="450"
-                      x2={x} y2={y}
-                      stroke={isHovered ? section.color : 'rgba(42,42,42,0.06)'}
-                      strokeWidth={isHovered ? 2 : 1}
-                      strokeDasharray={isHovered ? "none" : "4 6"}
-                      style={{ transition: 'all 0.4s ease' }}
-                    />
-                  );
-                })}
-              </svg>
-
-              {/* Orbital items */}
-              {portfolioSections.map((section, i) => {
-                const Icon = section.icon;
-                const angle = (i * 36 - 90) * (Math.PI / 180);
-                const radius = 370;
-                const x = 450 + radius * Math.cos(angle);
-                const y = 450 + radius * Math.sin(angle);
-                const isHovered = hoveredSection === i;
-
-                return (
-                  <motion.div
-                    key={section.id}
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.06 }}
-                    className="absolute"
-                    style={{
-                      left: `${x}px`,
-                      top: `${y}px`,
-                      transform: 'translate(-50%, -50%)',
-                    }}
-                    onMouseEnter={() => setHoveredSection(i)}
-                    onMouseLeave={() => setHoveredSection(null)}
-                  >
-                    <Link href={section.path}>
-                      <div className="flex flex-col items-center cursor-pointer group">
-                        {/* Node circle */}
-                        <motion.div
-                          className="relative flex items-center justify-center rounded-full transition-all duration-400"
-                          style={{
-                            width: isHovered ? '80px' : '64px',
-                            height: isHovered ? '80px' : '64px',
-                            backgroundColor: isHovered ? section.color : '#FFFFFF',
-                            border: `2px solid ${isHovered ? section.color : 'rgba(42,42,42,0.1)'}`,
-                            boxShadow: isHovered
-                              ? `0 8px 30px ${section.color}30`
-                              : '0 2px 12px rgba(42,42,42,0.06)',
-                          }}
-                          animate={{
-                            scale: isHovered ? 1.1 : 1,
-                          }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          {/* Chapter number badge */}
-                          <span
-                            className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold"
-                            style={{
-                              backgroundColor: isHovered ? '#2A2A2A' : section.color,
-                              color: '#FFFFFF',
-                            }}
-                          >
-                            {section.num}
-                          </span>
-                          <Icon
-                            className="w-5 h-5 transition-colors duration-300"
-                            style={{ color: isHovered ? '#FFFFFF' : section.color }}
-                          />
-                        </motion.div>
-
-                        {/* Label */}
-                        <div
-                          className="mt-2 text-center transition-all duration-300"
-                          style={{ maxWidth: '120px' }}
-                        >
-                          <span
-                            className="block text-[11px] font-semibold leading-tight transition-colors duration-300"
-                            style={{ color: isHovered ? section.color : '#2A2A2A' }}
-                          >
-                            {section.label}
-                          </span>
-                          {isHovered && (
-                            <motion.span
-                              initial={{ opacity: 0, y: -4 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              className="block text-[9px] font-light mt-1"
-                              style={{ color: '#888' }}
-                            >
-                              {section.desc}
-                            </motion.span>
-                          )}
-                        </div>
-                      </div>
-                    </Link>
-                  </motion.div>
-                );
-              })}
-
-              {/* Decorative triangles */}
-              {[0, 72, 144, 216, 288].map((deg, i) => {
-                const angle = (deg - 90) * (Math.PI / 180);
-                const r = 280;
-                const x = 450 + r * Math.cos(angle);
-                const y = 450 + r * Math.sin(angle);
-                return (
-                  <motion.div
-                    key={`tri-${i}`}
-                    className="absolute pointer-events-none"
-                    style={{
-                      left: `${x}px`,
-                      top: `${y}px`,
-                      transform: `translate(-50%, -50%) rotate(${deg}deg)`,
-                    }}
-                    animate={{ rotate: [deg, deg + 360] }}
-                    transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                  >
-                    <div
-                      className="w-0 h-0"
-                      style={{
-                        borderLeft: '6px solid transparent',
-                        borderRight: '6px solid transparent',
-                        borderBottom: '10px solid rgba(238,117,1,0.12)',
-                      }}
-                    />
-                  </motion.div>
-                );
-              })}
+                  <span className="text-4xl font-bold" style={{ color: sections[hovered].color }}>
+                    {sections[hovered].num}
+                  </span>
+                  <span className="text-sm font-semibold text-[#2A2A2A] whitespace-pre-line">
+                    {sections[hovered].label}
+                  </span>
+                </motion.div>
+              ) : (
+                <span className="text-xs font-light tracking-wider text-[#999]">
+                  Passe o mouse sobre os capítulos para explorar →
+                </span>
+              )}
             </motion.div>
           </div>
 
-          {/* Mobile/Tablet — List navigation */}
-          <div className="lg:hidden">
-            {/* Center logo */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="flex justify-center mb-12"
-            >
-              <div
-                className="w-32 h-32 rounded-full flex flex-col items-center justify-center"
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '2px solid rgba(238,117,1,0.2)',
-                  boxShadow: '0 8px 40px rgba(42,42,42,0.08)'
-                }}
-              >
-                <img
-                  src={ASSETS.logoGrupoArqueoColorido}
-                  alt="Grupo Arqueo"
-                  className="h-14 w-auto"
-                />
-              </div>
-            </motion.div>
+          {/* RIGHT — Orbital */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="relative w-full aspect-square max-w-[560px] mx-auto"
+          >
+            {/* Radial background for contrast */}
+            <div
+              className="absolute inset-[-10%] rounded-full"
+              style={{ background: 'radial-gradient(circle, rgba(249,248,246,0.95) 0%, rgba(249,248,246,0.7) 40%, transparent 60%)' }}
+            />
 
-            {/* Mobile cards */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={stagger}
-              className="grid grid-cols-2 sm:grid-cols-3 gap-3"
+            {/* Orbit rings */}
+            <div className="absolute inset-0 rounded-full" style={{ border: '1.5px solid rgba(238,117,1,0.18)' }} />
+            <div className="absolute inset-[15%] rounded-full" style={{ border: '1px dashed rgba(42,42,42,0.1)' }} />
+            <div className="absolute inset-[35%] rounded-full" style={{ border: '1px solid rgba(238,117,1,0.1)' }} />
+
+            {/* Center logo */}
+            <div className="absolute inset-[38%] rounded-full bg-white flex items-center justify-center z-10"
+              style={{ boxShadow: '0 8px 40px rgba(42,42,42,0.08)', border: '2px solid rgba(238,117,1,0.2)' }}
             >
-              {portfolioSections.map((section, i) => {
-                const Icon = section.icon;
+              <img src={ASSETS.logoGrupoArqueoColorido} alt="Grupo Arqueo" className="h-12 xl:h-14 w-auto" />
+            </div>
+
+            {/* SVG lines */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+              {sections.map((s, i) => {
+                const angle = (i * 36 - 90) * (Math.PI / 180);
+                const x = centerX + orbitalRadius * Math.cos(angle);
+                const y = centerY + orbitalRadius * Math.sin(angle);
+                const isH = hovered === i;
                 return (
-                  <motion.div key={section.id} variants={fadeUp} custom={i}>
-                    <Link href={section.path}>
-                      <div
-                        className="group relative p-4 text-center transition-all duration-300 cursor-pointer rounded-lg hover:shadow-lg"
-                        style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(42,42,42,0.06)' }}
-                      >
-                        <span
-                          className="block text-2xl font-bold mb-2"
-                          style={{ color: `${section.color}15` }}
-                        >
-                          {section.num}
-                        </span>
-                        <div
-                          className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 transition-colors duration-300 group-hover:text-white"
-                          style={{
-                            backgroundColor: `${section.color}10`,
-                            color: section.color,
-                          }}
-                        >
-                          <Icon className="w-4 h-4" />
-                        </div>
-                        <span
-                          className="block text-[11px] font-semibold leading-tight"
-                          style={{ color: '#2A2A2A' }}
-                        >
-                          {section.label}
-                        </span>
-                      </div>
-                    </Link>
-                  </motion.div>
+                  <line
+                    key={s.id}
+                    x1={centerX} y1={centerY} x2={x} y2={y}
+                    stroke={isH ? s.color : 'rgba(42,42,42,0.06)'}
+                    strokeWidth={isH ? 0.4 : 0.15}
+                    strokeDasharray={isH ? "none" : "0.8 1.2"}
+                    style={{ transition: 'all 0.4s ease' }}
+                  />
                 );
               })}
-            </motion.div>
+            </svg>
+
+            {/* Orbital nodes */}
+            {sections.map((s, i) => {
+              const Icon = s.icon;
+              const angle = (i * 36 - 90) * (Math.PI / 180);
+              const x = centerX + orbitalRadius * Math.cos(angle);
+              const y = centerY + orbitalRadius * Math.sin(angle);
+              const isH = hovered === i;
+
+              return (
+                <div
+                  key={s.id}
+                  className="absolute z-20"
+                  style={{
+                    left: `${x}%`,
+                    top: `${y}%`,
+                    transform: 'translate(-50%, -50%)',
+                  }}
+                  onMouseEnter={() => setHovered(i)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  <Link href={s.path}>
+                    <div className="flex flex-col items-center cursor-pointer group">
+                      <div
+                        className="relative flex items-center justify-center rounded-full transition-all duration-300"
+                        style={{
+                          width: isH ? '52px' : '42px',
+                          height: isH ? '52px' : '42px',
+                          backgroundColor: isH ? s.color : '#FFFFFF',
+                          border: `2px solid ${isH ? s.color : 'rgba(42,42,42,0.1)'}`,
+                          boxShadow: isH ? `0 6px 24px ${s.color}40` : '0 3px 16px rgba(42,42,42,0.12)',
+                        }}
+                      >
+                        <span
+                          className="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center text-[7px] font-bold text-white"
+                          style={{ backgroundColor: isH ? '#2A2A2A' : s.color }}
+                        >
+                          {s.num}
+                        </span>
+                        <Icon
+                          className="w-4 h-4 transition-colors duration-300"
+                          style={{ color: isH ? '#FFFFFF' : s.color }}
+                        />
+                      </div>
+                      <span
+                        className="mt-1 text-[9px] xl:text-[10px] font-semibold leading-tight text-center whitespace-pre-line transition-colors duration-300"
+                        style={{ color: isH ? s.color : '#2A2A2A', maxWidth: '80px' }}
+                      >
+                        {s.label}
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
+
+            {/* Decorative triangles */}
+            {[0, 72, 144, 216, 288].map((deg, i) => {
+              const angle = (deg - 90) * (Math.PI / 180);
+              const r = 30;
+              const x = centerX + r * Math.cos(angle);
+              const y = centerY + r * Math.sin(angle);
+              return (
+                <div
+                  key={`tri-${i}`}
+                  className="absolute pointer-events-none"
+                  style={{
+                    left: `${x}%`,
+                    top: `${y}%`,
+                    transform: `translate(-50%, -50%) rotate(${deg}deg)`,
+                  }}
+                >
+                  <div
+                    className="w-0 h-0"
+                    style={{
+                      borderLeft: '4px solid transparent',
+                      borderRight: '4px solid transparent',
+                      borderBottom: '7px solid rgba(238,117,1,0.1)',
+                    }}
+                  />
+                </div>
+              );
+            })}
+          </motion.div>
+        </div>
+
+        {/* ─── MOBILE LAYOUT ─── */}
+        <div className="lg:hidden relative z-10 min-h-screen flex flex-col justify-center py-16 px-4">
+          <motion.img
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            src={ASSETS.logo10anos}
+            alt="Grupo Arqueo — 10 Anos"
+            className="h-24 sm:h-28 w-auto mb-6"
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-xs font-medium tracking-[0.3em] uppercase mb-3 text-[#861720]"
+          >
+            Patrimônio Cultural e Arqueológico
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-3xl sm:text-4xl font-bold leading-[1.08] mb-5 text-[#2A2A2A]"
+          >
+            Consultoria estratégica{" "}
+            <span className="text-[#EE7501]">em pesquisa</span>{" "}
+            e gestão do patrimônio{" "}
+            <span className="text-[#861720]">sociocultural</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-sm font-light leading-relaxed mb-8 text-[#555]"
+          >
+            Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
+            e gestão estratégica para oferecer soluções completas em licenciamento
+            sociocultural no Brasil.
+          </motion.p>
+
+          {/* Mobile logo center */}
+          <div className="flex justify-center mb-8">
+            <div
+              className="w-24 h-24 rounded-full flex items-center justify-center bg-white"
+              style={{ border: '2px solid rgba(238,117,1,0.2)', boxShadow: '0 8px 40px rgba(42,42,42,0.08)' }}
+            >
+              <img src={ASSETS.logoGrupoArqueoColorido} alt="Grupo Arqueo" className="h-10 w-auto" />
+            </div>
+          </div>
+
+          {/* Mobile cards */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {sections.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <motion.div
+                  key={s.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.05 }}
+                >
+                  <Link href={s.path}>
+                    <div className="group p-4 text-center bg-white/85 rounded-lg border border-[#2A2A2A]/5 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                      <span className="block text-2xl font-bold mb-2" style={{ color: `${s.color}15` }}>
+                        {s.num}
+                      </span>
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2"
+                        style={{ backgroundColor: `${s.color}10`, color: s.color }}
+                      >
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <span className="block text-[11px] font-semibold leading-tight text-[#2A2A2A] whitespace-pre-line">
+                        {s.label}
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
