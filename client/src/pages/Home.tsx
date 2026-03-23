@@ -5,6 +5,7 @@ import {
   User, Building2, Target, Globe, Lightbulb, Star,
   BarChart3, FolderOpen, MapPin, Mail, ArrowRight, ChevronDown
 } from "lucide-react";
+import { useState } from "react";
 
 /**
  * HOME — Portfólio Digital Premium Grupo Arqueo
@@ -14,16 +15,16 @@ import {
  */
 
 const portfolioSections = [
-  { id: "ceo", num: "01", label: "Mensagem do CEO", desc: "Visão de liderança e propósito", icon: User, path: "/ceo" },
-  { id: "quem-somos", num: "02", label: "Quem Somos", desc: "Trajetória, identidade e posicionamento", icon: Building2, path: "/quem-somos" },
-  { id: "missao-visao", num: "03", label: "Missão, Visão e Valores", desc: "Os pilares que sustentam nossa atuação", icon: Target, path: "/missao-visao" },
-  { id: "ecossistema", num: "04", label: "Ecossistema do Grupo", desc: "Empresas e plataformas integradas", icon: Globe, path: "/ecossistema" },
-  { id: "solucoes", num: "05", label: "Soluções", desc: "Competências técnicas e serviços", icon: Lightbulb, path: "/solucoes" },
-  { id: "diferenciais", num: "06", label: "Diferenciais", desc: "O que nos torna referência no setor", icon: Star, path: "/diferenciais" },
-  { id: "numeros", num: "07", label: "Números", desc: "Impacto, alcance e resultados", icon: BarChart3, path: "/numeros" },
-  { id: "cases", num: "08", label: "Cases", desc: "Projetos que demonstram nossa capacidade", icon: FolderOpen, path: "/cases" },
-  { id: "territorio", num: "09", label: "Presença Territorial", desc: "Atuação em todo o Brasil", icon: MapPin, path: "/territorio" },
-  { id: "contato", num: "10", label: "Contato", desc: "Fale com o Grupo Arqueo", icon: Mail, path: "/contato" },
+  { id: "ceo", num: "01", label: "Mensagem do CEO", desc: "Visão de liderança e propósito", icon: User, path: "/ceo", color: "#861720" },
+  { id: "quem-somos", num: "02", label: "Quem Somos", desc: "Trajetória, identidade e posicionamento", icon: Building2, path: "/quem-somos", color: "#2C7EB3" },
+  { id: "missao-visao", num: "03", label: "Missão, Visão e Valores", desc: "Os pilares que sustentam nossa atuação", icon: Target, path: "/missao-visao", color: "#EE7501" },
+  { id: "ecossistema", num: "04", label: "Ecossistema do Grupo", desc: "Empresas e plataformas integradas", icon: Globe, path: "/ecossistema", color: "#2C7EB3" },
+  { id: "solucoes", num: "05", label: "Soluções", desc: "Competências técnicas e serviços", icon: Lightbulb, path: "/solucoes", color: "#861720" },
+  { id: "diferenciais", num: "06", label: "Diferenciais", desc: "O que nos torna referência no setor", icon: Star, path: "/diferenciais", color: "#EE7501" },
+  { id: "numeros", num: "07", label: "Números", desc: "Impacto, alcance e resultados", icon: BarChart3, path: "/numeros", color: "#2C7EB3" },
+  { id: "cases", num: "08", label: "Cases", desc: "Projetos que demonstram nossa capacidade", icon: FolderOpen, path: "/cases", color: "#861720" },
+  { id: "territorio", num: "09", label: "Presença Territorial", desc: "Atuação em todo o Brasil", icon: MapPin, path: "/territorio", color: "#EE7501" },
+  { id: "contato", num: "10", label: "Contato", desc: "Fale com o Grupo Arqueo", icon: Mail, path: "/contato", color: "#2C7EB3" },
 ];
 
 const fadeUp = {
@@ -40,9 +41,10 @@ const stagger = {
 };
 
 export default function Home() {
+  const [hoveredSection, setHoveredSection] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F9F8F6' }}>
-
 
       {/* ─── HERO SECTION ─── */}
       <section className="relative min-h-screen flex items-center pb-16 lg:pb-24 pt-12 overflow-hidden">
@@ -150,9 +152,8 @@ export default function Home() {
       </section>
 
 
-
-      {/* ─── ÍNDICE VISUAL (PORTFOLIO INDEX) ─── */}
-      <section id="indice" className="py-20 lg:py-32" style={{ backgroundColor: '#F9F8F6' }}>
+      {/* ─── ORBITAL NAVIGATION INDEX ─── */}
+      <section id="indice" className="py-20 lg:py-32 overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
         <div className="container">
           {/* Section header */}
           <motion.div
@@ -160,96 +161,307 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-16 lg:mb-24"
+            className="text-center mb-16 lg:mb-20"
           >
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center justify-center gap-4 mb-6">
               <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
               <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>
                 Índice
               </span>
+              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
             </div>
             <h2 className="text-3xl lg:text-5xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
               Navegue pelo{" "}
               <span style={{ color: '#EE7501' }}>portfólio</span>
             </h2>
-            <p className="text-base font-light mt-4 max-w-xl" style={{ color: '#666' }}>
+            <p className="text-base font-light mt-4 max-w-xl mx-auto" style={{ color: '#666' }}>
               Cada capítulo apresenta uma dimensão do Grupo Arqueo. Clique para explorar.
             </p>
           </motion.div>
 
-          {/* Cards grid */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={stagger}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5"
-          >
-            {portfolioSections.map((section, i) => {
-              const Icon = section.icon;
-              return (
-                <motion.div
-                  key={section.id}
-                  variants={fadeUp}
-                  custom={i}
+          {/* Orbital Navigation — Desktop */}
+          <div className="hidden lg:block">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative mx-auto"
+              style={{ width: '900px', height: '900px' }}
+            >
+              {/* Outer orbit ring */}
+              <div
+                className="absolute inset-0 rounded-full"
+                style={{ border: '1px solid rgba(238,117,1,0.12)' }}
+              />
+              {/* Middle orbit ring */}
+              <div
+                className="absolute rounded-full"
+                style={{
+                  top: '100px', left: '100px', right: '100px', bottom: '100px',
+                  border: '1px dashed rgba(42,42,42,0.08)'
+                }}
+              />
+              {/* Inner orbit ring */}
+              <div
+                className="absolute rounded-full"
+                style={{
+                  top: '250px', left: '250px', right: '250px', bottom: '250px',
+                  border: '1px solid rgba(238,117,1,0.08)'
+                }}
+              />
+
+              {/* Center — Logo Grupo Arqueo */}
+              <motion.div
+                className="absolute flex flex-col items-center justify-center"
+                style={{
+                  top: '50%', left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '200px', height: '200px',
+                }}
+                animate={{
+                  boxShadow: hoveredSection !== null
+                    ? '0 0 60px rgba(238,117,1,0.15)'
+                    : '0 0 40px rgba(42,42,42,0.06)'
+                }}
+                transition={{ duration: 0.4 }}
+              >
+                <div
+                  className="w-full h-full rounded-full flex flex-col items-center justify-center"
+                  style={{
+                    backgroundColor: '#FFFFFF',
+                    border: '2px solid rgba(238,117,1,0.2)',
+                    boxShadow: '0 8px 40px rgba(42,42,42,0.08)'
+                  }}
                 >
-                  <Link href={section.path}>
+                  <img
+                    src={ASSETS.logoGrupoArqueo}
+                    alt="Grupo Arqueo"
+                    className="h-16 w-auto mb-2"
+                  />
+                  <span className="text-[10px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#2A2A2A' }}>
+                    Portfólio
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* Connection lines (SVG) */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 900 900">
+                {portfolioSections.map((section, i) => {
+                  const angle = (i * 36 - 90) * (Math.PI / 180);
+                  const radius = 370;
+                  const x = 450 + radius * Math.cos(angle);
+                  const y = 450 + radius * Math.sin(angle);
+                  const isHovered = hoveredSection === i;
+                  return (
+                    <line
+                      key={section.id}
+                      x1="450" y1="450"
+                      x2={x} y2={y}
+                      stroke={isHovered ? section.color : 'rgba(42,42,42,0.06)'}
+                      strokeWidth={isHovered ? 2 : 1}
+                      strokeDasharray={isHovered ? "none" : "4 6"}
+                      style={{ transition: 'all 0.4s ease' }}
+                    />
+                  );
+                })}
+              </svg>
+
+              {/* Orbital items */}
+              {portfolioSections.map((section, i) => {
+                const Icon = section.icon;
+                const angle = (i * 36 - 90) * (Math.PI / 180);
+                const radius = 370;
+                const x = 450 + radius * Math.cos(angle);
+                const y = 450 + radius * Math.sin(angle);
+                const isHovered = hoveredSection === i;
+
+                return (
+                  <motion.div
+                    key={section.id}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.06 }}
+                    className="absolute"
+                    style={{
+                      left: `${x}px`,
+                      top: `${y}px`,
+                      transform: 'translate(-50%, -50%)',
+                    }}
+                    onMouseEnter={() => setHoveredSection(i)}
+                    onMouseLeave={() => setHoveredSection(null)}
+                  >
+                    <Link href={section.path}>
+                      <div className="flex flex-col items-center cursor-pointer group">
+                        {/* Node circle */}
+                        <motion.div
+                          className="relative flex items-center justify-center rounded-full transition-all duration-400"
+                          style={{
+                            width: isHovered ? '80px' : '64px',
+                            height: isHovered ? '80px' : '64px',
+                            backgroundColor: isHovered ? section.color : '#FFFFFF',
+                            border: `2px solid ${isHovered ? section.color : 'rgba(42,42,42,0.1)'}`,
+                            boxShadow: isHovered
+                              ? `0 8px 30px ${section.color}30`
+                              : '0 2px 12px rgba(42,42,42,0.06)',
+                          }}
+                          animate={{
+                            scale: isHovered ? 1.1 : 1,
+                          }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {/* Chapter number badge */}
+                          <span
+                            className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold"
+                            style={{
+                              backgroundColor: isHovered ? '#2A2A2A' : section.color,
+                              color: '#FFFFFF',
+                            }}
+                          >
+                            {section.num}
+                          </span>
+                          <Icon
+                            className="w-5 h-5 transition-colors duration-300"
+                            style={{ color: isHovered ? '#FFFFFF' : section.color }}
+                          />
+                        </motion.div>
+
+                        {/* Label */}
+                        <div
+                          className="mt-2 text-center transition-all duration-300"
+                          style={{ maxWidth: '120px' }}
+                        >
+                          <span
+                            className="block text-[11px] font-semibold leading-tight transition-colors duration-300"
+                            style={{ color: isHovered ? section.color : '#2A2A2A' }}
+                          >
+                            {section.label}
+                          </span>
+                          {isHovered && (
+                            <motion.span
+                              initial={{ opacity: 0, y: -4 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              className="block text-[9px] font-light mt-1"
+                              style={{ color: '#888' }}
+                            >
+                              {section.desc}
+                            </motion.span>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.div>
+                );
+              })}
+
+              {/* Decorative triangles */}
+              {[0, 72, 144, 216, 288].map((deg, i) => {
+                const angle = (deg - 90) * (Math.PI / 180);
+                const r = 280;
+                const x = 450 + r * Math.cos(angle);
+                const y = 450 + r * Math.sin(angle);
+                return (
+                  <motion.div
+                    key={`tri-${i}`}
+                    className="absolute pointer-events-none"
+                    style={{
+                      left: `${x}px`,
+                      top: `${y}px`,
+                      transform: `translate(-50%, -50%) rotate(${deg}deg)`,
+                    }}
+                    animate={{ rotate: [deg, deg + 360] }}
+                    transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                  >
                     <div
-                      className="group relative p-6 lg:p-7 transition-all duration-500 cursor-pointer border border-transparent hover:border-[#EE7501]/20 h-full"
-                      style={{ backgroundColor: '#FFFFFF' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#2A2A2A';
-                        e.currentTarget.style.transform = 'translateY(-4px)';
+                      className="w-0 h-0"
+                      style={{
+                        borderLeft: '6px solid transparent',
+                        borderRight: '6px solid transparent',
+                        borderBottom: '10px solid rgba(238,117,1,0.12)',
                       }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#FFFFFF';
-                        e.currentTarget.style.transform = 'translateY(0)';
-                      }}
-                    >
-                      {/* Chapter number */}
-                      <span
-                        className="block text-5xl font-bold mb-4 transition-colors duration-500 group-hover:text-white/10"
-                        style={{ color: 'rgba(238,117,1,0.1)' }}
+                    />
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
+
+          {/* Mobile/Tablet — List navigation */}
+          <div className="lg:hidden">
+            {/* Center logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="flex justify-center mb-12"
+            >
+              <div
+                className="w-32 h-32 rounded-full flex flex-col items-center justify-center"
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  border: '2px solid rgba(238,117,1,0.2)',
+                  boxShadow: '0 8px 40px rgba(42,42,42,0.08)'
+                }}
+              >
+                <img
+                  src={ASSETS.logoGrupoArqueo}
+                  alt="Grupo Arqueo"
+                  className="h-10 w-auto mb-1"
+                />
+                <span className="text-[8px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#2A2A2A' }}>
+                  Portfólio
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Mobile cards */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={stagger}
+              className="grid grid-cols-2 sm:grid-cols-3 gap-3"
+            >
+              {portfolioSections.map((section, i) => {
+                const Icon = section.icon;
+                return (
+                  <motion.div key={section.id} variants={fadeUp} custom={i}>
+                    <Link href={section.path}>
+                      <div
+                        className="group relative p-4 text-center transition-all duration-300 cursor-pointer rounded-lg hover:shadow-lg"
+                        style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(42,42,42,0.06)' }}
                       >
-                        {section.num}
-                      </span>
-
-                      {/* Icon */}
-                      <Icon
-                        className="w-5 h-5 mb-3 transition-colors duration-500 group-hover:text-[#EE7501]"
-                        style={{ color: '#2C7EB3' }}
-                      />
-
-                      {/* Title */}
-                      <h3
-                        className="text-sm font-semibold mb-2 transition-colors duration-500 group-hover:text-white"
-                        style={{ color: '#2A2A2A' }}
-                      >
-                        {section.label}
-                      </h3>
-
-                      {/* Description */}
-                      <p
-                        className="text-xs font-light leading-relaxed transition-colors duration-500 group-hover:text-white/60"
-                        style={{ color: '#888' }}
-                      >
-                        {section.desc}
-                      </p>
-
-                      {/* Arrow */}
-                      <ArrowRight
-                        className="w-4 h-4 mt-4 transition-all duration-500 opacity-0 translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0"
-                        style={{ color: '#EE7501' }}
-                      />
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+                        <span
+                          className="block text-2xl font-bold mb-2"
+                          style={{ color: `${section.color}15` }}
+                        >
+                          {section.num}
+                        </span>
+                        <div
+                          className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 transition-colors duration-300 group-hover:text-white"
+                          style={{
+                            backgroundColor: `${section.color}10`,
+                            color: section.color,
+                          }}
+                        >
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <span
+                          className="block text-[11px] font-semibold leading-tight"
+                          style={{ color: '#2A2A2A' }}
+                        >
+                          {section.label}
+                        </span>
+                      </div>
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
         </div>
       </section>
-
 
 
       {/* ─── COMPLIANCE STRIP ─── */}
