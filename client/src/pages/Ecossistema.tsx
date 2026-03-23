@@ -76,10 +76,6 @@ export default function Ecossistema() {
 
   // CSS para animações
   const animationStyles = `
-    @keyframes orbitRotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -89,10 +85,6 @@ export default function Ecossistema() {
         opacity: 1;
         transform: translateY(0);
       }
-    }
-    .orbit-animation {
-      animation: orbitRotate 120s linear infinite;
-      transform-origin: center;
     }
     .logo-fade-in {
       animation: fadeInUp 0.6s ease-out forwards;
@@ -118,7 +110,7 @@ export default function Ecossistema() {
           {/* Orbital Diagram - Compact Image with Animation and Rotation */}
           <div 
             ref={diagramRef}
-            className="flex justify-center mb-12 orbit-animation"
+            className="flex justify-center mb-12"
             style={{
               opacity: diagramLoaded ? 1 : 0,
               transform: diagramLoaded ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
