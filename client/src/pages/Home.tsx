@@ -149,34 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── POSITIONING STRIP ─── */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: '#2A2A2A' }}>
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
-            {[
-              { num: "250+", label: "Projetos e processos gerenciados" },
-              { num: "16", label: "Estados com atuação comprovada" },
-              { num: "10", label: "Anos de excelência no mercado" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="text-center md:text-left"
-              >
-                <span className="text-3xl lg:text-5xl font-bold" style={{ color: '#EE7501' }}>
-                  {item.num}
-                </span>
-                <p className="text-sm font-light mt-2" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                  {item.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* ─── ÍNDICE VISUAL (PORTFOLIO INDEX) ─── */}
       <section id="indice" className="py-20 lg:py-32" style={{ backgroundColor: '#F9F8F6' }}>
