@@ -355,6 +355,118 @@ export default function QuemSomos() {
         </div>
       </section>
 
+      {/* ═══════════════════ TEAM SECTION (CIRCULAR LAYOUT) ═══════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 -z-10" style={{
+          background: 'linear-gradient(135deg, #4A9B9E 0%, #2C7EB3 50%, #5BA4A7 100%)'
+        }} />
+
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16 text-center"
+          >
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0.1))' }} />
+              <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: 'rgba(255,255,255,0.7)' }}>Equipe</span>
+              <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to left, rgba(255,255,255,0.3), rgba(255,255,255,0.1))' }} />
+            </div>
+            <h2 className="text-3xl lg:text-5xl font-bold leading-tight text-white">
+              Nosso <span style={{ color: 'rgba(255,255,255,0.9)' }}>Time Multidisciplinar</span>
+            </h2>
+          </motion.div>
+
+          {/* Circular Team Layout */}
+          <div className="relative w-full h-[600px] lg:h-[700px] flex items-center justify-center">
+            {/* SVG for connecting lines */}
+            <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+              {/* Decorative circles and lines */}
+              <circle cx="50%" cy="50%" r="120" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2" />
+              <circle cx="50%" cy="50%" r="200" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="2" />
+              <circle cx="50%" cy="50%" r="280" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
+            </svg>
+
+            {/* Center member - Large */}
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="absolute z-20 flex flex-col items-center"
+              style={{
+                width: '200px',
+                height: '200px',
+              }}
+            >
+              <div
+                className="w-full h-full rounded-full overflow-hidden border-8 shadow-2xl"
+                style={{
+                  borderColor: 'rgba(255,255,255,0.9)',
+                  background: 'linear-gradient(135deg, #2C7EB3, #4A9B9E)'
+                }}
+              >
+                <div className="w-full h-full bg-gradient-to-br from-blue-300 to-teal-400 flex items-center justify-center text-white text-4xl font-bold">
+                  👨‍💼
+                </div>
+              </div>
+              <p className="mt-4 text-white font-semibold text-center text-sm">Liderança</p>
+            </motion.div>
+
+            {/* Surrounding members - positioned in circle */}
+            {[
+              { angle: 0, size: 120, label: '👩‍🔬', name: 'Arqueologia' },
+              { angle: 45, size: 100, label: '👨‍💻', name: 'Tecnologia' },
+              { angle: 90, size: 120, label: '👩‍💼', name: 'Gestão' },
+              { angle: 135, size: 100, label: '👨‍🏫', name: 'Educação' },
+              { angle: 180, size: 120, label: '👩‍🔍', name: 'Pesquisa' },
+              { angle: 225, size: 100, label: '👨‍🌾', name: 'Campo' },
+              { angle: 270, size: 120, label: '👩‍💻', name: 'Dados' },
+              { angle: 315, size: 100, label: '👨‍⚖️', name: 'Compliance' },
+            ].map((member, i) => {
+              const radius = 240;
+              const rad = (member.angle * Math.PI) / 180;
+              const x = Math.cos(rad) * radius;
+              const y = Math.sin(rad) * radius;
+
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  whileHover={{ scale: 1.15 }}
+                  className="absolute z-10 flex flex-col items-center cursor-pointer"
+                  style={{
+                    transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+                    width: `${member.size}px`,
+                    height: `${member.size}px`,
+                  }}
+                >
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                    className="w-full h-full rounded-full overflow-hidden border-6 shadow-lg"
+                    style={{
+                      borderColor: 'rgba(255,255,255,0.8)',
+                      background: 'linear-gradient(135deg, #2C7EB3, #4A9B9E)'
+                    }}
+                  >
+                    <div className="w-full h-full bg-gradient-to-br from-blue-300 to-teal-400 flex items-center justify-center text-2xl font-bold">
+                      {member.label}
+                    </div>
+                  </motion.div>
+                  <p className="mt-2 text-white font-medium text-center text-xs whitespace-nowrap">{member.name}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════════ OFFICES SECTION ═══════════════════ */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: '#F9F8F6' }}>
         <div className="container">
