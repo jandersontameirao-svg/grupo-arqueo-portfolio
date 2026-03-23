@@ -6,7 +6,44 @@ import { ASSETS } from '@/lib/assets';
 export default function Ecossistema() {
   const [diagramLoaded, setDiagramLoaded] = useState(false);
   const [selectedEmpresa, setSelectedEmpresa] = useState<string | null>(null);
+  const [currentPilarIndex, setCurrentPilarIndex] = useState(0);
   const diagramRef = useRef<HTMLDivElement>(null);
+
+  // Pilares da Sinergia
+  const pilares = [
+    {
+      num: '01',
+      title: 'Integração Técnica',
+      desc: 'Soluções complementares que se potencializam mutuamente',
+    },
+    {
+      num: '02',
+      title: 'Expertise Consolidada',
+      desc: 'Mais de uma década de experiência em arqueologia aplicada',
+    },
+    {
+      num: '03',
+      title: 'Inovação Contínua',
+      desc: 'Tecnologia e metodologias de ponta em cada especialidade',
+    },
+    {
+      num: '04',
+      title: 'Impacto Social',
+      desc: 'Compromisso com patrimônio cultural e desenvolvimento sustentável',
+    },
+  ];
+
+  const nextPilar = () => {
+    setCurrentPilarIndex((prev) => (prev + 1) % pilares.length);
+  };
+
+  const prevPilar = () => {
+    setCurrentPilarIndex((prev) => (prev - 1 + pilares.length) % pilares.length);
+  };
+
+  const goToPilar = (index: number) => {
+    setCurrentPilarIndex(index);
+  };
 
   // 6 empresas no ecossistema
   const empresas = [
@@ -99,11 +136,37 @@ export default function Ecossistema() {
         transform: scale(1);
       }
     }
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
     .logo-fade-in {
       animation: fadeInUp 0.6s ease-out forwards;
     }
     .modal-content {
       animation: modalFadeIn 0.3s ease-out;
+    }
+    .pilar-slide {
+      animation: slideInRight 0.4s ease-out;
+    }
+    .pilar-slide.prev {
+      animation: slideInLeft 0.4s ease-out;
     }
   `;
 
@@ -169,7 +232,7 @@ export default function Ecossistema() {
         </div>
       </section>
 
-      {/* Sinergia Section */}
+      {/* Sinergia Section - Carousel */}
       <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -181,44 +244,67 @@ export default function Ecossistema() {
             </h2>
           </div>
 
-          {/* 4 Pillars */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                num: '01',
-                title: 'Integração Técnica',
-                desc: 'Soluções complementares que se potencializam mutuamente',
-              },
-              {
-                num: '02',
-                title: 'Expertise Consolidada',
-                desc: 'Mais de uma década de experiência em arqueologia aplicada',
-              },
-              {
-                num: '03',
-                title: 'Inovação Contínua',
-                desc: 'Tecnologia e metodologias de ponta em cada especialidade',
-              },
-              {
-                num: '04',
-                title: 'Impacto Social',
-                desc: 'Compromisso com patrimônio cultural e desenvolvimento sustentável',
-              },
-            ].map((pilar, idx) => (
-              <div key={idx} className="text-center">
+          {/* Carousel Container */}
+          <div className="flex items-center justify-center gap-6 lg:gap-12">
+            {/* Left Arrow */}
+            <button
+              onClick={prevPilar}
+              className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:scale-110"
+              style={{ backgroundColor: '#EE7501', color: 'white' }}
+              aria-label="Pilar anterior"
+            >
+              <svg className="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Pilar Content */}
+            <div className="flex-1 max-w-2xl">
+              <div 
+                key={currentPilarIndex}
+                className="pilar-slide text-center py-8 lg:py-12"
+              >
                 <div 
-                  className="text-4xl font-bold mb-4"
+                  className="text-5xl lg:text-6xl font-bold mb-6"
                   style={{ color: '#EE7501' }}
                 >
-                  {pilar.num}
+                  {pilares[currentPilarIndex].num}
                 </div>
-                <h3 className="text-lg font-bold mb-3" style={{ color: '#1A1A1A' }}>
-                  {pilar.title}
+                <h3 className="text-2xl lg:text-3xl font-bold mb-4" style={{ color: '#1A1A1A' }}>
+                  {pilares[currentPilarIndex].title}
                 </h3>
-                <p style={{ color: '#666666' }}>
-                  {pilar.desc}
+                <p className="text-base lg:text-lg leading-relaxed" style={{ color: '#666666' }}>
+                  {pilares[currentPilarIndex].desc}
                 </p>
               </div>
+            </div>
+
+            {/* Right Arrow */}
+            <button
+              onClick={nextPilar}
+              className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:scale-110"
+              style={{ backgroundColor: '#EE7501', color: 'white' }}
+              aria-label="Próximo pilar"
+            >
+              <svg className="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center gap-3 mt-12">
+            {pilares.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => goToPilar(idx)}
+                className="w-3 h-3 rounded-full transition-all duration-300"
+                style={{
+                  backgroundColor: idx === currentPilarIndex ? '#EE7501' : '#CCCCCC',
+                  transform: idx === currentPilarIndex ? 'scale(1.2)' : 'scale(1)',
+                }}
+                aria-label={`Ir para pilar ${idx + 1}`}
+              />
             ))}
           </div>
         </div>
