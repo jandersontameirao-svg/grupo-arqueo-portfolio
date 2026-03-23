@@ -96,13 +96,13 @@ export default function Ecossistema() {
           </div>
 
           {/* SVG Orbital Diagram */}
-          <div className="flex justify-center mb-20">
+          <div className="flex justify-center mb-20" style={{ maxWidth: '700px', margin: '0 auto' }}>
             <svg
               viewBox="0 0 900 900"
               width="100%"
               height="auto"
               className="drop-shadow-lg"
-              style={{ maxWidth: '700px', aspectRatio: '1' }}
+              style={{ aspectRatio: '1' }}
             >
               {/* Background */}
               <rect width="900" height="900" fill="#FFFFFF" rx="20" />
