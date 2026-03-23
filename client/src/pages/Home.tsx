@@ -250,68 +250,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── ABOUT STRIP ─── */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: '#F3EFEA' }}>
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-            {/* Left */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-                <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>
-                  Sobre
-                </span>
-              </div>
-              <h2 className="text-2xl lg:text-4xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-                Uma década de excelência em{" "}
-                <span style={{ color: '#EE7501' }}>gestão do patrimônio</span>
-              </h2>
-              <p className="text-sm lg:text-base font-light leading-relaxed mb-4" style={{ color: '#555' }}>
-                O Grupo Arqueo é referência nacional em consultoria especializada para o licenciamento
-                sociocultural. Com equipe multidisciplinar e tecnologia proprietária, atuamos de forma
-                estratégica e adaptativa em todo o ciclo de pesquisa e gestão arqueológica.
-              </p>
-              <p className="text-sm lg:text-base font-light leading-relaxed" style={{ color: '#555' }}>
-                Nosso diferencial está na união entre competência técnica e inovação tecnológica,
-                promovendo confiabilidade processual e agilidade no cumprimento de prazos junto
-                aos órgãos competentes.
-              </p>
-            </motion.div>
 
-            {/* Right — Key facts */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="space-y-6"
-            >
-              {[
-                { label: "Energias Renováveis", detail: "Eólica, Solar, LTs e Offshore" },
-                { label: "Infraestrutura", detail: "Rodovias, Ferrovias e Construção Civil" },
-                { label: "Recursos Naturais", detail: "Mineração e Agronegócio" },
-                { label: "Educação Patrimonial", detail: "Programas integrados e comunicação social" },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-4 p-5 transition-all duration-300 hover:translate-x-2"
-                  style={{ backgroundColor: '#FFFFFF', borderLeft: '3px solid #EE7501' }}
-                >
-                  <div>
-                    <h4 className="text-sm font-semibold" style={{ color: '#2A2A2A' }}>{item.label}</h4>
-                    <p className="text-xs font-light mt-1" style={{ color: '#888' }}>{item.detail}</p>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* ─── COMPLIANCE STRIP ─── */}
       <section className="py-16 lg:py-20" style={{ backgroundColor: '#861720' }}>
