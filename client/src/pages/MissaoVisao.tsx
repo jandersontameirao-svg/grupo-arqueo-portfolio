@@ -9,6 +9,13 @@ import { useState } from "react";
  * Missão/Visão em cards lado a lado, Valores em grid com hover
  */
 
+const compliancePillars = [
+  { label: 'Código de Conduta Ética', color: '#EE7501', shortLabel: ['Código de', 'Conduta Ética'] },
+  { label: 'Política de Gestão de Terceiros', color: '#D4A843', shortLabel: ['Política de Gestão', 'de Terceiros'] },
+  { label: 'Política de Treinamentos e Comunicação', color: '#2C7EB3', shortLabel: ['Política de', 'Treinamentos e', 'Comunicação'] },
+  { label: 'Política de Integridade', color: '#861720', shortLabel: ['Política de', 'Integridade'] },
+];
+
 const valores = [
   { icon: Shield, title: "Integridade", desc: "Mantemos nossa palavra com firmeza, assegurando confiança em cada compromisso que assumimos.", color: "#861720" },
   { icon: Handshake, title: "Honestidade", desc: "Nossas ações e comunicações são pautadas pela transparência e sinceridade.", color: "#2C7EB3" },
@@ -20,6 +27,7 @@ const valores = [
 
 export default function MissaoVisao() {
   const [hoveredValor, setHoveredValor] = useState<number | null>(null);
+  const [hoveredPillar, setHoveredPillar] = useState<number | null>(null);
 
   return (
     <PortfolioLayout
@@ -256,7 +264,7 @@ export default function MissaoVisao() {
       {/* ═══════════════════ COMPLIANCE SECTION ═══════════════════ */}
       <section className="py-20 lg:py-28 overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
             {/* LEFT — Text */}
             <div>
@@ -279,7 +287,7 @@ export default function MissaoVisao() {
               </h2>
 
               <p
-                className="text-base lg:text-lg leading-relaxed mb-8"
+                className="text-base lg:text-lg leading-relaxed mb-10"
                 style={{ color: '#555' }}
               >
                 Estamos comprometidos em atuar com{' '}
@@ -288,112 +296,172 @@ export default function MissaoVisao() {
                 <span style={{ color: '#861720' }} className="font-semibold">regras gerais de condutas éticas</span>.
               </p>
 
-              {/* Pillar list */}
-              <div className="space-y-4">
-                {[
-                  { label: 'Código de Conduta Ética', color: '#EE7501' },
-                  { label: 'Política de Gestão de Terceiros', color: '#D4A843' },
-                  { label: 'Política de Treinamentos e Comunicação', color: '#2C7EB3' },
-                  { label: 'Política de Integridade', color: '#861720' },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4">
+              {/* Pillar list — interactive */}
+              <div className="space-y-3">
+                {compliancePillars.map((item, i) => {
+                  const isActive = hoveredPillar === i;
+                  return (
                     <div
-                      className="w-3 h-3 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: item.color }}
-                    />
-                    <span className="text-sm lg:text-base font-medium" style={{ color: '#333' }}>
-                      {item.label}
-                    </span>
-                  </div>
-                ))}
+                      key={i}
+                      className="flex items-center gap-4 rounded-xl px-5 py-4 cursor-pointer"
+                      style={{
+                        backgroundColor: isActive ? `${item.color}12` : 'transparent',
+                        border: `2px solid ${isActive ? item.color : 'transparent'}`,
+                        transform: isActive ? 'translateX(8px)' : 'translateX(0)',
+                        transition: 'all 0.35s cubic-bezier(0.4,0,0.2,1)',
+                      }}
+                      onMouseEnter={() => setHoveredPillar(i)}
+                      onMouseLeave={() => setHoveredPillar(null)}
+                    >
+                      <div
+                        className="w-4 h-4 rounded-full flex-shrink-0"
+                        style={{
+                          backgroundColor: item.color,
+                          transform: isActive ? 'scale(1.3)' : 'scale(1)',
+                          boxShadow: isActive ? `0 0 12px ${item.color}60` : 'none',
+                          transition: 'all 0.35s ease',
+                        }}
+                      />
+                      <span
+                        className="text-sm lg:text-base font-semibold"
+                        style={{
+                          color: isActive ? item.color : '#333',
+                          transition: 'color 0.35s ease',
+                        }}
+                      >
+                        {item.label}
+                      </span>
+                      {isActive && (
+                        <ArrowRight className="w-4 h-4 ml-auto flex-shrink-0" style={{ color: item.color }} />
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
-            {/* RIGHT — Donut Chart SVG */}
+            {/* RIGHT — Donut Chart SVG (larger) */}
             <div className="flex items-center justify-center">
-              <div className="relative" style={{ width: '380px', height: '380px' }}>
-                <svg viewBox="0 0 400 400" className="w-full h-full" style={{ filter: 'drop-shadow(0 8px 30px rgba(0,0,0,0.1))' }}>
-                  {/* Donut segments — 4 equal parts */}
-                  {/* Segment 1: Código de Conduta Ética (top-left) — Laranja */}
+              <div className="relative" style={{ width: '440px', height: '440px' }}>
+                <svg viewBox="0 0 440 440" className="w-full h-full" style={{ filter: 'drop-shadow(0 12px 40px rgba(0,0,0,0.12))' }}>
+                  {/* Donut segments — 4 equal parts with gap */}
+                  {/* Segment 0: Código de Conduta Ética (top-right) — Laranja */}
                   <path
-                    d="M200 40 A160 160 0 0 1 360 200 L280 200 A80 80 0 0 0 200 120 Z"
+                    d="M220 30 A190 190 0 0 1 410 220 L310 220 A90 90 0 0 0 220 130 Z"
                     fill="#EE7501"
+                    style={{
+                      opacity: hoveredPillar !== null && hoveredPillar !== 0 ? 0.4 : 1,
+                      transform: hoveredPillar === 0 ? 'translate(4px, -4px)' : 'translate(0,0)',
+                      transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
+                    }}
+                    onMouseEnter={() => setHoveredPillar(0)}
+                    onMouseLeave={() => setHoveredPillar(null)}
+                    className="cursor-pointer"
                   />
-                  {/* Segment 2: Política de Gestão de Terceiros (top-right) — Dourado */}
+                  {/* Segment 1: Política de Gestão de Terceiros (bottom-right) — Dourado */}
                   <path
-                    d="M360 200 A160 160 0 0 1 200 360 L200 280 A80 80 0 0 0 280 200 Z"
+                    d="M410 220 A190 190 0 0 1 220 410 L220 310 A90 90 0 0 0 310 220 Z"
                     fill="#D4A843"
+                    style={{
+                      opacity: hoveredPillar !== null && hoveredPillar !== 1 ? 0.4 : 1,
+                      transform: hoveredPillar === 1 ? 'translate(4px, 4px)' : 'translate(0,0)',
+                      transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
+                    }}
+                    onMouseEnter={() => setHoveredPillar(1)}
+                    onMouseLeave={() => setHoveredPillar(null)}
+                    className="cursor-pointer"
                   />
-                  {/* Segment 3: Política de Treinamentos (bottom-left) — Azul */}
+                  {/* Segment 2: Política de Treinamentos (bottom-left) — Azul */}
                   <path
-                    d="M200 360 A160 160 0 0 1 40 200 L120 200 A80 80 0 0 0 200 280 Z"
+                    d="M220 410 A190 190 0 0 1 30 220 L130 220 A90 90 0 0 0 220 310 Z"
                     fill="#2C7EB3"
+                    style={{
+                      opacity: hoveredPillar !== null && hoveredPillar !== 2 ? 0.4 : 1,
+                      transform: hoveredPillar === 2 ? 'translate(-4px, 4px)' : 'translate(0,0)',
+                      transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
+                    }}
+                    onMouseEnter={() => setHoveredPillar(2)}
+                    onMouseLeave={() => setHoveredPillar(null)}
+                    className="cursor-pointer"
                   />
-                  {/* Segment 4: Política de Integridade (bottom-right) — Vinho */}
+                  {/* Segment 3: Política de Integridade (top-left) — Vinho */}
                   <path
-                    d="M40 200 A160 160 0 0 1 200 40 L200 120 A80 80 0 0 0 120 200 Z"
+                    d="M30 220 A190 190 0 0 1 220 30 L220 130 A90 90 0 0 0 130 220 Z"
                     fill="#861720"
+                    style={{
+                      opacity: hoveredPillar !== null && hoveredPillar !== 3 ? 0.4 : 1,
+                      transform: hoveredPillar === 3 ? 'translate(-4px, -4px)' : 'translate(0,0)',
+                      transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
+                    }}
+                    onMouseEnter={() => setHoveredPillar(3)}
+                    onMouseLeave={() => setHoveredPillar(null)}
+                    className="cursor-pointer"
                   />
 
-                  {/* Center circle — white with logo */}
-                  <circle cx="200" cy="200" r="76" fill="#F0EFED" />
+                  {/* Center circle */}
+                  <circle cx="220" cy="220" r="86" fill="#F5F4F2" />
+                  <circle cx="220" cy="220" r="84" fill="none" stroke="#E8E6E3" strokeWidth="1" />
 
-                  {/* Segment labels — curved text */}
+                  {/* Segment labels — positioned in center of each arc segment */}
                   {/* Top-right: Código de Conduta Ética */}
                   <text
-                    x="295"
-                    y="115"
                     fill="white"
-                    fontSize="11"
-                    fontWeight="600"
+                    fontSize="13"
+                    fontWeight="700"
                     textAnchor="middle"
-                    transform="rotate(45, 295, 115)"
+                    style={{
+                      opacity: hoveredPillar !== null && hoveredPillar !== 0 ? 0.3 : 1,
+                      transition: 'opacity 0.4s ease',
+                    }}
                   >
-                    <tspan x="295" dy="0">Código de</tspan>
-                    <tspan x="295" dy="14">Conduta Ética</tspan>
+                    <tspan x="330" y="120">Código de</tspan>
+                    <tspan x="330" y="136">Conduta Ética</tspan>
                   </text>
 
                   {/* Bottom-right: Política de Gestão de Terceiros */}
                   <text
-                    x="305"
-                    y="285"
                     fill="white"
-                    fontSize="10"
-                    fontWeight="600"
+                    fontSize="12"
+                    fontWeight="700"
                     textAnchor="middle"
-                    transform="rotate(-45, 305, 285)"
+                    style={{
+                      opacity: hoveredPillar !== null && hoveredPillar !== 1 ? 0.3 : 1,
+                      transition: 'opacity 0.4s ease',
+                    }}
                   >
-                    <tspan x="305" dy="0">Política de Gestão</tspan>
-                    <tspan x="305" dy="13">de Terceiros</tspan>
+                    <tspan x="330" y="310">Política de Gestão</tspan>
+                    <tspan x="330" y="326">de Terceiros</tspan>
                   </text>
 
                   {/* Bottom-left: Política de Treinamentos */}
                   <text
-                    x="105"
-                    y="290"
                     fill="white"
-                    fontSize="10"
-                    fontWeight="600"
+                    fontSize="12"
+                    fontWeight="700"
                     textAnchor="middle"
-                    transform="rotate(45, 105, 290)"
+                    style={{
+                      opacity: hoveredPillar !== null && hoveredPillar !== 2 ? 0.3 : 1,
+                      transition: 'opacity 0.4s ease',
+                    }}
                   >
-                    <tspan x="105" dy="0">Política de</tspan>
-                    <tspan x="105" dy="13">Treinamentos e</tspan>
-                    <tspan x="105" dy="13">Comunicação</tspan>
+                    <tspan x="110" y="303">Política de</tspan>
+                    <tspan x="110" y="319">Treinamentos e</tspan>
+                    <tspan x="110" y="335">Comunicação</tspan>
                   </text>
 
                   {/* Top-left: Política de Integridade */}
                   <text
-                    x="105"
-                    y="115"
                     fill="white"
-                    fontSize="11"
-                    fontWeight="600"
+                    fontSize="13"
+                    fontWeight="700"
                     textAnchor="middle"
-                    transform="rotate(-45, 105, 115)"
+                    style={{
+                      opacity: hoveredPillar !== null && hoveredPillar !== 3 ? 0.3 : 1,
+                      transition: 'opacity 0.4s ease',
+                    }}
                   >
-                    <tspan x="105" dy="0">Política de</tspan>
-                    <tspan x="105" dy="14">Integridade</tspan>
+                    <tspan x="110" y="120">Política de</tspan>
+                    <tspan x="110" y="136">Integridade</tspan>
                   </text>
                 </svg>
 
@@ -405,7 +473,8 @@ export default function MissaoVisao() {
                   <img
                     src={ASSETS.logoGrupoArqueo}
                     alt="Grupo Arqueo"
-                    className="w-20 h-auto opacity-80"
+                    className="h-auto opacity-90"
+                    style={{ width: '90px' }}
                   />
                 </div>
               </div>
