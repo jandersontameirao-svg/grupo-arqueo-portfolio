@@ -62,22 +62,26 @@ export default function MissaoVisao() {
       nextPath="/ecossistema"
       nextLabel="Ecossistema do Grupo"
     >
-      {/* ═══════════════════ HERO SECTION ═══════════════════ */}
-      <section className="relative min-h-[550px] lg:min-h-[650px] flex items-center overflow-hidden">
+      {/* ═══════════════════ HERO SECTION — CINEMATIC ═══════════════════ */}
+      <section className="relative min-h-[420px] lg:min-h-[520px] flex items-end overflow-hidden">
+        {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/hero-mvv-arqueo-GK5J6R6QaWvJCr4P9a8Syu.webp"
+            alt="Artefatos arqueológicos em paisagem brasileira"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark gradient overlay from bottom */}
           <div
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(135deg, rgba(249,248,246,0.98) 0%, rgba(249,248,246,0.95) 30%, rgba(249,248,246,0.88) 60%, rgba(249,248,246,0.70) 100%)'
+              background: 'linear-gradient(to top, rgba(42,42,42,0.95) 0%, rgba(42,42,42,0.7) 35%, rgba(42,42,42,0.3) 60%, rgba(42,42,42,0.1) 100%)'
             }}
           />
-          {/* Decorative elements */}
-          <div className="absolute top-20 right-20 w-80 h-80 rounded-full opacity-[0.03]" style={{ backgroundColor: '#EE7501' }} />
-          <div className="absolute bottom-10 left-10 w-60 h-60 rounded-full opacity-[0.03]" style={{ backgroundColor: '#861720' }} />
         </div>
 
-        <div className="container relative z-10">
+        {/* Content positioned at bottom */}
+        <div className="container relative z-10 pb-14 lg:pb-20">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -91,10 +95,10 @@ export default function MissaoVisao() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex items-center gap-3 mb-8"
+              className="flex items-center gap-3 mb-6"
             >
-              <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
-              <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720' }}>Direcionamento Estratégico</span>
+              <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #EE7501, #861720)' }} />
+              <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: '#EE7501' }}>Direcionamento Estratégico</span>
             </motion.div>
 
             <motion.h1
@@ -102,13 +106,10 @@ export default function MissaoVisao() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-8"
-              style={{ color: '#2A2A2A' }}
+              className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] mb-6 text-white"
             >
               Missão, Visão e{' '}
-              <span style={{ background: 'linear-gradient(135deg, #EE7501 0%, #861720 100%)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Valores
-              </span>
+              <span style={{ color: '#EE7501' }}>Valores</span>
             </motion.h1>
 
             <motion.p
@@ -116,10 +117,10 @@ export default function MissaoVisao() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-lg lg:text-xl font-light leading-relaxed"
-              style={{ color: '#555', maxWidth: '650px' }}
+              className="text-base lg:text-lg font-light leading-relaxed text-white/70"
+              style={{ maxWidth: '600px' }}
             >
-              Os pilares que guiam nossas decisões, ações e relacionamentos. Cada dia, reafirmamos nosso compromisso com a <strong style={{ color: '#861720' }}>excelência</strong>, a <strong style={{ color: '#EE7501' }}>inovação</strong> e a preservação do patrimônio cultural brasileiro.
+              Os pilares que guiam nossas decisões, ações e relacionamentos — compromisso com a excelência, a inovação e a preservação do patrimônio cultural brasileiro.
             </motion.p>
           </motion.div>
         </div>
