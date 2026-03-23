@@ -46,8 +46,8 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md" style={{ backgroundColor: 'rgba(249,248,246,0.92)' }}>
         <div className="container flex items-center justify-between h-16 lg:h-20">
           <img
-            src={ASSETS.logo10anos}
-            alt="Grupo Arqueo — 10 Anos"
+            src={ASSETS.logoGrupoArqueo}
+            alt="Grupo Arqueo"
             className="h-10 lg:h-14 w-auto"
           />
           <div className="hidden md:flex items-center gap-8">
@@ -84,13 +84,18 @@ export default function Home() {
             variants={stagger}
             className="max-w-4xl"
           >
-            {/* Strata line */}
+            {/* Logo 10 anos no hero */}
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="w-16 h-0.5 mb-8"
-              style={{ backgroundColor: '#EE7501' }}
-            />
+              className="mb-8"
+            >
+              <img
+                src={ASSETS.logo10anos}
+                alt="Grupo Arqueo — 10 Anos"
+                className="h-16 lg:h-24 w-auto"
+              />
+            </motion.div>
 
             {/* Tagline */}
             <motion.p

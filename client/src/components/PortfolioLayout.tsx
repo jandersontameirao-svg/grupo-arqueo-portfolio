@@ -29,7 +29,7 @@ export default function PortfolioLayout({
         <div className="container flex items-center justify-between h-16 lg:h-20">
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer">
-              <img src={ASSETS.logo10anos} alt="Grupo Arqueo" className="h-10 lg:h-14 w-auto" />
+              <img src={ASSETS.logoGrupoArqueo} alt="Grupo Arqueo" className="h-10 lg:h-14 w-auto" />
             </div>
           </Link>
           <div className="flex items-center gap-4 lg:gap-6">
@@ -106,7 +106,7 @@ export default function PortfolioLayout({
       {/* FOOTER */}
       <footer className="py-10" style={{ backgroundColor: '#2A2A2A' }}>
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
-          <img src={ASSETS.logo10anos} alt="Grupo Arqueo" className="h-8 w-auto brightness-0 invert" />
+          <img src={ASSETS.logoGrupoArqueo} alt="Grupo Arqueo" className="h-8 w-auto brightness-0 invert" />
           <p className="text-[11px] font-light" style={{ color: 'rgba(255,255,255,0.3)' }}>
             &copy; 2016–2026 Grupo Arqueo. Todos os direitos reservados.
           </p>
