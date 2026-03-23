@@ -42,29 +42,10 @@ const stagger = {
 export default function Home() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F9F8F6' }}>
-      {/* ─── HEADER ─── */}
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md" style={{ backgroundColor: 'rgba(249,248,246,0.92)' }}>
-        <div className="container flex items-center justify-between h-16 lg:h-20">
-          <img
-            src={ASSETS.logoGrupoArqueo}
-            alt="Grupo Arqueo"
-            className="h-10 lg:h-14 w-auto"
-          />
-          <div className="hidden md:flex items-center gap-8">
-            <span className="text-xs font-medium tracking-[0.2em] uppercase" style={{ color: '#2A2A2A' }}>
-              Portfólio Institucional
-            </span>
-            <div className="w-px h-4" style={{ backgroundColor: '#E6E6E6' }} />
-            <span className="text-xs font-light tracking-wider" style={{ color: '#888' }}>
-              2016 — 2026
-            </span>
-          </div>
-        </div>
-        <div className="h-px w-full" style={{ background: 'linear-gradient(to right, transparent, #E6E6E6, transparent)' }} />
-      </header>
+
 
       {/* ─── HERO SECTION ─── */}
-      <section className="relative min-h-screen flex items-end pb-16 lg:pb-24 pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-end pb-16 lg:pb-24 pt-12 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0">
           <img
