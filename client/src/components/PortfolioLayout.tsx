@@ -30,32 +30,19 @@ export default function PortfolioLayout({
       </main>
 
       {/* CHAPTER NAVIGATION */}
-      <nav className="py-8 lg:py-12" style={{ backgroundColor: '#F3EFEA' }}>
+      <nav className="py-6 lg:py-8 border-t" style={{ backgroundColor: '#FFFFFF', borderColor: '#E6E6E6' }}>
         <div className="container flex items-center justify-between">
-          {prevPath ? (
-            <Link href={prevPath}>
-              <div className="flex items-center gap-3 group cursor-pointer">
-                <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" style={{ color: '#EE7501' }} />
-                <div>
-                  <p className="text-[10px] font-medium tracking-wider uppercase" style={{ color: '#888' }}>Anterior</p>
-                  <p className="text-sm font-semibold" style={{ color: '#2A2A2A' }}>{prevLabel}</p>
-                </div>
-              </div>
-            </Link>
-          ) : <div />}
           <Link href="/">
-            <div className="flex items-center gap-2 text-xs font-medium cursor-pointer transition-colors hover:text-[#EE7501]" style={{ color: '#888' }}>
-              <Home className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-2 text-xs font-medium cursor-pointer transition-colors hover:text-[#EE7501] group" style={{ color: '#888' }}>
+              <Home className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5" />
               Voltar ao Índice
             </div>
           </Link>
           {nextPath ? (
             <Link href={nextPath}>
-              <div className="flex items-center gap-3 group cursor-pointer text-right">
-                <div>
-                  <p className="text-[10px] font-medium tracking-wider uppercase" style={{ color: '#888' }}>Próximo</p>
-                  <p className="text-sm font-semibold" style={{ color: '#2A2A2A' }}>{nextLabel}</p>
-                </div>
+              <div className="flex items-center gap-3 group cursor-pointer transition-all hover:gap-4">
+                <span className="text-[10px] font-medium tracking-wider uppercase" style={{ color: '#888' }}>PRÓXIMO</span>
+                <span className="text-sm font-semibold" style={{ color: '#2A2A2A' }}>{nextLabel}</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" style={{ color: '#EE7501' }} />
               </div>
             </Link>

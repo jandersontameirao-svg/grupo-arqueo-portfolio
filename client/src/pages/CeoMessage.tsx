@@ -128,23 +128,7 @@ export default function CeoMessage() {
 
 
 
-                {/* CTA */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: 0.6 }}
-                  className="pt-4"
-                >
-                  <a
-                    href="/quem-somos"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white transition-all hover:gap-3 hover:shadow-lg"
-                    style={{ backgroundColor: '#EE7501' }}
-                  >
-                    Conheça Nossa História
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </motion.div>
+
               </div>
             </motion.div>
           </div>
