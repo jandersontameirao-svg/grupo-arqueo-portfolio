@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { ASSETS } from "@/lib/assets";
 import {
   User, Building2, Target, Globe, Lightbulb, Star,
-  BarChart3, FolderOpen, MapPin, Mail
+  BarChart3, FolderOpen, MapPin, Mail, Download
 } from "lucide-react";
 import { useState } from "react";
 
@@ -115,9 +115,26 @@ export default function Home() {
                   </span>
                 </motion.div>
               ) : (
-                <span className="text-xs font-light tracking-wider text-[#999]">
-                  Passe o mouse sobre os capítulos para explorar →
-                </span>
+                <button
+                  onClick={() => window.print()}
+                  className="group flex items-center gap-3 px-6 py-3 rounded-lg transition-all duration-300 cursor-pointer"
+                  style={{
+                    backgroundColor: '#EE7501',
+                    color: '#FFFFFF',
+                    boxShadow: '0 4px 16px rgba(238,117,1,0.25)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#D66800';
+                    e.currentTarget.style.boxShadow = '0 6px 24px rgba(238,117,1,0.35)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#EE7501';
+                    e.currentTarget.style.boxShadow = '0 4px 16px rgba(238,117,1,0.25)';
+                  }}
+                >
+                  <Download className="w-4 h-4" />
+                  <span className="text-sm font-semibold tracking-wide">Baixar Portfólio em PDF</span>
+                </button>
               )}
             </motion.div>
           </div>
