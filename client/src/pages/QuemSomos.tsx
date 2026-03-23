@@ -188,59 +188,6 @@ export default function QuemSomos() {
         </div>
       </section>
 
-      {/* ═══════════════════ NOSSO TIME HERO SECTION ═══════════════════ */}
-      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden py-20 lg:py-28">
-        {/* Gradient background */}
-        <div className="absolute inset-0 -z-10" style={{
-          background: 'linear-gradient(135deg, #4A9B9E 0%, #2C7EB3 50%, #5BA4A7 100%)'
-        }} />
-
-        <div className="container relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            {/* Label */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex items-center justify-center gap-3 mb-8"
-            >
-              <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0.1))' }} />
-              <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: 'rgba(255,255,255,0.8)' }}>Equipe</span>
-              <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to left, rgba(255,255,255,0.3), rgba(255,255,255,0.1))' }} />
-            </motion.div>
-
-            {/* Title */}
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-8 text-white"
-            >
-              Nosso <span style={{ color: 'rgba(255,255,255,0.9)' }}>Time Multidisciplinar</span>
-            </motion.h2>
-
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-lg lg:text-xl font-light leading-relaxed"
-              style={{ color: 'rgba(255,255,255,0.85)' }}
-            >
-              Composta por arqueólogos, historiadores, geógrafos, biólogos, educadores e especialistas em tecnologia, todos comprometidos com a excelência técnica e a inovação contínua.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* ═══════════════════ TIMELINE SECTION ═══════════════════ */}
       <section className="py-20 lg:py-28 relative overflow-hidden">
@@ -332,13 +279,65 @@ export default function QuemSomos() {
       </section>
 
       {/* ═══════════════════ TEAM SECTION (CIRCULAR LAYOUT) ═══════════════════ */}
-      <section className="py-20 lg:py-28 relative overflow-hidden">
+      {/* ═══════════════════ NOSSO TIME HERO + CIRCULAR SECTION ═══════════════════ */}
+      <section className="relative overflow-hidden">
         {/* Gradient background */}
         <div className="absolute inset-0 -z-10" style={{
           background: 'linear-gradient(135deg, #4A9B9E 0%, #2C7EB3 50%, #5BA4A7 100%)'
         }} />
 
-        <div className="container">
+        {/* HERO SECTION */}
+        <div className="py-16 lg:py-24">
+          <div className="container relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9 }}
+              className="max-w-4xl mx-auto text-center"
+            >
+              {/* Label */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="flex items-center justify-center gap-3 mb-8"
+              >
+                <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0.1))' }} />
+                <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: 'rgba(255,255,255,0.8)' }}>Equipe</span>
+                <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to left, rgba(255,255,255,0.3), rgba(255,255,255,0.1))' }} />
+              </motion.div>
+
+              {/* Title */}
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-8 text-white"
+              >
+                Nosso <span style={{ color: 'rgba(255,255,255,0.9)' }}>Time Multidisciplinar</span>
+              </motion.h2>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-lg lg:text-xl font-light leading-relaxed"
+                style={{ color: 'rgba(255,255,255,0.85)' }}
+              >
+                Composta por arqueólogos, historiadores, geógrafos, biólogos, educadores e especialistas em tecnologia, todos comprometidos com a excelência técnica e a inovação contínua.
+              </motion.p>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* CIRCULAR TEAM SECTION */}
+        <div className="py-20 lg:py-28">
+          <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -439,6 +438,7 @@ export default function QuemSomos() {
                 </motion.div>
               );
             })}
+          </div>
           </div>
         </div>
       </section>
