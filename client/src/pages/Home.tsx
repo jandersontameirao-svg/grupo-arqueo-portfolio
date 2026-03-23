@@ -237,11 +237,8 @@ export default function Home() {
                   <img
                     src={ASSETS.logoGrupoArqueo}
                     alt="Grupo Arqueo"
-                    className="h-16 w-auto mb-2"
+                    className="h-20 w-auto"
                   />
-                  <span className="text-[10px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#2A2A2A' }}>
-                    Portfólio
-                  </span>
                 </div>
               </motion.div>
 
@@ -407,11 +404,8 @@ export default function Home() {
                 <img
                   src={ASSETS.logoGrupoArqueo}
                   alt="Grupo Arqueo"
-                  className="h-10 w-auto mb-1"
+                  className="h-14 w-auto"
                 />
-                <span className="text-[8px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#2A2A2A' }}>
-                  Portfólio
-                </span>
               </div>
             </motion.div>
 
