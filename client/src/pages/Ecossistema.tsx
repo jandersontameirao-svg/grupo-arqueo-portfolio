@@ -66,23 +66,6 @@ export default function Ecossistema() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#F8F7F5' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
-              Ecossistema
-            </span>
-            <h1 className="text-4xl lg:text-5xl font-bold mt-4 mb-6" style={{ color: '#1A1A1A' }}>
-              Quatro empresas,<br />uma visão integrada
-            </h1>
-            <p className="text-base lg:text-lg max-w-2xl mx-auto" style={{ color: '#666666' }}>
-              O Grupo Arqueo articula empresas com expertises complementares para oferecer soluções integradas em arqueologia preventiva, patrimônio cultural, inovação aplicada e desenvolvimento técnico.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Orbital Diagram Section */}
       <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
         <div className="max-w-7xl mx-auto">
