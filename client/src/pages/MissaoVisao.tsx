@@ -1,4 +1,5 @@
 import PortfolioLayout from "@/components/PortfolioLayout";
+import { ASSETS } from "@/lib/assets";
 import { Target, Eye, Shield, Handshake, Heart, Users, Sparkles, Scale, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
@@ -37,6 +38,13 @@ export default function MissaoVisao() {
       >
         <div className="container relative z-10">
           <div className="max-w-3xl">
+            {/* Logo 10 Anos */}
+            <img
+              src={ASSETS.logo10anos}
+              alt="Grupo Arqueo 10 Anos"
+              className="h-16 lg:h-20 w-auto mb-8"
+            />
+
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #EE7501, #861720)' }} />
               <span
