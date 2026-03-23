@@ -175,45 +175,73 @@ export default function CeoMessage() {
       {/* Divider */}
       <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
 
-      {/* Values section */}
-      <section className="py-16 lg:py-24">
+      {/* Values section — Premium Modern Design */}
+      <section className="py-16 lg:py-24 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-20 right-0 w-96 h-96 rounded-full opacity-3" style={{ backgroundColor: '#EE7501' }} />
+          <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-3" style={{ backgroundColor: '#2C7EB3' }} />
+        </div>
+
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-12 lg:mb-16"
+            className="mb-16 lg:mb-20"
           >
-            <p className="text-xs lg:text-sm font-semibold tracking-widest mb-3" style={{ color: '#EE7501' }}>NOSSOS PILARES</p>
-            <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold" style={{ color: '#2A2A2A' }}>
+            <p className="text-xs lg:text-sm font-semibold tracking-widest mb-4" style={{ color: '#EE7501' }}>NOSSOS PILARES</p>
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
               Os fundamentos que guiam nossa atuação
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
-              { icon: '🔬', title: 'Competência Técnica', desc: 'Excelência em pesquisa e consultoria especializada' },
-              { icon: '🤝', title: 'Integridade', desc: 'Transparência e ética em todas as relações' },
-              { icon: '💡', title: 'Inovação', desc: 'Tecnologia e metodologias avançadas' },
-              { icon: '⭐', title: 'Excelência', desc: 'Compromisso com a qualidade máxima' },
+              { icon: '🔬', title: 'Competência Técnica', desc: 'Excelência em pesquisa e consultoria especializada', color: '#EE7501' },
+              { icon: '🤝', title: 'Integridade', desc: 'Transparência e ética em todas as relações', color: '#861720' },
+              { icon: '💡', title: 'Inovação', desc: 'Tecnologia e metodologias avançadas', color: '#2C7EB3' },
+              { icon: '⭐', title: 'Excelência', desc: 'Compromisso com a qualidade máxima', color: '#2A2A2A' },
             ].map((pillar, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="p-6 lg:p-8 rounded-lg border transition-all hover:shadow-lg"
-                style={{ borderColor: '#E6E6E6', backgroundColor: '#FAFAF8' }}
+                transition={{ duration: 0.6, delay: idx * 0.12 }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group relative p-8 lg:p-10 rounded-2xl border-2 transition-all duration-300 hover:shadow-2xl overflow-hidden"
+                style={{
+                  borderColor: `${pillar.color}30`,
+                  backgroundColor: '#FFFFFF',
+                  background: `linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(${parseInt(pillar.color.slice(1,3), 16)},${parseInt(pillar.color.slice(3,5), 16)},${parseInt(pillar.color.slice(5,7), 16)},0.02) 100%)`
+                }}
               >
-                <p className="text-3xl lg:text-4xl mb-4">{pillar.icon}</p>
-                <h3 className="text-lg font-semibold mb-2" style={{ color: '#2A2A2A' }}>
+                {/* Accent line on top */}
+                <div className="absolute top-0 left-0 right-0 h-1" style={{ background: `linear-gradient(to right, ${pillar.color}, transparent)` }} />
+
+                {/* Icon container with background */}
+                <motion.div
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                  className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-xl transition-all"
+                  style={{ backgroundColor: `${pillar.color}12` }}
+                >
+                  <p className="text-3xl lg:text-4xl">{pillar.icon}</p>
+                </motion.div>
+
+                {/* Content */}
+                <h3 className="text-lg lg:text-xl font-bold mb-3 transition-colors" style={{ color: pillar.color }}>
                   {pillar.title}
                 </h3>
-                <p className="text-sm font-light" style={{ color: '#888' }}>
+                <p className="text-sm lg:text-base font-light leading-relaxed" style={{ color: '#666' }}>
                   {pillar.desc}
                 </p>
+
+                {/* Decorative corner accent */}
+                <div className="absolute bottom-0 right-0 w-24 h-24 opacity-0 group-hover:opacity-5 transition-opacity" style={{ backgroundColor: pillar.color, borderRadius: '100% 0 0 0' }} />
               </motion.div>
             ))}
           </div>
