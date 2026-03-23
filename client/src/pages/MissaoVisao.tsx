@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
-import { Target, Eye, Shield, Handshake, Heart, Users, Sparkles, Scale, ArrowRight } from "lucide-react";
+import { Target, Eye, Shield, Handshake, Heart, Users, Sparkles, Scale } from "lucide-react";
 import { ASSETS } from "@/lib/assets";
 import { useState } from "react";
 
@@ -272,99 +272,251 @@ export default function MissaoVisao() {
       </section>
 
 
-      {/* ═══════════════════ VALORES — INTERACTIVE GRID ═══════════════════ */}
-      <section className="py-20 lg:py-32 relative overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
+      {/* ═══════════════════ VALORES — HEXAGONAL HONEYCOMB ═══════════════════ */}
+      <section className="py-20 lg:py-32 relative overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
         <div className="container">
           {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16 lg:mb-20"
+            className="text-center mb-16 lg:mb-20"
           >
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
               <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720' }}>Valores</span>
+              <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to left, #861720, #EE7501)' }} />
             </div>
             <h2 className="text-3xl lg:text-5xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
               Os pilares que <span style={{ color: '#EE7501' }}>sustentam</span> nossa atuação
             </h2>
-            <p className="mt-6 text-base lg:text-lg font-light leading-relaxed max-w-2xl" style={{ color: '#777' }}>
-              Cada valor reflete o compromisso do Grupo Arqueo com a excelência e a ética em todas as suas relações.
-            </p>
           </motion.div>
 
-          {/* Values grid — 3x2 with interactive hover */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {valores.map((valor, i) => {
-              const Icon = valor.icon;
-              const isActive = activeValor === i;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.08 }}
-                  onMouseEnter={() => setActiveValor(i)}
-                  onMouseLeave={() => setActiveValor(null)}
-                  className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500"
-                  style={{
-                    backgroundColor: isActive ? valor.color : '#F9F8F6',
-                    border: `1px solid ${isActive ? valor.color : 'rgba(230, 230, 230, 0.6)'}`,
-                    boxShadow: isActive ? `0 20px 60px ${valor.color}25` : '0 4px 20px rgba(0, 0, 0, 0.03)',
-                    transform: isActive ? 'translateY(-8px)' : 'translateY(0)',
-                  }}
-                >
-                  {/* Top accent line */}
-                  <div
-                    className="h-1 w-full transition-opacity duration-500"
+          {/* Hexagonal honeycomb layout */}
+          <div className="relative mx-auto" style={{ maxWidth: '750px' }}>
+            {/* Desktop: Honeycomb grid */}
+            <div className="hidden lg:block relative" style={{ height: '580px' }}>
+              {/* Row 1: 2 hexagons */}
+              {[
+                { ...valores[0], x: '12%', y: '0%' },
+                { ...valores[1], x: '52%', y: '0%' },
+              ].map((item, idx) => {
+                const Icon = item.icon;
+                const i = idx;
+                const isActive = activeValor === i;
+                return (
+                  <motion.div
+                    key={`r1-${idx}`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.1 }}
+                    onMouseEnter={() => setActiveValor(i)}
+                    onMouseLeave={() => setActiveValor(null)}
+                    className="absolute cursor-pointer transition-all duration-500"
                     style={{
-                      background: `linear-gradient(to right, ${valor.color}, transparent)`,
-                      opacity: isActive ? 0 : 1,
+                      left: item.x,
+                      top: item.y,
+                      width: '250px',
+                      height: '220px',
+                      transform: isActive ? 'scale(1.05)' : 'scale(1)',
+                      zIndex: isActive ? 20 : 10,
                     }}
-                  />
+                  >
+                    <div className="relative w-full h-full flex flex-col items-center justify-center text-center px-6">
+                      {/* Hexagon SVG background */}
+                      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 250 220" preserveAspectRatio="none">
+                        <polygon
+                          points="125,0 245,55 245,165 125,220 5,165 5,55"
+                          fill={isActive ? item.color : `${item.color}18`}
+                          stroke={item.color}
+                          strokeWidth={isActive ? '2' : '1'}
+                          opacity={isActive ? 1 : 0.9}
+                          className="transition-all duration-500"
+                        />
+                      </svg>
+                      {/* Content */}
+                      <div className="relative z-10">
+                        <Icon className="w-8 h-8 mx-auto mb-3 transition-colors duration-500" style={{ color: isActive ? '#FFFFFF' : item.color }} />
+                        <h3 className="text-base font-bold mb-2 transition-colors duration-500" style={{ color: isActive ? '#FFFFFF' : '#2A2A2A' }}>{item.title}</h3>
+                        <p className="text-[11px] leading-snug font-light transition-colors duration-500 px-2" style={{ color: isActive ? 'rgba(255,255,255,0.85)' : '#888' }}>{item.desc}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
 
-                  <div className="p-8 lg:p-10">
-                    {/* Icon */}
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-500"
+              {/* Row 2: 3 hexagons (offset) — includes center label */}
+              {[
+                { ...valores[2], x: '-8%', y: '33%' },
+                { x: '32%', y: '33%', isCenter: true },
+                { ...valores[3], x: '72%', y: '33%' },
+              ].map((item, idx) => {
+                if ('isCenter' in item && item.isCenter) {
+                  return (
+                    <motion.div
+                      key="center"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.7, delay: 0.3 }}
+                      className="absolute"
                       style={{
-                        backgroundColor: isActive ? 'rgba(255,255,255,0.15)' : `${valor.color}10`,
+                        left: item.x,
+                        top: item.y,
+                        width: '250px',
+                        height: '220px',
+                        zIndex: 15,
                       }}
                     >
-                      <Icon
-                        className="w-7 h-7 transition-colors duration-500"
-                        style={{ color: isActive ? '#FFFFFF' : valor.color }}
-                      />
+                      <div className="relative w-full h-full flex flex-col items-center justify-center text-center px-6">
+                        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 250 220" preserveAspectRatio="none">
+                          <polygon
+                            points="125,0 245,55 245,165 125,220 5,165 5,55"
+                            fill="#861720"
+                            stroke="#861720"
+                            strokeWidth="2"
+                          />
+                        </svg>
+                        <div className="relative z-10">
+                          <span className="text-xs font-semibold tracking-[0.25em] uppercase text-white/50 block mb-2">Nossos</span>
+                          <h3 className="text-2xl font-bold text-white leading-tight">Valores</h3>
+                          <div className="w-10 h-0.5 mx-auto mt-3 rounded-full" style={{ background: 'linear-gradient(to right, #EE7501, transparent)' }} />
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                }
+                const valorItem = item as typeof valores[0] & { x: string; y: string };
+                const Icon = valorItem.icon;
+                const globalIdx = idx === 0 ? 2 : 3;
+                const isActive = activeValor === globalIdx;
+                return (
+                  <motion.div
+                    key={`r2-${idx}`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: globalIdx * 0.1 }}
+                    onMouseEnter={() => setActiveValor(globalIdx)}
+                    onMouseLeave={() => setActiveValor(null)}
+                    className="absolute cursor-pointer transition-all duration-500"
+                    style={{
+                      left: valorItem.x,
+                      top: valorItem.y,
+                      width: '250px',
+                      height: '220px',
+                      transform: isActive ? 'scale(1.05)' : 'scale(1)',
+                      zIndex: isActive ? 20 : 10,
+                    }}
+                  >
+                    <div className="relative w-full h-full flex flex-col items-center justify-center text-center px-6">
+                      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 250 220" preserveAspectRatio="none">
+                        <polygon
+                          points="125,0 245,55 245,165 125,220 5,165 5,55"
+                          fill={isActive ? valorItem.color : `${valorItem.color}18`}
+                          stroke={valorItem.color}
+                          strokeWidth={isActive ? '2' : '1'}
+                          opacity={isActive ? 1 : 0.9}
+                          className="transition-all duration-500"
+                        />
+                      </svg>
+                      <div className="relative z-10">
+                        <Icon className="w-8 h-8 mx-auto mb-3 transition-colors duration-500" style={{ color: isActive ? '#FFFFFF' : valorItem.color }} />
+                        <h3 className="text-base font-bold mb-2 transition-colors duration-500" style={{ color: isActive ? '#FFFFFF' : '#2A2A2A' }}>{valorItem.title}</h3>
+                        <p className="text-[11px] leading-snug font-light transition-colors duration-500 px-2" style={{ color: isActive ? 'rgba(255,255,255,0.85)' : '#888' }}>{valorItem.desc}</p>
+                      </div>
                     </div>
+                  </motion.div>
+                );
+              })}
 
-                    {/* Title */}
-                    <h3
-                      className="text-lg font-bold mb-3 transition-colors duration-500"
-                      style={{ color: isActive ? '#FFFFFF' : '#2A2A2A' }}
-                    >
-                      {valor.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p
-                      className="text-sm font-light leading-relaxed transition-colors duration-500"
-                      style={{ color: isActive ? 'rgba(255,255,255,0.8)' : '#777' }}
-                    >
-                      {valor.desc}
-                    </p>
-
-                    {/* Arrow indicator */}
-                    <div className="mt-6 flex items-center gap-2 transition-all duration-500"
-                      style={{ opacity: isActive ? 1 : 0, transform: isActive ? 'translateX(0)' : 'translateX(-10px)' }}
-                    >
-                      <ArrowRight className="w-4 h-4 text-white/60" />
+              {/* Row 3: 2 hexagons */}
+              {[
+                { ...valores[4], x: '12%', y: '66%' },
+                { ...valores[5], x: '52%', y: '66%' },
+              ].map((item, idx) => {
+                const Icon = item.icon;
+                const globalIdx = idx + 4;
+                const isActive = activeValor === globalIdx;
+                return (
+                  <motion.div
+                    key={`r3-${idx}`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: globalIdx * 0.1 }}
+                    onMouseEnter={() => setActiveValor(globalIdx)}
+                    onMouseLeave={() => setActiveValor(null)}
+                    className="absolute cursor-pointer transition-all duration-500"
+                    style={{
+                      left: item.x,
+                      top: item.y,
+                      width: '250px',
+                      height: '220px',
+                      transform: isActive ? 'scale(1.05)' : 'scale(1)',
+                      zIndex: isActive ? 20 : 10,
+                    }}
+                  >
+                    <div className="relative w-full h-full flex flex-col items-center justify-center text-center px-6">
+                      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 250 220" preserveAspectRatio="none">
+                        <polygon
+                          points="125,0 245,55 245,165 125,220 5,165 5,55"
+                          fill={isActive ? item.color : `${item.color}18`}
+                          stroke={item.color}
+                          strokeWidth={isActive ? '2' : '1'}
+                          opacity={isActive ? 1 : 0.9}
+                          className="transition-all duration-500"
+                        />
+                      </svg>
+                      <div className="relative z-10">
+                        <Icon className="w-8 h-8 mx-auto mb-3 transition-colors duration-500" style={{ color: isActive ? '#FFFFFF' : item.color }} />
+                        <h3 className="text-base font-bold mb-2 transition-colors duration-500" style={{ color: isActive ? '#FFFFFF' : '#2A2A2A' }}>{item.title}</h3>
+                        <p className="text-[11px] leading-snug font-light transition-colors duration-500 px-2" style={{ color: isActive ? 'rgba(255,255,255,0.85)' : '#888' }}>{item.desc}</p>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Mobile: Stacked hexagons */}
+            <div className="lg:hidden grid grid-cols-2 gap-4">
+              {valores.map((valor, i) => {
+                const Icon = valor.icon;
+                const isActive = activeValor === i;
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
+                    onTouchStart={() => setActiveValor(i)}
+                    onTouchEnd={() => setActiveValor(null)}
+                    className="relative cursor-pointer"
+                    style={{ aspectRatio: '250/220' }}
+                  >
+                    <div className="relative w-full h-full flex flex-col items-center justify-center text-center px-4">
+                      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 250 220" preserveAspectRatio="none">
+                        <polygon
+                          points="125,0 245,55 245,165 125,220 5,165 5,55"
+                          fill={isActive ? valor.color : `${valor.color}18`}
+                          stroke={valor.color}
+                          strokeWidth="1"
+                          opacity={isActive ? 1 : 0.9}
+                        />
+                      </svg>
+                      <div className="relative z-10">
+                        <Icon className="w-6 h-6 mx-auto mb-2" style={{ color: isActive ? '#FFFFFF' : valor.color }} />
+                        <h3 className="text-xs font-bold mb-1" style={{ color: isActive ? '#FFFFFF' : '#2A2A2A' }}>{valor.title}</h3>
+                        <p className="text-[9px] leading-snug font-light px-1" style={{ color: isActive ? 'rgba(255,255,255,0.85)' : '#888' }}>{valor.desc.substring(0, 60)}...</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
