@@ -80,6 +80,21 @@ export default function QuemSomos() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="max-w-3xl"
           >
+            {/* Logo 10 anos */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-6"
+            >
+              <img
+                src={ASSETS.logo10anos}
+                alt="Grupo Arqueo - 10 Anos"
+                className="h-14 lg:h-16 w-auto object-contain"
+              />
+            </motion.div>
+
             {/* Label */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -161,21 +176,6 @@ export default function QuemSomos() {
               Uma década de <span style={{ color: '#EE7501' }}>crescimento</span>
             </h2>
 
-            {/* Logo 10 anos */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-8"
-            >
-              <img
-                src={ASSETS.logo10anos}
-                alt="Grupo Arqueo - 10 Anos"
-                className="h-16 lg:h-20 w-auto object-contain"
-                style={{ opacity: 0.9 }}
-              />
-            </motion.div>
           </motion.div>
 
           {/* Timeline circles row */}
