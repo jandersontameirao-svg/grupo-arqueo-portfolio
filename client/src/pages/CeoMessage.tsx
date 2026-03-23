@@ -126,15 +126,19 @@ export default function CeoMessage() {
                   style={{ color: '#444' }}
                 >
                   <p>
-                    Ao longo de uma década, o <strong style={{ color: '#2A2A2A', fontWeight: 600 }}>Grupo Arqueo</strong> consolidou-se como referência nacional em consultoria especializada para o licenciamento sociocultural. Nascemos com a convicção de que é possível conciliar desenvolvimento econômico com a preservação do patrimônio cultural e arqueológico.
+                    O projeto nasce a partir de um <strong style={{ color: '#861720', fontWeight: 600 }}>propósito claro</strong>: elevar o padrão da arqueologia preventiva no Brasil e entregar mais <strong style={{ color: '#861720', fontWeight: 600 }}>previsibilidade ao licenciamento ambiental</strong>. Desde o início assumimos um papel <strong style={{ color: '#EE7501', fontWeight: 600 }}>disruptivo</strong> ao combinar <strong style={{ color: '#861720', fontWeight: 600 }}>rigor técnico</strong>, visão de gestão e <strong style={{ color: '#861720', fontWeight: 600 }}>inovação aplicada</strong>, transformando exigências e complexidade em método, rastreabilidade e entregas consistentes.
                   </p>
 
                   <p>
-                    Nossa trajetória foi construída sobre pilares sólidos: <strong style={{ color: '#861720', fontWeight: 600 }}>competência técnica</strong>, integridade profissional, <strong style={{ color: '#861720', fontWeight: 600 }}>inovação tecnológica</strong> e compromisso com a excelência. Cada projeto que realizamos carrega a responsabilidade de proteger a memória e a identidade cultural das comunidades onde atuamos.
+                    Ao longo dessa trajetória, a tecnologia deixou de ser um apoio pontual e passou a integrar nossa forma de operar. Investimos em <strong style={{ color: '#861720', fontWeight: 600 }}>padronização de processos</strong>, organização inteligente de dados, controles de qualidade e melhoria contínua, fortalecendo a capacidade de execução em projetos complexos e com alta demanda de conformidade.
                   </p>
 
                   <p>
-                    Hoje, com mais de <strong style={{ color: '#EE7501', fontWeight: 700 }}>250 projetos</strong> gerenciados em <strong style={{ color: '#EE7501', fontWeight: 700 }}>16 estados brasileiros</strong>, lideramos um ecossistema integrado que abrange desde a pesquisa arqueológica de campo até a gestão de dados geoespaciais, educação patrimonial e arqueologia subaquática.
+                    Com quase <strong style={{ color: '#EE7501', fontWeight: 700 }}>10 anos de história</strong>, inauguramos um novo ciclo e o <strong style={{ color: '#2A2A2A', fontWeight: 600 }}>Grupo Arqueo</strong> se projeta como nunca, para a era das <strong style={{ color: '#861720', fontWeight: 600 }}>IAs e da sustentabilidade</strong>, formalizando padrões, consolidando governança e incorporando <strong style={{ color: '#EE7501', fontWeight: 600 }}>inteligência artificial</strong> para padronizar fluxos, qualificar decisões e acelerar entregas com segurança, transparência e foco em resultados.
+                  </p>
+
+                  <p className="pt-4 italic border-l-4" style={{ borderColor: '#861720', paddingLeft: '1.5rem', color: '#555' }}>
+                    “É assim que avançamos: rigor técnico, inovação aplicada e compromisso com resultados, hoje e nos próximos anos.”
                   </p>
                 </motion.div>
               </div>
