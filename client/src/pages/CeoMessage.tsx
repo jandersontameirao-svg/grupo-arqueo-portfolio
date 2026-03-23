@@ -136,10 +136,10 @@ export default function CeoMessage() {
       </section>
 
       {/* Divider */}
-      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
+      <div className="h-px my-4 lg:my-6" style={{ backgroundColor: '#E6E6E6' }} />
 
       {/* Values section — Premium Modern Design */}
-      <section className="py-16 lg:py-24 relative overflow-hidden">
+      <section className="py-6 lg:py-8 relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 right-0 w-96 h-96 rounded-full opacity-3" style={{ backgroundColor: '#EE7501' }} />
@@ -152,7 +152,7 @@ export default function CeoMessage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-16 lg:mb-20"
+            className="mb-8 lg:mb-10"
           >
             <p className="text-xs lg:text-sm font-semibold tracking-widest mb-4" style={{ color: '#EE7501' }}>NOSSOS PILARES</p>
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
