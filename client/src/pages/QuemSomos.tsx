@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
-import { MapPin, Users, Zap, Award } from "lucide-react";
+import { Building2, Globe, BookOpen, Lightbulb } from "lucide-react";
 
 /**
  * QUEM SOMOS — Página 02 (REDESIGN MODERNO)
@@ -11,24 +11,39 @@ import { MapPin, Users, Zap, Award } from "lucide-react";
  */
 
 export default function QuemSomos() {
-  const stats = [
-    { value: "2016", label: "Ano de fundação", color: "#EE7501", icon: Award },
-    { value: "3", label: "Escritórios", color: "#861720", icon: MapPin },
-    { value: "16", label: "Estados", color: "#2C7EB3", icon: Zap },
-    { value: "250+", label: "Projetos", color: "#EE7501", icon: Users },
-  ];
-
   const timeline = [
-    { year: "2016", title: "Fundação", desc: "Criação do Grupo Arqueo em Brasília, com foco em consultoria arqueológica para licenciamento ambiental." },
-    { year: "2018", title: "Expansão", desc: "Abertura do escritório em Natal/RN e início da atuação em projetos de energia eólica no Nordeste." },
-    { year: "2020", title: "Ecossistema", desc: "Lançamento das submarcas ArqueoGIS, ArqueoOcean e ArqueoEduc, ampliando o portfólio de serviços." },
-    { year: "2023", title: "Consolidação", desc: "Escritório em São Paulo, mais de 250 projetos gerenciados e presença em 16 estados." },
-  ];
-
-  const offices = [
-    { city: "Brasília/DF", role: "Sede Administrativa", address: "SHS Qd. 06, Conj. A, Sala 501 — Complexo Brasil 21", color: "#861720" },
-    { city: "Natal/RN", role: "Escritório Regional Nordeste", address: "Rua Raimundo Chaves, 2182, Sala 501 — Ponta Negra", color: "#2C7EB3" },
-    { city: "São Paulo/SP", role: "Escritório Regional Sudeste", address: "Av. Brig. Faria Lima, 1461, 4º andar, Conj. 41", color: "#EE7501" },
+    {
+      year: "2016",
+      title: "Fundação",
+      desc: "Criação do Grupo Arqueo em Brasília, com foco em consultoria arqueológica para licenciamento ambiental.",
+      icon: Building2,
+      badgeColor: "#861720",
+      arcColor: "#861720",
+    },
+    {
+      year: "2018",
+      title: "Expansão",
+      desc: "Abertura do escritório em Natal/RN e início da atuação em projetos de energia eólica no Nordeste.",
+      icon: Globe,
+      badgeColor: "#2C7EB3",
+      arcColor: "#2C7EB3",
+    },
+    {
+      year: "2020",
+      title: "Ecossistema",
+      desc: "Lançamento das submarcas ArqueoGIS, ArqueoOcean e ArqueoEduc, ampliando o portfólio de serviços.",
+      icon: Lightbulb,
+      badgeColor: "#EE7501",
+      arcColor: "#EE7501",
+    },
+    {
+      year: "2023",
+      title: "Consolidação",
+      desc: "Escritório em São Paulo, mais de 250 projetos gerenciados e presença em 16 estados.",
+      icon: BookOpen,
+      badgeColor: "#861720",
+      arcColor: "#861720",
+    },
   ];
 
   return (
@@ -125,88 +140,18 @@ export default function QuemSomos() {
         </div>
       </section>
 
-      {/* ═══════════════════ STATS SECTION ═══════════════════ */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: '#F9F8F6' }}>
+
+
+
+      {/* ═══════════════════ TIMELINE SECTION — CIRCULAR DESIGN ═══════════════════ */}
+      <section className="py-20 lg:py-32 relative overflow-hidden" style={{ backgroundColor: '#F0EFED' }}>
         <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {stats.map((stat, i) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  whileHover={{ y: -8 }}
-                  className="group relative p-8 rounded-2xl backdrop-blur-sm transition-all duration-300 cursor-pointer"
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid rgba(230, 230, 230, 0.6)',
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = `0 20px 40px ${stat.color}20`;
-                    e.currentTarget.style.borderColor = stat.color;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
-                    e.currentTarget.style.borderColor = 'rgba(230, 230, 230, 0.6)';
-                  }}
-                >
-                  {/* Icon container */}
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="mb-6 w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300"
-                    style={{ backgroundColor: `${stat.color}15` }}
-                  >
-                    <Icon className="w-7 h-7" style={{ color: stat.color }} />
-                  </motion.div>
-
-                  {/* Value */}
-                  <span
-                    className="text-4xl lg:text-5xl font-bold block mb-3 transition-colors duration-300"
-                    style={{ color: stat.color }}
-                  >
-                    {stat.value}
-                  </span>
-
-                  {/* Label */}
-                  <p className="text-sm font-medium" style={{ color: '#888' }}>
-                    {stat.label}
-                  </p>
-
-                  {/* Decorative accent */}
-                  <div
-                    className="absolute bottom-0 left-0 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
-                    style={{ width: '40%', backgroundColor: stat.color }}
-                  />
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-
-      {/* ═══════════════════ TIMELINE SECTION ═══════════════════ */}
-      <section className="py-20 lg:py-28 relative overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 -z-10">
-          <div
-            className="absolute inset-0 opacity-3"
-            style={{
-              background: 'linear-gradient(135deg, #861720 0%, #EE7501 100%)'
-            }}
-          />
-        </div>
-
-        <div className="container">
+          {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="mb-20"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
@@ -217,66 +162,162 @@ export default function QuemSomos() {
             </h2>
           </motion.div>
 
-          {/* Timeline */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {timeline.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="group relative p-8 rounded-2xl transition-all duration-300"
+          {/* Timeline circles row */}
+          <div className="relative">
+            {/* SVG connecting arcs between circles */}
+            <svg
+              className="absolute top-0 left-0 w-full hidden lg:block"
+              style={{ height: '260px', zIndex: 1 }}
+              viewBox="0 0 1200 260"
+              preserveAspectRatio="xMidYMid meet"
+              fill="none"
+            >
+              {/* Arc from circle 1 to circle 2 */}
+              <path
+                d="M 210 200 Q 300 40 390 200"
+                stroke="#861720"
+                strokeWidth="2"
+                strokeDasharray="6 4"
+                fill="none"
+                opacity="0.35"
+              />
+              {/* Arc from circle 2 to circle 3 */}
+              <path
+                d="M 510 200 Q 600 40 690 200"
+                stroke="#2C7EB3"
+                strokeWidth="2"
+                strokeDasharray="6 4"
+                fill="none"
+                opacity="0.35"
+              />
+              {/* Arc from circle 3 to circle 4 */}
+              <path
+                d="M 810 200 Q 900 40 990 200"
+                stroke="#EE7501"
+                strokeWidth="2"
+                strokeDasharray="6 4"
+                fill="none"
+                opacity="0.35"
+              />
+            </svg>
+
+            {/* Circles grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative z-10">
+              {timeline.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: i * 0.15 }}
+                    className="flex flex-col items-center text-center"
+                  >
+                    {/* Semi-circle arc on top */}
+                    <div className="relative mb-0">
+                      <svg width="200" height="110" viewBox="0 0 200 110" fill="none">
+                        {/* Semi-circle arc */}
+                        <path
+                          d="M 20 105 A 80 80 0 0 1 180 105"
+                          stroke={item.arcColor}
+                          strokeWidth="2.5"
+                          fill="none"
+                          opacity="0.3"
+                        />
+                        {/* Thicker partial arc for visual weight */}
+                        <path
+                          d="M 40 100 A 65 65 0 0 1 160 100"
+                          stroke={item.arcColor}
+                          strokeWidth="1.5"
+                          fill="none"
+                          opacity="0.15"
+                        />
+                      </svg>
+                    </div>
+
+                    {/* Main circle */}
+                    <motion.div
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      transition={{ duration: 0.3 }}
+                      className="relative -mt-14 cursor-pointer"
+                    >
+                      <div
+                        className="w-44 h-44 lg:w-48 lg:h-48 rounded-full flex flex-col items-center justify-center relative"
+                        style={{
+                          backgroundColor: '#FFFFFF',
+                          boxShadow: '0 8px 40px rgba(0, 0, 0, 0.08), 0 2px 12px rgba(0, 0, 0, 0.04)',
+                          border: `1px solid rgba(230, 230, 230, 0.5)`,
+                        }}
+                      >
+                        {/* Icon */}
+                        <div
+                          className="w-14 h-14 rounded-full flex items-center justify-center mb-3"
+                          style={{ backgroundColor: `${item.arcColor}10` }}
+                        >
+                          <Icon className="w-7 h-7" style={{ color: item.arcColor, opacity: 0.7 }} />
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-base font-bold mb-1" style={{ color: '#2A2A2A' }}>
+                          {item.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-[11px] leading-snug px-5 font-light" style={{ color: '#888' }}>
+                          {item.desc.length > 80 ? item.desc.substring(0, 80) + '...' : item.desc}
+                        </p>
+                      </div>
+                    </motion.div>
+
+                    {/* Connector line from circle to badge */}
+                    <div className="w-px h-8 my-2" style={{ backgroundColor: `${item.badgeColor}30` }} />
+
+                    {/* Year badge row with arrows */}
+                    <div className="flex items-center gap-3">
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg cursor-pointer"
+                        style={{
+                          backgroundColor: item.badgeColor,
+                          boxShadow: `0 6px 20px ${item.badgeColor}40`,
+                        }}
+                      >
+                        {item.year}
+                      </motion.div>
+                      {/* Arrow to next (hidden on last item) */}
+                      {i < timeline.length - 1 && (
+                        <span
+                          className="text-xl font-light hidden lg:block absolute"
+                          style={{
+                            color: '#BFBFBF',
+                            right: '-24px',
+                            position: 'relative',
+                          }}
+                        >
+                          ›
+                        </span>
+                      )}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Horizontal connecting line between year badges (desktop only) */}
+            <div className="hidden lg:block absolute bottom-[38px] left-[12%] right-[12%] z-0">
+              <div
+                className="h-px w-full"
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '2px solid transparent',
-                  background: 'linear-gradient(#FFFFFF, #FFFFFF) padding-box, linear-gradient(135deg, #861720, #EE7501) border-box',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+                  background: 'linear-gradient(to right, #861720, #2C7EB3, #EE7501, #861720)',
+                  opacity: 0.2,
                 }}
-              >
-                {/* Year badge */}
-                <div
-                  className="inline-block px-4 py-2 rounded-lg mb-6 font-bold text-white"
-                  style={{
-                    background: i % 2 === 0
-                      ? 'linear-gradient(135deg, #861720, #EE7501)'
-                      : 'linear-gradient(135deg, #2C7EB3, #EE7501)',
-                    fontSize: '18px'
-                  }}
-                >
-                  {item.year}
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold mb-4" style={{ color: '#2A2A2A' }}>
-                  {item.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm font-light leading-relaxed" style={{ color: '#666' }}>
-                  {item.desc}
-                </p>
-
-                {/* Decorative line on hover */}
-                <div
-                  className="absolute bottom-0 left-0 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
-                  style={{
-                    width: '0%',
-                    background: i % 2 === 0
-                      ? 'linear-gradient(to right, #861720, #EE7501)'
-                      : 'linear-gradient(to right, #2C7EB3, #EE7501)',
-                    animation: 'none'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.width = '100%';
-                  }}
-                />
-              </motion.div>
-            ))}
+              />
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* ═══════════════════ NOSSO TIME SECTION ═══════════════════ */}
       <section className="py-20 lg:py-28 relative" style={{ backgroundColor: '#F5F5F5' }}>
@@ -411,7 +452,6 @@ export default function QuemSomos() {
         </div>
       </section>
 
-      {/* Offices section removed */}
     </PortfolioLayout>
   );
 }
