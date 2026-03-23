@@ -85,9 +85,9 @@ export default function CeoMessage() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-8"
+                className="mb-6"
               >
-                <Quote className="w-12 h-12 lg:w-16 lg:h-16" style={{ color: '#EE7501', opacity: 0.2 }} />
+                <Quote className="w-10 h-10 lg:w-14 lg:h-14" style={{ color: '#861720', opacity: 0.35 }} />
               </motion.div>
 
               {/* Main message */}
@@ -99,36 +99,44 @@ export default function CeoMessage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: 0.3 }}
                 >
-                  <p className="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
-                    O patrimônio cultural é um ativo estratégico para o desenvolvimento sustentável do Brasil.
-                  </p>
+                  <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style={{ color: '#861720' }}>
+                    O patrimônio cultural é um{" "}
+                    <span style={{ color: '#EE7501' }}>ativo estratégico</span>{" "}
+                    para o desenvolvimento sustentável do Brasil.
+                  </h2>
                 </motion.div>
+
+                {/* Decorative accent line */}
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="h-[3px] w-20 origin-left rounded-full"
+                  style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }}
+                />
 
                 {/* Body paragraphs */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: 0.4 }}
-                  className="space-y-4 text-base lg:text-lg leading-relaxed font-light"
-                  style={{ color: '#555' }}
+                  transition={{ duration: 0.7, delay: 0.5 }}
+                  className="space-y-5 text-base lg:text-lg leading-[1.8] font-light"
+                  style={{ color: '#444' }}
                 >
                   <p>
-                    Ao longo de uma década, o Grupo Arqueo consolidou-se como referência nacional em consultoria especializada para o licenciamento sociocultural. Nascemos com a convicção de que é possível conciliar desenvolvimento econômico com a preservação do patrimônio cultural e arqueológico.
+                    Ao longo de uma década, o <strong style={{ color: '#2A2A2A', fontWeight: 600 }}>Grupo Arqueo</strong> consolidou-se como referência nacional em consultoria especializada para o licenciamento sociocultural. Nascemos com a convicção de que é possível conciliar desenvolvimento econômico com a preservação do patrimônio cultural e arqueológico.
                   </p>
 
                   <p>
-                    Nossa trajetória foi construída sobre pilares sólidos: competência técnica, integridade profissional, inovação tecnológica e compromisso com a excelência. Cada projeto que realizamos carrega a responsabilidade de proteger a memória e a identidade cultural das comunidades onde atuamos.
+                    Nossa trajetória foi construída sobre pilares sólidos: <strong style={{ color: '#861720', fontWeight: 600 }}>competência técnica</strong>, integridade profissional, <strong style={{ color: '#861720', fontWeight: 600 }}>inovação tecnológica</strong> e compromisso com a excelência. Cada projeto que realizamos carrega a responsabilidade de proteger a memória e a identidade cultural das comunidades onde atuamos.
                   </p>
 
                   <p>
-                    Hoje, com mais de 250 projetos gerenciados em 16 estados brasileiros, lideramos um ecossistema integrado que abrange desde a pesquisa arqueológica de campo até a gestão de dados geoespaciais, educação patrimonial e arqueologia subaquática.
+                    Hoje, com mais de <strong style={{ color: '#EE7501', fontWeight: 700 }}>250 projetos</strong> gerenciados em <strong style={{ color: '#EE7501', fontWeight: 700 }}>16 estados brasileiros</strong>, lideramos um ecossistema integrado que abrange desde a pesquisa arqueológica de campo até a gestão de dados geoespaciais, educação patrimonial e arqueologia subaquática.
                   </p>
                 </motion.div>
-
-
-
-
               </div>
             </motion.div>
           </div>
