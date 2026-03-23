@@ -264,44 +264,6 @@ export default function MissaoVisao() {
         </div>
       </section>
 
-
-      {/* ═══════════════════ COMPROMISSO — FULL WIDTH STATEMENT ═══════════════════ */}
-      <section className="relative py-24 lg:py-32 overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(135deg, #861720 0%, #6B1219 40%, #2A2A2A 100%)',
-          }}
-        />
-        <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
-          <circle cx="20%" cy="30%" r="200" fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-          <circle cx="80%" cy="70%" r="150" fill="none" stroke="rgba(238,117,1,0.05)" strokeWidth="1" />
-          <circle cx="50%" cy="50%" r="300" fill="none" stroke="rgba(255,255,255,0.02)" strokeWidth="1" />
-        </svg>
-
-        <div className="container relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="text-7xl lg:text-8xl font-serif leading-none mb-6" style={{ color: 'rgba(238, 117, 1, 0.3)' }}>
-              "
-            </div>
-            <h3 className="text-2xl lg:text-4xl font-bold text-white leading-snug mb-8">
-              Nosso compromisso vai além da conformidade legal — buscamos gerar{' '}
-              <span style={{ color: '#EE7501' }}>valor real</span> para o patrimônio cultural brasileiro.
-            </h3>
-            <div className="flex items-center justify-center gap-4 mt-10">
-              <div className="w-12 h-px" style={{ backgroundColor: 'rgba(238, 117, 1, 0.5)' }} />
-              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-white/40">Grupo Arqueo</span>
-              <div className="w-12 h-px" style={{ backgroundColor: 'rgba(238, 117, 1, 0.5)' }} />
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </PortfolioLayout>
   );
 }
