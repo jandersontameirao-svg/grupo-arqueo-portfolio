@@ -95,79 +95,13 @@ export default function Ecossistema() {
             </h2>
           </div>
 
-          {/* SVG Orbital Diagram */}
-          <div className="flex justify-center mb-20" style={{ maxWidth: '700px', margin: '0 auto' }}>
-            <svg
-              viewBox="0 0 900 900"
-              width="100%"
-              height="auto"
-              className="drop-shadow-lg"
-              style={{ aspectRatio: '1' }}
-            >
-              {/* Background */}
-              <rect width="900" height="900" fill="#FFFFFF" rx="20" />
-
-              {/* Orbit rings */}
-              <circle cx="450" cy="450" r="380" fill="none" stroke="rgba(134,23,32,0.08)" strokeWidth="2" />
-              <circle cx="450" cy="450" r="300" fill="none" stroke="rgba(134,23,32,0.06)" strokeWidth="1.5" />
-              <circle cx="450" cy="450" r="200" fill="none" stroke="rgba(134,23,32,0.04)" strokeWidth="1" strokeDasharray="5,5" />
-
-              {/* Connection lines from center */}
-              <line x1="450" y1="450" x2="450" y2="80" stroke="rgba(134,23,32,0.1)" strokeWidth="1" strokeDasharray="4,6" />
-              <line x1="450" y1="450" x2="800" y2="450" stroke="rgba(134,23,32,0.1)" strokeWidth="1" strokeDasharray="4,6" />
-              <line x1="450" y1="450" x2="450" y2="820" stroke="rgba(134,23,32,0.1)" strokeWidth="1" strokeDasharray="4,6" />
-              <line x1="450" y1="450" x2="100" y2="450" stroke="rgba(134,23,32,0.1)" strokeWidth="1" strokeDasharray="4,6" />
-
-              {/* Decorative elements - triangles and semicircles */}
-              {/* Top triangle */}
-              <polygon points="450,120 430,160 470,160" fill="rgba(134,23,32,0.15)" />
-              {/* Right triangle */}
-              <polygon points="780,450 740,430 740,470" fill="rgba(134,23,32,0.15)" />
-              {/* Bottom triangle */}
-              <polygon points="450,780 430,740 470,740" fill="rgba(134,23,32,0.15)" />
-              {/* Left triangle */}
-              <polygon points="120,450 160,430 160,470" fill="rgba(134,23,32,0.15)" />
-
-              {/* Center nucleus - Grupo Arqueo */}
-              <circle cx="450" cy="450" r="80" fill="url(#gradientCenter)" />
-              <image href={ASSETS.logoGrupoArqueo} x="420" y="420" width="60" height="60" />
-              <text x="450" y="545" textAnchor="middle" fontSize="11" fontWeight="600" fill="rgba(255,255,255,0.7)" letterSpacing="2">
-                NÚCLEO
-              </text>
-
-              {/* Enterprise nodes - 6 positions */}
-              {/* Top - Arqueoproject (Orange) */}
-              <circle cx="450" cy="100" r="50" fill="#EE7501" />
-              <image href={empresas[0].logo} x="425" y="75" width="50" height="50" />
-
-              {/* Top-Right - ArqueoGIS (Blue) */}
-              <circle cx="720" cy="230" r="50" fill="#2C7EB3" />
-              <image href={empresas[1].logo} x="695" y="205" width="50" height="50" />
-
-              {/* Bottom-Right - ArqueoOcean (Blue) */}
-              <circle cx="720" cy="670" r="50" fill="#2C7EB3" />
-              <image href={empresas[2].logo} x="695" y="645" width="50" height="50" />
-
-              {/* Bottom - ArqueoEduc (Wine) */}
-              <circle cx="450" cy="800" r="50" fill="#861720" />
-              <image href={empresas[3].logo} x="425" y="775" width="50" height="50" />
-
-              {/* Bottom-Left - ArqueoRede (Orange) */}
-              <circle cx="180" cy="670" r="50" fill="#EE7501" />
-              <image href={empresas[4].logo} x="155" y="645" width="50" height="50" />
-
-              {/* Top-Left - SIGEPA Plus (Orange) */}
-              <circle cx="180" cy="230" r="50" fill="#EE7501" />
-              <image href={empresas[5].logo} x="155" y="205" width="50" height="50" />
-
-              {/* Defs for gradient */}
-              <defs>
-                <linearGradient id="gradientCenter" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: '#861720', stopOpacity: 1 }} />
-                  <stop offset="100%" style={{ stopColor: '#6B1219', stopOpacity: 1 }} />
-                </linearGradient>
-              </defs>
-            </svg>
+          {/* Orbital Diagram - Compact Image */}
+          <div className="flex justify-center mb-12">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-6_5e5eb982.webp"
+              alt="Diagrama Orbital Grupo Arqueo"
+              className="w-full max-w-2xl h-auto drop-shadow-lg"
+            />
           </div>
 
           {/* Enterprise labels below diagram */}
