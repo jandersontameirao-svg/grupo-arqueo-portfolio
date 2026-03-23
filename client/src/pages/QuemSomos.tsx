@@ -356,12 +356,12 @@ export default function QuemSomos() {
 
           {/* Circular Team Layout */}
           <div className="relative w-full h-[600px] lg:h-[700px] flex items-center justify-center">
-            {/* SVG for connecting lines */}
+            {/* SVG for connecting lines with Arqueo colors */}
             <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
-              {/* Decorative circles and lines */}
-              <circle cx="50%" cy="50%" r="120" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2" />
-              <circle cx="50%" cy="50%" r="200" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="2" />
-              <circle cx="50%" cy="50%" r="280" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
+              {/* Decorative circles and lines - Arqueo colors */}
+              <circle cx="50%" cy="50%" r="120" fill="none" stroke="#EE7501" strokeWidth="2" opacity="0.15" />
+              <circle cx="50%" cy="50%" r="200" fill="none" stroke="#861720" strokeWidth="2" opacity="0.12" />
+              <circle cx="50%" cy="50%" r="280" fill="none" stroke="#2C7EB3" strokeWidth="2" opacity="0.1" />
             </svg>
 
             {/* Center member - Large */}
@@ -379,11 +379,11 @@ export default function QuemSomos() {
               <div
                 className="w-full h-full rounded-full overflow-hidden border-8 shadow-2xl"
                 style={{
-                  borderColor: 'rgba(255,255,255,0.9)',
-                  background: 'linear-gradient(135deg, #2C7EB3, #4A9B9E)'
+                  borderColor: '#FFFFFF',
+                  background: 'linear-gradient(135deg, #EE7501, #861720)'
                 }}
               >
-                <div className="w-full h-full bg-gradient-to-br from-blue-300 to-teal-400 flex items-center justify-center text-white text-4xl font-bold">
+                <div className="w-full h-full bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center text-white text-4xl font-bold">
                   👨‍💼
                 </div>
               </div>
@@ -392,14 +392,14 @@ export default function QuemSomos() {
 
             {/* Surrounding members - positioned in circle */}
             {[
-              { angle: 0, size: 120, label: '👩‍🔬', name: 'Arqueologia' },
-              { angle: 45, size: 100, label: '👨‍💻', name: 'Tecnologia' },
-              { angle: 90, size: 120, label: '👩‍💼', name: 'Gestão' },
-              { angle: 135, size: 100, label: '👨‍🏫', name: 'Educação' },
-              { angle: 180, size: 120, label: '👩‍🔍', name: 'Pesquisa' },
-              { angle: 225, size: 100, label: '👨‍🌾', name: 'Campo' },
-              { angle: 270, size: 120, label: '👩‍💻', name: 'Dados' },
-              { angle: 315, size: 100, label: '👨‍⚖️', name: 'Compliance' },
+              { angle: 0, size: 120, label: '👩‍🔬', name: 'Arqueologia', color: '#EE7501' },
+              { angle: 45, size: 100, label: '👨‍💻', name: 'Tecnologia', color: '#2C7EB3' },
+              { angle: 90, size: 120, label: '👩‍💼', name: 'Gestão', color: '#861720' },
+              { angle: 135, size: 100, label: '👨‍🏫', name: 'Educação', color: '#EE7501' },
+              { angle: 180, size: 120, label: '👩‍🔍', name: 'Pesquisa', color: '#2C7EB3' },
+              { angle: 225, size: 100, label: '👨‍🌾', name: 'Campo', color: '#861720' },
+              { angle: 270, size: 120, label: '👩‍💻', name: 'Dados', color: '#EE7501' },
+              { angle: 315, size: 100, label: '👨‍⚖️', name: 'Compliance', color: '#2C7EB3' },
             ].map((member, i) => {
               const radius = 240;
               const rad = (member.angle * Math.PI) / 180;
@@ -426,11 +426,14 @@ export default function QuemSomos() {
                     transition={{ duration: 0.6 }}
                     className="w-full h-full rounded-full overflow-hidden border-6 shadow-lg"
                     style={{
-                      borderColor: 'rgba(255,255,255,0.8)',
-                      background: 'linear-gradient(135deg, #2C7EB3, #4A9B9E)'
+                      borderColor: '#FFFFFF',
+                      background: `linear-gradient(135deg, ${member.color}, ${member.color}dd)`
                     }}
                   >
-                    <div className="w-full h-full bg-gradient-to-br from-blue-300 to-teal-400 flex items-center justify-center text-2xl font-bold">
+                    <div className="w-full h-full flex items-center justify-center text-2xl font-bold" style={{
+                      background: `linear-gradient(135deg, ${member.color}99, ${member.color}44)`,
+                      color: '#FFFFFF'
+                    }}>
                       {member.label}
                     </div>
                   </motion.div>
