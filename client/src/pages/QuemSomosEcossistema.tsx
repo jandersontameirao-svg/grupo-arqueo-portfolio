@@ -522,9 +522,9 @@ export default function QuemSomosEcossistema() {
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
-                  top: '10%',
+                  top: '5%',
                   left: '50%',
-                  transform: 'translate(-50%, -50%)',
+                  transform: 'translate(-50%, 0)',
                 }}
               >
                 <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
@@ -542,7 +542,7 @@ export default function QuemSomosEcossistema() {
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
                   top: '50%',
-                  right: '8%',
+                  right: '3%',
                   transform: 'translateY(-50%)',
                 }}
               >
@@ -560,7 +560,7 @@ export default function QuemSomosEcossistema() {
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
-                  bottom: '8%',
+                  bottom: '3%',
                   left: '50%',
                   transform: 'translateX(-50%)',
                 }}
@@ -580,7 +580,7 @@ export default function QuemSomosEcossistema() {
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
                   top: '50%',
-                  left: '8%',
+                  left: '3%',
                   transform: 'translateY(-50%)',
                 }}
               >
