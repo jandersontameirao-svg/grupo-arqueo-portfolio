@@ -342,51 +342,61 @@ export default function Ecossistema() {
         </div>
       </section>
 
-      {/* Sinergia Section - Carousel */}
-      <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
+      {/* Sinergia Section - Carousel Premium */}
+      <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
-              Força Integrada
+              Forca Integrada
             </span>
-            <h2 className="text-2xl lg:text-3xl font-bold mt-3" style={{ color: '#1A1A1A' }}>
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mt-4" style={{ color: '#1A1A1A' }}>
               Sinergia que gera valor
             </h2>
           </div>
 
-          {/* Carousel Container */}
-          <div className="flex items-center justify-center gap-6 lg:gap-12">
+          {/* Carousel Container - Premium */}
+          <div className="flex items-center justify-between gap-4 lg:gap-8">
             {/* Left Arrow */}
             <button
               onClick={prevPilar}
-              className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:scale-110"
+              className="flex-shrink-0 w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110 group"
               style={{ backgroundColor: '#EE7501', color: 'white' }}
               aria-label="Pilar anterior"
             >
-              <svg className="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg className="w-6 h-6 lg:w-8 lg:h-8 group-hover:scale-125 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
-            {/* Pilar Content */}
-            <div className="flex-1 max-w-2xl">
+            {/* Pilar Content - Card Premium */}
+            <div className="flex-1 max-w-3xl">
               <div 
                 key={currentPilarIndex}
-                className="text-center py-8 lg:py-12"
+                className="p-12 lg:p-16 rounded-2xl text-center transition-all duration-300"
                 style={{
+                  backgroundColor: '#FAFAF9',
+                  border: '1px solid #E6E6E6',
                   animation: 'slideInRight 0.4s ease-out',
                 }}
               >
+                {/* Numero Grande */}
                 <div 
-                  className="text-5xl lg:text-6xl font-bold mb-6"
+                  className="text-7xl lg:text-8xl font-bold mb-6"
                   style={{ color: '#EE7501' }}
                 >
                   {pilares[currentPilarIndex].num}
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4" style={{ color: '#1A1A1A' }}>
+                
+                {/* Divisor */}
+                <div className="w-12 h-1 mx-auto mb-8" style={{ backgroundColor: '#EE7501' }} />
+                
+                {/* Titulo */}
+                <h3 className="text-2xl lg:text-3xl font-bold mb-6" style={{ color: '#1A1A1A' }}>
                   {pilares[currentPilarIndex].title}
                 </h3>
-                <p className="text-base lg:text-lg leading-relaxed" style={{ color: '#666666' }}>
+                
+                {/* Descricao */}
+                <p className="text-base lg:text-lg leading-relaxed" style={{ color: '#555555' }}>
                   {pilares[currentPilarIndex].desc}
                 </p>
               </div>
@@ -395,18 +405,18 @@ export default function Ecossistema() {
             {/* Right Arrow */}
             <button
               onClick={nextPilar}
-              className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:scale-110"
+              className="flex-shrink-0 w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110 group"
               style={{ backgroundColor: '#EE7501', color: 'white' }}
-              aria-label="Próximo pilar"
+              aria-label="Proximo pilar"
             >
-              <svg className="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg className="w-6 h-6 lg:w-8 lg:h-8 group-hover:scale-125 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
 
           {/* Dots Navigation */}
-          <div className="flex justify-center gap-3 mt-12">
+          <div className="flex justify-center gap-3 mt-16">
             {pilares.map((_, idx) => (
               <button
                 key={idx}
