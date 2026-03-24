@@ -96,196 +96,195 @@ export default function Numeros() {
         </div>
       </section>
 
-      {/* Métricas com Hierarquia */}
+      {/* Seção Principal com Duas Colunas */}
       <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="max-w-6xl mx-auto">
-          {/* Métrica Principal */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          
+          {/* Coluna Esquerda - Métricas */}
+          <div>
+            {/* Métrica Principal */}
             <div 
-              className={`mb-20 lg:mb-32 text-center metric-fade-in metric-primary ${animateMetrics ? '' : 'opacity-0'}`}
+              className={`mb-16 lg:mb-20 text-center metric-fade-in metric-primary ${animateMetrics ? '' : 'opacity-0'}`}
               style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
             >
               <div 
-                className="text-7xl lg:text-8xl font-bold mb-4"
+                className="text-6xl lg:text-7xl font-bold mb-4"
                 style={{ color: '#EE7501' }}
               >
                 400+
               </div>
-            <h3 className="text-2xl lg:text-3xl font-bold mb-3" style={{ color: '#1A1A1A' }}>
-              Projetos e processos gerenciados
-            </h3>
-            <p className="text-base lg:text-lg max-w-3xl mx-auto" style={{ color: '#666666' }}>
-              Atuação em múltiplos contextos regulatórios e territoriais, consolidando experiência em diferentes tipologias de empreendimento
-            </p>
+              <h3 className="text-xl lg:text-2xl font-bold mb-3" style={{ color: '#1A1A1A' }}>
+                Projetos e processos gerenciados
+              </h3>
+              <p className="text-sm lg:text-base max-w-2xl mx-auto" style={{ color: '#666666' }}>
+                Atuação em múltiplos contextos regulatórios e territoriais
+              </p>
+            </div>
+
+            {/* Métricas Secundárias */}
+            <div className="grid grid-cols-2 gap-6 lg:gap-8 mb-12 lg:mb-16">
+              {/* Secundária 1 */}
+              <div 
+                className={`text-center metric-fade-in metric-secondary-1 ${animateMetrics ? '' : 'opacity-0'}`}
+                style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
+              >
+                <div 
+                  className="text-4xl lg:text-5xl font-bold mb-2"
+                  style={{ color: '#861720' }}
+                >
+                  24
+                </div>
+                <h3 className="text-base lg:text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>
+                  Estados
+                </h3>
+                <p className="text-xs lg:text-sm" style={{ color: '#666666' }}>
+                  Atuação comprovada
+                </p>
+              </div>
+
+              {/* Secundária 2 */}
+              <div 
+                className={`text-center metric-fade-in metric-secondary-2 ${animateMetrics ? '' : 'opacity-0'}`}
+                style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
+              >
+                <div 
+                  className="text-4xl lg:text-5xl font-bold mb-2"
+                  style={{ color: '#2C7EB3' }}
+                >
+                  10
+                </div>
+                <h3 className="text-base lg:text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>
+                  Anos
+                </h3>
+                <p className="text-xs lg:text-sm" style={{ color: '#666666' }}>
+                  De experiência
+                </p>
+              </div>
+            </div>
+
+            {/* Métricas Complementares */}
+            <div className="grid grid-cols-2 gap-6 lg:gap-8">
+              {/* Complementar 1 */}
+              <div 
+                className={`text-center metric-fade-in metric-complementary-1 ${animateMetrics ? '' : 'opacity-0'}`}
+                style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
+              >
+                <div 
+                  className="text-3xl lg:text-4xl font-bold mb-1"
+                  style={{ color: '#EE7501' }}
+                >
+                  4
+                </div>
+                <h3 className="text-sm lg:text-base font-bold mb-1" style={{ color: '#1A1A1A' }}>
+                  Empresas
+                </h3>
+                <p className="text-xs" style={{ color: '#666666' }}>
+                  Ecossistema
+                </p>
+              </div>
+
+              {/* Complementar 2 */}
+              <div 
+                className={`text-center metric-fade-in metric-complementary-2 ${animateMetrics ? '' : 'opacity-0'}`}
+                style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
+              >
+                <div 
+                  className="text-3xl lg:text-4xl font-bold mb-1"
+                  style={{ color: '#861720' }}
+                >
+                  3
+                </div>
+                <h3 className="text-sm lg:text-base font-bold mb-1" style={{ color: '#1A1A1A' }}>
+                  Escritórios
+                </h3>
+                <p className="text-xs" style={{ color: '#666666' }}>
+                  Estratégicos
+                </p>
+              </div>
+
+              {/* Complementar 3 */}
+              <div 
+                className={`text-center metric-fade-in metric-complementary-3 ${animateMetrics ? '' : 'opacity-0'}`}
+                style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
+              >
+                <div 
+                  className="text-3xl lg:text-4xl font-bold mb-1"
+                  style={{ color: '#2C7EB3' }}
+                >
+                  120+
+                </div>
+                <h3 className="text-sm lg:text-base font-bold mb-1" style={{ color: '#1A1A1A' }}>
+                  Profissionais
+                </h3>
+                <p className="text-xs" style={{ color: '#666666' }}>
+                  Envolvidos
+                </p>
+              </div>
+
+              {/* Complementar 4 */}
+              <div 
+                className={`text-center metric-fade-in metric-complementary-4 ${animateMetrics ? '' : 'opacity-0'}`}
+                style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
+              >
+                <div 
+                  className="text-3xl lg:text-4xl font-bold mb-1"
+                  style={{ color: '#FFD700' }}
+                >
+                  5K+
+                </div>
+                <h3 className="text-sm lg:text-base font-bold mb-1" style={{ color: '#1A1A1A' }}>
+                  Participantes
+                </h3>
+                <p className="text-xs" style={{ color: '#666666' }}>
+                  Educação
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Métricas Secundárias */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20 lg:mb-32">
-            {/* Secundária 1 */}
-            <div 
-              className={`text-center metric-fade-in metric-secondary-1 ${animateMetrics ? '' : 'opacity-0'}`}
-              style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
-            >
-            <div 
-              className="text-5xl lg:text-6xl font-bold mb-3"
-              style={{ color: '#861720' }}
-            >
-              24
-            </div>
-            <h3 className="text-xl lg:text-2xl font-bold mb-2" style={{ color: '#1A1A1A' }}>
-              Estados com atuação comprovada
-            </h3>
-              <p className="text-sm lg:text-base" style={{ color: '#666666' }}>
-                Presença nacional consolidada em múltiplos territórios
-              </p>
-            </div>
-
-            {/* Secundária 2 */}
-            <div 
-              className={`text-center metric-fade-in metric-secondary-2 ${animateMetrics ? '' : 'opacity-0'}`}
-              style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
-            >
-              <div 
-                className="text-5xl lg:text-6xl font-bold mb-3"
-                style={{ color: '#2C7EB3' }}
-              >
-                10
-              </div>
-              <h3 className="text-xl lg:text-2xl font-bold mb-2" style={{ color: '#1A1A1A' }}>
-                Anos de experiência no mercado
-              </h3>
-              <p className="text-sm lg:text-base" style={{ color: '#666666' }}>
-                Trajetória de crescimento e consolidação institucional
-              </p>
-            </div>
-          </div>
-
-          {/* Métricas Complementares */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {/* Complementar 1 */}
-            <div 
-              className={`text-center metric-fade-in metric-complementary-1 ${animateMetrics ? '' : 'opacity-0'}`}
-              style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
-            >
-              <div 
-                className="text-4xl lg:text-5xl font-bold mb-2"
-                style={{ color: '#EE7501' }}
-              >
-                4
-              </div>
-              <h3 className="text-lg lg:text-xl font-bold mb-1" style={{ color: '#1A1A1A' }}>
-                Empresas no ecossistema
-              </h3>
-              <p className="text-xs lg:text-sm" style={{ color: '#666666' }}>
-                Estrutura integrada de especialidades
-              </p>
-            </div>
-
-            {/* Complementar 2 */}
-            <div 
-              className={`text-center metric-fade-in metric-complementary-2 ${animateMetrics ? '' : 'opacity-0'}`}
-              style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
-            >
-              <div 
-                className="text-4xl lg:text-5xl font-bold mb-2"
-                style={{ color: '#861720' }}
-              >
-                3
-              </div>
-              <h3 className="text-lg lg:text-xl font-bold mb-1" style={{ color: '#1A1A1A' }}>
-                Escritórios estratégicos
-              </h3>
-              <p className="text-xs lg:text-sm" style={{ color: '#666666' }}>
-                Capilaridade operacional nacional
-              </p>
-            </div>
-
-            {/* Complementar 3 */}
-            <div 
-              className={`text-center metric-fade-in metric-complementary-3 ${animateMetrics ? '' : 'opacity-0'}`}
-              style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
-            >
-              <div 
-                className="text-4xl lg:text-5xl font-bold mb-2"
-                style={{ color: '#2C7EB3' }}
-              >
-                120+
-              </div>
-              <h3 className="text-lg lg:text-xl font-bold mb-1" style={{ color: '#1A1A1A' }}>
-                Profissionais envolvidos
-              </h3>
-              <p className="text-xs lg:text-sm" style={{ color: '#666666' }}>
-                Capacidade técnica consolidada
-              </p>
-            </div>
-
-            {/* Complementar 4 */}
-            <div 
-              className={`text-center metric-fade-in metric-complementary-4 ${animateMetrics ? '' : 'opacity-0'}`}
-              style={{ animationPlayState: animateMetrics ? 'running' : 'paused', animationDelay: '0.7s' }}
-            >
-              <div 
-                className="text-4xl lg:text-5xl font-bold mb-2"
-                style={{ color: '#FFD700' }}
-              >
-                5.000+
-              </div>
-              <h3 className="text-lg lg:text-xl font-bold mb-1" style={{ color: '#1A1A1A' }}>
-                Participantes em educações patrimoniais
-              </h3>
-              <p className="text-xs lg:text-sm" style={{ color: '#666666' }}>
-                Impacto social e cultural consolidado
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Distribuição por Segmento - Seção Escura */}
-      <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#2A2A2A' }}>
-        <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
+          {/* Coluna Direita - Diversidade Setorial */}
+          <div style={{ backgroundColor: '#2A2A2A', borderRadius: '12px', padding: '32px' }}>
+            <h2 className="text-2xl lg:text-3xl font-bold mb-3" style={{ color: '#FFFFFF' }}>
               Diversidade setorial
             </h2>
-            <p className="text-base lg:text-lg" style={{ color: '#CCCCCC' }}>
-              A atuação do Grupo Arqueo abrange setores estratégicos da infraestrutura e do desenvolvimento nacional, com experiência acumulada em múltiplas tipologias de empreendimento.
+            <p className="text-sm lg:text-base mb-8" style={{ color: '#CCCCCC' }}>
+              Experiência em múltiplas tipologias de empreendimento
             </p>
-          </div>
 
-          {/* Segmentos */}
-          <div className="space-y-6 lg:space-y-8">
-            {segmentos.map((seg, idx) => (
-              <div 
-                key={idx}
-                className={`segment-bar ${animateMetrics ? '' : 'opacity-0'}`}
-                style={{ animationDelay: `${0.7 + idx * 0.1}s`, animationPlayState: animateMetrics ? 'running' : 'paused' }}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <h4 className="text-base lg:text-lg font-semibold" style={{ color: '#FFFFFF' }}>
-                    {seg.name}
-                  </h4>
-                  <span className="text-lg lg:text-xl font-bold" style={{ color: '#EE7501' }}>
-                    {seg.count}
-                  </span>
-                </div>
+            {/* Segmentos */}
+            <div className="space-y-4">
+              {segmentos.map((seg, idx) => (
                 <div 
-                  className="h-2 rounded-full"
-                  style={{ 
-                    backgroundColor: '#444444',
-                    overflow: 'hidden'
-                  }}
+                  key={idx}
+                  className={`segment-bar ${animateMetrics ? '' : 'opacity-0'}`}
+                  style={{ animationDelay: `${0.7 + idx * 0.1}s`, animationPlayState: animateMetrics ? 'running' : 'paused' }}
                 >
+                  <div className="flex items-center justify-between mb-1">
+                    <h4 className="text-xs lg:text-sm font-semibold" style={{ color: '#FFFFFF' }}>
+                      {seg.name}
+                    </h4>
+                    <span className="text-sm lg:text-base font-bold" style={{ color: '#EE7501' }}>
+                      {seg.count}
+                    </span>
+                  </div>
                   <div 
-                    className="h-full rounded-full transition-all duration-1000 ease-out"
+                    className="h-1.5 rounded-full"
                     style={{ 
-                      width: animateMetrics ? `${seg.percentage}%` : '0%',
-                      backgroundColor: '#EE7501'
+                      backgroundColor: '#444444',
+                      overflow: 'hidden'
                     }}
-                  />
+                  >
+                    <div 
+                      className="h-full rounded-full transition-all duration-1000 ease-out"
+                      style={{ 
+                        width: animateMetrics ? `${seg.percentage}%` : '0%',
+                        backgroundColor: '#EE7501'
+                      }}
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
