@@ -67,7 +67,14 @@ export default function Parceiros() {
   ];
 
   return (
-    <PortfolioLayout chapterNum="11" chapterTitle="Nossos Parceiros">
+    <PortfolioLayout
+      chapterNum="11"
+      chapterTitle="Nossos Parceiros"
+      prevPath="/numeros-territorio"
+      prevLabel="Números & Território"
+      nextPath="/cases"
+      nextLabel="Cases"
+    >
       {/* Hero Section */}
       <section className="relative py-20 lg:py-28" style={{ backgroundColor: '#F5F5F5' }}>
         <div className="container">
