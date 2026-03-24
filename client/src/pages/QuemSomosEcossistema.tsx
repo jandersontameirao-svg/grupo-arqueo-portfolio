@@ -286,45 +286,18 @@ export default function QuemSomosEcossistema() {
           </div>
         </section>
 
-        {/* SEÇÃO 1B: QUEM SOMOS - Hero de Conteúdo */}
+        {/* SEÇÃO 1B: QUEM SOMOS + TRAJETÓRIA - Hero Mesclado */}
         <section className="py-16 lg:py-24 px-4 lg:px-8 relative overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
           {/* Background sutil */}
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #861720 0%, transparent 50%), radial-gradient(circle at 80% 50%, #EE7501 0%, transparent 50%)' }} />
           
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="max-w-2xl">
-              {/* Coluna esquerda - Texto */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: '#EE7501' }}>
-                  — QUEM SOMOS
-                </p>
-                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-6" style={{ color: '#1A1A1A' }}>
-                  Competência técnica,<br />
-                  <span style={{ color: '#861720' }}>inovação</span> e <span style={{ color: '#EE7501' }}>gestão estratégica</span>
-                </h2>
-                <p className="text-lg leading-relaxed mb-8" style={{ color: '#555555' }}>
-                  Há uma década, o Grupo Arqueo une competência técnica, inovação tecnológica e gestão estratégica para oferecer soluções completas em licenciamento sociocultural no Brasil.
-                </p>
-
-              </motion.div>
+            {/* Título Principal */}
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
+                Uma década de <span style={{ color: '#EE7501' }}>crescimento</span>
+              </h2>
             </div>
-          </div>
-        </section>
-
-        {/* SEÇÃO 2: TIMELINE */}
-        <section className="py-16 lg:py-24 px-4 lg:px-8" style={{ backgroundColor: '#F8F7F5' }}>
-          <div className="max-w-7xl mx-auto">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: '#999' }}>
-              — TRAJETÓRIA
-            </p>
-            <h3 className="text-3xl lg:text-4xl font-bold mb-16" style={{ color: '#1A1A1A' }}>
-              Uma década de <span style={{ color: '#EE7501' }}>crescimento</span>
-            </h3>
 
             {/* Timeline com linha horizontal */}
             <div className="relative">
