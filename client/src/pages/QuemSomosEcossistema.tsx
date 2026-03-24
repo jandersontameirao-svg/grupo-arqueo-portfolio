@@ -522,9 +522,9 @@ export default function QuemSomosEcossistema() {
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
-                  top: '5%',
+                  top: '22.5%',
                   left: '50%',
-                  transform: 'translate(-50%, 0)',
+                  transform: 'translate(-50%, -50%)',
                 }}
               >
                 <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
@@ -541,9 +541,9 @@ export default function QuemSomosEcossistema() {
                 transition={{ duration: 0.7, delay: 0.35 }}
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
-                  top: '42%',
-                  right: '3%',
-                  transform: 'translateY(-50%)',
+                  top: '50%',
+                  left: '72%',
+                  transform: 'translate(-50%, -50%)',
                 }}
               >
                 <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
@@ -560,9 +560,9 @@ export default function QuemSomosEcossistema() {
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
-                  bottom: '3%',
+                  top: '77.5%',
                   left: '50%',
-                  transform: 'translateX(-50%)',
+                  transform: 'translate(-50%, -50%)',
                 }}
               >
                 <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
@@ -579,9 +579,9 @@ export default function QuemSomosEcossistema() {
                 transition={{ duration: 0.7, delay: 0.45 }}
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
-                  top: '42%',
-                  left: '3%',
-                  transform: 'translateY(-50%)',
+                  top: '50%',
+                  left: '28%',
+                  transform: 'translate(-50%, -50%)',
                 }}
               >
                 <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
