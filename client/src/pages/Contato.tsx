@@ -1,11 +1,13 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
-import { Mail, Phone, MapPin, Globe, Linkedin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Linkedin, Instagram, MessageCircle, X } from "lucide-react";
+import { useState } from "react";
 
 /**
  * CONTATO — Página 10 (Final)
  * Design: Hero section similar to Home with image background + gradient overlay
+ * Botões flutuantes: WhatsApp, E-mail, Telefone, LinkedIn
  */
 
 const offices = [
@@ -26,13 +28,46 @@ const offices = [
   },
 ];
 
+const floatingButtons = [
+  {
+    label: "WhatsApp",
+    icon: MessageCircle,
+    href: "https://wa.me/5561999999999",
+    bg: "#25D366",
+    hoverBg: "#1EBE57",
+  },
+  {
+    label: "E-mail",
+    icon: Mail,
+    href: "mailto:contato@grupoarqueo.com.br",
+    bg: "#EE7501",
+    hoverBg: "#D46800",
+  },
+  {
+    label: "Telefone",
+    icon: Phone,
+    href: "tel:+556131421040",
+    bg: "#2C7EB3",
+    hoverBg: "#246D9E",
+  },
+  {
+    label: "LinkedIn",
+    icon: Linkedin,
+    href: "https://www.linkedin.com/company/grupoarqueo",
+    bg: "#0A66C2",
+    hoverBg: "#0855A1",
+  },
+];
+
 export default function Contato() {
+  const [fabOpen, setFabOpen] = useState(false);
+
   return (
     <PortfolioLayout
       chapterNum="10"
       chapterTitle="Contato"
-      prevPath="/territorio"
-      prevLabel="Presenca Territorial"
+      prevPath="/parceiros"
+      prevLabel="Nossos Parceiros"
     >
       {/* Hero Section — Similar to Home */}
       <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">
@@ -194,6 +229,65 @@ export default function Contato() {
           </motion.div>
         </div>
       </section>
+
+      {/* ═══════════════════ BOTÕES FLUTUANTES ═══════════════════ */}
+      <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-3">
+        {/* Botões expandidos */}
+        <AnimatePresence>
+          {fabOpen && floatingButtons.map((btn, i) => (
+            <motion.a
+              key={btn.label}
+              href={btn.href}
+              target={btn.href.startsWith("http") ? "_blank" : undefined}
+              rel={btn.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              initial={{ opacity: 0, y: 20, scale: 0.6 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, scale: 0.6 }}
+              transition={{ duration: 0.25, delay: i * 0.06 }}
+              className="flex items-center gap-3 group"
+            >
+              {/* Label */}
+              <motion.span
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 10 }}
+                transition={{ duration: 0.2, delay: i * 0.06 + 0.1 }}
+                className="px-3 py-1.5 text-xs font-semibold tracking-wide text-white rounded-md shadow-lg whitespace-nowrap"
+                style={{ backgroundColor: 'rgba(42,42,42,0.9)', backdropFilter: 'blur(8px)' }}
+              >
+                {btn.label}
+              </motion.span>
+              {/* Ícone circular */}
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 hover:scale-110"
+                style={{ backgroundColor: btn.bg }}
+              >
+                <btn.icon className="w-5 h-5 text-white" />
+              </div>
+            </motion.a>
+          ))}
+        </AnimatePresence>
+
+        {/* Botão FAB principal */}
+        <motion.button
+          onClick={() => setFabOpen(!fabOpen)}
+          className="w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 hover:shadow-2xl"
+          style={{ backgroundColor: fabOpen ? '#2A2A2A' : '#EE7501' }}
+          whileTap={{ scale: 0.92 }}
+          aria-label="Abrir canais de contato"
+        >
+          <motion.div
+            animate={{ rotate: fabOpen ? 90 : 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            {fabOpen ? (
+              <X className="w-6 h-6 text-white" />
+            ) : (
+              <MessageCircle className="w-6 h-6 text-white" />
+            )}
+          </motion.div>
+        </motion.button>
+      </div>
     </PortfolioLayout>
   );
 }
