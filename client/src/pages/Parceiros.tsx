@@ -136,8 +136,8 @@ export default function Parceiros() {
                 <div
                   className="rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer"
                   style={{
-                    width: '110px',
-                    height: '110px',
+                    width: '165px',
+                    height: '165px',
                     backgroundColor: '#FFFFFF',
                     border: '1px solid #E8E8E8',
                     boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
