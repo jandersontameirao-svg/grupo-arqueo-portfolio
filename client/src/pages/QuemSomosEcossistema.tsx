@@ -557,7 +557,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Team 2 - Arqueóloga - TOP CENTER-RIGHT */}
-              <div className="absolute" style={{ zIndex: 7, top: '8%', left: '38%' }}>
+              <div className="absolute" style={{ zIndex: 7, top: '5%', right: '15%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 142, height: 142, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp" alt="Arqueóloga" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
