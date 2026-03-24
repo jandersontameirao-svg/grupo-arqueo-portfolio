@@ -517,41 +517,42 @@ export default function Ecossistema() {
           </div>
 
           {/* Layout Assimetrico - Cards com Fotos */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-            {/* Card 1 - Grande (esquerda superior) */}
-            <div className="lg:col-span-6 lg:row-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Card 1 - Grande com Borda Laranja */}
+            <div className="lg:row-span-2">
               <div
-                className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                className="h-full rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-l-8"
                 style={{
-                  backgroundColor: "#FAFAF9",
-                  border: "1px solid #E6E6E6",
+                  borderLeftColor: "#EE7501",
+                  backgroundColor: "#FFFFFF",
                 }}
               >
                 {/* Foto */}
-                <div className="w-full h-64 lg:h-80 bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center">
-                  <div className="text-center">
+                <div className="w-full h-72 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-10" style={{ backgroundColor: "#EE7501" }} />
+                  <div className="text-center relative z-10">
                     <div
-                      className="text-6xl font-bold"
+                      className="text-7xl font-bold"
                       style={{ color: "#EE7501" }}
                     >
                       01
                     </div>
-                    <p className="text-sm mt-2" style={{ color: "#999999" }}>
+                    <p className="text-xs mt-3 tracking-widest uppercase" style={{ color: "#999999" }}>
                       Espaco para foto
                     </p>
                   </div>
                 </div>
                 {/* Conteudo */}
-                <div className="p-8">
+                <div className="p-10">
                   <h3
-                    className="text-2xl font-bold mb-3"
+                    className="text-2xl font-bold mb-4"
                     style={{ color: "#1A1A1A" }}
                   >
                     {pilares[0].title}
                   </h3>
                   <p
                     className="text-base leading-relaxed"
-                    style={{ color: "#555555" }}
+                    style={{ color: "#666666" }}
                   >
                     {pilares[0].desc}
                   </p>
@@ -559,40 +560,41 @@ export default function Ecossistema() {
               </div>
             </div>
 
-            {/* Card 2 - Medio (direita superior) */}
-            <div className="lg:col-span-6">
+            {/* Card 2 - Vermelho Vinho */}
+            <div>
               <div
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-l-8"
                 style={{
-                  backgroundColor: "#FAFAF9",
-                  border: "1px solid #E6E6E6",
+                  borderLeftColor: "#861720",
+                  backgroundColor: "#FFFFFF",
                 }}
               >
                 {/* Foto */}
-                <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center">
-                  <div className="text-center">
+                <div className="w-full h-56 bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-10" style={{ backgroundColor: "#861720" }} />
+                  <div className="text-center relative z-10">
                     <div
-                      className="text-5xl font-bold"
-                      style={{ color: "#2C7EB3" }}
+                      className="text-6xl font-bold"
+                      style={{ color: "#861720" }}
                     >
                       02
                     </div>
-                    <p className="text-sm mt-2" style={{ color: "#999999" }}>
+                    <p className="text-xs mt-3 tracking-widest uppercase" style={{ color: "#999999" }}>
                       Espaco para foto
                     </p>
                   </div>
                 </div>
                 {/* Conteudo */}
-                <div className="p-6">
+                <div className="p-8">
                   <h3
-                    className="text-xl font-bold mb-2"
+                    className="text-xl font-bold mb-3"
                     style={{ color: "#1A1A1A" }}
                   >
                     {pilares[1].title}
                   </h3>
                   <p
                     className="text-sm leading-relaxed"
-                    style={{ color: "#555555" }}
+                    style={{ color: "#666666" }}
                   >
                     {pilares[1].desc}
                   </p>
@@ -600,40 +602,41 @@ export default function Ecossistema() {
               </div>
             </div>
 
-            {/* Card 3 - Medio (direita meio) */}
-            <div className="lg:col-span-6">
+            {/* Card 3 - Azul */}
+            <div>
               <div
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-l-8"
                 style={{
-                  backgroundColor: "#FAFAF9",
-                  border: "1px solid #E6E6E6",
+                  borderLeftColor: "#2C7EB3",
+                  backgroundColor: "#FFFFFF",
                 }}
               >
                 {/* Foto */}
-                <div className="w-full h-48 bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center">
-                  <div className="text-center">
+                <div className="w-full h-56 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-10" style={{ backgroundColor: "#2C7EB3" }} />
+                  <div className="text-center relative z-10">
                     <div
-                      className="text-5xl font-bold"
-                      style={{ color: "#861720" }}
+                      className="text-6xl font-bold"
+                      style={{ color: "#2C7EB3" }}
                     >
                       03
                     </div>
-                    <p className="text-sm mt-2" style={{ color: "#999999" }}>
+                    <p className="text-xs mt-3 tracking-widest uppercase" style={{ color: "#999999" }}>
                       Espaco para foto
                     </p>
                   </div>
                 </div>
                 {/* Conteudo */}
-                <div className="p-6">
+                <div className="p-8">
                   <h3
-                    className="text-xl font-bold mb-2"
+                    className="text-xl font-bold mb-3"
                     style={{ color: "#1A1A1A" }}
                   >
                     {pilares[2].title}
                   </h3>
                   <p
                     className="text-sm leading-relaxed"
-                    style={{ color: "#555555" }}
+                    style={{ color: "#666666" }}
                   >
                     {pilares[2].desc}
                   </p>
@@ -641,40 +644,41 @@ export default function Ecossistema() {
               </div>
             </div>
 
-            {/* Card 4 - Pequeno (esquerda inferior) */}
-            <div className="lg:col-span-6">
+            {/* Card 4 - Amarelo Ouro */}
+            <div>
               <div
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-l-8"
                 style={{
-                  backgroundColor: "#FAFAF9",
-                  border: "1px solid #E6E6E6",
+                  borderLeftColor: "#FFD700",
+                  backgroundColor: "#FFFFFF",
                 }}
               >
                 {/* Foto */}
-                <div className="w-full h-40 bg-gradient-to-br from-yellow-100 to-yellow-50 flex items-center justify-center">
-                  <div className="text-center">
+                <div className="w-full h-56 bg-gradient-to-br from-yellow-50 to-yellow-100 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-10" style={{ backgroundColor: "#FFD700" }} />
+                  <div className="text-center relative z-10">
                     <div
-                      className="text-4xl font-bold"
-                      style={{ color: "#EE7501" }}
+                      className="text-6xl font-bold"
+                      style={{ color: "#FFD700" }}
                     >
                       04
                     </div>
-                    <p className="text-sm mt-2" style={{ color: "#999999" }}>
+                    <p className="text-xs mt-3 tracking-widest uppercase" style={{ color: "#999999" }}>
                       Espaco para foto
                     </p>
                   </div>
                 </div>
                 {/* Conteudo */}
-                <div className="p-6">
+                <div className="p-8">
                   <h3
-                    className="text-lg font-bold mb-2"
+                    className="text-xl font-bold mb-3"
                     style={{ color: "#1A1A1A" }}
                   >
                     {pilares[3].title}
                   </h3>
                   <p
                     className="text-sm leading-relaxed"
-                    style={{ color: "#555555" }}
+                    style={{ color: "#666666" }}
                   >
                     {pilares[3].desc}
                   </p>
