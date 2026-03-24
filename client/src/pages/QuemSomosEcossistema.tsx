@@ -477,120 +477,58 @@ export default function QuemSomosEcossistema() {
                 boxShadow: '0 30px 90px rgba(134, 23, 32, 0.35)',
               }}
             >
-              {/* Orbital rings via SVG */}
+              {/* Orbital rings and team photos - all inside SVG for perfect alignment */}
               <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" style={{ zIndex: 1 }}>
                 {/* Orbital rings */}
                 <circle cx="500" cy="400" r="160" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
                 <circle cx="500" cy="400" r="280" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1.5" />
+
+                {/* CEO - center of inner circle */}
+                <defs>
+                  <clipPath id="ceoClip"><circle cx="500" cy="400" r="75" /></clipPath>
+                  <clipPath id="exec1Clip"><circle cx="500" cy="180" r="45" /></clipPath>
+                  <clipPath id="exec2Clip"><circle cx="720" cy="400" r="45" /></clipPath>
+                  <clipPath id="exec3Clip"><circle cx="500" cy="620" r="45" /></clipPath>
+                  <clipPath id="exec4Clip"><circle cx="280" cy="400" r="45" /></clipPath>
+                </defs>
+
+                {/* CEO photo circle */}
+                <circle cx="500" cy="400" r="80" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="4" />
+                <circle cx="500" cy="400" r="88" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="8" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp" x="425" y="325" width="150" height="150" clipPath="url(#ceoClip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="500" y="500" textAnchor="middle" fill="white" fontWeight="bold" fontSize="16" letterSpacing="2">CEO</text>
+
+                {/* Executive 1 - Top - Diretora Administrativa e Financeira (between circles at top) */}
+                <circle cx="500" cy="180" r="50" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="3" />
+                <circle cx="500" cy="180" r="56" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="6" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" x="455" y="135" width="90" height="90" clipPath="url(#exec1Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="500" y="250" textAnchor="middle" fill="white" fontWeight="bold" fontSize="12" letterSpacing="1">
+                  <tspan x="500" dy="0">Diretora</tspan>
+                  <tspan x="500" dy="15">Administrativa</tspan>
+                  <tspan x="500" dy="15">e Financeira</tspan>
+                </text>
+
+                {/* Executive 2 - Right - CSO (between circles at right) */}
+                <circle cx="720" cy="400" r="50" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="3" />
+                <circle cx="720" cy="400" r="56" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="6" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" x="675" y="355" width="90" height="90" clipPath="url(#exec2Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="720" y="470" textAnchor="middle" fill="white" fontWeight="bold" fontSize="12" letterSpacing="1">CSO</text>
+
+                {/* Executive 3 - Bottom - Diretor de Estratégia (between circles at bottom) */}
+                <circle cx="500" cy="620" r="50" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="3" />
+                <circle cx="500" cy="620" r="56" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="6" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" x="455" y="575" width="90" height="90" clipPath="url(#exec3Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="500" y="690" textAnchor="middle" fill="white" fontWeight="bold" fontSize="12" letterSpacing="1">
+                  <tspan x="500" dy="0">Diretor de Estratégia,</tspan>
+                  <tspan x="500" dy="15">Contencioso e Qualidade</tspan>
+                </text>
+
+                {/* Executive 4 - Left - Tesoureira (between circles at left) */}
+                <circle cx="280" cy="400" r="50" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="3" />
+                <circle cx="280" cy="400" r="56" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="6" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" x="235" y="355" width="90" height="90" clipPath="url(#exec4Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="280" y="470" textAnchor="middle" fill="white" fontWeight="bold" fontSize="12" letterSpacing="1">Tesoureira</text>
               </svg>
-
-              {/* Center nucleus - CEO Photo - LARGE */}
-              <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="absolute z-20"
-                style={{
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                }}
-              >
-                <div className="relative">
-                  <div
-                    className="w-40 h-40 rounded-full overflow-hidden shadow-2xl"
-                    style={{
-                      border: '4px solid rgba(255,255,255,0.9)',
-                      boxShadow: '0 0 0 8px rgba(255,255,255,0.15), 0 20px 60px rgba(0,0,0,0.4)',
-                    }}
-                  >
-                    <img
-                      src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp"
-                      alt="CEO"
-                      className="w-full h-full object-cover"
-                      style={{ filter: 'brightness(1.05) contrast(1.1)' }}
-                    />
-                  </div>
-                  <p className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-white font-bold text-center text-sm tracking-wider whitespace-nowrap">CEO</p>
-                </div>
-              </motion.div>
-
-              {/* Executive 1 - Top - Diretora Administrativa e Financeira */}
-              <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-                className="absolute z-10 flex flex-col items-center justify-center"
-                style={{
-                  top: '22.5%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                }}
-              >
-                <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" alt="Diretora Administrativa e Financeira" className="w-full h-full object-cover" />
-                </div>
-                <p className="mt-2 text-white font-bold text-center text-xs tracking-wider leading-tight" style={{ maxWidth: '110px' }}>Diretora Administrativa e Financeira</p>
-              </motion.div>
-
-              {/* Executive 2 - Right - CSO */}
-              <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.35 }}
-                className="absolute z-10 flex flex-col items-center justify-center"
-                style={{
-                  top: '50%',
-                  left: '72%',
-                  transform: 'translate(-50%, -50%)',
-                }}
-              >
-                <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" alt="CSO" className="w-full h-full object-cover" />
-                </div>
-                <p className="mt-2 text-white font-bold text-center text-xs tracking-wider">CSO</p>
-              </motion.div>
-
-              {/* Executive 3 - Bottom - Diretor de Estratégia, Contencioso e Qualidade */}
-              <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.4 }}
-                className="absolute z-10 flex flex-col items-center justify-center"
-                style={{
-                  top: '77.5%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                }}
-              >
-                <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" alt="Diretor de Estratégia, Contencioso e Qualidade" className="w-full h-full object-cover" />
-                </div>
-                <p className="mt-2 text-white font-bold text-center text-xs tracking-wider leading-tight" style={{ maxWidth: '110px' }}>Diretor de Estratégia, Contencioso e Qualidade</p>
-              </motion.div>
-
-              {/* Executive 4 - Left - Tesoureira */}
-              <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.45 }}
-                className="absolute z-10 flex flex-col items-center justify-center"
-                style={{
-                  top: '50%',
-                  left: '28%',
-                  transform: 'translate(-50%, -50%)',
-                }}
-              >
-                <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" alt="Tesoureira" className="w-full h-full object-cover" />
-                </div>
-                <p className="mt-2 text-white font-bold text-center text-xs tracking-wider">Tesoureira</p>
-              </motion.div>
 
             </motion.div>
           </div>
