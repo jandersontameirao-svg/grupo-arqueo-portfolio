@@ -496,123 +496,123 @@ export default function QuemSomosEcossistema() {
 
               {/* CEO - LARGE BUBBLE - CENTER */}
               <div className="absolute" style={{ zIndex: 10, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-2xl" style={{ width: 200, height: 200, border: '5px solid rgba(255,255,255,0.5)', boxShadow: '0 0 0 10px rgba(255,255,255,0.15), 0 0 0 20px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.3)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp" alt="CEO" className="w-full h-full object-cover" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_10px_rgba(255,255,255,0.25),0_0_0_20px_rgba(255,255,255,0.12),0_20px_60px_rgba(0,0,0,0.4)]" style={{ width: 200, height: 200, border: '5px solid rgba(255,255,255,0.5)', boxShadow: '0 0 0 10px rgba(255,255,255,0.15), 0 0 0 20px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.3)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp" alt="CEO" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <div className="mt-3 bg-white/20 backdrop-blur-sm px-5 py-1.5 rounded-full border border-white/30">
-                    <span className="text-white font-bold text-sm tracking-widest">CEO</span>
+                  <div className="mt-3 bg-white/20 backdrop-blur-sm px-5 py-1.5 rounded-full border border-white/30 transition-all duration-300 group-hover:bg-white/40 group-hover:border-white/60">
+                    <span className="text-white font-bold text-sm tracking-widest transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">CEO</span>
                   </div>
                 </div>
               </div>
 
               {/* Exec 1 - Diretora Administrativa - TOP LEFT */}
               <div className="absolute" style={{ zIndex: 8, top: '8%', left: '15%' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-xl" style={{ width: 140, height: 140, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" alt="Diretora Administrativa" className="w-full h-full object-cover" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 140, height: 140, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" alt="Diretora Administrativa" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg">Diretora Administrativa<br/>e Financeira</span>
+                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Diretora Administrativa<br/>e Financeira</span>
                 </div>
               </div>
 
               {/* Exec 2 - CSO - TOP RIGHT */}
               <div className="absolute" style={{ zIndex: 8, top: '5%', right: '20%' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-xl" style={{ width: 130, height: 130, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" alt="CSO" className="w-full h-full object-cover" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 130, height: 130, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" alt="CSO" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg">CSO</span>
+                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">CSO</span>
                 </div>
               </div>
 
               {/* Exec 3 - Diretor de Estratégia - BOTTOM LEFT */}
               <div className="absolute" style={{ zIndex: 8, bottom: '10%', left: '8%' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-xl" style={{ width: 135, height: 135, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" alt="Diretor de Estratégia" className="w-full h-full object-cover" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 135, height: 135, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" alt="Diretor de Estratégia" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg">Diretor de Estratégia,<br/>Contencioso e Qualidade</span>
+                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Diretor de Estratégia,<br/>Contencioso e Qualidade</span>
                 </div>
               </div>
 
               {/* Exec 4 - Tesoureira - RIGHT MIDDLE */}
               <div className="absolute" style={{ zIndex: 8, top: '38%', right: '5%' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-xl" style={{ width: 130, height: 130, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" alt="Tesoureira" className="w-full h-full object-cover" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 130, height: 130, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" alt="Tesoureira" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg">Tesoureira</span>
+                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Tesoureira</span>
                 </div>
               </div>
 
               {/* Team 1 - Arqueólogo - LEFT MIDDLE */}
               <div className="absolute" style={{ zIndex: 7, top: '35%', left: '4%' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 100, height: 100, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp" alt="Arqueólogo" className="w-full h-full object-cover" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 100, height: 100, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp" alt="Arqueólogo" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg">Arqueólogo</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Arqueólogo</span>
                 </div>
               </div>
 
               {/* Team 2 - Arqueóloga - TOP CENTER-RIGHT */}
               <div className="absolute" style={{ zIndex: 7, top: '12%', left: '42%' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 95, height: 95, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp" alt="Arqueóloga" className="w-full h-full object-cover" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 95, height: 95, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp" alt="Arqueóloga" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg">Arqueóloga</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Arqueóloga</span>
                 </div>
               </div>
 
               {/* Team 3 - Coord. Pesquisa - BOTTOM CENTER */}
               <div className="absolute" style={{ zIndex: 7, bottom: '5%', left: '38%' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 100, height: 100, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp" alt="Coord. Pesquisa" className="w-full h-full object-cover" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 100, height: 100, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp" alt="Coord. Pesquisa" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg">Coord. de Pesquisa<br/>e Licenciamento</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Coord. de Pesquisa<br/>e Licenciamento</span>
                 </div>
               </div>
 
               {/* Team 4 - Gerente de Projetos - BOTTOM RIGHT */}
               <div className="absolute" style={{ zIndex: 7, bottom: '12%', right: '15%' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 120, height: 120, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/643-RIC_3179_73874ff3.webp" alt="Gerente de Projetos" className="w-full h-full object-cover object-top" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 120, height: 120, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/643-RIC_3179_73874ff3.webp" alt="Gerente de Projetos" className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg">Gerente de Projetos</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Gerente de Projetos</span>
                 </div>
               </div>
 
               {/* Team 5 - Analista de Geoprocessamento - TOP FAR RIGHT */}
               <div className="absolute" style={{ zIndex: 7, top: '15%', right: '5%' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 85, height: 85, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp" alt="Analista de Geoprocessamento" className="w-full h-full object-cover" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 85, height: 85, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp" alt="Analista de Geoprocessamento" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg">Analista de<br/>Geoprocessamento</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Analista de<br/>Geoprocessamento</span>
                 </div>
               </div>
 
               {/* Team 6 - Assessor Jurídico - BOTTOM FAR LEFT */}
               <div className="absolute" style={{ zIndex: 7, bottom: '25%', left: '22%' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 90, height: 90, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp" alt="Assessor Jurídico" className="w-full h-full object-cover" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 90, height: 90, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp" alt="Assessor Jurídico" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg">Assessor Jurídico</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Assessor Jurídico</span>
                 </div>
               </div>
 
               {/* Team 7 - Coord. Comercial - RIGHT BOTTOM */}
               <div className="absolute" style={{ zIndex: 7, bottom: '3%', right: '5%' }}>
-                <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 85, height: 85, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp" alt="Coord. Comercial" className="w-full h-full object-cover" />
+                <div className="flex flex-col items-center group cursor-pointer">
+                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 85, height: 85, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp" alt="Coord. Comercial" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg">Coord. Comercial<br/>e de Relacionamento</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Coord. Comercial<br/>e de Relacionamento</span>
                 </div>
               </div>
 
