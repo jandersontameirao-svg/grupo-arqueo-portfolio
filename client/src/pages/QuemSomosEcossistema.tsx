@@ -463,7 +463,7 @@ export default function QuemSomosEcossistema() {
               </p>
             </motion.div>
 
-            {/* Team Hierarchy Layout - PREMIUM ASYMMETRIC */}
+            {/* Team Bubble Layout - ORGANIC ASYMMETRIC like reference image */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -472,120 +472,147 @@ export default function QuemSomosEcossistema() {
               className="relative mx-auto rounded-3xl overflow-hidden"
               style={{
                 maxWidth: '1100px',
+                height: '700px',
                 background: 'linear-gradient(135deg, #861720 0%, #6B1219 25%, #A01B28 50%, #EE7501 100%)',
                 boxShadow: '0 30px 90px rgba(134, 23, 32, 0.35)',
-                padding: '60px 40px 50px',
               }}
             >
-              {/* Decorative subtle circles in background */}
+              {/* Decorative concentric circles in background */}
               <div className="absolute inset-0" style={{ zIndex: 0 }}>
-                <div className="absolute rounded-full border border-white/10" style={{ width: 500, height: 500, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-                <div className="absolute rounded-full border border-white/5" style={{ width: 750, height: 750, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                <div className="absolute rounded-full border-2 border-white/8" style={{ width: 320, height: 320, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                <div className="absolute rounded-full border-2 border-white/6" style={{ width: 520, height: 520, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                <div className="absolute rounded-full border border-white/4" style={{ width: 720, height: 720, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                <div className="absolute rounded-full border border-white/3" style={{ width: 950, height: 950, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                {/* Small decorative dots */}
+                <div className="absolute rounded-full" style={{ width: 18, height: 18, top: '12%', left: '8%', backgroundColor: 'rgba(255,255,255,0.15)', border: '3px solid rgba(255,255,255,0.25)' }} />
+                <div className="absolute rounded-full" style={{ width: 14, height: 14, top: '8%', right: '15%', backgroundColor: 'rgba(255,255,255,0.12)', border: '3px solid rgba(255,255,255,0.2)' }} />
+                <div className="absolute rounded-full" style={{ width: 20, height: 20, bottom: '15%', left: '5%', backgroundColor: 'rgba(255,255,255,0.1)', border: '3px solid rgba(255,255,255,0.18)' }} />
+                <div className="absolute rounded-full" style={{ width: 16, height: 16, bottom: '10%', right: '8%', backgroundColor: 'rgba(255,255,255,0.12)', border: '3px solid rgba(255,255,255,0.2)' }} />
+                <div className="absolute rounded-full" style={{ width: 12, height: 12, top: '35%', left: '3%', backgroundColor: 'rgba(255,255,255,0.08)', border: '2px solid rgba(255,255,255,0.15)' }} />
+                <div className="absolute rounded-full" style={{ width: 10, height: 10, top: '60%', right: '4%', backgroundColor: 'rgba(255,255,255,0.1)', border: '2px solid rgba(255,255,255,0.15)' }} />
+                <div className="absolute rounded-full" style={{ width: 22, height: 22, top: '75%', left: '18%', backgroundColor: 'rgba(255,255,255,0.08)', border: '3px solid rgba(255,255,255,0.15)' }} />
+                <div className="absolute rounded-full" style={{ width: 15, height: 15, top: '20%', right: '5%', backgroundColor: 'rgba(255,255,255,0.1)', border: '3px solid rgba(255,255,255,0.18)' }} />
               </div>
 
-              {/* CEO - LARGE AND CENTERED */}
-              <div className="relative flex flex-col items-center mb-12" style={{ zIndex: 1 }}>
-                <div className="relative">
-                  <div className="rounded-full overflow-hidden border-4 border-white/90 shadow-2xl" style={{ width: 160, height: 160 }}>
+              {/* CEO - LARGE BUBBLE - CENTER */}
+              <div className="absolute" style={{ zIndex: 10, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-2xl" style={{ width: 200, height: 200, border: '5px solid rgba(255,255,255,0.5)', boxShadow: '0 0 0 10px rgba(255,255,255,0.15), 0 0 0 20px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.3)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp" alt="CEO" className="w-full h-full object-cover" />
                   </div>
-                  <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full border border-white/30">
+                  <div className="mt-3 bg-white/20 backdrop-blur-sm px-5 py-1.5 rounded-full border border-white/30">
                     <span className="text-white font-bold text-sm tracking-widest">CEO</span>
                   </div>
                 </div>
               </div>
 
-              {/* EXECUTIVES ROW - MEDIUM SIZE, ASYMMETRIC SPACING */}
-              <div className="relative flex justify-center items-start gap-6 lg:gap-10 mb-12 flex-wrap" style={{ zIndex: 1 }}>
-                {/* Exec 1 - Diretora Administrativa */}
-                <div className="flex flex-col items-center" style={{ marginTop: '10px' }}>
-                  <div className="rounded-full overflow-hidden border-3 border-white/70 shadow-xl" style={{ width: 110, height: 110, borderWidth: 3 }}>
+              {/* Exec 1 - Diretora Administrativa - TOP LEFT */}
+              <div className="absolute" style={{ zIndex: 8, top: '8%', left: '15%' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-xl" style={{ width: 140, height: 140, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" alt="Diretora Administrativa" className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-white font-semibold text-xs mt-3 text-center leading-tight max-w-[120px]">Diretora Administrativa e Financeira</span>
-                </div>
-
-                {/* Exec 2 - CSO */}
-                <div className="flex flex-col items-center" style={{ marginTop: '30px' }}>
-                  <div className="rounded-full overflow-hidden border-3 border-white/70 shadow-xl" style={{ width: 110, height: 110, borderWidth: 3 }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" alt="CSO" className="w-full h-full object-cover" />
-                  </div>
-                  <span className="text-white font-semibold text-xs mt-3 text-center leading-tight max-w-[120px]">CSO</span>
-                </div>
-
-                {/* Exec 3 - Diretor de Estratégia */}
-                <div className="flex flex-col items-center" style={{ marginTop: '0px' }}>
-                  <div className="rounded-full overflow-hidden border-3 border-white/70 shadow-xl" style={{ width: 110, height: 110, borderWidth: 3 }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" alt="Diretor de Estratégia" className="w-full h-full object-cover" />
-                  </div>
-                  <span className="text-white font-semibold text-xs mt-3 text-center leading-tight max-w-[120px]">Diretor de Estratégia, Contencioso e Qualidade</span>
-                </div>
-
-                {/* Exec 4 - Tesoureira */}
-                <div className="flex flex-col items-center" style={{ marginTop: '20px' }}>
-                  <div className="rounded-full overflow-hidden border-3 border-white/70 shadow-xl" style={{ width: 110, height: 110, borderWidth: 3 }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" alt="Tesoureira" className="w-full h-full object-cover" />
-                  </div>
-                  <span className="text-white font-semibold text-xs mt-3 text-center leading-tight max-w-[120px]">Tesoureira</span>
+                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg">Diretora Administrativa<br/>e Financeira</span>
                 </div>
               </div>
 
-              {/* TEAM MEMBERS ROW - SMALLER SIZE, ASYMMETRIC */}
-              <div className="relative flex justify-center items-start gap-4 lg:gap-8 flex-wrap" style={{ zIndex: 1 }}>
-                {/* Team 1 - Arqueólogo */}
-                <div className="flex flex-col items-center" style={{ marginTop: '15px' }}>
-                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+              {/* Exec 2 - CSO - TOP RIGHT */}
+              <div className="absolute" style={{ zIndex: 8, top: '5%', right: '20%' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-xl" style={{ width: 130, height: 130, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" alt="CSO" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg">CSO</span>
+                </div>
+              </div>
+
+              {/* Exec 3 - Diretor de Estratégia - BOTTOM LEFT */}
+              <div className="absolute" style={{ zIndex: 8, bottom: '10%', left: '8%' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-xl" style={{ width: 135, height: 135, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" alt="Diretor de Estratégia" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg">Diretor de Estratégia,<br/>Contencioso e Qualidade</span>
+                </div>
+              </div>
+
+              {/* Exec 4 - Tesoureira - RIGHT MIDDLE */}
+              <div className="absolute" style={{ zIndex: 8, top: '38%', right: '5%' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-xl" style={{ width: 130, height: 130, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" alt="Tesoureira" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg">Tesoureira</span>
+                </div>
+              </div>
+
+              {/* Team 1 - Arqueólogo - LEFT MIDDLE */}
+              <div className="absolute" style={{ zIndex: 7, top: '35%', left: '4%' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 100, height: 100, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp" alt="Arqueólogo" className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Arqueólogo</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg">Arqueólogo</span>
                 </div>
+              </div>
 
-                {/* Team 2 - Arqueóloga */}
-                <div className="flex flex-col items-center" style={{ marginTop: '0px' }}>
-                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+              {/* Team 2 - Arqueóloga - TOP CENTER-RIGHT */}
+              <div className="absolute" style={{ zIndex: 7, top: '12%', left: '42%' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 95, height: 95, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp" alt="Arqueóloga" className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Arqueóloga</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg">Arqueóloga</span>
                 </div>
+              </div>
 
-                {/* Team 3 - Coord. Pesquisa */}
-                <div className="flex flex-col items-center" style={{ marginTop: '25px' }}>
-                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+              {/* Team 3 - Coord. Pesquisa - BOTTOM CENTER */}
+              <div className="absolute" style={{ zIndex: 7, bottom: '5%', left: '38%' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 100, height: 100, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp" alt="Coord. Pesquisa" className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Coord. de Pesquisa e Licenciamento</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg">Coord. de Pesquisa<br/>e Licenciamento</span>
                 </div>
+              </div>
 
-                {/* Team 4 - Gerente de Projetos */}
-                <div className="flex flex-col items-center" style={{ marginTop: '5px' }}>
-                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+              {/* Team 4 - Gerente de Projetos - BOTTOM RIGHT */}
+              <div className="absolute" style={{ zIndex: 7, bottom: '12%', right: '15%' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 90, height: 90, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Annaflavia_0ffbab23.webp" alt="Gerente de Projetos" className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Gerente de Projetos</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg">Gerente de Projetos</span>
                 </div>
+              </div>
 
-                {/* Team 5 - Analista de Geoprocessamento */}
-                <div className="flex flex-col items-center" style={{ marginTop: '20px' }}>
-                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+              {/* Team 5 - Analista de Geoprocessamento - TOP FAR RIGHT */}
+              <div className="absolute" style={{ zIndex: 7, top: '15%', right: '5%' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 85, height: 85, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp" alt="Analista de Geoprocessamento" className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Analista de Geoprocessamento</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg">Analista de<br/>Geoprocessamento</span>
                 </div>
+              </div>
 
-                {/* Team 6 - Assessor Jurídico */}
-                <div className="flex flex-col items-center" style={{ marginTop: '10px' }}>
-                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+              {/* Team 6 - Assessor Jurídico - BOTTOM FAR LEFT */}
+              <div className="absolute" style={{ zIndex: 7, bottom: '25%', left: '22%' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 90, height: 90, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp" alt="Assessor Jurídico" className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Assessor Jurídico</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg">Assessor Jurídico</span>
                 </div>
+              </div>
 
-                {/* Team 7 - Coord. Comercial */}
-                <div className="flex flex-col items-center" style={{ marginTop: '0px' }}>
-                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+              {/* Team 7 - Coord. Comercial - RIGHT BOTTOM */}
+              <div className="absolute" style={{ zIndex: 7, bottom: '3%', right: '5%' }}>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 85, height: 85, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp" alt="Coord. Comercial" className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Coord. Comercial e de Relacionamento</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg">Coord. Comercial<br/>e de Relacionamento</span>
                 </div>
               </div>
 
