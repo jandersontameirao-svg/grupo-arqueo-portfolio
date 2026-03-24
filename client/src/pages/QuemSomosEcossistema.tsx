@@ -507,7 +507,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
                 {/* Exec 1 - Diretora Administrativa - TOP LEFT */}
-              <div className="absolute" style={{ zIndex: 9, top: '18%', left: '15%' }}>
+              <div className="absolute" style={{ zIndex: 9, top: '25%', left: '22%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 202, height: 202, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" alt="Diretora Administrativa" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
