@@ -491,13 +491,13 @@ export default function QuemSomosEcossistema() {
                   <clipPath id="exec2Clip"><circle cx="670" cy="450" r="38" /></clipPath>
                   <clipPath id="exec3Clip"><circle cx="500" cy="670" r="38" /></clipPath>
                   <clipPath id="exec4Clip"><circle cx="330" cy="450" r="38" /></clipPath>
-                  <clipPath id="team1Clip"><circle cx="500" cy="110" r="28" /></clipPath>
-                  <clipPath id="team2Clip"><circle cx="793" cy="232" r="28" /></clipPath>
-                  <clipPath id="team3Clip"><circle cx="834" cy="520" r="28" /></clipPath>
-                  <clipPath id="team4Clip"><circle cx="640" cy="757" r="28" /></clipPath>
-                  <clipPath id="team5Clip"><circle cx="360" cy="757" r="28" /></clipPath>
-                  <clipPath id="team6Clip"><circle cx="166" cy="520" r="28" /></clipPath>
-                  <clipPath id="team7Clip"><circle cx="207" cy="232" r="28" /></clipPath>
+                  <clipPath id="team1Clip"><circle cx="500" cy="80" r="48" /></clipPath>
+                  <clipPath id="team2Clip"><circle cx="820" cy="160" r="44" /></clipPath>
+                  <clipPath id="team3Clip"><circle cx="880" cy="450" r="50" /></clipPath>
+                  <clipPath id="team4Clip"><circle cx="700" cy="780" r="46" /></clipPath>
+                  <clipPath id="team5Clip"><circle cx="300" cy="780" r="46" /></clipPath>
+                  <clipPath id="team6Clip"><circle cx="120" cy="450" r="50" /></clipPath>
+                  <clipPath id="team7Clip"><circle cx="180" cy="160" r="44" /></clipPath>
                 </defs>
 
                 {/* CEO photo circle - center */}
@@ -534,48 +534,48 @@ export default function QuemSomosEcossistema() {
 
                 {/* ═══ THIRD ORBIT - 7 Team Members ═══ */}
 
-                {/* Team 1 - Top - Arqueólogo */}
-                <circle cx="500" cy="110" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp" x="472" y="82" width="56" height="56" clipPath="url(#team1Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="500" y="158" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">Arqueólogo</text>
+                {/* Team 1 - Top Center - Arqueólogo - LARGER */}
+                <circle cx="500" cy="80" r="48" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp" x="452" y="32" width="96" height="96" clipPath="url(#team1Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="500" y="150" textAnchor="middle" fill="white" fontWeight="600" fontSize="11" letterSpacing="0.5">Arqueólogo</text>
 
-                {/* Team 2 - Top Right - Arqueóloga */}
-                <circle cx="793" cy="232" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp" x="765" y="204" width="56" height="56" clipPath="url(#team2Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="793" y="280" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">Arqueóloga</text>
+                {/* Team 2 - Top Right - Arqueóloga - LARGER */}
+                <circle cx="820" cy="160" r="44" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp" x="776" y="116" width="88" height="88" clipPath="url(#team2Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="820" y="222" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">Arqueóloga</text>
 
-                {/* Team 3 - Right - Coord. Pesquisa e Licenciamento */}
-                <circle cx="834" cy="520" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp" x="806" y="492" width="56" height="56" clipPath="url(#team3Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="834" y="568" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">
-                  <tspan x="834" dy="0">Coord. de Pesquisa</tspan>
-                  <tspan x="834" dy="12">e Licenciamento</tspan>
+                {/* Team 3 - Right - Coord. Pesquisa e Licenciamento - LARGER */}
+                <circle cx="880" cy="450" r="50" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp" x="830" y="400" width="100" height="100" clipPath="url(#team3Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="880" y="520" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">
+                  <tspan x="880" dy="0">Coord. de Pesquisa</tspan>
+                  <tspan x="880" dy="13">e Licenciamento</tspan>
                 </text>
 
-                {/* Team 4 - Bottom Right - Gerente de Projetos */}
-                <circle cx="640" cy="757" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Annaflavia_0ffbab23.webp" x="612" y="729" width="56" height="56" clipPath="url(#team4Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="640" y="805" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">Gerente de Projetos</text>
+                {/* Team 4 - Bottom Right - Gerente de Projetos - LARGER */}
+                <circle cx="700" cy="780" r="46" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Annaflavia_0ffbab23.webp" x="654" y="734" width="92" height="92" clipPath="url(#team4Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="700" y="850" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">Gerente de Projetos</text>
 
-                {/* Team 5 - Bottom Left - Analista de Geoprocessamento */}
-                <circle cx="360" cy="757" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp" x="332" y="729" width="56" height="56" clipPath="url(#team5Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="360" y="805" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">
-                  <tspan x="360" dy="0">Analista de</tspan>
-                  <tspan x="360" dy="12">Geoprocessamento</tspan>
+                {/* Team 5 - Bottom Left - Analista de Geoprocessamento - LARGER */}
+                <circle cx="300" cy="780" r="46" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp" x="254" y="734" width="92" height="92" clipPath="url(#team5Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="300" y="850" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">
+                  <tspan x="300" dy="0">Analista de</tspan>
+                  <tspan x="300" dy="13">Geoprocessamento</tspan>
                 </text>
 
-                {/* Team 6 - Left - Assessor Jurídico */}
-                <circle cx="166" cy="520" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp" x="138" y="492" width="56" height="56" clipPath="url(#team6Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="166" y="568" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">Assessor Jurídico</text>
+                {/* Team 6 - Left - Assessor Jurídico - LARGER */}
+                <circle cx="120" cy="450" r="50" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp" x="70" y="400" width="100" height="100" clipPath="url(#team6Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="120" y="520" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">Assessor Jurídico</text>
 
-                {/* Team 7 - Top Left - Coord. Comercial e de Relacionamento */}
-                <circle cx="207" cy="232" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp" x="179" y="204" width="56" height="56" clipPath="url(#team7Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="207" y="280" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">
-                  <tspan x="207" dy="0">Coord. Comercial</tspan>
-                  <tspan x="207" dy="12">e de Relacionamento</tspan>
+                {/* Team 7 - Top Left - Coord. Comercial e de Relacionamento - LARGER */}
+                <circle cx="180" cy="160" r="44" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp" x="136" y="116" width="88" height="88" clipPath="url(#team7Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="180" y="222" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">
+                  <tspan x="180" dy="0">Coord. Comercial</tspan>
+                  <tspan x="180" dy="13">e de Relacionamento</tspan>
                 </text>
               </svg>
 
