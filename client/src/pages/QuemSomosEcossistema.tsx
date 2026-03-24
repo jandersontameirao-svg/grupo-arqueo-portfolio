@@ -463,7 +463,7 @@ export default function QuemSomosEcossistema() {
               </p>
             </motion.div>
 
-            {/* Team Card with circular layout - PREMIUM */}
+            {/* Team Card with orbital dots layout - PREMIUM */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -477,97 +477,91 @@ export default function QuemSomosEcossistema() {
                 boxShadow: '0 30px 90px rgba(134, 23, 32, 0.35)',
               }}
             >
-              {/* Outer decorative circle */}
-              <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
-                <circle cx="50%" cy="50%" r="240" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="1.5" />
-                <circle cx="50%" cy="50%" r="180" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
-                <circle cx="50%" cy="50%" r="120" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
-                <circle cx="15%" cy="20%" r="8" fill="rgba(255,255,255,0.08)" />
-                <circle cx="85%" cy="25%" r="6" fill="rgba(255,255,255,0.06)" />
-                <circle cx="10%" cy="75%" r="10" fill="rgba(255,255,255,0.05)" />
-                <circle cx="90%" cy="70%" r="7" fill="rgba(255,255,255,0.07)" />
-                <circle cx="20%" cy="50%" r="5" fill="rgba(255,255,255,0.1)" />
-                <circle cx="80%" cy="50%" r="5" fill="rgba(255,255,255,0.1)" />
-                <circle cx="25%" cy="30%" r="12" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="3" />
-                <circle cx="75%" cy="80%" r="10" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="3" />
-                <circle cx="12%" cy="60%" r="8" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="3" />
-                <circle cx="88%" cy="40%" r="9" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="3" />
+              {/* Orbital rings + dots via SVG */}
+              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 550" preserveAspectRatio="xMidYMid meet" style={{ zIndex: 1 }}>
+                {/* Orbital rings */}
+                <circle cx="500" cy="275" r="100" fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="1.5" />
+                <circle cx="500" cy="275" r="160" fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth="1.5" />
+                <circle cx="500" cy="275" r="220" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1.5" />
+
+                {/* Inner orbit dots (r=100) - 2 dots */}
+                <circle cx="600" cy="275" r="8" fill="#FFFFFF" opacity="0.95">
+                  <animate attributeName="opacity" values="0.95;0.6;0.95" dur="3s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="400" cy="275" r="8" fill="#FFFFFF" opacity="0.9">
+                  <animate attributeName="opacity" values="0.9;0.55;0.9" dur="3.5s" repeatCount="indefinite" />
+                </circle>
+
+                {/* Middle orbit dots (r=160) - 4 dots */}
+                <circle cx="660" cy="275" r="9" fill="#FFFFFF" opacity="0.9">
+                  <animate attributeName="opacity" values="0.9;0.5;0.9" dur="4s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="500" cy="115" r="9" fill="#FFFFFF" opacity="0.85">
+                  <animate attributeName="opacity" values="0.85;0.5;0.85" dur="3.2s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="340" cy="275" r="9" fill="#FFFFFF" opacity="0.88">
+                  <animate attributeName="opacity" values="0.88;0.5;0.88" dur="3.8s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="500" cy="435" r="9" fill="#FFFFFF" opacity="0.82">
+                  <animate attributeName="opacity" values="0.82;0.5;0.82" dur="4.2s" repeatCount="indefinite" />
+                </circle>
+
+                {/* Outer orbit dots (r=220) - 5 dots */}
+                <circle cx="720" cy="275" r="10" fill="#FFFFFF" opacity="0.85">
+                  <animate attributeName="opacity" values="0.85;0.45;0.85" dur="4.5s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="655" cy="115" r="10" fill="#FFFFFF" opacity="0.8">
+                  <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3.6s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="345" cy="115" r="10" fill="#FFFFFF" opacity="0.82">
+                  <animate attributeName="opacity" values="0.82;0.45;0.82" dur="4.8s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="280" cy="275" r="10" fill="#FFFFFF" opacity="0.78">
+                  <animate attributeName="opacity" values="0.78;0.4;0.78" dur="3.4s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="345" cy="435" r="10" fill="#FFFFFF" opacity="0.83">
+                  <animate attributeName="opacity" values="0.83;0.45;0.83" dur="5s" repeatCount="indefinite" />
+                </circle>
+
+                {/* Ambient tiny dots for depth */}
+                <circle cx="150" cy="100" r="3" fill="rgba(255,255,255,0.15)" />
+                <circle cx="850" cy="120" r="4" fill="rgba(255,255,255,0.12)" />
+                <circle cx="120" cy="420" r="3.5" fill="rgba(255,255,255,0.1)" />
+                <circle cx="880" cy="450" r="3" fill="rgba(255,255,255,0.13)" />
+                <circle cx="200" cy="250" r="2.5" fill="rgba(255,255,255,0.08)" />
+                <circle cx="800" cy="300" r="2.5" fill="rgba(255,255,255,0.08)" />
               </svg>
 
-              {/* Center member - Large - COM MAIS PROTAGONISMO */}
+              {/* Center nucleus - Text label instead of photo */}
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="absolute z-20"
+                className="absolute z-20 flex items-center justify-center"
                 style={{
                   top: '50%',
                   left: '50%',
                   transform: 'translate(-50%, -50%)',
-                  width: '200px',
-                  height: '200px',
+                  width: '160px',
+                  height: '160px',
                 }}
               >
                 <div
-                  className="w-full h-full rounded-full overflow-hidden shadow-2xl"
+                  className="w-full h-full rounded-full flex flex-col items-center justify-center"
                   style={{
-                    border: '8px solid rgba(255,255,255,0.95)',
-                    boxShadow: '0 0 0 12px rgba(255,255,255,0.2), 0 25px 70px rgba(0,0,0,0.35)',
+                    background: 'rgba(255,255,255,0.12)',
+                    border: '2px solid rgba(255,255,255,0.25)',
+                    backdropFilter: 'blur(8px)',
+                    boxShadow: '0 0 40px rgba(255,255,255,0.08)',
                   }}
                 >
-                  <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face"
-                    alt="Liderança"
-                    className="w-full h-full object-cover"
-                    style={{ filter: 'brightness(1.05) contrast(1.1)' }}
-                  />
+                  <span className="text-white font-bold text-lg leading-tight text-center">Grupo</span>
+                  <span className="text-white font-bold text-lg leading-tight text-center">Arqueo</span>
                 </div>
-                <p className="mt-4 text-white font-bold text-center text-sm">Liderança</p>
               </motion.div>
 
-              {/* Surrounding members - COM MELHOR NITIDEZ */}
-              {[
-                { top: '8%', left: '35%', size: 100, name: 'Arqueologia', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face' },
-                { top: '12%', left: '60%', size: 90, name: 'Tecnologia', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face' },
-                { top: '25%', left: '78%', size: 85, name: 'Gestão', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face' },
-                { top: '55%', left: '80%', size: 100, name: 'Pesquisa', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face' },
-                { top: '70%', left: '60%', size: 90, name: 'Educação', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face' },
-                { top: '65%', left: '35%', size: 85, name: 'Inovação', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face' },
-                { top: '50%', left: '18%', size: 95, name: 'Consultoria', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face' },
-              ].map((member, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ scale: 0, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 + idx * 0.08 }}
-                  className="absolute z-10"
-                  style={{
-                    top: member.top,
-                    left: member.left,
-                    width: `${member.size}px`,
-                    height: `${member.size}px`,
-                    transform: 'translate(-50%, -50%)',
-                  }}
-                >
-                  <div
-                    className="w-full h-full rounded-full overflow-hidden shadow-lg"
-                    style={{
-                      border: '5px solid rgba(255,255,255,0.85)',
-                      boxShadow: '0 0 0 6px rgba(255,255,255,0.15), 0 12px 35px rgba(0,0,0,0.25)',
-                    }}
-                  >
-                    <img
-                      src={member.img}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                      style={{ filter: 'brightness(1.08) contrast(1.12)' }}
-                    />
-                  </div>
-                  <p className="mt-2 text-white font-semibold text-center text-xs">{member.name}</p>
-                </motion.div>
-              ))}
+
             </motion.div>
           </div>
         </section>
