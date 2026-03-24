@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /**
@@ -305,8 +305,72 @@ interface MapaBrasilSVGProps {
   selectedEstado?: EstadoData | null;
 }
 
+// Ordem geográfica para animação: Norte → Nordeste → Centro-Oeste → Sudeste → Sul
+const animationOrder: string[] = [
+  'RR', 'AP', 'AM', 'PA', 'AC', 'RO', 'TO',
+  'MA', 'PI', 'CE', 'RN', 'PB', 'PE', 'AL', 'SE', 'BA',
+  'MT', 'GO', 'DF', 'MS',
+  'MG', 'ES', 'RJ', 'SP',
+  'PR', 'SC', 'RS',
+];
+
 export default function MapaBrasilSVG({ onEstadoSelect, selectedEstado }: MapaBrasilSVGProps) {
   const [hoveredEstado, setHoveredEstado] = useState<string | null>(null);
+  const [visibleStates, setVisibleStates] = useState<Set<string>>(new Set());
+  const [animationComplete, setAnimationComplete] = useState(false);
+  const hasAnimated = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (hasAnimated.current) return;
+
+    const startAnimation = () => {
+      if (hasAnimated.current) return;
+      hasAnimated.current = true;
+      animationOrder.forEach((sigla, index) => {
+        setTimeout(() => {
+          setVisibleStates(prev => {
+            const next = new Set(Array.from(prev));
+            next.add(sigla);
+            return next;
+          });
+          if (index === animationOrder.length - 1) {
+            setTimeout(() => setAnimationComplete(true), 300);
+          }
+        }, 80 * index);
+      });
+    };
+
+    // Small delay to ensure component is mounted, then start
+    const timer = setTimeout(() => {
+      if (!containerRef.current) {
+        startAnimation();
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            startAnimation();
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.05 }
+      );
+
+      observer.observe(containerRef.current);
+
+      // Fallback: if observer doesn't fire within 500ms, start anyway
+      setTimeout(() => {
+        if (!hasAnimated.current) {
+          startAnimation();
+          observer.disconnect();
+        }
+      }, 500);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const hoveredData = useMemo(() => {
     if (!hoveredEstado) return null;
@@ -330,8 +394,13 @@ export default function MapaBrasilSVG({ onEstadoSelect, selectedEstado }: MapaBr
     return '1.2';
   };
 
+  // Get animation index for stagger delay
+  const getAnimIndex = (sigla: string): number => {
+    return animationOrder.indexOf(sigla);
+  };
+
   return (
-    <div className="relative w-full h-full">
+    <div ref={containerRef} className="relative w-full h-full">
       {/* SVG Map */}
       <svg
         viewBox="0 0 460 470"
@@ -362,66 +431,75 @@ export default function MapaBrasilSVG({ onEstadoSelect, selectedEstado }: MapaBr
         </defs>
 
         <g filter="url(#map-shadow)">
-          {estadosData.map((estado) => (
-            <g
-              key={estado.sigla}
-              onMouseEnter={() => setHoveredEstado(estado.sigla)}
-              onMouseLeave={() => setHoveredEstado(null)}
-              onClick={() => onEstadoSelect?.(estado)}
-              style={{
-                cursor: 'pointer',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-              }}
-              filter={
-                selectedEstado?.sigla === estado.sigla || hoveredEstado === estado.sigla
-                  ? 'url(#glow)'
-                  : undefined
-              }
-            >
-              {/* Main state path */}
-              <path
-                d={estado.path}
-                fill={getColor(estado.sigla, estado.ativo)}
-                stroke={getStroke(estado.sigla)}
-                strokeWidth={getStrokeWidth(estado.sigla)}
-                strokeLinecap="round"
-                strokeLinejoin="round"
+          {estadosData.map((estado) => {
+            const isVisible = visibleStates.has(estado.sigla);
+            const idx = getAnimIndex(estado.sigla);
+            return (
+              <g
+                key={estado.sigla}
+                onMouseEnter={() => setHoveredEstado(estado.sigla)}
+                onMouseLeave={() => setHoveredEstado(null)}
+                onClick={() => onEstadoSelect?.(estado)}
                 style={{
-                  transition: 'fill 0.3s ease, stroke 0.3s ease, stroke-width 0.2s ease',
-                  opacity: hoveredEstado && hoveredEstado !== estado.sigla ? 0.7 : 1,
+                  cursor: 'pointer',
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'scale(1)' : 'scale(0.85)',
+                  transformOrigin: `${estado.tx}px ${estado.ty}px`,
+                  transition: `opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)`,
                 }}
-              />
-
-              {/* Circle for small states */}
-              {estado.circle && (
-                <path
-                  d={estado.circle}
-                  fill={getColor(estado.sigla, estado.ativo)}
-                  opacity={0.6}
-                  style={{ transition: 'fill 0.3s ease' }}
-                />
-              )}
-
-              {/* State label */}
-              <text
-                x={estado.tx}
-                y={estado.ty}
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fill="#FFFFFF"
-                fontSize="10"
-                fontWeight="700"
-                fontFamily="'Inter', 'Segoe UI', system-ui, sans-serif"
-                letterSpacing="0.5"
-                pointerEvents="none"
-                style={{
-                  textShadow: '0 1px 2px rgba(0,0,0,0.3)',
-                }}
+                filter={
+                  selectedEstado?.sigla === estado.sigla || hoveredEstado === estado.sigla
+                    ? 'url(#glow)'
+                    : undefined
+                }
               >
-                {estado.sigla}
-              </text>
-            </g>
-          ))}
+                {/* Main state path */}
+                <path
+                  d={estado.path}
+                  fill={getColor(estado.sigla, estado.ativo)}
+                  stroke={getStroke(estado.sigla)}
+                  strokeWidth={getStrokeWidth(estado.sigla)}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={{
+                    transition: 'fill 0.3s ease, stroke 0.3s ease, stroke-width 0.2s ease',
+                    opacity: hoveredEstado && hoveredEstado !== estado.sigla ? 0.7 : 1,
+                  }}
+                />
+
+                {/* Circle for small states */}
+                {estado.circle && (
+                  <path
+                    d={estado.circle}
+                    fill={getColor(estado.sigla, estado.ativo)}
+                    opacity={0.6}
+                    style={{ transition: 'fill 0.3s ease' }}
+                  />
+                )}
+
+                {/* State label */}
+                <text
+                  x={estado.tx}
+                  y={estado.ty}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fill="#FFFFFF"
+                  fontSize="10"
+                  fontWeight="700"
+                  fontFamily="'Inter', 'Segoe UI', system-ui, sans-serif"
+                  letterSpacing="0.5"
+                  pointerEvents="none"
+                  style={{
+                    textShadow: '0 1px 2px rgba(0,0,0,0.3)',
+                    opacity: isVisible ? 1 : 0,
+                    transition: 'opacity 0.4s ease 0.15s',
+                  }}
+                >
+                  {estado.sigla}
+                </text>
+              </g>
+            );
+          })}
         </g>
       </svg>
 
