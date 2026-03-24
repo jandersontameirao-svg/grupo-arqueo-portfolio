@@ -294,9 +294,12 @@ export default function QuemSomosEcossistema() {
           <div className="max-w-7xl mx-auto relative z-10">
             {/* Título Principal */}
             <div className="mb-12 text-center">
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-4" style={{ color: '#1A1A1A' }}>
                 Uma década de <span style={{ color: '#EE7501' }}>crescimento</span>
               </h2>
+              <p className="text-lg lg:text-xl leading-relaxed" style={{ color: '#555555' }}>
+                O Grupo Arqueo é um hub de soluções integradas para Arqueologia e Patrimônio cultural.
+              </p>
             </div>
 
             {/* Timeline com linha horizontal */}
