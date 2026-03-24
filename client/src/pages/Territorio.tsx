@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
-import { MapPin } from "lucide-react";
 import MapaBrasilSVG, { type EstadoData } from "@/components/MapaBrasilSVG";
 import { useState } from "react";
 
@@ -188,50 +187,7 @@ export default function Territorio() {
         </div>
       </section>
 
-      {/* Offices */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: '#2A2A2A' }}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>Escritórios</span>
-            </div>
-            <h2 className="text-2xl lg:text-3xl font-bold text-white">
-              Bases <span style={{ color: '#EE7501' }}>estratégicas</span>
-            </h2>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { city: "Brasília/DF", role: "Sede Administrativa", address: "SHS Qd. 06, Conj. A, Sala 501 — Complexo Brasil 21" },
-              { city: "Natal/RN", role: "Regional Nordeste", address: "Rua Raimundo Chaves, 2182, Sala 501 — Ponta Negra" },
-              { city: "São Paulo/SP", role: "Regional Sudeste", address: "Av. Brig. Faria Lima, 1461, 4º andar, Conj. 41" },
-            ].map((office, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="p-6"
-                style={{ border: '1px solid rgba(255,255,255,0.1)' }}
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <MapPin className="w-4 h-4" style={{ color: '#EE7501' }} />
-                  <h3 className="text-base font-bold text-white">{office.city}</h3>
-                </div>
-                <p className="text-xs font-medium mb-2" style={{ color: '#EE7501' }}>{office.role}</p>
-                <p className="text-xs font-light" style={{ color: 'rgba(255,255,255,0.5)' }}>{office.address}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </PortfolioLayout>
   );
 }
