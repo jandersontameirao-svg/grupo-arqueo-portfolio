@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { ASSETS } from "@/lib/assets";
 import {
   User, Building2, Target, Globe, Lightbulb, Star,
-  BarChart3, FolderOpen, MapPin, Mail, Download, ArrowRight
+  BarChart3, FolderOpen, MapPin, Mail, Download, ArrowRight, Users
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -22,7 +22,8 @@ const sections = [
   { id: "numeros", num: "07", label: "Números", icon: BarChart3, path: "/numeros", color: "#2C7EB3" },
   { id: "cases", num: "08", label: "Cases", icon: FolderOpen, path: "/cases", color: "#861720" },
   { id: "territorio", num: "09", label: "Presença Territorial", icon: MapPin, path: "/territorio", color: "#EE7501" },
-  { id: "contato", num: "10", label: "Contato", icon: Mail, path: "/contato", color: "#2C7EB3" },
+  { id: "parceiros", num: "10", label: "Nossos Parceiros", icon: Users, path: "/parceiros", color: "#2C7EB3" },
+  { id: "contato", num: "11", label: "Contato", icon: Mail, path: "/contato", color: "#861720" },
 ];
 
 export default function Home() {
