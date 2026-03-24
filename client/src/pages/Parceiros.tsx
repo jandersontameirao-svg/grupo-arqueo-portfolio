@@ -77,7 +77,7 @@ export default function Parceiros() {
     { nome: "UP", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/up-urbanizadora_d47e149e.png" },
     { nome: "Vestas", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/vestas_8a73412c.png" },
     { nome: "Voltalia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/voltalia_2a3ecfe2.png" },
-  ];
+  ].sort((a, b) => a.nome.localeCompare(b.nome));
 
   // Generate initials from name
   const getInitials = (name: string) => {
@@ -146,31 +146,25 @@ export default function Parceiros() {
                   <div className="text-center px-2">
                     {parceiro.logo ? (
                       <>
-                        <div className="w-12 h-12 flex items-center justify-center mx-auto mb-1.5">
+                        <div className="w-20 h-20 flex items-center justify-center mx-auto">
                           <img
                             src={parceiro.logo}
                             alt={parceiro.nome}
                             className="max-w-full max-h-full object-contain"
                           />
                         </div>
-                        <p className="text-[8px] font-semibold leading-tight" style={{ color: '#2A2A2A' }}>
-                          {parceiro.nome}
-                        </p>
                       </>
                     ) : (
                       <>
                         <div
-                          className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-1.5"
+                          className="w-16 h-16 rounded-full flex items-center justify-center mx-auto"
                           style={{
                             backgroundColor: getColor(i),
                             color: '#FFFFFF',
                           }}
                         >
-                          <span className="text-[9px] font-bold tracking-wide">{getInitials(parceiro.nome)}</span>
+                          <span className="text-[12px] font-bold tracking-wide">{getInitials(parceiro.nome)}</span>
                         </div>
-                        <p className="text-[8px] font-semibold leading-tight" style={{ color: '#2A2A2A' }}>
-                          {parceiro.nome}
-                        </p>
                       </>
                     )}
                   </div>
