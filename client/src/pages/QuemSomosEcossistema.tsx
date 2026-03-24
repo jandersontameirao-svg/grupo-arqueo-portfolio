@@ -444,11 +444,11 @@ export default function QuemSomosEcossistema() {
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             {/* Section Title - MELHORADO */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-20"
+              className="text-center mb-8"
             >
               <div className="flex items-center justify-center gap-3 mb-8">
                 <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
@@ -472,67 +472,19 @@ export default function QuemSomosEcossistema() {
               className="relative mx-auto rounded-3xl overflow-hidden"
               style={{
                 maxWidth: '1000px',
-                height: '550px',
+                height: '650px',
                 background: 'linear-gradient(135deg, #861720 0%, #6B1219 25%, #A01B28 50%, #EE7501 100%)',
                 boxShadow: '0 30px 90px rgba(134, 23, 32, 0.35)',
               }}
             >
-              {/* Orbital rings + dots via SVG */}
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 550" preserveAspectRatio="xMidYMid meet" style={{ zIndex: 1 }}>
+              {/* Orbital rings via SVG */}
+              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 650" preserveAspectRatio="xMidYMid meet" style={{ zIndex: 1 }}>
                 {/* Orbital rings */}
-                <circle cx="500" cy="275" r="100" fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="1.5" />
-                <circle cx="500" cy="275" r="160" fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth="1.5" />
-                <circle cx="500" cy="275" r="220" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1.5" />
-
-                {/* Inner orbit dots (r=100) - 2 dots */}
-                <circle cx="600" cy="275" r="8" fill="#FFFFFF" opacity="0.95">
-                  <animate attributeName="opacity" values="0.95;0.6;0.95" dur="3s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="400" cy="275" r="8" fill="#FFFFFF" opacity="0.9">
-                  <animate attributeName="opacity" values="0.9;0.55;0.9" dur="3.5s" repeatCount="indefinite" />
-                </circle>
-
-                {/* Middle orbit dots (r=160) - 4 dots */}
-                <circle cx="660" cy="275" r="9" fill="#FFFFFF" opacity="0.9">
-                  <animate attributeName="opacity" values="0.9;0.5;0.9" dur="4s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="500" cy="115" r="9" fill="#FFFFFF" opacity="0.85">
-                  <animate attributeName="opacity" values="0.85;0.5;0.85" dur="3.2s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="340" cy="275" r="9" fill="#FFFFFF" opacity="0.88">
-                  <animate attributeName="opacity" values="0.88;0.5;0.88" dur="3.8s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="500" cy="435" r="9" fill="#FFFFFF" opacity="0.82">
-                  <animate attributeName="opacity" values="0.82;0.5;0.82" dur="4.2s" repeatCount="indefinite" />
-                </circle>
-
-                {/* Outer orbit dots (r=220) - 5 dots */}
-                <circle cx="720" cy="275" r="10" fill="#FFFFFF" opacity="0.85">
-                  <animate attributeName="opacity" values="0.85;0.45;0.85" dur="4.5s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="655" cy="115" r="10" fill="#FFFFFF" opacity="0.8">
-                  <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3.6s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="345" cy="115" r="10" fill="#FFFFFF" opacity="0.82">
-                  <animate attributeName="opacity" values="0.82;0.45;0.82" dur="4.8s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="280" cy="275" r="10" fill="#FFFFFF" opacity="0.78">
-                  <animate attributeName="opacity" values="0.78;0.4;0.78" dur="3.4s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="345" cy="435" r="10" fill="#FFFFFF" opacity="0.83">
-                  <animate attributeName="opacity" values="0.83;0.45;0.83" dur="5s" repeatCount="indefinite" />
-                </circle>
-
-                {/* Ambient tiny dots for depth */}
-                <circle cx="150" cy="100" r="3" fill="rgba(255,255,255,0.15)" />
-                <circle cx="850" cy="120" r="4" fill="rgba(255,255,255,0.12)" />
-                <circle cx="120" cy="420" r="3.5" fill="rgba(255,255,255,0.1)" />
-                <circle cx="880" cy="450" r="3" fill="rgba(255,255,255,0.13)" />
-                <circle cx="200" cy="250" r="2.5" fill="rgba(255,255,255,0.08)" />
-                <circle cx="800" cy="300" r="2.5" fill="rgba(255,255,255,0.08)" />
+                <circle cx="500" cy="325" r="120" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
+                <circle cx="500" cy="325" r="200" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1.5" />
               </svg>
 
-              {/* Center nucleus - CEO Photo */}
+              {/* Center nucleus - CEO Photo - LARGE */}
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
@@ -562,6 +514,81 @@ export default function QuemSomosEcossistema() {
                 <p className="mt-3 text-white font-bold text-center text-sm tracking-wider">CEO</p>
               </motion.div>
 
+              {/* Executive 1 - Top - Diretora Administrativa e Financeira */}
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="absolute z-10 flex flex-col items-center justify-center"
+                style={{
+                  top: '10%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                }}
+              >
+                <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" alt="Diretora Administrativa e Financeira" className="w-full h-full object-cover" />
+                </div>
+                <p className="mt-2 text-white font-bold text-center text-xs tracking-wider leading-tight" style={{ maxWidth: '110px' }}>Diretora Administrativa e Financeira</p>
+              </motion.div>
+
+              {/* Executive 2 - Right - CSO */}
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.35 }}
+                className="absolute z-10 flex flex-col items-center justify-center"
+                style={{
+                  top: '50%',
+                  right: '8%',
+                  transform: 'translateY(-50%)',
+                }}
+              >
+                <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" alt="CSO" className="w-full h-full object-cover" />
+                </div>
+                <p className="mt-2 text-white font-bold text-center text-xs tracking-wider">CSO</p>
+              </motion.div>
+
+              {/* Executive 3 - Bottom - Diretor de Estratégia, Contencioso e Qualidade */}
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+                className="absolute z-10 flex flex-col items-center justify-center"
+                style={{
+                  bottom: '8%',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                }}
+              >
+                <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" alt="Diretor de Estratégia, Contencioso e Qualidade" className="w-full h-full object-cover" />
+                </div>
+                <p className="mt-2 text-white font-bold text-center text-xs tracking-wider leading-tight" style={{ maxWidth: '110px' }}>Diretor de Estratégia, Contencioso e Qualidade</p>
+              </motion.div>
+
+              {/* Executive 4 - Left - Tesoureira */}
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.45 }}
+                className="absolute z-10 flex flex-col items-center justify-center"
+                style={{
+                  top: '50%',
+                  left: '8%',
+                  transform: 'translateY(-50%)',
+                }}
+              >
+                <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg" style={{ border: '3px solid rgba(255,255,255,0.8)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.3)' }}>
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" alt="Tesoureira" className="w-full h-full object-cover" />
+                </div>
+                <p className="mt-2 text-white font-bold text-center text-xs tracking-wider">Tesoureira</p>
+              </motion.div>
 
             </motion.div>
           </div>
