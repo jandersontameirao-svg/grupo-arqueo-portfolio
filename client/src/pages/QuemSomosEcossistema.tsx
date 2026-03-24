@@ -310,18 +310,7 @@ export default function QuemSomosEcossistema() {
                 <p className="text-lg leading-relaxed mb-8" style={{ color: '#555555' }}>
                   Há uma década, o Grupo Arqueo une competência técnica, inovação tecnológica e gestão estratégica para oferecer soluções completas em licenciamento sociocultural no Brasil.
                 </p>
-                <div className="flex flex-wrap gap-4">
-                  {[
-                    { num: '+500', label: 'Projetos realizados' },
-                    { num: '+10', label: 'Anos de atuação' },
-                    { num: '6', label: 'Empresas no grupo' },
-                  ].map((stat, i) => (
-                    <div key={i} className="flex items-center gap-3 pr-6" style={{ borderRight: i < 2 ? '1px solid #E6E6E6' : 'none' }}>
-                      <span className="text-2xl lg:text-3xl font-bold" style={{ color: '#861720' }}>{stat.num}</span>
-                      <span className="text-sm" style={{ color: '#777' }}>{stat.label}</span>
-                    </div>
-                  ))}
-                </div>
+
               </motion.div>
 
               {/* Coluna direita - Imagem */}
@@ -340,17 +329,7 @@ export default function QuemSomosEcossistema() {
                   />
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(134,23,32,0.15) 0%, rgba(238,117,1,0.1) 100%)' }} />
                 </div>
-                {/* Badge flutuante */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  className="absolute -bottom-6 -left-6 lg:-left-8 rounded-xl p-4 shadow-xl"
-                  style={{ backgroundColor: '#861720' }}
-                >
-                  <img src={ASSETS.logo10anos} alt="10 Anos" className="h-16 lg:h-20 object-contain" />
-                </motion.div>
+
               </motion.div>
             </div>
           </div>
