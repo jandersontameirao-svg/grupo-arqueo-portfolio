@@ -512,7 +512,7 @@ export default function QuemSomosEcossistema() {
                     style={{ filter: 'brightness(1.05) contrast(1.1)' }}
                   />
                 </div>
-                <p className="mt-3 text-white font-bold text-center text-sm tracking-wider">CEO</p>
+                <p className="mt-6 text-white font-bold text-center text-sm tracking-wider">CEO</p>
               </motion.div>
 
               {/* Executive 1 - Top - Diretora Administrativa e Financeira */}
