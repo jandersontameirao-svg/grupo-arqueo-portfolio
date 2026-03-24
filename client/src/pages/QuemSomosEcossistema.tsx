@@ -292,7 +292,7 @@ export default function QuemSomosEcossistema() {
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #861720 0%, transparent 50%), radial-gradient(circle at 80% 50%, #EE7501 0%, transparent 50%)' }} />
           
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="max-w-2xl">
               {/* Coluna esquerda - Texto */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -310,25 +310,6 @@ export default function QuemSomosEcossistema() {
                 <p className="text-lg leading-relaxed mb-8" style={{ color: '#555555' }}>
                   Há uma década, o Grupo Arqueo une competência técnica, inovação tecnológica e gestão estratégica para oferecer soluções completas em licenciamento sociocultural no Brasil.
                 </p>
-
-              </motion.div>
-
-              {/* Coluna direita - Imagem */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
-              >
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ aspectRatio: '4/3' }}>
-                  <img
-                    src={ASSETS.heroArqueologia}
-                    alt="Grupo Arqueo - Arqueologia e Patrimônio Cultural"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(134,23,32,0.15) 0%, rgba(238,117,1,0.1) 100%)' }} />
-                </div>
 
               </motion.div>
             </div>
