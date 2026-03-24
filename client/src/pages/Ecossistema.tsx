@@ -162,25 +162,37 @@ export default function Ecossistema() {
       
       {/* Cabeçalho da Seção */}
       <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
-        <div className="max-w-7xl mx-auto text-center">
-          <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
-            Estrutura Integrada
-          </span>
-          <h1 className="text-3xl lg:text-4xl font-bold mt-4 mb-3" style={{ color: '#1A1A1A' }}>
-            Um ecossistema, múltiplas especialidades
-          </h1>
-          <p className="text-base lg:text-lg max-w-3xl mx-auto" style={{ color: '#666666' }}>
-            Empresas complementares, integradas por inteligência, operação e visão estratégica.
-          </p>
+        <div className="max-w-7xl mx-auto">
+          {/* Logo 10 Anos */}
+          <div className="flex justify-center mb-8">
+            <img 
+              src={ASSETS.logo10anos} 
+              alt="10 Anos Grupo Arqueo"
+              className="h-16 lg:h-20 object-contain"
+            />
+          </div>
+          
+          {/* Título e Subtítulo */}
+          <div className="text-center">
+            <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
+              Estrutura Integrada
+            </span>
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mt-6 mb-4 leading-tight" style={{ color: '#1A1A1A' }}>
+              Um ecossistema,<br />múltiplas especialidades
+            </h1>
+            <p className="text-base lg:text-lg max-w-3xl mx-auto" style={{ color: '#666666' }}>
+              Empresas complementares, integradas por inteligência, operação e visão estratégica.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Layout Principal - Duas Colunas */}
+      {/* Layout Principal - Assimétrico */}
       <section className="py-12 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-            {/* Coluna Principal - Diagrama */}
-            <div className="lg:col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+            {/* Coluna Principal - Diagrama (Maior) */}
+            <div className="lg:col-span-3">
               {/* Diagrama Orbital */}
               <div 
                 ref={diagramRef}
@@ -227,8 +239,8 @@ export default function Ecossistema() {
               </div>
             </div>
 
-            {/* Coluna Lateral - Painel Contextual */}
-            <div className="lg:col-span-1">
+            {/* Coluna Lateral - Painel Contextual (Menor) */}
+            <div className="lg:col-span-2">
               {selectedEmpresaData ? (
                 <div className="panel-slide sticky top-8 p-6 rounded-xl" style={{ backgroundColor: '#FAFAF9', border: '1px solid #E6E6E6' }}>
                   {/* Logo */}
