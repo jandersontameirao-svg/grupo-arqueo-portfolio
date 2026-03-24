@@ -6,9 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import CeoMessage from "./pages/CeoMessage";
-import QuemSomos from "./pages/QuemSomos";
-import MissaoVisao from "./pages/MissaoVisao";
-import Ecossistema from "./pages/Ecossistema";
+import QuemSomosEcossistema from "./pages/QuemSomosEcossistema";
 import Solucoes from "./pages/Solucoes";
 import Diferenciais from "./pages/Diferenciais";
 import NumerosTerritori from "./pages/NumerosTerritori";
@@ -23,9 +21,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/ceo" component={CeoMessage} />
-      <Route path="/quem-somos" component={QuemSomos} />
-      <Route path="/missao-visao" component={MissaoVisao} />
-      <Route path="/ecossistema" component={Ecossistema} />
+      <Route path="/quem-somos" component={QuemSomosEcossistema} />
+      <Route path="/ecossistema" component={QuemSomosEcossistema} />
       <Route path="/solucoes" component={Solucoes} />
       <Route path="/diferenciais" component={Diferenciais} />
       <Route path="/numeros" component={NumerosTerritori} />
