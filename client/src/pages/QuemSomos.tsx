@@ -134,23 +134,7 @@ export default function QuemSomos() {
               O Grupo Arqueo é uma empresa de consultoria especializada em pesquisa e gestão do patrimônio sociocultural, com foco em licenciamento ambiental. Fundado em 2016, nascemos com a visão de oferecer soluções completas, integradas e tecnologicamente avançadas.
             </motion.p>
 
-            {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <button
-                className="px-8 py-4 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95"
-                style={{
-                  background: 'linear-gradient(135deg, #861720 0%, #EE7501 100%)',
-                  boxShadow: '0 10px 30px rgba(134, 23, 32, 0.2)'
-                }}
-              >
-                Conheça Nossa Estrutura
-              </button>
-            </motion.div>
+
           </motion.div>
         </div>
       </section>
