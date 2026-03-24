@@ -74,14 +74,24 @@ export default function Numeros() {
 
       {/* Hero Institucional */}
       <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
-        <div className="max-w-5xl mx-auto text-center">
-          <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
-            Nossa Trajetória
-          </span>
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mt-6 mb-6 leading-tight" style={{ color: '#1A1A1A' }}>
-            Escala, presença e consistência operacional
-          </h1>
-          <p className="text-lg lg:text-xl leading-relaxed" style={{ color: '#555555' }}>
+        <div className="max-w-6xl mx-auto">
+          {/* Logo e Título */}
+          <div className="flex items-center gap-6 lg:gap-8 mb-8">
+            <img
+              src="https://cdn.jsdelivr.net/gh/grupo-arqueo/assets/logo-10-anos.png"
+              alt="10 Anos"
+              className="h-16 lg:h-20 w-auto flex-shrink-0"
+            />
+            <div>
+              <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
+                Nossa Trajetória
+              </span>
+              <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold mt-2 leading-tight" style={{ color: '#1A1A1A' }}>
+                Escala, presença e consistência operacional
+              </h1>
+            </div>
+          </div>
+          <p className="text-base lg:text-lg leading-relaxed max-w-3xl" style={{ color: '#555555' }}>
             Mais de dez anos de atuação, presença em múltiplos territórios e experiência consolidada em diferentes contextos do licenciamento ambiental e do patrimônio cultural.
           </p>
         </div>
