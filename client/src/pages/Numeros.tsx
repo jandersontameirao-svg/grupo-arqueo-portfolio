@@ -86,9 +86,6 @@ export default function Numeros() {
               Escala, presença e consistência operacional
             </h1>
           </div>
-          <p className="text-base lg:text-lg leading-relaxed max-w-3xl" style={{ color: '#555555' }}>
-            Mais de dez anos de atuação, presença em múltiplos territórios e experiência consolidada em diferentes contextos do licenciamento ambiental e do patrimônio cultural.
-          </p>
         </div>
       </section>
 
