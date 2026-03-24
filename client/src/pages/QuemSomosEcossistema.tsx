@@ -472,16 +472,16 @@ export default function QuemSomosEcossistema() {
               className="relative mx-auto rounded-3xl overflow-hidden"
               style={{
                 maxWidth: '1000px',
-                height: '650px',
+                height: '800px',
                 background: 'linear-gradient(135deg, #861720 0%, #6B1219 25%, #A01B28 50%, #EE7501 100%)',
                 boxShadow: '0 30px 90px rgba(134, 23, 32, 0.35)',
               }}
             >
               {/* Orbital rings via SVG */}
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 650" preserveAspectRatio="xMidYMid meet" style={{ zIndex: 1 }}>
+              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" style={{ zIndex: 1 }}>
                 {/* Orbital rings */}
-                <circle cx="500" cy="325" r="120" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
-                <circle cx="500" cy="325" r="200" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1.5" />
+                <circle cx="500" cy="400" r="120" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
+                <circle cx="500" cy="400" r="200" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1.5" />
               </svg>
 
               {/* Center nucleus - CEO Photo - LARGE */}
@@ -495,6 +495,7 @@ export default function QuemSomosEcossistema() {
                   top: '50%',
                   left: '50%',
                   transform: 'translate(-50%, -50%)',
+                  marginTop: '0px',
                 }}
               >
                 <div
@@ -522,7 +523,7 @@ export default function QuemSomosEcossistema() {
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
-                  top: '2%',
+                  top: '8%',
                   left: '50%',
                   transform: 'translate(-50%, 0)',
                 }}
@@ -542,7 +543,7 @@ export default function QuemSomosEcossistema() {
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
                   top: '50%',
-                  right: '1%',
+                  right: '5%',
                   transform: 'translateY(-50%)',
                 }}
               >
@@ -560,7 +561,7 @@ export default function QuemSomosEcossistema() {
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
-                  bottom: '2%',
+                  bottom: '8%',
                   left: '50%',
                   transform: 'translateX(-50%)',
                 }}
@@ -580,7 +581,7 @@ export default function QuemSomosEcossistema() {
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
                   top: '50%',
-                  left: '1%',
+                  left: '5%',
                   transform: 'translateY(-50%)',
                 }}
               >
