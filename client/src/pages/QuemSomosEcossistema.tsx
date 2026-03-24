@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'wouter';
 
 interface TeamMember {
   id: string;
@@ -12,14 +11,14 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 'ceo',
-    name: 'Arquéologa',
+    name: 'Arqueóloga',
     role: 'CEO',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp',
   },
   {
     id: 'diretora',
-    name: 'Diretora Administrativa',
-    role: 'e Financeira',
+    name: 'Diretora',
+    role: 'Administrativa',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp',
   },
   {
@@ -30,8 +29,8 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 'diretor',
-    name: 'Diretor de Estratégia',
-    role: 'Contencioso e Qualidade',
+    name: 'Diretor de',
+    role: 'Estratégia',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp',
   },
   {
@@ -54,14 +53,14 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 'coord-pesquisa',
-    name: 'Coord. de Pesquisa',
-    role: 'e Licenciamento',
+    name: 'Coord. de',
+    role: 'Pesquisa',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp',
   },
   {
     id: 'gerente-projetos',
-    name: 'Gerente de Projetos',
-    role: '',
+    name: 'Gerente de',
+    role: 'Projetos',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/643-RIC_3179_73874ff3.webp',
   },
   {
@@ -78,32 +77,32 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 'coord-comercial',
-    name: 'Coord. Comercial',
-    role: 'e de Relacionamento',
+    name: 'Coord.',
+    role: 'Comercial',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp',
   },
 ];
 
-// Posições radiais equilibradas (sem hierarquia)
+// Posições radiais com leve assimetria controlada e maior espaçamento
 const positions = [
   { top: '50%', left: '50%', size: 'large', zIndex: 10 }, // CEO - centro
-  { top: '12%', left: '28%', size: 'medium', zIndex: 8 }, // Diretora - topo esquerda
-  { top: '8%', left: '72%', size: 'medium', zIndex: 8 }, // CSO - topo direita
-  { top: '28%', left: '8%', size: 'medium', zIndex: 8 }, // Diretor - esquerda
-  { top: '28%', left: '92%', size: 'medium', zIndex: 8 }, // Tesoureira - direita
-  { top: '50%', left: '12%', size: 'small', zIndex: 7 }, // Arqueólogo - esquerda centro
-  { top: '50%', left: '88%', size: 'small', zIndex: 7 }, // Arqueóloga - direita centro
-  { top: '72%', left: '28%', size: 'small', zIndex: 7 }, // Coord. Pesquisa - embaixo esquerda
-  { top: '72%', left: '72%', size: 'small', zIndex: 7 }, // Gerente Projetos - embaixo direita
-  { top: '18%', left: '50%', size: 'small', zIndex: 7 }, // Analista Geo - topo centro
-  { top: '82%', left: '50%', size: 'small', zIndex: 7 }, // Assessor - embaixo centro
-  { top: '42%', left: '50%', size: 'small', zIndex: 7 }, // Coord. Comercial - centro
+  { top: '10%', left: '24%', size: 'medium', zIndex: 8 }, // Diretora - topo esquerda (mais espaço)
+  { top: '6%', left: '76%', size: 'medium', zIndex: 8 }, // CSO - topo direita (mais espaço, leve assimetria)
+  { top: '32%', left: '5%', size: 'medium', zIndex: 8 }, // Diretor - esquerda (mais espaço)
+  { top: '32%', left: '95%', size: 'medium', zIndex: 8 }, // Tesoureira - direita (mais espaço)
+  { top: '50%', left: '10%', size: 'small', zIndex: 7 }, // Arqueólogo - esquerda centro
+  { top: '50%', left: '90%', size: 'small', zIndex: 7 }, // Arqueóloga - direita centro
+  { top: '72%', left: '26%', size: 'small', zIndex: 7 }, // Coord. Pesquisa - embaixo esquerda
+  { top: '72%', left: '74%', size: 'small', zIndex: 7 }, // Gerente Projetos - embaixo direita
+  { top: '14%', left: '50%', size: 'small', zIndex: 7 }, // Analista Geo - topo centro
+  { top: '86%', left: '50%', size: 'small', zIndex: 7 }, // Assessor - embaixo centro
+  { top: '58%', left: '50%', size: 'small', zIndex: 7 }, // Coord. Comercial - centro
 ];
 
 const sizeMap = {
-  large: { width: 180, height: 180, border: 5, textSize: 'sm', textWeight: 'bold' },
-  medium: { width: 140, height: 140, border: 4, textSize: 'xs', textWeight: 'semibold' },
-  small: { width: 110, height: 110, border: 3, textSize: '[10px]', textWeight: 'medium' },
+  large: { width: 155, height: 155, border: 4.5, textSize: '13px', textWeight: 600, textMargin: '6px' },
+  medium: { width: 125, height: 125, border: 3.5, textSize: '11px', textWeight: 600, textMargin: '5px' },
+  small: { width: 95, height: 95, border: 3, textSize: '10px', textWeight: 500, textMargin: '4px' },
 };
 
 export default function QuemSomosEcossistema() {
@@ -126,7 +125,7 @@ export default function QuemSomosEcossistema() {
           </p>
         </motion.div>
 
-        {/* Team Composition - Radial Layout */}
+        {/* Team Composition - Radial Layout Premium */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,19 +133,20 @@ export default function QuemSomosEcossistema() {
           transition={{ duration: 0.9 }}
           className="relative mx-auto rounded-3xl overflow-hidden"
           style={{
-            maxWidth: '1000px',
-            height: '900px',
+            maxWidth: '1100px',
+            height: '950px',
             background: 'linear-gradient(135deg, #861720 0%, #6B1219 25%, #A01B28 50%, #EE7501 100%)',
             boxShadow: '0 30px 90px rgba(134, 23, 32, 0.35)',
           }}
         >
-          {/* Subtle background circles - minimalist */}
+          {/* Subtle background circles - minimalist and refined */}
           <div className="absolute inset-0" style={{ zIndex: 0 }}>
-            <div className="absolute rounded-full" style={{ width: 400, height: 400, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', border: '1px solid rgba(255,255,255,0.08)' }} />
-            <div className="absolute rounded-full" style={{ width: 600, height: 600, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', border: '1px solid rgba(255,255,255,0.05)' }} />
+            <div className="absolute rounded-full" style={{ width: 420, height: 420, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', border: '1px solid rgba(255,255,255,0.04)' }} />
+            <div className="absolute rounded-full" style={{ width: 640, height: 640, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', border: '1px solid rgba(255,255,255,0.03)' }} />
+            <div className="absolute rounded-full" style={{ width: 880, height: 880, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', border: '1px solid rgba(255,255,255,0.02)' }} />
           </div>
 
-          {/* Team Members - Radial Distribution */}
+          {/* Team Members - Radial Distribution with Premium Refinement */}
           {teamMembers.map((member, index) => {
             const pos = positions[index];
             const size = sizeMap[pos.size as keyof typeof sizeMap];
@@ -164,49 +164,57 @@ export default function QuemSomosEcossistema() {
                 }}
               >
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.85 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  transition={{ duration: 0.5, delay: index * 0.04 }}
                   className="flex flex-col items-center group cursor-pointer"
                 >
-                  {/* Profile Circle */}
+                  {/* Profile Circle - Premium Refinement */}
                   <div
-                    className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl"
+                    className="rounded-full overflow-hidden transition-all duration-300 group-hover:scale-105"
                     style={{
                       width: size.width,
                       height: size.height,
-                      border: `${size.border}px solid rgba(255,255,255,0.6)`,
+                      border: `${size.border}px solid rgba(255,255,255,0.65)`,
                       boxShadow: isCenter
-                        ? '0 0 0 8px rgba(255,255,255,0.2), 0 20px 60px rgba(0,0,0,0.3)'
-                        : '0 0 0 4px rgba(255,255,255,0.1), 0 15px 40px rgba(0,0,0,0.2)',
+                        ? '0 0 0 6px rgba(255,255,255,0.15), 0 0 30px rgba(0,0,0,0.25), inset 0 0 20px rgba(0,0,0,0.05)'
+                        : '0 0 0 3px rgba(255,255,255,0.08), 0 12px 32px rgba(0,0,0,0.18), inset 0 0 15px rgba(0,0,0,0.03)',
+                      filter: 'drop-shadow(0 0 8px rgba(0,0,0,0.1))',
                     }}
                   >
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
 
-                  {/* Name and Role - Clean Typography */}
-                  <div className="mt-4 text-center">
+                  {/* Name and Role - Refined Typography */}
+                  <div
+                    className="text-center"
+                    style={{
+                      marginTop: `${size.textMargin}`,
+                      maxWidth: pos.size === 'large' ? '130px' : pos.size === 'medium' ? '105px' : '85px',
+                    }}
+                  >
                     <p
-                      className={`text-white font-${size.textWeight} text-${size.textSize} leading-tight drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]`}
+                      className="text-white leading-tight drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"
                       style={{
-                        maxWidth: pos.size === 'large' ? '140px' : pos.size === 'medium' ? '110px' : '90px',
-                        fontSize: size.textSize === 'sm' ? '14px' : size.textSize === 'xs' ? '12px' : '10px',
-                        fontWeight: size.textWeight === 'bold' ? 700 : size.textWeight === 'semibold' ? 600 : 500,
+                        fontSize: size.textSize,
+                        fontWeight: size.textWeight,
+                        letterSpacing: '0.3px',
                       }}
                     >
                       {member.name}
                     </p>
                     {member.role && (
                       <p
-                        className="text-white/80 text-[9px] leading-tight drop-shadow-lg mt-1"
+                        className="text-white/75 leading-tight drop-shadow-lg mt-0.5"
                         style={{
-                          maxWidth: pos.size === 'large' ? '140px' : pos.size === 'medium' ? '110px' : '90px',
+                          fontSize: `${parseInt(size.textSize) - 1}px`,
                           fontWeight: 400,
+                          letterSpacing: '0.2px',
                         }}
                       >
                         {member.role}
@@ -219,34 +227,34 @@ export default function QuemSomosEcossistema() {
           })}
         </motion.div>
 
-        {/* Team Values Section */}
+        {/* Team Values Section - Premium Styling */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, delay: 0.2 }}
-          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-12"
         >
           <div className="text-center">
-            <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-white text-xl">🎯</span>
+            <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg">
+              <span className="text-white text-2xl">🎯</span>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Excelência</h3>
-            <p className="text-gray-600">Comprometidos com os mais altos padrões de qualidade em cada projeto</p>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Excelência</h3>
+            <p className="text-gray-600 leading-relaxed">Comprometidos com os mais altos padrões de qualidade em cada projeto</p>
           </div>
           <div className="text-center">
-            <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-white text-xl">🤝</span>
+            <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg">
+              <span className="text-white text-2xl">🤝</span>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Colaboração</h3>
-            <p className="text-gray-600">Trabalhando juntos para alcançar objetivos compartilhados e inovadores</p>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Colaboração</h3>
+            <p className="text-gray-600 leading-relaxed">Trabalhando juntos para alcançar objetivos compartilhados e inovadores</p>
           </div>
           <div className="text-center">
-            <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-white text-xl">💡</span>
+            <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg">
+              <span className="text-white text-2xl">💡</span>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Inovação</h3>
-            <p className="text-gray-600">Explorando novas metodologias e perspectivas em arqueologia</p>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Inovação</h3>
+            <p className="text-gray-600 leading-relaxed">Explorando novas metodologias e perspectivas em arqueologia</p>
           </div>
         </motion.div>
       </div>
