@@ -73,18 +73,7 @@ export default function MissaoVisao() {
               </p>
             </div>
 
-            <div className="lg:col-span-5 hidden lg:flex items-end justify-end gap-6 pb-4">
-              {[
-                { label: 'Missão', color: '#861720', h: '180px' },
-                { label: 'Visão', color: '#2C7EB3', h: '140px' },
-                { label: 'Pilares', color: '#EE7501', h: '200px' },
-              ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center gap-3">
-                  <span className="text-[10px] font-semibold tracking-[0.15em] uppercase" style={{ color: item.color }}>{item.label}</span>
-                  <div className="w-[3px] rounded-full" style={{ height: item.h, backgroundColor: item.color, opacity: 0.25 }} />
-                </div>
-              ))}
-            </div>
+
           </div>
         </div>
 
