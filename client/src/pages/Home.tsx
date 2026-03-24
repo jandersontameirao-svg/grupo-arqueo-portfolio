@@ -280,8 +280,8 @@ export default function Home() {
                         <div
                           className="relative flex items-center justify-center rounded-full"
                           style={{
-                            width: '56px',
-                            height: '56px',
+                            width: '72px',
+                            height: '72px',
                             background: isH ? '#FFFFFF' : s.color,
                             border: `2.5px solid ${s.color}`,
                             boxShadow: isH
@@ -292,7 +292,7 @@ export default function Home() {
                         >
                           {/* Number badge */}
                           <span
-                            className="absolute -top-1 -right-1 w-[18px] h-[18px] rounded-full flex items-center justify-center text-[7px] font-black"
+                            className="absolute -top-1 -right-1 w-[22px] h-[22px] rounded-full flex items-center justify-center text-[8px] font-black"
                             style={{
                               background: isH ? '#2A2A2A' : s.color,
                               color: '#FFFFFF',
@@ -304,7 +304,7 @@ export default function Home() {
                           </span>
 
                           <Icon
-                            className="w-5 h-5"
+                            className="w-6 h-6"
                             style={{
                               color: isH ? s.color : '#FFFFFF',
                               transition: 'color 0.3s ease',
