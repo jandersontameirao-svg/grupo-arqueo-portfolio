@@ -234,8 +234,8 @@ export default function Home() {
                         <div
                           className="relative flex items-center justify-center rounded-full"
                           style={{
-                            width: '48px',
-                            height: '48px',
+                            width: '64px',
+                            height: '64px',
                             background: isH ? '#FFFFFF' : s.color,
                             border: `3px solid ${s.color}`,
                             boxShadow: isH
@@ -257,7 +257,7 @@ export default function Home() {
                           </span>
 
                           <Icon
-                            className="w-4 h-4"
+                            className="w-6 h-6"
                             style={{
                               color: isH ? s.color : '#FFFFFF',
                               transition: 'color 0.3s ease',
