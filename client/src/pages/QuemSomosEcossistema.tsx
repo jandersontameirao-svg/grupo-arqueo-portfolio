@@ -357,46 +357,65 @@ export default function QuemSomosEcossistema() {
         </section>
 
         {/* SEÇÃO 2: TIMELINE */}
-        <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: "#FFFFFF" }}>
+        <section className="py-16 lg:py-24 px-4 lg:px-8" style={{ backgroundColor: '#F8F7F5' }}>
           <div className="max-w-7xl mx-auto">
-            <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#EE7501" }}>
-              — NOSSA TRAJETÓRIA
+            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: '#999' }}>
+              — TRAJETÓRIA
             </p>
-            <h3 className="text-3xl lg:text-4xl font-bold mb-12" style={{ color: "#1A1A1A" }}>
-              Marcos de crescimento
+            <h3 className="text-3xl lg:text-4xl font-bold mb-16" style={{ color: '#1A1A1A' }}>
+              Uma década de <span style={{ color: '#EE7501' }}>crescimento</span>
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {timeline.map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="relative"
-                  >
-                    <div className="flex flex-col items-center text-center">
+            {/* Timeline com linha horizontal */}
+            <div className="relative">
+              {/* Linha horizontal de conexão */}
+              <div className="hidden lg:block absolute top-[120px] left-[12%] right-[12%] h-[2px]" style={{ backgroundColor: '#E0DEDA' }} />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+                {timeline.map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.15, duration: 0.6 }}
+                      className="relative flex flex-col items-center text-center"
+                    >
+                      {/* Círculo grande com ícone */}
                       <div
-                        className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
+                        className="w-28 h-28 lg:w-32 lg:h-32 rounded-full flex items-center justify-center mb-6 relative z-10"
+                        style={{
+                          backgroundColor: '#FFFFFF',
+                          border: '3px solid #E8E6E2',
+                          boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
+                        }}
+                      >
+                        <Icon className="w-10 h-10 lg:w-12 lg:h-12" style={{ color: item.badgeColor, opacity: 0.7 }} />
+                      </div>
+
+                      {/* Badge do ano */}
+                      <div
+                        className="w-12 h-12 rounded-full flex items-center justify-center -mt-3 mb-4 relative z-20"
                         style={{ backgroundColor: item.badgeColor }}
                       >
-                        <Icon className="w-8 h-8 text-white" />
+                        <span className="text-white text-xs font-bold">{item.year}</span>
                       </div>
-                      <h4 className="text-2xl font-bold mb-2" style={{ color: item.badgeColor }}>
-                        {item.year}
-                      </h4>
-                      <h5 className="text-lg font-semibold mb-2" style={{ color: "#1A1A1A" }}>
+
+                      {/* Título */}
+                      <h5 className="text-lg font-bold mb-2" style={{ color: '#1A1A1A' }}>
                         {item.title}
                       </h5>
-                      <p style={{ color: "#555555" }} className="text-sm leading-relaxed">
+
+                      {/* Descrição */}
+                      <p className="text-sm leading-relaxed max-w-[220px]" style={{ color: '#777' }}>
                         {item.desc}
                       </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
