@@ -1,416 +1,203 @@
-import { useState, useMemo } from "react";
-import { ChevronDown, Search, MapPin, Users, Briefcase, Calendar } from "lucide-react";
-import projectsData from "../data/projects.json";
-import statsData from "../data/stats.json";
+import { motion } from "framer-motion";
+import PortfolioLayout from "@/components/PortfolioLayout";
+import { ASSETS } from "@/lib/assets";
+import { useState } from "react";
+import { MapPin, Calendar, Building2 } from "lucide-react";
 
-interface Project {
-  id: number;
-  ano: number;
-  projeto: string;
-  empreendimento: string;
-  tipo: string;
-  empreendedor: string;
-  coordenadores: string[];
-  locais: Array<{ estado: string; municipio: string }>;
-  uf_principal: string;
-  nivel: string;
-  tipo_autorizacao: string;
-}
+/**
+ * CASES — Página 08
+ * Design: Hero section similar to Home with image background + gradient overlay
+ */
+
+const cases = [
+  {
+    title: "Complexo Eólico Serra da Borborema",
+    sector: "Energia Eólica",
+    location: "Paraíba",
+    year: "2023",
+    client: "Confidencial",
+    desc: "Diagnóstico arqueológico, prospecção e monitoramento para complexo eólico com mais de 200 aerogeradores. Gestão completa do licenciamento sociocultural junto ao IPHAN.",
+    services: ["Diagnóstico", "Prospecção", "Monitoramento", "Educação Patrimonial"],
+  },
+  {
+    title: "Parque Solar Chapada dos Veadeiros",
+    sector: "Energia Solar",
+    location: "Goiás",
+    year: "2022",
+    client: "Confidencial",
+    desc: "Pesquisa arqueológica preventiva para implantação de parque solar em área de alta sensibilidade arqueológica. Identificação e resgate de sítios pré-coloniais.",
+    services: ["Diagnóstico", "Resgate", "Laudos Técnicos"],
+  },
+  {
+    title: "LT 500kV Recife–Teresina",
+    sector: "Linhas de Transmissão",
+    location: "PE / PI",
+    year: "2023",
+    client: "Confidencial",
+    desc: "Acompanhamento arqueológico de linha de transmissão de 800km, com prospecção em faixa de servidão e monitoramento durante implantação de torres.",
+    services: ["Prospecção", "Monitoramento", "Relatórios IPHAN"],
+  },
+  {
+    title: "Duplicação BR-101 Norte",
+    sector: "Rodovias",
+    location: "Rio Grande do Norte",
+    year: "2021",
+    client: "DNIT",
+    desc: "Programa de pesquisa arqueológica para duplicação de trecho da BR-101, incluindo resgate de sítios históricos e pré-coloniais ao longo do corredor rodoviário.",
+    services: ["Diagnóstico", "Resgate", "Educação Patrimonial", "Gestão de Acervo"],
+  },
+  {
+    title: "Mineração Serra do Espinhaço",
+    sector: "Mineração",
+    location: "Minas Gerais",
+    year: "2022",
+    client: "Confidencial",
+    desc: "Levantamento arqueológico e educação patrimonial para projeto de mineração em região com alto potencial arqueológico. Identificação de sítios rupestres.",
+    services: ["Levantamento", "Educação Patrimonial", "Comunicação Social"],
+  },
+  {
+    title: "Porto Offshore Pecém",
+    sector: "Infraestrutura",
+    location: "Ceará",
+    year: "2023",
+    client: "Confidencial",
+    desc: "Arqueologia subaquática para expansão portuária, com levantamento de patrimônio naval e costeiro. Equipe de mergulho científico certificada.",
+    services: ["Arqueologia Subaquática", "Levantamento Costeiro", "Mergulho Científico"],
+  },
+];
+
+const sectors = ["Todos", ...Array.from(new Set(cases.map(c => c.sector)))];
 
 export default function Cases() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedState, setSelectedState] = useState<string>("");
-  const [selectedType, setSelectedType] = useState<string>("");
-  const [selectedYear, setSelectedYear] = useState<string>("");
-  const [expandedFilters, setExpandedFilters] = useState<Record<string, boolean>>({
-    estado: true,
-    tipo: true,
-    ano: false,
-  });
-
-  const projects: Project[] = projectsData;
-
-  // Filtrar projetos
-  const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
-      const matchesSearch =
-        searchTerm === "" ||
-        project.projeto.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.empreendimento.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.empreendedor.toLowerCase().includes(searchTerm.toLowerCase());
-
-      const matchesState = selectedState === "" || project.uf_principal === selectedState;
-      const matchesType = selectedType === "" || project.tipo === selectedType;
-      const matchesYear = selectedYear === "" || project.ano.toString() === selectedYear;
-
-      return matchesSearch && matchesState && matchesType && matchesYear;
-    });
-  }, [searchTerm, selectedState, selectedType, selectedYear]);
-
-  // Extrair opções únicas
-  const states = Object.keys(statsData.estados).sort();
-  const types = Object.keys(statsData.tipos).sort();
-  const years = statsData.anos.sort((a, b) => b - a);
+  const [activeFilter, setActiveFilter] = useState("Todos");
+  const filtered = activeFilter === "Todos" ? cases : cases.filter(c => c.sector === activeFilter);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FAFAF9" }}>
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="flex items-center gap-4 mb-4">
-            <img
-              src="https://cdn.jsdelivr.net/gh/grupo-arqueo/assets/logo-10-anos.png"
-              alt="10 Anos"
-              className="h-12 w-auto"
-            />
-          </div>
-          <h1 className="text-5xl lg:text-6xl font-bold mb-4" style={{ color: "#1A1A1A" }}>
-            Nossos Cases
-          </h1>
-          <p className="text-lg" style={{ color: "#666666" }}>
-            Portfólio de {statsData.total_projetos} projetos de arqueologia preventiva realizados
-            entre {Math.min(...statsData.anos)} e {Math.max(...statsData.anos)}
-          </p>
+    <PortfolioLayout
+      chapterNum="08"
+      chapterTitle="Cases"
+      prevPath="/numeros"
+      prevLabel="Números"
+      nextPath="/territorio"
+      nextLabel="Presença Territorial"
+    >
+      {/* Hero Section — Similar to Home */}
+      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">
+        {/* Background image + gradient overlay */}
+        <div className="absolute inset-0 -z-10">
+          <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to right, rgba(249,248,246,1) 0%, rgba(249,248,246,0.98) 20%, rgba(249,248,246,0.95) 40%, rgba(249,248,246,0.85) 60%, rgba(249,248,246,0.70) 80%, rgba(249,248,246,0.50) 100%)'
+            }}
+          />
         </div>
-      </header>
 
-      {/* Estatísticas */}
-      <section className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="text-4xl font-bold" style={{ color: "#EE7501" }}>
-                {statsData.total_projetos}
-              </div>
-              <p className="text-sm mt-2" style={{ color: "#999999" }}>
-                Projetos Realizados
-              </p>
+        {/* Content */}
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
+              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Portfólio</span>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold" style={{ color: "#861720" }}>
-                {states.length}
-              </div>
-              <p className="text-sm mt-2" style={{ color: "#999999" }}>
-                Estados Atendidos
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold" style={{ color: "#2C7EB3" }}>
-                {types.length}
-              </div>
-              <p className="text-sm mt-2" style={{ color: "#999999" }}>
-                Tipos de Empreendimentos
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold" style={{ color: "#FFD700" }}>
-                {Math.max(...statsData.anos) - Math.min(...statsData.anos) + 1}
-              </div>
-              <p className="text-sm mt-2" style={{ color: "#999999" }}>
-                Anos de Atuação
-              </p>
-            </div>
-          </div>
+            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
+              Projetos que demonstram nossa{' '}
+              <span style={{ color: '#EE7501' }}>capacidade</span>
+            </h1>
+            <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '600px' }}>
+              Seleção de projetos representativos da nossa atuação em diferentes setores e regiões do Brasil.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Conteúdo Principal */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Sidebar Filtros */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl p-6 shadow-lg sticky top-4">
-              <h3 className="text-lg font-bold mb-6" style={{ color: "#1A1A1A" }}>
-                Filtros
-              </h3>
+      {/* Divider */}
+      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
 
-              {/* Busca */}
-              <div className="mb-6">
-                <label className="block text-sm font-semibold mb-2" style={{ color: "#1A1A1A" }}>
-                  Buscar
-                </label>
-                <div className="relative">
-                  <Search className="absolute left-3 top-3 w-4 h-4" style={{ color: "#999999" }} />
-                  <input
-                    type="text"
-                    placeholder="Projeto, empreendimento..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  />
-                </div>
-              </div>
-
-              {/* Estado */}
-              <div className="mb-6">
+      {/* Cases + Filter */}
+      <section className="py-16 lg:py-24">
+        <div className="container">
+          {/* Filters */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <div className="flex flex-wrap gap-2">
+              {sectors.map((sector) => (
                 <button
-                  onClick={() =>
-                    setExpandedFilters((prev) => ({
-                      ...prev,
-                      estado: !prev.estado,
-                    }))
-                  }
-                  className="w-full flex items-center justify-between mb-3"
+                  key={sector}
+                  onClick={() => setActiveFilter(sector)}
+                  className="px-4 py-2 text-xs font-medium transition-all duration-300"
+                  style={{
+                    backgroundColor: activeFilter === sector ? '#2A2A2A' : '#FFFFFF',
+                    color: activeFilter === sector ? '#FFFFFF' : '#2A2A2A',
+                    border: `1px solid ${activeFilter === sector ? '#2A2A2A' : '#E6E6E6'}`,
+                  }}
                 >
-                  <span className="text-sm font-semibold" style={{ color: "#1A1A1A" }}>
-                    Estado
-                  </span>
-                  <ChevronDown
-                    className="w-4 h-4"
-                    style={{
-                      transform: expandedFilters.estado ? "rotate(180deg)" : "rotate(0deg)",
-                      transition: "transform 0.2s",
-                    }}
-                  />
+                  {sector}
                 </button>
-                {expandedFilters.estado && (
-                  <div className="space-y-2 max-h-48 overflow-y-auto">
-                    <button
-                      onClick={() => setSelectedState("")}
-                      className="w-full text-left px-3 py-2 rounded text-sm"
-                      style={{
-                        backgroundColor: selectedState === "" ? "#EE7501" : "#F5F5F5",
-                        color: selectedState === "" ? "#FFFFFF" : "#1A1A1A",
-                      }}
-                    >
-                      Todos
-                    </button>
-                    {states.map((state) => (
-                      <button
-                        key={state}
-                        onClick={() => setSelectedState(state)}
-                        className="w-full text-left px-3 py-2 rounded text-sm"
-                        style={{
-                          backgroundColor: selectedState === state ? "#EE7501" : "#F5F5F5",
-                          color: selectedState === state ? "#FFFFFF" : "#1A1A1A",
-                        }}
-                      >
-                        {state} ({statsData.estados[state as keyof typeof statsData.estados]})
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Tipo */}
-              <div className="mb-6">
-                <button
-                  onClick={() =>
-                    setExpandedFilters((prev) => ({
-                      ...prev,
-                      tipo: !prev.tipo,
-                    }))
-                  }
-                  className="w-full flex items-center justify-between mb-3"
-                >
-                  <span className="text-sm font-semibold" style={{ color: "#1A1A1A" }}>
-                    Tipo
-                  </span>
-                  <ChevronDown
-                    className="w-4 h-4"
-                    style={{
-                      transform: expandedFilters.tipo ? "rotate(180deg)" : "rotate(0deg)",
-                      transition: "transform 0.2s",
-                    }}
-                  />
-                </button>
-                {expandedFilters.tipo && (
-                  <div className="space-y-2 max-h-48 overflow-y-auto">
-                    <button
-                      onClick={() => setSelectedType("")}
-                      className="w-full text-left px-3 py-2 rounded text-sm"
-                      style={{
-                        backgroundColor: selectedType === "" ? "#EE7501" : "#F5F5F5",
-                        color: selectedType === "" ? "#FFFFFF" : "#1A1A1A",
-                      }}
-                    >
-                      Todos
-                    </button>
-                    {types.map((type) => (
-                      <button
-                        key={type}
-                        onClick={() => setSelectedType(type)}
-                        className="w-full text-left px-3 py-2 rounded text-sm"
-                        style={{
-                          backgroundColor: selectedType === type ? "#EE7501" : "#F5F5F5",
-                          color: selectedType === type ? "#FFFFFF" : "#1A1A1A",
-                        }}
-                      >
-                        {type} ({statsData.tipos[type as keyof typeof statsData.tipos]})
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Ano */}
-              <div>
-                <button
-                  onClick={() =>
-                    setExpandedFilters((prev) => ({
-                      ...prev,
-                      ano: !prev.ano,
-                    }))
-                  }
-                  className="w-full flex items-center justify-between mb-3"
-                >
-                  <span className="text-sm font-semibold" style={{ color: "#1A1A1A" }}>
-                    Ano
-                  </span>
-                  <ChevronDown
-                    className="w-4 h-4"
-                    style={{
-                      transform: expandedFilters.ano ? "rotate(180deg)" : "rotate(0deg)",
-                      transition: "transform 0.2s",
-                    }}
-                  />
-                </button>
-                {expandedFilters.ano && (
-                  <div className="space-y-2 max-h-48 overflow-y-auto">
-                    <button
-                      onClick={() => setSelectedYear("")}
-                      className="w-full text-left px-3 py-2 rounded text-sm"
-                      style={{
-                        backgroundColor: selectedYear === "" ? "#EE7501" : "#F5F5F5",
-                        color: selectedYear === "" ? "#FFFFFF" : "#1A1A1A",
-                      }}
-                    >
-                      Todos
-                    </button>
-                    {years.map((year) => (
-                      <button
-                        key={year}
-                        onClick={() => setSelectedYear(year.toString())}
-                        className="w-full text-left px-3 py-2 rounded text-sm"
-                        style={{
-                          backgroundColor: selectedYear === year.toString() ? "#EE7501" : "#F5F5F5",
-                          color: selectedYear === year.toString() ? "#FFFFFF" : "#1A1A1A",
-                        }}
-                      >
-                        {year}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+              ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Grid de Projetos */}
-          <div className="lg:col-span-3">
-            <div className="mb-6 flex items-center justify-between">
-              <h2 className="text-2xl font-bold" style={{ color: "#1A1A1A" }}>
-                {filteredProjects.length} Projetos
-              </h2>
-            </div>
-
-            {filteredProjects.length === 0 ? (
-              <div
-                className="text-center py-12 rounded-2xl"
-                style={{ backgroundColor: "#FFFFFF", border: "1px solid #E6E6E6" }}
+          {/* Cases grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {filtered.map((caseItem, i) => (
+              <motion.div
+                key={caseItem.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="group p-6 lg:p-8 transition-all duration-300"
+                style={{ backgroundColor: '#FFFFFF', borderLeft: '3px solid #EE7501' }}
               >
-                <p style={{ color: "#999999" }}>Nenhum projeto encontrado com os filtros selecionados.</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {filteredProjects.map((project) => (
-                  <div
-                    key={project.id}
-                    className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-l-4"
-                    style={{ borderLeftColor: "#EE7501" }}
-                  >
-                    {/* Header Card */}
-                    <div
-                      className="p-6 border-b border-gray-100"
-                      style={{ backgroundColor: "#FAFAF9" }}
-                    >
-                      <h3 className="text-lg font-bold mb-2" style={{ color: "#1A1A1A" }}>
-                        {project.projeto}
-                      </h3>
-                      <p className="text-sm" style={{ color: "#666666" }}>
-                        {project.empreendimento}
-                      </p>
-                    </div>
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <span className="px-2 py-0.5 text-[10px] font-medium" style={{ backgroundColor: '#F3EFEA', color: '#EE7501' }}>
+                    {caseItem.sector}
+                  </span>
+                </div>
 
-                    {/* Conteúdo Card */}
-                    <div className="p-6 space-y-4">
-                      {/* Tipo */}
-                      <div className="flex items-start gap-3">
-                        <Briefcase className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#EE7501" }} />
-                        <div>
-                          <p className="text-xs font-semibold uppercase" style={{ color: "#999999" }}>
-                            Tipo
-                          </p>
-                          <p className="text-sm" style={{ color: "#1A1A1A" }}>
-                            {project.tipo}
-                          </p>
-                        </div>
-                      </div>
+                <h3 className="text-base lg:text-lg font-bold mb-3" style={{ color: '#2A2A2A' }}>{caseItem.title}</h3>
 
-                      {/* Localização */}
-                      {project.locais.length > 0 && (
-                        <div className="flex items-start gap-3">
-                          <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#2C7EB3" }} />
-                          <div>
-                            <p className="text-xs font-semibold uppercase" style={{ color: "#999999" }}>
-                              Localização
-                            </p>
-                            <p className="text-sm" style={{ color: "#1A1A1A" }}>
-                              {project.locais.map((l) => `${l.municipio || "N/A"} - ${l.estado}`).join(", ")}
-                            </p>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Coordenadores */}
-                      {project.coordenadores.length > 0 && (
-                        <div className="flex items-start gap-3">
-                          <Users className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#861720" }} />
-                          <div>
-                            <p className="text-xs font-semibold uppercase" style={{ color: "#999999" }}>
-                              Coordenador{project.coordenadores.length > 1 ? "es" : ""}
-                            </p>
-                            <p className="text-sm" style={{ color: "#1A1A1A" }}>
-                              {project.coordenadores.slice(0, 2).join(", ")}
-                              {project.coordenadores.length > 2 && ` +${project.coordenadores.length - 2}`}
-                            </p>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Ano */}
-                      <div className="flex items-start gap-3">
-                        <Calendar className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#FFD700" }} />
-                        <div>
-                          <p className="text-xs font-semibold uppercase" style={{ color: "#999999" }}>
-                            Ano
-                          </p>
-                          <p className="text-sm" style={{ color: "#1A1A1A" }}>
-                            {project.ano}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Footer Card */}
-                    <div
-                      className="px-6 py-4 flex items-center justify-between border-t border-gray-100"
-                      style={{ backgroundColor: "#FAFAF9" }}
-                    >
-                      <span className="text-xs font-semibold uppercase" style={{ color: "#999999" }}>
-                        {project.tipo_autorizacao}
-                      </span>
-                      <span className="text-xs px-3 py-1 rounded-full" style={{ backgroundColor: "#EE7501", color: "#FFFFFF" }}>
-                        {project.nivel}
-                      </span>
-                    </div>
+                <div className="flex flex-wrap items-center gap-4 mb-4">
+                  <div className="flex items-center gap-1.5">
+                    <MapPin className="w-3 h-3" style={{ color: '#888' }} />
+                    <span className="text-xs font-light" style={{ color: '#888' }}>{caseItem.location}</span>
                   </div>
-                ))}
-              </div>
-            )}
+                  <div className="flex items-center gap-1.5">
+                    <Calendar className="w-3 h-3" style={{ color: '#888' }} />
+                    <span className="text-xs font-light" style={{ color: '#888' }}>{caseItem.year}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <Building2 className="w-3 h-3" style={{ color: '#888' }} />
+                    <span className="text-xs font-light" style={{ color: '#888' }}>{caseItem.client}</span>
+                  </div>
+                </div>
+
+                <p className="text-xs font-light leading-relaxed mb-4" style={{ color: '#666' }}>{caseItem.desc}</p>
+
+                <div className="flex flex-wrap gap-1.5 pt-4" style={{ borderTop: '1px solid #F3EFEA' }}>
+                  {caseItem.services.map((s, j) => (
+                    <span key={j} className="px-2 py-0.5 text-[10px] font-medium" style={{ backgroundColor: '#F3EFEA', color: '#555' }}>
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
-    </div>
+    </PortfolioLayout>
   );
 }

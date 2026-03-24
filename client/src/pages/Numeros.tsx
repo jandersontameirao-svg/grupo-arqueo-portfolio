@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import statsData from '../data/stats.json';
 
 export default function Numeros() {
   const [animateMetrics, setAnimateMetrics] = useState(false);
@@ -50,14 +51,19 @@ export default function Numeros() {
     }
   `;
 
-  const segmentos = [
-    { name: 'Energia Eólica', count: '80+', percentage: 100 },
-    { name: 'Energia Solar', count: '45+', percentage: 56 },
-    { name: 'Linhas de Transmissão', count: '35+', percentage: 44 },
-    { name: 'Rodovias', count: '30+', percentage: 38 },
-    { name: 'Mineração', count: '25+', percentage: 31 },
-    { name: 'Construção Civil', count: '20+', percentage: 25 },
-  ];
+  // Preparar dados dos segmentos a partir das estatísticas
+  const tiposData = Object.entries(statsData.tipos).map(([name, count]) => ({
+    name,
+    count: count as number,
+  }));
+  
+  // Calcular percentagem relativa ao máximo
+  const maxCount = Math.max(...tiposData.map(t => t.count));
+  const segmentos = tiposData.map(seg => ({
+    name: seg.name,
+    count: seg.count.toString(),
+    percentage: Math.round((seg.count / maxCount) * 100),
+  }));
 
   return (
     <div className="min-h-screen bg-white">
@@ -99,7 +105,7 @@ export default function Numeros() {
               className="text-7xl lg:text-8xl font-bold mb-4"
               style={{ color: '#EE7501' }}
             >
-              250+
+              {statsData.total_projetos}+
             </div>
             <h3 className="text-2xl lg:text-3xl font-bold mb-3" style={{ color: '#1A1A1A' }}>
               Projetos e processos gerenciados
@@ -116,15 +122,15 @@ export default function Numeros() {
               className={`text-center metric-fade-in metric-secondary-1 ${animateMetrics ? '' : 'opacity-0'}`}
               style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
             >
-              <div 
-                className="text-5xl lg:text-6xl font-bold mb-3"
-                style={{ color: '#861720' }}
-              >
-                16
-              </div>
-              <h3 className="text-xl lg:text-2xl font-bold mb-2" style={{ color: '#1A1A1A' }}>
-                Estados com atuação comprovada
-              </h3>
+            <div 
+              className="text-5xl lg:text-6xl font-bold mb-3"
+              style={{ color: '#861720' }}
+            >
+              {Object.keys(statsData.estados).length}
+            </div>
+            <h3 className="text-xl lg:text-2xl font-bold mb-2" style={{ color: '#1A1A1A' }}>
+              Estados com atuação comprovada
+            </h3>
               <p className="text-sm lg:text-base" style={{ color: '#666666' }}>
                 Presença nacional consolidada em múltiplos territórios
               </p>
@@ -139,7 +145,7 @@ export default function Numeros() {
                 className="text-5xl lg:text-6xl font-bold mb-3"
                 style={{ color: '#2C7EB3' }}
               >
-                10
+                {Math.max(...statsData.anos) - Math.min(...statsData.anos) + 1}
               </div>
               <h3 className="text-xl lg:text-2xl font-bold mb-2" style={{ color: '#1A1A1A' }}>
                 Anos de experiência no mercado
