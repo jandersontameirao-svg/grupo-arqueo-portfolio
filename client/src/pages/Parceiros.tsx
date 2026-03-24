@@ -9,70 +9,74 @@ import PortfolioLayout from "@/components/PortfolioLayout";
  */
 
 export default function Parceiros() {
-  const parceiros = [
-    "2W Energia",
-    "ACBMM",
-    "AES Brasil",
-    "Alamo Energia",
-    "AMBIA",
-    "Ambientare",
-    "Atlas Renewable Energy",
-    "Aurora",
-    "Axia Energia",
-    "BIenergia",
-    "CanadianSolar",
-    "CEI",
-    "Comerc Energia",
-    "CONCREMAT",
-    "Copasa",
-    "CYMI",
-    "Dossel",
-    "Dyonisio",
-    "EDF Energy",
-    "EDP Renewables",
-    "Eldorado Brasil",
-    "Elera Renováveis",
-    "ENGEPLAN",
-    "Faro Energy",
-    "GDR",
-    "Grande Sertão",
-    "Greenyellow",
-    "Grupo Dimensão",
-    "Grupo Elecnor",
-    "Helexia",
-    "IACO",
-    "IB Vogt",
-    "INPASA",
-    "Itahum Export",
-    "JMM",
-    "K Infra",
-    "Kroma Energia",
-    "Lightsource BP",
-    "Luanova",
-    "Mateus",
-    "Mercury Renew",
-    "Neoenergia",
-    "Pan American Energy",
-    "PEC Energia",
-    "PowerChina",
-    "Powertis",
-    "Raízen",
-    "RenovaMundo",
-    "Rumo",
-    "Safira",
-    "SER Renováveis",
-    "Shell",
-    "Solatio",
-    "Sowitec",
-    "SPIC Brasil",
-    "Statkraft",
-    "State Grid",
-    "Sunco Capital",
-    "Taesa",
-    "Triunfo Concetra",
-    "UP",
-    "Vestas",
-    "Voltalia",
+  const parceiros: { nome: string; logo?: string }[] = [
+    { nome: "2W Energia" },
+    { nome: "ACBMM" },
+    { nome: "AES Brasil" },
+    { nome: "Alamo Energia" },
+    { nome: "AMBIA" },
+    { nome: "Ambientare" },
+    { nome: "Atlas Renewable Energy" },
+    { nome: "Aurora" },
+    { nome: "Axia Energia" },
+    { nome: "BIenergia" },
+    { nome: "CanadianSolar" },
+    { nome: "CEI" },
+    { nome: "Comerc Energia" },
+    { nome: "CONCREMAT" },
+    { nome: "Copasa" },
+    { nome: "CYMI" },
+    { nome: "Dossel" },
+    { nome: "Dyonisio" },
+    { nome: "EDF Energy" },
+    { nome: "EDP Renewables" },
+    { nome: "Eldorado Brasil" },
+    { nome: "Elera Renováveis" },
+    { nome: "ENGEPLAN" },
+    { nome: "Faro Energy" },
+    { nome: "Ferreira Rocha", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_WonW1i_image_c925c2ec.png" },
+    { nome: "GDR" },
+    { nome: "Grande Sertão" },
+    { nome: "Greenyellow" },
+    { nome: "Grupo Dimensão" },
+    { nome: "Grupo Elecnor" },
+    { nome: "Guaporé Sul", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_W3bqIt_image_ebaa0df5.png" },
+    { nome: "Helexia" },
+    { nome: "IACO" },
+    { nome: "IB Vogt" },
+    { nome: "INPASA" },
+    { nome: "Itahum Export" },
+    { nome: "JMM" },
+    { nome: "K Infra" },
+    { nome: "Kroma Energia" },
+    { nome: "Lightsource BP" },
+    { nome: "Luanova" },
+    { nome: "Mateus" },
+    { nome: "Mercury Renew" },
+    { nome: "Neoenergia" },
+    { nome: "NewFortress Energy", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_FupiYu_image_b0157d0f.png" },
+    { nome: "Pan American Energy" },
+    { nome: "PEC Energia" },
+    { nome: "PowerChina" },
+    { nome: "Powertis" },
+    { nome: "Quantum", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_ZcfdfV_image_9efa3af4.png" },
+    { nome: "Raízen" },
+    { nome: "RenovaMundo" },
+    { nome: "Rumo" },
+    { nome: "Safira" },
+    { nome: "SER Renováveis" },
+    { nome: "Shell" },
+    { nome: "Solatio" },
+    { nome: "Sowitec" },
+    { nome: "SPIC Brasil" },
+    { nome: "Statkraft" },
+    { nome: "State Grid" },
+    { nome: "Sunco Capital" },
+    { nome: "Taesa" },
+    { nome: "Triunfo Concetra" },
+    { nome: "UP" },
+    { nome: "Vestas" },
+    { nome: "Voltalia" },
   ];
 
   // Generate initials from name
@@ -120,9 +124,9 @@ export default function Parceiros() {
       <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div className="flex flex-wrap justify-center gap-5 lg:gap-6">
-            {parceiros.map((nome, i) => (
+            {parceiros.map((parceiro, i) => (
               <motion.div
-                key={nome}
+                key={parceiro.nome}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -140,18 +144,35 @@ export default function Parceiros() {
                   }}
                 >
                   <div className="text-center px-2">
-                    <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-1.5"
-                      style={{
-                        backgroundColor: getColor(i),
-                        color: '#FFFFFF',
-                      }}
-                    >
-                      <span className="text-[9px] font-bold tracking-wide">{getInitials(nome)}</span>
-                    </div>
-                    <p className="text-[8px] font-semibold leading-tight" style={{ color: '#2A2A2A' }}>
-                      {nome}
-                    </p>
+                    {parceiro.logo ? (
+                      <>
+                        <div className="w-12 h-12 flex items-center justify-center mx-auto mb-1.5">
+                          <img
+                            src={parceiro.logo}
+                            alt={parceiro.nome}
+                            className="max-w-full max-h-full object-contain"
+                          />
+                        </div>
+                        <p className="text-[8px] font-semibold leading-tight" style={{ color: '#2A2A2A' }}>
+                          {parceiro.nome}
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <div
+                          className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-1.5"
+                          style={{
+                            backgroundColor: getColor(i),
+                            color: '#FFFFFF',
+                          }}
+                        >
+                          <span className="text-[9px] font-bold tracking-wide">{getInitials(parceiro.nome)}</span>
+                        </div>
+                        <p className="text-[8px] font-semibold leading-tight" style={{ color: '#2A2A2A' }}>
+                          {parceiro.nome}
+                        </p>
+                      </>
+                    )}
                   </div>
                 </div>
               </motion.div>
