@@ -271,15 +271,15 @@ export default function QuemSomosEcossistema() {
         <style>{animationStyles}</style>
 
         {/* SEÇÃO 1: QUEM SOMOS - Hero */}
-        <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
+        <section className="py-6 lg:py-8 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-8 lg:gap-12 mb-12">
+            <div className="flex items-center gap-6 lg:gap-10">
               <div className="flex-shrink-0">
-                <img src={ASSETS.logo10anos} alt="10 Anos Grupo Arqueo" className="h-20 lg:h-28 object-contain" />
+                <img src={ASSETS.logo10anos} alt="10 Anos Grupo Arqueo" className="h-14 lg:h-20 object-contain" />
               </div>
               <div>
-                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: "#1A1A1A" }}>
-                  Dez anos de <span style={{ color: "#EE7501" }}>excelência</span><br />em arqueologia
+                <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style={{ color: "#1A1A1A" }}>
+                  Dez anos de <span style={{ color: "#EE7501" }}>excelência</span> em arqueologia
                 </h2>
               </div>
             </div>
