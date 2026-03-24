@@ -463,7 +463,7 @@ export default function QuemSomosEcossistema() {
               </p>
             </motion.div>
 
-            {/* Team Card with orbital dots layout - PREMIUM */}
+            {/* Team Hierarchy Layout - PREMIUM ASYMMETRIC */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -471,113 +471,123 @@ export default function QuemSomosEcossistema() {
               transition={{ duration: 0.9 }}
               className="relative mx-auto rounded-3xl overflow-hidden"
               style={{
-                maxWidth: '1000px',
-                height: '900px',
+                maxWidth: '1100px',
                 background: 'linear-gradient(135deg, #861720 0%, #6B1219 25%, #A01B28 50%, #EE7501 100%)',
                 boxShadow: '0 30px 90px rgba(134, 23, 32, 0.35)',
+                padding: '60px 40px 50px',
               }}
             >
-              {/* Orbital rings and team photos - all inside SVG for perfect alignment */}
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid meet" style={{ zIndex: 1 }}>
-                {/* Orbital rings */}
-                <circle cx="500" cy="450" r="130" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
-                <circle cx="500" cy="450" r="220" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1.5" />
-                <circle cx="500" cy="450" r="340" fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
+              {/* Decorative subtle circles in background */}
+              <div className="absolute inset-0" style={{ zIndex: 0 }}>
+                <div className="absolute rounded-full border border-white/10" style={{ width: 500, height: 500, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                <div className="absolute rounded-full border border-white/5" style={{ width: 750, height: 750, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+              </div>
 
-                {/* CEO - center of inner circle */}
-                <defs>
-                  <clipPath id="ceoClip"><circle cx="500" cy="450" r="60" /></clipPath>
-                  <clipPath id="exec1Clip"><circle cx="500" cy="230" r="38" /></clipPath>
-                  <clipPath id="exec2Clip"><circle cx="670" cy="450" r="38" /></clipPath>
-                  <clipPath id="exec3Clip"><circle cx="500" cy="670" r="38" /></clipPath>
-                  <clipPath id="exec4Clip"><circle cx="330" cy="450" r="38" /></clipPath>
-                  <clipPath id="team1Clip"><circle cx="500" cy="80" r="48" /></clipPath>
-                  <clipPath id="team2Clip"><circle cx="820" cy="160" r="44" /></clipPath>
-                  <clipPath id="team3Clip"><circle cx="880" cy="450" r="50" /></clipPath>
-                  <clipPath id="team4Clip"><circle cx="700" cy="780" r="46" /></clipPath>
-                  <clipPath id="team5Clip"><circle cx="300" cy="780" r="46" /></clipPath>
-                  <clipPath id="team6Clip"><circle cx="120" cy="450" r="50" /></clipPath>
-                  <clipPath id="team7Clip"><circle cx="180" cy="160" r="44" /></clipPath>
-                </defs>
+              {/* CEO - LARGE AND CENTERED */}
+              <div className="relative flex flex-col items-center mb-12" style={{ zIndex: 1 }}>
+                <div className="relative">
+                  <div className="rounded-full overflow-hidden border-4 border-white/90 shadow-2xl" style={{ width: 160, height: 160 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp" alt="CEO" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full border border-white/30">
+                    <span className="text-white font-bold text-sm tracking-widest">CEO</span>
+                  </div>
+                </div>
+              </div>
 
-                {/* CEO photo circle - center */}
-                <circle cx="500" cy="450" r="65" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" />
-                <circle cx="500" cy="450" r="72" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="6" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp" x="440" y="390" width="120" height="120" clipPath="url(#ceoClip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="500" y="535" textAnchor="middle" fill="white" fontWeight="bold" fontSize="14" letterSpacing="2">CEO</text>
+              {/* EXECUTIVES ROW - MEDIUM SIZE, ASYMMETRIC SPACING */}
+              <div className="relative flex justify-center items-start gap-6 lg:gap-10 mb-12 flex-wrap" style={{ zIndex: 1 }}>
+                {/* Exec 1 - Diretora Administrativa */}
+                <div className="flex flex-col items-center" style={{ marginTop: '10px' }}>
+                  <div className="rounded-full overflow-hidden border-3 border-white/70 shadow-xl" style={{ width: 110, height: 110, borderWidth: 3 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" alt="Diretora Administrativa" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white font-semibold text-xs mt-3 text-center leading-tight max-w-[120px]">Diretora Administrativa e Financeira</span>
+                </div>
 
-                {/* Executive 1 - Top - Diretora Administrativa e Financeira */}
-                <circle cx="500" cy="230" r="42" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" x="462" y="192" width="76" height="76" clipPath="url(#exec1Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="500" y="290" textAnchor="middle" fill="white" fontWeight="bold" fontSize="10" letterSpacing="0.5">
-                  <tspan x="500" dy="0">Diretora Administrativa</tspan>
-                  <tspan x="500" dy="13">e Financeira</tspan>
-                </text>
+                {/* Exec 2 - CSO */}
+                <div className="flex flex-col items-center" style={{ marginTop: '30px' }}>
+                  <div className="rounded-full overflow-hidden border-3 border-white/70 shadow-xl" style={{ width: 110, height: 110, borderWidth: 3 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" alt="CSO" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white font-semibold text-xs mt-3 text-center leading-tight max-w-[120px]">CSO</span>
+                </div>
 
-                {/* Executive 2 - Right - CSO */}
-                <circle cx="670" cy="450" r="42" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" x="632" y="412" width="76" height="76" clipPath="url(#exec2Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="670" y="510" textAnchor="middle" fill="white" fontWeight="bold" fontSize="10" letterSpacing="0.5">CSO</text>
+                {/* Exec 3 - Diretor de Estratégia */}
+                <div className="flex flex-col items-center" style={{ marginTop: '0px' }}>
+                  <div className="rounded-full overflow-hidden border-3 border-white/70 shadow-xl" style={{ width: 110, height: 110, borderWidth: 3 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" alt="Diretor de Estratégia" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white font-semibold text-xs mt-3 text-center leading-tight max-w-[120px]">Diretor de Estratégia, Contencioso e Qualidade</span>
+                </div>
 
-                {/* Executive 3 - Bottom - Diretor de Estratégia */}
-                <circle cx="500" cy="670" r="42" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" x="462" y="632" width="76" height="76" clipPath="url(#exec3Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="500" y="730" textAnchor="middle" fill="white" fontWeight="bold" fontSize="10" letterSpacing="0.5">
-                  <tspan x="500" dy="0">Diretor de Estratégia,</tspan>
-                  <tspan x="500" dy="13">Contencioso e Qualidade</tspan>
-                </text>
+                {/* Exec 4 - Tesoureira */}
+                <div className="flex flex-col items-center" style={{ marginTop: '20px' }}>
+                  <div className="rounded-full overflow-hidden border-3 border-white/70 shadow-xl" style={{ width: 110, height: 110, borderWidth: 3 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" alt="Tesoureira" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white font-semibold text-xs mt-3 text-center leading-tight max-w-[120px]">Tesoureira</span>
+                </div>
+              </div>
 
-                {/* Executive 4 - Left - Tesoureira */}
-                <circle cx="330" cy="450" r="42" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" x="292" y="412" width="76" height="76" clipPath="url(#exec4Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="330" y="510" textAnchor="middle" fill="white" fontWeight="bold" fontSize="10" letterSpacing="0.5">Tesoureira</text>
+              {/* TEAM MEMBERS ROW - SMALLER SIZE, ASYMMETRIC */}
+              <div className="relative flex justify-center items-start gap-4 lg:gap-8 flex-wrap" style={{ zIndex: 1 }}>
+                {/* Team 1 - Arqueólogo */}
+                <div className="flex flex-col items-center" style={{ marginTop: '15px' }}>
+                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp" alt="Arqueólogo" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Arqueólogo</span>
+                </div>
 
-                {/* ═══ THIRD ORBIT - 7 Team Members ═══ */}
+                {/* Team 2 - Arqueóloga */}
+                <div className="flex flex-col items-center" style={{ marginTop: '0px' }}>
+                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp" alt="Arqueóloga" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Arqueóloga</span>
+                </div>
 
-                {/* Team 1 - Top Center - Arqueólogo - LARGER */}
-                <circle cx="500" cy="80" r="48" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp" x="452" y="32" width="96" height="96" clipPath="url(#team1Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="500" y="150" textAnchor="middle" fill="white" fontWeight="600" fontSize="11" letterSpacing="0.5">Arqueólogo</text>
+                {/* Team 3 - Coord. Pesquisa */}
+                <div className="flex flex-col items-center" style={{ marginTop: '25px' }}>
+                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp" alt="Coord. Pesquisa" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Coord. de Pesquisa e Licenciamento</span>
+                </div>
 
-                {/* Team 2 - Top Right - Arqueóloga - LARGER */}
-                <circle cx="820" cy="160" r="44" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp" x="776" y="116" width="88" height="88" clipPath="url(#team2Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="820" y="222" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">Arqueóloga</text>
+                {/* Team 4 - Gerente de Projetos */}
+                <div className="flex flex-col items-center" style={{ marginTop: '5px' }}>
+                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Annaflavia_0ffbab23.webp" alt="Gerente de Projetos" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Gerente de Projetos</span>
+                </div>
 
-                {/* Team 3 - Right - Coord. Pesquisa e Licenciamento - LARGER */}
-                <circle cx="880" cy="450" r="50" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp" x="830" y="400" width="100" height="100" clipPath="url(#team3Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="880" y="520" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">
-                  <tspan x="880" dy="0">Coord. de Pesquisa</tspan>
-                  <tspan x="880" dy="13">e Licenciamento</tspan>
-                </text>
+                {/* Team 5 - Analista de Geoprocessamento */}
+                <div className="flex flex-col items-center" style={{ marginTop: '20px' }}>
+                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp" alt="Analista de Geoprocessamento" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Analista de Geoprocessamento</span>
+                </div>
 
-                {/* Team 4 - Bottom Right - Gerente de Projetos - LARGER */}
-                <circle cx="700" cy="780" r="46" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Annaflavia_0ffbab23.webp" x="654" y="734" width="92" height="92" clipPath="url(#team4Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="700" y="850" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">Gerente de Projetos</text>
+                {/* Team 6 - Assessor Jurídico */}
+                <div className="flex flex-col items-center" style={{ marginTop: '10px' }}>
+                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp" alt="Assessor Jurídico" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Assessor Jurídico</span>
+                </div>
 
-                {/* Team 5 - Bottom Left - Analista de Geoprocessamento - LARGER */}
-                <circle cx="300" cy="780" r="46" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp" x="254" y="734" width="92" height="92" clipPath="url(#team5Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="300" y="850" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">
-                  <tspan x="300" dy="0">Analista de</tspan>
-                  <tspan x="300" dy="13">Geoprocessamento</tspan>
-                </text>
-
-                {/* Team 6 - Left - Assessor Jurídico - LARGER */}
-                <circle cx="120" cy="450" r="50" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp" x="70" y="400" width="100" height="100" clipPath="url(#team6Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="120" y="520" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">Assessor Jurídico</text>
-
-                {/* Team 7 - Top Left - Coord. Comercial e de Relacionamento - LARGER */}
-                <circle cx="180" cy="160" r="44" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp" x="136" y="116" width="88" height="88" clipPath="url(#team7Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="180" y="222" textAnchor="middle" fill="white" fontWeight="600" fontSize="10" letterSpacing="0.5">
-                  <tspan x="180" dy="0">Coord. Comercial</tspan>
-                  <tspan x="180" dy="13">e de Relacionamento</tspan>
-                </text>
-              </svg>
+                {/* Team 7 - Coord. Comercial */}
+                <div className="flex flex-col items-center" style={{ marginTop: '0px' }}>
+                  <div className="rounded-full overflow-hidden border-2 border-white/50 shadow-lg" style={{ width: 85, height: 85 }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp" alt="Coord. Comercial" className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-white/90 font-medium text-[10px] mt-2 text-center leading-tight max-w-[100px]">Coord. Comercial e de Relacionamento</span>
+                </div>
+              </div>
 
             </motion.div>
           </div>
