@@ -29,6 +29,7 @@ function Router() {
       <Route path="/diferenciais" component={DiferenciaisConformidade} />
       <Route path="/conformidade" component={DiferenciaisConformidade} />
       <Route path="/numeros" component={NumerosTerritori} />
+      <Route path="/numeros-territorio" component={NumerosTerritori} />
       <Route path="/presenca-territorial" component={NumerosTerritori} />
       <Route path="/cases" component={Cases} />
       <Route path="/territorio" component={Territorio} />
