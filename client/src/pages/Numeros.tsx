@@ -205,7 +205,7 @@ export default function Numeros() {
                 className="text-4xl lg:text-5xl font-bold mb-2"
                 style={{ color: '#2C7EB3' }}
               >
-                100+
+                120+
               </div>
               <h3 className="text-lg lg:text-xl font-bold mb-1" style={{ color: '#1A1A1A' }}>
                 Profissionais envolvidos
