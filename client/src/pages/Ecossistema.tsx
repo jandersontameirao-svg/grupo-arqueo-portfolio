@@ -6,6 +6,7 @@ import { ASSETS } from '@/lib/assets';
 export default function Ecossistema() {
   const [diagramLoaded, setDiagramLoaded] = useState(false);
   const [selectedEmpresa, setSelectedEmpresa] = useState<string | null>(null);
+  const [hoveredEmpresa, setHoveredEmpresa] = useState<string | null>(null);
   const [currentPilarIndex, setCurrentPilarIndex] = useState(0);
   const diagramRef = useRef<HTMLDivElement>(null);
 
@@ -55,6 +56,8 @@ export default function Ecossistema() {
       logo: ASSETS.logoArqueoproject,
       description: 'Empresa-mãe do grupo, especializada em pesquisa arqueológica preventiva e consultoria para licenciamento sociocultural. Atua em todo o ciclo de gestão arqueológica, desde o diagnóstico até o resgate e monitoramento.',
       competencias: ['Diagnóstico Arqueológico', 'Prospecção e Resgate', 'Monitoramento Arqueológico', 'Laudos e Relatórios Técnicos', 'Gestão de Acervo'],
+      paperNoEcossistema: 'Empresa-mãe que coordena a estratégia integrada do grupo, fornecendo expertise em pesquisa arqueológica e consultoria especializada.',
+      diferenciais: ['Experiência consolidada em arqueologia preventiva', 'Equipe multidisciplinar de especialistas', 'Metodologias inovadoras em diagnóstico'],
     },
     {
       id: 'arqueogis',
@@ -63,7 +66,9 @@ export default function Ecossistema() {
       color: '#2C7EB3',
       logo: ASSETS.logoArqueogis,
       description: 'Plataforma de tecnologia e gestão de dados geoespaciais aplicados à arqueologia. Desenvolve soluções de geoprocessamento, sensoriamento remoto e sistemas de informação geográfica para projetos arqueológicos.',
-      competencias: ['Geoprocessamento', 'Sensoriamento Remoto', 'SIG Arqueológico', 'Modelagem 3D', 'Banco de Dados Espaciais'],
+      competencias: ['Geotecnologias Aplicadas', 'Inteligência Territorial', 'Bancos de Dados', 'Automação de Análises', 'Visualização Espacial'],
+      paperNoEcossistema: 'Responsável pela transformação digital do grupo, integrando dados e fornecendo inteligência territorial para tomadas de decisão.',
+      diferenciais: ['Plataformas de SIG customizadas', 'Análise de dados geoespaciais avançada', 'Integração de sensoriamento remoto'],
     },
     {
       id: 'arqueocean',
@@ -72,7 +77,9 @@ export default function Ecossistema() {
       color: '#2C7EB3',
       logo: ASSETS.logoArqueocean,
       description: 'Divisão especializada em arqueologia subaquática e costeira. Atua em projetos offshore, portuários e de infraestrutura costeira, com equipe certificada em mergulho científico e técnico.',
-      competencias: ['Arqueologia Subaquática', 'Prospecção Costeira', 'Levantamento Offshore', 'Mergulho Científico', 'Patrimônio Naval'],
+      competencias: ['Diagnóstico Subaquático', 'Apoio Técnico Offshore', 'Investigações em Ambientes Aquáticos', 'Operações Embarcadas'],
+      paperNoEcossistema: 'Especialista em ambientes aquáticos, expandindo a atuação do grupo para setores de energia offshore e infraestrutura costeira.',
+      diferenciais: ['Certificação em mergulho científico', 'Operações em águas profundas', 'Expertise em patrimônio naval'],
     },
     {
       id: 'arqueoeduc',
@@ -81,7 +88,9 @@ export default function Ecossistema() {
       color: '#861720',
       logo: ASSETS.logoArqueoeduc,
       description: 'Braço educacional e de comunicação social do grupo. Desenvolve programas de educação patrimonial, comunicação social e engajamento comunitário como parte dos processos de licenciamento.',
-      competencias: ['Educação Patrimonial', 'Comunicação Social', 'Engajamento Comunitário', 'Produção de Conteúdo', 'Programas Educativos'],
+      competencias: ['Educação Patrimonial', 'Comunicação Estratégica', 'Engajamento Social', 'Mediação Institucional'],
+      paperNoEcossistema: 'Responsável pela comunicação institucional e engajamento comunitário, garantindo transparência e valor social dos projetos.',
+      diferenciais: ['Programas de educação patrimonial inovadores', 'Comunicação estratégica com stakeholders', 'Engajamento comunitário estruturado'],
     },
     {
       id: 'arqueorrede',
@@ -90,7 +99,9 @@ export default function Ecossistema() {
       color: '#EE7501',
       logo: ASSETS.logoArqueoproject,
       description: 'Plataforma de rede colaborativa que integra profissionais e instituições do setor arqueológico. Facilita parcerias estratégicas e compartilhamento de conhecimento entre especialistas.',
-      competencias: ['Networking', 'Colaboração Estratégica', 'Compartilhamento de Conhecimento', 'Parcerias', 'Integração'],
+      competencias: ['Integração de Especialistas', 'Capilaridade Operacional', 'Apoio Regional', 'Articulação Técnica em Rede'],
+      paperNoEcossistema: 'Rede que amplia a capilaridade do grupo, conectando especialistas e facilitando operações regionais descentralizadas.',
+      diferenciais: ['Rede nacional de profissionais', 'Suporte técnico regionalizado', 'Parcerias estratégicas consolidadas'],
     },
     {
       id: 'sigepa',
@@ -99,12 +110,13 @@ export default function Ecossistema() {
       color: '#EE7501',
       logo: ASSETS.logoArqueoproject,
       description: 'Sistema de gestão integrada para projetos arqueológicos. Centraliza informações, facilita colaboração entre equipes e otimiza processos de documentação e relatórios.',
-      competencias: ['Gestão de Projetos', 'Documentação', 'Relatórios', 'Colaboração', 'Integração de Dados'],
+      competencias: ['Organização de Dados', 'Rastreabilidade Operacional', 'Gestão de Projetos', 'Padronização de Processos'],
+      paperNoEcossistema: 'Infraestrutura de gestão que integra todas as operações do grupo, garantindo padronização, rastreabilidade e eficiência.',
+      diferenciais: ['Sistema integrado de gestão de projetos', 'Padronização de processos operacionais', 'Rastreabilidade completa de dados'],
     },
   ];
 
   useEffect(() => {
-    // Trigger animation when component mounts
     const timer = setTimeout(() => {
       setDiagramLoaded(true);
     }, 100);
@@ -126,16 +138,6 @@ export default function Ecossistema() {
         transform: translateY(0);
       }
     }
-    @keyframes modalFadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
     @keyframes slideInRight {
       from {
         opacity: 0;
@@ -146,27 +148,11 @@ export default function Ecossistema() {
         transform: translateX(0);
       }
     }
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
     .logo-fade-in {
       animation: fadeInUp 0.6s ease-out forwards;
     }
-    .modal-content {
-      animation: modalFadeIn 0.3s ease-out;
-    }
-    .pilar-slide {
+    .panel-slide {
       animation: slideInRight 0.4s ease-out;
-    }
-    .pilar-slide.prev {
-      animation: slideInLeft 0.4s ease-out;
     }
   `;
 
@@ -174,60 +160,175 @@ export default function Ecossistema() {
     <div className="min-h-screen bg-white">
       <style>{animationStyles}</style>
       
-      {/* Hero Grande - Orbital Diagram Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
-        <div className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center">
-          {/* Title */}
-          <div className="text-center mb-12 lg:mb-20">
-            <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
-              Estrutura Integrada
-            </span>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mt-4 leading-tight" style={{ color: '#1A1A1A' }}>
-              Um ecossistema,<br />múltiplas especialidades
-            </h1>
-          </div>
+      {/* Cabeçalho da Seção */}
+      <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
+        <div className="max-w-7xl mx-auto text-center">
+          <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
+            Estrutura Integrada
+          </span>
+          <h1 className="text-3xl lg:text-4xl font-bold mt-4 mb-3" style={{ color: '#1A1A1A' }}>
+            Um ecossistema, múltiplas especialidades
+          </h1>
+          <p className="text-base lg:text-lg max-w-3xl mx-auto" style={{ color: '#666666' }}>
+            Empresas complementares, integradas por inteligência, operação e visão estratégica.
+          </p>
+        </div>
+      </section>
 
-          {/* Orbital Diagram - Compact Image with Animation */}
-          <div 
-            ref={diagramRef}
-            className="flex justify-center mb-16 lg:mb-24 w-full"
-            style={{
-              opacity: diagramLoaded ? 1 : 0,
-              transform: diagramLoaded ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
-              transition: 'opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
-            }}
-          >
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-6_5e5eb982.webp"
-              alt="Diagrama Orbital Grupo Arqueo"
-              className="w-full max-w-3xl h-auto drop-shadow-lg"
-              onLoad={() => setDiagramLoaded(true)}
-              style={{ pointerEvents: 'none' }}
-            />
-          </div>
-
-          {/* Enterprise labels below diagram with staggered animation */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-4xl mx-auto text-center w-full">
-            {empresas.map((emp, idx) => (
+      {/* Layout Principal - Duas Colunas */}
+      <section className="py-12 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Coluna Principal - Diagrama */}
+            <div className="lg:col-span-2">
+              {/* Diagrama Orbital */}
               <div 
-                key={emp.id} 
-                className="flex flex-col items-center logo-fade-in cursor-pointer group"
+                ref={diagramRef}
+                className="flex justify-center mb-12"
                 style={{
-                  animationDelay: `${0.1 + idx * 0.1}s`,
+                  opacity: diagramLoaded ? 1 : 0,
+                  transform: diagramLoaded ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
+                  transition: 'opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
                 }}
-                onClick={() => setSelectedEmpresa(emp.id)}
               >
-                <p 
-                  className="font-bold text-sm lg:text-base transition-all duration-300 group-hover:scale-110"
-                  style={{ color: emp.color }}
-                >
-                  {emp.name}
-                </p>
-                <p className="text-xs lg:text-sm transition-colors duration-300 group-hover:text-gray-700" style={{ color: '#999999' }}>
-                  {emp.subtitle}
-                </p>
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-6_5e5eb982.webp"
+                  alt="Diagrama Orbital Grupo Arqueo"
+                  className="w-full max-w-2xl h-auto drop-shadow-lg"
+                  onLoad={() => setDiagramLoaded(true)}
+                  style={{ pointerEvents: 'none' }}
+                />
               </div>
-            ))}
+
+              {/* Navegação Inferior - Cards Clicáveis */}
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                {empresas.map((emp) => (
+                  <button
+                    key={emp.id}
+                    onClick={() => setSelectedEmpresa(emp.id)}
+                    onMouseEnter={() => setHoveredEmpresa(emp.id)}
+                    onMouseLeave={() => setHoveredEmpresa(null)}
+                    className="text-left p-4 rounded-lg transition-all duration-300 logo-fade-in"
+                    style={{
+                      backgroundColor: selectedEmpresa === emp.id ? `${emp.color}15` : 'transparent',
+                      border: selectedEmpresa === emp.id ? `2px solid ${emp.color}` : `1px solid #E6E6E6`,
+                      opacity: hoveredEmpresa === emp.id || selectedEmpresa === emp.id ? 1 : 0.7,
+                      transform: hoveredEmpresa === emp.id ? 'scale(1.02)' : 'scale(1)',
+                    }}
+                  >
+                    <p className="font-bold text-sm" style={{ color: emp.color }}>
+                      {emp.name}
+                    </p>
+                    <p className="text-xs mt-1" style={{ color: '#999999' }}>
+                      {emp.subtitle}
+                    </p>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Coluna Lateral - Painel Contextual */}
+            <div className="lg:col-span-1">
+              {selectedEmpresaData ? (
+                <div className="panel-slide sticky top-8 p-6 rounded-xl" style={{ backgroundColor: '#FAFAF9', border: '1px solid #E6E6E6' }}>
+                  {/* Logo */}
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: selectedEmpresaData.color }}>
+                    <img 
+                      src={selectedEmpresaData.logo} 
+                      alt={selectedEmpresaData.name}
+                      className="w-10 h-10 object-contain"
+                    />
+                  </div>
+
+                  {/* Nome e Subtítulo */}
+                  <h3 className="text-xl font-bold mb-1" style={{ color: selectedEmpresaData.color }}>
+                    {selectedEmpresaData.name}
+                  </h3>
+                  <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#999999' }}>
+                    {selectedEmpresaData.subtitle}
+                  </p>
+
+                  {/* Divisor */}
+                  <div className="h-px mb-4" style={{ backgroundColor: '#E6E6E6' }} />
+
+                  {/* Descrição */}
+                  <p className="text-sm leading-relaxed mb-6" style={{ color: '#555555' }}>
+                    {selectedEmpresaData.description}
+                  </p>
+
+                  {/* Competências */}
+                  <div className="mb-6">
+                    <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: '#999999' }}>
+                      Competências
+                    </p>
+                    <div className="space-y-2">
+                      {selectedEmpresaData.competencias.map((comp, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <div 
+                            className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
+                            style={{ backgroundColor: selectedEmpresaData.color }}
+                          />
+                          <span className="text-sm" style={{ color: '#555555' }}>
+                            {comp}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Papel no Ecossistema */}
+                  <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: `${selectedEmpresaData.color}10` }}>
+                    <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: selectedEmpresaData.color }}>
+                      Papel no Ecossistema
+                    </p>
+                    <p className="text-sm leading-relaxed" style={{ color: '#555555' }}>
+                      {selectedEmpresaData.paperNoEcossistema}
+                    </p>
+                  </div>
+
+                  {/* Diferenciais */}
+                  <div>
+                    <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: '#999999' }}>
+                      Principais Entregas
+                    </p>
+                    <div className="space-y-2">
+                      {selectedEmpresaData.diferenciais.map((dif, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <div 
+                            className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
+                            style={{ backgroundColor: selectedEmpresaData.color }}
+                          />
+                          <span className="text-sm" style={{ color: '#555555' }}>
+                            {dif}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Botão Fechar */}
+                  <button
+                    onClick={() => setSelectedEmpresa(null)}
+                    className="w-full mt-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300"
+                    style={{
+                      backgroundColor: selectedEmpresaData.color,
+                      color: 'white',
+                    }}
+                  >
+                    Fechar
+                  </button>
+                </div>
+              ) : (
+                <div className="sticky top-8 p-6 rounded-xl text-center" style={{ backgroundColor: '#FAFAF9', border: '1px solid #E6E6E6' }}>
+                  <p className="text-lg font-bold mb-2" style={{ color: '#1A1A1A' }}>
+                    Selecione uma empresa
+                  </p>
+                  <p className="text-sm" style={{ color: '#666666' }}>
+                    Clique em qualquer unidade do diagrama ou nos cards abaixo para explorar suas competências e papel no ecossistema.
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -262,7 +363,10 @@ export default function Ecossistema() {
             <div className="flex-1 max-w-2xl">
               <div 
                 key={currentPilarIndex}
-                className="pilar-slide text-center py-8 lg:py-12"
+                className="text-center py-8 lg:py-12"
+                style={{
+                  animation: 'slideInRight 0.4s ease-out',
+                }}
               >
                 <div 
                   className="text-5xl lg:text-6xl font-bold mb-6"
@@ -309,88 +413,6 @@ export default function Ecossistema() {
           </div>
         </div>
       </section>
-
-      {/* Modal */}
-      {selectedEmpresaData && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-          onClick={() => setSelectedEmpresa(null)}
-        >
-          <div 
-            className="modal-content bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div 
-              className="p-8 text-white rounded-t-2xl"
-              style={{ backgroundColor: selectedEmpresaData.color }}
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                  <img 
-                    src={selectedEmpresaData.logo} 
-                    alt={selectedEmpresaData.name}
-                    className="w-12 h-12 object-contain"
-                  />
-                </div>
-                <button
-                  onClick={() => setSelectedEmpresa(null)}
-                  className="text-white hover:opacity-80 transition-opacity text-2xl"
-                >
-                  ✕
-                </button>
-              </div>
-              <h2 className="text-3xl font-bold">{selectedEmpresaData.name}</h2>
-              <p className="text-sm font-semibold tracking-widest uppercase mt-2 opacity-90">
-                {selectedEmpresaData.subtitle}
-              </p>
-            </div>
-
-            {/* Modal Content */}
-            <div className="p-8">
-              {/* Description */}
-              <div className="mb-8">
-                <p className="text-base leading-relaxed" style={{ color: '#555555' }}>
-                  {selectedEmpresaData.description}
-                </p>
-              </div>
-
-              {/* Competências */}
-              <div className="mb-8">
-                <h3 className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: '#999999' }}>
-                  Competências
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {selectedEmpresaData.competencias.map((comp, idx) => (
-                    <span
-                      key={idx}
-                      className="px-4 py-2 rounded-full text-sm font-medium"
-                      style={{
-                        backgroundColor: `${selectedEmpresaData.color}15`,
-                        color: selectedEmpresaData.color,
-                        border: `1px solid ${selectedEmpresaData.color}40`,
-                      }}
-                    >
-                      {comp}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Close Button */}
-              <button
-                onClick={() => setSelectedEmpresa(null)}
-                className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-lg"
-                style={{
-                  backgroundColor: selectedEmpresaData.color,
-                }}
-              >
-                Fechar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
