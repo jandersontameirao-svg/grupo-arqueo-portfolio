@@ -126,7 +126,7 @@ export default function Numeros() {
               className="text-5xl lg:text-6xl font-bold mb-3"
               style={{ color: '#861720' }}
             >
-              13
+              24
             </div>
             <h3 className="text-xl lg:text-2xl font-bold mb-2" style={{ color: '#1A1A1A' }}>
               Estados com atuação comprovada
