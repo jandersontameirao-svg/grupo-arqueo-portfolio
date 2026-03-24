@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
 import { MapPin } from "lucide-react";
-import MapaBrasilSVG from "@/components/MapaBrasilSVG";
+import MapaBrasilSVG, { type EstadoData } from "@/components/MapaBrasilSVG";
 import { useState } from "react";
 
 /**
  * PRESENÇA TERRITORIAL — Página 09
- * Design: Hero section similar to Home with image background + gradient overlay
+ * Design: Hero section + Mapa SVG real do Brasil com contornos dos estados
+ * Layout: Texto à esquerda + Mapa à direita (referência: site Grupo Arqueo)
  */
 
 const estados = [
@@ -36,16 +37,9 @@ const regioes = [
   { nome: "Norte", count: 2, color: "#5B8C3E" },
 ];
 
-interface Estado {
-  sigla: string;
-  nome: string;
-  ativo: boolean;
-  projetos: number;
-  regiao: string;
-}
-
 export default function Territorio() {
-  const [selectedEstado, setSelectedEstado] = useState<Estado | null>(null);
+  const [selectedEstado, setSelectedEstado] = useState<EstadoData | null>(null);
+
   return (
     <PortfolioLayout
       chapterNum="09"
@@ -55,105 +49,103 @@ export default function Territorio() {
       nextPath="/contato"
       nextLabel="Contato"
     >
-      {/* Hero Section — Similar to Home */}
-      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">
-        {/* Background image + gradient overlay */}
-        <div className="absolute inset-0 -z-10">
-          <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(to right, rgba(249,248,246,1) 0%, rgba(249,248,246,0.98) 20%, rgba(249,248,246,0.95) 40%, rgba(249,248,246,0.85) 60%, rgba(249,248,246,0.70) 80%, rgba(249,248,246,0.50) 100%)'
-            }}
-          />
-        </div>
-
-        {/* Content */}
+      {/* Hero Section with Map — Layout: Text Left + Map Right */}
+      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
         <div className="container relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl"
-          >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Território</span>
-            </div>
-            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-              Atuação em <span style={{ color: '#EE7501' }}>16 estados</span> brasileiros
-            </h1>
-            <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '600px' }}>
-              Com escritórios em Brasília, Natal e São Paulo, o Grupo Arqueo possui presença estratégica para atender projetos em todas as regiões do Brasil, com destaque para o Nordeste, onde concentra a maior parte de sua atuação.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Left: Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
+                <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#EE7501' }}>Território</span>
+              </div>
+              <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
+                Atuação em <span style={{ color: '#EE7501' }}>16 estados</span> brasileiros
+              </h1>
+              <p className="text-base lg:text-lg font-light leading-relaxed mb-8" style={{ color: '#555', maxWidth: '520px' }}>
+                Com escritórios em Brasília, Natal e São Paulo, o Grupo Arqueo possui presença estratégica para atender projetos em todas as regiões do Brasil, com destaque para o Nordeste, onde concentra a maior parte de sua atuação.
+              </p>
 
-      {/* Divider */}
-      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
-
-      {/* Mapa Visual */}
-      <section className="py-16 lg:py-24">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-            {/* Left: Text */}
-            <div className="lg:col-span-1 flex flex-col justify-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-                  <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Mapa</span>
+              {/* Selected state info */}
+              {selectedEstado ? (
+                <motion.div
+                  key={selectedEstado.sigla}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-5 rounded-lg"
+                  style={{ backgroundColor: '#FFFFFF', borderLeft: '4px solid #EE7501', boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: '#861720' }}>
+                      {selectedEstado.sigla}
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold" style={{ color: '#2A2A2A' }}>{selectedEstado.nome}</p>
+                      <p className="text-xs" style={{ color: '#888' }}>{selectedEstado.regiao}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 mt-3">
+                    <span className="text-2xl font-bold" style={{ color: '#EE7501' }}>{selectedEstado.projetos}</span>
+                    <span className="text-xs" style={{ color: '#888' }}>projetos realizados</span>
+                  </div>
+                </motion.div>
+              ) : (
+                <div className="p-4 rounded-lg" style={{ backgroundColor: 'rgba(134,23,32,0.04)', border: '1px dashed rgba(134,23,32,0.15)' }}>
+                  <p className="text-xs" style={{ color: '#888' }}>
+                    Clique em um estado no mapa para ver detalhes
+                  </p>
                 </div>
-                <h2 className="text-2xl lg:text-3xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-                  Presença em <span style={{ color: '#EE7501' }}>24 estados</span>
-                </h2>
-                <p className="text-sm font-light leading-relaxed mb-6" style={{ color: '#555' }}>
-                  Estados ativos em <span style={{ color: '#861720', fontWeight: 600 }}>vermelho</span> representam a cobertura estratégica do Grupo Arqueo em todas as regiões do Brasil.
-                </p>
-                {selectedEstado && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="p-4 rounded-lg"
-                    style={{ backgroundColor: '#FFF5E6', borderLeft: '3px solid #EE7501' }}
-                  >
-                    <p className="text-xs font-medium" style={{ color: '#EE7501' }}>Selecionado</p>
-                    <p className="text-lg font-bold" style={{ color: '#2A2A2A' }}>{selectedEstado.nome}</p>
-                    <p className="text-sm" style={{ color: '#666' }}>{selectedEstado.projetos} projetos</p>
-                  </motion.div>
-                )}
-              </motion.div>
-            </div>
+              )}
+
+              {/* Legend */}
+              <div className="flex items-center gap-6 mt-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#861720' }} />
+                  <span className="text-xs" style={{ color: '#666' }}>Com atuação</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#C4C4C4' }} />
+                  <span className="text-xs" style={{ color: '#666' }}>Sem atuação</span>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Right: Map */}
-            <div className="lg:col-span-2">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="rounded-lg overflow-hidden shadow-lg"
-                style={{ backgroundColor: '#FFFFFF', minHeight: '500px' }}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div
+                className="rounded-2xl overflow-hidden"
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  boxShadow: '0 8px 40px rgba(0,0,0,0.06)',
+                  minHeight: '500px',
+                }}
               >
                 <MapaBrasilSVG
                   onEstadoSelect={setSelectedEstado}
                   selectedEstado={selectedEstado}
                 />
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Divider */}
-      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
+      <div className="h-px" style={{ backgroundColor: '#E6E6E6' }} />
 
-      {/* Content */}
-      <section className="py-16 lg:py-24">
+      {/* Regions Summary + States Grid */}
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container">
           {/* Regions summary */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
@@ -165,7 +157,7 @@ export default function Territorio() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="p-5"
-                style={{ backgroundColor: '#FFFFFF', borderTop: `3px solid ${reg.color}` }}
+                style={{ backgroundColor: '#F9F8F6', borderTop: `3px solid ${reg.color}` }}
               >
                 <span className="text-2xl font-bold" style={{ color: reg.color }}>{reg.count}</span>
                 <p className="text-xs font-medium mt-1" style={{ color: '#2A2A2A' }}>estados</p>
@@ -184,7 +176,7 @@ export default function Territorio() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.03 }}
                 className="group p-4 text-center transition-all duration-300 hover:-translate-y-1 cursor-default"
-                style={{ backgroundColor: '#FFFFFF' }}
+                style={{ backgroundColor: '#F9F8F6' }}
               >
                 <span className="text-lg font-bold block transition-colors duration-300 group-hover:text-[#EE7501]" style={{ color: '#2A2A2A' }}>
                   {estado.uf}
@@ -216,9 +208,9 @@ export default function Territorio() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { city: "Brasília/DF", role: "Sede Administrativa", address: "SHS Qd. 06, Conj. A, Sala 501 — Complexo Brasil 21", icon: "🏛️" },
-              { city: "Natal/RN", role: "Regional Nordeste", address: "Rua Raimundo Chaves, 2182, Sala 501 — Ponta Negra", icon: "🌊" },
-              { city: "São Paulo/SP", role: "Regional Sudeste", address: "Av. Brig. Faria Lima, 1461, 4º andar, Conj. 41", icon: "🏙️" },
+              { city: "Brasília/DF", role: "Sede Administrativa", address: "SHS Qd. 06, Conj. A, Sala 501 — Complexo Brasil 21" },
+              { city: "Natal/RN", role: "Regional Nordeste", address: "Rua Raimundo Chaves, 2182, Sala 501 — Ponta Negra" },
+              { city: "São Paulo/SP", role: "Regional Sudeste", address: "Av. Brig. Faria Lima, 1461, 4º andar, Conj. 41" },
             ].map((office, i) => (
               <motion.div
                 key={i}
