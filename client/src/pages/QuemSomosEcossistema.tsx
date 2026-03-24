@@ -472,62 +472,111 @@ export default function QuemSomosEcossistema() {
               className="relative mx-auto rounded-3xl overflow-hidden"
               style={{
                 maxWidth: '1000px',
-                height: '800px',
+                height: '900px',
                 background: 'linear-gradient(135deg, #861720 0%, #6B1219 25%, #A01B28 50%, #EE7501 100%)',
                 boxShadow: '0 30px 90px rgba(134, 23, 32, 0.35)',
               }}
             >
               {/* Orbital rings and team photos - all inside SVG for perfect alignment */}
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" style={{ zIndex: 1 }}>
+              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid meet" style={{ zIndex: 1 }}>
                 {/* Orbital rings */}
-                <circle cx="500" cy="400" r="160" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
-                <circle cx="500" cy="400" r="280" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1.5" />
+                <circle cx="500" cy="450" r="130" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
+                <circle cx="500" cy="450" r="220" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1.5" />
+                <circle cx="500" cy="450" r="340" fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
 
                 {/* CEO - center of inner circle */}
                 <defs>
-                  <clipPath id="ceoClip"><circle cx="500" cy="400" r="75" /></clipPath>
-                  <clipPath id="exec1Clip"><circle cx="500" cy="180" r="45" /></clipPath>
-                  <clipPath id="exec2Clip"><circle cx="720" cy="400" r="45" /></clipPath>
-                  <clipPath id="exec3Clip"><circle cx="500" cy="620" r="45" /></clipPath>
-                  <clipPath id="exec4Clip"><circle cx="280" cy="400" r="45" /></clipPath>
+                  <clipPath id="ceoClip"><circle cx="500" cy="450" r="60" /></clipPath>
+                  <clipPath id="exec1Clip"><circle cx="500" cy="230" r="38" /></clipPath>
+                  <clipPath id="exec2Clip"><circle cx="670" cy="450" r="38" /></clipPath>
+                  <clipPath id="exec3Clip"><circle cx="500" cy="670" r="38" /></clipPath>
+                  <clipPath id="exec4Clip"><circle cx="330" cy="450" r="38" /></clipPath>
+                  <clipPath id="team1Clip"><circle cx="500" cy="110" r="28" /></clipPath>
+                  <clipPath id="team2Clip"><circle cx="793" cy="232" r="28" /></clipPath>
+                  <clipPath id="team3Clip"><circle cx="834" cy="520" r="28" /></clipPath>
+                  <clipPath id="team4Clip"><circle cx="640" cy="757" r="28" /></clipPath>
+                  <clipPath id="team5Clip"><circle cx="360" cy="757" r="28" /></clipPath>
+                  <clipPath id="team6Clip"><circle cx="166" cy="520" r="28" /></clipPath>
+                  <clipPath id="team7Clip"><circle cx="207" cy="232" r="28" /></clipPath>
                 </defs>
 
-                {/* CEO photo circle */}
-                <circle cx="500" cy="400" r="80" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="4" />
-                <circle cx="500" cy="400" r="88" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="8" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp" x="425" y="325" width="150" height="150" clipPath="url(#ceoClip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="500" y="500" textAnchor="middle" fill="white" fontWeight="bold" fontSize="16" letterSpacing="2">CEO</text>
+                {/* CEO photo circle - center */}
+                <circle cx="500" cy="450" r="65" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" />
+                <circle cx="500" cy="450" r="72" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="6" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp" x="440" y="390" width="120" height="120" clipPath="url(#ceoClip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="500" y="535" textAnchor="middle" fill="white" fontWeight="bold" fontSize="14" letterSpacing="2">CEO</text>
 
-                {/* Executive 1 - Top - Diretora Administrativa e Financeira (between circles at top) */}
-                <circle cx="500" cy="180" r="50" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="3" />
-                <circle cx="500" cy="180" r="56" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="6" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" x="455" y="135" width="90" height="90" clipPath="url(#exec1Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="500" y="250" textAnchor="middle" fill="white" fontWeight="bold" fontSize="12" letterSpacing="1">
-                  <tspan x="500" dy="0">Diretora</tspan>
-                  <tspan x="500" dy="15">Administrativa</tspan>
-                  <tspan x="500" dy="15">e Financeira</tspan>
+                {/* Executive 1 - Top - Diretora Administrativa e Financeira */}
+                <circle cx="500" cy="230" r="42" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" x="462" y="192" width="76" height="76" clipPath="url(#exec1Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="500" y="290" textAnchor="middle" fill="white" fontWeight="bold" fontSize="10" letterSpacing="0.5">
+                  <tspan x="500" dy="0">Diretora Administrativa</tspan>
+                  <tspan x="500" dy="13">e Financeira</tspan>
                 </text>
 
-                {/* Executive 2 - Right - CSO (between circles at right) */}
-                <circle cx="720" cy="400" r="50" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="3" />
-                <circle cx="720" cy="400" r="56" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="6" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" x="675" y="355" width="90" height="90" clipPath="url(#exec2Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="720" y="470" textAnchor="middle" fill="white" fontWeight="bold" fontSize="12" letterSpacing="1">CSO</text>
+                {/* Executive 2 - Right - CSO */}
+                <circle cx="670" cy="450" r="42" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" x="632" y="412" width="76" height="76" clipPath="url(#exec2Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="670" y="510" textAnchor="middle" fill="white" fontWeight="bold" fontSize="10" letterSpacing="0.5">CSO</text>
 
-                {/* Executive 3 - Bottom - Diretor de Estratégia (between circles at bottom) */}
-                <circle cx="500" cy="620" r="50" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="3" />
-                <circle cx="500" cy="620" r="56" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="6" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" x="455" y="575" width="90" height="90" clipPath="url(#exec3Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="500" y="690" textAnchor="middle" fill="white" fontWeight="bold" fontSize="12" letterSpacing="1">
+                {/* Executive 3 - Bottom - Diretor de Estratégia */}
+                <circle cx="500" cy="670" r="42" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" x="462" y="632" width="76" height="76" clipPath="url(#exec3Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="500" y="730" textAnchor="middle" fill="white" fontWeight="bold" fontSize="10" letterSpacing="0.5">
                   <tspan x="500" dy="0">Diretor de Estratégia,</tspan>
-                  <tspan x="500" dy="15">Contencioso e Qualidade</tspan>
+                  <tspan x="500" dy="13">Contencioso e Qualidade</tspan>
                 </text>
 
-                {/* Executive 4 - Left - Tesoureira (between circles at left) */}
-                <circle cx="280" cy="400" r="50" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="3" />
-                <circle cx="280" cy="400" r="56" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="6" />
-                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" x="235" y="355" width="90" height="90" clipPath="url(#exec4Clip)" preserveAspectRatio="xMidYMid slice" />
-                <text x="280" y="470" textAnchor="middle" fill="white" fontWeight="bold" fontSize="12" letterSpacing="1">Tesoureira</text>
+                {/* Executive 4 - Left - Tesoureira */}
+                <circle cx="330" cy="450" r="42" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" x="292" y="412" width="76" height="76" clipPath="url(#exec4Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="330" y="510" textAnchor="middle" fill="white" fontWeight="bold" fontSize="10" letterSpacing="0.5">Tesoureira</text>
+
+                {/* ═══ THIRD ORBIT - 7 Team Members ═══ */}
+
+                {/* Team 1 - Top - Arqueólogo */}
+                <circle cx="500" cy="110" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp" x="472" y="82" width="56" height="56" clipPath="url(#team1Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="500" y="158" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">Arqueólogo</text>
+
+                {/* Team 2 - Top Right - Arqueóloga */}
+                <circle cx="793" cy="232" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp" x="765" y="204" width="56" height="56" clipPath="url(#team2Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="793" y="280" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">Arqueóloga</text>
+
+                {/* Team 3 - Right - Coord. Pesquisa e Licenciamento */}
+                <circle cx="834" cy="520" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp" x="806" y="492" width="56" height="56" clipPath="url(#team3Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="834" y="568" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">
+                  <tspan x="834" dy="0">Coord. de Pesquisa</tspan>
+                  <tspan x="834" dy="12">e Licenciamento</tspan>
+                </text>
+
+                {/* Team 4 - Bottom Right - Gerente de Projetos */}
+                <circle cx="640" cy="757" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Annaflavia_0ffbab23.webp" x="612" y="729" width="56" height="56" clipPath="url(#team4Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="640" y="805" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">Gerente de Projetos</text>
+
+                {/* Team 5 - Bottom Left - Analista de Geoprocessamento */}
+                <circle cx="360" cy="757" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp" x="332" y="729" width="56" height="56" clipPath="url(#team5Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="360" y="805" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">
+                  <tspan x="360" dy="0">Analista de</tspan>
+                  <tspan x="360" dy="12">Geoprocessamento</tspan>
+                </text>
+
+                {/* Team 6 - Left - Assessor Jurídico */}
+                <circle cx="166" cy="520" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp" x="138" y="492" width="56" height="56" clipPath="url(#team6Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="166" y="568" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">Assessor Jurídico</text>
+
+                {/* Team 7 - Top Left - Coord. Comercial e de Relacionamento */}
+                <circle cx="207" cy="232" r="32" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
+                <image href="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp" x="179" y="204" width="56" height="56" clipPath="url(#team7Clip)" preserveAspectRatio="xMidYMid slice" />
+                <text x="207" y="280" textAnchor="middle" fill="white" fontWeight="600" fontSize="9" letterSpacing="0.5">
+                  <tspan x="207" dy="0">Coord. Comercial</tspan>
+                  <tspan x="207" dy="12">e de Relacionamento</tspan>
+                </text>
               </svg>
 
             </motion.div>
