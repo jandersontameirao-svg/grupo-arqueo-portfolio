@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { ASSETS } from '@/lib/assets';
+import { useState, useEffect, useRef } from "react";
+import { ASSETS } from "@/lib/assets";
 
 export default function Ecossistema() {
   const [diagramLoaded, setDiagramLoaded] = useState(false);
@@ -13,33 +13,33 @@ export default function Ecossistema() {
   // Pilares da Sinergia
   const pilares = [
     {
-      num: '01',
-      title: 'Integração Técnica',
-      desc: 'Soluções complementares que se potencializam mutuamente',
+      num: "01",
+      title: "Integração Técnica",
+      desc: "Soluções complementares que se potencializam mutuamente",
     },
     {
-      num: '02',
-      title: 'Expertise Consolidada',
-      desc: 'Mais de uma década de experiência em arqueologia aplicada',
+      num: "02",
+      title: "Expertise Consolidada",
+      desc: "Mais de uma década de experiência em arqueologia aplicada",
     },
     {
-      num: '03',
-      title: 'Inovação Contínua',
-      desc: 'Tecnologia e metodologias de ponta em cada especialidade',
+      num: "03",
+      title: "Inovação Contínua",
+      desc: "Tecnologia e metodologias de ponta em cada especialidade",
     },
     {
-      num: '04',
-      title: 'Impacto Social',
-      desc: 'Compromisso com patrimônio cultural e desenvolvimento sustentável',
+      num: "04",
+      title: "Impacto Social",
+      desc: "Compromisso com patrimônio cultural e desenvolvimento sustentável",
     },
   ];
 
   const nextPilar = () => {
-    setCurrentPilarIndex((prev) => (prev + 1) % pilares.length);
+    setCurrentPilarIndex(prev => (prev + 1) % pilares.length);
   };
 
   const prevPilar = () => {
-    setCurrentPilarIndex((prev) => (prev - 1 + pilares.length) % pilares.length);
+    setCurrentPilarIndex(prev => (prev - 1 + pilares.length) % pilares.length);
   };
 
   const goToPilar = (index: number) => {
@@ -49,70 +49,138 @@ export default function Ecossistema() {
   // 6 empresas no ecossistema
   const empresas = [
     {
-      id: 'arqueoproject',
-      name: 'Arqueoproject',
-      subtitle: 'Pesquisa & Consultoria',
-      color: '#861720',
+      id: "arqueoproject",
+      name: "Arqueoproject",
+      subtitle: "Pesquisa & Consultoria",
+      color: "#861720",
       logo: ASSETS.logoArqueoproject,
-      description: 'Empresa-mãe do grupo, especializada em pesquisa arqueológica preventiva e consultoria para licenciamento sociocultural. Atua em todo o ciclo de gestão arqueológica, desde o diagnóstico até o resgate e monitoramento.',
-      competencias: ['Diagnóstico Arqueológico', 'Prospecção e Resgate', 'Monitoramento Arqueológico', 'Laudos e Relatórios Técnicos', 'Gestão de Acervo'],
-      paperNoEcossistema: 'Empresa-mãe que coordena a estratégia integrada do grupo, fornecendo expertise em pesquisa arqueológica e consultoria especializada.',
-      diferenciais: ['Experiência consolidada em arqueologia preventiva', 'Equipe multidisciplinar de especialistas', 'Metodologias inovadoras em diagnóstico'],
+      description:
+        "Empresa-mãe do grupo, especializada em pesquisa arqueológica preventiva e consultoria para licenciamento sociocultural. Atua em todo o ciclo de gestão arqueológica, desde o diagnóstico até o resgate e monitoramento.",
+      competencias: [
+        "Diagnóstico Arqueológico",
+        "Prospecção e Resgate",
+        "Monitoramento Arqueológico",
+        "Laudos e Relatórios Técnicos",
+        "Gestão de Acervo",
+      ],
+      paperNoEcossistema:
+        "Empresa-mãe que coordena a estratégia integrada do grupo, fornecendo expertise em pesquisa arqueológica e consultoria especializada.",
+      diferenciais: [
+        "Experiência consolidada em arqueologia preventiva",
+        "Equipe multidisciplinar de especialistas",
+        "Metodologias inovadoras em diagnóstico",
+      ],
     },
     {
-      id: 'arqueogis',
-      name: 'ArqueoGIS',
-      subtitle: 'Tecnologia & Dados',
-      color: '#2C7EB3',
+      id: "arqueogis",
+      name: "ArqueoGIS",
+      subtitle: "Tecnologia & Dados",
+      color: "#2C7EB3",
       logo: ASSETS.logoArqueogis,
-      description: 'Plataforma de tecnologia e gestão de dados geoespaciais aplicados à arqueologia. Desenvolve soluções de geoprocessamento, sensoriamento remoto e sistemas de informação geográfica para projetos arqueológicos.',
-      competencias: ['Geotecnologias Aplicadas', 'Inteligência Territorial', 'Bancos de Dados', 'Automação de Análises', 'Visualização Espacial'],
-      paperNoEcossistema: 'Responsável pela transformação digital do grupo, integrando dados e fornecendo inteligência territorial para tomadas de decisão.',
-      diferenciais: ['Plataformas de SIG customizadas', 'Análise de dados geoespaciais avançada', 'Integração de sensoriamento remoto'],
+      description:
+        "Plataforma de tecnologia e gestão de dados geoespaciais aplicados à arqueologia. Desenvolve soluções de geoprocessamento, sensoriamento remoto e sistemas de informação geográfica para projetos arqueológicos.",
+      competencias: [
+        "Geotecnologias Aplicadas",
+        "Inteligência Territorial",
+        "Bancos de Dados",
+        "Automação de Análises",
+        "Visualização Espacial",
+      ],
+      paperNoEcossistema:
+        "Responsável pela transformação digital do grupo, integrando dados e fornecendo inteligência territorial para tomadas de decisão.",
+      diferenciais: [
+        "Plataformas de SIG customizadas",
+        "Análise de dados geoespaciais avançada",
+        "Integração de sensoriamento remoto",
+      ],
     },
     {
-      id: 'arqueocean',
-      name: 'ArqueoOcean',
-      subtitle: 'Operações Subaquáticas',
-      color: '#2C7EB3',
+      id: "arqueocean",
+      name: "ArqueoOcean",
+      subtitle: "Operações Subaquáticas",
+      color: "#2C7EB3",
       logo: ASSETS.logoArqueocean,
-      description: 'Divisão especializada em arqueologia subaquática e costeira. Atua em projetos offshore, portuários e de infraestrutura costeira, com equipe certificada em mergulho científico e técnico.',
-      competencias: ['Diagnóstico Subaquático', 'Apoio Técnico Offshore', 'Investigações em Ambientes Aquáticos', 'Operações Embarcadas'],
-      paperNoEcossistema: 'Especialista em ambientes aquáticos, expandindo a atuação do grupo para setores de energia offshore e infraestrutura costeira.',
-      diferenciais: ['Certificação em mergulho científico', 'Operações em águas profundas', 'Expertise em patrimônio naval'],
+      description:
+        "Divisão especializada em arqueologia subaquática e costeira. Atua em projetos offshore, portuários e de infraestrutura costeira, com equipe certificada em mergulho científico e técnico.",
+      competencias: [
+        "Diagnóstico Subaquático",
+        "Apoio Técnico Offshore",
+        "Investigações em Ambientes Aquáticos",
+        "Operações Embarcadas",
+      ],
+      paperNoEcossistema:
+        "Especialista em ambientes aquáticos, expandindo a atuação do grupo para setores de energia offshore e infraestrutura costeira.",
+      diferenciais: [
+        "Certificação em mergulho científico",
+        "Operações em águas profundas",
+        "Expertise em patrimônio naval",
+      ],
     },
     {
-      id: 'arqueoeduc',
-      name: 'ArqueoEduc',
-      subtitle: 'Educação & Comunicação',
-      color: '#861720',
+      id: "arqueoeduc",
+      name: "ArqueoEduc",
+      subtitle: "Educação & Comunicação",
+      color: "#861720",
       logo: ASSETS.logoArqueoeduc,
-      description: 'Braço educacional e de comunicação social do grupo. Desenvolve programas de educação patrimonial, comunicação social e engajamento comunitário como parte dos processos de licenciamento.',
-      competencias: ['Educação Patrimonial', 'Comunicação Estratégica', 'Engajamento Social', 'Mediação Institucional'],
-      paperNoEcossistema: 'Responsável pela comunicação institucional e engajamento comunitário, garantindo transparência e valor social dos projetos.',
-      diferenciais: ['Programas de educação patrimonial inovadores', 'Comunicação estratégica com stakeholders', 'Engajamento comunitário estruturado'],
+      description:
+        "Braço educacional e de comunicação social do grupo. Desenvolve programas de educação patrimonial, comunicação social e engajamento comunitário como parte dos processos de licenciamento.",
+      competencias: [
+        "Educação Patrimonial",
+        "Comunicação Estratégica",
+        "Engajamento Social",
+        "Mediação Institucional",
+      ],
+      paperNoEcossistema:
+        "Responsável pela comunicação institucional e engajamento comunitário, garantindo transparência e valor social dos projetos.",
+      diferenciais: [
+        "Programas de educação patrimonial inovadores",
+        "Comunicação estratégica com stakeholders",
+        "Engajamento comunitário estruturado",
+      ],
     },
     {
-      id: 'arqueorrede',
-      name: 'ArqueoRede',
-      subtitle: 'Rede Colaborativa',
-      color: '#EE7501',
+      id: "arqueorrede",
+      name: "ArqueoRede",
+      subtitle: "Rede Colaborativa",
+      color: "#EE7501",
       logo: ASSETS.logoArqueoproject,
-      description: 'Plataforma de rede colaborativa que integra profissionais e instituições do setor arqueológico. Facilita parcerias estratégicas e compartilhamento de conhecimento entre especialistas.',
-      competencias: ['Integração de Especialistas', 'Capilaridade Operacional', 'Apoio Regional', 'Articulação Técnica em Rede'],
-      paperNoEcossistema: 'Rede que amplia a capilaridade do grupo, conectando especialistas e facilitando operações regionais descentralizadas.',
-      diferenciais: ['Rede nacional de profissionais', 'Suporte técnico regionalizado', 'Parcerias estratégicas consolidadas'],
+      description:
+        "Plataforma de rede colaborativa que integra profissionais e instituições do setor arqueológico. Facilita parcerias estratégicas e compartilhamento de conhecimento entre especialistas.",
+      competencias: [
+        "Integração de Especialistas",
+        "Capilaridade Operacional",
+        "Apoio Regional",
+        "Articulação Técnica em Rede",
+      ],
+      paperNoEcossistema:
+        "Rede que amplia a capilaridade do grupo, conectando especialistas e facilitando operações regionais descentralizadas.",
+      diferenciais: [
+        "Rede nacional de profissionais",
+        "Suporte técnico regionalizado",
+        "Parcerias estratégicas consolidadas",
+      ],
     },
     {
-      id: 'sigepa',
-      name: 'SIGEPA Plus',
-      subtitle: 'Gestão Integrada',
-      color: '#EE7501',
+      id: "sigepa",
+      name: "SIGEPA Plus",
+      subtitle: "Gestão Integrada",
+      color: "#EE7501",
       logo: ASSETS.logoArqueoproject,
-      description: 'Sistema de gestão integrada para projetos arqueológicos. Centraliza informações, facilita colaboração entre equipes e otimiza processos de documentação e relatórios.',
-      competencias: ['Organização de Dados', 'Rastreabilidade Operacional', 'Gestão de Projetos', 'Padronização de Processos'],
-      paperNoEcossistema: 'Infraestrutura de gestão que integra todas as operações do grupo, garantindo padronização, rastreabilidade e eficiência.',
-      diferenciais: ['Sistema integrado de gestão de projetos', 'Padronização de processos operacionais', 'Rastreabilidade completa de dados'],
+      description:
+        "Sistema de gestão integrada para projetos arqueológicos. Centraliza informações, facilita colaboração entre equipes e otimiza processos de documentação e relatórios.",
+      competencias: [
+        "Organização de Dados",
+        "Rastreabilidade Operacional",
+        "Gestão de Projetos",
+        "Padronização de Processos",
+      ],
+      paperNoEcossistema:
+        "Infraestrutura de gestão que integra todas as operações do grupo, garantindo padronização, rastreabilidade e eficiência.",
+      diferenciais: [
+        "Sistema integrado de gestão de projetos",
+        "Padronização de processos operacionais",
+        "Rastreabilidade completa de dados",
+      ],
     },
   ];
 
@@ -159,25 +227,33 @@ export default function Ecossistema() {
   return (
     <div className="min-h-screen bg-white">
       <style>{animationStyles}</style>
-      
+
       {/* Cabeçalho da Seção */}
-      <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
+      <section
+        className="py-16 lg:py-20 px-4 lg:px-8"
+        style={{ backgroundColor: "#FAFAF9" }}
+      >
         <div className="max-w-7xl mx-auto">
           {/* Título com Logo ao Lado */}
           <div className="flex items-center gap-8 lg:gap-12">
             {/* Logo 10 Anos */}
             <div className="flex-shrink-0">
-              <img 
-                src={ASSETS.logo10anos} 
+              <img
+                src={ASSETS.logo10anos}
                 alt="10 Anos Grupo Arqueo"
                 className="h-20 lg:h-28 object-contain"
               />
             </div>
-            
+
             {/* Título */}
             <div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
-                Um ecossistema,<br />múltiplas especialidades
+              <h1
+                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
+                style={{ color: "#1A1A1A" }}
+              >
+                Um ecossistema,
+                <br />
+                múltiplas especialidades
               </h1>
             </div>
           </div>
@@ -185,19 +261,25 @@ export default function Ecossistema() {
       </section>
 
       {/* Layout Principal - Assimétrico */}
-      <section className="py-12 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
+      <section
+        className="py-12 lg:py-20 px-4 lg:px-8"
+        style={{ backgroundColor: "#FFFFFF" }}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
             {/* Coluna Principal - Diagrama (Maior) */}
             <div className="lg:col-span-3">
               {/* Diagrama Orbital */}
-              <div 
+              <div
                 ref={diagramRef}
                 className="flex justify-center mb-12"
                 style={{
                   opacity: diagramLoaded ? 1 : 0,
-                  transform: diagramLoaded ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
-                  transition: 'opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                  transform: diagramLoaded
+                    ? "scale(1) translateY(0)"
+                    : "scale(0.95) translateY(20px)",
+                  transition:
+                    "opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
                 }}
               >
                 <img
@@ -205,13 +287,13 @@ export default function Ecossistema() {
                   alt="Diagrama Orbital Grupo Arqueo"
                   className="w-full max-w-2xl h-auto drop-shadow-lg"
                   onLoad={() => setDiagramLoaded(true)}
-                  style={{ pointerEvents: 'none' }}
+                  style={{ pointerEvents: "none" }}
                 />
               </div>
 
               {/* Navegação Inferior - Cards Clicáveis */}
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-                {empresas.map((emp) => (
+                {empresas.map(emp => (
                   <button
                     key={emp.id}
                     onClick={() => setSelectedEmpresa(emp.id)}
@@ -219,16 +301,29 @@ export default function Ecossistema() {
                     onMouseLeave={() => setHoveredEmpresa(null)}
                     className="text-left p-4 rounded-lg transition-all duration-300 logo-fade-in"
                     style={{
-                      backgroundColor: selectedEmpresa === emp.id ? `${emp.color}15` : 'transparent',
-                      border: selectedEmpresa === emp.id ? `2px solid ${emp.color}` : `1px solid #E6E6E6`,
-                      opacity: hoveredEmpresa === emp.id || selectedEmpresa === emp.id ? 1 : 0.7,
-                      transform: hoveredEmpresa === emp.id ? 'scale(1.02)' : 'scale(1)',
+                      backgroundColor:
+                        selectedEmpresa === emp.id
+                          ? `${emp.color}15`
+                          : "transparent",
+                      border:
+                        selectedEmpresa === emp.id
+                          ? `2px solid ${emp.color}`
+                          : `1px solid #E6E6E6`,
+                      opacity:
+                        hoveredEmpresa === emp.id || selectedEmpresa === emp.id
+                          ? 1
+                          : 0.7,
+                      transform:
+                        hoveredEmpresa === emp.id ? "scale(1.02)" : "scale(1)",
                     }}
                   >
-                    <p className="font-bold text-sm" style={{ color: emp.color }}>
+                    <p
+                      className="font-bold text-sm"
+                      style={{ color: emp.color }}
+                    >
                       {emp.name}
                     </p>
-                    <p className="text-xs mt-1" style={{ color: '#999999' }}>
+                    <p className="text-xs mt-1" style={{ color: "#999999" }}>
                       {emp.subtitle}
                     </p>
                   </button>
@@ -239,45 +334,74 @@ export default function Ecossistema() {
             {/* Coluna Lateral - Painel Contextual (Menor) */}
             <div className="lg:col-span-2">
               {selectedEmpresaData ? (
-                <div className="panel-slide sticky top-8 p-6 rounded-xl" style={{ backgroundColor: '#FAFAF9', border: '1px solid #E6E6E6' }}>
+                <div
+                  className="panel-slide sticky top-8 p-6 rounded-xl"
+                  style={{
+                    backgroundColor: "#FAFAF9",
+                    border: "1px solid #E6E6E6",
+                  }}
+                >
                   {/* Logo */}
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: selectedEmpresaData.color }}>
-                    <img 
-                      src={selectedEmpresaData.logo} 
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
+                    style={{ backgroundColor: selectedEmpresaData.color }}
+                  >
+                    <img
+                      src={selectedEmpresaData.logo}
                       alt={selectedEmpresaData.name}
                       className="w-10 h-10 object-contain"
                     />
                   </div>
 
                   {/* Nome e Subtítulo */}
-                  <h3 className="text-xl font-bold mb-1" style={{ color: selectedEmpresaData.color }}>
+                  <h3
+                    className="text-xl font-bold mb-1"
+                    style={{ color: selectedEmpresaData.color }}
+                  >
                     {selectedEmpresaData.name}
                   </h3>
-                  <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#999999' }}>
+                  <p
+                    className="text-xs font-semibold tracking-widest uppercase mb-4"
+                    style={{ color: "#999999" }}
+                  >
                     {selectedEmpresaData.subtitle}
                   </p>
 
                   {/* Divisor */}
-                  <div className="h-px mb-4" style={{ backgroundColor: '#E6E6E6' }} />
+                  <div
+                    className="h-px mb-4"
+                    style={{ backgroundColor: "#E6E6E6" }}
+                  />
 
                   {/* Descrição */}
-                  <p className="text-sm leading-relaxed mb-6" style={{ color: '#555555' }}>
+                  <p
+                    className="text-sm leading-relaxed mb-6"
+                    style={{ color: "#555555" }}
+                  >
                     {selectedEmpresaData.description}
                   </p>
 
                   {/* Competências */}
                   <div className="mb-6">
-                    <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: '#999999' }}>
+                    <p
+                      className="text-xs font-semibold tracking-widest uppercase mb-3"
+                      style={{ color: "#999999" }}
+                    >
                       Competências
                     </p>
                     <div className="space-y-2">
                       {selectedEmpresaData.competencias.map((comp, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <div 
+                          <div
                             className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
-                            style={{ backgroundColor: selectedEmpresaData.color }}
+                            style={{
+                              backgroundColor: selectedEmpresaData.color,
+                            }}
                           />
-                          <span className="text-sm" style={{ color: '#555555' }}>
+                          <span
+                            className="text-sm"
+                            style={{ color: "#555555" }}
+                          >
                             {comp}
                           </span>
                         </div>
@@ -286,28 +410,47 @@ export default function Ecossistema() {
                   </div>
 
                   {/* Papel no Ecossistema */}
-                  <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: `${selectedEmpresaData.color}10` }}>
-                    <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: selectedEmpresaData.color }}>
+                  <div
+                    className="mb-6 p-4 rounded-lg"
+                    style={{
+                      backgroundColor: `${selectedEmpresaData.color}10`,
+                    }}
+                  >
+                    <p
+                      className="text-xs font-semibold tracking-widest uppercase mb-2"
+                      style={{ color: selectedEmpresaData.color }}
+                    >
                       Papel no Ecossistema
                     </p>
-                    <p className="text-sm leading-relaxed" style={{ color: '#555555' }}>
+                    <p
+                      className="text-sm leading-relaxed"
+                      style={{ color: "#555555" }}
+                    >
                       {selectedEmpresaData.paperNoEcossistema}
                     </p>
                   </div>
 
                   {/* Diferenciais */}
                   <div>
-                    <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: '#999999' }}>
+                    <p
+                      className="text-xs font-semibold tracking-widest uppercase mb-3"
+                      style={{ color: "#999999" }}
+                    >
                       Principais Entregas
                     </p>
                     <div className="space-y-2">
                       {selectedEmpresaData.diferenciais.map((dif, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <div 
+                          <div
                             className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
-                            style={{ backgroundColor: selectedEmpresaData.color }}
+                            style={{
+                              backgroundColor: selectedEmpresaData.color,
+                            }}
                           />
-                          <span className="text-sm" style={{ color: '#555555' }}>
+                          <span
+                            className="text-sm"
+                            style={{ color: "#555555" }}
+                          >
                             {dif}
                           </span>
                         </div>
@@ -321,19 +464,29 @@ export default function Ecossistema() {
                     className="w-full mt-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300"
                     style={{
                       backgroundColor: selectedEmpresaData.color,
-                      color: 'white',
+                      color: "white",
                     }}
                   >
                     Fechar
                   </button>
                 </div>
               ) : (
-                <div className="sticky top-8 p-6 rounded-xl text-center" style={{ backgroundColor: '#FAFAF9', border: '1px solid #E6E6E6' }}>
-                  <p className="text-lg font-bold mb-2" style={{ color: '#1A1A1A' }}>
+                <div
+                  className="sticky top-8 p-6 rounded-xl text-center"
+                  style={{
+                    backgroundColor: "#FAFAF9",
+                    border: "1px solid #E6E6E6",
+                  }}
+                >
+                  <p
+                    className="text-lg font-bold mb-2"
+                    style={{ color: "#1A1A1A" }}
+                  >
                     Selecione uma empresa
                   </p>
-                  <p className="text-sm" style={{ color: '#666666' }}>
-                    Clique em qualquer unidade do diagrama ou nos cards abaixo para explorar suas competências e papel no ecossistema.
+                  <p className="text-sm" style={{ color: "#666666" }}>
+                    Clique em qualquer unidade do diagrama ou nos cards abaixo
+                    para explorar suas competências e papel no ecossistema.
                   </p>
                 </div>
               )}
@@ -343,92 +496,191 @@ export default function Ecossistema() {
       </section>
 
       {/* Sinergia Section - Carousel Premium */}
-      <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
+      <section
+        className="py-20 lg:py-32 px-4 lg:px-8"
+        style={{ backgroundColor: "#FFFFFF" }}
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
+            <span
+              className="text-[11px] font-semibold tracking-[0.35em] uppercase"
+              style={{ color: "#EE7501" }}
+            >
               Forca Integrada
             </span>
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mt-4" style={{ color: '#1A1A1A' }}>
+            <h2
+              className="text-3xl lg:text-4xl xl:text-5xl font-bold mt-4"
+              style={{ color: "#1A1A1A" }}
+            >
               Sinergia que gera valor
             </h2>
           </div>
 
-          {/* Carousel Container - Premium */}
-          <div className="flex items-center justify-between gap-4 lg:gap-8">
-            {/* Left Arrow */}
-            <button
-              onClick={prevPilar}
-              className="flex-shrink-0 w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110 group"
-              style={{ backgroundColor: '#EE7501', color: 'white' }}
-              aria-label="Pilar anterior"
-            >
-              <svg className="w-6 h-6 lg:w-8 lg:h-8 group-hover:scale-125 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-
-            {/* Pilar Content - Card Premium */}
-            <div className="flex-1 max-w-3xl">
-              <div 
-                key={currentPilarIndex}
-                className="p-12 lg:p-16 rounded-2xl text-center transition-all duration-300"
+          {/* Layout Assimetrico - Cards com Fotos */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+            {/* Card 1 - Grande (esquerda superior) */}
+            <div className="lg:col-span-6 lg:row-span-2">
+              <div
+                className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
                 style={{
-                  backgroundColor: '#FAFAF9',
-                  border: '1px solid #E6E6E6',
-                  animation: 'slideInRight 0.4s ease-out',
+                  backgroundColor: "#FAFAF9",
+                  border: "1px solid #E6E6E6",
                 }}
               >
-                {/* Numero Grande */}
-                <div 
-                  className="text-7xl lg:text-8xl font-bold mb-6"
-                  style={{ color: '#EE7501' }}
-                >
-                  {pilares[currentPilarIndex].num}
+                {/* Foto */}
+                <div className="w-full h-64 lg:h-80 bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center">
+                  <div className="text-center">
+                    <div
+                      className="text-6xl font-bold"
+                      style={{ color: "#EE7501" }}
+                    >
+                      01
+                    </div>
+                    <p className="text-sm mt-2" style={{ color: "#999999" }}>
+                      Espaco para foto
+                    </p>
+                  </div>
                 </div>
-                
-                {/* Divisor */}
-                <div className="w-12 h-1 mx-auto mb-8" style={{ backgroundColor: '#EE7501' }} />
-                
-                {/* Titulo */}
-                <h3 className="text-2xl lg:text-3xl font-bold mb-6" style={{ color: '#1A1A1A' }}>
-                  {pilares[currentPilarIndex].title}
-                </h3>
-                
-                {/* Descricao */}
-                <p className="text-base lg:text-lg leading-relaxed" style={{ color: '#555555' }}>
-                  {pilares[currentPilarIndex].desc}
-                </p>
+                {/* Conteudo */}
+                <div className="p-8">
+                  <h3
+                    className="text-2xl font-bold mb-3"
+                    style={{ color: "#1A1A1A" }}
+                  >
+                    {pilares[0].title}
+                  </h3>
+                  <p
+                    className="text-base leading-relaxed"
+                    style={{ color: "#555555" }}
+                  >
+                    {pilares[0].desc}
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Right Arrow */}
-            <button
-              onClick={nextPilar}
-              className="flex-shrink-0 w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110 group"
-              style={{ backgroundColor: '#EE7501', color: 'white' }}
-              aria-label="Proximo pilar"
-            >
-              <svg className="w-6 h-6 lg:w-8 lg:h-8 group-hover:scale-125 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Dots Navigation */}
-          <div className="flex justify-center gap-3 mt-16">
-            {pilares.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => goToPilar(idx)}
-                className="w-3 h-3 rounded-full transition-all duration-300"
+            {/* Card 2 - Medio (direita superior) */}
+            <div className="lg:col-span-6">
+              <div
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
                 style={{
-                  backgroundColor: idx === currentPilarIndex ? '#EE7501' : '#CCCCCC',
-                  transform: idx === currentPilarIndex ? 'scale(1.2)' : 'scale(1)',
+                  backgroundColor: "#FAFAF9",
+                  border: "1px solid #E6E6E6",
                 }}
-                aria-label={`Ir para pilar ${idx + 1}`}
-              />
-            ))}
+              >
+                {/* Foto */}
+                <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center">
+                  <div className="text-center">
+                    <div
+                      className="text-5xl font-bold"
+                      style={{ color: "#2C7EB3" }}
+                    >
+                      02
+                    </div>
+                    <p className="text-sm mt-2" style={{ color: "#999999" }}>
+                      Espaco para foto
+                    </p>
+                  </div>
+                </div>
+                {/* Conteudo */}
+                <div className="p-6">
+                  <h3
+                    className="text-xl font-bold mb-2"
+                    style={{ color: "#1A1A1A" }}
+                  >
+                    {pilares[1].title}
+                  </h3>
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: "#555555" }}
+                  >
+                    {pilares[1].desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 - Medio (direita meio) */}
+            <div className="lg:col-span-6">
+              <div
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                style={{
+                  backgroundColor: "#FAFAF9",
+                  border: "1px solid #E6E6E6",
+                }}
+              >
+                {/* Foto */}
+                <div className="w-full h-48 bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center">
+                  <div className="text-center">
+                    <div
+                      className="text-5xl font-bold"
+                      style={{ color: "#861720" }}
+                    >
+                      03
+                    </div>
+                    <p className="text-sm mt-2" style={{ color: "#999999" }}>
+                      Espaco para foto
+                    </p>
+                  </div>
+                </div>
+                {/* Conteudo */}
+                <div className="p-6">
+                  <h3
+                    className="text-xl font-bold mb-2"
+                    style={{ color: "#1A1A1A" }}
+                  >
+                    {pilares[2].title}
+                  </h3>
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: "#555555" }}
+                  >
+                    {pilares[2].desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4 - Pequeno (esquerda inferior) */}
+            <div className="lg:col-span-6">
+              <div
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                style={{
+                  backgroundColor: "#FAFAF9",
+                  border: "1px solid #E6E6E6",
+                }}
+              >
+                {/* Foto */}
+                <div className="w-full h-40 bg-gradient-to-br from-yellow-100 to-yellow-50 flex items-center justify-center">
+                  <div className="text-center">
+                    <div
+                      className="text-4xl font-bold"
+                      style={{ color: "#EE7501" }}
+                    >
+                      04
+                    </div>
+                    <p className="text-sm mt-2" style={{ color: "#999999" }}>
+                      Espaco para foto
+                    </p>
+                  </div>
+                </div>
+                {/* Conteudo */}
+                <div className="p-6">
+                  <h3
+                    className="text-lg font-bold mb-2"
+                    style={{ color: "#1A1A1A" }}
+                  >
+                    {pilares[3].title}
+                  </h3>
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: "#555555" }}
+                  >
+                    {pilares[3].desc}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
