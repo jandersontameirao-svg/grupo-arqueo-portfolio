@@ -8,8 +8,8 @@ import { useState, useEffect } from "react";
 
 /**
  * HOME — Portfólio Digital Premium Grupo Arqueo
- * Design: Modern orbital navigation with premium aesthetic
- * NO framer-motion in hero to avoid stacking/opacity issues
+ * Design: Microsoft-style orbital navigation — clean, organized, premium
+ * 9 nodes evenly distributed around center logo
  */
 
 const sections = [
@@ -27,22 +27,34 @@ const sections = [
 export default function Home() {
   const [hovered, setHovered] = useState<number | null>(null);
   const [rotation, setRotation] = useState(0);
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    requestAnimationFrame(() => setLoaded(true));
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRotation(prev => (prev + 0.12) % 360);
+      setRotation(prev => (prev + 0.1) % 360);
     }, 50);
     return () => clearInterval(interval);
   }, []);
 
-  const orbR = 48;
+  /* ── Orbital geometry ── */
+  const nodeCount = sections.length;       // 9
+  const angleStep = 360 / nodeCount;       // 40° per node
+  const orbR = 42;                         // orbit radius (% of container)
   const cx = 50;
   const cy = 50;
+
+  /* ── Compute label position offset based on angle ── */
+  const getLabelPosition = (angleDeg: number) => {
+    // Normalize angle to 0-360
+    const a = ((angleDeg % 360) + 360) % 360;
+    // Top area (315-45): label below
+    if (a >= 315 || a < 45) return { anchor: 'center' as const, offsetY: 6 };
+    // Right area (45-135): label to the left
+    if (a >= 45 && a < 135) return { anchor: 'right' as const, offsetY: 0 };
+    // Bottom area (135-225): label above
+    if (a >= 135 && a < 225) return { anchor: 'center' as const, offsetY: -2 };
+    // Left area (225-315): label to the right
+    return { anchor: 'left' as const, offsetY: 0 };
+  };
 
   return (
     <div className="min-h-screen bg-[#F9F8F6]">
@@ -65,9 +77,7 @@ export default function Home() {
           style={{ position: 'relative', zIndex: 10 }}
         >
           {/* LEFT — Text block */}
-          <div
-            className="w-[44%] flex flex-col justify-center pr-8"
-          >
+          <div className="w-[40%] flex flex-col justify-center pr-8">
             <img
               src={ASSETS.logo10anos}
               alt="Grupo Arqueo — 10 Anos"
@@ -129,49 +139,48 @@ export default function Home() {
             </div>
           </div>
 
-          {/* RIGHT — Orbital Navigation */}
-          <div className="w-[56%] flex items-center justify-center">
+          {/* RIGHT — Orbital Navigation (Microsoft-style clean layout) */}
+          <div className="w-[60%] flex items-center justify-center">
             <div
               className="relative"
               style={{
-                width: 'min(480px, 44vw)',
-                height: 'min(480px, 44vw)',
+                width: 'min(560px, 50vw)',
+                height: 'min(560px, 50vw)',
               }}
             >
-              {/* Soft radial glow behind orbital for contrast */}
+              {/* Soft radial glow */}
               <div
                 className="absolute rounded-full pointer-events-none"
                 style={{
-                  inset: '-15%',
-                  background: 'radial-gradient(circle, rgba(249,248,246,1) 0%, rgba(249,248,246,0.95) 30%, rgba(249,248,246,0.7) 50%, rgba(249,248,246,0.3) 70%, transparent 85%)',
+                  inset: '-12%',
+                  background: 'radial-gradient(circle, rgba(249,248,246,1) 0%, rgba(249,248,246,0.97) 25%, rgba(249,248,246,0.85) 45%, rgba(249,248,246,0.5) 65%, transparent 80%)',
                 }}
               />
 
               {/* Rotating decorative outer ring */}
               <svg
                 className="absolute pointer-events-none"
-                style={{ inset: '-3%', width: '106%', height: '106%', transform: `rotate(${rotation}deg)` }}
+                style={{ inset: '-2%', width: '104%', height: '104%', transform: `rotate(${rotation}deg)` }}
                 viewBox="0 0 100 100"
               >
-                <circle cx="50" cy="50" r="49" fill="none" stroke="url(#outerGrad)" strokeWidth="0.3" strokeDasharray="3 6" />
+                <circle cx="50" cy="50" r="49" fill="none" stroke="url(#outerGrad)" strokeWidth="0.25" strokeDasharray="2 5" />
                 <defs>
                   <linearGradient id="outerGrad" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#EE7501" stopOpacity="0.4" />
-                    <stop offset="50%" stopColor="#2C7EB3" stopOpacity="0.2" />
-                    <stop offset="100%" stopColor="#861720" stopOpacity="0.4" />
+                    <stop offset="0%" stopColor="#EE7501" stopOpacity="0.35" />
+                    <stop offset="50%" stopColor="#2C7EB3" stopOpacity="0.15" />
+                    <stop offset="100%" stopColor="#861720" stopOpacity="0.35" />
                   </linearGradient>
                 </defs>
               </svg>
 
-              {/* Main orbit rings */}
+              {/* Main orbit ring */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
-                <circle cx={cx} cy={cy} r={orbR + 1} fill="none" stroke="rgba(238,117,1,0.15)" strokeWidth="0.5" />
-                <circle cx={cx} cy={cy} r={orbR * 0.55} fill="none" stroke="rgba(42,42,42,0.08)" strokeWidth="0.3" strokeDasharray="1.5 3" />
-                <circle cx={cx} cy={cy} r={orbR * 0.3} fill="none" stroke="rgba(238,117,1,0.08)" strokeWidth="0.2" />
+                <circle cx={cx} cy={cy} r={orbR + 0.5} fill="none" stroke="rgba(238,117,1,0.18)" strokeWidth="0.4" />
+                <circle cx={cx} cy={cy} r={orbR * 0.5} fill="none" stroke="rgba(42,42,42,0.06)" strokeWidth="0.25" strokeDasharray="1.2 2.5" />
 
-                {/* Connection lines */}
+                {/* Connection lines from center to each node */}
                 {sections.map((s, i) => {
-                  const angle = (i * 36 - 90) * (Math.PI / 180);
+                  const angle = (i * angleStep - 90) * (Math.PI / 180);
                   const x = cx + orbR * Math.cos(angle);
                   const y = cy + orbR * Math.sin(angle);
                   const isH = hovered === i;
@@ -179,9 +188,9 @@ export default function Home() {
                     <line
                       key={s.id}
                       x1={cx} y1={cy} x2={x} y2={y}
-                      stroke={isH ? s.color : 'rgba(42,42,42,0.15)'}
-                      strokeWidth={isH ? 0.5 : 0.2}
-                      strokeDasharray={isH ? "none" : "0.8 1.5"}
+                      stroke={isH ? s.color : 'rgba(42,42,42,0.1)'}
+                      strokeWidth={isH ? 0.4 : 0.15}
+                      strokeDasharray={isH ? "none" : "0.6 1.2"}
                       style={{ transition: 'all 0.4s ease' }}
                     />
                   );
@@ -195,24 +204,61 @@ export default function Home() {
                   left: '50%',
                   top: '50%',
                   transform: 'translate(-50%, -50%)',
-                  width: '22%',
-                  height: '22%',
+                  width: '18%',
+                  height: '18%',
                   background: '#FFFFFF',
-                  border: '3px solid rgba(238,117,1,0.25)',
-                  boxShadow: '0 8px 40px rgba(42,42,42,0.1), 0 2px 8px rgba(238,117,1,0.08)',
+                  border: '3px solid rgba(238,117,1,0.2)',
+                  boxShadow: '0 8px 40px rgba(42,42,42,0.08), 0 2px 8px rgba(238,117,1,0.06)',
                   zIndex: 5,
                 }}
               >
                 <img src={ASSETS.logoGrupoArqueoColorido} alt="Grupo Arqueo" style={{ height: '55%', width: 'auto' }} />
               </div>
 
-              {/* Orbital nodes */}
+              {/* ── Orbital Nodes ── */}
               {sections.map((s, i) => {
                 const Icon = s.icon;
-                const angle = (i * 36 - 90) * (Math.PI / 180);
-                const x = cx + orbR * Math.cos(angle);
-                const y = cy + orbR * Math.sin(angle);
+                const angleDeg = i * angleStep - 90;
+                const angleRad = angleDeg * (Math.PI / 180);
+                const x = cx + orbR * Math.cos(angleRad);
+                const y = cy + orbR * Math.sin(angleRad);
                 const isH = hovered === i;
+                const labelPos = getLabelPosition(angleDeg + 90);
+
+                // Compute label alignment styles
+                const labelStyle: React.CSSProperties = {
+                  color: isH ? s.color : '#444',
+                  maxWidth: '120px',
+                  textShadow: '0 1px 6px rgba(249,248,246,1), 0 0 10px rgba(249,248,246,1), 0 0 16px rgba(249,248,246,0.9)',
+                  transition: 'color 0.3s ease',
+                  lineHeight: '1.25',
+                  fontSize: '11px',
+                  fontWeight: 600,
+                };
+
+                // Position label based on node angle to avoid overlaps
+                let labelClass = "absolute whitespace-normal text-center";
+                let labelPositionStyle: React.CSSProperties = {};
+
+                if (labelPos.anchor === 'center') {
+                  // Top or bottom: center label below/above node
+                  labelClass = "absolute left-1/2 -translate-x-1/2 text-center";
+                  if (angleDeg + 90 < 180) {
+                    // Top half: label below
+                    labelPositionStyle = { top: '100%', marginTop: '8px' };
+                  } else {
+                    // Bottom half: label above
+                    labelPositionStyle = { bottom: '100%', marginBottom: '8px' };
+                  }
+                } else if (labelPos.anchor === 'right') {
+                  // Right side: label to the right
+                  labelClass = "absolute text-left";
+                  labelPositionStyle = { left: '100%', marginLeft: '12px', top: '50%', transform: 'translateY(-50%)' };
+                } else {
+                  // Left side: label to the left
+                  labelClass = "absolute text-right";
+                  labelPositionStyle = { right: '100%', marginRight: '12px', top: '50%', transform: 'translateY(-50%)' };
+                }
 
                 return (
                   <div
@@ -221,43 +267,44 @@ export default function Home() {
                     style={{
                       left: `${x}%`,
                       top: `${y}%`,
-                      transform: `translate(-50%, -50%) scale(${isH ? 1.15 : 1}) translateY(${isH ? -3 : 0}px)`,
-                      transition: 'transform 0.3s ease',
+                      transform: `translate(-50%, -50%) scale(${isH ? 1.12 : 1})`,
+                      transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
                       zIndex: isH ? 30 : 20,
                     }}
                     onMouseEnter={() => setHovered(i)}
                     onMouseLeave={() => setHovered(null)}
                   >
                     <Link href={s.path}>
-                      <div className="flex flex-col items-center cursor-pointer">
+                      <div className="relative cursor-pointer">
                         {/* Node circle */}
                         <div
                           className="relative flex items-center justify-center rounded-full"
                           style={{
-                            width: '64px',
-                            height: '64px',
+                            width: '56px',
+                            height: '56px',
                             background: isH ? '#FFFFFF' : s.color,
-                            border: `3px solid ${s.color}`,
+                            border: `2.5px solid ${s.color}`,
                             boxShadow: isH
-                              ? `0 8px 30px ${s.color}60, 0 4px 12px rgba(0,0,0,0.2)`
-                              : `0 6px 20px ${s.color}50, 0 3px 10px rgba(0,0,0,0.15), 0 0 0 4px rgba(255,255,255,0.8)`,
+                              ? `0 8px 28px ${s.color}50, 0 4px 10px rgba(0,0,0,0.15)`
+                              : `0 4px 16px ${s.color}40, 0 2px 6px rgba(0,0,0,0.1), 0 0 0 3px rgba(255,255,255,0.85)`,
                             transition: 'all 0.3s ease',
                           }}
                         >
                           {/* Number badge */}
                           <span
-                            className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-black"
+                            className="absolute -top-1 -right-1 w-[18px] h-[18px] rounded-full flex items-center justify-center text-[7px] font-black"
                             style={{
                               background: isH ? '#2A2A2A' : s.color,
                               color: '#FFFFFF',
-                              boxShadow: '0 2px 6px rgba(0,0,0,0.25)',
+                              boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+                              border: '1.5px solid #FFFFFF',
                             }}
                           >
                             {s.num}
                           </span>
 
                           <Icon
-                            className="w-6 h-6"
+                            className="w-5 h-5"
                             style={{
                               color: isH ? s.color : '#FFFFFF',
                               transition: 'color 0.3s ease',
@@ -266,15 +313,10 @@ export default function Home() {
                           />
                         </div>
 
-                        {/* Label */}
+                        {/* Label — positioned dynamically based on angle */}
                         <span
-                          className="mt-2 text-[10px] xl:text-[11px] font-semibold leading-tight text-center whitespace-nowrap"
-                          style={{
-                            color: isH ? s.color : '#444',
-                            maxWidth: '90px',
-                            textShadow: '0 1px 4px rgba(249,248,246,1), 0 0px 8px rgba(249,248,246,0.9)',
-                            transition: 'color 0.3s ease',
-                          }}
+                          className={labelClass}
+                          style={{ ...labelStyle, ...labelPositionStyle }}
                         >
                           {s.label}
                         </span>
@@ -284,10 +326,10 @@ export default function Home() {
                 );
               })}
 
-              {/* Floating micro-dots */}
+              {/* Floating micro-dots for visual depth */}
               {[0, 60, 120, 180, 240, 300].map((deg, i) => {
                 const angle = deg * (Math.PI / 180);
-                const r = orbR * 0.6;
+                const r = orbR * 0.58;
                 const dotX = cx + r * Math.cos(angle);
                 const dotY = cy + r * Math.sin(angle);
                 const colors = ['#EE7501', '#2C7EB3', '#861720', '#EE7501', '#2C7EB3', '#861720'];
@@ -298,10 +340,10 @@ export default function Home() {
                     style={{
                       left: `${dotX}%`,
                       top: `${dotY}%`,
-                      width: '4px',
-                      height: '4px',
+                      width: '3px',
+                      height: '3px',
                       backgroundColor: colors[i],
-                      opacity: 0.3,
+                      opacity: 0.25,
                       transform: 'translate(-50%, -50%)',
                     }}
                   />
@@ -366,13 +408,13 @@ export default function Home() {
           </div>
 
           {/* Mobile cards grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-3">
             {sections.map((s) => {
               const Icon = s.icon;
               return (
                 <Link key={s.id} href={s.path}>
                   <div
-                    className="group p-4 text-center rounded-xl cursor-pointer"
+                    className="group p-3 text-center rounded-xl cursor-pointer"
                     style={{
                       background: '#FFFFFF',
                       border: '1px solid #E5E7EB',
@@ -380,22 +422,16 @@ export default function Home() {
                       transition: 'all 0.3s ease',
                     }}
                   >
-                    <span
-                      className="block text-lg font-black mb-2"
-                      style={{ color: `${s.color}25` }}
-                    >
-                      {s.num}
-                    </span>
                     <div
                       className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2"
                       style={{
-                        background: `${s.color}10`,
-                        color: s.color,
+                        background: s.color,
+                        color: '#FFFFFF',
                       }}
                     >
                       <Icon className="w-4 h-4" strokeWidth={1.8} />
                     </div>
-                    <span className="block text-[11px] font-semibold leading-tight text-[#2A2A2A]">
+                    <span className="block text-[10px] font-semibold leading-tight text-[#2A2A2A]">
                       {s.label}
                     </span>
                   </div>
