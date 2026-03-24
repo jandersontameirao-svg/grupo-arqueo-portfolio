@@ -21,7 +21,7 @@ export default function QuemSomosEcossistema() {
     {
       year: "2016",
       title: "Fundação",
-      desc: "Criação do Grupo Arqueo em Brasília, com foco em consultoria arqueológica para licenciamento ambiental.",
+      desc: "Criação da Arqueoproject em Brasília, com foco em consultoria arqueológica para licenciamento ambiental.",
       icon: Building2,
       badgeColor: "#861720",
       arcColor: "#861720",
