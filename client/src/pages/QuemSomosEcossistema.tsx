@@ -341,14 +341,20 @@ export default function QuemSomosEcossistema() {
         {/* SEÇÃO 3: ECOSSISTEMA - Cabeçalho */}
         <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-8 lg:gap-12 mb-12">
-              <div className="flex-shrink-0">
-                <img src={ASSETS.logo10anos} alt="10 Anos Grupo Arqueo" className="h-20 lg:h-28 object-contain" />
-              </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: "#1A1A1A" }}>
-                  Um ecossistema,<br />múltiplas especialidades
+                <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#EE7501" }}>
+                  — ECOSSISTEMA
+                </p>
+                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: "#1A1A1A" }}>
+                  Um ecossistema,<br /><span style={{ color: "#EE7501" }}>múltiplas</span> especialidades
                 </h2>
+                <p className="text-lg leading-relaxed mb-8" style={{ color: "#555555" }}>
+                  Seis empresas especializadas que, juntas, formam um ecossistema integrado de soluções para gestão do patrimônio sociocultural no Brasil.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <img src={ASSETS.logo10anos} alt="10 Anos Grupo Arqueo" className="h-40 lg:h-56 object-contain" />
               </div>
             </div>
           </div>
