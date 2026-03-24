@@ -527,7 +527,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Exec 3 - Diretor de Estratégia - BOTTOM LEFT */}
-              <div className="absolute" style={{ zIndex: 8, bottom: '20%', left: '8%' }}>
+              <div className="absolute" style={{ zIndex: 8, bottom: '8%', left: '8%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 202, height: 202, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" alt="Diretor de Estratégia" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
