@@ -193,29 +193,33 @@ export default function MissaoVisao() {
             </p>
           </div>
 
-          {/* Mosaico assimétrico: 1 destaque + 5 complementares */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
-            {/* Pilar principal — destaque grande */}
+          {/* Layout: Integridade destaque + 5 pilares alinhados */}
+          <div className="space-y-6">
+
+            {/* ── Integridade — Card destaque horizontal ── */}
             {(() => {
               const p = pilares[0];
               const Icon = p.icon;
               const isH = hoveredPilar === 0;
               return (
                 <div
-                  className="lg:col-span-5 lg:row-span-2 rounded-3xl relative cursor-pointer overflow-hidden"
+                  className="rounded-2xl relative cursor-pointer overflow-hidden"
                   style={{
                     backgroundColor: isH ? p.color : '#FFFFFF',
                     border: `1px solid ${isH ? p.color : 'rgba(0,0,0,0.06)'}`,
-                    boxShadow: isH ? `0 24px 60px ${p.color}25` : '0 2px 20px rgba(0,0,0,0.04)',
+                    boxShadow: isH ? `0 20px 50px ${p.color}22` : '0 2px 20px rgba(0,0,0,0.04)',
                     transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
                   }}
                   onMouseEnter={() => setHoveredPilar(0)}
                   onMouseLeave={() => setHoveredPilar(null)}
                 >
-                  <div className="p-10 lg:p-12 h-full flex flex-col justify-between" style={{ minHeight: '380px' }}>
-                    <div>
+                  {/* Accent top bar */}
+                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: p.color, opacity: isH ? 0 : 1, transition: 'opacity 0.4s ease' }} />
+
+                  <div className="p-8 lg:p-10 flex flex-col md:flex-row md:items-center gap-6 lg:gap-10">
+                    <div className="flex items-center gap-5 md:gap-6 flex-shrink-0">
                       <div
-                        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8"
+                        className="w-16 h-16 rounded-2xl flex items-center justify-center"
                         style={{
                           backgroundColor: isH ? 'rgba(255,255,255,0.18)' : p.accent,
                           transition: 'all 0.4s ease',
@@ -223,64 +227,71 @@ export default function MissaoVisao() {
                       >
                         <Icon className="w-8 h-8" style={{ color: isH ? '#FFF' : p.color, transition: 'color 0.4s ease' }} />
                       </div>
-                      <h3 className="text-2xl lg:text-3xl font-bold mb-4" style={{ color: isH ? '#FFF' : '#1A1A1A', transition: 'color 0.4s ease', letterSpacing: '-0.01em' }}>
-                        {p.title}
-                      </h3>
-                      <p className="text-base lg:text-lg leading-[1.8]" style={{ color: isH ? 'rgba(255,255,255,0.88)' : '#777', transition: 'color 0.4s ease', fontWeight: 300 }}>
-                        {p.desc}
-                      </p>
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-[9px] font-bold tracking-[0.18em] uppercase px-2 py-0.5 rounded-full" style={{ backgroundColor: isH ? 'rgba(255,255,255,0.15)' : `${p.color}12`, color: isH ? 'rgba(255,255,255,0.8)' : p.color, transition: 'all 0.4s ease' }}>
+                            Pilar Fundamental
+                          </span>
+                        </div>
+                        <h3 className="text-2xl lg:text-3xl font-bold" style={{ color: isH ? '#FFF' : '#1A1A1A', transition: 'color 0.4s ease', letterSpacing: '-0.01em' }}>
+                          {p.title}
+                        </h3>
+                      </div>
                     </div>
-                    <div className="mt-8 flex items-center gap-2" style={{ opacity: isH ? 1 : 0.4, transition: 'opacity 0.4s ease' }}>
-                      <div className="w-8 h-[2px] rounded-full" style={{ backgroundColor: isH ? 'rgba(255,255,255,0.5)' : p.color }} />
-                      <span className="text-[10px] font-semibold tracking-[0.15em] uppercase" style={{ color: isH ? 'rgba(255,255,255,0.6)' : p.color }}>
-                        Pilar Fundamental
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              );
-            })()}
-
-            {/* Pilares complementares — grid menor */}
-            {pilares.slice(1).map((p, idx) => {
-              const i = idx + 1;
-              const Icon = p.icon;
-              const isH = hoveredPilar === i;
-              const span = i === 1 || i === 4 ? 'lg:col-span-4' : 'lg:col-span-3';
-              return (
-                <div
-                  key={i}
-                  className={`${span} rounded-2xl relative cursor-pointer overflow-hidden`}
-                  style={{
-                    backgroundColor: isH ? p.color : '#FFFFFF',
-                    border: `1px solid ${isH ? p.color : 'rgba(0,0,0,0.06)'}`,
-                    boxShadow: isH ? `0 16px 40px ${p.color}20` : '0 2px 16px rgba(0,0,0,0.03)',
-                    transform: isH ? 'translateY(-4px)' : 'translateY(0)',
-                    transition: 'all 0.35s cubic-bezier(0.4,0,0.2,1)',
-                  }}
-                  onMouseEnter={() => setHoveredPilar(i)}
-                  onMouseLeave={() => setHoveredPilar(null)}
-                >
-                  <div className="p-7 lg:p-8">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                      style={{
-                        backgroundColor: isH ? 'rgba(255,255,255,0.18)' : p.accent,
-                        transition: 'all 0.35s ease',
-                      }}
-                    >
-                      <Icon className="w-6 h-6" style={{ color: isH ? '#FFF' : p.color, transition: 'color 0.35s ease' }} />
-                    </div>
-                    <h3 className="text-lg font-bold mb-2" style={{ color: isH ? '#FFF' : '#1A1A1A', transition: 'color 0.35s ease' }}>
-                      {p.title}
-                    </h3>
-                    <p className="text-sm leading-[1.7]" style={{ color: isH ? 'rgba(255,255,255,0.85)' : '#888', transition: 'color 0.35s ease', fontWeight: 300 }}>
+                    <div className="hidden md:block w-px self-stretch" style={{ backgroundColor: isH ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.06)', transition: 'background-color 0.4s ease' }} />
+                    <p className="text-base lg:text-lg leading-[1.8] flex-1" style={{ color: isH ? 'rgba(255,255,255,0.9)' : '#666', transition: 'color 0.4s ease', fontWeight: 300 }}>
                       {p.desc}
                     </p>
                   </div>
                 </div>
               );
-            })}
+            })()}
+
+            {/* ── 5 Pilares complementares — Grid uniforme ── */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+              {pilares.slice(1).map((p, idx) => {
+                const i = idx + 1;
+                const Icon = p.icon;
+                const isH = hoveredPilar === i;
+                return (
+                  <div
+                    key={i}
+                    className="rounded-2xl relative cursor-pointer overflow-hidden"
+                    style={{
+                      backgroundColor: isH ? p.color : '#FFFFFF',
+                      border: `1px solid ${isH ? p.color : 'rgba(0,0,0,0.06)'}`,
+                      boxShadow: isH ? `0 16px 40px ${p.color}20` : '0 2px 16px rgba(0,0,0,0.03)',
+                      transform: isH ? 'translateY(-4px)' : 'translateY(0)',
+                      transition: 'all 0.35s cubic-bezier(0.4,0,0.2,1)',
+                    }}
+                    onMouseEnter={() => setHoveredPilar(i)}
+                    onMouseLeave={() => setHoveredPilar(null)}
+                  >
+                    {/* Accent top line */}
+                    <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ backgroundColor: p.color, opacity: isH ? 0 : 0.5, transition: 'opacity 0.35s ease' }} />
+
+                    <div className="p-6 lg:p-7">
+                      <div
+                        className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                        style={{
+                          backgroundColor: isH ? 'rgba(255,255,255,0.18)' : p.accent,
+                          transition: 'all 0.35s ease',
+                        }}
+                      >
+                        <Icon className="w-5 h-5" style={{ color: isH ? '#FFF' : p.color, transition: 'color 0.35s ease' }} />
+                      </div>
+                      <h3 className="text-base font-bold mb-2" style={{ color: isH ? '#FFF' : '#1A1A1A', transition: 'color 0.35s ease' }}>
+                        {p.title}
+                      </h3>
+                      <p className="text-[13px] leading-[1.7]" style={{ color: isH ? 'rgba(255,255,255,0.85)' : '#888', transition: 'color 0.35s ease', fontWeight: 300 }}>
+                        {p.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
         </div>
       </section>
