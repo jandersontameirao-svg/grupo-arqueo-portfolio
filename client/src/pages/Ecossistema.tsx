@@ -163,26 +163,23 @@ export default function Ecossistema() {
       {/* Cabeçalho da Seção */}
       <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
         <div className="max-w-7xl mx-auto">
-          {/* Logo 10 Anos */}
-          <div className="flex justify-center mb-8">
-            <img 
-              src={ASSETS.logo10anos} 
-              alt="10 Anos Grupo Arqueo"
-              className="h-16 lg:h-20 object-contain"
-            />
-          </div>
-          
-          {/* Título e Subtítulo */}
-          <div className="text-center">
-            <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
-              Estrutura Integrada
-            </span>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mt-6 mb-4 leading-tight" style={{ color: '#1A1A1A' }}>
-              Um ecossistema,<br />múltiplas especialidades
-            </h1>
-            <p className="text-base lg:text-lg max-w-3xl mx-auto" style={{ color: '#666666' }}>
-              Empresas complementares, integradas por inteligência, operação e visão estratégica.
-            </p>
+          {/* Título com Logo ao Lado */}
+          <div className="flex items-center gap-8 lg:gap-12">
+            {/* Logo 10 Anos */}
+            <div className="flex-shrink-0">
+              <img 
+                src={ASSETS.logo10anos} 
+                alt="10 Anos Grupo Arqueo"
+                className="h-20 lg:h-28 object-contain"
+              />
+            </div>
+            
+            {/* Título */}
+            <div>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
+                Um ecossistema,<br />múltiplas especialidades
+              </h1>
+            </div>
           </div>
         </div>
       </section>
