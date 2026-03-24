@@ -335,19 +335,9 @@ export default function QuemSomosEcossistema() {
         {/* SEÇÃO 3: ECOSSISTEMA - Título */}
         <section className="py-6 lg:py-8 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-6 lg:gap-10">
-              <div className="flex-shrink-0">
-                <img src={ASSETS.logo10anos} alt="10 Anos Grupo Arqueo" className="h-14 lg:h-20 object-contain" />
-              </div>
-              <div>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "#EE7501" }}>
-                  — ECOSSISTEMA
-                </p>
-                <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style={{ color: "#1A1A1A" }}>
-                  Um ecossistema, <span style={{ color: "#EE7501" }}>múltiplas</span> especialidades
-                </h2>
-              </div>
-            </div>
+            <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style={{ color: "#1A1A1A" }}>
+              Um ecossistema, <span style={{ color: "#EE7501" }}>múltiplas</span> especialidades
+            </h2>
           </div>
         </section>
 
