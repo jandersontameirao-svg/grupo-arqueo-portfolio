@@ -72,8 +72,8 @@ export default function Parceiros() {
       chapterTitle="Nossos Parceiros"
       prevPath="/numeros-territorio"
       prevLabel="Números & Território"
-      nextPath="/cases"
-      nextLabel="Cases"
+      nextPath="/contato"
+      nextLabel="Contato"
     >
       {/* Hero Section */}
       <section className="relative py-20 lg:py-28" style={{ backgroundColor: '#F5F5F5' }}>
