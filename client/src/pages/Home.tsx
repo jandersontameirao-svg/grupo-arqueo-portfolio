@@ -43,7 +43,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  const orbR = 42;
+  const orbR = 48;
   const cx = 50;
   const cy = 50;
 
@@ -237,8 +237,8 @@ export default function Home() {
                         <div
                           className="relative flex items-center justify-center rounded-full"
                           style={{
-                            width: '56px',
-                            height: '56px',
+                            width: '48px',
+                            height: '48px',
                             background: isH ? '#FFFFFF' : s.color,
                             border: `3px solid ${s.color}`,
                             boxShadow: isH
@@ -260,7 +260,7 @@ export default function Home() {
                           </span>
 
                           <Icon
-                            className="w-5 h-5"
+                            className="w-4 h-4"
                             style={{
                               color: isH ? s.color : '#FFFFFF',
                               transition: 'color 0.3s ease',
