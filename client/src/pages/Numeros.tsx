@@ -46,6 +46,9 @@ export default function Numeros() {
     .metric-complementary-3 {
       animation-delay: 0.6s;
     }
+    .metric-complementary-4 {
+      animation-delay: 0.7s;
+    }
     .segment-bar {
       animation: fadeInUp 0.6s ease-out forwards;
     }
@@ -157,7 +160,7 @@ export default function Numeros() {
           </div>
 
           {/* Métricas Complementares */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Complementar 1 */}
             <div 
               className={`text-center metric-fade-in metric-complementary-1 ${animateMetrics ? '' : 'opacity-0'}`}
@@ -212,6 +215,25 @@ export default function Numeros() {
               </h3>
               <p className="text-xs lg:text-sm" style={{ color: '#666666' }}>
                 Capacidade técnica consolidada
+              </p>
+            </div>
+
+            {/* Complementar 4 */}
+            <div 
+              className={`text-center metric-fade-in metric-complementary-4 ${animateMetrics ? '' : 'opacity-0'}`}
+              style={{ animationPlayState: animateMetrics ? 'running' : 'paused', animationDelay: '0.7s' }}
+            >
+              <div 
+                className="text-4xl lg:text-5xl font-bold mb-2"
+                style={{ color: '#FFD700' }}
+              >
+                5.000+
+              </div>
+              <h3 className="text-lg lg:text-xl font-bold mb-1" style={{ color: '#1A1A1A' }}>
+                Participantes em educações patrimoniais
+              </h3>
+              <p className="text-xs lg:text-sm" style={{ color: '#666666' }}>
+                Impacto social e cultural consolidado
               </p>
             </div>
           </div>
