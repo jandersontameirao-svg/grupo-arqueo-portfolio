@@ -14,46 +14,40 @@ export default function PresencaTerritorial() {
   const [estadoSelecionado, setEstadoSelecionado] = useState<Estado | null>(null);
 
   // Dados dos 24 estados onde o Grupo Arqueo atua
-  const estados: Estado[] = [
-    // Região Norte
-    { sigla: 'AM', nome: 'Amazonas', ativo: true, projetos: 3, regiao: 'Norte' },
-    { sigla: 'AP', nome: 'Amapá', ativo: true, projetos: 1, regiao: 'Norte' },
-    { sigla: 'PA', nome: 'Pará', ativo: true, projetos: 2, regiao: 'Norte' },
-    { sigla: 'TO', nome: 'Tocantins', ativo: true, projetos: 2, regiao: 'Norte' },
+  const estadosData: { [key: string]: Estado } = {
+    'AC': { sigla: 'AC', nome: 'Acre', ativo: false, projetos: 0, regiao: 'Norte' },
+    'AM': { sigla: 'AM', nome: 'Amazonas', ativo: true, projetos: 3, regiao: 'Norte' },
+    'AP': { sigla: 'AP', nome: 'Amapá', ativo: true, projetos: 1, regiao: 'Norte' },
+    'PA': { sigla: 'PA', nome: 'Pará', ativo: true, projetos: 2, regiao: 'Norte' },
+    'RR': { sigla: 'RR', nome: 'Roraima', ativo: false, projetos: 0, regiao: 'Norte' },
+    'TO': { sigla: 'TO', nome: 'Tocantins', ativo: true, projetos: 2, regiao: 'Norte' },
     
-    // Região Nordeste
-    { sigla: 'MA', nome: 'Maranhão', ativo: true, projetos: 16, regiao: 'Nordeste' },
-    { sigla: 'PI', nome: 'Piauí', ativo: true, projetos: 2, regiao: 'Nordeste' },
-    { sigla: 'CE', nome: 'Ceará', ativo: true, projetos: 1, regiao: 'Nordeste' },
-    { sigla: 'RN', nome: 'Rio Grande do Norte', ativo: true, projetos: 1, regiao: 'Nordeste' },
-    { sigla: 'PB', nome: 'Paraíba', ativo: true, projetos: 1, regiao: 'Nordeste' },
-    { sigla: 'PE', nome: 'Pernambuco', ativo: true, projetos: 4, regiao: 'Nordeste' },
-    { sigla: 'AL', nome: 'Alagoas', ativo: true, projetos: 1, regiao: 'Nordeste' },
-    { sigla: 'BA', nome: 'Bahia', ativo: true, projetos: 5, regiao: 'Nordeste' },
+    'AL': { sigla: 'AL', nome: 'Alagoas', ativo: true, projetos: 1, regiao: 'Nordeste' },
+    'BA': { sigla: 'BA', nome: 'Bahia', ativo: true, projetos: 5, regiao: 'Nordeste' },
+    'CE': { sigla: 'CE', nome: 'Ceará', ativo: true, projetos: 1, regiao: 'Nordeste' },
+    'MA': { sigla: 'MA', nome: 'Maranhão', ativo: true, projetos: 16, regiao: 'Nordeste' },
+    'PB': { sigla: 'PB', nome: 'Paraíba', ativo: true, projetos: 1, regiao: 'Nordeste' },
+    'PE': { sigla: 'PE', nome: 'Pernambuco', ativo: true, projetos: 4, regiao: 'Nordeste' },
+    'PI': { sigla: 'PI', nome: 'Piauí', ativo: true, projetos: 2, regiao: 'Nordeste' },
+    'RN': { sigla: 'RN', nome: 'Rio Grande do Norte', ativo: true, projetos: 1, regiao: 'Nordeste' },
+    'SE': { sigla: 'SE', nome: 'Sergipe', ativo: false, projetos: 0, regiao: 'Nordeste' },
     
-    // Região Centro-Oeste
-    { sigla: 'MT', nome: 'Mato Grosso', ativo: true, projetos: 3, regiao: 'Centro-Oeste' },
-    { sigla: 'MS', nome: 'Mato Grosso do Sul', ativo: true, projetos: 6, regiao: 'Centro-Oeste' },
-    { sigla: 'GO', nome: 'Goiás', ativo: true, projetos: 1, regiao: 'Centro-Oeste' },
-    { sigla: 'DF', nome: 'Distrito Federal', ativo: true, projetos: 2, regiao: 'Centro-Oeste' },
+    'DF': { sigla: 'DF', nome: 'Distrito Federal', ativo: true, projetos: 2, regiao: 'Centro-Oeste' },
+    'GO': { sigla: 'GO', nome: 'Goiás', ativo: true, projetos: 1, regiao: 'Centro-Oeste' },
+    'MS': { sigla: 'MS', nome: 'Mato Grosso do Sul', ativo: true, projetos: 6, regiao: 'Centro-Oeste' },
+    'MT': { sigla: 'MT', nome: 'Mato Grosso', ativo: true, projetos: 3, regiao: 'Centro-Oeste' },
     
-    // Região Sudeste
-    { sigla: 'MG', nome: 'Minas Gerais', ativo: true, projetos: 12, regiao: 'Sudeste' },
-    { sigla: 'SP', nome: 'São Paulo', ativo: true, projetos: 4, regiao: 'Sudeste' },
-    { sigla: 'RJ', nome: 'Rio de Janeiro', ativo: true, projetos: 2, regiao: 'Sudeste' },
-    { sigla: 'ES', nome: 'Espírito Santo', ativo: true, projetos: 1, regiao: 'Sudeste' },
+    'ES': { sigla: 'ES', nome: 'Espírito Santo', ativo: true, projetos: 1, regiao: 'Sudeste' },
+    'MG': { sigla: 'MG', nome: 'Minas Gerais', ativo: true, projetos: 12, regiao: 'Sudeste' },
+    'RJ': { sigla: 'RJ', nome: 'Rio de Janeiro', ativo: true, projetos: 2, regiao: 'Sudeste' },
+    'SP': { sigla: 'SP', nome: 'São Paulo', ativo: true, projetos: 4, regiao: 'Sudeste' },
     
-    // Região Sul
-    { sigla: 'PR', nome: 'Paraná', ativo: true, projetos: 3, regiao: 'Sul' },
-    { sigla: 'SC', nome: 'Santa Catarina', ativo: true, projetos: 2, regiao: 'Sul' },
-    { sigla: 'RS', nome: 'Rio Grande do Sul', ativo: true, projetos: 2, regiao: 'Sul' },
-    
-    // Estados inativos
-    { sigla: 'AC', nome: 'Acre', ativo: false, projetos: 0, regiao: 'Norte' },
-    { sigla: 'RR', nome: 'Roraima', ativo: false, projetos: 0, regiao: 'Norte' },
-    { sigla: 'SE', nome: 'Sergipe', ativo: false, projetos: 0, regiao: 'Nordeste' },
-  ];
+    'PR': { sigla: 'PR', nome: 'Paraná', ativo: true, projetos: 3, regiao: 'Sul' },
+    'RS': { sigla: 'RS', nome: 'Rio Grande do Sul', ativo: true, projetos: 2, regiao: 'Sul' },
+    'SC': { sigla: 'SC', nome: 'Santa Catarina', ativo: true, projetos: 2, regiao: 'Sul' },
+  };
 
+  const estados = Object.values(estadosData);
   const estadosAtivos = estados.filter(e => e.ativo);
   const totalProjetos = estadosAtivos.reduce((sum, e) => sum + e.projetos, 0);
 
@@ -63,6 +57,11 @@ export default function PresencaTerritorial() {
     if (estado.projetos > 5) return '#FF9E3D';
     if (estado.projetos > 2) return '#FFB366';
     return '#FFD699';
+  };
+
+  const getCorTexto = (estado: Estado) => {
+    if (!estado.ativo) return '#999999';
+    return '#FFFFFF';
   };
 
   return (
@@ -126,64 +125,162 @@ export default function PresencaTerritorial() {
 
       {/* Mapa Interativo */}
       <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center" style={{ color: '#1A1A1A' }}>
             Mapa de atuação
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Grid de Estados */}
-            <div className="lg:col-span-2">
-              <div className="grid grid-cols-4 md:grid-cols-5 gap-3">
-                {estados.map((estado) => (
-                  <button
-                    key={estado.sigla}
-                    onClick={() => setEstadoSelecionado(estado)}
-                    className="p-3 rounded-lg font-bold text-sm transition-all hover:scale-105 cursor-pointer"
-                    style={{
-                      backgroundColor: getCor(estado),
-                      color: estado.ativo ? '#FFFFFF' : '#999999',
-                      border: estadoSelecionado?.sigla === estado.sigla ? '3px solid #1A1A1A' : 'none',
-                      opacity: estado.ativo ? 1 : 0.5,
-                    }}
-                    title={estado.nome}
-                  >
-                    {estado.sigla}
-                  </button>
-                ))}
-              </div>
+            {/* Mapa SVG */}
+            <div className="lg:col-span-2 flex justify-center">
+              <svg viewBox="0 0 1000 1200" className="w-full max-w-2xl" style={{ filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.1))' }}>
+                {/* Mapa simplificado do Brasil com estados */}
+                
+                {/* Norte */}
+                <g onClick={() => setEstadoSelecionado(estadosData['AC'])} style={{ cursor: 'pointer' }}>
+                  <rect x="50" y="50" width="120" height="100" fill={getCor(estadosData['AC'])} stroke="#999" strokeWidth="2" />
+                  <text x="110" y="105" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['AC'])}>AC</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['AM'])} style={{ cursor: 'pointer' }}>
+                  <rect x="200" y="50" width="120" height="100" fill={getCor(estadosData['AM'])} stroke="#999" strokeWidth="2" />
+                  <text x="260" y="105" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['AM'])}>AM</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['RR'])} style={{ cursor: 'pointer' }}>
+                  <rect x="350" y="50" width="120" height="100" fill={getCor(estadosData['RR'])} stroke="#999" strokeWidth="2" />
+                  <text x="410" y="105" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['RR'])}>RR</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['AP'])} style={{ cursor: 'pointer' }}>
+                  <rect x="500" y="50" width="120" height="100" fill={getCor(estadosData['AP'])} stroke="#999" strokeWidth="2" />
+                  <text x="560" y="105" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['AP'])}>AP</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['PA'])} style={{ cursor: 'pointer' }}>
+                  <rect x="650" y="50" width="120" height="100" fill={getCor(estadosData['PA'])} stroke="#999" strokeWidth="2" />
+                  <text x="710" y="105" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['PA'])}>PA</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['TO'])} style={{ cursor: 'pointer' }}>
+                  <rect x="800" y="50" width="120" height="100" fill={getCor(estadosData['TO'])} stroke="#999" strokeWidth="2" />
+                  <text x="860" y="105" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['TO'])}>TO</text>
+                </g>
 
-              {/* Legenda */}
-              <div className="mt-12 pt-8 border-t" style={{ borderColor: '#E5E5E5' }}>
-                <h3 className="text-lg font-bold mb-4" style={{ color: '#1A1A1A' }}>
-                  Legenda de intensidade
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded" style={{ backgroundColor: '#EE7501' }}></div>
-                    <span className="text-sm">10+ projetos</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded" style={{ backgroundColor: '#FF9E3D' }}></div>
-                    <span className="text-sm">5-10 projetos</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded" style={{ backgroundColor: '#FFB366' }}></div>
-                    <span className="text-sm">2-5 projetos</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded" style={{ backgroundColor: '#FFD699' }}></div>
-                    <span className="text-sm">1 projeto</span>
-                  </div>
-                </div>
-              </div>
+                {/* Nordeste */}
+                <g onClick={() => setEstadoSelecionado(estadosData['MA'])} style={{ cursor: 'pointer' }}>
+                  <rect x="50" y="200" width="120" height="100" fill={getCor(estadosData['MA'])} stroke="#999" strokeWidth="2" />
+                  <text x="110" y="255" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['MA'])}>MA</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['PI'])} style={{ cursor: 'pointer' }}>
+                  <rect x="200" y="200" width="120" height="100" fill={getCor(estadosData['PI'])} stroke="#999" strokeWidth="2" />
+                  <text x="260" y="255" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['PI'])}>PI</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['CE'])} style={{ cursor: 'pointer' }}>
+                  <rect x="350" y="200" width="120" height="100" fill={getCor(estadosData['CE'])} stroke="#999" strokeWidth="2" />
+                  <text x="410" y="255" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['CE'])}>CE</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['RN'])} style={{ cursor: 'pointer' }}>
+                  <rect x="500" y="200" width="120" height="100" fill={getCor(estadosData['RN'])} stroke="#999" strokeWidth="2" />
+                  <text x="560" y="255" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['RN'])}>RN</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['PB'])} style={{ cursor: 'pointer' }}>
+                  <rect x="650" y="200" width="120" height="100" fill={getCor(estadosData['PB'])} stroke="#999" strokeWidth="2" />
+                  <text x="710" y="255" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['PB'])}>PB</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['PE'])} style={{ cursor: 'pointer' }}>
+                  <rect x="800" y="200" width="120" height="100" fill={getCor(estadosData['PE'])} stroke="#999" strokeWidth="2" />
+                  <text x="860" y="255" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['PE'])}>PE</text>
+                </g>
+
+                {/* Nordeste (continuação) */}
+                <g onClick={() => setEstadoSelecionado(estadosData['AL'])} style={{ cursor: 'pointer' }}>
+                  <rect x="50" y="350" width="120" height="100" fill={getCor(estadosData['AL'])} stroke="#999" strokeWidth="2" />
+                  <text x="110" y="405" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['AL'])}>AL</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['SE'])} style={{ cursor: 'pointer' }}>
+                  <rect x="200" y="350" width="120" height="100" fill={getCor(estadosData['SE'])} stroke="#999" strokeWidth="2" />
+                  <text x="260" y="405" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['SE'])}>SE</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['BA'])} style={{ cursor: 'pointer' }}>
+                  <rect x="350" y="350" width="120" height="100" fill={getCor(estadosData['BA'])} stroke="#999" strokeWidth="2" />
+                  <text x="410" y="405" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['BA'])}>BA</text>
+                </g>
+
+                {/* Centro-Oeste */}
+                <g onClick={() => setEstadoSelecionado(estadosData['MT'])} style={{ cursor: 'pointer' }}>
+                  <rect x="500" y="350" width="120" height="100" fill={getCor(estadosData['MT'])} stroke="#999" strokeWidth="2" />
+                  <text x="560" y="405" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['MT'])}>MT</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['DF'])} style={{ cursor: 'pointer' }}>
+                  <rect x="650" y="350" width="120" height="100" fill={getCor(estadosData['DF'])} stroke="#999" strokeWidth="2" />
+                  <text x="710" y="405" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['DF'])}>DF</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['GO'])} style={{ cursor: 'pointer' }}>
+                  <rect x="800" y="350" width="120" height="100" fill={getCor(estadosData['GO'])} stroke="#999" strokeWidth="2" />
+                  <text x="860" y="405" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['GO'])}>GO</text>
+                </g>
+
+                {/* Centro-Oeste (continuação) */}
+                <g onClick={() => setEstadoSelecionado(estadosData['MS'])} style={{ cursor: 'pointer' }}>
+                  <rect x="500" y="500" width="120" height="100" fill={getCor(estadosData['MS'])} stroke="#999" strokeWidth="2" />
+                  <text x="560" y="555" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['MS'])}>MS</text>
+                </g>
+
+                {/* Sudeste */}
+                <g onClick={() => setEstadoSelecionado(estadosData['MG'])} style={{ cursor: 'pointer' }}>
+                  <rect x="650" y="500" width="120" height="100" fill={getCor(estadosData['MG'])} stroke="#999" strokeWidth="2" />
+                  <text x="710" y="555" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['MG'])}>MG</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['SP'])} style={{ cursor: 'pointer' }}>
+                  <rect x="800" y="500" width="120" height="100" fill={getCor(estadosData['SP'])} stroke="#999" strokeWidth="2" />
+                  <text x="860" y="555" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['SP'])}>SP</text>
+                </g>
+
+                {/* Sudeste (continuação) */}
+                <g onClick={() => setEstadoSelecionado(estadosData['RJ'])} style={{ cursor: 'pointer' }}>
+                  <rect x="50" y="650" width="120" height="100" fill={getCor(estadosData['RJ'])} stroke="#999" strokeWidth="2" />
+                  <text x="110" y="705" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['RJ'])}>RJ</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['ES'])} style={{ cursor: 'pointer' }}>
+                  <rect x="200" y="650" width="120" height="100" fill={getCor(estadosData['ES'])} stroke="#999" strokeWidth="2" />
+                  <text x="260" y="705" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['ES'])}>ES</text>
+                </g>
+
+                {/* Sul */}
+                <g onClick={() => setEstadoSelecionado(estadosData['PR'])} style={{ cursor: 'pointer' }}>
+                  <rect x="350" y="650" width="120" height="100" fill={getCor(estadosData['PR'])} stroke="#999" strokeWidth="2" />
+                  <text x="410" y="705" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['PR'])}>PR</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['SC'])} style={{ cursor: 'pointer' }}>
+                  <rect x="500" y="650" width="120" height="100" fill={getCor(estadosData['SC'])} stroke="#999" strokeWidth="2" />
+                  <text x="560" y="705" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['SC'])}>SC</text>
+                </g>
+                
+                <g onClick={() => setEstadoSelecionado(estadosData['RS'])} style={{ cursor: 'pointer' }}>
+                  <rect x="650" y="650" width="120" height="100" fill={getCor(estadosData['RS'])} stroke="#999" strokeWidth="2" />
+                  <text x="710" y="705" textAnchor="middle" fontSize="16" fontWeight="bold" fill={getCorTexto(estadosData['RS'])}>RS</text>
+                </g>
+              </svg>
             </div>
 
             {/* Painel Lateral */}
             <div>
               {estadoSelecionado ? (
                 <div
-                  className="p-6 rounded-lg"
+                  className="p-6 rounded-lg sticky top-8"
                   style={{
                     backgroundColor: getCor(estadoSelecionado),
                     color: estadoSelecionado.ativo ? '#FFFFFF' : '#666666',
@@ -219,14 +316,39 @@ export default function PresencaTerritorial() {
                 </div>
               ) : (
                 <div
-                  className="p-6 rounded-lg text-center"
+                  className="p-6 rounded-lg text-center sticky top-8"
                   style={{ backgroundColor: '#FAFAF9', color: '#666666' }}
                 >
                   <p className="text-sm">
-                    Clique em um estado para visualizar detalhes
+                    Clique em um estado no mapa para visualizar detalhes
                   </p>
                 </div>
               )}
+            </div>
+          </div>
+
+          {/* Legenda */}
+          <div className="mt-12 pt-8 border-t" style={{ borderColor: '#E5E5E5' }}>
+            <h3 className="text-lg font-bold mb-4" style={{ color: '#1A1A1A' }}>
+              Legenda de intensidade
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded" style={{ backgroundColor: '#EE7501' }}></div>
+                <span className="text-sm">10+ projetos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded" style={{ backgroundColor: '#FF9E3D' }}></div>
+                <span className="text-sm">5-10 projetos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded" style={{ backgroundColor: '#FFB366' }}></div>
+                <span className="text-sm">2-5 projetos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded" style={{ backgroundColor: '#FFD699' }}></div>
+                <span className="text-sm">1 projeto</span>
+              </div>
             </div>
           </div>
         </div>
