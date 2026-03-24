@@ -39,8 +39,8 @@ export default function MissaoVisao() {
       chapterTitle="Missão, Visão e Valores"
       prevPath="/quem-somos"
       prevLabel="Quem Somos"
-      nextPath="/ecossistema"
-      nextLabel="Ecossistema do Grupo"
+      nextPath="/solucoes"
+      nextLabel="Soluções"
     >
 
       {/* ═══════════════════ 1. HERO INSTITUCIONAL ═══════════════════ */}
