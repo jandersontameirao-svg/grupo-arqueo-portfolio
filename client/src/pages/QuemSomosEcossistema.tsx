@@ -579,10 +579,10 @@ export default function QuemSomosEcossistema() {
               {/* Team 4 - Gerente de Projetos - BOTTOM RIGHT */}
               <div className="absolute" style={{ zIndex: 7, bottom: '12%', right: '15%' }}>
                 <div className="flex flex-col items-center">
-                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 90, height: 90, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Annaflavia_0ffbab23.webp" alt="Gerente de Projetos" className="w-full h-full object-cover" />
+                  <div className="rounded-full overflow-hidden shadow-lg" style={{ width: 120, height: 120, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/643-RIC_3179_73874ff3.webp" alt="Gerente de Projetos" className="w-full h-full object-cover object-top" />
                   </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg">Gerente de Projetos</span>
+                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg">Gerente de Projetos</span>
                 </div>
               </div>
 
