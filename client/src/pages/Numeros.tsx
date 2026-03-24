@@ -97,16 +97,16 @@ export default function Numeros() {
       <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="max-w-6xl mx-auto">
           {/* Métrica Principal */}
-          <div 
-            className={`mb-20 lg:mb-32 text-center metric-fade-in metric-primary ${animateMetrics ? '' : 'opacity-0'}`}
-            style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
-          >
             <div 
-              className="text-7xl lg:text-8xl font-bold mb-4"
-              style={{ color: '#EE7501' }}
+              className={`mb-20 lg:mb-32 text-center metric-fade-in metric-primary ${animateMetrics ? '' : 'opacity-0'}`}
+              style={{ animationPlayState: animateMetrics ? 'running' : 'paused' }}
             >
-              {statsData.total_projetos}+
-            </div>
+              <div 
+                className="text-7xl lg:text-8xl font-bold mb-4"
+                style={{ color: '#EE7501' }}
+              >
+                400+
+              </div>
             <h3 className="text-2xl lg:text-3xl font-bold mb-3" style={{ color: '#1A1A1A' }}>
               Projetos e processos gerenciados
             </h3>
