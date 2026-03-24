@@ -12,6 +12,7 @@ import Ecossistema from "./pages/Ecossistema";
 import Solucoes from "./pages/Solucoes";
 import Diferenciais from "./pages/Diferenciais";
 import Numeros from "./pages/Numeros";
+import PresencaTerritorial from "./pages/PresencaTerritorial";
 import Cases from "./pages/Cases";
 import Territorio from "./pages/Territorio";
 import Contato from "./pages/Contato";
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/solucoes" component={Solucoes} />
       <Route path="/diferenciais" component={Diferenciais} />
       <Route path="/numeros" component={Numeros} />
+      <Route path="/presenca-territorial" component={PresencaTerritorial} />
       <Route path="/cases" component={Cases} />
       <Route path="/territorio" component={Territorio} />
       <Route path="/contato" component={Contato} />
