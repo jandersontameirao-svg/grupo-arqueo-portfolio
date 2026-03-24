@@ -230,7 +230,7 @@ export default function QuemSomosEcossistema() {
     >
       <div className="w-full">
         {/* SEÇÃO 1B: QUEM SOMOS + TRAJETÓRIA - Hero Mesclado - REFINADO */}
-        <section className="py-20 lg:py-32 px-4 lg:px-8 relative overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
+        <section className="py-12 lg:py-16 px-4 lg:px-8 relative overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
           {/* Background sutil premium */}
           <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #861720 0%, transparent 50%), radial-gradient(circle at 80% 50%, #EE7501 0%, transparent 50%)' }} />
           
@@ -305,7 +305,7 @@ export default function QuemSomosEcossistema() {
         </section>
 
         {/* SEÇÃO 3: TÍTULO DO ECOSSISTEMA */}
-        <section className="py-12 lg:py-16 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
+        <section className="py-8 lg:py-12 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
               Um ecossistema, <span style={{ color: "#EE7501", fontWeight: 800 }}>múltiplas</span> especialidades
@@ -314,7 +314,7 @@ export default function QuemSomosEcossistema() {
         </section>
 
         {/* SEÇÃO 4: ECOSSISTEMA - Layout Principal - REFINADO */}
-        <section className="py-16 lg:py-24 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
+        <section className="py-12 lg:py-16 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
               {/* Coluna Principal - Diagrama - COM MAIS PRESENÇA */}
@@ -440,7 +440,7 @@ export default function QuemSomosEcossistema() {
         </section>
 
         {/* ═════════════════ NOSSO TIME SECTION - REFINADO ═════════════════ */}
-        <section className="py-24 lg:py-32 relative" style={{ backgroundColor: '#FFFFFF' }}>
+        <section className="py-16 lg:py-20 relative" style={{ backgroundColor: '#FFFFFF' }}>
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             {/* Section Title - MELHORADO */}
             <motion.div
