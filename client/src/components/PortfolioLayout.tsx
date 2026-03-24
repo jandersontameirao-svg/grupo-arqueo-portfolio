@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ASSETS } from "@/lib/assets";
-import { Home, ArrowLeft, ArrowRight } from "lucide-react";
+import { Home, ArrowRight } from "lucide-react";
 
 interface PortfolioLayoutProps {
   children: React.ReactNode;
@@ -29,27 +29,6 @@ export default function PortfolioLayout({
         {children}
       </main>
 
-      {/* CHAPTER NAVIGATION */}
-      <nav className="py-6 lg:py-8 border-t" style={{ backgroundColor: '#FFFFFF', borderColor: '#E6E6E6' }}>
-        <div className="container flex items-center justify-between">
-          <Link href="/">
-            <div className="flex items-center gap-2 text-xs font-medium cursor-pointer transition-colors hover:text-[#EE7501] group" style={{ color: '#888' }}>
-              <Home className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5" />
-              Voltar ao Índice
-            </div>
-          </Link>
-          {nextPath ? (
-            <Link href={nextPath}>
-              <div className="flex items-center gap-3 group cursor-pointer transition-all hover:gap-4">
-                <span className="text-[10px] font-medium tracking-wider uppercase" style={{ color: '#888' }}>PRÓXIMO</span>
-                <span className="text-sm font-semibold" style={{ color: '#2A2A2A' }}>{nextLabel}</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" style={{ color: '#EE7501' }} />
-              </div>
-            </Link>
-          ) : <div />}
-        </div>
-      </nav>
-
       {/* FOOTER */}
       <footer className="py-10" style={{ backgroundColor: '#2A2A2A' }}>
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
@@ -59,6 +38,57 @@ export default function PortfolioLayout({
           </p>
         </div>
       </footer>
+
+      {/* ═══════════ FLOATING NAVIGATION BUTTONS ═══════════ */}
+
+      {/* Voltar ao Índice — fixo canto inferior esquerdo */}
+      <Link href="/">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="fixed bottom-8 left-8 z-50 flex items-center gap-2.5 px-5 py-3 rounded-full cursor-pointer group"
+          style={{
+            backgroundColor: 'rgba(255,255,255,0.92)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)',
+            border: '1px solid rgba(0,0,0,0.06)',
+          }}
+        >
+          <Home className="w-4 h-4 transition-all duration-300 group-hover:scale-110" style={{ color: '#888' }} />
+          <span className="text-xs font-medium transition-colors duration-300 group-hover:text-[#EE7501]" style={{ color: '#888' }}>
+            Voltar ao Índice
+          </span>
+        </motion.div>
+      </Link>
+
+      {/* Próximo — fixo canto inferior direito */}
+      {nextPath && (
+        <Link href={nextPath}>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="fixed bottom-8 right-8 z-50 flex items-center gap-3 px-5 py-3 rounded-full cursor-pointer group"
+            style={{
+              backgroundColor: 'rgba(255,255,255,0.92)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)',
+              border: '1px solid rgba(0,0,0,0.06)',
+            }}
+          >
+            <span className="text-[10px] font-medium tracking-wider uppercase transition-colors duration-300" style={{ color: '#888' }}>
+              PRÓXIMO
+            </span>
+            <span className="text-sm font-semibold transition-colors duration-300 group-hover:text-[#EE7501]" style={{ color: '#2A2A2A' }}>
+              {nextLabel}
+            </span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" style={{ color: '#EE7501' }} />
+          </motion.div>
+        </Link>
+      )}
     </div>
   );
 }
