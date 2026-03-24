@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
 import { MapPin } from "lucide-react";
+import MapaBrasilSVG from "@/components/MapaBrasilSVG";
+import { useState } from "react";
 
 /**
  * PRESENÇA TERRITORIAL — Página 09
@@ -34,7 +36,16 @@ const regioes = [
   { nome: "Norte", count: 2, color: "#5B8C3E" },
 ];
 
+interface Estado {
+  sigla: string;
+  nome: string;
+  ativo: boolean;
+  projetos: number;
+  regiao: string;
+}
+
 export default function Territorio() {
+  const [selectedEstado, setSelectedEstado] = useState<Estado | null>(null);
   return (
     <PortfolioLayout
       chapterNum="09"
@@ -77,6 +88,64 @@ export default function Territorio() {
               Com escritórios em Brasília, Natal e São Paulo, o Grupo Arqueo possui presença estratégica para atender projetos em todas as regiões do Brasil, com destaque para o Nordeste, onde concentra a maior parte de sua atuação.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
+
+      {/* Mapa Visual */}
+      <section className="py-16 lg:py-24">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+            {/* Left: Text */}
+            <div className="lg:col-span-1 flex flex-col justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
+                  <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Mapa</span>
+                </div>
+                <h2 className="text-2xl lg:text-3xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
+                  Presença em <span style={{ color: '#EE7501' }}>24 estados</span>
+                </h2>
+                <p className="text-sm font-light leading-relaxed mb-6" style={{ color: '#555' }}>
+                  Estados ativos em <span style={{ color: '#861720', fontWeight: 600 }}>vermelho</span> representam a cobertura estratégica do Grupo Arqueo em todas as regiões do Brasil.
+                </p>
+                {selectedEstado && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 rounded-lg"
+                    style={{ backgroundColor: '#FFF5E6', borderLeft: '3px solid #EE7501' }}
+                  >
+                    <p className="text-xs font-medium" style={{ color: '#EE7501' }}>Selecionado</p>
+                    <p className="text-lg font-bold" style={{ color: '#2A2A2A' }}>{selectedEstado.nome}</p>
+                    <p className="text-sm" style={{ color: '#666' }}>{selectedEstado.projetos} projetos</p>
+                  </motion.div>
+                )}
+              </motion.div>
+            </div>
+            {/* Right: Map */}
+            <div className="lg:col-span-2">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="rounded-lg overflow-hidden shadow-lg"
+                style={{ backgroundColor: '#FFFFFF', minHeight: '500px' }}
+              >
+                <MapaBrasilSVG
+                  onEstadoSelect={setSelectedEstado}
+                  selectedEstado={selectedEstado}
+                />
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
