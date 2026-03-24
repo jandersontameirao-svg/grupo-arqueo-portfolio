@@ -19,12 +19,11 @@ const sections = [
   { id: "ecossistema", num: "04", label: "Ecossistema", icon: Globe, path: "/ecossistema", color: "#2C7EB3" },
   { id: "solucoes", num: "05", label: "Soluções", icon: Lightbulb, path: "/solucoes", color: "#861720" },
   { id: "diferenciais", num: "06", label: "Diferenciais", icon: Star, path: "/diferenciais", color: "#EE7501" },
-  { id: "numeros", num: "07", label: "Números", icon: BarChart3, path: "/numeros", color: "#2C7EB3" },
+  { id: "numeros-territorio", num: "07", label: "Números & Território", icon: BarChart3, path: "/numeros", color: "#2C7EB3" },
   { id: "cases", num: "08", label: "Cases", icon: FolderOpen, path: "/cases", color: "#861720" },
-  { id: "territorio", num: "09", label: "Presença Territorial", icon: MapPin, path: "/territorio", color: "#EE7501" },
-  { id: "parceiros", num: "10", label: "Nossos Parceiros", icon: Users, path: "/parceiros", color: "#2C7EB3" },
-  { id: "conformidade", num: "11", label: "Conformidade", icon: Target, path: "/conformidade", color: "#861720" },
-  { id: "contato", num: "12", label: "Contato", icon: Mail, path: "/contato", color: "#2C7EB3" },
+  { id: "parceiros", num: "09", label: "Nossos Parceiros", icon: Users, path: "/parceiros", color: "#EE7501" },
+  { id: "conformidade", num: "10", label: "Conformidade", icon: Target, path: "/conformidade", color: "#2C7EB3" },
+  { id: "contato", num: "11", label: "Contato", icon: Mail, path: "/contato", color: "#861720" },
 ];
 
 export default function Home() {

@@ -11,8 +11,7 @@ import MissaoVisao from "./pages/MissaoVisao";
 import Ecossistema from "./pages/Ecossistema";
 import Solucoes from "./pages/Solucoes";
 import Diferenciais from "./pages/Diferenciais";
-import Numeros from "./pages/Numeros";
-import PresencaTerritorial from "./pages/PresencaTerritorial";
+import NumerosTerritori from "./pages/NumerosTerritori";
 import Cases from "./pages/Cases";
 import Territorio from "./pages/Territorio";
 import Parceiros from "./pages/Parceiros";
@@ -29,8 +28,8 @@ function Router() {
       <Route path="/ecossistema" component={Ecossistema} />
       <Route path="/solucoes" component={Solucoes} />
       <Route path="/diferenciais" component={Diferenciais} />
-      <Route path="/numeros" component={Numeros} />
-      <Route path="/presenca-territorial" component={PresencaTerritorial} />
+      <Route path="/numeros" component={NumerosTerritori} />
+      <Route path="/presenca-territorial" component={NumerosTerritori} />
       <Route path="/cases" component={Cases} />
       <Route path="/territorio" component={Territorio} />
       <Route path="/parceiros" component={Parceiros} />
