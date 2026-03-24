@@ -431,7 +431,7 @@ export default function QuemSomos() {
               { top: '55%', left: '80%', size: 90, name: 'Pesquisa', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face' },
               { top: '72%', left: '60%', size: 70, name: 'Dados', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face' },
               { top: '70%', left: '30%', size: 85, name: 'Educação', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&crop=face' },
-              { top: '30%', left: '12%', size: 100, name: 'Campo', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face' },
+              { top: '30%', left: '12%', size: 100, name: 'Gerente de projetos', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/EQUIPEGRUPOARQUEO-ANNAFLÁVIATAVARES_92c99893.png' },
             ].map((member, i) => (
               <motion.div
                 key={i}
