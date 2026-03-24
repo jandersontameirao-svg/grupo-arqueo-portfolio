@@ -337,6 +337,137 @@ export default function QuemSomosEcossistema() {
           </div>
         </section>
 
+        {/* ═══════════════════ NOSSO TIME SECTION ═══════════════════ */}
+        <section className="py-20 lg:py-28 relative" style={{ backgroundColor: '#F5F5F5' }}>
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            {/* Section Title */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
+                <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720' }}>Equipe</span>
+                <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to left, #861720, #EE7501)' }} />
+              </div>
+              <h2 className="text-3xl lg:text-5xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
+                Nosso <span style={{ color: '#861720' }}>Time</span> <span style={{ color: '#EE7501' }}>Multidisciplinar</span>
+              </h2>
+              <p className="mt-6 text-base lg:text-lg font-light leading-relaxed max-w-3xl mx-auto" style={{ color: '#666' }}>
+                Composta por arqueólogos, historiadores, geógrafos, biólogos, educadores e especialistas em tecnologia, todos comprometidos com a excelência técnica e a inovação contínua.
+              </p>
+            </motion.div>
+
+            {/* Team Card with circular layout */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9 }}
+              className="relative mx-auto rounded-3xl overflow-hidden"
+              style={{
+                maxWidth: '1000px',
+                height: '550px',
+                background: 'linear-gradient(135deg, #861720 0%, #6B1219 30%, #EE7501 100%)',
+                boxShadow: '0 25px 80px rgba(134, 23, 32, 0.3)',
+              }}
+            >
+              {/* Outer decorative circle */}
+              <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+                <circle cx="50%" cy="50%" r="240" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" />
+                <circle cx="50%" cy="50%" r="180" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
+                <circle cx="50%" cy="50%" r="120" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
+                <circle cx="15%" cy="20%" r="8" fill="rgba(255,255,255,0.08)" />
+                <circle cx="85%" cy="25%" r="6" fill="rgba(255,255,255,0.06)" />
+                <circle cx="10%" cy="75%" r="10" fill="rgba(255,255,255,0.05)" />
+                <circle cx="90%" cy="70%" r="7" fill="rgba(255,255,255,0.07)" />
+                <circle cx="20%" cy="50%" r="5" fill="rgba(255,255,255,0.1)" />
+                <circle cx="80%" cy="50%" r="5" fill="rgba(255,255,255,0.1)" />
+                <circle cx="25%" cy="30%" r="12" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="3" />
+                <circle cx="75%" cy="80%" r="10" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="3" />
+                <circle cx="12%" cy="60%" r="8" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="3" />
+                <circle cx="88%" cy="40%" r="9" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="3" />
+              </svg>
+
+              {/* Center member - Large */}
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="absolute z-20"
+                style={{
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '180px',
+                  height: '180px',
+                }}
+              >
+                <div
+                  className="w-full h-full rounded-full overflow-hidden shadow-2xl"
+                  style={{
+                    border: '6px solid rgba(255,255,255,0.9)',
+                    boxShadow: '0 0 0 8px rgba(255,255,255,0.15), 0 20px 60px rgba(0,0,0,0.3)',
+                  }}
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face"
+                    alt="Liderança"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="mt-3 text-white font-semibold text-center text-sm">Liderança</p>
+              </motion.div>
+
+              {/* Surrounding members */}
+              {[
+                { top: '8%', left: '35%', size: 90, name: 'Arqueologia', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face' },
+                { top: '12%', left: '60%', size: 80, name: 'Tecnologia', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face' },
+                { top: '25%', left: '78%', size: 75, name: 'Gestão', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face' },
+                { top: '55%', left: '80%', size: 90, name: 'Pesquisa', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face' },
+                { top: '72%', left: '60%', size: 70, name: 'Dados', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face' },
+                { top: '70%', left: '30%', size: 85, name: 'Educação', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&crop=face' },
+                { top: '30%', left: '12%', size: 100, name: 'Gerente de projetos', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/EQUIPEGRUPOARQUEO-ANNAFLÁVIATAVARES_92c99893.png' },
+              ].map((member, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 + i * 0.08 }}
+                  whileHover={{ scale: 1.12 }}
+                  className="absolute z-10 flex flex-col items-center cursor-pointer"
+                  style={{
+                    top: member.top,
+                    left: member.left,
+                  }}
+                >
+                  <div
+                    className="rounded-full overflow-hidden shadow-xl"
+                    style={{
+                      width: `${member.size}px`,
+                      height: `${member.size}px`,
+                      border: '4px solid rgba(255,255,255,0.85)',
+                      boxShadow: '0 0 0 4px rgba(255,255,255,0.1), 0 8px 30px rgba(0,0,0,0.25)',
+                    }}
+                  >
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="mt-2 text-white font-medium text-center text-xs whitespace-nowrap" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>{member.name}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* SEÇÃO 3: ECOSSISTEMA - Cabeçalho */}
         <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
           <div className="max-w-7xl mx-auto">
