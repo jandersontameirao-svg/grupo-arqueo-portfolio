@@ -17,12 +17,11 @@ const sections = [
   { id: "quem-somos-ecossistema", num: "02", label: "Quem Somos & Ecossistema", icon: Building2, path: "/quem-somos", color: "#2C7EB3" },
   { id: "missao-visao", num: "03", label: "Missão e Valores", icon: Target, path: "/missao-visao", color: "#EE7501" },
   { id: "solucoes", num: "04", label: "Soluções", icon: Lightbulb, path: "/solucoes", color: "#861720" },
-  { id: "diferenciais", num: "05", label: "Diferenciais", icon: Star, path: "/diferenciais", color: "#EE7501" },
+  { id: "diferenciais-conformidade", num: "05", label: "Diferenciais & Conformidade", icon: Star, path: "/diferenciais", color: "#EE7501" },
   { id: "numeros-territorio", num: "06", label: "Números & Território", icon: BarChart3, path: "/numeros", color: "#2C7EB3" },
   { id: "cases", num: "07", label: "Cases", icon: FolderOpen, path: "/cases", color: "#861720" },
   { id: "parceiros", num: "08", label: "Nossos Parceiros", icon: Users, path: "/parceiros", color: "#EE7501" },
-  { id: "conformidade", num: "09", label: "Conformidade", icon: Target, path: "/conformidade", color: "#2C7EB3" },
-  { id: "contato", num: "10", label: "Contato", icon: Mail, path: "/contato", color: "#861720" },
+  { id: "contato", num: "09", label: "Contato", icon: Mail, path: "/contato", color: "#2C7EB3" },
 ];
 
 export default function Home() {
