@@ -82,14 +82,9 @@ export default function Numeros() {
               alt="10 Anos"
               className="h-16 lg:h-20 w-auto flex-shrink-0"
             />
-            <div>
-              <span className="text-[11px] font-semibold tracking-[0.35em] uppercase" style={{ color: '#EE7501' }}>
-                Nossa Trajetória
-              </span>
-              <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold mt-2 leading-tight" style={{ color: '#1A1A1A' }}>
-                Escala, presença e consistência operacional
-              </h1>
-            </div>
+            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
+              Escala, presença e consistência operacional
+            </h1>
           </div>
           <p className="text-base lg:text-lg leading-relaxed max-w-3xl" style={{ color: '#555555' }}>
             Mais de dez anos de atuação, presença em múltiplos territórios e experiência consolidada em diferentes contextos do licenciamento ambiental e do patrimônio cultural.
