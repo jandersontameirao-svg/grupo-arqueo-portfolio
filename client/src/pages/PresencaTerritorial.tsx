@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { useState, useRef, useEffect, Suspense } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -42,116 +42,77 @@ const estadosData: { [key: string]: Estado } = {
   'SC': { sigla: 'SC', nome: 'Santa Catarina', ativo: true, projetos: 2, regiao: 'Sul' },
 };
 
-function MapaBrasil3D({ estadoSelecionado, setEstadoSelecionado }: any) {
-  const groupRef = useRef<THREE.Group>(null);
-  const [estados, setEstados] = useState<any[]>([]);
+// Componente que renderiza os cubos dos estados
+function EstadoCubo({ coord, estado, onSelect, selected }: any) {
+  const meshRef = useRef<THREE.Mesh>(null);
+  const [hovered, setHovered] = useState(false);
 
-  useEffect(() => {
-    // Criar geometria simplificada do mapa do Brasil
-    const criarMapaBrasil = () => {
-      const estadosGeometria: any[] = [];
+  const altura = estado.ativo ? 0.8 + (estado.projetos * 0.1) : 0.2;
 
-      // Dados aproximados dos estados (simplificados para demonstração)
-      const estadosCoords = [
-        { sigla: 'AC', x: -8, y: 2, width: 1.5, height: 1.5 },
-        { sigla: 'AM', x: -3, y: 3, width: 2, height: 2 },
-        { sigla: 'RR', x: 0, y: 5, width: 1.5, height: 1.5 },
-        { sigla: 'AP', x: 1, y: 4, width: 1, height: 1 },
-        { sigla: 'PA', x: 0, y: 2, width: 2, height: 1.5 },
-        { sigla: 'TO', x: -2, y: 1, width: 1.5, height: 1 },
-        { sigla: 'MA', x: 1, y: 0, width: 1.5, height: 1.5 },
-        { sigla: 'PI', x: 2, y: -1, width: 1, height: 1.5 },
-        { sigla: 'CE', x: 3, y: -1, width: 1, height: 1 },
-        { sigla: 'RN', x: 3.5, y: -0.5, width: 0.8, height: 0.8 },
-        { sigla: 'PB', x: 3.5, y: -1.5, width: 0.8, height: 0.8 },
-        { sigla: 'PE', x: 3.2, y: -2, width: 0.8, height: 1 },
-        { sigla: 'AL', x: 3.2, y: -2.5, width: 0.6, height: 0.8 },
-        { sigla: 'SE', x: 3.2, y: -3, width: 0.6, height: 0.6 },
-        { sigla: 'BA', x: 2, y: -3, width: 2, height: 2 },
-        { sigla: 'MT', x: -2, y: -1, width: 1.5, height: 1.5 },
-        { sigla: 'DF', x: -1, y: -1, width: 0.5, height: 0.5 },
-        { sigla: 'GO', x: -1, y: -2, width: 1, height: 1 },
-        { sigla: 'MS', x: -2, y: -3, width: 1.5, height: 1.5 },
-        { sigla: 'MG', x: 1, y: -2.5, width: 1.5, height: 1.5 },
-        { sigla: 'SP', x: 0, y: -3, width: 1, height: 1 },
-        { sigla: 'RJ', x: 1.5, y: -3.5, width: 0.8, height: 0.8 },
-        { sigla: 'ES', x: 2, y: -3, width: 0.6, height: 0.8 },
-        { sigla: 'PR', x: 0, y: -4, width: 1, height: 1 },
-        { sigla: 'SC', x: 0.5, y: -4.5, width: 0.8, height: 0.8 },
-        { sigla: 'RS', x: -0.5, y: -5, width: 1.2, height: 1.2 },
-      ];
-
-      estadosCoords.forEach((coord) => {
-        const estado = estadosData[coord.sigla];
-        if (estado) {
-          const altura = estado.ativo ? 0.8 + (estado.projetos * 0.1) : 0.2;
-          
-          const geometry = new THREE.BoxGeometry(coord.width, altura, coord.height);
-          
-          const cor = !estado.ativo ? '#E5E5E5' : 
-                      estado.projetos > 10 ? '#EE7501' :
-                      estado.projetos > 5 ? '#FF9E3D' :
-                      estado.projetos > 2 ? '#FFB366' : '#FFD699';
-          
-          const material = new THREE.MeshStandardMaterial({
-            color: cor,
-            metalness: 0.3,
-            roughness: 0.4,
-            emissive: estado.ativo ? cor : '#000000',
-            emissiveIntensity: 0.1,
-          });
-
-          const mesh = new THREE.Mesh(geometry, material);
-          mesh.position.set(coord.x, altura / 2, coord.y);
-          mesh.castShadow = true;
-          mesh.receiveShadow = true;
-          mesh.userData = { sigla: coord.sigla, estado };
-          
-          estadosGeometria.push(mesh);
-        }
-      });
-
-      return estadosGeometria;
-    };
-
-    const mapaMeshes = criarMapaBrasil();
-    setEstados(mapaMeshes);
-
-    if (groupRef.current) {
-      mapaMeshes.forEach(mesh => {
-        groupRef.current?.add(mesh);
-        
-        // Adicionar event listener para clique
-        const raycaster = new THREE.Raycaster();
-        const mouse = new THREE.Vector2();
-        
-        const onMouseClick = (event: MouseEvent) => {
-          if (event.target === event.currentTarget) return;
-          mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-          mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-          
-          raycaster.setFromCamera(mouse, (window as any).__camera);
-          const intersects = raycaster.intersectObjects(mapaMeshes);
-          
-          if (intersects.length > 0) {
-            const clicked = intersects[0].object as any;
-            if (clicked.userData.estado) {
-              setEstadoSelecionado(clicked.userData.estado);
-            }
-          }
-        };
-
-        window.addEventListener('click', onMouseClick);
-        return () => window.removeEventListener('click', onMouseClick);
-      });
-    }
-  }, [setEstadoSelecionado]);
+  const cor = !estado.ativo ? '#E5E5E5' : 
+              estado.projetos > 10 ? '#EE7501' :
+              estado.projetos > 5 ? '#FF9E3D' :
+              estado.projetos > 2 ? '#FFB366' : '#FFD699';
 
   useFrame(() => {
-    if (groupRef.current && !estadoSelecionado) {
-      groupRef.current.rotation.y += 0.0005;
+    if (meshRef.current) {
+      const targetScale = selected ? 1.3 : hovered ? 1.1 : 1;
+      meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
     }
   });
+
+  return (
+    <mesh
+      ref={meshRef}
+      position={[coord.x, altura / 2, coord.y]}
+      onClick={() => onSelect(estado)}
+      onPointerEnter={() => setHovered(true)}
+      onPointerLeave={() => setHovered(false)}
+      castShadow
+      receiveShadow
+    >
+      <boxGeometry args={[coord.width, altura, coord.height]} />
+      <meshStandardMaterial
+        color={cor}
+        metalness={0.3}
+        roughness={0.4}
+        emissive={hovered || selected ? cor : '#000000'}
+        emissiveIntensity={hovered || selected ? 0.5 : 0.1}
+      />
+    </mesh>
+  );
+}
+
+// Componente do mapa 3D
+function MapaBrasil3D({ estadoSelecionado, setEstadoSelecionado }: any) {
+  const estadosCoords = [
+    { sigla: 'AC', x: -8, y: 2, width: 1.5, height: 1.5 },
+    { sigla: 'AM', x: -3, y: 3, width: 2, height: 2 },
+    { sigla: 'RR', x: 0, y: 5, width: 1.5, height: 1.5 },
+    { sigla: 'AP', x: 1, y: 4, width: 1, height: 1 },
+    { sigla: 'PA', x: 0, y: 2, width: 2, height: 1.5 },
+    { sigla: 'TO', x: -2, y: 1, width: 1.5, height: 1 },
+    { sigla: 'MA', x: 1, y: 0, width: 1.5, height: 1.5 },
+    { sigla: 'PI', x: 2, y: -1, width: 1, height: 1.5 },
+    { sigla: 'CE', x: 3, y: -1, width: 1, height: 1 },
+    { sigla: 'RN', x: 3.5, y: -0.5, width: 0.8, height: 0.8 },
+    { sigla: 'PB', x: 3.5, y: -1.5, width: 0.8, height: 0.8 },
+    { sigla: 'PE', x: 3.2, y: -2, width: 0.8, height: 1 },
+    { sigla: 'AL', x: 3.2, y: -2.5, width: 0.6, height: 0.8 },
+    { sigla: 'SE', x: 3.2, y: -3, width: 0.6, height: 0.6 },
+    { sigla: 'BA', x: 2, y: -3, width: 2, height: 2 },
+    { sigla: 'MT', x: -2, y: -1, width: 1.5, height: 1.5 },
+    { sigla: 'DF', x: -1, y: -1, width: 0.5, height: 0.5 },
+    { sigla: 'GO', x: -1, y: -2, width: 1, height: 1 },
+    { sigla: 'MS', x: -2, y: -3, width: 1.5, height: 1.5 },
+    { sigla: 'MG', x: 1, y: -2.5, width: 1.5, height: 1.5 },
+    { sigla: 'SP', x: 0, y: -3, width: 1, height: 1 },
+    { sigla: 'RJ', x: 1.5, y: -3.5, width: 0.8, height: 0.8 },
+    { sigla: 'ES', x: 2, y: -3, width: 0.6, height: 0.8 },
+    { sigla: 'PR', x: 0, y: -4, width: 1, height: 1 },
+    { sigla: 'SC', x: 0.5, y: -4.5, width: 0.8, height: 0.8 },
+    { sigla: 'RS', x: -0.5, y: -5, width: 1.2, height: 1.2 },
+  ];
 
   return (
     <>
@@ -159,12 +120,20 @@ function MapaBrasil3D({ estadoSelecionado, setEstadoSelecionado }: any) {
       <pointLight position={[15, 15, 15]} intensity={1.2} castShadow />
       <pointLight position={[-15, -15, 15]} intensity={0.6} />
       <pointLight position={[0, 20, 0]} intensity={0.8} />
-      
-      <group ref={groupRef}>
-        {estados.map((mesh, i) => (
-          <primitive key={i} object={mesh} />
-        ))}
-      </group>
+
+      {estadosCoords.map((coord) => {
+        const estado = estadosData[coord.sigla];
+        if (!estado) return null;
+        return (
+          <EstadoCubo
+            key={coord.sigla}
+            coord={coord}
+            estado={estado}
+            onSelect={setEstadoSelecionado}
+            selected={estadoSelecionado?.sigla === coord.sigla}
+          />
+        );
+      })}
 
       <OrbitControls
         autoRotate={!estadoSelecionado}
@@ -175,6 +144,24 @@ function MapaBrasil3D({ estadoSelecionado, setEstadoSelecionado }: any) {
         maxDistance={50}
       />
     </>
+  );
+}
+
+// Fallback enquanto carrega
+function MapaLoading() {
+  return (
+    <div style={{
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#F5F5F5',
+      color: '#999999',
+      fontSize: '14px',
+    }}>
+      Carregando mapa 3D...
+    </div>
   );
 }
 
@@ -251,11 +238,29 @@ export default function PresencaTerritorial() {
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Canvas 3D */}
-            <div className="lg:col-span-2 rounded-lg overflow-hidden" style={{ height: '600px', backgroundColor: '#F5F5F5' }}>
-              <Canvas camera={{ position: [0, 8, 20], fov: 50 }} shadows>
-                <MapaBrasil3D estadoSelecionado={estadoSelecionado} setEstadoSelecionado={setEstadoSelecionado} />
-              </Canvas>
+            {/* Canvas 3D - VISÍVEL E FUNCIONAL */}
+            <div
+              className="lg:col-span-2 rounded-lg overflow-hidden"
+              style={{
+                width: '100%',
+                height: '600px',
+                backgroundColor: '#F5F5F5',
+                position: 'relative',
+              }}
+            >
+              <Suspense fallback={<MapaLoading />}>
+                <Canvas
+                  camera={{ position: [0, 8, 20], fov: 50 }}
+                  shadows
+                  style={{ width: '100%', height: '100%' }}
+                  gl={{ antialias: true, alpha: true }}
+                >
+                  <MapaBrasil3D
+                    estadoSelecionado={estadoSelecionado}
+                    setEstadoSelecionado={setEstadoSelecionado}
+                  />
+                </Canvas>
+              </Suspense>
             </div>
 
             {/* Painel Lateral */}
