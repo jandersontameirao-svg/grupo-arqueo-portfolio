@@ -1,0 +1,43 @@
+{
+  "total_projetos": 397,
+  "anos": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "estados": {
+    "MA": 16,
+    "MG": 12,
+    "MS": 6,
+    "SP": 4,
+    "PE": 4,
+    "PA": 2,
+    "CE": 1,
+    "GO": 1
+  },
+  "tipos": {
+    "Energia Solar": 91,
+    "Empreendimento Imobiliário": 52,
+    "Complexo Solar": 38,
+    "Linha de Transmissão 500kV": 26,
+    "Linha de Transmissão 230kV": 25,
+    "Geração de Energia Solar": 16,
+    "Geração de Energia Hidrelétrica": 14,
+    "Complexo Eólico": 11,
+    "Infraestrutura Urbana": 10,
+    "Mineração": 10,
+    "Geração de Energia": 10,
+    "Fazenda": 10,
+    "Complexo Fotovoltaico": 9,
+    "Rodovia": 7,
+    "N.A": 5
+  }
+}
