@@ -229,17 +229,6 @@ export default function QuemSomosEcossistema() {
       nextLabel="Próximo"
     >
       <div className="w-full">
-        {/* SEÇÃO 0: HEADER COMPACTO */}
-        <section className="py-8 lg:py-12 px-4 lg:px-8 relative" style={{ backgroundColor: '#FFFFFF' }}>
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
-                Dez anos de <span style={{ color: '#EE7501' }}>excelência</span> em arqueologia
-              </h1>
-            </div>
-          </div>
-        </section>
-
         {/* SEÇÃO 1B: QUEM SOMOS + TRAJETÓRIA - Hero Mesclado - REFINADO */}
         <section className="py-20 lg:py-32 px-4 lg:px-8 relative overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
           {/* Background sutil premium */}
