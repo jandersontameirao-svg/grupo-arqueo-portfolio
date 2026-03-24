@@ -23,7 +23,8 @@ const sections = [
   { id: "cases", num: "08", label: "Cases", icon: FolderOpen, path: "/cases", color: "#861720" },
   { id: "territorio", num: "09", label: "Presença Territorial", icon: MapPin, path: "/territorio", color: "#EE7501" },
   { id: "parceiros", num: "10", label: "Nossos Parceiros", icon: Users, path: "/parceiros", color: "#2C7EB3" },
-  { id: "contato", num: "11", label: "Contato", icon: Mail, path: "/contato", color: "#861720" },
+  { id: "conformidade", num: "11", label: "Conformidade", icon: Target, path: "/conformidade", color: "#861720" },
+  { id: "contato", num: "12", label: "Contato", icon: Mail, path: "/contato", color: "#2C7EB3" },
 ];
 
 export default function Home() {

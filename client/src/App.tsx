@@ -16,6 +16,7 @@ import PresencaTerritorial from "./pages/PresencaTerritorial";
 import Cases from "./pages/Cases";
 import Territorio from "./pages/Territorio";
 import Parceiros from "./pages/Parceiros";
+import Conformidade from "./pages/Conformidade";
 import Contato from "./pages/Contato";
 
 function Router() {
@@ -33,6 +34,7 @@ function Router() {
       <Route path="/cases" component={Cases} />
       <Route path="/territorio" component={Territorio} />
       <Route path="/parceiros" component={Parceiros} />
+      <Route path="/conformidade" component={Conformidade} />
       <Route path="/contato" component={Contato} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
