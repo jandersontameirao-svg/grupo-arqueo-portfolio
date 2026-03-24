@@ -490,28 +490,30 @@ export default function QuemSomosEcossistema() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="absolute z-20 flex flex-col items-center justify-center"
+                className="absolute z-20"
                 style={{
                   top: '50%',
                   left: '50%',
                   transform: 'translate(-50%, -50%)',
                 }}
               >
-                <div
-                  className="w-40 h-40 rounded-full overflow-hidden shadow-2xl"
-                  style={{
-                    border: '4px solid rgba(255,255,255,0.9)',
-                    boxShadow: '0 0 0 8px rgba(255,255,255,0.15), 0 20px 60px rgba(0,0,0,0.4)',
-                  }}
-                >
-                  <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp"
-                    alt="CEO"
-                    className="w-full h-full object-cover"
-                    style={{ filter: 'brightness(1.05) contrast(1.1)' }}
-                  />
+                <div className="relative">
+                  <div
+                    className="w-40 h-40 rounded-full overflow-hidden shadow-2xl"
+                    style={{
+                      border: '4px solid rgba(255,255,255,0.9)',
+                      boxShadow: '0 0 0 8px rgba(255,255,255,0.15), 0 20px 60px rgba(0,0,0,0.4)',
+                    }}
+                  >
+                    <img
+                      src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp"
+                      alt="CEO"
+                      className="w-full h-full object-cover"
+                      style={{ filter: 'brightness(1.05) contrast(1.1)' }}
+                    />
+                  </div>
+                  <p className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-white font-bold text-center text-sm tracking-wider whitespace-nowrap">CEO</p>
                 </div>
-                <p className="mt-3 text-white font-bold text-center text-sm tracking-wider">CEO</p>
               </motion.div>
 
               {/* Executive 1 - Top - Diretora Administrativa e Financeira */}
