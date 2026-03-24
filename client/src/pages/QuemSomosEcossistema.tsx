@@ -533,70 +533,7 @@ export default function QuemSomosEcossistema() {
           </div>
         </section>
 
-        {/* SEÇÃO 5: PILARES DA SINERGIA */}
-        <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
-          <div className="max-w-7xl mx-auto">
-            <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#EE7501" }}>
-              — PILARES DA SINERGIA
-            </p>
-            <h3 className="text-3xl lg:text-4xl font-bold mb-12" style={{ color: "#1A1A1A" }}>
-              O que sustenta nossa integração
-            </h3>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                {pilares.map((pilar, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => goToPilar(idx)}
-                    className="w-full text-left p-6 rounded-lg transition-all duration-300"
-                    style={{
-                      backgroundColor: currentPilarIndex === idx ? "#EE7501" : "#FFFFFF",
-                      border: `1px solid ${currentPilarIndex === idx ? "#EE7501" : "#E6E6E6"}`,
-                    }}
-                  >
-                    <p className="text-sm font-bold mb-2" style={{ color: currentPilarIndex === idx ? "#FFFFFF" : "#EE7501" }}>
-                      {pilar.num}
-                    </p>
-                    <h4 className="text-lg font-bold mb-2" style={{ color: currentPilarIndex === idx ? "#FFFFFF" : "#1A1A1A" }}>
-                      {pilar.title}
-                    </h4>
-                    <p style={{ color: currentPilarIndex === idx ? "#FFFFFF" : "#555555" }} className="text-sm">
-                      {pilar.desc}
-                    </p>
-                  </button>
-                ))}
-              </div>
-
-              <div className="flex flex-col items-center justify-center">
-                <div className="w-full max-w-sm aspect-square rounded-2xl flex items-center justify-center mb-8" style={{ backgroundColor: "#EE7501" }}>
-                  <div className="text-center">
-                    <p className="text-6xl font-bold text-white mb-2">{pilares[currentPilarIndex].num}</p>
-                    <h4 className="text-2xl font-bold text-white">{pilares[currentPilarIndex].title}</h4>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <button
-                    onClick={prevPilar}
-                    className="p-2 rounded-full transition-all"
-                    style={{ backgroundColor: "#E6E6E6", color: "#1A1A1A" }}
-                  >
-                    <ChevronLeft className="w-6 h-6" />
-                  </button>
-                  <button
-                    onClick={nextPilar}
-                    className="p-2 rounded-full transition-all"
-                    style={{ backgroundColor: "#E6E6E6", color: "#1A1A1A" }}
-                  >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════════════ NOSSO TIME SECTION ═══════════════════ */}
+        {/* ═════════════════ NOSSO TIME SECTION ═════════════════ */}
         <section className="py-20 lg:py-28 relative" style={{ backgroundColor: '#F5F5F5' }}>
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             {/* Section Title */}
