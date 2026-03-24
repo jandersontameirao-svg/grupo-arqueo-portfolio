@@ -518,8 +518,8 @@ export default function Ecossistema() {
 
           {/* Layout Assimetrico - Cards com Fotos */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Card 1 - Grande com Borda Laranja */}
-            <div className="lg:row-span-2">
+            {/* Card 1 - Borda Laranja */}
+            <div>
               <div
                 className="h-full rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-l-8"
                 style={{
@@ -528,11 +528,11 @@ export default function Ecossistema() {
                 }}
               >
                 {/* Foto */}
-                <div className="w-full h-72 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center relative overflow-hidden">
+                <div className="w-full h-56 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 opacity-10" style={{ backgroundColor: "#EE7501" }} />
                   <div className="text-center relative z-10">
                     <div
-                      className="text-7xl font-bold"
+                      className="text-6xl font-bold"
                       style={{ color: "#EE7501" }}
                     >
                       01
@@ -543,15 +543,15 @@ export default function Ecossistema() {
                   </div>
                 </div>
                 {/* Conteudo */}
-                <div className="p-10">
+                <div className="p-8">
                   <h3
-                    className="text-2xl font-bold mb-4"
+                    className="text-xl font-bold mb-3"
                     style={{ color: "#1A1A1A" }}
                   >
                     {pilares[0].title}
                   </h3>
                   <p
-                    className="text-base leading-relaxed"
+                    className="text-sm leading-relaxed"
                     style={{ color: "#666666" }}
                   >
                     {pilares[0].desc}
