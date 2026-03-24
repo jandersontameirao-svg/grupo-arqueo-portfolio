@@ -14,6 +14,7 @@ import Cases from "./pages/Cases";
 import Territorio from "./pages/Territorio";
 import Parceiros from "./pages/Parceiros";
 import Conformidade from "./pages/Conformidade";
+import MissaoVisao from "./pages/MissaoVisao";
 import Contato from "./pages/Contato";
 
 function Router() {
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/ceo" component={CeoMessage} />
       <Route path="/quem-somos" component={QuemSomosEcossistema} />
       <Route path="/ecossistema" component={QuemSomosEcossistema} />
+      <Route path="/missao-visao" component={MissaoVisao} />
       <Route path="/solucoes" component={Solucoes} />
       <Route path="/diferenciais" component={DiferenciaisConformidade} />
       <Route path="/conformidade" component={DiferenciaisConformidade} />
