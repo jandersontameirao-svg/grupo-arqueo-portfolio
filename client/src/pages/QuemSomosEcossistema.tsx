@@ -522,7 +522,7 @@ export default function QuemSomosEcossistema() {
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
-                  top: '5%',
+                  top: '2%',
                   left: '50%',
                   transform: 'translate(-50%, 0)',
                 }}
@@ -542,7 +542,7 @@ export default function QuemSomosEcossistema() {
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
                   top: '50%',
-                  right: '3%',
+                  right: '1%',
                   transform: 'translateY(-50%)',
                 }}
               >
@@ -560,7 +560,7 @@ export default function QuemSomosEcossistema() {
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
-                  bottom: '3%',
+                  bottom: '2%',
                   left: '50%',
                   transform: 'translateX(-50%)',
                 }}
@@ -580,7 +580,7 @@ export default function QuemSomosEcossistema() {
                 className="absolute z-10 flex flex-col items-center justify-center"
                 style={{
                   top: '50%',
-                  left: '3%',
+                  left: '1%',
                   transform: 'translateY(-50%)',
                 }}
               >
