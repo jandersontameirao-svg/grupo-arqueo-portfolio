@@ -239,7 +239,7 @@ export default function QuemSomosEcossistema() {
             <div className="mb-16 lg:mb-20 flex items-center justify-center gap-8">
               {/* Logo 10 Anos */}
               <div className="hidden lg:flex flex-shrink-0">
-                <img src={ASSETS.logo10anos} alt="10 Anos" className="w-32 h-32 object-contain" />
+                <img src={ASSETS.logo10anos} alt="10 Anos" className="w-48 h-48 object-contain" />
               </div>
               
               {/* Texto Principal */}
