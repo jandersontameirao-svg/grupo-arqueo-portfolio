@@ -517,7 +517,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Exec 2 - CSO - TOP RIGHT */}
-              <div className="absolute" style={{ zIndex: 8, top: '5%', right: '20%' }}>
+              <div className="absolute" style={{ zIndex: 8, top: '-5%', right: '15%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 195, height: 195, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" alt="CSO" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -527,7 +527,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Exec 3 - Diretor de Estratégia - BOTTOM LEFT */}
-              <div className="absolute" style={{ zIndex: 8, bottom: '10%', left: '8%' }}>
+              <div className="absolute" style={{ zIndex: 8, bottom: '5%', left: '2%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 202, height: 202, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" alt="Diretor de Estratégia" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -537,7 +537,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Exec 4 - Tesoureira - RIGHT MIDDLE */}
-              <div className="absolute" style={{ zIndex: 8, top: '38%', right: '5%' }}>
+              <div className="absolute" style={{ zIndex: 8, top: '35%', right: '-3%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 195, height: 195, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" alt="Tesoureira" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -547,7 +547,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Team 1 - Arqueólogo - LEFT MIDDLE */}
-              <div className="absolute" style={{ zIndex: 7, top: '35%', left: '4%' }}>
+              <div className="absolute" style={{ zIndex: 7, top: '40%', left: '-2%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 150, height: 150, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp" alt="Arqueólogo" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -557,7 +557,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Team 2 - Arqueóloga - TOP CENTER-RIGHT */}
-              <div className="absolute" style={{ zIndex: 7, top: '12%', left: '42%' }}>
+              <div className="absolute" style={{ zIndex: 7, top: '8%', left: '40%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 142, height: 142, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp" alt="Arqueóloga" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -567,7 +567,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Team 3 - Coord. Pesquisa - BOTTOM CENTER */}
-              <div className="absolute" style={{ zIndex: 7, bottom: '5%', left: '38%' }}>
+              <div className="absolute" style={{ zIndex: 7, bottom: '-2%', left: '36%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 150, height: 150, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp" alt="Coord. Pesquisa" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -577,7 +577,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Team 4 - Gerente de Projetos - BOTTOM RIGHT */}
-              <div className="absolute" style={{ zIndex: 7, bottom: '12%', right: '15%' }}>
+              <div className="absolute" style={{ zIndex: 7, bottom: '8%', right: '20%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 180, height: 180, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/643-RIC_3179_73874ff3.webp" alt="Gerente de Projetos" className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110" />
@@ -587,7 +587,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Team 5 - Analista de Geoprocessamento - TOP FAR RIGHT */}
-              <div className="absolute" style={{ zIndex: 7, top: '15%', right: '5%' }}>
+              <div className="absolute" style={{ zIndex: 7, top: '18%', right: '-2%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 127, height: 127, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp" alt="Analista de Geoprocessamento" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -597,7 +597,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Team 6 - Assessor Jurídico - BOTTOM FAR LEFT */}
-              <div className="absolute" style={{ zIndex: 7, bottom: '25%', left: '22%' }}>
+              <div className="absolute" style={{ zIndex: 7, bottom: '20%', left: '18%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 90, height: 90, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp" alt="Assessor Jurídico" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -607,7 +607,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* Team 7 - Coord. Comercial - RIGHT BOTTOM */}
-              <div className="absolute" style={{ zIndex: 7, bottom: '3%', right: '5%' }}>
+              <div className="absolute" style={{ zIndex: 7, bottom: '2%', right: '8%' }}>
                 <div className="flex flex-col items-center group cursor-pointer">
                   <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 127, height: 127, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp" alt="Coord. Comercial" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
