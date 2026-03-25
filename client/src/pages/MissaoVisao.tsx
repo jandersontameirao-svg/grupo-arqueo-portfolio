@@ -10,6 +10,13 @@ import { useState } from "react";
  * Design: Premium institucional — sofisticado, editorial, estratégico
  * Paleta: off-white quente + cores institucionais como accent
  * Tipografia: hierarquia forte, respiro generoso
+ *
+ * REFINAMENTOS APLICADOS:
+ * 1. Hero: headline maior (4.5rem xl), subtítulo fortalecido (text-xl), espaço abaixo reduzido
+ * 2. Missão/Visão: grid 50/50, Visão com fundo azulado sutil + padrão, mais presença
+ * 3. Princípios: grid 3x2 uniforme, Integridade integrado com badge, sem fragmentação
+ * 4. Cards: mais respiro (p-8 a p-10), ícones maiores (w-14), títulos xl-2xl, contraste melhor
+ * 5. Ritmo vertical fluido, transições suaves
  */
 
 const pilares = [
@@ -39,10 +46,10 @@ export default function MissaoVisao() {
       <section className="relative overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
         <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(to right, #861720, #EE7501, #2C7EB3)' }} />
 
-        <div className="container py-24 lg:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
-            <div className="lg:col-span-7">
-              <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-14 lg:h-16 w-auto mb-10" />
+        <div className="container py-20 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+            <div className="lg:col-span-8">
+              <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-14 lg:h-16 w-auto mb-8" />
 
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-[2px] rounded-full" style={{ backgroundColor: '#861720' }} />
@@ -51,41 +58,48 @@ export default function MissaoVisao() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold leading-[1.1] mb-8" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
+              <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-bold leading-[1.05] mb-6" style={{ color: '#1A1A1A', letterSpacing: '-0.025em' }}>
                 Os fundamentos que orientam{' '}
                 <span className="block" style={{ color: '#861720' }}>nossa atuação</span>
               </h1>
 
-              <p className="text-base lg:text-lg leading-[1.8] max-w-xl" style={{ color: '#666' }}>
+              <p className="text-lg lg:text-xl leading-[1.75] max-w-2xl" style={{ color: '#555', letterSpacing: '0.01em' }}>
                 Cada projeto, decisão e relacionamento institucional é guiado por princípios que integram{' '}
-                <strong style={{ color: '#1A1A1A' }}>ética</strong>,{' '}
-                <strong style={{ color: '#1A1A1A' }}>inovação</strong>,{' '}
-                <strong style={{ color: '#1A1A1A' }}>responsabilidade</strong> e{' '}
-                <strong style={{ color: '#1A1A1A' }}>excelência operacional</strong>.
+                <strong style={{ color: '#1A1A1A', fontWeight: 600 }}>ética</strong>,{' '}
+                <strong style={{ color: '#1A1A1A', fontWeight: 600 }}>inovação</strong>,{' '}
+                <strong style={{ color: '#1A1A1A', fontWeight: 600 }}>responsabilidade</strong> e{' '}
+                <strong style={{ color: '#1A1A1A', fontWeight: 600 }}>excelência operacional</strong>.
               </p>
             </div>
 
-
+            {/* Elemento decorativo lateral */}
+            <div className="hidden lg:flex lg:col-span-4 items-end justify-end">
+              <div className="flex flex-col items-end gap-3 opacity-[0.12]">
+                <div className="w-32 h-[2px] rounded-full" style={{ backgroundColor: '#861720' }} />
+                <div className="w-20 h-[2px] rounded-full" style={{ backgroundColor: '#EE7501' }} />
+                <div className="w-12 h-[2px] rounded-full" style={{ backgroundColor: '#2C7EB3' }} />
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-16" style={{ background: 'linear-gradient(to bottom, transparent, #FFFFFF)' }} />
+        <div className="absolute bottom-0 left-0 right-0 h-12" style={{ background: 'linear-gradient(to bottom, transparent, #FFFFFF)' }} />
       </section>
 
       {/* ═══════════════════ 2. MISSÃO & VISÃO ═══════════════════ */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: '#FFFFFF' }}>
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container">
-          <div className="flex items-center gap-3 mb-14 lg:mb-20">
+          <div className="flex items-center gap-3 mb-12 lg:mb-16">
             <div className="w-8 h-[2px] rounded-full" style={{ backgroundColor: '#EE7501' }} />
             <span className="text-[11px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#999' }}>Propósito & Direção</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-            {/* MISSÃO — Bloco escuro */}
-            <div className="lg:col-span-7 rounded-3xl overflow-hidden relative" style={{ backgroundColor: '#861720' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            {/* MISSÃO — Bloco escuro, presença forte */}
+            <div className="rounded-2xl overflow-hidden relative" style={{ backgroundColor: '#861720' }}>
               <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
-              <div className="relative p-10 lg:p-14">
-                <div className="flex items-center gap-4 mb-10">
+              <div className="relative p-10 lg:p-12 xl:p-14 flex flex-col h-full">
+                <div className="flex items-center gap-4 mb-8">
                   <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ backgroundColor: 'rgba(238,117,1,0.2)' }}>
                     <Target className="w-7 h-7" style={{ color: '#EE7501' }} />
                   </div>
@@ -95,9 +109,9 @@ export default function MissaoVisao() {
                   </div>
                 </div>
 
-                <div className="w-20 h-[2px] rounded-full mb-10" style={{ background: 'linear-gradient(to right, #EE7501, transparent)' }} />
+                <div className="w-20 h-[2px] rounded-full mb-8" style={{ background: 'linear-gradient(to right, #EE7501, transparent)' }} />
 
-                <p className="text-lg lg:text-xl leading-[1.8] text-white mb-8" style={{ opacity: 0.92, fontWeight: 300 }}>
+                <p className="text-lg lg:text-xl leading-[1.8] text-white mb-8 flex-1" style={{ opacity: 0.92, fontWeight: 300 }}>
                   Liderar o mercado de serviços na área de{' '}
                   <strong className="font-semibold text-white">patrimônio sociocultural e arqueológico</strong>{' '}
                   com estratégias inovadoras e adaptativas, alinhando nossas operações com as necessidades dinâmicas de nossos parceiros.
@@ -113,23 +127,25 @@ export default function MissaoVisao() {
               </div>
             </div>
 
-            {/* VISÃO — Bloco claro, aspiracional */}
-            <div className="lg:col-span-5 rounded-3xl overflow-hidden relative" style={{ backgroundColor: '#FAFAF8', border: '1px solid rgba(44,126,179,0.15)' }}>
-              <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(to right, #2C7EB3, rgba(44,126,179,0.2))' }} />
-              <div className="relative p-10 lg:p-14">
-                <div className="flex items-center gap-4 mb-10">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ backgroundColor: 'rgba(44,126,179,0.1)' }}>
+            {/* VISÃO — Bloco claro, aspiracional, com mais presença */}
+            <div className="rounded-2xl overflow-hidden relative" style={{ backgroundColor: '#F5F8FA', border: '1px solid rgba(44,126,179,0.12)' }}>
+              <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(to right, #2C7EB3, rgba(44,126,179,0.3))' }} />
+              {/* Padrão sutil de fundo para dar mais corpo */}
+              <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #2C7EB3 1px, transparent 0)', backgroundSize: '28px 28px' }} />
+              <div className="relative p-10 lg:p-12 xl:p-14 flex flex-col h-full">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ backgroundColor: 'rgba(44,126,179,0.12)' }}>
                     <Eye className="w-7 h-7" style={{ color: '#2C7EB3' }} />
                   </div>
                   <div>
-                    <span className="text-[10px] font-semibold tracking-[0.2em] uppercase block" style={{ color: '#BBB' }}>Nossa</span>
+                    <span className="text-[10px] font-semibold tracking-[0.2em] uppercase block" style={{ color: '#AAA' }}>Nossa</span>
                     <h2 className="text-3xl lg:text-4xl font-bold" style={{ color: '#1A1A1A', letterSpacing: '-0.01em' }}>Visão</h2>
                   </div>
                 </div>
 
-                <div className="w-20 h-[2px] rounded-full mb-10" style={{ background: 'linear-gradient(to right, #2C7EB3, transparent)' }} />
+                <div className="w-20 h-[2px] rounded-full mb-8" style={{ background: 'linear-gradient(to right, #2C7EB3, transparent)' }} />
 
-                <p className="text-lg lg:text-xl leading-[1.8] mb-8" style={{ color: '#333', fontWeight: 300 }}>
+                <p className="text-lg lg:text-xl leading-[1.8] mb-8 flex-1" style={{ color: '#333', fontWeight: 300 }}>
                   Solidificar nossa posição como o{' '}
                   <strong className="font-semibold" style={{ color: '#2C7EB3' }}>principal HUB do Brasil</strong>{' '}
                   em produtos e serviços socioculturais e arqueológicos.
@@ -137,7 +153,7 @@ export default function MissaoVisao() {
 
                 <div className="flex items-start gap-3 pt-8" style={{ borderTop: '1px solid rgba(44,126,179,0.1)' }}>
                   <ArrowRight className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#2C7EB3' }} />
-                  <p className="text-sm lg:text-base leading-relaxed" style={{ color: '#888', fontWeight: 300 }}>
+                  <p className="text-sm lg:text-base leading-relaxed" style={{ color: '#777', fontWeight: 300 }}>
                     Estabelecendo um padrão de{' '}
                     <span style={{ color: '#EE7501' }} className="font-medium">excelência, eficiência e inovação</span>{' '}
                     que se torne referência no mercado nacional.
@@ -158,7 +174,7 @@ export default function MissaoVisao() {
       <section className="py-20 lg:py-28" style={{ backgroundColor: '#FAFAF8' }}>
         <div className="container">
           {/* Header */}
-          <div className="max-w-2xl mb-16 lg:mb-20">
+          <div className="max-w-2xl mb-14 lg:mb-18">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-[2px] rounded-full" style={{ backgroundColor: '#EE7501' }} />
               <span className="text-[11px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#EE7501' }}>
@@ -174,106 +190,84 @@ export default function MissaoVisao() {
             </p>
           </div>
 
-          {/* Layout: Integridade destaque + 5 pilares alinhados */}
-          <div className="space-y-6">
-
-            {/* ── Integridade — Card destaque horizontal ── */}
-            {(() => {
-              const p = pilares[0];
+          {/* Layout: Grid uniforme 3x2 — todos os pilares com mesmo peso visual */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+            {pilares.map((p, idx) => {
               const Icon = p.icon;
-              const isH = hoveredPilar === 0;
+              const isH = hoveredPilar === idx;
+              const isFirst = idx === 0;
               return (
                 <div
-                  className="rounded-2xl relative cursor-pointer overflow-hidden"
+                  key={idx}
+                  className="rounded-2xl relative cursor-pointer overflow-hidden group"
                   style={{
                     backgroundColor: isH ? p.color : '#FFFFFF',
                     border: `1px solid ${isH ? p.color : 'rgba(0,0,0,0.06)'}`,
                     boxShadow: isH ? `0 20px 50px ${p.color}22` : '0 2px 20px rgba(0,0,0,0.04)',
+                    transform: isH ? 'translateY(-4px)' : 'translateY(0)',
                     transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
                   }}
-                  onMouseEnter={() => setHoveredPilar(0)}
+                  onMouseEnter={() => setHoveredPilar(idx)}
                   onMouseLeave={() => setHoveredPilar(null)}
                 >
                   {/* Accent top bar */}
-                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: p.color, opacity: isH ? 0 : 1, transition: 'opacity 0.4s ease' }} />
+                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: p.color, opacity: isH ? 0 : 0.6, transition: 'opacity 0.4s ease' }} />
 
-                  <div className="p-8 lg:p-10 flex flex-col md:flex-row md:items-center gap-6 lg:gap-10">
-                    <div className="flex items-center gap-5 md:gap-6 flex-shrink-0">
+                  <div className="p-8 lg:p-9 xl:p-10">
+                    <div className="flex items-center gap-4 mb-6">
                       <div
-                        className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                        className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                         style={{
                           backgroundColor: isH ? 'rgba(255,255,255,0.18)' : p.accent,
                           transition: 'all 0.4s ease',
                         }}
                       >
-                        <Icon className="w-8 h-8" style={{ color: isH ? '#FFF' : p.color, transition: 'color 0.4s ease' }} />
+                        <Icon className="w-7 h-7" style={{ color: isH ? '#FFF' : p.color, transition: 'color 0.4s ease' }} />
                       </div>
                       <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-[9px] font-bold tracking-[0.18em] uppercase px-2 py-0.5 rounded-full" style={{ backgroundColor: isH ? 'rgba(255,255,255,0.15)' : `${p.color}12`, color: isH ? 'rgba(255,255,255,0.8)' : p.color, transition: 'all 0.4s ease' }}>
+                        {isFirst && (
+                          <span
+                            className="text-[9px] font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-full inline-block mb-1"
+                            style={{
+                              backgroundColor: isH ? 'rgba(255,255,255,0.15)' : `${p.color}12`,
+                              color: isH ? 'rgba(255,255,255,0.8)' : p.color,
+                              transition: 'all 0.4s ease',
+                            }}
+                          >
                             Pilar Fundamental
                           </span>
-                        </div>
-                        <h3 className="text-2xl lg:text-3xl font-bold" style={{ color: isH ? '#FFF' : '#1A1A1A', transition: 'color 0.4s ease', letterSpacing: '-0.01em' }}>
+                        )}
+                        <h3
+                          className="text-xl lg:text-2xl font-bold"
+                          style={{
+                            color: isH ? '#FFF' : '#1A1A1A',
+                            transition: 'color 0.4s ease',
+                            letterSpacing: '-0.01em',
+                          }}
+                        >
                           {p.title}
                         </h3>
                       </div>
                     </div>
-                    <div className="hidden md:block w-px self-stretch" style={{ backgroundColor: isH ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.06)', transition: 'background-color 0.4s ease' }} />
-                    <p className="text-base lg:text-lg leading-[1.8] flex-1" style={{ color: isH ? 'rgba(255,255,255,0.9)' : '#666', transition: 'color 0.4s ease', fontWeight: 300 }}>
+
+                    <div className="w-12 h-[1.5px] rounded-full mb-5" style={{ backgroundColor: isH ? 'rgba(255,255,255,0.2)' : `${p.color}30`, transition: 'background-color 0.4s ease' }} />
+
+                    <p
+                      className="text-[15px] lg:text-base leading-[1.75]"
+                      style={{
+                        color: isH ? 'rgba(255,255,255,0.9)' : '#666',
+                        transition: 'color 0.4s ease',
+                        fontWeight: 300,
+                      }}
+                    >
                       {p.desc}
                     </p>
                   </div>
                 </div>
               );
-            })()}
-
-            {/* ── 5 Pilares complementares — Grid uniforme ── */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-              {pilares.slice(1).map((p, idx) => {
-                const i = idx + 1;
-                const Icon = p.icon;
-                const isH = hoveredPilar === i;
-                return (
-                  <div
-                    key={i}
-                    className="rounded-2xl relative cursor-pointer overflow-hidden"
-                    style={{
-                      backgroundColor: isH ? p.color : '#FFFFFF',
-                      border: `1px solid ${isH ? p.color : 'rgba(0,0,0,0.06)'}`,
-                      boxShadow: isH ? `0 16px 40px ${p.color}20` : '0 2px 16px rgba(0,0,0,0.03)',
-                      transform: isH ? 'translateY(-4px)' : 'translateY(0)',
-                      transition: 'all 0.35s cubic-bezier(0.4,0,0.2,1)',
-                    }}
-                    onMouseEnter={() => setHoveredPilar(i)}
-                    onMouseLeave={() => setHoveredPilar(null)}
-                  >
-                    {/* Accent top line */}
-                    <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ backgroundColor: p.color, opacity: isH ? 0 : 0.5, transition: 'opacity 0.35s ease' }} />
-
-                    <div className="p-6 lg:p-7">
-                      <div
-                        className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
-                        style={{
-                          backgroundColor: isH ? 'rgba(255,255,255,0.18)' : p.accent,
-                          transition: 'all 0.35s ease',
-                        }}
-                      >
-                        <Icon className="w-5 h-5" style={{ color: isH ? '#FFF' : p.color, transition: 'color 0.35s ease' }} />
-                      </div>
-                      <h3 className="text-base font-bold mb-2" style={{ color: isH ? '#FFF' : '#1A1A1A', transition: 'color 0.35s ease' }}>
-                        {p.title}
-                      </h3>
-                      <p className="text-[13px] leading-[1.7]" style={{ color: isH ? 'rgba(255,255,255,0.85)' : '#888', transition: 'color 0.35s ease', fontWeight: 300 }}>
-                        {p.desc}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
+            })}
           </div>
+
         </div>
       </section>
 
