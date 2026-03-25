@@ -79,17 +79,14 @@ export default function Contato() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <h1 className="leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-              <div className="text-base lg:text-lg font-normal mb-2" style={{ color: '#666' }}>Fale com o</div>
-              <div className="flex items-center gap-4 lg:gap-6">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-3_73dbd431.webp"
-                  alt="10 Anos Arqueo"
-                  className="h-16 lg:h-20 xl:h-24 w-auto flex-shrink-0"
-                />
-                <div className="text-4xl lg:text-6xl xl:text-7xl font-bold" style={{ color: '#EE7501' }}>Arqueo</div>
-              </div>
-            </h1>
+            <div className="flex items-center gap-4 lg:gap-6">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-3_73dbd431.webp"
+                alt="10 Anos Arqueo"
+                className="h-16 lg:h-20 xl:h-24 w-auto flex-shrink-0"
+              />
+              <div className="text-4xl lg:text-6xl xl:text-7xl font-bold" style={{ color: '#EE7501' }}>Arqueo</div>
+            </div>
             <p className="text-lg lg:text-xl font-light leading-relaxed" style={{ color: '#444', maxWidth: '600px', letterSpacing: '0.3px' }}>
               Conectamos expertise em arqueologia, patrimônio cultural e licenciamento ambiental com soluções inovadoras para seus projetos.
             </p>
