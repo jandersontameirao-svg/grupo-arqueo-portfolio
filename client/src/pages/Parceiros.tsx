@@ -163,10 +163,10 @@ export default function Parceiros() {
                   style={{
                     width: '140px',
                     height: '140px',
-                    backgroundColor: '#FAFAF9',
+                    backgroundColor: 'transparent',
                     borderRadius: '14px',
-                    border: '1px solid #F0F0EE',
-                    boxShadow: '0 1px 4px rgba(0,0,0,0.03)',
+                    border: 'none',
+                    boxShadow: 'none',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
