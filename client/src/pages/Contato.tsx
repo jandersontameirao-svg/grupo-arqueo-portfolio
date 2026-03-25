@@ -79,15 +79,6 @@ export default function Contato() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-3_73dbd431.webp"
-                alt="10 Anos"
-                className="h-12 lg:h-16 w-auto flex-shrink-0"
-              />
-              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Contato</span>
-            </div>
             <h1 className="leading-tight mb-6" style={{ color: '#2A2A2A' }}>
               <div className="text-base lg:text-lg font-normal mb-2" style={{ color: '#666' }}>Fale com o</div>
               <div className="flex items-center gap-4 lg:gap-6">
