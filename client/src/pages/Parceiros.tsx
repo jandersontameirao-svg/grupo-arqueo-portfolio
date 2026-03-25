@@ -146,8 +146,8 @@ export default function Parceiros() {
 
       {/* ═══════════════════ PARTNERS GRID — Flex wrap compacto ═══════════════════ */}
       <section style={{ backgroundColor: '#FFFFFF', padding: '28px 0 36px' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 20px' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap' as const, justifyContent: 'center', gap: '10px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap' as const, justifyContent: 'center', gap: '12px' }}>
             {parceiros.map((parceiro, i) => (
               <motion.div
                 key={parceiro.nome}
@@ -161,8 +161,8 @@ export default function Parceiros() {
                 <div
                   className="transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-0.5"
                   style={{
-                    width: '110px',
-                    height: '110px',
+                    width: '140px',
+                    height: '140px',
                     backgroundColor: '#FAFAF9',
                     borderRadius: '14px',
                     border: '1px solid #F0F0EE',
@@ -178,7 +178,7 @@ export default function Parceiros() {
                       src={parceiro.logo}
                       alt={parceiro.nome}
                       className="transition-transform duration-300 group-hover:scale-110"
-                      style={{ width: '70px', height: '70px', objectFit: 'contain' }}
+                      style={{ width: '95px', height: '95px', objectFit: 'contain' }}
                     />
                   ) : (
                     <span style={{ fontSize: '9px', fontWeight: 700, color: '#BBB', textAlign: 'center', padding: '0 4px' }}>
