@@ -14,7 +14,7 @@ const offices = [
   {
     city: "Brasília/DF",
     role: "Sede Administrativa",
-    address: "QS 1 BLOCO D - Águas Claras, Brasília - DF, 71950-550\nConnect Towers - Salas 2620 e 2621",
+    address: "QS 1 BLOCO D - Águas Claras, Brasília - DF, 71950-550\nConnect Towers - Salas 26 20 e 26 21",
   },
 ];
 
