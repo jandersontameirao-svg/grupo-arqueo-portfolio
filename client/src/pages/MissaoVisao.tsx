@@ -51,9 +51,10 @@ export default function MissaoVisao() {
             <div className="lg:col-span-8">
               <div className="flex items-center gap-8 lg:gap-12 mb-8">
                 <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-40 lg:h-48 xl:h-56 w-auto flex-shrink-0" />
-                <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-bold leading-[1.05] max-w-3xl" style={{ color: '#1A1A1A', letterSpacing: '-0.025em' }}>
-                  Os fundamentos que orientam nossa{' '}
-                  <span className="block" style={{ color: '#861720' }}>atuação</span>
+                <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-bold leading-[1.2]" style={{ color: '#1A1A1A', letterSpacing: '-0.025em' }}>
+                  Os fundamentos que<br />
+                  orientam nossa<br />
+                  <span style={{ color: '#861720' }}>atuação</span>
                 </h1>
               </div>
 
