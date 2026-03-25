@@ -12,19 +12,9 @@ import { useState } from "react";
 
 const offices = [
   {
-    city: "Brasilia/DF",
+    city: "Brasília/DF",
     role: "Sede Administrativa",
-    address: "SHS Qd. 06, Conj. A, Sala 501 - Complexo Brasil 21",
-  },
-  {
-    city: "Natal/RN",
-    role: "Regional Nordeste",
-    address: "Rua Raimundo Chaves, 2182, Sala 501 - Ponta Negra",
-  },
-  {
-    city: "Sao Paulo/SP",
-    role: "Regional Sudeste",
-    address: "Av. Brig. Faria Lima, 1461, 4o andar, Conj. 41",
+    address: "QS 1 BLOCO D - Águas Claras, Brasília - DF, 71950-550\nConnect Towers - Salas 2620 e 2621",
   },
 ];
 
@@ -187,7 +177,7 @@ export default function Contato() {
               transition={{ delay: 0.2 }}
               className="space-y-8"
             >
-              <h3 className="text-lg font-bold mb-8" style={{ color: '#2A2A2A' }}>Nossos Escritorios</h3>
+              <h3 className="text-lg font-bold mb-8" style={{ color: '#2A2A2A' }}>Nossa Sede</h3>
               {offices.map((office, i) => (
                 <div
                   key={i}
@@ -199,7 +189,7 @@ export default function Contato() {
                     <h4 className="text-base font-bold" style={{ color: '#2A2A2A' }}>{office.city}</h4>
                   </div>
                   <p className="text-xs font-medium mb-2" style={{ color: '#EE7501' }}>{office.role}</p>
-                  <p className="text-xs font-light leading-relaxed mb-4" style={{ color: '#888' }}>{office.address}</p>
+                  <p className="text-xs font-light leading-relaxed mb-4" style={{ color: '#888', whiteSpace: 'pre-line' }}>{office.address}</p>
                   <a href="#" className="text-xs font-medium transition-colors duration-300 inline-flex items-center gap-1 group-hover:text-[#EE7501]" style={{ color: '#AAA' }}>
                     Ver no mapa →
                   </a>
