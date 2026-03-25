@@ -4,71 +4,72 @@ import { ASSETS } from "@/lib/assets";
 import { Search, FileText, Pickaxe, Monitor, GraduationCap, Anchor, Database, ClipboardCheck } from "lucide-react";
 
 /**
- * SOLUÇÕES — Página 05
- * Design: Sistema escalável, modular e elegante para suportar muitos cards
- * - Hero forte com headline clara
- * - Grid responsivo com cards modulares
- * - Dois níveis de cards (padrão + destaque)
- * - Espaçamento inteligente e sofisticado
- * - Escalabilidade sem monotonia
+ * SOLUÇÕES — Página 05 (Reestruturada)
+ * Design: Blocos temáticos, cards minimalistas, escalável para muitos cards
+ * - Hero limpo e forte
+ * - 5 blocos temáticos com títulos e descrições leves
+ * - Cards minimalistas: apenas ícone + nome
+ * - Dois níveis: padrão + destaque sutil
+ * - Grid 3 colunas (desktop), 2 (tablet), 1 (mobile)
+ * - Aparência institucional premium, não catálogo técnico
  */
 
-const solucoes = [
+// Blocos temáticos com suas soluções
+const solutionBlocks = [
   {
-    icon: Search,
-    title: "Diagnóstico Arqueológico",
-    desc: "Levantamento e avaliação do potencial arqueológico de áreas destinadas a empreendimentos, com análise documental, prospecção de superfície e elaboração de laudos técnicos.",
-    tags: ["Levantamento", "Análise Documental", "Prospecção"],
-    featured: true,
+    id: "pesquisa",
+    title: "Pesquisa e Diagnóstico",
+    description: "Levantamentos especializados e avaliações técnicas para identificar potencial arqueológico e patrimônio cultural.",
+    color: "#2C7EB3", // Azul
+    solutions: [
+      { name: "Diagnóstico Arqueológico", icon: Search, featured: true },
+      { name: "Prospecção e Resgate", icon: Pickaxe, featured: false },
+      { name: "Pesquisa Documental", icon: FileText, featured: false },
+    ],
   },
   {
-    icon: Pickaxe,
-    title: "Prospecção e Resgate",
-    desc: "Execução de escavações arqueológicas controladas para prospecção e resgate de sítios, com registro detalhado, coleta de material e análise laboratorial.",
-    tags: ["Escavação", "Registro", "Análise Laboratorial"],
-    featured: false,
+    id: "gestao",
+    title: "Gestão e Licenciamento",
+    description: "Gerenciamento completo de processos de licenciamento e conformidade regulatória junto ao IPHAN.",
+    color: "#861720", // Bordo
+    solutions: [
+      { name: "Gestão de Licenciamento", icon: ClipboardCheck, featured: true },
+      { name: "Laudos e Relatórios", icon: FileText, featured: false },
+      { name: "Conformidade Regulatória", icon: Monitor, featured: false },
+    ],
   },
   {
-    icon: Monitor,
-    title: "Monitoramento Arqueológico",
-    desc: "Acompanhamento técnico durante obras de engenharia para garantir a preservação de eventuais vestígios arqueológicos identificados durante a execução.",
-    tags: ["Acompanhamento", "Obras", "Preservação"],
-    featured: false,
+    id: "patrimonio",
+    title: "Patrimônio e Educação",
+    description: "Programas de preservação, educação patrimonial e comunicação social integrada.",
+    color: "#EE7501", // Laranja
+    solutions: [
+      { name: "Educação Patrimonial", icon: GraduationCap, featured: true },
+      { name: "Comunicação Social", icon: FileText, featured: false },
+      { name: "Preservação Comunitária", icon: Monitor, featured: false },
+    ],
   },
   {
-    icon: FileText,
-    title: "Laudos e Relatórios",
-    desc: "Elaboração de documentação técnica completa para atendimento às exigências do IPHAN e demais órgãos reguladores do patrimônio cultural.",
-    tags: ["IPHAN", "Documentação", "Conformidade"],
-    featured: true,
+    id: "monitoramento",
+    title: "Monitoramento e Salvamento",
+    description: "Acompanhamento técnico durante obras e pesquisa especializada em patrimônio subaquático.",
+    color: "#2C7EB3", // Azul
+    solutions: [
+      { name: "Monitoramento Arqueológico", icon: Monitor, featured: true },
+      { name: "Arqueologia Subaquática", icon: Anchor, featured: false },
+      { name: "Resgate de Sítios", icon: Pickaxe, featured: false },
+    ],
   },
   {
-    icon: GraduationCap,
-    title: "Educação Patrimonial",
-    desc: "Desenvolvimento e execução de programas de educação patrimonial e comunicação social integrados aos processos de licenciamento ambiental.",
-    tags: ["Programas", "Comunicação Social", "Comunidades"],
-    featured: false,
-  },
-  {
-    icon: Anchor,
-    title: "Arqueologia Subaquática",
-    desc: "Pesquisa e gestão do patrimônio arqueológico subaquático e costeiro, com equipe certificada em mergulho científico e técnicas especializadas.",
-    tags: ["Offshore", "Mergulho", "Patrimônio Naval"],
-    featured: false,
-  },
-  {
-    icon: Database,
-    title: "Geoprocessamento e SIG",
-    desc: "Soluções de tecnologia geoespacial aplicadas à arqueologia, incluindo modelagem 3D, sensoriamento remoto e sistemas de informação geográfica.",
-    tags: ["GIS", "Modelagem 3D", "Sensoriamento"],
-    featured: true,
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Gestão de Licenciamento",
-    desc: "Gerenciamento completo do processo de licenciamento sociocultural junto ao IPHAN e órgãos estaduais, com acompanhamento de prazos e condicionantes.",
-    tags: ["IPHAN", "Prazos", "Condicionantes"],
-    featured: false,
+    id: "tecnologia",
+    title: "Tecnologia e Suporte Técnico",
+    description: "Soluções geoespaciais avançadas e tecnologia aplicada à arqueologia e patrimônio cultural.",
+    color: "#861720", // Bordo
+    solutions: [
+      { name: "Geoprocessamento e SIG", icon: Database, featured: true },
+      { name: "Modelagem 3D", icon: Database, featured: false },
+      { name: "Sensoriamento Remoto", icon: Database, featured: false },
+    ],
   },
 ];
 
@@ -82,8 +83,8 @@ export default function Solucoes() {
       nextPath="/diferenciais"
       nextLabel="Diferenciais"
     >
-      {/* Hero Section — Redesigned for strength and clarity */}
-      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">
+      {/* Hero Section — Limpo e forte */}
+      <section className="relative min-h-[450px] lg:min-h-[550px] flex items-center overflow-hidden">
         {/* Background image + gradient overlay */}
         <div className="absolute inset-0 -z-10">
           <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
@@ -106,14 +107,14 @@ export default function Solucoes() {
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Portfólio de Soluções</span>
+              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Capacidades</span>
             </div>
             <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-              Soluções integradas para o{' '}
-              <span style={{ color: '#EE7501' }}>licenciamento sociocultural</span>
+              Soluções integradas para{' '}
+              <span style={{ color: '#EE7501' }}>patrimônio e arqueologia</span>
             </h1>
             <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#666', maxWidth: '650px' }}>
-              Oferecemos um portfólio abrangente e modular de serviços técnicos especializados, cobrindo todo o ciclo de pesquisa, gestão e preservação do patrimônio arqueológico e sociocultural.
+              Um portfólio abrangente de serviços técnicos especializados, cobrindo todo o ciclo de pesquisa, gestão e preservação do patrimônio arqueológico e sociocultural.
             </p>
           </motion.div>
         </div>
@@ -122,136 +123,112 @@ export default function Solucoes() {
       {/* Divider */}
       <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
 
-      {/* Solutions grid — Scalable, modular system */}
+      {/* Solution Blocks — Modular, scalable architecture */}
       <section className="py-16 lg:py-28">
         <div className="container">
-          {/* Grid header with context */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16 lg:mb-20"
-          >
-            <p className="text-sm font-light" style={{ color: '#888', maxWidth: '700px' }}>
-              Cada solução é desenvolvida sob medida, combinando expertise técnica, inovação metodológica e conformidade regulatória. Navegue por nossos serviços principais ou entre em contato para soluções customizadas.
-            </p>
-          </motion.div>
+          {solutionBlocks.map((block, blockIdx) => (
+            <motion.div
+              key={block.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: blockIdx * 0.1 }}
+              className={`mb-20 lg:mb-28 ${blockIdx !== solutionBlocks.length - 1 ? 'pb-20 lg:pb-28 border-b' : ''}`}
+              style={{ borderBottomColor: blockIdx !== solutionBlocks.length - 1 ? '#E6E6E6' : 'transparent' }}
+            >
+              {/* Block Header */}
+              <div className="mb-12 lg:mb-16">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-1 h-6" style={{ backgroundColor: block.color }} />
+                  <h2 className="text-2xl lg:text-3xl font-bold" style={{ color: '#2A2A2A' }}>
+                    {block.title}
+                  </h2>
+                </div>
+                <p className="text-sm lg:text-base font-light leading-relaxed" style={{ color: '#888', maxWidth: '700px' }}>
+                  {block.description}
+                </p>
+              </div>
 
-          {/* Masonry-inspired grid with variable heights */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {solucoes.map((sol, i) => {
-              const Icon = sol.icon;
-              const isFeatured = sol.featured;
+              {/* Solutions Grid — Minimalist cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {block.solutions.map((sol, solIdx) => {
+                  const Icon = sol.icon;
+                  const isFeatured = sol.featured;
 
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className={`group transition-all duration-500 hover:-translate-y-2 cursor-pointer ${
-                    isFeatured ? 'lg:col-span-1' : ''
-                  }`}
-                >
-                  {/* Card container with modular styling */}
-                  <div
-                    className={`h-full flex flex-col p-7 lg:p-8 rounded-lg transition-all duration-500 ${
-                      isFeatured
-                        ? 'border-l-4 hover:shadow-lg'
-                        : 'border-l-2 hover:shadow-md'
-                    }`}
-                    style={{
-                      backgroundColor: isFeatured ? '#FAFAF8' : '#FFFFFF',
-                      borderLeftColor: isFeatured ? '#EE7501' : '#D0D0D0',
-                      boxShadow: isFeatured ? '0 4px 12px rgba(238, 117, 1, 0.08)' : 'none',
-                    }}
-                  >
-                    {/* Featured badge */}
-                    {isFeatured && (
-                      <div className="mb-4">
-                        <span
-                          className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider rounded"
-                          style={{ backgroundColor: '#EE7501', color: '#FFFFFF' }}
-                        >
-                          Destaque
-                        </span>
-                      </div>
-                    )}
-
-                    {/* Icon container — Premium styling */}
-                    <div className="mb-5 flex items-start">
+                  return (
+                    <motion.div
+                      key={solIdx}
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: solIdx * 0.08 }}
+                      className="group cursor-pointer transition-all duration-500 hover:-translate-y-1"
+                    >
+                      {/* Card container — Minimalist and premium */}
                       <div
-                        className={`w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg transition-all duration-300 ${
-                          isFeatured ? 'group-hover:scale-110' : 'group-hover:scale-105'
+                        className={`h-full flex flex-col items-center justify-center p-8 lg:p-10 rounded-lg transition-all duration-500 text-center ${
+                          isFeatured ? 'hover:shadow-lg' : 'hover:shadow-md'
                         }`}
                         style={{
-                          backgroundColor: isFeatured ? 'rgba(238, 117, 1, 0.12)' : '#F3EFEA',
+                          backgroundColor: isFeatured ? '#FAFAF8' : '#FFFFFF',
+                          border: `1px solid ${isFeatured ? block.color : '#E6E6E6'}`,
+                          boxShadow: isFeatured ? `0 2px 8px ${block.color}14` : '0 1px 3px rgba(0,0,0,0.06)',
                         }}
                       >
-                        <Icon
-                          className="w-6 h-6 transition-colors duration-300"
+                        {/* Icon — Premium styling */}
+                        <div
+                          className="mb-5 w-14 h-14 flex items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110"
                           style={{
-                            color: isFeatured ? '#EE7501' : '#2C7EB3',
-                          }}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Title */}
-                    <h3
-                      className="text-base lg:text-lg font-bold mb-3 leading-tight"
-                      style={{ color: '#2A2A2A' }}
-                    >
-                      {sol.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p
-                      className="text-sm font-light leading-relaxed mb-5 flex-grow"
-                      style={{ color: '#777' }}
-                    >
-                      {sol.desc}
-                    </p>
-
-                    {/* Tags — Modular and scalable */}
-                    <div className="flex flex-wrap gap-2 pt-4 border-t" style={{ borderTopColor: '#E6E6E6' }}>
-                      {sol.tags.map((tag, j) => (
-                        <span
-                          key={j}
-                          className="px-2.5 py-1 text-[11px] font-medium rounded transition-colors duration-300"
-                          style={{
-                            backgroundColor: isFeatured ? '#EE7501' : '#F3EFEA',
-                            color: isFeatured ? '#FFFFFF' : '#666',
+                            backgroundColor: isFeatured ? `${block.color}15` : '#F3EFEA',
                           }}
                         >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                          <Icon
+                            className="w-7 h-7 transition-colors duration-300"
+                            style={{
+                              color: isFeatured ? block.color : '#999',
+                            }}
+                          />
+                        </div>
 
-          {/* Spacer for future expansion */}
+                        {/* Title — Clean and legible */}
+                        <h3
+                          className="text-base lg:text-lg font-semibold leading-tight"
+                          style={{ color: '#2A2A2A' }}
+                        >
+                          {sol.name}
+                        </h3>
+
+                        {/* Featured indicator — Subtle */}
+                        {isFeatured && (
+                          <div className="mt-3 text-[11px] font-medium uppercase tracking-wider" style={{ color: block.color }}>
+                            Destaque
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Section — Closing institutional message */}
+      <section className="py-16 lg:py-20 border-t" style={{ borderTopColor: '#E6E6E6' }}>
+        <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="mt-20 lg:mt-28 pt-16 lg:pt-20 border-t"
-            style={{ borderTopColor: '#E6E6E6' }}
+            className="max-w-2xl"
           >
-            <div className="max-w-2xl">
-              <h3 className="text-lg lg:text-xl font-bold mb-4" style={{ color: '#2A2A2A' }}>
-                Soluções customizadas
-              </h3>
-              <p className="text-sm font-light leading-relaxed" style={{ color: '#888' }}>
-                Além de nossos serviços principais, desenvolvemos soluções integradas e personalizadas conforme as necessidades específicas de cada projeto. Converse com nossos especialistas para conhecer as possibilidades.
-              </p>
-            </div>
+            <h3 className="text-lg lg:text-xl font-bold mb-4" style={{ color: '#2A2A2A' }}>
+              Soluções customizadas
+            </h3>
+            <p className="text-sm font-light leading-relaxed" style={{ color: '#888' }}>
+              Além de nossos serviços principais, desenvolvemos soluções integradas e personalizadas conforme as necessidades específicas de cada projeto. Converse com nossos especialistas para conhecer as possibilidades.
+            </p>
           </motion.div>
         </div>
       </section>
