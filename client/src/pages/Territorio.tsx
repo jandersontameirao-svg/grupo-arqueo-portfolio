@@ -30,10 +30,11 @@ const estados = [
 ];
 
 const regioes = [
-  { nome: "Nordeste", count: 9, color: "#EE7501" },
-  { nome: "Sudeste", count: 3, color: "#2C7EB3" },
-  { nome: "Centro-Oeste", count: 2, color: "#861720" },
-  { nome: "Norte", count: 2, color: "#5B8C3E" },
+  { nome: "Nordeste", count: 8, color: "#EE7501" },
+  { nome: "Sudeste", count: 4, color: "#2C7EB3" },
+  { nome: "Centro-Oeste", count: 4, color: "#861720" },
+  { nome: "Norte", count: 5, color: "#5B8C3E" },
+  { nome: "Sul", count: 3, color: "#6B4C8A" },
 ];
 
 export default function Territorio() {
@@ -48,10 +49,10 @@ export default function Territorio() {
       nextPath="/contato"
       nextLabel="Contato"
     >
-      {/* Hero Section with Map — Layout: Text Left + Map Right */}
-      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
-        <div className="container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      {/* Hero Section with Map + Regions — Layout: Text Left + Map Right + Regions Below */}
+      <section className="relative min-h-auto lg:min-h-[800px] flex flex-col items-center overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
+        <div className="container relative z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 lg:mb-24">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -137,17 +138,11 @@ export default function Territorio() {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
 
-      {/* Divider */}
-      <div className="h-px" style={{ backgroundColor: '#E6E6E6' }} />
-
-      {/* Regions Summary + States Grid */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="container">
-          {/* Regions summary */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          {/* Regions Summary — Integrated into Hero */}
+          <div className="w-full">
+            <h2 className="text-xl lg:text-2xl font-bold mb-8 text-center" style={{ color: '#2A2A2A' }}>Distribuição por Região</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 max-w-3xl mx-auto">
             {regioes.map((reg, i) => (
               <motion.div
                 key={i}
@@ -162,31 +157,11 @@ export default function Territorio() {
                 <p className="text-xs font-medium mt-1" style={{ color: '#2A2A2A' }}>estados</p>
                 <p className="text-xs font-light" style={{ color: '#888' }}>{reg.nome}</p>
               </motion.div>
-            ))}
-          </div>
-
-          {/* States grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3">
-            {estados.map((estado, i) => (
-              <motion.div
-                key={estado.uf}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.03 }}
-                className="group p-4 text-center transition-all duration-300 hover:-translate-y-1 cursor-default"
-                style={{ backgroundColor: '#F9F8F6' }}
-              >
-                <span className="text-lg font-bold block transition-colors duration-300 group-hover:text-[#EE7501]" style={{ color: '#2A2A2A' }}>
-                  {estado.uf}
-                </span>
-                <p className="text-[10px] font-light mt-0.5" style={{ color: '#888' }}>{estado.projetos}</p>
-              </motion.div>
-            ))}
+            ))})
+            </div>
           </div>
         </div>
       </section>
-
 
 
     </PortfolioLayout>
