@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { Quote, ArrowRight } from "lucide-react";
 
-const CEO_PHOTO = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/ceo-janderson-tameirao_b4bbdc61.webp";
+const CEO_PHOTO = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo80_2ec49fb7.webp";
 
 export default function CeoMessage() {
   return (
