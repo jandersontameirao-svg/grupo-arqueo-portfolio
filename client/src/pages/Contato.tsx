@@ -122,55 +122,59 @@ export default function Contato() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="p-10 lg:p-14 rounded-lg"
+              style={{ backgroundColor: '#FAFAF8', border: '1px solid #E6E6E6' }}
             >
-              <div className="space-y-5">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: '#F3EFEA' }}>
-                    <Mail className="w-4 h-4" style={{ color: '#EE7501' }} />
+              <h3 className="text-xs font-bold uppercase tracking-[0.15em] mb-10" style={{ color: '#888' }}>Informações de Contato</h3>
+              
+              <div className="space-y-8">
+                <div className="flex gap-4 items-start">
+                  <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
+                    <Mail className="w-5 h-5 text-white" />
                   </div>
-                  <div className="flex items-baseline gap-2 flex-wrap">
-                    <span className="text-xs font-medium tracking-wider uppercase" style={{ color: '#AAA' }}>E-mail:</span>
-                    <a href="mailto:contato@grupoarqueo.com.br" className="text-sm font-semibold transition-colors hover:text-[#EE7501]" style={{ color: '#2A2A2A' }}>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-medium uppercase tracking-wider mb-2" style={{ color: '#AAA' }}>E-mail</p>
+                    <a href="mailto:contato@grupoarqueo.com.br" className="text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#2A2A2A' }}>
                       contato@grupoarqueo.com.br
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: '#F3EFEA' }}>
-                    <Phone className="w-4 h-4" style={{ color: '#EE7501' }} />
+                <div className="flex gap-4 items-start">
+                  <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
+                    <Phone className="w-5 h-5 text-white" />
                   </div>
-                  <div className="flex items-baseline gap-2 flex-wrap">
-                    <span className="text-xs font-medium tracking-wider uppercase" style={{ color: '#AAA' }}>Telefone:</span>
-                    <p className="text-sm font-semibold" style={{ color: '#2A2A2A' }}>(61) 3142-1040</p>
+                  <div className="flex-1">
+                    <p className="text-xs font-medium uppercase tracking-wider mb-2" style={{ color: '#AAA' }}>Telefone</p>
+                    <p className="text-base font-semibold" style={{ color: '#2A2A2A' }}>(61) 3142-1040</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: '#F3EFEA' }}>
-                    <Globe className="w-4 h-4" style={{ color: '#EE7501' }} />
+                <div className="flex gap-4 items-start">
+                  <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
+                    <Globe className="w-5 h-5 text-white" />
                   </div>
-                  <div className="flex items-baseline gap-2 flex-wrap">
-                    <span className="text-xs font-medium tracking-wider uppercase" style={{ color: '#AAA' }}>Website:</span>
-                    <a href="https://grupoarqueo.com.br" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold transition-colors hover:text-[#EE7501]" style={{ color: '#2A2A2A' }}>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-medium uppercase tracking-wider mb-2" style={{ color: '#AAA' }}>Website</p>
+                    <a href="https://grupoarqueo.com.br" target="_blank" rel="noopener noreferrer" className="text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#2A2A2A' }}>
                       www.grupoarqueo.com.br
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-12 pt-10" style={{ borderTop: '1px solid #E6E6E6' }}>
-                <p className="text-xs font-medium tracking-wider uppercase mb-4" style={{ color: '#888' }}>Redes Sociais</p>
-                <div className="flex gap-3">
+              <div className="mt-10 pt-10" style={{ borderTop: '1px solid #E6E6E6' }}>
+                <p className="text-xs font-medium tracking-wider uppercase mb-6" style={{ color: '#888' }}>Redes Sociais</p>
+                <div className="flex gap-4">
                   <a href="https://www.linkedin.com/company/grupoarqueo" target="_blank" rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center transition-all duration-300 hover:bg-[#EE7501] hover:text-white"
-                    style={{ border: '1px solid #E6E6E6', color: '#2A2A2A' }}>
-                    <Linkedin className="w-4 h-4" />
+                    className="w-11 h-11 flex items-center justify-center transition-all duration-300 rounded hover:shadow-md"
+                    style={{ backgroundColor: '#EE7501', color: 'white' }}>
+                    <Linkedin className="w-5 h-5" />
                   </a>
                   <a href="https://www.instagram.com/grupoarqueo" target="_blank" rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center transition-all duration-300 hover:bg-[#EE7501] hover:text-white"
-                    style={{ border: '1px solid #E6E6E6', color: '#2A2A2A' }}>
-                    <Instagram className="w-4 h-4" />
+                    className="w-11 h-11 flex items-center justify-center transition-all duration-300 rounded hover:shadow-md"
+                    style={{ backgroundColor: '#EE7501', color: 'white' }}>
+                    <Instagram className="w-5 h-5" />
                   </a>
                 </div>
               </div>
