@@ -120,7 +120,7 @@ export default function NumerosTerritori() {
           {/* Logo e Título */}
           <div className="flex items-center gap-6 lg:gap-8 mb-8">
             <img
-              src="https://cdn.jsdelivr.net/gh/grupo-arqueo/assets/logo-10-anos.png"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-3_aa567132.webp"
               alt="10 Anos"
               className="h-16 lg:h-20 w-auto flex-shrink-0"
             />
@@ -187,7 +187,7 @@ export default function NumerosTerritori() {
                   }}
                 >
                   <div className="text-4xl font-bold mb-1" style={{ color: '#861720' }}>
-                    16
+                    23 <span style={{ fontSize: '0.7em', color: '#666' }}>e DF</span>
                   </div>
                   <div className="text-sm font-medium" style={{ color: '#666' }}>
                     Estados
