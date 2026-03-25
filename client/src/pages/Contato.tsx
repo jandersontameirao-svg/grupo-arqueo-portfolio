@@ -59,9 +59,22 @@ export default function Contato() {
       prevPath="/parceiros"
       prevLabel="Nossos Parceiros"
     >
-      {/* Hero Section — Similar to Home */}
-      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">
-        {/* Background image + gradient overlay */}
+      {/* Imagem Institucional — TOPO DA PÁGINA */}
+      <section className="py-12 lg:py-16 bg-white">
+        <div className="container flex justify-center">
+          <motion.img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/imagem(5)_13e48ffd.png"
+            alt="Grupo Arqueo - Hub de soluções integradas"
+            className="h-auto max-w-2xl w-full"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          />
+        </div>
+      </section>
+
+      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">        {/* Background image + gradient overlay */}
         <div className="absolute inset-0 -z-10">
           <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
           <div
@@ -98,21 +111,6 @@ export default function Contato() {
               Estamos prontos para atender as demandas do seu empreendimento com soluções técnicas especializadas em patrimônio sociocultural e licenciamento ambiental.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Imagem Institucional */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="container flex justify-center">
-          <motion.img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/imagem(5)_13e48ffd.png"
-            alt="Grupo Arqueo - Hub de soluções integradas"
-            className="h-auto max-w-2xl w-full"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          />
         </div>
       </section>
 
