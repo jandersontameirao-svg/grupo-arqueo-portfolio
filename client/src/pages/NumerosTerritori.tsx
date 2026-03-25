@@ -353,37 +353,7 @@ export default function NumerosTerritori() {
         </div>
       </section>
 
-      {/* Grid de Estados */}
-      <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-xl lg:text-2xl font-bold mb-8" style={{ color: '#2A2A2A' }}>
-            Estados de Atuação
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {estados.map((estado, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="p-4 rounded-lg text-center cursor-pointer transition-all hover:shadow-lg"
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E0E0E0',
-                }}
-              >
-                <div className="font-bold text-lg" style={{ color: '#EE7501' }}>
-                  {estado.uf}
-                </div>
-                <div className="text-xs mt-1" style={{ color: '#666' }}>
-                  {estado.nome}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+
     </PortfolioLayout>
   );
 }
