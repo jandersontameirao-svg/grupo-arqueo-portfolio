@@ -472,8 +472,8 @@ export default function QuemSomosEcossistema() {
                 {[
                   { name: 'CEO', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp' },
                   { name: 'Diretora Administrativa\ne Financeira', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp' },
-                  { name: 'Diretor de Estratégia,\nContencioso e Qualidade', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp' },
                   { name: 'Tesoureira', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp' },
+                  { name: 'Diretor de Estratégia,\nContencioso e Qualidade', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp' },
                   { name: 'CSO', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp' },
                 ].map((member, idx) => (
                   <div key={idx} className="flex flex-col items-center group cursor-pointer">
