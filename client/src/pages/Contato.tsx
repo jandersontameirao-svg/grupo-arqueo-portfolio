@@ -187,15 +187,18 @@ export default function Contato() {
               {offices.map((office, i) => (
                 <div
                   key={i}
-                  className="p-6 transition-all duration-300 hover:translate-x-2"
-                  style={{ backgroundColor: '#FFFFFF', borderLeft: '3px solid #EE7501' }}
+                  className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer group"
+                  style={{ backgroundColor: '#FFFFFF', borderLeft: '3px solid #EE7501', border: '1px solid #E6E6E6' }}
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <MapPin className="w-4 h-4" style={{ color: '#EE7501' }} />
                     <h4 className="text-base font-bold" style={{ color: '#2A2A2A' }}>{office.city}</h4>
                   </div>
                   <p className="text-xs font-medium mb-2" style={{ color: '#EE7501' }}>{office.role}</p>
-                  <p className="text-xs font-light leading-relaxed" style={{ color: '#888' }}>{office.address}</p>
+                  <p className="text-xs font-light leading-relaxed mb-4" style={{ color: '#888' }}>{office.address}</p>
+                  <a href="#" className="text-xs font-medium transition-colors duration-300 inline-flex items-center gap-1 group-hover:text-[#EE7501]" style={{ color: '#AAA' }}>
+                    Ver no mapa →
+                  </a>
                 </div>
               ))}
 

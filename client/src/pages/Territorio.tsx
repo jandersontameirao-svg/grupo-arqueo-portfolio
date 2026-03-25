@@ -49,10 +49,34 @@ export default function Territorio() {
       nextPath="/contato"
       nextLabel="Contato"
     >
-      {/* Hero Section with Map + Regions — Layout: Text Left + Map Right + Regions Below */}
-      <section className="relative min-h-auto lg:min-h-[800px] flex flex-col items-center overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
+      {/* Regions Summary — Top Section */}
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFFFF' }}>
+        <div className="container">
+          <h2 className="text-xl lg:text-2xl font-bold mb-8 text-center" style={{ color: '#2A2A2A' }}>Distribuição por Região</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 max-w-3xl mx-auto">
+          {regioes.map((reg, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className="p-5"
+              style={{ backgroundColor: '#F9F8F6', borderTop: `3px solid ${reg.color}` }}
+            >
+              <span className="text-2xl font-bold" style={{ color: reg.color }}>{reg.count}</span>
+              <p className="text-xs font-medium mt-1" style={{ color: '#2A2A2A' }}>estados</p>
+              <p className="text-xs font-light" style={{ color: '#888' }}>{reg.nome}</p>
+            </motion.div>
+          ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Section with Map — Layout: Text Left + Map Right */}
+      <section className="relative min-h-auto lg:min-h-[700px] flex flex-col items-center overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
         <div className="container relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -137,28 +161,6 @@ export default function Territorio() {
                 />
               </div>
             </motion.div>
-          </div>
-
-          {/* Regions Summary — Integrated into Hero */}
-          <div className="w-full">
-            <h2 className="text-xl lg:text-2xl font-bold mb-8 text-center" style={{ color: '#2A2A2A' }}>Distribuição por Região</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 max-w-3xl mx-auto">
-            {regioes.map((reg, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="p-5"
-                style={{ backgroundColor: '#F9F8F6', borderTop: `3px solid ${reg.color}` }}
-              >
-                <span className="text-2xl font-bold" style={{ color: reg.color }}>{reg.count}</span>
-                <p className="text-xs font-medium mt-1" style={{ color: '#2A2A2A' }}>estados</p>
-                <p className="text-xs font-light" style={{ color: '#888' }}>{reg.nome}</p>
-              </motion.div>
-            ))})
-            </div>
           </div>
         </div>
       </section>
