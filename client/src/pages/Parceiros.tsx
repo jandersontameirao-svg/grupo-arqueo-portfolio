@@ -3,10 +3,11 @@ import PortfolioLayout from "@/components/PortfolioLayout";
 
 /**
  * NOSSOS PARCEIROS — Página 11
- * Grid de logos de clientes e parceiros do Grupo Arqueo
- * Design: Fundo branco, logos em círculos com sombra sutil, layout responsivo
- * Ordem: Alfabética
+ * Design: Premium institucional com logo 10 anos, grid compacto e elegante
+ * Paleta: Cores do Grupo Arqueo — vermelho, laranja, dourado
  */
+
+const LOGO_10_ANOS = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logo-10-anos-arqueo_ce93a3c4.webp";
 
 export default function Parceiros() {
   const parceiros: { nome: string; logo?: string }[] = [
@@ -79,19 +80,6 @@ export default function Parceiros() {
     { nome: "Voltalia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/voltalia_2a3ecfe2.png" },
   ].sort((a, b) => a.nome.localeCompare(b.nome));
 
-  // Generate initials from name
-  const getInitials = (name: string) => {
-    const words = name.split(" ");
-    if (words.length === 1) return name.substring(0, 2).toUpperCase();
-    return (words[0][0] + words[1][0]).toUpperCase();
-  };
-
-  // Assign a consistent color based on index
-  const getColor = (i: number) => {
-    const colors = ["#861720", "#EE7501", "#2C7EB3", "#D4A843"];
-    return colors[i % colors.length];
-  };
-
   return (
     <PortfolioLayout
       chapterNum="11"
@@ -101,76 +89,140 @@ export default function Parceiros() {
       nextPath="/contato"
       nextLabel="Contato"
     >
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-28" style={{ backgroundColor: '#F5F5F5' }}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-              Nossos <span style={{ color: '#EE7501' }}>Parceiros</span>
-            </h1>
-            <p className="text-lg font-light" style={{ color: '#666', maxWidth: '700px', margin: '0 auto' }}>
-              Empresas e instituições que confiam no Grupo Arqueo para transformar seus projetos em realidade.
-            </p>
-          </motion.div>
+      {/* ═══════════════════ HERO — Logo 10 Anos + Título + Contadores ═══════════════════ */}
+      <section style={{ backgroundColor: '#F9F8F6', position: 'relative', overflow: 'hidden' }}>
+        {/* Top accent line */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(to right, #861720, #EE7501, #D4A843)' }} />
+
+        <div className="container" style={{ paddingTop: '48px', paddingBottom: '36px' }}>
+          {/* Logo 10 Anos centralizada */}
+          <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+            <img
+              src={LOGO_10_ANOS}
+              alt="Grupo Arqueo - 10 Anos"
+              style={{ height: '90px', width: 'auto', display: 'inline-block', filter: 'drop-shadow(0 4px 16px rgba(212,168,67,0.15))' }}
+            />
+          </div>
+
+          {/* Tag */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '10px' }}>
+            <div style={{ width: '28px', height: '2px', backgroundColor: '#D4A843', borderRadius: '2px' }} />
+            <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase' as const, color: '#D4A843' }}>
+              Uma Década de Parcerias
+            </span>
+            <div style={{ width: '28px', height: '2px', backgroundColor: '#D4A843', borderRadius: '2px' }} />
+          </div>
+
+          {/* Título */}
+          <h1 style={{ fontSize: '34px', fontWeight: 700, lineHeight: 1.1, color: '#1A1A1A', letterSpacing: '-0.02em', margin: '0 0 10px', textAlign: 'center' }}>
+            Nossos <span style={{ color: '#EE7501' }}>Parceiros</span>
+          </h1>
+
+          {/* Subtítulo */}
+          <p style={{ fontSize: '14px', lineHeight: 1.7, color: '#888', fontWeight: 300, maxWidth: '520px', margin: '0 auto 24px', textAlign: 'center' }}>
+            Empresas e instituições que confiam no Grupo Arqueo para transformar projetos em resultados concretos ao longo de{' '}
+            <strong style={{ color: '#D4A843', fontWeight: 600 }}>10 anos de excelência</strong>.
+          </p>
+
+          {/* Contadores */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '28px' }}>
+            <div style={{ textAlign: 'center' }}>
+              <span style={{ fontSize: '30px', fontWeight: 700, color: '#861720', display: 'block', lineHeight: 1 }}>{parceiros.length}+</span>
+              <span style={{ fontSize: '9px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.1em', color: '#AAA' }}>Parceiros</span>
+            </div>
+            <div style={{ width: '1px', height: '24px', backgroundColor: '#E0E0E0' }} />
+            <div style={{ textAlign: 'center' }}>
+              <span style={{ fontSize: '30px', fontWeight: 700, color: '#EE7501', display: 'block', lineHeight: 1 }}>10</span>
+              <span style={{ fontSize: '9px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.1em', color: '#AAA' }}>Anos</span>
+            </div>
+            <div style={{ width: '1px', height: '24px', backgroundColor: '#E0E0E0' }} />
+            <div style={{ textAlign: 'center' }}>
+              <span style={{ fontSize: '30px', fontWeight: 700, color: '#D4A843', display: 'block', lineHeight: 1 }}>26</span>
+              <span style={{ fontSize: '9px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.1em', color: '#AAA' }}>Estados</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Partners Grid - White circles with logos like reference image */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
-          <div className="flex flex-wrap justify-center gap-5 lg:gap-6">
+      {/* ═══════════════════ PARTNERS GRID — Flex wrap compacto ═══════════════════ */}
+      <section style={{ backgroundColor: '#FFFFFF', padding: '28px 0 36px' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 20px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap' as const, justifyContent: 'center', gap: '10px' }}>
             {parceiros.map((parceiro, i) => (
               <motion.div
                 key={parceiro.nome}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.92 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: (i % 14) * 0.03 }}
-                className="flex items-center justify-center"
+                viewport={{ once: true, margin: '-10px' }}
+                transition={{ duration: 0.2, delay: (i % 20) * 0.01 }}
+                className="group"
+                style={{ position: 'relative' }}
               >
                 <div
-                  className="rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer"
+                  className="transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-0.5"
                   style={{
-                    width: '165px',
-                    height: '165px',
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid #E8E8E8',
-                    boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
+                    width: '110px',
+                    height: '110px',
+                    backgroundColor: '#FAFAF9',
+                    borderRadius: '14px',
+                    border: '1px solid #F0F0EE',
+                    boxShadow: '0 1px 4px rgba(0,0,0,0.03)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
                   }}
                 >
-                  <div className="text-center px-2">
-                    {parceiro.logo ? (
-                      <>
-                        <div className="w-20 h-20 flex items-center justify-center mx-auto">
-                          <img
-                            src={parceiro.logo}
-                            alt={parceiro.nome}
-                            className="max-w-full max-h-full object-contain"
-                          />
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <div
-                          className="w-16 h-16 rounded-full flex items-center justify-center mx-auto"
-                          style={{
-                            backgroundColor: getColor(i),
-                            color: '#FFFFFF',
-                          }}
-                        >
-                          <span className="text-[12px] font-bold tracking-wide">{getInitials(parceiro.nome)}</span>
-                        </div>
-                      </>
-                    )}
-                  </div>
+                  {parceiro.logo ? (
+                    <img
+                      src={parceiro.logo}
+                      alt={parceiro.nome}
+                      className="transition-transform duration-300 group-hover:scale-110"
+                      style={{ width: '70px', height: '70px', objectFit: 'contain' }}
+                    />
+                  ) : (
+                    <span style={{ fontSize: '9px', fontWeight: 700, color: '#BBB', textAlign: 'center', padding: '0 4px' }}>
+                      {parceiro.nome}
+                    </span>
+                  )}
+                </div>
+
+                {/* Tooltip */}
+                <div
+                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  style={{
+                    position: 'absolute',
+                    bottom: '-22px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    whiteSpace: 'nowrap' as const,
+                    pointerEvents: 'none' as const,
+                    zIndex: 20,
+                  }}
+                >
+                  <span style={{ fontSize: '9px', fontWeight: 500, padding: '2px 8px', borderRadius: '4px', backgroundColor: '#333', color: '#FFF' }}>
+                    {parceiro.nome}
+                  </span>
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════ BOTTOM CTA ═══════════════════ */}
+      <section style={{ backgroundColor: '#F9F8F6', padding: '24px 0 28px' }}>
+        <div style={{ maxWidth: '700px', margin: '0 auto', padding: '0 20px', textAlign: 'center' }}>
+          <p style={{ fontSize: '13px', lineHeight: 1.8, color: '#888', fontWeight: 300, marginBottom: '10px' }}>
+            O Grupo Arqueo tem orgulho de construir relações duradouras com empresas líderes em seus segmentos,
+            contribuindo para o desenvolvimento sustentável do Brasil.
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+            <div style={{ width: '20px', height: '2px', backgroundColor: '#D4A843', borderRadius: '2px' }} />
+            <span style={{ fontSize: '9px', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase' as const, color: '#D4A843' }}>
+              Construindo o futuro juntos
+            </span>
+            <div style={{ width: '20px', height: '2px', backgroundColor: '#D4A843', borderRadius: '2px' }} />
           </div>
         </div>
       </section>
