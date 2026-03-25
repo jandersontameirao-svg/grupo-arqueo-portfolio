@@ -59,21 +59,6 @@ export default function Contato() {
       prevPath="/parceiros"
       prevLabel="Nossos Parceiros"
     >
-      {/* Imagem Institucional — TOPO DA PÁGINA */}
-      <section className="py-0 bg-white">
-        <div className="w-full flex justify-center">
-          <motion.img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/imagem(5)_13e48ffd.png"
-            alt="Grupo Arqueo - Hub de soluções integradas"
-            className="h-auto w-full"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          />
-        </div>
-      </section>
-
       <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">        {/* Background image + gradient overlay */}
         <div className="absolute inset-0 -z-10">
           <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
