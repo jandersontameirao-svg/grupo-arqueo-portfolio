@@ -31,10 +31,11 @@ const estados = [
 ];
 
 const regioes = [
-  { nome: "Nordeste", count: 9, color: "#EE7501" },
-  { nome: "Sudeste", count: 3, color: "#2C7EB3" },
-  { nome: "Centro-Oeste", count: 2, color: "#861720" },
-  { nome: "Norte", count: 2, color: "#5B8C3E" },
+  { nome: "Nordeste", count: 8, color: "#EE7501" },
+  { nome: "Sudeste", count: 4, color: "#2C7EB3" },
+  { nome: "Centro-Oeste", count: 4, color: "#861720" },
+  { nome: "Norte", count: 5, color: "#5B8C3E" },
+  { nome: "Sul", count: 3, color: "#8B4789" },
 ];
 
 export default function NumerosTerritori() {
