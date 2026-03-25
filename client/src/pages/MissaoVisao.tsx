@@ -54,7 +54,7 @@ export default function MissaoVisao() {
                 <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-bold leading-[1.2]" style={{ color: '#1A1A1A', letterSpacing: '-0.025em' }}>
                   Os fundamentos que<br />
                   orientam nossa<br />
-                  <span style={{ color: '#861720' }}>atuação</span>
+                  atuação
                 </h1>
               </div>
 
