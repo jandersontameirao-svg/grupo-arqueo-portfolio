@@ -107,8 +107,8 @@ export default function Contato() {
               <div className="text-base lg:text-lg font-normal mb-2" style={{ color: '#666' }}>Fale com o</div>
               <div className="text-4xl lg:text-6xl xl:text-7xl font-bold" style={{ color: '#EE7501' }}>Arqueo</div>
             </h1>
-            <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '600px' }}>
-              Estamos prontos para atender as demandas do seu empreendimento com soluções técnicas especializadas em patrimônio sociocultural e licenciamento ambiental.
+            <p className="text-lg lg:text-xl font-light leading-relaxed" style={{ color: '#444', maxWidth: '600px', letterSpacing: '0.3px' }}>
+              Conectamos expertise em arqueologia, patrimônio cultural e licenciamento ambiental com soluções inovadoras para seus projetos.
             </p>
           </motion.div>
         </div>
@@ -128,7 +128,7 @@ export default function Contato() {
               className="p-12 lg:p-16 rounded-lg"
               style={{ backgroundColor: '#FAFAF8', border: '1px solid #E6E6E6' }}
             >
-              <h3 className="text-xs font-bold uppercase tracking-[0.15em] mb-12" style={{ color: '#888' }}>Informações de Contato</h3>
+              <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-12" style={{ color: '#666', letterSpacing: '0.5px' }}>Informações de Contato</h3>
               
               <div className="space-y-12">
                 <div className="flex gap-6 items-start">
@@ -136,8 +136,8 @@ export default function Contato() {
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1 min-w-0 pt-1">
-                    <p className="text-xs font-medium uppercase tracking-wider mb-3" style={{ color: '#AAA' }}>E-mail</p>
-                    <a href="mailto:contato@grupoarqueo.com.br" className="text-lg font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#2A2A2A' }}>
+                    <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: '#888', letterSpacing: '0.4px' }}>E-mail</p>
+                    <a href="mailto:contato@grupoarqueo.com.br" className="text-base lg:text-lg font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
                       contato@grupoarqueo.com.br
                     </a>
                   </div>
@@ -148,8 +148,8 @@ export default function Contato() {
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1 pt-1">
-                    <p className="text-xs font-medium uppercase tracking-wider mb-3" style={{ color: '#AAA' }}>Telefone</p>
-                    <p className="text-lg font-semibold" style={{ color: '#2A2A2A' }}>(61) 3142-1040</p>
+                    <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: '#888', letterSpacing: '0.4px' }}>Telefone</p>
+                    <p className="text-base lg:text-lg font-semibold" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>(61) 3142-1040</p>
                   </div>
                 </div>
 
@@ -158,8 +158,8 @@ export default function Contato() {
                     <Globe className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1 min-w-0 pt-1">
-                    <p className="text-xs font-medium uppercase tracking-wider mb-3" style={{ color: '#AAA' }}>Website</p>
-                    <a href="https://grupoarqueo.com.br" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#2A2A2A' }}>
+                    <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: '#888', letterSpacing: '0.4px' }}>Website</p>
+                    <a href="https://grupoarqueo.com.br" target="_blank" rel="noopener noreferrer" className="text-base lg:text-lg font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
                       www.grupoarqueo.com.br
                     </a>
                   </div>
@@ -167,7 +167,7 @@ export default function Contato() {
               </div>
 
               <div className="mt-12 pt-12" style={{ borderTop: '1px solid #E6E6E6' }}>
-                <p className="text-xs font-medium tracking-wider uppercase mb-8" style={{ color: '#888' }}>Redes Sociais</p>
+                <p className="text-sm font-bold tracking-wider uppercase mb-8" style={{ color: '#666', letterSpacing: '0.5px' }}>Redes Sociais</p>
                 <div className="flex gap-5">
                   <a href="https://www.linkedin.com/company/grupoarqueo" target="_blank" rel="noopener noreferrer"
                     className="w-12 h-12 flex items-center justify-center transition-all duration-300 rounded hover:shadow-md hover:scale-105"
@@ -190,7 +190,7 @@ export default function Contato() {
               transition={{ delay: 0.2 }}
               className="space-y-8"
             >
-              <h3 className="text-lg font-bold mb-8" style={{ color: '#2A2A2A' }}>Nossa Sede</h3>
+              <h3 className="text-xl font-bold mb-8" style={{ color: '#1A1A1A', letterSpacing: '0.3px' }}>Nossa Sede</h3>
               {offices.map((office, i) => (
                 <div
                   key={i}
@@ -199,23 +199,23 @@ export default function Contato() {
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <MapPin className="w-4 h-4" style={{ color: '#EE7501' }} />
-                    <h4 className="text-base font-bold" style={{ color: '#2A2A2A' }}>{office.city}</h4>
+                    <h4 className="text-lg font-bold" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>{office.city}</h4>
                   </div>
-                  <p className="text-xs font-medium mb-2" style={{ color: '#EE7501' }}>{office.role}</p>
-                  <p className="text-xs font-light leading-relaxed mb-4" style={{ color: '#888', whiteSpace: 'pre-line' }}>{office.address}</p>
-                  <a href="#" className="text-xs font-medium transition-colors duration-300 inline-flex items-center gap-1 group-hover:text-[#EE7501]" style={{ color: '#AAA' }}>
+                  <p className="text-sm font-semibold mb-3" style={{ color: '#EE7501', letterSpacing: '0.3px' }}>{office.role}</p>
+                  <p className="text-sm font-light leading-relaxed mb-4" style={{ color: '#555', whiteSpace: 'pre-line', letterSpacing: '0.2px' }}>{office.address}</p>
+                  <a href="#" className="text-sm font-semibold transition-colors duration-300 inline-flex items-center gap-1 group-hover:text-[#EE7501]" style={{ color: '#888' }}>
                     Ver no mapa →
                   </a>
                 </div>
               ))}
 
               <div className="p-8 mt-6" style={{ backgroundColor: '#2A2A2A' }}>
-                <h4 className="text-sm font-bold text-white mb-3">Horario de Atendimento</h4>
-                <p className="text-xs font-light" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                <h4 className="text-base font-bold text-white mb-4" style={{ letterSpacing: '0.3px' }}>Horário de Atendimento</h4>
+                <p className="text-sm font-light" style={{ color: 'rgba(255,255,255,0.75)', letterSpacing: '0.2px' }}>
                   Segunda a Sexta: 08h00 - 18h00
                 </p>
-                <p className="text-xs font-light mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                  Sabados, Domingos e Feriados: Fechado
+                <p className="text-sm font-light mt-2" style={{ color: 'rgba(255,255,255,0.6)', letterSpacing: '0.2px' }}>
+                  Sábados, Domingos e Feriados: Fechado
                 </p>
               </div>
             </motion.div>
