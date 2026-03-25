@@ -112,18 +112,18 @@ export default function Contato() {
       </section>
 
       {/* Divider */}
-      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
+      <div className="h-px my-20 lg:my-28" style={{ backgroundColor: '#E6E6E6' }} />
 
       {/* Contact Content */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-32">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: '#F3EFEA' }}>
                     <Mail className="w-5 h-5" style={{ color: '#EE7501' }} />
@@ -159,7 +159,7 @@ export default function Contato() {
                 </div>
               </div>
 
-              <div className="mt-10 pt-8" style={{ borderTop: '1px solid #E6E6E6' }}>
+              <div className="mt-12 pt-10" style={{ borderTop: '1px solid #E6E6E6' }}>
                 <p className="text-xs font-medium tracking-wider uppercase mb-4" style={{ color: '#888' }}>Redes Sociais</p>
                 <div className="flex gap-3">
                   <a href="https://www.linkedin.com/company/grupoarqueo" target="_blank" rel="noopener noreferrer"
@@ -181,9 +181,9 @@ export default function Contato() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="space-y-6"
+              className="space-y-8"
             >
-              <h3 className="text-lg font-bold mb-6" style={{ color: '#2A2A2A' }}>Nossos Escritorios</h3>
+              <h3 className="text-lg font-bold mb-8" style={{ color: '#2A2A2A' }}>Nossos Escritorios</h3>
               {offices.map((office, i) => (
                 <div
                   key={i}
