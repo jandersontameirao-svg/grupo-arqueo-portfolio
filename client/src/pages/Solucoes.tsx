@@ -108,22 +108,40 @@ export default function Solucoes() {
 
         {/* Content */}
         <div className="container relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-              Soluções integradas para{' '}
-              <span style={{ color: '#EE7501' }}>patrimônio e arqueologia</span>
-            </h1>
+          <div className="flex items-start gap-8 lg:gap-12">
+            {/* Logo 10 anos */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="hidden lg:block flex-shrink-0"
+            >
+              <img
+                src="https://cdn.manus.space/webdev-assets/logo-10-anos-grupo-arqueo.webp"
+                alt="10 anos Grupo Arqueo"
+                className="w-32 h-auto"
+              />
+            </motion.div>
 
-            <p className="text-lg lg:text-xl leading-relaxed" style={{ color: '#666' }}>
-              Um portfólio abrangente de serviços técnicos especializados, cobrindo todo o ciclo de pesquisa, gestão e preservação do patrimônio arqueológico e sociocultural.
-            </p>
-          </motion.div>
+            {/* Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-3xl"
+            >
+              <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
+                Soluções integradas para{' '}
+                <span style={{ color: '#EE7501' }}>patrimônio e arqueologia</span>
+              </h1>
+
+              <p className="text-lg lg:text-xl leading-relaxed" style={{ color: '#666' }}>
+                Um portfólio abrangente de serviços técnicos especializados, cobrindo todo o ciclo de pesquisa, gestão e preservação do patrimônio arqueológico e sociocultural.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
