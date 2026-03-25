@@ -456,7 +456,7 @@ export default function QuemSomosEcossistema() {
             <div
               className="relative mx-auto rounded-3xl overflow-hidden px-8 py-10 lg:px-12 lg:py-14"
               style={{
-                maxWidth: '1000px',
+                maxWidth: '1200px',
                 background: 'linear-gradient(135deg, #861720 0%, #6B1219 25%, #A01B28 50%, #EE7501 100%)',
                 boxShadow: '0 30px 90px rgba(134, 23, 32, 0.35)',
               }}
