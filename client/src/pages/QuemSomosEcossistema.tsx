@@ -1,324 +1,564 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import { ASSETS } from "@/lib/assets";
+import { Building2, Globe, BookOpen, Lightbulb, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import PortfolioLayout from "@/components/PortfolioLayout";
 
-interface TeamBubble {
-  id: string;
-  name: string;
-  role: string;
-  image: string;
-  // Position as percentage
-  top: string;
-  left: string;
-  // Size of the inner photo circle
-  photoSize: number;
-  // Size of the outer glow ring
-  ringSize: number;
-  zIndex: number;
-}
-
-const teamBubbles: TeamBubble[] = [
-  {
-    id: 'ceo',
-    name: 'CEO',
-    role: 'Arqueóloga',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp',
-    top: '42%',
-    left: '48%',
-    photoSize: 260,
-    ringSize: 310,
-    zIndex: 10,
-  },
-  {
-    id: 'diretora',
-    name: 'Diretora',
-    role: 'Administrativa',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp',
-    top: '28%',
-    left: '18%',
-    photoSize: 160,
-    ringSize: 195,
-    zIndex: 8,
-  },
-  {
-    id: 'cso',
-    name: 'CSO',
-    role: '',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp',
-    top: '8%',
-    left: '68%',
-    photoSize: 120,
-    ringSize: 150,
-    zIndex: 8,
-  },
-  {
-    id: 'diretor',
-    name: 'Diretor',
-    role: 'Estratégia',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp',
-    top: '68%',
-    left: '22%',
-    photoSize: 140,
-    ringSize: 172,
-    zIndex: 8,
-  },
-  {
-    id: 'tesoureira',
-    name: 'Tesoureira',
-    role: '',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp',
-    top: '42%',
-    left: '82%',
-    photoSize: 140,
-    ringSize: 172,
-    zIndex: 8,
-  },
-  {
-    id: 'arqueologo',
-    name: 'Arqueólogo',
-    role: '',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp',
-    top: '58%',
-    left: '8%',
-    photoSize: 110,
-    ringSize: 138,
-    zIndex: 7,
-  },
-  {
-    id: 'arqueologa',
-    name: 'Arqueóloga',
-    role: '',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp',
-    top: '12%',
-    left: '35%',
-    photoSize: 105,
-    ringSize: 132,
-    zIndex: 7,
-  },
-  {
-    id: 'coord-pesquisa',
-    name: 'Coord.',
-    role: 'Pesquisa',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp',
-    top: '78%',
-    left: '48%',
-    photoSize: 115,
-    ringSize: 142,
-    zIndex: 7,
-  },
-  {
-    id: 'gerente-projetos',
-    name: 'Gerente',
-    role: 'Projetos',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/643-RIC_3179_73874ff3.webp',
-    top: '72%',
-    left: '72%',
-    photoSize: 110,
-    ringSize: 138,
-    zIndex: 7,
-  },
-  {
-    id: 'analista-geo',
-    name: 'Analista',
-    role: 'Geo',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp',
-    top: '18%',
-    left: '52%',
-    photoSize: 90,
-    ringSize: 115,
-    zIndex: 7,
-  },
-  {
-    id: 'assessor',
-    name: 'Assessor',
-    role: 'Jurídico',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp',
-    top: '88%',
-    left: '15%',
-    photoSize: 85,
-    ringSize: 108,
-    zIndex: 7,
-  },
-  {
-    id: 'coord-comercial',
-    name: 'Coord.',
-    role: 'Comercial',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp',
-    top: '62%',
-    left: '92%',
-    photoSize: 80,
-    ringSize: 102,
-    zIndex: 7,
-  },
-];
-
-// Decorative empty circles (just outlines)
-const decorCircles = [
-  { top: '5%', left: '10%', size: 28, opacity: 0.25 },
-  { top: '15%', left: '88%', size: 22, opacity: 0.2 },
-  { top: '35%', left: '5%', size: 18, opacity: 0.18 },
-  { top: '85%', left: '88%', size: 26, opacity: 0.22 },
-  { top: '92%', left: '42%', size: 20, opacity: 0.15 },
-  { top: '48%', left: '95%', size: 16, opacity: 0.2 },
-  { top: '8%', left: '48%', size: 14, opacity: 0.15 },
-  { top: '75%', left: '4%', size: 24, opacity: 0.18 },
-  { top: '30%', left: '92%', size: 20, opacity: 0.2 },
-  { top: '55%', left: '30%', size: 12, opacity: 0.12 },
-  { top: '22%', left: '78%', size: 16, opacity: 0.15 },
-  { top: '90%', left: '68%', size: 18, opacity: 0.18 },
-];
+/**
+ * QUEM SOMOS & ECOSSISTEMA — Página 02
+ * Design: Premium modern layout combining company history and ecosystem structure
+ * Sections: Timeline + Ecossistema com 6 empresas + Pilares da Sinergia
+ */
 
 export default function QuemSomosEcossistema() {
+  const [selectedEmpresa, setSelectedEmpresa] = useState<string | null>(null);
+  const [hoveredEmpresa, setHoveredEmpresa] = useState<string | null>(null);
+  const [currentPilarIndex, setCurrentPilarIndex] = useState(0);
+  const [diagramLoaded, setDiagramLoaded] = useState(false);
+  const diagramRef = useRef<HTMLDivElement>(null);
+
+  const timeline = [
+    {
+      year: "2016",
+      title: "Fundação",
+      desc: "Criação do Grupo Arqueo em Brasília, com foco em consultoria arqueológica para licenciamento ambiental.",
+      icon: Building2,
+      badgeColor: "#861720",
+      arcColor: "#861720",
+    },
+    {
+      year: "2018",
+      title: "Expansão",
+      desc: "Abertura do escritório em Natal/RN e início da atuação em projetos de energia eólica no Nordeste.",
+      icon: Globe,
+      badgeColor: "#2C7EB3",
+      arcColor: "#2C7EB3",
+    },
+    {
+      year: "2020",
+      title: "Ecossistema",
+      desc: "Lançamento das submarcas ArqueoGIS, ArqueoOcean e ArqueoEduc, ampliando o portfólio de serviços.",
+      icon: Lightbulb,
+      badgeColor: "#EE7501",
+      arcColor: "#EE7501",
+    },
+    {
+      year: "2023",
+      title: "Consolidação",
+      desc: "Escritório em São Paulo, mais de 250 projetos gerenciados e presença em 16 estados.",
+      icon: BookOpen,
+      badgeColor: "#861720",
+      arcColor: "#861720",
+    },
+  ];
+
+  const pilares = [
+    {
+      num: "01",
+      title: "Integração Técnica",
+      desc: "Soluções complementares que se potencializam mutuamente",
+    },
+    {
+      num: "02",
+      title: "Expertise Consolidada",
+      desc: "Mais de uma década de experiência em arqueologia aplicada",
+    },
+    {
+      num: "03",
+      title: "Inovação Contínua",
+      desc: "Tecnologia e metodologias de ponta em cada especialidade",
+    },
+    {
+      num: "04",
+      title: "Impacto Social",
+      desc: "Compromisso com patrimônio cultural e desenvolvimento sustentável",
+    },
+  ];
+
+  // 6 empresas no ecossistema
+  const empresas = [
+    {
+      id: "arqueoproject",
+      name: "Arqueoproject",
+      subtitle: "Pesquisa & Consultoria",
+      color: "#861720",
+      logo: ASSETS.logoArqueoproject,
+      description:
+        "Empresa-mãe do grupo, especializada em pesquisa arqueológica preventiva e consultoria para licenciamento sociocultural. Atua em todo o ciclo de gestão arqueológica, desde o diagnóstico até o resgate e monitoramento.",
+      competencias: [
+        "Diagnóstico Arqueológico",
+        "Prospecção e Resgate",
+        "Monitoramento Arqueológico",
+        "Laudos e Relatórios Técnicos",
+        "Gestão de Acervo",
+      ],
+      paperNoEcossistema:
+        "Empresa-mãe que coordena a estratégia integrada do grupo, fornecendo expertise em pesquisa arqueológica e consultoria especializada.",
+      diferenciais: [
+        "Experiência consolidada em arqueologia preventiva",
+        "Equipe multidisciplinar de especialistas",
+        "Metodologias inovadoras em diagnóstico",
+      ],
+    },
+    {
+      id: "arqueogis",
+      name: "ArqueoGIS",
+      subtitle: "Tecnologia & Dados",
+      color: "#2C7EB3",
+      logo: ASSETS.logoArqueogis,
+      description:
+        "Plataforma de tecnologia e gestão de dados geoespaciais aplicados à arqueologia. Desenvolve soluções de geoprocessamento, sensoriamento remoto e sistemas de informação geográfica para projetos arqueológicos.",
+      competencias: [
+        "Geotecnologias Aplicadas",
+        "Inteligência Territorial",
+        "Bancos de Dados",
+        "Automação de Análises",
+        "Visualização Espacial",
+      ],
+      paperNoEcossistema:
+        "Responsável pela transformação digital do grupo, integrando dados e fornecendo inteligência territorial para tomadas de decisão.",
+      diferenciais: [
+        "Plataformas de SIG customizadas",
+        "Análise de dados geoespaciais avançada",
+        "Integração de sensoriamento remoto",
+      ],
+    },
+    {
+      id: "arqueocean",
+      name: "ArqueoOcean",
+      subtitle: "Operações Subaquáticas",
+      color: "#2C7EB3",
+      logo: ASSETS.logoArqueocean,
+      description:
+        "Divisão especializada em arqueologia subaquática e costeira. Atua em projetos offshore, portuários e de infraestrutura costeira, com equipe certificada em mergulho científico e técnico.",
+      competencias: [
+        "Diagnóstico Subaquático",
+        "Apoio Técnico Offshore",
+        "Investigações em Ambientes Aquáticos",
+        "Operações Embarcadas",
+      ],
+      paperNoEcossistema:
+        "Especialista em ambientes aquáticos, expandindo a atuação do grupo para setores de energia offshore e infraestrutura costeira.",
+      diferenciais: [
+        "Certificação em mergulho científico",
+        "Operações em águas profundas",
+        "Expertise em patrimônio naval",
+      ],
+    },
+    {
+      id: "arqueoeduc",
+      name: "ArqueoEduc",
+      subtitle: "Educação & Comunicação",
+      color: "#861720",
+      logo: ASSETS.logoArqueoeduc,
+      description:
+        "Braço educacional e de comunicação social do grupo. Desenvolve programas de educação patrimonial, comunicação social e engajamento comunitário como parte dos processos de licenciamento.",
+      competencias: [
+        "Educação Patrimonial",
+        "Comunicação Estratégica",
+        "Engajamento Social",
+        "Mediação Institucional",
+      ],
+      paperNoEcossistema:
+        "Responsável pela comunicação institucional e engajamento comunitário, garantindo transparência e valor social dos projetos.",
+      diferenciais: [
+        "Programas de educação patrimonial inovadores",
+        "Comunicação estratégica com stakeholders",
+        "Engajamento comunitário estruturado",
+      ],
+    },
+    {
+      id: "arqueorrede",
+      name: "ArqueoRede",
+      subtitle: "Rede Colaborativa",
+      color: "#EE7501",
+      logo: ASSETS.logoArqueoproject,
+      description:
+        "Plataforma de rede colaborativa que integra profissionais e instituições do setor arqueológico. Facilita parcerias estratégicas e compartilhamento de conhecimento entre especialistas.",
+      competencias: [
+        "Integração de Especialistas",
+        "Capilaridade Operacional",
+        "Apoio Regional",
+        "Articulação Técnica em Rede",
+      ],
+      paperNoEcossistema:
+        "Rede que amplia a capilaridade do grupo, conectando especialistas e facilitando operações regionais descentralizadas.",
+      diferenciais: [
+        "Rede nacional de profissionais",
+        "Suporte técnico regionalizado",
+        "Parcerias estratégicas consolidadas",
+      ],
+    },
+    {
+      id: "sigepa",
+      name: "SIGEPA Plus",
+      subtitle: "Gestão Integrada",
+      color: "#EE7501",
+      logo: ASSETS.logoArqueoproject,
+      description:
+        "Sistema de gestão integrada para projetos arqueológicos. Centraliza informações, facilita colaboração entre equipes e otimiza processos de documentação e relatórios.",
+      competencias: [
+        "Organização de Dados",
+        "Rastreabilidade Operacional",
+        "Gestão de Projetos",
+        "Padronização de Processos",
+      ],
+      paperNoEcossistema:
+        "Infraestrutura de gestão que integra todas as operações do grupo, garantindo padronização, rastreabilidade e eficiência.",
+      diferenciais: [
+        "Sistema integrado de gestão de projetos",
+        "Padronização de processos operacionais",
+        "Rastreabilidade completa de dados",
+      ],
+    },
+  ];
+
+  const nextPilar = () => {
+    setCurrentPilarIndex(prev => (prev + 1) % pilares.length);
+  };
+
+  const prevPilar = () => {
+    setCurrentPilarIndex(prev => (prev - 1 + pilares.length) % pilares.length);
+  };
+
+  const goToPilar = (index: number) => {
+    setCurrentPilarIndex(index);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDiagramLoaded(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Get selected empresa data
+  const selectedEmpresaData = empresas.find(emp => emp.id === selectedEmpresa);
+
+  // CSS para animações
+  const animationStyles = `
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .logo-fade-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .panel-slide {
+      animation: slideInRight 0.4s ease-out;
+    }
+  `;
+
   return (
-    <div className="w-full bg-gradient-to-b from-white via-gray-50 to-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Nosso Time
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Uma equipe multidisciplinar dedicada à excelência em arqueologia, pesquisa e inovação
-          </p>
-        </motion.div>
+    <PortfolioLayout chapterNum="02" chapterTitle="Quem Somos & Ecossistema" prevPath="/" prevLabel="Home" nextPath="/missao-visao" nextLabel="Missão e Valores">
+      <div className="min-h-screen bg-white">
+        <style>{animationStyles}</style>
 
-        {/* Team Composition - Bubble Map Style */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
-          className="relative mx-auto rounded-3xl overflow-hidden"
-          style={{
-            maxWidth: '1100px',
-            height: '700px',
-            background: 'linear-gradient(135deg, #861720 0%, #7A1520 30%, #A01B28 55%, #C43A1A 75%, #EE7501 100%)',
-            boxShadow: '0 30px 90px rgba(134, 23, 32, 0.35)',
-          }}
-        >
-          {/* Concentric background circles - subtle */}
-          <div className="absolute inset-0" style={{ zIndex: 0 }}>
-            <div className="absolute rounded-full" style={{ width: 350, height: 350, top: '42%', left: '48%', transform: 'translate(-50%, -50%)', border: '1.5px solid rgba(255,255,255,0.06)' }} />
-            <div className="absolute rounded-full" style={{ width: 520, height: 520, top: '42%', left: '48%', transform: 'translate(-50%, -50%)', border: '1.5px solid rgba(255,255,255,0.04)' }} />
-            <div className="absolute rounded-full" style={{ width: 720, height: 720, top: '42%', left: '48%', transform: 'translate(-50%, -50%)', border: '1px solid rgba(255,255,255,0.03)' }} />
+        {/* SEÇÃO 1: QUEM SOMOS - Hero */}
+        <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#EE7501" }}>
+                  — QUEM SOMOS
+                </p>
+                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: "#1A1A1A" }}>
+                  Dez anos de <span style={{ color: "#EE7501" }}>excelência</span> em arqueologia
+                </h2>
+                <p className="text-lg leading-relaxed mb-8" style={{ color: "#555555" }}>
+                  Há uma década, o Grupo Arqueo une competência técnica, inovação tecnológica e gestão estratégica para oferecer soluções completas em licenciamento sociocultural no Brasil.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <img src={ASSETS.logo10anos} alt="10 Anos Grupo Arqueo" className="h-40 lg:h-56 object-contain" />
+              </div>
+            </div>
           </div>
+        </section>
 
-          {/* Decorative empty circles (small dots with ring) */}
-          {decorCircles.map((dot, i) => (
-            <div
-              key={`dot-${i}`}
-              className="absolute rounded-full"
-              style={{
-                top: dot.top,
-                left: dot.left,
-                width: dot.size,
-                height: dot.size,
-                border: `3px solid rgba(255,255,255,${dot.opacity})`,
-                backgroundColor: `rgba(255,255,255,${dot.opacity * 0.3})`,
-                zIndex: 1,
-              }}
-            />
-          ))}
+        {/* SEÇÃO 2: TIMELINE */}
+        <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: "#FFFFFF" }}>
+          <div className="max-w-7xl mx-auto">
+            <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#EE7501" }}>
+              — NOSSA TRAJETÓRIA
+            </p>
+            <h3 className="text-3xl lg:text-4xl font-bold mb-12" style={{ color: "#1A1A1A" }}>
+              Marcos de crescimento
+            </h3>
 
-          {/* Team Bubbles */}
-          {teamBubbles.map((member, index) => {
-            const isCenter = member.id === 'ceo';
-            const ringGap = (member.ringSize - member.photoSize) / 2;
-
-            return (
-              <div
-                key={member.id}
-                className="absolute"
-                style={{
-                  zIndex: member.zIndex,
-                  top: member.top,
-                  left: member.left,
-                  transform: 'translate(-50%, -50%)',
-                }}
-              >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.7 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.06 }}
-                  className="flex flex-col items-center group cursor-pointer"
-                >
-                  {/* Outer glow ring */}
-                  <div
-                    className="rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-105"
-                    style={{
-                      width: member.ringSize,
-                      height: member.ringSize,
-                      border: isCenter
-                        ? '3px solid rgba(255,255,255,0.3)'
-                        : '2px solid rgba(255,255,255,0.2)',
-                      backgroundColor: 'rgba(255,255,255,0.06)',
-                      boxShadow: isCenter
-                        ? '0 0 40px rgba(255,255,255,0.08), inset 0 0 30px rgba(255,255,255,0.04)'
-                        : '0 0 20px rgba(255,255,255,0.05), inset 0 0 15px rgba(255,255,255,0.03)',
-                    }}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {timeline.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="relative"
                   >
-                    {/* Inner photo circle */}
-                    <div
-                      className="rounded-full overflow-hidden transition-all duration-300 group-hover:shadow-lg"
+                    <div className="flex flex-col items-center text-center">
+                      <div
+                        className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
+                        style={{ backgroundColor: item.badgeColor }}
+                      >
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-2xl font-bold mb-2" style={{ color: item.badgeColor }}>
+                        {item.year}
+                      </h4>
+                      <h5 className="text-lg font-semibold mb-2" style={{ color: "#1A1A1A" }}>
+                        {item.title}
+                      </h5>
+                      <p style={{ color: "#555555" }} className="text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* SEÇÃO 3: ECOSSISTEMA - Cabeçalho */}
+        <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-8 lg:gap-12 mb-12">
+              <div className="flex-shrink-0">
+                <img src={ASSETS.logo10anos} alt="10 Anos Grupo Arqueo" className="h-20 lg:h-28 object-contain" />
+              </div>
+              <div>
+                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: "#1A1A1A" }}>
+                  Um ecossistema,<br />múltiplas especialidades
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SEÇÃO 4: ECOSSISTEMA - Layout Principal */}
+        <section className="py-12 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: "#FFFFFF" }}>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+              {/* Coluna Principal - Diagrama */}
+              <div className="lg:col-span-3">
+                {/* Diagrama Orbital */}
+                <div
+                  ref={diagramRef}
+                  className="flex justify-center mb-12"
+                  style={{
+                    opacity: diagramLoaded ? 1 : 0,
+                    transform: diagramLoaded ? "scale(1) translateY(0)" : "scale(0.95) translateY(20px)",
+                    transition: "opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                  }}
+                >
+                  <img
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-6_5e5eb982.webp"
+                    alt="Diagrama Orbital Grupo Arqueo"
+                    className="w-full max-w-2xl h-auto drop-shadow-lg"
+                    onLoad={() => setDiagramLoaded(true)}
+                    style={{ pointerEvents: "none" }}
+                  />
+                </div>
+
+                {/* Navegação Inferior - Cards Clicáveis */}
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                  {empresas.map(emp => (
+                    <button
+                      key={emp.id}
+                      onClick={() => setSelectedEmpresa(emp.id)}
+                      onMouseEnter={() => setHoveredEmpresa(emp.id)}
+                      onMouseLeave={() => setHoveredEmpresa(null)}
+                      className="text-left p-4 rounded-lg transition-all duration-300 logo-fade-in"
                       style={{
-                        width: member.photoSize,
-                        height: member.photoSize,
-                        border: isCenter
-                          ? '4px solid rgba(255,255,255,0.7)'
-                          : '3px solid rgba(255,255,255,0.55)',
-                        boxShadow: '0 8px 30px rgba(0,0,0,0.2)',
+                        backgroundColor: selectedEmpresa === emp.id ? `${emp.color}15` : "transparent",
+                        border: selectedEmpresa === emp.id ? `2px solid ${emp.color}` : `1px solid #E6E6E6`,
+                        opacity: hoveredEmpresa === emp.id || selectedEmpresa === emp.id ? 1 : 0.7,
+                        transform: hoveredEmpresa === emp.id ? "scale(1.02)" : "scale(1)",
                       }}
                     >
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
+                      <p className="font-bold text-sm" style={{ color: emp.color }}>
+                        {emp.name}
+                      </p>
+                      <p className="text-xs mt-1" style={{ color: "#999999" }}>
+                        {emp.subtitle}
+                      </p>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Coluna Lateral - Painel Contextual */}
+              <div className="lg:col-span-2">
+                {selectedEmpresaData ? (
+                  <div
+                    className="panel-slide sticky top-8 p-6 rounded-xl"
+                    style={{ backgroundColor: "#FAFAF9", border: "1px solid #E6E6E6" }}
+                  >
+                    {/* Logo */}
+                    <div
+                      className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
+                      style={{ backgroundColor: selectedEmpresaData.color }}
+                    >
+                      <img src={selectedEmpresaData.logo} alt={selectedEmpresaData.name} className="w-10 h-10 object-contain" />
+                    </div>
+
+                    {/* Nome e Subtítulo */}
+                    <h3 className="text-xl font-bold mb-1" style={{ color: selectedEmpresaData.color }}>
+                      {selectedEmpresaData.name}
+                    </h3>
+                    <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#999999" }}>
+                      {selectedEmpresaData.subtitle}
+                    </p>
+
+                    {/* Divisor */}
+                    <div className="h-px mb-4" style={{ backgroundColor: "#E6E6E6" }} />
+
+                    {/* Descrição */}
+                    <p className="text-sm leading-relaxed mb-6" style={{ color: "#555555" }}>
+                      {selectedEmpresaData.description}
+                    </p>
+
+                    {/* Competências */}
+                    <div className="mb-6">
+                      <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#999999" }}>
+                        Competências
+                      </p>
+                      <div className="space-y-2">
+                        {selectedEmpresaData.competencias.map((comp, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <div
+                              className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
+                              style={{ backgroundColor: selectedEmpresaData.color }}
+                            />
+                            <span className="text-sm" style={{ color: "#555555" }}>
+                              {comp}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Papel no Ecossistema */}
+                    <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: `${selectedEmpresaData.color}10` }}>
+                      <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: selectedEmpresaData.color }}>
+                        Papel no Ecossistema
+                      </p>
+                      <p className="text-sm leading-relaxed" style={{ color: "#555555" }}>
+                        {selectedEmpresaData.paperNoEcossistema}
+                      </p>
+                    </div>
+
+                    {/* Diferenciais */}
+                    <div>
+                      <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#999999" }}>
+                        Principais Entregas
+                      </p>
+                      <div className="space-y-2">
+                        {selectedEmpresaData.diferenciais.map((dif, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <div
+                              className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
+                              style={{ backgroundColor: selectedEmpresaData.color }}
+                            />
+                            <span className="text-sm" style={{ color: "#555555" }}>
+                              {dif}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </motion.div>
+                ) : (
+                  <div className="sticky top-8 p-6 rounded-xl text-center" style={{ backgroundColor: "#FAFAF9", border: "1px solid #E6E6E6" }}>
+                    <p style={{ color: "#999999" }}>Selecione uma empresa para ver detalhes</p>
+                  </div>
+                )}
               </div>
-            );
-          })}
-        </motion.div>
+            </div>
+          </div>
+        </section>
 
-        {/* Team Values Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-12"
-        >
-          <div className="text-center">
-            <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg">
-              <span className="text-white text-2xl">🎯</span>
+        {/* SEÇÃO 5: PILARES DA SINERGIA */}
+        <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
+          <div className="max-w-7xl mx-auto">
+            <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#EE7501" }}>
+              — PILARES DA SINERGIA
+            </p>
+            <h3 className="text-3xl lg:text-4xl font-bold mb-12" style={{ color: "#1A1A1A" }}>
+              O que sustenta nossa integração
+            </h3>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                {pilares.map((pilar, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => goToPilar(idx)}
+                    className="w-full text-left p-6 rounded-lg transition-all duration-300"
+                    style={{
+                      backgroundColor: currentPilarIndex === idx ? "#EE7501" : "#FFFFFF",
+                      border: `1px solid ${currentPilarIndex === idx ? "#EE7501" : "#E6E6E6"}`,
+                    }}
+                  >
+                    <p className="text-sm font-bold mb-2" style={{ color: currentPilarIndex === idx ? "#FFFFFF" : "#EE7501" }}>
+                      {pilar.num}
+                    </p>
+                    <h4 className="text-lg font-bold mb-2" style={{ color: currentPilarIndex === idx ? "#FFFFFF" : "#1A1A1A" }}>
+                      {pilar.title}
+                    </h4>
+                    <p style={{ color: currentPilarIndex === idx ? "#FFFFFF" : "#555555" }} className="text-sm">
+                      {pilar.desc}
+                    </p>
+                  </button>
+                ))}
+              </div>
+
+              <div className="flex flex-col items-center justify-center">
+                <div className="w-full max-w-sm aspect-square rounded-2xl flex items-center justify-center mb-8" style={{ backgroundColor: "#EE7501" }}>
+                  <div className="text-center">
+                    <p className="text-6xl font-bold text-white mb-2">{pilares[currentPilarIndex].num}</p>
+                    <h4 className="text-2xl font-bold text-white">{pilares[currentPilarIndex].title}</h4>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <button
+                    onClick={prevPilar}
+                    className="p-2 rounded-full transition-all"
+                    style={{ backgroundColor: "#E6E6E6", color: "#1A1A1A" }}
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={nextPilar}
+                    className="p-2 rounded-full transition-all"
+                    style={{ backgroundColor: "#E6E6E6", color: "#1A1A1A" }}
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                </div>
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Excelência</h3>
-            <p className="text-gray-600 leading-relaxed">Comprometidos com os mais altos padrões de qualidade em cada projeto</p>
           </div>
-          <div className="text-center">
-            <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg">
-              <span className="text-white text-2xl">🤝</span>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Colaboração</h3>
-            <p className="text-gray-600 leading-relaxed">Trabalhando juntos para alcançar objetivos compartilhados e inovadores</p>
-          </div>
-          <div className="text-center">
-            <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg">
-              <span className="text-white text-2xl">💡</span>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Inovação</h3>
-            <p className="text-gray-600 leading-relaxed">Explorando novas metodologias e perspectivas em arqueologia</p>
-          </div>
-        </motion.div>
+        </section>
       </div>
-    </div>
+    </PortfolioLayout>
   );
 }
