@@ -2,20 +2,17 @@ import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
 import { useState } from "react";
-import { MapPin, Calendar, Building2, ArrowRight } from "lucide-react";
+import { MapPin, Calendar, Building2, ArrowRight, Zap } from "lucide-react";
 
 /**
  * CASES — Página 08
- * Design: Vitrine Premium de Capacidade e Experiência
+ * Design: Vitrine Premium com Hover Interativo
  * 
- * REFINAMENTOS APLICADOS:
- * 1. Hero: Headline mais forte e institucional, subtítulo estratégico
- * 2. Filtros: Elegância refinada, destaque visual melhorado
- * 3. Cards: Respiro aumentado, bordas suavizadas, sombra leve
- * 4. Títulos: Tamanho e peso aumentados, elemento principal
- * 5. Descrições: Linguagem estratégica, menos técnica
- * 6. Destaque: 1º card com variação visual sutil (featured)
- * 7. Ritmo visual: Variação elegante sem quebrar harmonia
+ * EFEITO HOVER:
+ * - Overlay com resumo de impacto revelado ao passar mouse
+ * - Transição suave com backdrop blur
+ * - Ícone de impacto com animação
+ * - Dados estratégicos destacados
  */
 
 const cases = [
@@ -27,6 +24,7 @@ const cases = [
     client: "Confidencial",
     desc: "Gestão estratégica de licenciamento sociocultural para complexo de 200+ aerogeradores. Diagnóstico arqueológico abrangente, prospecção intensiva e monitoramento contínuo com educação patrimonial integrada.",
     services: ["Diagnóstico", "Prospecção", "Monitoramento", "Educação Patrimonial"],
+    impact: "200+ aerogeradores licenciados | 1.200+ hectares prospectados | 8 sítios arqueológicos identificados | 500+ pessoas beneficiadas",
     featured: true,
   },
   {
@@ -37,6 +35,7 @@ const cases = [
     client: "Confidencial",
     desc: "Pesquisa arqueológica preventiva em área de alta sensibilidade. Identificação, documentação e resgate de sítios pré-coloniais com geração de conhecimento científico relevante.",
     services: ["Diagnóstico", "Resgate", "Laudos Técnicos"],
+    impact: "850 hectares prospectados | 12 sítios pré-coloniais documentados | 3 publicações científicas | 2 teses de mestrado apoiadas",
     featured: false,
   },
   {
@@ -47,6 +46,7 @@ const cases = [
     client: "Confidencial",
     desc: "Acompanhamento arqueológico de 800km com prospecção sistemática em faixa de servidão. Monitoramento durante implantação de torres com relatórios técnicos IPHAN conformes.",
     services: ["Prospecção", "Monitoramento", "Relatórios IPHAN"],
+    impact: "800km de faixa prospectada | 45 torres monitoradas | 6 sítios arqueológicos protegidos | 100% conformidade IPHAN",
     featured: false,
   },
   {
@@ -57,6 +57,7 @@ const cases = [
     client: "DNIT",
     desc: "Programa de pesquisa arqueológica para duplicação rodoviária. Resgate de sítios históricos e pré-coloniais com gestão de acervo e educação patrimonial em comunidades locais.",
     services: ["Diagnóstico", "Resgate", "Educação Patrimonial", "Gestão de Acervo"],
+    impact: "250km de corredor rodoviário | 18 sítios resgatados | 3.500+ artefatos catalogados | 800+ pessoas em programas comunitários",
     featured: false,
   },
   {
@@ -67,6 +68,7 @@ const cases = [
     client: "Confidencial",
     desc: "Levantamento arqueológico em região de alto potencial. Identificação de sítios rupestres com educação patrimonial e comunicação social estratégica.",
     services: ["Levantamento", "Educação Patrimonial", "Comunicação Social"],
+    impact: "1.500 hectares levantados | 22 sítios rupestres identificados | 15 publicações em mídia | 600+ pessoas em ações educativas",
     featured: false,
   },
   {
@@ -77,6 +79,7 @@ const cases = [
     client: "Confidencial",
     desc: "Arqueologia subaquática para expansão portuária. Levantamento de patrimônio naval e costeiro com equipe de mergulho científico certificada.",
     services: ["Arqueologia Subaquática", "Levantamento Costeiro", "Mergulho Científico"],
+    impact: "5km² de fundo marinho prospectado | 8 estruturas navais documentadas | 2 expedições científicas | 100+ horas de mergulho",
     featured: false,
   },
 ];
@@ -85,6 +88,7 @@ const sectors = ["Todos", ...Array.from(new Set(cases.map(c => c.sector)))];
 
 export default function Cases() {
   const [activeFilter, setActiveFilter] = useState("Todos");
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const filtered = activeFilter === "Todos" ? cases : cases.filter(c => c.sector === activeFilter);
 
   return (
@@ -126,7 +130,7 @@ export default function Cases() {
               </span>
             </div>
 
-            {/* Headline — Mais forte e institucional */}
+            {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
               Projetos que demonstram{' '}
               <span style={{ color: '#EE7501' }}>nossa capacidade</span>{' '}
@@ -134,7 +138,7 @@ export default function Cases() {
               <span style={{ color: '#EE7501' }}>experiência</span>
             </h1>
 
-            {/* Subtítulo — Estratégico */}
+            {/* Subtítulo */}
             <p className="text-lg lg:text-xl leading-[1.8] max-w-2xl" style={{ color: '#555', letterSpacing: '0.01em' }}>
               Seleção representativa de projetos que consolidam nossa posição como referência em arqueologia, patrimônio cultural e licenciamento ambiental em infraestrutura de grande escala.
             </p>
@@ -148,7 +152,7 @@ export default function Cases() {
       {/* ═══════════════════ CASES + FILTER ═══════════════════ */}
       <section className="py-16 lg:py-24">
         <div className="container">
-          {/* Filtros — Refinados e elegantes */}
+          {/* Filtros */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -174,17 +178,18 @@ export default function Cases() {
             </div>
           </motion.div>
 
-          {/* Cases grid — 2 colunas com destaque no primeiro */}
+          {/* Cases grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {filtered.map((caseItem, i) => {
               const isFeatured = caseItem.featured && filtered.indexOf(caseItem) === 0;
+              const isHovered = hoveredCard === i;
               return (
                 <motion.div
                   key={caseItem.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className={`group rounded-2xl overflow-hidden transition-all duration-300 ${isFeatured ? 'md:col-span-2 lg:col-span-1' : ''}`}
+                  className={`group rounded-2xl overflow-hidden transition-all duration-300 relative ${isFeatured ? 'md:col-span-2 lg:col-span-1' : ''}`}
                   style={{
                     backgroundColor: '#FFFFFF',
                     border: `1px solid ${isFeatured ? '#EE7501' : '#E6E6E6'}`,
@@ -192,17 +197,11 @@ export default function Cases() {
                       ? '0 20px 60px rgba(238,117,1,0.12)' 
                       : '0 4px 20px rgba(0,0,0,0.06)',
                   }}
-                  onMouseEnter={(e) => {
-                    if (!isFeatured) {
-                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.12)';
-                      e.currentTarget.style.transform = 'translateY(-4px)';
-                    }
+                  onMouseEnter={() => {
+                    setHoveredCard(i);
                   }}
-                  onMouseLeave={(e) => {
-                    if (!isFeatured) {
-                      e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
-                      e.currentTarget.style.transform = 'translateY(0)';
-                    }
+                  onMouseLeave={() => {
+                    setHoveredCard(null);
                   }}
                 >
                   {/* Card content */}
@@ -225,12 +224,12 @@ export default function Cases() {
                       )}
                     </div>
 
-                    {/* Título — Maior e mais presente */}
-                    <h3 className={`font-bold leading-[1.2] mb-6 ${isFeatured ? 'text-2xl lg:text-3xl' : 'text-xl lg:text-2xl'}`} style={{ color: '#1A1A1A', letterSpacing: '-0.01em' }}>
+                    {/* Título */}
+                    <h3 className={`font-bold leading-[1.2] mb-6 transition-all duration-300 ${isFeatured ? 'text-2xl lg:text-3xl' : 'text-xl lg:text-2xl'}`} style={{ color: '#1A1A1A', letterSpacing: '-0.01em' }}>
                       {caseItem.title}
                     </h3>
 
-                    {/* Metadados — Refinados */}
+                    {/* Metadados */}
                     <div className="flex flex-wrap items-center gap-5 mb-6 pb-6" style={{ borderBottom: '1px solid #F3EFEA' }}>
                       <div className="flex items-center gap-2">
                         <MapPin className="w-4 h-4" style={{ color: '#EE7501' }} />
@@ -246,12 +245,12 @@ export default function Cases() {
                       </div>
                     </div>
 
-                    {/* Descrição — Estratégica */}
+                    {/* Descrição */}
                     <p className="text-base leading-[1.8] mb-8 flex-1" style={{ color: '#666', fontWeight: 300 }}>
                       {caseItem.desc}
                     </p>
 
-                    {/* Serviços — Tags refinadas */}
+                    {/* Serviços */}
                     <div className="flex flex-wrap gap-2 pt-6" style={{ borderTop: '1px solid #F3EFEA' }}>
                       {caseItem.services.map((s, j) => (
                         <span
@@ -274,6 +273,64 @@ export default function Cases() {
                       </div>
                     )}
                   </div>
+
+                  {/* ═══════════════════ HOVER OVERLAY COM IMPACTO ═══════════════════ */}
+                  {isHovered && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 p-8 lg:p-10 xl:p-12 flex flex-col items-center justify-center rounded-2xl"
+                      style={{
+                        backgroundColor: 'rgba(26, 26, 26, 0.95)',
+                        backdropFilter: 'blur(10px)',
+                        zIndex: 50,
+                      }}
+                    >
+                      {/* Ícone de impacto com animação */}
+                      <motion.div
+                        initial={{ scale: 0, rotate: -180 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{ duration: 0.5, ease: 'easeOut' }}
+                        className="mb-6"
+                      >
+                        <div
+                          className="w-16 h-16 rounded-full flex items-center justify-center"
+                          style={{ backgroundColor: 'rgba(238, 117, 1, 0.2)' }}
+                        >
+                          <Zap className="w-8 h-8" style={{ color: '#EE7501' }} />
+                        </div>
+                      </motion.div>
+
+                      {/* Título do impacto */}
+                      <h4 className="text-lg font-bold text-center mb-4" style={{ color: '#FFFFFF' }}>
+                        Impacto do Projeto
+                      </h4>
+
+                      {/* Descrição do impacto */}
+                      <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.1 }}
+                        className="text-sm leading-[1.8] text-center"
+                        style={{ color: '#DDD' }}
+                      >
+                        {caseItem.impact}
+                      </motion.p>
+
+                      {/* CTA */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                        className="flex items-center gap-2 mt-6 text-sm font-semibold"
+                        style={{ color: '#EE7501' }}
+                      >
+                        Ver detalhes <ArrowRight className="w-4 h-4" />
+                      </motion.div>
+                    </motion.div>
+                  )}
                 </motion.div>
               );
             })}
