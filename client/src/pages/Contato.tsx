@@ -139,20 +139,19 @@ export default function Contato() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
+
 
       {/* ═══════════════════ CONTACT CONTENT ═══════════════════ */}
       <section className="py-16 lg:py-28">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
 
             {/* ─── COLUNA ESQUERDA: CONTATOS ─── */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-10"
+              className="space-y-0"
             >
               {/* Atendimento Comercial */}
               <div
@@ -283,7 +282,7 @@ export default function Contato() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="space-y-8"
+              className="space-y-0"
             >
               {/* Sede */}
               <div
