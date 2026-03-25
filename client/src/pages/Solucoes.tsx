@@ -6,67 +6,82 @@ import { motion } from "framer-motion";
 import { Search, FileText, Pickaxe, Monitor, GraduationCap, Anchor, Database, ClipboardCheck } from "lucide-react";
 
 /**
- * SOLUÇÕES — Página 05 (Redesenhada)
- * Design: Cards com borda lateral colorida, descrição completa, ícone, título e badge
- * - Hero limpo
- * - Cards em grid 3 colunas com borda lateral 4px colorida
- * - Descrição completa em cada card
- * - Ícone + Título + Badge
- * - Cores do Grupo Arqueo (bordo, laranja, azul, amarelo)
- * - Aparência premium e institucional
+ * SOLUÇÕES — Página 05 (Redesenhada com novo layout)
+ * Design: Cards com borda lateral colorida, descrição, ícone, título e badge
+ * - Conteúdo original mantido (5 blocos temáticos)
+ * - Novo layout: borda lateral 4px colorida, ícone, título, descrição, badge
+ * - Grid 3 colunas responsivo
+ * - Cores do Grupo Arqueo
  */
 
-// Dados das soluções com descrição completa
-const solutions = [
+// Blocos temáticos com suas soluções - CONTEÚDO ORIGINAL
+const solutionBlocks = [
   {
-    id: 1,
-    title: "Inovação Tecnológica",
-    description: "Utilizamos tecnologias proprietárias e ferramentas de ponta em geoprocessamento, modelagem 3D e gestão de dados, garantindo precisão e eficiência em cada projeto.",
-    icon: Database,
-    badge: "Tecnologia proprietária ArqueoGIS",
-    color: "#861720", // Bordo
-  },
-  {
-    id: 2,
-    title: "Equipe Multidisciplinar",
-    description: "Contamos com arqueólogos, historiadores, geógrafos, biólogos, educadores e especialistas em tecnologia, formando uma equipe completa e integrada.",
-    icon: Monitor,
-    badge: "Profissionais especializados em cada área",
-    color: "#EE7501", // Laranja
-  },
-  {
-    id: 3,
-    title: "Agilidade Processual",
-    description: "Gestão estratégica de prazos e processos junto ao IPHAN e órgãos estaduais, com acompanhamento proativo de condicionantes e entregas.",
-    icon: ClipboardCheck,
-    badge: "Cumprimento rigoroso de cronogramas",
+    id: "pesquisa",
+    title: "Pesquisa e Diagnóstico",
+    description: "Levantamentos especializados e avaliações técnicas para identificar potencial arqueológico e patrimônio cultural.",
     color: "#2C7EB3", // Azul
+    solutions: [
+      { name: "Diagnóstico Arqueológico", icon: Search, featured: true },
+      { name: "Prospecção e Resgate", icon: Pickaxe, featured: false },
+      { name: "Pesquisa Documental", icon: FileText, featured: false },
+    ],
   },
   {
-    id: 4,
-    title: "Compliance e Governança",
-    description: "Programa robusto de compliance com código de conduta, política anticorrupção e gestão de riscos, assegurado em todas as operações.",
-    icon: FileText,
-    badge: "Código de Conduta e Política Anticorrupção",
+    id: "gestao",
+    title: "Gestão e Licenciamento",
+    description: "Gerenciamento completo de processos de licenciamento e conformidade regulatória junto ao IPHAN.",
     color: "#861720", // Bordo
+    solutions: [
+      { name: "Gestão de Licenciamento", icon: ClipboardCheck, featured: true },
+      { name: "Laudos e Relatórios", icon: FileText, featured: false },
+      { name: "Conformidade Regulatória", icon: Monitor, featured: false },
+    ],
   },
   {
-    id: 5,
-    title: "Ecossistema Integrado",
-    description: "Quatro empresas especializadas operando de forma integrada, cobrindo desde a pesquisa de campo até educação patrimonial e arqueologia subaquática.",
-    icon: Pickaxe,
-    badge: "Solução completa em um único grupo",
+    id: "patrimonio",
+    title: "Patrimônio e Educação",
+    description: "Programas de preservação, educação patrimonial e comunicação social integrada.",
     color: "#EE7501", // Laranja
+    solutions: [
+      { name: "Educação Patrimonial", icon: GraduationCap, featured: true },
+      { name: "Comunicação Social", icon: FileText, featured: false },
+      { name: "Preservação Comunitária", icon: Monitor, featured: false },
+    ],
   },
   {
-    id: 6,
-    title: "Experiência Comprovada",
-    description: "Mais de 250 projetos gerenciados em 16 estados brasileiros, atendendo aos maiores empreendimentos de infraestrutura e energia do país.",
-    icon: Search,
-    badge: "250+ projetos em 10 anos",
-    color: "#2C7EB3", // Azul
+    id: "monitoramento",
+    title: "Monitoramento e Salvamento",
+    description: "Acompanhamento técnico durante obras e pesquisa especializada em patrimônio subaquático.",
+    color: "#F4C430", // Amarelo
+    solutions: [
+      { name: "Monitoramento Arqueológico", icon: Monitor, featured: true },
+      { name: "Arqueologia Subaquática", icon: Anchor, featured: false },
+      { name: "Resgate de Sítios", icon: Pickaxe, featured: false },
+    ],
+  },
+  {
+    id: "tecnologia",
+    title: "Tecnologia e Suporte Técnico",
+    description: "Soluções geoespaciais avançadas e tecnologia aplicada à arqueologia e patrimônio cultural.",
+    color: "#EE7501", // Laranja
+    solutions: [
+      { name: "Geoprocessamento e SIG", icon: Database, featured: true },
+      { name: "Modelagem 3D", icon: Database, featured: false },
+      { name: "Sensoriamento Remoto", icon: Database, featured: false },
+    ],
   },
 ];
+
+// Flattened array de todas as soluções para novo layout
+const allSolutions = solutionBlocks.flatMap((block) =>
+  block.solutions.map((sol) => ({
+    ...sol,
+    blockTitle: block.title,
+    blockColor: block.color,
+    blockDescription: block.description,
+  }))
+);
 
 export default function Solucoes() {
   return (
@@ -116,12 +131,12 @@ export default function Solucoes() {
       <section className="py-16 lg:py-24">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {solutions.map((solution, idx) => {
+            {allSolutions.map((solution, idx) => {
               const Icon = solution.icon;
               
               return (
                 <motion.div
-                  key={solution.id}
+                  key={`${solution.blockTitle}-${solution.name}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '0px 0px -50px 0px' }}
@@ -137,7 +152,7 @@ export default function Solucoes() {
                     className="h-full flex flex-col p-6 lg:p-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                     style={{
                       backgroundColor: '#FFFFFF',
-                      borderLeft: `4px solid ${solution.color}`,
+                      borderLeft: `4px solid ${solution.blockColor}`,
                       boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
                     }}
                   >
@@ -145,38 +160,48 @@ export default function Solucoes() {
                     <div
                       className="w-14 h-14 flex items-center justify-center rounded-lg mb-4 transition-all duration-300 group-hover:scale-110"
                       style={{
-                        backgroundColor: `${solution.color}15`,
+                        backgroundColor: `${solution.blockColor}15`,
                       }}
                     >
                       <Icon
                         className="w-7 h-7"
-                        style={{ color: solution.color }}
+                        style={{ color: solution.blockColor }}
                       />
                     </div>
 
                     {/* Title */}
                     <h3
-                      className="text-lg lg:text-xl font-bold mb-3 leading-tight"
+                      className="text-lg lg:text-xl font-bold mb-2 leading-tight"
                       style={{ color: '#2A2A2A' }}
                     >
-                      {solution.title}
+                      {solution.name}
                     </h3>
+
+                    {/* Block Category */}
+                    <p
+                      className="text-xs font-medium mb-3"
+                      style={{ color: solution.blockColor }}
+                    >
+                      {solution.blockTitle}
+                    </p>
 
                     {/* Description */}
                     <p
                       className="text-sm lg:text-base leading-relaxed mb-6 flex-grow"
                       style={{ color: '#666' }}
                     >
-                      {solution.description}
+                      {solution.blockDescription}
                     </p>
 
-                    {/* Badge */}
-                    <div
-                      className="inline-block px-3 py-1.5 rounded-full text-xs font-medium text-white"
-                      style={{ backgroundColor: solution.color }}
-                    >
-                      {solution.badge}
-                    </div>
+                    {/* Badge - Featured indicator */}
+                    {solution.featured && (
+                      <div
+                        className="inline-block px-3 py-1.5 rounded-full text-xs font-medium text-white"
+                        style={{ backgroundColor: solution.blockColor }}
+                      >
+                        Solução Estratégica
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               );
