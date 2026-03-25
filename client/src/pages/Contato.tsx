@@ -150,24 +150,19 @@ export default function Contato() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex gap-6 items-start">
+                  <a href="tel:+5561911211508" className="flex gap-6 items-start transition-transform duration-200 hover:scale-105">
                     <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
                       <Phone className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1 pt-0.5">
                       <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>Telefone</p>
-                      <div className="flex items-center gap-3 mb-3">
-                        <a href="tel:+5561911211508" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501]" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 91121-1508</a>
-                        <a href="tel:+5561911211508" className="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded transition-all duration-200 hover:scale-110" style={{ backgroundColor: '#EE7501', color: 'white' }} aria-label="Ligar para Janderson">
-                          <Phone className="w-4 h-4" />
-                        </a>
-                      </div>
+                      <p className="text-sm lg:text-base font-semibold mb-3" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 91121-1508</p>
                       <a href="https://wa.me/5561911211508" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-xs font-semibold transition-all duration-200 hover:scale-105" style={{ backgroundColor: '#25D366', color: 'white' }} aria-label="Enviar WhatsApp para Janderson">
                         <Send className="w-3.5 h-3.5" />
                         WhatsApp
                       </a>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
 
@@ -191,24 +186,19 @@ export default function Contato() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex gap-6 items-start">
+                  <a href="tel:+5561983186264" className="flex gap-6 items-start transition-transform duration-200 hover:scale-105">
                     <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
                       <Phone className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1 pt-0.5">
                       <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>Telefone</p>
-                      <div className="flex items-center gap-3 mb-3">
-                        <a href="tel:+5561983186264" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501]" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 98318-6264</a>
-                        <a href="tel:+5561983186264" className="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded transition-all duration-200 hover:scale-110" style={{ backgroundColor: '#EE7501', color: 'white' }} aria-label="Ligar para Fernanda">
-                          <Phone className="w-4 h-4" />
-                        </a>
-                      </div>
+                      <p className="text-sm lg:text-base font-semibold mb-3" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 98318-6264</p>
                       <a href="https://wa.me/5561983186264" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-xs font-semibold transition-all duration-200 hover:scale-105" style={{ backgroundColor: '#25D366', color: 'white' }} aria-label="Enviar WhatsApp para Fernanda">
                         <Send className="w-3.5 h-3.5" />
                         WhatsApp
                       </a>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
 
