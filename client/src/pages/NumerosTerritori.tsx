@@ -273,7 +273,7 @@ export default function NumerosTerritori() {
                 <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#EE7501' }}>Território</span>
               </div>
               <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-                Atuação em <span style={{ color: '#EE7501' }}>16 estados</span> brasileiros
+                Atuação em <span style={{ color: '#EE7501' }}>23 estados</span> brasileiros e o <span style={{ color: '#EE7501' }}>DF</span>
               </h1>
               <p className="text-base lg:text-lg font-light leading-relaxed mb-8" style={{ color: '#555', maxWidth: '520px' }}>
                 Com escritórios em Brasília, Natal e São Paulo, o Grupo Arqueo possui presença estratégica para atender projetos em todas as regiões do Brasil, com destaque para o Nordeste, onde concentra a maior parte de sua atuação.
