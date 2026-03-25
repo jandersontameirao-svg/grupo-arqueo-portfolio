@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
-import { Mail, Phone, MapPin, Globe, Linkedin, Instagram, MessageCircle, X } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Linkedin, Instagram, MessageCircle, X, Send } from "lucide-react";
 import { useState } from "react";
 
 /**
@@ -140,9 +140,14 @@ export default function Contato() {
                     </div>
                     <div className="flex-1 min-w-0 pt-0.5">
                       <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>E-mail</p>
-                      <a href="mailto:janderson@grupoarqueo.com.br" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
-                        janderson@grupoarqueo.com.br
-                      </a>
+                      <div className="flex items-center gap-3">
+                        <a href="mailto:janderson@grupoarqueo.com.br" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
+                          janderson@grupoarqueo.com.br
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=janderson@grupoarqueo.com.br" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded transition-all duration-200 hover:scale-110" style={{ backgroundColor: '#EE7501', color: 'white' }} aria-label="Enviar e-mail para Janderson">
+                          <Mail className="w-4 h-4" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <div className="flex gap-6 items-start">
@@ -151,7 +156,16 @@ export default function Contato() {
                     </div>
                     <div className="flex-1 pt-0.5">
                       <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>Telefone</p>
-                      <a href="tel:+5561911211508" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501]" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 91121-1508</a>
+                      <div className="flex items-center gap-3 mb-3">
+                        <a href="tel:+5561911211508" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501]" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 91121-1508</a>
+                        <a href="tel:+5561911211508" className="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded transition-all duration-200 hover:scale-110" style={{ backgroundColor: '#EE7501', color: 'white' }} aria-label="Ligar para Janderson">
+                          <Phone className="w-4 h-4" />
+                        </a>
+                      </div>
+                      <a href="https://wa.me/5561911211508" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-xs font-semibold transition-all duration-200 hover:scale-105" style={{ backgroundColor: '#25D366', color: 'white' }} aria-label="Enviar WhatsApp para Janderson">
+                        <Send className="w-3.5 h-3.5" />
+                        WhatsApp
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -167,9 +181,14 @@ export default function Contato() {
                     </div>
                     <div className="flex-1 min-w-0 pt-0.5">
                       <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>E-mail</p>
-                      <a href="mailto:Fernanda@arqueoproject.com.br" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
-                        Fernanda@arqueoproject.com.br
-                      </a>
+                      <div className="flex items-center gap-3">
+                        <a href="mailto:Fernanda@arqueoproject.com.br" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
+                          Fernanda@arqueoproject.com.br
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Fernanda@arqueoproject.com.br" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded transition-all duration-200 hover:scale-110" style={{ backgroundColor: '#EE7501', color: 'white' }} aria-label="Enviar e-mail para Fernanda">
+                          <Mail className="w-4 h-4" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <div className="flex gap-6 items-start">
@@ -178,7 +197,16 @@ export default function Contato() {
                     </div>
                     <div className="flex-1 pt-0.5">
                       <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>Telefone</p>
-                      <a href="tel:+5561983186264" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501]" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 98318-6264</a>
+                      <div className="flex items-center gap-3 mb-3">
+                        <a href="tel:+5561983186264" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501]" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 98318-6264</a>
+                        <a href="tel:+5561983186264" className="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded transition-all duration-200 hover:scale-110" style={{ backgroundColor: '#EE7501', color: 'white' }} aria-label="Ligar para Fernanda">
+                          <Phone className="w-4 h-4" />
+                        </a>
+                      </div>
+                      <a href="https://wa.me/5561983186264" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-xs font-semibold transition-all duration-200 hover:scale-105" style={{ backgroundColor: '#25D366', color: 'white' }} aria-label="Enviar WhatsApp para Fernanda">
+                        <Send className="w-3.5 h-3.5" />
+                        WhatsApp
+                      </a>
                     </div>
                   </div>
                 </div>
