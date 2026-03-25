@@ -159,26 +159,34 @@ export default function Parceiros() {
                 style={{ position: 'relative' }}
               >
                 <div
-                  className="transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-0.5"
+                  className="transition-all duration-300 group-hover:-translate-y-1"
                   style={{
                     width: '140px',
                     height: '140px',
-                    backgroundColor: 'transparent',
-                    borderRadius: '14px',
-                    border: 'none',
-                    boxShadow: 'none',
+                    backgroundColor: '#FFFFFF',
+                    borderRadius: '16px',
+                    border: '1.5px solid rgba(212,168,67,0.2)',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.04), 0 0 0 1px rgba(212,168,67,0.06)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     cursor: 'pointer',
+                    position: 'relative' as const,
+                    overflow: 'hidden',
                   }}
                 >
+                  {/* Moldura decorativa nos cantos */}
+                  <div style={{ position: 'absolute', top: '4px', left: '4px', width: '14px', height: '14px', borderTop: '2px solid rgba(212,168,67,0.35)', borderLeft: '2px solid rgba(212,168,67,0.35)', borderRadius: '4px 0 0 0' }} />
+                  <div style={{ position: 'absolute', top: '4px', right: '4px', width: '14px', height: '14px', borderTop: '2px solid rgba(212,168,67,0.35)', borderRight: '2px solid rgba(212,168,67,0.35)', borderRadius: '0 4px 0 0' }} />
+                  <div style={{ position: 'absolute', bottom: '4px', left: '4px', width: '14px', height: '14px', borderBottom: '2px solid rgba(212,168,67,0.35)', borderLeft: '2px solid rgba(212,168,67,0.35)', borderRadius: '0 0 0 4px' }} />
+                  <div style={{ position: 'absolute', bottom: '4px', right: '4px', width: '14px', height: '14px', borderBottom: '2px solid rgba(212,168,67,0.35)', borderRight: '2px solid rgba(212,168,67,0.35)', borderRadius: '0 0 4px 0' }} />
+
                   {parceiro.logo ? (
                     <img
                       src={parceiro.logo}
                       alt={parceiro.nome}
                       className="transition-transform duration-300 group-hover:scale-110"
-                      style={{ width: '95px', height: '95px', objectFit: 'contain' }}
+                      style={{ width: '90px', height: '90px', objectFit: 'contain' }}
                     />
                   ) : (
                     <span style={{ fontSize: '9px', fontWeight: 700, color: '#BBB', textAlign: 'center', padding: '0 4px' }}>
