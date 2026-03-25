@@ -210,29 +210,6 @@ export default function Contato() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: '#861720' }}>
-        <div className="container text-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-xl lg:text-3xl font-bold text-white max-w-3xl mx-auto leading-tight">
-              Pronto para iniciar seu projeto com quem entende de patrimonio cultural?
-            </h3>
-            <a
-              href="mailto:contato@grupoarqueo.com.br"
-              className="inline-flex items-center gap-2 mt-8 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
-              style={{ backgroundColor: '#EE7501' }}
-            >
-              <Mail className="w-4 h-4" />
-              Enviar E-mail
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ═══════════════════ BOTÕES FLUTUANTES ═══════════════════ */}
       <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-3">
         {/* Botões expandidos */}
