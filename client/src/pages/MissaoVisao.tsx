@@ -1,8 +1,7 @@
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
 import {
-  Target, Eye, Shield, Lightbulb, Award, Users, Leaf, ArrowRight,
-  FileCheck, Scale, MessageSquare, Lock,
+  Target, Eye, Shield, Lightbulb, Award, Users, Leaf, ArrowRight, Scale,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -22,16 +21,9 @@ const pilares = [
   { icon: Scale, title: "Diversidade", desc: "Reconhecemos e respeitamos as diferenças como fonte de enriquecimento e inovação.", color: "#2C7EB3", accent: "rgba(44,126,179,0.08)" },
 ];
 
-const complianceAxes = [
-  { icon: FileCheck, title: "Código de Conduta", desc: "Diretrizes éticas que orientam o comportamento de todos os colaboradores e parceiros.", color: "#EE7501" },
-  { icon: Scale, title: "Conflito de Interesses", desc: "Mecanismos de prevenção e gestão de situações que possam comprometer a imparcialidade.", color: "#D4A843" },
-  { icon: MessageSquare, title: "Transparência e Comunicação", desc: "Canais abertos e processos claros para garantir a integridade das informações.", color: "#2C7EB3" },
-  { icon: Lock, title: "Política de Integridade", desc: "Estrutura normativa que assegura conformidade legal e responsabilidade institucional.", color: "#861720" },
-];
 
 export default function MissaoVisao() {
   const [hoveredPilar, setHoveredPilar] = useState<number | null>(null);
-  const [hoveredAxis, setHoveredAxis] = useState<number | null>(null);
 
   return (
     <PortfolioLayout
@@ -285,106 +277,7 @@ export default function MissaoVisao() {
         </div>
       </section>
 
-      {/* ═══════════════════ Divider ═══════════════════ */}
-      <div className="container">
-        <div className="h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(134,23,32,0.12), rgba(44,126,179,0.12), transparent)' }} />
-      </div>
 
-      {/* ═══════════════════ 4. COMPLIANCE & INTEGRIDADE ═══════════════════ */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="container">
-          {/* Header */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16 lg:mb-20">
-            <div className="lg:col-span-7">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-[2px] rounded-full" style={{ backgroundColor: '#861720' }} />
-                <span className="text-[11px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#861720' }}>
-                  Governança & Compliance
-                </span>
-              </div>
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.15] mb-6" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
-                Estrutura de{' '}
-                <span style={{ color: '#861720' }}>Integridade</span>{' '}
-                e Governança
-              </h2>
-              <p className="text-base lg:text-lg leading-[1.8]" style={{ color: '#666' }}>
-                O Grupo Arqueo estrutura sua atuação com base em{' '}
-                <strong style={{ color: '#1A1A1A' }}>ética, transparência, conformidade</strong> e{' '}
-                <strong style={{ color: '#1A1A1A' }}>responsabilidade institucional</strong>, garantindo maturidade organizacional e credibilidade perante parceiros e stakeholders.
-              </p>
-            </div>
-          </div>
-
-          {/* 4 Eixos — Framework visual com núcleo central */}
-          <div className="relative">
-            {/* Central nucleus — visible on desktop */}
-            <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <div
-                className="w-32 h-32 rounded-full flex flex-col items-center justify-center"
-                style={{
-                  backgroundColor: '#F9F8F6',
-                  border: '2px solid rgba(134,23,32,0.12)',
-                  boxShadow: '0 8px 40px rgba(0,0,0,0.06)',
-                }}
-              >
-                <img src={ASSETS.logoGrupoArqueo} alt="Grupo Arqueo" className="w-16 h-auto opacity-80" />
-              </div>
-            </div>
-
-            {/* 4 Eixos grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
-              {complianceAxes.map((axis, i) => {
-                const Icon = axis.icon;
-                const isH = hoveredAxis === i;
-                return (
-                  <div
-                    key={i}
-                    className="rounded-2xl relative cursor-pointer overflow-hidden group"
-                    style={{
-                      backgroundColor: isH ? '#2A2A2A' : '#FAFAF8',
-                      border: `1px solid ${isH ? axis.color : 'rgba(0,0,0,0.06)'}`,
-                      boxShadow: isH ? `0 16px 40px rgba(0,0,0,0.1)` : '0 2px 16px rgba(0,0,0,0.02)',
-                      transform: isH ? 'translateY(-4px)' : 'translateY(0)',
-                      transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
-                    }}
-                    onMouseEnter={() => setHoveredAxis(i)}
-                    onMouseLeave={() => setHoveredAxis(null)}
-                  >
-                    {/* Top accent line */}
-                    <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: axis.color, opacity: isH ? 1 : 0.5, transition: 'opacity 0.4s ease' }} />
-
-                    <div className="p-8 lg:p-10">
-                      <div className="flex items-start gap-5 mb-6">
-                        <div
-                          className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                          style={{
-                            backgroundColor: isH ? `${axis.color}30` : `${axis.color}10`,
-                            transition: 'all 0.4s ease',
-                          }}
-                        >
-                          <Icon className="w-7 h-7" style={{ color: isH ? axis.color : axis.color, transition: 'color 0.4s ease' }} />
-                        </div>
-                        <div>
-                          <span className="text-[10px] font-semibold tracking-[0.15em] uppercase block mb-1" style={{ color: isH ? axis.color : '#BBB', transition: 'color 0.4s ease' }}>
-                            Eixo {String(i + 1).padStart(2, '0')}
-                          </span>
-                          <h3 className="text-xl font-bold" style={{ color: isH ? '#FFF' : '#1A1A1A', transition: 'color 0.4s ease' }}>
-                            {axis.title}
-                          </h3>
-                        </div>
-                      </div>
-
-                      <p className="text-sm leading-[1.8]" style={{ color: isH ? 'rgba(255,255,255,0.7)' : '#888', transition: 'color 0.4s ease', fontWeight: 300 }}>
-                        {axis.desc}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
 
     </PortfolioLayout>
   );
