@@ -49,15 +49,8 @@ export default function MissaoVisao() {
         <div className="container py-20 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
             <div className="lg:col-span-8">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-[2px] rounded-full" style={{ backgroundColor: '#861720' }} />
-                <span className="text-[11px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#861720' }}>
-                  Direcionamento Estratégico
-                </span>
-              </div>
-
-              <div className="flex items-center gap-5 lg:gap-8 mb-6">
-                <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-20 lg:h-24 xl:h-28 w-auto flex-shrink-0" />
+              <div className="flex items-center gap-8 lg:gap-12 mb-8">
+                <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-40 lg:h-48 xl:h-56 w-auto flex-shrink-0" />
                 <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-bold leading-[1.05]" style={{ color: '#1A1A1A', letterSpacing: '-0.025em' }}>
                   Os fundamentos que orientam{' '}
                   <span className="block" style={{ color: '#861720' }}>nossa atuação</span>
