@@ -503,11 +503,13 @@ export default function QuemSomosEcossistema() {
                 ))}
               </div>
 
-              {/* ROW 3 - 2 membros centralizados */}
-              <div className="relative z-10 flex justify-center gap-6 lg:gap-8">
+              {/* ROW 3 - 4 membros (2 anteriores + 2 novos) */}
+              <div className="relative z-10 flex justify-center gap-6 lg:gap-8 flex-wrap">
                 {[
                   { name: 'Assessor Jurídico', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp' },
                   { name: 'Coord. Comercial\ne de Relacionamento', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp' },
+                  { name: 'Arqueóloga', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251054_4fb88472.webp' },
+                  { name: 'Arqueólogo', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251052_bf77fd54.webp' },
                 ].map((member, idx) => (
                   <div key={idx} className="flex flex-col items-center group cursor-pointer">
                     <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 120, height: 120, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)' }}>
