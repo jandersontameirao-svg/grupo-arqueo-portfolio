@@ -128,23 +128,7 @@ export default function Territorio() {
                 </div>
               </div>
 
-              {/* Escritórios */}
-              <div className="space-y-3">
-                <h4 className="text-xs font-semibold tracking-wider uppercase" style={{ color: '#999' }}>Escritórios</h4>
-                {[
-                  { city: "Brasília – DF", role: "Sede Administrativa" },
-                  { city: "Natal – RN", role: "Base Operacional" },
-                  { city: "São Paulo – SP", role: "Escritório Comercial" },
-                ].map((office, idx) => (
-                  <div key={idx} className="flex items-center gap-3 p-3 rounded-lg" style={{ backgroundColor: '#FFFFFF', boxShadow: '0 1px 6px rgba(0,0,0,0.03)' }}>
-                    <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: '#EE7501' }} />
-                    <div>
-                      <p className="text-xs font-semibold" style={{ color: '#2A2A2A' }}>{office.city}</p>
-                      <p className="text-[10px]" style={{ color: '#888' }}>{office.role}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+
             </div>
           </div>
         </div>
