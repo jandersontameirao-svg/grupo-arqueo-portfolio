@@ -120,7 +120,7 @@ export default function Solucoes() {
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-3_aa567132.webp"
                 alt="10 anos Grupo Arqueo"
-                className="w-32 h-auto"
+                className="w-80 h-auto"
               />
             </motion.div>
 
