@@ -79,15 +79,15 @@ export default function Contato() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <div className="flex items-center gap-4 lg:gap-6">
+            <div className="flex items-center gap-6 lg:gap-8 mb-10">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-3_73dbd431.webp"
                 alt="10 Anos Arqueo"
-                className="h-16 lg:h-20 xl:h-24 w-auto flex-shrink-0"
+                className="h-24 lg:h-32 xl:h-40 w-auto flex-shrink-0"
               />
-              <div className="text-4xl lg:text-6xl xl:text-7xl font-bold" style={{ color: '#EE7501' }}>Arqueo</div>
+              <div className="text-5xl lg:text-7xl xl:text-8xl font-bold" style={{ color: '#EE7501' }}>Arqueo</div>
             </div>
-            <p className="text-lg lg:text-xl font-light leading-relaxed" style={{ color: '#444', maxWidth: '600px', letterSpacing: '0.3px' }}>
+            <p className="text-xl lg:text-2xl font-medium leading-relaxed" style={{ color: '#333', maxWidth: '700px', letterSpacing: '0.4px', lineHeight: '1.8' }}>
               Conectamos expertise em arqueologia, patrimônio cultural e licenciamento ambiental com soluções inovadoras para seus projetos.
             </p>
           </motion.div>
@@ -120,14 +120,9 @@ export default function Contato() {
                     </div>
                     <div className="flex-1 min-w-0 pt-0.5">
                       <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>E-mail</p>
-                      <div className="flex items-center gap-3">
-                        <a href="mailto:janderson@grupoarqueo.com.br" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
-                          janderson@grupoarqueo.com.br
-                        </a>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=janderson@grupoarqueo.com.br" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded transition-all duration-200 hover:scale-110" style={{ backgroundColor: '#EE7501', color: 'white' }} aria-label="Enviar e-mail para Janderson">
-                          <Mail className="w-4 h-4" />
-                        </a>
-                      </div>
+                      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=janderson@grupoarqueo.com.br" target="_blank" rel="noopener noreferrer" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }} aria-label="Enviar e-mail para Janderson">
+                      janderson@grupoarqueo.com.br
+                    </a>
                     </div>
                   </div>
                   <a href="tel:+5561911211508" className="flex gap-6 items-start transition-transform duration-200 hover:scale-105">
@@ -156,14 +151,9 @@ export default function Contato() {
                     </div>
                     <div className="flex-1 min-w-0 pt-0.5">
                       <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>E-mail</p>
-                      <div className="flex items-center gap-3">
-                        <a href="mailto:Fernanda@arqueoproject.com.br" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
-                          Fernanda@arqueoproject.com.br
-                        </a>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Fernanda@arqueoproject.com.br" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded transition-all duration-200 hover:scale-110" style={{ backgroundColor: '#EE7501', color: 'white' }} aria-label="Enviar e-mail para Fernanda">
-                          <Mail className="w-4 h-4" />
-                        </a>
-                      </div>
+                      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Fernanda@arqueoproject.com.br" target="_blank" rel="noopener noreferrer" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }} aria-label="Enviar e-mail para Fernanda">
+                      Fernanda@arqueoproject.com.br
+                    </a>
                     </div>
                   </div>
                   <a href="tel:+5561983186264" className="flex gap-6 items-start transition-transform duration-200 hover:scale-105">
