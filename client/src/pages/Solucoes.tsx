@@ -150,44 +150,7 @@ export default function Solucoes() {
         </div>
       </section>
 
-      {/* Sectors */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: '#2A2A2A' }}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>Setores</span>
-            </div>
-            <h2 className="text-2xl lg:text-3xl font-bold text-white">
-              Setores de <span style={{ color: '#EE7501' }}>atuação</span>
-            </h2>
-          </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              "Energia Eólica", "Energia Solar", "Linhas de Transmissão",
-              "Rodovias", "Mineração", "Construção Civil",
-            ].map((setor, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="p-4 text-center transition-all duration-300 hover:bg-white/10"
-                style={{ border: '1px solid rgba(255,255,255,0.1)' }}
-              >
-                <p className="text-xs font-medium text-white">{setor}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </PortfolioLayout>
   );
 }
