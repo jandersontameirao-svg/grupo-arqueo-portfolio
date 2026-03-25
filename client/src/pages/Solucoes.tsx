@@ -83,8 +83,8 @@ export default function Solucoes() {
       nextPath="/diferenciais"
       nextLabel="Diferenciais"
     >
-      {/* Hero Section — Limpo e forte */}
-      <section className="relative min-h-[450px] lg:min-h-[550px] flex items-center overflow-hidden">
+      {/* Hero Section — Moderno e compacto */}
+      <section className="relative min-h-[350px] lg:min-h-[420px] flex items-center overflow-hidden">
         {/* Background image + gradient overlay */}
         <div className="absolute inset-0 -z-10">
           <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
@@ -121,10 +121,10 @@ export default function Solucoes() {
       </section>
 
       {/* Divider */}
-      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
+      <div className="h-px my-8 lg:my-12" style={{ backgroundColor: '#E6E6E6' }} />
 
       {/* Solution Blocks — Modular, scalable architecture */}
-      <section className="py-16 lg:py-28">
+      <section className="py-10 lg:py-16">
         <div className="container">
           {solutionBlocks.map((block, blockIdx) => (
             <motion.div
@@ -133,11 +133,11 @@ export default function Solucoes() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: blockIdx * 0.1 }}
-              className={`mb-20 lg:mb-28 ${blockIdx !== solutionBlocks.length - 1 ? 'pb-20 lg:pb-28 border-b' : ''}`}
+              className={`mb-12 lg:mb-16 ${blockIdx !== solutionBlocks.length - 1 ? 'pb-12 lg:pb-16 border-b' : ''}`}
               style={{ borderBottomColor: blockIdx !== solutionBlocks.length - 1 ? '#E6E6E6' : 'transparent' }}
             >
               {/* Block Header */}
-              <div className="mb-12 lg:mb-16">
+              <div className="mb-8 lg:mb-10">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-1 h-6" style={{ backgroundColor: block.color }} />
                   <h2 className="text-2xl lg:text-3xl font-bold" style={{ color: '#2A2A2A' }}>
@@ -150,7 +150,7 @@ export default function Solucoes() {
               </div>
 
               {/* Solutions Grid — Minimalist cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
                 {block.solutions.map((sol, solIdx) => {
                   const Icon = sol.icon;
                   const isFeatured = sol.featured;
@@ -162,11 +162,11 @@ export default function Solucoes() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: solIdx * 0.08 }}
-                      className="group cursor-pointer transition-all duration-500 hover:-translate-y-1"
+                      className="group cursor-pointer transition-all duration-500 hover:-translate-y-0.5"
                     >
                       {/* Card container — Minimalist and premium */}
                       <div
-                        className={`h-full flex flex-col items-center justify-center p-8 lg:p-10 rounded-lg transition-all duration-500 text-center ${
+                        className={`h-full flex flex-col items-center justify-center p-5 lg:p-6 rounded-lg transition-all duration-500 text-center ${
                           isFeatured ? 'hover:shadow-lg' : 'hover:shadow-md'
                         }`}
                         style={{
@@ -177,13 +177,13 @@ export default function Solucoes() {
                       >
                         {/* Icon — Premium styling */}
                         <div
-                          className="mb-5 w-14 h-14 flex items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110"
+                          className="mb-3 w-12 h-12 flex items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-105"
                           style={{
                             backgroundColor: isFeatured ? `${block.color}15` : '#F3EFEA',
                           }}
                         >
                           <Icon
-                            className="w-7 h-7 transition-colors duration-300"
+                            className="w-6 h-6 transition-colors duration-300"
                             style={{
                               color: isFeatured ? block.color : '#999',
                             }}
@@ -192,7 +192,7 @@ export default function Solucoes() {
 
                         {/* Title — Clean and legible */}
                         <h3
-                          className="text-base lg:text-lg font-semibold leading-tight"
+                          className="text-sm lg:text-base font-semibold leading-tight"
                           style={{ color: '#2A2A2A' }}
                         >
                           {sol.name}
@@ -200,7 +200,7 @@ export default function Solucoes() {
 
                         {/* Featured indicator — Subtle */}
                         {isFeatured && (
-                          <div className="mt-3 text-[11px] font-medium uppercase tracking-wider" style={{ color: block.color }}>
+                          <div className="mt-2 text-[10px] font-medium uppercase tracking-wider" style={{ color: block.color }}>
                             Destaque
                           </div>
                         )}
@@ -215,7 +215,7 @@ export default function Solucoes() {
       </section>
 
       {/* CTA Section — Closing institutional message */}
-      <section className="py-16 lg:py-20 border-t" style={{ borderTopColor: '#E6E6E6' }}>
+      <section className="py-10 lg:py-12 border-t" style={{ borderTopColor: '#E6E6E6' }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -223,10 +223,10 @@ export default function Solucoes() {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <h3 className="text-lg lg:text-xl font-bold mb-4" style={{ color: '#2A2A2A' }}>
+            <h3 className="text-base lg:text-lg font-bold mb-3" style={{ color: '#2A2A2A' }}>
               Soluções customizadas
             </h3>
-            <p className="text-sm font-light leading-relaxed" style={{ color: '#888' }}>
+            <p className="text-xs lg:text-sm font-light leading-relaxed" style={{ color: '#888' }}>
               Além de nossos serviços principais, desenvolvemos soluções integradas e personalizadas conforme as necessidades específicas de cada projeto. Converse com nossos especialistas para conhecer as possibilidades.
             </p>
           </motion.div>
