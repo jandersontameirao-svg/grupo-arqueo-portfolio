@@ -20,7 +20,7 @@ const solutionBlocks = [
     id: "pesquisa",
     title: "Pesquisa e Diagnóstico",
     description: "Levantamentos especializados e avaliações técnicas para identificar potencial arqueológico e patrimônio cultural.",
-    color: "#2C7EB3", // Azul
+    color: "#2C7EB3", // Azul Grupo Arqueo
     solutions: [
       { name: "Diagnóstico Arqueológico", icon: Search, featured: true },
       { name: "Prospecção e Resgate", icon: Pickaxe, featured: false },
@@ -31,7 +31,7 @@ const solutionBlocks = [
     id: "gestao",
     title: "Gestão e Licenciamento",
     description: "Gerenciamento completo de processos de licenciamento e conformidade regulatória junto ao IPHAN.",
-    color: "#861720", // Bordo
+    color: "#861720", // Bordo Grupo Arqueo
     solutions: [
       { name: "Gestão de Licenciamento", icon: ClipboardCheck, featured: true },
       { name: "Laudos e Relatórios", icon: FileText, featured: false },
@@ -42,7 +42,7 @@ const solutionBlocks = [
     id: "patrimonio",
     title: "Patrimônio e Educação",
     description: "Programas de preservação, educação patrimonial e comunicação social integrada.",
-    color: "#EE7501", // Laranja
+    color: "#EE7501", // Laranja Grupo Arqueo
     solutions: [
       { name: "Educação Patrimonial", icon: GraduationCap, featured: true },
       { name: "Comunicação Social", icon: FileText, featured: false },
@@ -53,7 +53,7 @@ const solutionBlocks = [
     id: "monitoramento",
     title: "Monitoramento e Salvamento",
     description: "Acompanhamento técnico durante obras e pesquisa especializada em patrimônio subaquático.",
-    color: "#2C7EB3", // Azul
+    color: "#F4C430", // Amarelo Grupo Arqueo
     solutions: [
       { name: "Monitoramento Arqueológico", icon: Monitor, featured: true },
       { name: "Arqueologia Subaquática", icon: Anchor, featured: false },
@@ -64,7 +64,7 @@ const solutionBlocks = [
     id: "tecnologia",
     title: "Tecnologia e Suporte Técnico",
     description: "Soluções geoespaciais avançadas e tecnologia aplicada à arqueologia e patrimônio cultural.",
-    color: "#861720", // Bordo
+    color: "#EE7501", // Laranja Grupo Arqueo
     solutions: [
       { name: "Geoprocessamento e SIG", icon: Database, featured: true },
       { name: "Modelagem 3D", icon: Database, featured: false },
