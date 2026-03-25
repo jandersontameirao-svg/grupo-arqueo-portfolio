@@ -14,7 +14,7 @@ const LOGO_10_ANOS = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/D
 const PARCEIROS_DESTAQUE = [
   "Shell", "Raízen", "Neoenergia", "AES Brasil", "EDP Renewables",
   "Statkraft", "State Grid", "PowerChina", "Rumo", "Taesa",
-  "Elera Renováveis", "Voltalia"
+  "Elera Renováveis", "Voltalia", "Axia Energia", "Grupo Elecnor"
 ];
 
 export default function Parceiros() {
