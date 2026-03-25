@@ -439,184 +439,102 @@ export default function QuemSomosEcossistema() {
           </div>
         </section>
 
-        {/* ═════════════════ NOSSO TIME SECTION - REFINADO ═════════════════ */}
+        {/* ═════════════════ NOSSO TIME SECTION - GRID ORGANIZADO ═════════════════ */}
         <section className="py-16 lg:py-20 relative" style={{ backgroundColor: '#FFFFFF' }}>
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            {/* Section Title - MELHORADO */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-8"
-            >
-              <div className="flex items-center justify-center gap-3 mb-8">
-                <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
-                <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720' }}>Equipe</span>
-                <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to left, #861720, #EE7501)' }} />
-              </div>
-              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-8" style={{ color: '#1A1A1A' }}>
-                Nosso <span style={{ color: '#861720', fontWeight: 900 }}>Time</span> <span style={{ color: '#EE7501', fontWeight: 900 }}>Multidisciplinar</span>
+            {/* Section Title */}
+            <div className="text-center mb-10">
+              <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1A1A1A', fontFamily: 'serif' }}>
+                Nosso Time
               </h2>
-              <p className="text-base lg:text-lg leading-relaxed max-w-3xl mx-auto" style={{ color: '#666666', fontWeight: 500 }}>
-                Composta por arqueólogos, historiadores, geógrafos, biólogos, educadores e especialistas em tecnologia, todos comprometidos com a excelência técnica e a inovação contínua.
+              <p className="text-sm lg:text-base leading-relaxed max-w-2xl mx-auto" style={{ color: '#999999' }}>
+                Uma equipe multidisciplinar dedicada à excelência em arqueologia, pesquisa e inovação
               </p>
-            </motion.div>
+            </div>
 
-            {/* Team Bubble Layout - ORGANIC ASYMMETRIC like reference image */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9 }}
-              className="relative mx-auto rounded-3xl overflow-hidden"
+            {/* Team Grid Layout - 5+5+2 organizado conforme referência */}
+            <div
+              className="relative mx-auto rounded-3xl overflow-hidden px-8 py-10 lg:px-12 lg:py-14"
               style={{
-                maxWidth: '1100px',
-                height: '700px',
+                maxWidth: '1000px',
                 background: 'linear-gradient(135deg, #861720 0%, #6B1219 25%, #A01B28 50%, #EE7501 100%)',
                 boxShadow: '0 30px 90px rgba(134, 23, 32, 0.35)',
               }}
             >
-              {/* Decorative concentric circles in background */}
-              <div className="absolute inset-0" style={{ zIndex: 0 }}>
-                <div className="absolute rounded-full border-2 border-white/8" style={{ width: 320, height: 320, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-                <div className="absolute rounded-full border-2 border-white/6" style={{ width: 520, height: 520, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-                <div className="absolute rounded-full border border-white/4" style={{ width: 720, height: 720, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-                <div className="absolute rounded-full border border-white/3" style={{ width: 950, height: 950, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-                {/* Small decorative dots */}
-                <div className="absolute rounded-full" style={{ width: 18, height: 18, top: '12%', left: '8%', backgroundColor: 'rgba(255,255,255,0.15)', border: '3px solid rgba(255,255,255,0.25)' }} />
-                <div className="absolute rounded-full" style={{ width: 14, height: 14, top: '8%', right: '15%', backgroundColor: 'rgba(255,255,255,0.12)', border: '3px solid rgba(255,255,255,0.2)' }} />
-                <div className="absolute rounded-full" style={{ width: 20, height: 20, bottom: '15%', left: '5%', backgroundColor: 'rgba(255,255,255,0.1)', border: '3px solid rgba(255,255,255,0.18)' }} />
-                <div className="absolute rounded-full" style={{ width: 16, height: 16, bottom: '10%', right: '8%', backgroundColor: 'rgba(255,255,255,0.12)', border: '3px solid rgba(255,255,255,0.2)' }} />
-                <div className="absolute rounded-full" style={{ width: 12, height: 12, top: '35%', left: '3%', backgroundColor: 'rgba(255,255,255,0.08)', border: '2px solid rgba(255,255,255,0.15)' }} />
-                <div className="absolute rounded-full" style={{ width: 10, height: 10, top: '60%', right: '4%', backgroundColor: 'rgba(255,255,255,0.1)', border: '2px solid rgba(255,255,255,0.15)' }} />
-                <div className="absolute rounded-full" style={{ width: 22, height: 22, top: '75%', left: '18%', backgroundColor: 'rgba(255,255,255,0.08)', border: '3px solid rgba(255,255,255,0.15)' }} />
-                <div className="absolute rounded-full" style={{ width: 15, height: 15, top: '20%', right: '5%', backgroundColor: 'rgba(255,255,255,0.1)', border: '3px solid rgba(255,255,255,0.18)' }} />
+              {/* Decorative circles in background */}
+              <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+                <div className="absolute rounded-full border border-white/8" style={{ width: 400, height: 400, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                <div className="absolute rounded-full border border-white/5" style={{ width: 650, height: 650, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
               </div>
 
-              {/* CEO - LARGE BUBBLE - CENTER */}
-              <div className="absolute" style={{ zIndex: 10, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_10px_rgba(255,255,255,0.25),0_0_0_20px_rgba(255,255,255,0.12),0_20px_60px_rgba(0,0,0,0.4)]" style={{ width: 200, height: 200, border: '5px solid rgba(255,255,255,0.5)', boxShadow: '0 0 0 10px rgba(255,255,255,0.15), 0 0 0 20px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.3)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp" alt="CEO" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+              {/* ROW 1 - 5 membros */}
+              <div className="relative z-10 flex justify-center gap-6 lg:gap-8 mb-8">
+                {[
+                  { name: 'CEO', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp' },
+                  { name: 'Diretora Administrativa\ne Financeira', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp' },
+                  { name: 'CSO', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp' },
+                  { name: 'Diretor de Estratégia,\nContencioso e Qualidade', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp' },
+                  { name: 'Tesoureira', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp' },
+                ].map((member, idx) => (
+                  <div key={idx} className="flex flex-col items-center group cursor-pointer">
+                    <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 120, height: 120, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)' }}>
+                      <img src={member.img} alt={member.name.split('\n')[0]} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                    </div>
+                    <span className="text-white font-semibold text-[10px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg" style={{ whiteSpace: 'pre-line' }}>{member.name}</span>
                   </div>
-                  <div className="mt-3 bg-white/20 backdrop-blur-sm px-5 py-1.5 rounded-full border border-white/30 transition-all duration-300 group-hover:bg-white/40 group-hover:border-white/60">
-                    <span className="text-white font-bold text-sm tracking-widest transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">CEO</span>
+                ))}
+              </div>
+
+              {/* ROW 2 - 5 membros */}
+              <div className="relative z-10 flex justify-center gap-6 lg:gap-8 mb-8">
+                {[
+                  { name: 'Arqueólogo', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp' },
+                  { name: 'Arqueóloga', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp' },
+                  { name: 'Coord. de Pesquisa\ne Licenciamento', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp' },
+                  { name: 'Gerente de Projetos', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/643-RIC_3179_73874ff3.webp', objectPos: 'object-top' },
+                  { name: 'Analista de\nGeoprocessamento', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp' },
+                ].map((member, idx) => (
+                  <div key={idx} className="flex flex-col items-center group cursor-pointer">
+                    <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 120, height: 120, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)' }}>
+                      <img src={member.img} alt={member.name.split('\n')[0]} className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 ${(member as any).objectPos || ''}`} />
+                    </div>
+                    <span className="text-white font-semibold text-[10px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg" style={{ whiteSpace: 'pre-line' }}>{member.name}</span>
                   </div>
+                ))}
+              </div>
+
+              {/* ROW 3 - 2 membros centralizados */}
+              <div className="relative z-10 flex justify-center gap-6 lg:gap-8">
+                {[
+                  { name: 'Assessor Jurídico', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp' },
+                  { name: 'Coord. Comercial\ne de Relacionamento', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp' },
+                ].map((member, idx) => (
+                  <div key={idx} className="flex flex-col items-center group cursor-pointer">
+                    <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 120, height: 120, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)' }}>
+                      <img src={member.img} alt={member.name.split('\n')[0]} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                    </div>
+                    <span className="text-white font-semibold text-[10px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg" style={{ whiteSpace: 'pre-line' }}>{member.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Valores - Excelência, Colaboração, Inovação */}
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              {[
+                { icon: '🎯', title: 'Excelência', desc: 'Comprometidos com os mais altos padrões de qualidade em cada projeto' },
+                { icon: '🤝', title: 'Colaboração', desc: 'Trabalhando juntos para alcançar objetivos compartilhados e inovadores' },
+                { icon: '💡', title: 'Inovação', desc: 'Explorando novas metodologias e perspectivas em arqueologia' },
+              ].map((val, idx) => (
+                <div key={idx} className="text-center">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ backgroundColor: '#EE7501' }}>
+                    <span className="text-white text-lg">{val.icon}</span>
+                  </div>
+                  <h4 className="font-bold text-base mb-2" style={{ color: '#1A1A1A' }}>{val.title}</h4>
+                  <p className="text-sm leading-relaxed" style={{ color: '#888888' }}>{val.desc}</p>
                 </div>
-              </div>
-
-              {/* Exec 1 - Diretora Administrativa - TOP LEFT */}
-              <div className="absolute" style={{ zIndex: 8, top: '8%', left: '15%' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 140, height: 140, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp" alt="Diretora Administrativa" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Diretora Administrativa<br/>e Financeira</span>
-                </div>
-              </div>
-
-              {/* Exec 2 - CSO - TOP RIGHT */}
-              <div className="absolute" style={{ zIndex: 8, top: '5%', right: '20%' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 195, height: 195, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp" alt="CSO" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">CSO</span>
-                </div>
-              </div>
-
-              {/* Exec 3 - Diretor de Estratégia - BOTTOM LEFT */}
-              <div className="absolute" style={{ zIndex: 8, bottom: '10%', left: '8%' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 202, height: 202, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp" alt="Diretor de Estratégia" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Diretor de Estratégia,<br/>Contencioso e Qualidade</span>
-                </div>
-              </div>
-
-              {/* Exec 4 - Tesoureira - RIGHT MIDDLE */}
-              <div className="absolute" style={{ zIndex: 8, top: '38%', right: '5%' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.25),0_15px_40px_rgba(0,0,0,0.35)]" style={{ width: 195, height: 195, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 8px rgba(255,255,255,0.12), 0 15px 40px rgba(0,0,0,0.25)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp" alt="Tesoureira" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <span className="text-white font-semibold text-xs mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Tesoureira</span>
-                </div>
-              </div>
-
-              {/* Team 1 - Arqueólogo - LEFT MIDDLE */}
-              <div className="absolute" style={{ zIndex: 7, top: '35%', left: '4%' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 150, height: 150, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp" alt="Arqueólogo" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Arqueólogo</span>
-                </div>
-              </div>
-
-              {/* Team 2 - Arqueóloga - TOP CENTER-RIGHT */}
-              <div className="absolute" style={{ zIndex: 7, top: '12%', left: '42%' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 142, height: 142, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp" alt="Arqueóloga" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Arqueóloga</span>
-                </div>
-              </div>
-
-              {/* Team 3 - Coord. Pesquisa - BOTTOM CENTER */}
-              <div className="absolute" style={{ zIndex: 7, bottom: '5%', left: '38%' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 150, height: 150, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp" alt="Coord. Pesquisa" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Coord. de Pesquisa<br/>e Licenciamento</span>
-                </div>
-              </div>
-
-              {/* Team 4 - Gerente de Projetos - BOTTOM RIGHT */}
-              <div className="absolute" style={{ zIndex: 7, bottom: '12%', right: '15%' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 180, height: 180, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/643-RIC_3179_73874ff3.webp" alt="Gerente de Projetos" className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[120px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Gerente de Projetos</span>
-                </div>
-              </div>
-
-              {/* Team 5 - Analista de Geoprocessamento - TOP FAR RIGHT */}
-              <div className="absolute" style={{ zIndex: 7, top: '15%', right: '5%' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 127, height: 127, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_de1be588.webp" alt="Analista de Geoprocessamento" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Analista de<br/>Geoprocessamento</span>
-                </div>
-              </div>
-
-              {/* Team 6 - Assessor Jurídico - BOTTOM FAR LEFT */}
-              <div className="absolute" style={{ zIndex: 7, bottom: '25%', left: '22%' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 90, height: 90, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp" alt="Assessor Jurídico" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[100px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Assessor Jurídico</span>
-                </div>
-              </div>
-
-              {/* Team 7 - Coord. Comercial - RIGHT BOTTOM */}
-              <div className="absolute" style={{ zIndex: 7, bottom: '3%', right: '5%' }}>
-                <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="rounded-full overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.2),0_10px_30px_rgba(0,0,0,0.3)]" style={{ width: 127, height: 127, border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 0 0 6px rgba(255,255,255,0.1), 0 10px 30px rgba(0,0,0,0.2)' }}>
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp" alt="Coord. Comercial" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <span className="text-white/90 font-medium text-[11px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">Coord. Comercial<br/>e de Relacionamento</span>
-                </div>
-              </div>
-
-            </motion.div>
+              ))}
+            </div>
           </div>
         </section>
       </div>
