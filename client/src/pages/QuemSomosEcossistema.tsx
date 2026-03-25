@@ -468,7 +468,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* ROW 1 - 5 membros */}
-              <div className="relative z-10 flex justify-center gap-6 lg:gap-8 mb-8">
+              <div className="relative z-10 flex justify-center gap-8 lg:gap-12 mb-8">
                 {[
                   { name: 'CEO', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp' },
                   { name: 'Diretora Administrativa\ne Financeira', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp' },
@@ -486,7 +486,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* ROW 2 - 5 membros */}
-              <div className="relative z-10 flex justify-center gap-6 lg:gap-8 mb-8">
+              <div className="relative z-10 flex justify-center gap-8 lg:gap-12 mb-8">
                 {[
                   { name: 'Assessor Jurídico', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp' },
                   { name: 'Coord. de Pesquisa\ne Licenciamento', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp' },
@@ -504,7 +504,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* ROW 3 - 5 membros */}
-              <div className="relative z-10 flex justify-center gap-6 lg:gap-8 flex-wrap">
+              <div className="relative z-10 flex justify-center gap-8 lg:gap-12 flex-wrap">
                 {[
                   { name: 'Arqueóloga', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp' },
                   { name: 'Arqueóloga', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251054_4fb88472.webp' },
@@ -522,7 +522,7 @@ export default function QuemSomosEcossistema() {
               </div>
 
               {/* ROW 4 - 2 membros */}
-              <div className="relative z-10 flex justify-center gap-6 lg:gap-8 flex-wrap">
+              <div className="relative z-10 flex justify-center gap-8 lg:gap-12 flex-wrap">
                 {[
                   { name: 'Técnico em Arqueologia', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251103_53c6f31a.webp' },
                   { name: 'Técnico em arqueologia', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251108_e4d33d44.webp' },
