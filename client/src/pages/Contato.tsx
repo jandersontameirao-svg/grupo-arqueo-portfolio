@@ -346,25 +346,6 @@ export default function Contato() {
                 </div>
               </div>
 
-              {/* Bloco Institucional */}
-              <div
-                className="p-10 lg:p-12 rounded-2xl relative overflow-hidden"
-                style={{ backgroundColor: '#861720' }}
-              >
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full opacity-10" style={{ backgroundColor: '#EE7501', transform: 'translate(30%, -30%)' }} />
-                <h4 className="text-lg font-bold text-white mb-4 relative z-10">Patrimônio cultural é com o Arqueo.</h4>
-                <p className="text-sm font-normal leading-relaxed relative z-10 mb-8" style={{ color: 'rgba(255,255,255,0.75)', lineHeight: '1.75' }}>
-                  Há 10 anos conectando expertise técnica, inovação e responsabilidade para viabilizar projetos que transformam o cenário do patrimônio cultural brasileiro.
-                </p>
-                <a
-                  href="/"
-                  className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:gap-3 relative z-10"
-                  style={{ letterSpacing: '0.1em' }}
-                >
-                  Conheça o Grupo Arqueo
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
             </motion.div>
           </div>
         </div>
