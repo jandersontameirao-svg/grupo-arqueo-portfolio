@@ -176,6 +176,7 @@ export default function NumerosTerritori() {
                 transition={{ duration: 0.8 }}
               >
                 <MapaBrasilSVG
+                  onEstadoSelect={setSelectedEstado}
                   selectedEstado={selectedEstado}
                 />
               </motion.div>
