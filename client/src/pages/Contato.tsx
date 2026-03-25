@@ -60,12 +60,12 @@ export default function Contato() {
       prevLabel="Nossos Parceiros"
     >
       {/* Imagem Institucional — TOPO DA PÁGINA */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="container flex justify-center">
+      <section className="py-0 bg-white">
+        <div className="w-full flex justify-center">
           <motion.img
             src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/imagem(5)_13e48ffd.png"
             alt="Grupo Arqueo - Hub de soluções integradas"
-            className="h-auto max-w-2xl w-full"
+            className="h-auto w-full"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
