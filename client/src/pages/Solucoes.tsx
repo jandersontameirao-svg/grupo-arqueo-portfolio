@@ -105,10 +105,7 @@ export default function Solucoes() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Capacidades</span>
-            </div>
+
             <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
               Soluções integradas para{' '}
               <span style={{ color: '#EE7501' }}>patrimônio e arqueologia</span>
