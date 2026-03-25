@@ -128,45 +128,63 @@ export default function Contato() {
               className="p-12 lg:p-16 rounded-lg"
               style={{ backgroundColor: '#FAFAF8', border: '1px solid #E6E6E6' }}
             >
-              <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-12" style={{ color: '#666', letterSpacing: '0.5px' }}>Informações de Contato</h3>
+              <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-12" style={{ color: '#666', letterSpacing: '0.5px' }}>Contatos Especializados</h3>
               
-              <div className="space-y-12">
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
-                    <Mail className="w-6 h-6 text-white" />
+              {/* Janderson */}
+              <div className="mb-12 pb-12" style={{ borderBottom: '1px solid #E6E6E6' }}>
+                <p className="text-sm font-bold mb-6" style={{ color: '#1A1A1A', letterSpacing: '0.3px' }}>Janderson</p>
+                <div className="space-y-6">
+                  <div className="flex gap-6 items-start">
+                    <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
+                      <Mail className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>E-mail</p>
+                      <a href="mailto:janderson@grupoarqueo.com.br" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
+                        janderson@grupoarqueo.com.br
+                      </a>
+                    </div>
                   </div>
-                  <div className="flex-1 min-w-0 pt-1">
-                    <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: '#888', letterSpacing: '0.4px' }}>E-mail</p>
-                    <a href="mailto:contato@grupoarqueo.com.br" className="text-base lg:text-lg font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
-                      contato@grupoarqueo.com.br
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
-                    <Phone className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="flex-1 pt-1">
-                    <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: '#888', letterSpacing: '0.4px' }}>Telefone</p>
-                    <p className="text-base lg:text-lg font-semibold" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>(61) 3142-1040</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
-                    <Globe className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="flex-1 min-w-0 pt-1">
-                    <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: '#888', letterSpacing: '0.4px' }}>Website</p>
-                    <a href="https://grupoarqueo.com.br" target="_blank" rel="noopener noreferrer" className="text-base lg:text-lg font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
-                      www.grupoarqueo.com.br
-                    </a>
+                  <div className="flex gap-6 items-start">
+                    <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
+                      <Phone className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="flex-1 pt-0.5">
+                      <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>Telefone</p>
+                      <a href="tel:+5561911211508" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501]" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 91121-1508</a>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-12 pt-12" style={{ borderTop: '1px solid #E6E6E6' }}>
+              {/* Fernanda */}
+              <div>
+                <p className="text-sm font-bold mb-6" style={{ color: '#1A1A1A', letterSpacing: '0.3px' }}>Fernanda</p>
+                <div className="space-y-6">
+                  <div className="flex gap-6 items-start">
+                    <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
+                      <Mail className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>E-mail</p>
+                      <a href="mailto:Fernanda@arqueoproject.com.br" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>
+                        Fernanda@arqueoproject.com.br
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex gap-6 items-start">
+                    <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
+                      <Phone className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="flex-1 pt-0.5">
+                      <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>Telefone</p>
+                      <a href="tel:+5561983186264" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501]" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 98318-6264</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-16 pt-12" style={{ borderTop: '1px solid #E6E6E6' }}>
                 <p className="text-sm font-bold tracking-wider uppercase mb-8" style={{ color: '#666', letterSpacing: '0.5px' }}>Redes Sociais</p>
                 <div className="flex gap-5">
                   <a href="https://www.linkedin.com/company/grupoarqueo" target="_blank" rel="noopener noreferrer"
