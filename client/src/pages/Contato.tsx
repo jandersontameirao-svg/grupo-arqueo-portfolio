@@ -325,22 +325,22 @@ export default function Contato() {
               {/* Horário de Atendimento */}
               <div
                 className="p-10 lg:p-12 rounded-2xl"
-                style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
+                style={{ backgroundColor: '#1A1A1A' }}
               >
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl" style={{ backgroundColor: '#EE7501' }}>
-                    <Clock className="w-5 h-5" style={{ color: 'white' }} />
+                  <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl" style={{ backgroundColor: 'rgba(238,117,1,0.15)' }}>
+                    <Clock className="w-5 h-5" style={{ color: '#EE7501' }} />
                   </div>
-                  <h3 className="text-xs font-bold uppercase tracking-[0.25em]" style={{ color: '#999' }}>Horário de Atendimento</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-white">Horário de Atendimento</h3>
                 </div>
                 <div className="ml-14 space-y-4">
-                  <div className="flex justify-between items-center pb-4" style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
-                    <p className="text-sm font-medium" style={{ color: '#666' }}>Segunda a Sexta</p>
-                    <p className="text-sm font-bold" style={{ color: '#1A1A1A' }}>08h00 — 18h00</p>
+                  <div className="flex justify-between items-center pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                    <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>Segunda a Sexta</p>
+                    <p className="text-sm font-bold text-white">08h00 — 18h00</p>
                   </div>
                   <div className="flex justify-between items-center">
-                    <p className="text-sm font-medium" style={{ color: '#999' }}>Sábados, Domingos e Feriados</p>
-                    <p className="text-sm font-semibold" style={{ color: '#999' }}>Fechado</p>
+                    <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>Sábados, Domingos e Feriados</p>
+                    <p className="text-sm font-semibold" style={{ color: 'rgba(255,255,255,0.45)' }}>Fechado</p>
                   </div>
                 </div>
               </div>
