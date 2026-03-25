@@ -187,10 +187,10 @@ export default function NumerosTerritori() {
                   }}
                 >
                   <div className="text-4xl font-bold mb-1" style={{ color: '#861720' }}>
-                    23 <span style={{ fontSize: '0.7em', color: '#666' }}>e DF</span>
+                    23
                   </div>
                   <div className="text-sm font-medium" style={{ color: '#666' }}>
-                    Estados
+                    e DF Estados
                   </div>
                 </div>
               </div>
