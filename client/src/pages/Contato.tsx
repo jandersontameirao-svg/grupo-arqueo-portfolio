@@ -1,13 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
-import { Mail, Phone, MapPin, Globe, Linkedin, Instagram, MessageCircle, X, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Linkedin, Instagram, MessageCircle, X, Send, FileText, Calendar, Clock, Building2, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 /**
  * CONTATO — Página 10 (Final)
- * Design: Hero section similar to Home with image background + gradient overlay
- * Botões flutuantes: WhatsApp, E-mail, Telefone, LinkedIn
+ * Design: Institucional premium, orientado à conversão
+ * Hero com chamada estratégica + bloco de ação
+ * Contatos organizados por tipo + lado direito robusto
  */
 
 const offices = [
@@ -59,7 +60,9 @@ export default function Contato() {
       prevPath="/parceiros"
       prevLabel="Nossos Parceiros"
     >
-      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">        {/* Background image + gradient overlay */}
+      {/* ═══════════════════ HERO SECTION ═══════════════════ */}
+      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+        {/* Background image + gradient overlay */}
         <div className="absolute inset-0 -z-10">
           <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
           <div
@@ -77,9 +80,10 @@ export default function Contato() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+            className="max-w-3xl"
           >
-            <div className="flex items-center gap-6 lg:gap-8 mb-10">
+            {/* Logo + Arqueo */}
+            <div className="flex items-center gap-6 lg:gap-8 mb-8">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-3_73dbd431.webp"
                 alt="10 Anos Arqueo"
@@ -87,108 +91,193 @@ export default function Contato() {
               />
               <div className="text-5xl lg:text-7xl xl:text-8xl font-bold" style={{ color: '#EE7501' }}>Arqueo</div>
             </div>
-            <p className="text-xl lg:text-2xl font-medium leading-relaxed" style={{ color: '#333', maxWidth: '700px', letterSpacing: '0.4px', lineHeight: '1.8' }}>
-              Conectamos expertise em arqueologia, patrimônio cultural e licenciamento ambiental com soluções inovadoras para seus projetos.
+
+            {/* Chamada institucional */}
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-6" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
+              Vamos estruturar o seu projeto?
+            </h1>
+
+            {/* Subtítulo estratégico */}
+            <p className="text-lg lg:text-xl font-normal leading-relaxed mb-12" style={{ color: '#555', maxWidth: '650px', lineHeight: '1.75' }}>
+              Conectamos expertise em arqueologia, patrimônio cultural e licenciamento ambiental com soluções inovadoras. Fale com nossos especialistas e descubra como podemos viabilizar seu empreendimento.
             </p>
+
+            {/* Bloco de ação */}
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=janderson@grupoarqueo.com.br&su=Solicita%C3%A7%C3%A3o%20de%20Proposta"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white rounded transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                style={{ backgroundColor: '#EE7501', letterSpacing: '0.1em' }}
+              >
+                <FileText className="w-5 h-5" />
+                Solicitar Proposta
+              </a>
+              <a
+                href="https://wa.me/5561911211508?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Grupo%20Arqueo."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white rounded transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                style={{ backgroundColor: '#25D366', letterSpacing: '0.1em' }}
+              >
+                <MessageCircle className="w-5 h-5" />
+                Falar no WhatsApp
+              </a>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=janderson@grupoarqueo.com.br&su=Agendamento%20de%20Reuni%C3%A3o"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 text-sm font-bold uppercase tracking-wider rounded transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                style={{ backgroundColor: 'transparent', color: '#1A1A1A', border: '2px solid #1A1A1A', letterSpacing: '0.1em' }}
+              >
+                <Calendar className="w-5 h-5" />
+                Agendar Reunião
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Divider */}
-      <div className="h-px my-20 lg:my-28" style={{ backgroundColor: '#E6E6E6' }} />
+      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
 
-      {/* Contact Content */}
-      <section className="py-20 lg:py-32">
+      {/* ═══════════════════ CONTACT CONTENT ═══════════════════ */}
+      <section className="py-16 lg:py-28">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+
+            {/* ─── COLUNA ESQUERDA: CONTATOS ─── */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-12 lg:p-16 rounded-lg"
-              style={{ backgroundColor: '#FAFAF8', border: '1px solid #E6E6E6' }}
+              className="space-y-10"
             >
-              <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-12" style={{ color: '#666', letterSpacing: '0.5px' }}>Contatos Especializados</h3>
-              
-              {/* Janderson */}
-              <div className="mb-12 pb-12" style={{ borderBottom: '1px solid #E6E6E6' }}>
-                <p className="text-sm font-bold mb-6" style={{ color: '#1A1A1A', letterSpacing: '0.3px' }}>Janderson</p>
-                <div className="space-y-6">
-                  <div className="flex gap-6 items-start">
-                    <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
-                      <Mail className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0 pt-0.5">
-                      <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>E-mail</p>
-                      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=janderson@grupoarqueo.com.br" target="_blank" rel="noopener noreferrer" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }} aria-label="Enviar e-mail para Janderson">
-                      janderson@grupoarqueo.com.br
+              {/* Atendimento Comercial */}
+              <div
+                className="p-10 lg:p-12 rounded-2xl"
+                style={{ backgroundColor: '#FAFAF8', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
+              >
+                <div className="flex items-center gap-3 mb-10">
+                  <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#EE7501' }} />
+                  <h3 className="text-xs font-bold uppercase tracking-[0.25em]" style={{ color: '#999' }}>Atendimento Comercial</h3>
+                </div>
+
+                {/* Janderson */}
+                <div className="mb-10 pb-10" style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+                  <p className="text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>Janderson</p>
+                  <p className="text-xs font-medium uppercase tracking-wider mb-6" style={{ color: '#999' }}>Direção Comercial</p>
+                  <div className="space-y-5">
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=janderson@grupoarqueo.com.br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
+                    >
+                      <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl transition-colors duration-200" style={{ backgroundColor: '#EE7501' }}>
+                        <Mail className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>E-mail</p>
+                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>janderson@grupoarqueo.com.br</p>
+                      </div>
                     </a>
-                    </div>
+                    <a
+                      href="tel:+5561911211508"
+                      className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
+                    >
+                      <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl transition-colors duration-200" style={{ backgroundColor: '#EE7501' }}>
+                        <Phone className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>Telefone</p>
+                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>+55 61 91121-1508</p>
+                      </div>
+                    </a>
+                    <a
+                      href="https://wa.me/5561911211508"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+                      style={{ backgroundColor: '#25D366', color: 'white', letterSpacing: '0.08em' }}
+                    >
+                      <Send className="w-3.5 h-3.5" />
+                      WhatsApp
+                    </a>
                   </div>
-                  <a href="tel:+5561911211508" className="flex gap-6 items-start transition-transform duration-200 hover:scale-105">
-                    <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
-                      <Phone className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex-1 pt-0.5">
-                      <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>Telefone</p>
-                      <p className="text-sm lg:text-base font-semibold mb-3" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 91121-1508</p>
-                      <a href="https://wa.me/5561911211508" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-xs font-semibold transition-all duration-200 hover:scale-105" style={{ backgroundColor: '#25D366', color: 'white' }} aria-label="Enviar WhatsApp para Janderson">
-                        <Send className="w-3.5 h-3.5" />
-                        WhatsApp
-                      </a>
-                    </div>
-                  </a>
+                </div>
+
+                {/* Fernanda */}
+                <div>
+                  <p className="text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>Fernanda</p>
+                  <p className="text-xs font-medium uppercase tracking-wider mb-6" style={{ color: '#999' }}>Gestão de Projetos</p>
+                  <div className="space-y-5">
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=Fernanda@arqueoproject.com.br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
+                    >
+                      <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl transition-colors duration-200" style={{ backgroundColor: '#EE7501' }}>
+                        <Mail className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>E-mail</p>
+                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>Fernanda@arqueoproject.com.br</p>
+                      </div>
+                    </a>
+                    <a
+                      href="tel:+5561983186264"
+                      className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
+                    >
+                      <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl transition-colors duration-200" style={{ backgroundColor: '#EE7501' }}>
+                        <Phone className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>Telefone</p>
+                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>+55 61 98318-6264</p>
+                      </div>
+                    </a>
+                    <a
+                      href="https://wa.me/5561983186264"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+                      style={{ backgroundColor: '#25D366', color: 'white', letterSpacing: '0.08em' }}
+                    >
+                      <Send className="w-3.5 h-3.5" />
+                      WhatsApp
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              {/* Fernanda */}
-              <div>
-                <p className="text-sm font-bold mb-6" style={{ color: '#1A1A1A', letterSpacing: '0.3px' }}>Fernanda</p>
-                <div className="space-y-6">
-                  <div className="flex gap-6 items-start">
-                    <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
-                      <Mail className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0 pt-0.5">
-                      <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>E-mail</p>
-                      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Fernanda@arqueoproject.com.br" target="_blank" rel="noopener noreferrer" className="text-sm lg:text-base font-semibold transition-colors hover:text-[#EE7501] break-all" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }} aria-label="Enviar e-mail para Fernanda">
-                      Fernanda@arqueoproject.com.br
-                    </a>
-                    </div>
-                  </div>
-                  <a href="tel:+5561983186264" className="flex gap-6 items-start transition-transform duration-200 hover:scale-105">
-                    <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: '#EE7501' }}>
-                      <Phone className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex-1 pt-0.5">
-                      <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#888', letterSpacing: '0.4px' }}>Telefone</p>
-                      <p className="text-sm lg:text-base font-semibold mb-3" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>+55 61 98318-6264</p>
-                      <a href="https://wa.me/5561983186264" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-xs font-semibold transition-all duration-200 hover:scale-105" style={{ backgroundColor: '#25D366', color: 'white' }} aria-label="Enviar WhatsApp para Fernanda">
-                        <Send className="w-3.5 h-3.5" />
-                        WhatsApp
-                      </a>
-                    </div>
-                  </a>
+              {/* Redes Sociais */}
+              <div
+                className="p-10 lg:p-12 rounded-2xl"
+                style={{ backgroundColor: '#FAFAF8', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#EE7501' }} />
+                  <h3 className="text-xs font-bold uppercase tracking-[0.25em]" style={{ color: '#999' }}>Redes Sociais</h3>
                 </div>
-              </div>
-
-              <div className="mt-16 pt-12" style={{ borderTop: '1px solid #E6E6E6' }}>
-                <p className="text-sm font-bold tracking-wider uppercase mb-8" style={{ color: '#666', letterSpacing: '0.5px' }}>Redes Sociais</p>
-                <div className="flex gap-5">
+                <div className="flex gap-4">
                   <a href="https://www.linkedin.com/company/grupoarqueo" target="_blank" rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center justify-center transition-all duration-300 rounded hover:shadow-md hover:scale-105"
+                    className="w-12 h-12 flex items-center justify-center transition-all duration-300 rounded-xl hover:shadow-md hover:-translate-y-0.5"
                     style={{ backgroundColor: '#EE7501', color: 'white' }}>
-                    <Linkedin className="w-6 h-6" />
+                    <Linkedin className="w-5 h-5" />
                   </a>
                   <a href="https://www.instagram.com/grupoarqueo" target="_blank" rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center justify-center transition-all duration-300 rounded hover:shadow-md hover:scale-105"
+                    className="w-12 h-12 flex items-center justify-center transition-all duration-300 rounded-xl hover:shadow-md hover:-translate-y-0.5"
                     style={{ backgroundColor: '#EE7501', color: 'white' }}>
-                    <Instagram className="w-6 h-6" />
+                    <Instagram className="w-5 h-5" />
                   </a>
                 </div>
               </div>
             </motion.div>
 
+            {/* ─── COLUNA DIREITA: SEDE + HORÁRIO + INSTITUCIONAL ─── */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -196,33 +285,85 @@ export default function Contato() {
               transition={{ delay: 0.2 }}
               className="space-y-8"
             >
-              <h3 className="text-xl font-bold mb-8" style={{ color: '#1A1A1A', letterSpacing: '0.3px' }}>Nossa Sede</h3>
-              {offices.map((office, i) => (
-                <div
-                  key={i}
-                  className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer group"
-                  style={{ backgroundColor: '#FFFFFF', borderLeft: '3px solid #EE7501', border: '1px solid #E6E6E6' }}
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <MapPin className="w-4 h-4" style={{ color: '#EE7501' }} />
-                    <h4 className="text-lg font-bold" style={{ color: '#1A1A1A', letterSpacing: '0.2px' }}>{office.city}</h4>
-                  </div>
-                  <p className="text-sm font-semibold mb-3" style={{ color: '#EE7501', letterSpacing: '0.3px' }}>{office.role}</p>
-                  <p className="text-sm font-light leading-relaxed mb-4" style={{ color: '#555', whiteSpace: 'pre-line', letterSpacing: '0.2px' }}>{office.address}</p>
-                  <a href="#" className="text-sm font-semibold transition-colors duration-300 inline-flex items-center gap-1 group-hover:text-[#EE7501]" style={{ color: '#888' }}>
-                    Ver no mapa →
-                  </a>
+              {/* Sede */}
+              <div
+                className="p-10 lg:p-12 rounded-2xl"
+                style={{ backgroundColor: '#FAFAF8', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
+              >
+                <div className="flex items-center gap-3 mb-10">
+                  <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#EE7501' }} />
+                  <h3 className="text-xs font-bold uppercase tracking-[0.25em]" style={{ color: '#999' }}>Nossa Sede</h3>
                 </div>
-              ))}
 
-              <div className="p-8 mt-6" style={{ backgroundColor: '#2A2A2A' }}>
-                <h4 className="text-base font-bold text-white mb-4" style={{ letterSpacing: '0.3px' }}>Horário de Atendimento</h4>
-                <p className="text-sm font-light" style={{ color: 'rgba(255,255,255,0.75)', letterSpacing: '0.2px' }}>
-                  Segunda a Sexta: 08h00 - 18h00
+                {offices.map((office, i) => (
+                  <div key={i}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl" style={{ backgroundColor: '#EE7501' }}>
+                        <Building2 className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold" style={{ color: '#1A1A1A' }}>{office.city}</h4>
+                        <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: '#EE7501' }}>{office.role}</p>
+                      </div>
+                    </div>
+                    <div className="ml-14">
+                      <p className="text-sm font-normal leading-relaxed mb-5" style={{ color: '#555', whiteSpace: 'pre-line', lineHeight: '1.8' }}>{office.address}</p>
+                      <a
+                        href="https://maps.google.com/?q=QS+1+BLOCO+D+Aguas+Claras+Brasilia+DF+Connect+Towers"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 hover:gap-3"
+                        style={{ color: '#EE7501' }}
+                      >
+                        Ver no Google Maps
+                        <ArrowRight className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Horário de Atendimento */}
+              <div
+                className="p-10 lg:p-12 rounded-2xl"
+                style={{ backgroundColor: '#1A1A1A' }}
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl" style={{ backgroundColor: 'rgba(238,117,1,0.15)' }}>
+                    <Clock className="w-5 h-5" style={{ color: '#EE7501' }} />
+                  </div>
+                  <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-white">Horário de Atendimento</h3>
+                </div>
+                <div className="ml-14 space-y-4">
+                  <div className="flex justify-between items-center pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                    <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>Segunda a Sexta</p>
+                    <p className="text-sm font-bold text-white">08h00 — 18h00</p>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>Sábados, Domingos e Feriados</p>
+                    <p className="text-sm font-semibold" style={{ color: 'rgba(255,255,255,0.45)' }}>Fechado</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bloco Institucional */}
+              <div
+                className="p-10 lg:p-12 rounded-2xl relative overflow-hidden"
+                style={{ backgroundColor: '#861720' }}
+              >
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full opacity-10" style={{ backgroundColor: '#EE7501', transform: 'translate(30%, -30%)' }} />
+                <h4 className="text-lg font-bold text-white mb-4 relative z-10">Patrimônio cultural é com o Arqueo.</h4>
+                <p className="text-sm font-normal leading-relaxed relative z-10 mb-8" style={{ color: 'rgba(255,255,255,0.75)', lineHeight: '1.75' }}>
+                  Há 10 anos conectando expertise técnica, inovação e responsabilidade para viabilizar projetos que transformam o cenário do patrimônio cultural brasileiro.
                 </p>
-                <p className="text-sm font-light mt-2" style={{ color: 'rgba(255,255,255,0.6)', letterSpacing: '0.2px' }}>
-                  Sábados, Domingos e Feriados: Fechado
-                </p>
+                <a
+                  href="/"
+                  className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:gap-3 relative z-10"
+                  style={{ letterSpacing: '0.1em' }}
+                >
+                  Conheça o Grupo Arqueo
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
             </motion.div>
           </div>
