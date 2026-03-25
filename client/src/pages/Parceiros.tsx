@@ -2,15 +2,23 @@ import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 
 /**
- * NOSSOS PARCEIROS — Página 11
- * Design: Premium institucional com logo 10 anos, grid compacto e elegante
- * Paleta: Cores do Grupo Arqueo — vermelho, laranja, dourado
+ * PARCEIROS — Página 11
+ * Design Philosophy: Apresentação institucional de autoridade e relevância de mercado.
+ * Não é uma listagem — é uma declaração de confiança e posicionamento.
+ * Paleta: Bordô #861720, Laranja #EE7501, Dourado #D4A843, Carvão #1A1A1A
  */
 
 const LOGO_10_ANOS = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logo-10-anos-arqueo_ce93a3c4.webp";
 
+/* ── Parceiros estratégicos de maior relevância (destaque) ── */
+const PARCEIROS_DESTAQUE = [
+  "Shell", "Raízen", "Neoenergia", "AES Brasil", "EDP Renewables",
+  "Statkraft", "State Grid", "PowerChina", "Rumo", "Taesa",
+  "Elera Renováveis", "Voltalia"
+];
+
 export default function Parceiros() {
-  const parceiros: { nome: string; logo?: string }[] = [
+  const todosParceiros: { nome: string; logo?: string }[] = [
     { nome: "2W Energia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/2w-energia_dedbe3fb.png" },
     { nome: "ACBMM", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/acbmm_574207a0.png" },
     { nome: "AES Brasil", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/AES_Brasil_7e4432e2.png" },
@@ -80,127 +88,233 @@ export default function Parceiros() {
     { nome: "Voltalia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/voltalia_2a3ecfe2.png" },
   ].sort((a, b) => a.nome.localeCompare(b.nome));
 
+  const parceirosDestaque = todosParceiros.filter(p => PARCEIROS_DESTAQUE.includes(p.nome));
+  const parceirosGrid = todosParceiros.filter(p => !PARCEIROS_DESTAQUE.includes(p.nome));
+
   return (
     <PortfolioLayout
       chapterNum="11"
-      chapterTitle="Nossos Parceiros"
+      chapterTitle="Relações Estratégicas"
       prevPath="/numeros-territorio"
       prevLabel="Números & Território"
       nextPath="/contato"
       nextLabel="Contato"
     >
-      {/* ═══════════════════ HERO — Logo 10 Anos + Título + Contadores ═══════════════════ */}
-      <section style={{ backgroundColor: '#F9F8F6', position: 'relative', overflow: 'hidden' }}>
-        {/* Top accent line */}
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(to right, #861720, #EE7501, #D4A843)' }} />
+      {/* ═══════════════════════════════════════════════════════════════════
+          SEÇÃO 1 — HERO INSTITUCIONAL
+          Título estratégico, métricas de impacto, logo 10 anos
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(168deg, #1A1A1A 0%, #2A2420 48%, #1A1A1A 100%)' }}>
+        {/* Textura sutil de noise */}
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.03, backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")', backgroundSize: '128px 128px' }} />
+        {/* Accent line top */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(to right, #861720, #EE7501, #D4A843, #EE7501, #861720)' }} />
+        {/* Glow sutil */}
+        <div style={{ position: 'absolute', top: '-120px', left: '50%', transform: 'translateX(-50%)', width: '600px', height: '300px', background: 'radial-gradient(ellipse, rgba(212,168,67,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
-        <div className="container" style={{ paddingTop: '48px', paddingBottom: '36px' }}>
-          {/* Logo 10 Anos centralizada */}
-          <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '56px', paddingBottom: '52px' }}>
+          {/* Logo 10 Anos */}
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            style={{ textAlign: 'center', marginBottom: '28px' }}
+          >
             <img
               src={LOGO_10_ANOS}
               alt="Grupo Arqueo - 10 Anos"
-              style={{ height: '90px', width: 'auto', display: 'inline-block', filter: 'drop-shadow(0 4px 16px rgba(212,168,67,0.15))' }}
+              style={{ height: '80px', width: 'auto', display: 'inline-block', filter: 'drop-shadow(0 4px 20px rgba(212,168,67,0.25))' }}
             />
-          </div>
+          </motion.div>
 
-          {/* Tag */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '10px' }}>
-            <div style={{ width: '28px', height: '2px', backgroundColor: '#D4A843', borderRadius: '2px' }} />
-            <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase' as const, color: '#D4A843' }}>
-              Uma Década de Parcerias
-            </span>
-            <div style={{ width: '28px', height: '2px', backgroundColor: '#D4A843', borderRadius: '2px' }} />
-          </div>
+          {/* Título institucional estratégico */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            style={{ textAlign: 'center' }}
+          >
+            <h1 style={{ fontSize: '40px', fontWeight: 700, lineHeight: 1.1, color: '#FFFFFF', letterSpacing: '-0.03em', margin: '0 0 8px' }}>
+              Relações que Constroem
+              <br />
+              <span style={{ color: '#D4A843' }}>o Futuro do Brasil</span>
+            </h1>
+            <p style={{ fontSize: '15px', lineHeight: 1.8, color: 'rgba(255,255,255,0.5)', fontWeight: 300, maxWidth: '560px', margin: '12px auto 0' }}>
+              Ao longo de uma década, o Grupo Arqueo consolidou parcerias com empresas líderes
+              nos setores de energia, infraestrutura e meio ambiente — construindo uma rede de
+              confiança que impulsiona grandes projetos em todo o território nacional.
+            </p>
+          </motion.div>
 
-          {/* Título */}
-          <h1 style={{ fontSize: '34px', fontWeight: 700, lineHeight: 1.1, color: '#1A1A1A', letterSpacing: '-0.02em', margin: '0 0 10px', textAlign: 'center' }}>
-            Nossos <span style={{ color: '#EE7501' }}>Parceiros</span>
-          </h1>
-
-          {/* Subtítulo */}
-          <p style={{ fontSize: '14px', lineHeight: 1.7, color: '#888', fontWeight: 300, maxWidth: '520px', margin: '0 auto 24px', textAlign: 'center' }}>
-            Empresas e instituições que confiam no Grupo Arqueo para transformar projetos em resultados concretos ao longo de{' '}
-            <strong style={{ color: '#D4A843', fontWeight: 600 }}>10 anos de excelência</strong>.
-          </p>
-
-          {/* Contadores */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '28px' }}>
-            <div style={{ textAlign: 'center' }}>
-              <span style={{ fontSize: '30px', fontWeight: 700, color: '#861720', display: 'block', lineHeight: 1 }}>{parceiros.length}+</span>
-              <span style={{ fontSize: '9px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.1em', color: '#AAA' }}>Parceiros</span>
-            </div>
-            <div style={{ width: '1px', height: '24px', backgroundColor: '#E0E0E0' }} />
-            <div style={{ textAlign: 'center' }}>
-              <span style={{ fontSize: '30px', fontWeight: 700, color: '#EE7501', display: 'block', lineHeight: 1 }}>10</span>
-              <span style={{ fontSize: '9px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.1em', color: '#AAA' }}>Anos</span>
-            </div>
-            <div style={{ width: '1px', height: '24px', backgroundColor: '#E0E0E0' }} />
-            <div style={{ textAlign: 'center' }}>
-              <span style={{ fontSize: '30px', fontWeight: 700, color: '#D4A843', display: 'block', lineHeight: 1 }}>26</span>
-              <span style={{ fontSize: '9px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.1em', color: '#AAA' }}>Estados</span>
-            </div>
-          </div>
+          {/* Métricas de impacto — grande presença */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '48px', marginTop: '40px' }}
+          >
+            {[
+              { valor: `${todosParceiros.length}+`, label: 'Parceiros Ativos', cor: '#EE7501' },
+              { valor: '10', label: 'Anos de Mercado', cor: '#D4A843' },
+              { valor: '26', label: 'Estados Atendidos', cor: '#FFFFFF' },
+            ].map((m, i) => (
+              <div key={i} style={{ textAlign: 'center' }}>
+                <span style={{ fontSize: '48px', fontWeight: 800, color: m.cor, display: 'block', lineHeight: 1, letterSpacing: '-0.03em' }}>
+                  {m.valor}
+                </span>
+                <span style={{ fontSize: '10px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.18em', color: 'rgba(255,255,255,0.35)', marginTop: '6px', display: 'block' }}>
+                  {m.label}
+                </span>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* ═══════════════════ PARTNERS GRID — Flex wrap compacto ═══════════════════ */}
-      <section style={{ backgroundColor: '#FFFFFF', padding: '28px 0 36px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap' as const, justifyContent: 'center', gap: '12px' }}>
-            {parceiros.map((parceiro, i) => (
+      {/* ═══════════════════════════════════════════════════════════════════
+          SEÇÃO 2 — PARCEIROS ESTRATÉGICOS EM DESTAQUE
+          Logos maiores, mais espaçados, com label de nome
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section style={{ position: 'relative', background: 'linear-gradient(180deg, #F7F6F3 0%, #FFFFFF 100%)', padding: '40px 0 32px' }}>
+        {/* Separador dourado */}
+        <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '80px', height: '3px', background: 'linear-gradient(to right, #D4A843, #EE7501)', borderRadius: '2px' }} />
+
+        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px' }}>
+          {/* Label da seção */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            style={{ textAlign: 'center', marginBottom: '32px' }}
+          >
+            <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase' as const, color: '#D4A843' }}>
+              Parcerias de Referência
+            </span>
+            <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#1A1A1A', margin: '8px 0 0', letterSpacing: '-0.02em' }}>
+              Grandes Empresas que Confiam no Grupo Arqueo
+            </h2>
+          </motion.div>
+
+          {/* Grid de destaque — logos maiores */}
+          <div style={{ display: 'flex', flexWrap: 'wrap' as const, justifyContent: 'center', gap: '20px' }}>
+            {parceirosDestaque.map((p, i) => (
               <motion.div
-                key={parceiro.nome}
-                initial={{ opacity: 0, scale: 0.92 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: '-10px' }}
-                transition={{ duration: 0.2, delay: (i % 20) * 0.01 }}
+                key={p.nome}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.04 }}
                 className="group"
-                style={{ position: 'relative' }}
+                style={{ display: 'flex', flexDirection: 'column' as const, alignItems: 'center', gap: '8px' }}
               >
                 <div
                   className="transition-all duration-300 group-hover:-translate-y-1"
                   style={{
-                    width: '140px',
-                    height: '140px',
+                    width: '160px',
+                    height: '120px',
                     backgroundColor: '#FFFFFF',
-                    borderRadius: '16px',
-                    border: '1.5px solid rgba(212,168,67,0.2)',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.04), 0 0 0 1px rgba(212,168,67,0.06)',
+                    borderRadius: '20px',
+                    border: '1px solid rgba(0,0,0,0.05)',
+                    boxShadow: '0 2px 12px rgba(0,0,0,0.04), 0 0 0 1px rgba(212,168,67,0.08)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    cursor: 'pointer',
-                    position: 'relative' as const,
-                    overflow: 'hidden',
+                    padding: '16px',
                   }}
                 >
-                  {/* Moldura decorativa nos cantos */}
-                  <div style={{ position: 'absolute', top: '4px', left: '4px', width: '14px', height: '14px', borderTop: '2px solid rgba(212,168,67,0.35)', borderLeft: '2px solid rgba(212,168,67,0.35)', borderRadius: '4px 0 0 0' }} />
-                  <div style={{ position: 'absolute', top: '4px', right: '4px', width: '14px', height: '14px', borderTop: '2px solid rgba(212,168,67,0.35)', borderRight: '2px solid rgba(212,168,67,0.35)', borderRadius: '0 4px 0 0' }} />
-                  <div style={{ position: 'absolute', bottom: '4px', left: '4px', width: '14px', height: '14px', borderBottom: '2px solid rgba(212,168,67,0.35)', borderLeft: '2px solid rgba(212,168,67,0.35)', borderRadius: '0 0 0 4px' }} />
-                  <div style={{ position: 'absolute', bottom: '4px', right: '4px', width: '14px', height: '14px', borderBottom: '2px solid rgba(212,168,67,0.35)', borderRight: '2px solid rgba(212,168,67,0.35)', borderRadius: '0 0 4px 0' }} />
+                  <img
+                    src={p.logo}
+                    alt={p.nome}
+                    className="transition-transform duration-300 group-hover:scale-105"
+                    style={{ maxWidth: '110px', maxHeight: '70px', objectFit: 'contain' }}
+                  />
+                </div>
+                <span style={{ fontSize: '10px', fontWeight: 500, color: '#999', letterSpacing: '0.02em' }}>
+                  {p.nome}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* ═══════════════════════════════════════════════════════════════════
+          SEÇÃO 3 — GRID COMPLETO DE PARCEIROS
+          Cards refinados, sombra elegante, respiro interno, ritmo visual
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section style={{ position: 'relative', padding: '32px 0 44px', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 30%, #F5F4F1 100%)' }}>
+        {/* Textura sutil */}
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.015, backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")', pointerEvents: 'none' }} />
+
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 1 }}>
+          {/* Label */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            style={{ textAlign: 'center', marginBottom: '28px' }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '4px' }}>
+              <div style={{ width: '40px', height: '1px', backgroundColor: '#D4A843' }} />
+              <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase' as const, color: '#D4A843' }}>
+                Rede Completa
+              </span>
+              <div style={{ width: '40px', height: '1px', backgroundColor: '#D4A843' }} />
+            </div>
+            <p style={{ fontSize: '13px', color: '#999', fontWeight: 300, margin: 0 }}>
+              Todas as empresas e instituições que integram nossa rede de parcerias
+            </p>
+          </motion.div>
+
+          {/* Grid flex-wrap refinado */}
+          <div style={{ display: 'flex', flexWrap: 'wrap' as const, justifyContent: 'center', gap: '14px' }}>
+            {parceirosGrid.map((parceiro, i) => (
+              <motion.div
+                key={parceiro.nome}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.25, delay: (i % 15) * 0.015 }}
+                className="group"
+                style={{ position: 'relative' }}
+              >
+                <div
+                  className="transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md"
+                  style={{
+                    width: '130px',
+                    height: '130px',
+                    backgroundColor: '#FFFFFF',
+                    borderRadius: '18px',
+                    border: '1px solid rgba(0,0,0,0.04)',
+                    boxShadow: '0 1px 6px rgba(0,0,0,0.03)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '18px',
+                    cursor: 'default',
+                  }}
+                >
                   {parceiro.logo ? (
                     <img
                       src={parceiro.logo}
                       alt={parceiro.nome}
-                      className="transition-transform duration-300 group-hover:scale-110"
-                      style={{ width: '90px', height: '90px', objectFit: 'contain' }}
+                      className="transition-transform duration-300 group-hover:scale-108"
+                      style={{ maxWidth: '85px', maxHeight: '85px', objectFit: 'contain' }}
                     />
                   ) : (
-                    <span style={{ fontSize: '9px', fontWeight: 700, color: '#BBB', textAlign: 'center', padding: '0 4px' }}>
+                    <span style={{ fontSize: '10px', fontWeight: 600, color: '#CCC', textAlign: 'center' }}>
                       {parceiro.nome}
                     </span>
                   )}
                 </div>
 
-                {/* Tooltip */}
+                {/* Tooltip elegante */}
                 <div
                   className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                   style={{
                     position: 'absolute',
-                    bottom: '-22px',
+                    bottom: '-24px',
                     left: '50%',
                     transform: 'translateX(-50%)',
                     whiteSpace: 'nowrap' as const,
@@ -208,7 +322,7 @@ export default function Parceiros() {
                     zIndex: 20,
                   }}
                 >
-                  <span style={{ fontSize: '9px', fontWeight: 500, padding: '2px 8px', borderRadius: '4px', backgroundColor: '#333', color: '#FFF' }}>
+                  <span style={{ fontSize: '9px', fontWeight: 500, padding: '3px 10px', borderRadius: '6px', backgroundColor: '#1A1A1A', color: '#FFF', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
                     {parceiro.nome}
                   </span>
                 </div>
@@ -218,20 +332,28 @@ export default function Parceiros() {
         </div>
       </section>
 
-      {/* ═══════════════════ BOTTOM CTA ═══════════════════ */}
-      <section style={{ backgroundColor: '#F9F8F6', padding: '24px 0 28px' }}>
-        <div style={{ maxWidth: '700px', margin: '0 auto', padding: '0 20px', textAlign: 'center' }}>
-          <p style={{ fontSize: '13px', lineHeight: 1.8, color: '#888', fontWeight: 300, marginBottom: '10px' }}>
-            O Grupo Arqueo tem orgulho de construir relações duradouras com empresas líderes em seus segmentos,
-            contribuindo para o desenvolvimento sustentável do Brasil.
-          </p>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-            <div style={{ width: '20px', height: '2px', backgroundColor: '#D4A843', borderRadius: '2px' }} />
-            <span style={{ fontSize: '9px', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase' as const, color: '#D4A843' }}>
-              Construindo o futuro juntos
+      {/* ═══════════════════════════════════════════════════════════════════
+          SEÇÃO 4 — CLOSING STATEMENT
+          Declaração institucional de encerramento
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section style={{ background: 'linear-gradient(180deg, #F5F4F1 0%, #F9F8F6 100%)', padding: '36px 0 40px' }}>
+        <div style={{ maxWidth: '640px', margin: '0 auto', padding: '0 24px', textAlign: 'center' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div style={{ width: '40px', height: '3px', background: 'linear-gradient(to right, #D4A843, #EE7501)', borderRadius: '2px', margin: '0 auto 16px' }} />
+            <p style={{ fontSize: '15px', lineHeight: 1.9, color: '#666', fontWeight: 300, margin: '0 0 8px' }}>
+              Cada parceria representa um compromisso mútuo com a excelência.
+              O Grupo Arqueo tem orgulho de construir relações duradouras com empresas
+              que lideram a transformação energética e o desenvolvimento sustentável do Brasil.
+            </p>
+            <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase' as const, color: '#D4A843' }}>
+              Autoridade construída com resultados
             </span>
-            <div style={{ width: '20px', height: '2px', backgroundColor: '#D4A843', borderRadius: '2px' }} />
-          </div>
+          </motion.div>
         </div>
       </section>
     </PortfolioLayout>
