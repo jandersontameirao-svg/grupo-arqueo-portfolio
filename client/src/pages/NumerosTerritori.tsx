@@ -7,28 +7,9 @@ import statsData from "../data/stats.json";
 
 /**
  * NÚMEROS & PRESENÇA TERRITORIAL — Página 08
- * Design: Combinação de métricas de escala + mapa interativo do Brasil
- * Layout: Seção de números + Mapa SVG real com contornos dos estados
+ * Design: Layout compacto e estratégico com blocos claros
+ * Blocos: 1) Indicadores principais  2) Presença territorial (mapa)  3) Distribuição por tipo
  */
-
-const estados = [
-  { uf: "RN", nome: "Rio Grande do Norte", regiao: "Nordeste", projetos: "40+" },
-  { uf: "PB", nome: "Paraíba", regiao: "Nordeste", projetos: "35+" },
-  { uf: "PE", nome: "Pernambuco", regiao: "Nordeste", projetos: "25+" },
-  { uf: "CE", nome: "Ceará", regiao: "Nordeste", projetos: "20+" },
-  { uf: "BA", nome: "Bahia", regiao: "Nordeste", projetos: "20+" },
-  { uf: "PI", nome: "Piauí", regiao: "Nordeste", projetos: "15+" },
-  { uf: "MA", nome: "Maranhão", regiao: "Nordeste", projetos: "10+" },
-  { uf: "SE", nome: "Sergipe", regiao: "Nordeste", projetos: "8+" },
-  { uf: "AL", nome: "Alagoas", regiao: "Nordeste", projetos: "5+" },
-  { uf: "MG", nome: "Minas Gerais", regiao: "Sudeste", projetos: "15+" },
-  { uf: "SP", nome: "São Paulo", regiao: "Sudeste", projetos: "10+" },
-  { uf: "RJ", nome: "Rio de Janeiro", regiao: "Sudeste", projetos: "8+" },
-  { uf: "GO", nome: "Goiás", regiao: "Centro-Oeste", projetos: "10+" },
-  { uf: "DF", nome: "Distrito Federal", regiao: "Centro-Oeste", projetos: "5+" },
-  { uf: "TO", nome: "Tocantins", regiao: "Norte", projetos: "5+" },
-  { uf: "PA", nome: "Pará", regiao: "Norte", projetos: "3+" },
-];
 
 const regioes = [
   { nome: "Nordeste", count: 8, color: "#EE7501" },
@@ -43,65 +24,30 @@ export default function NumerosTerritori() {
   const [animateMetrics, setAnimateMetrics] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimateMetrics(true);
-    }, 300);
+    const timer = setTimeout(() => setAnimateMetrics(true), 300);
     return () => clearTimeout(timer);
   }, []);
 
-  // CSS para animações
   const animationStyles = `
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    .metric-fade-in {
-      animation: fadeInUp 0.6s ease-out forwards;
-    }
-    .metric-primary {
-      animation-delay: 0.1s;
-    }
-    .metric-secondary-1 {
-      animation-delay: 0.2s;
-    }
-    .metric-secondary-2 {
-      animation-delay: 0.3s;
-    }
-    .metric-complementary-1 {
-      animation-delay: 0.4s;
-    }
-    .metric-complementary-2 {
-      animation-delay: 0.5s;
-    }
-    .metric-complementary-3 {
-      animation-delay: 0.6s;
-    }
-    .metric-complementary-4 {
-      animation-delay: 0.7s;
-    }
-    .segment-bar {
-      animation: fadeInUp 0.6s ease-out forwards;
-    }
+    .metric-fade-in { animation: fadeInUp 0.6s ease-out forwards; }
+    .metric-d1 { animation-delay: 0.1s; }
+    .metric-d2 { animation-delay: 0.2s; }
+    .metric-d3 { animation-delay: 0.3s; }
+    .metric-d4 { animation-delay: 0.4s; }
+    .metric-d5 { animation-delay: 0.5s; }
   `;
 
-  // Preparar dados dos segmentos
-  const tiposData = Object.entries(statsData.tipos).map(([name, count]) => ({
-    name,
-    count: count as number,
-  }));
+  // Top 8 segmentos para manter compacto
+  const tiposData = Object.entries(statsData.tipos)
+    .map(([name, count]) => ({ name, count: count as number }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 8);
   
   const maxCount = Math.max(...tiposData.map(t => t.count));
-  const segmentos = tiposData.map(seg => ({
-    name: seg.name,
-    count: seg.count.toString(),
-    percentage: Math.round((seg.count / maxCount) * 100),
-  }));
 
   return (
     <PortfolioLayout
@@ -114,173 +60,130 @@ export default function NumerosTerritori() {
     >
       <style>{animationStyles}</style>
 
-      {/* ═══════════════════ SEÇÃO 1: NÚMEROS ═══════════════════ */}
-      <section className="py-20 lg:py-32 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
+      {/* ═══════════ BLOCO 1: INDICADORES PRINCIPAIS ═══════════ */}
+      <section className="py-16 lg:py-24 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
         <div className="max-w-6xl mx-auto">
-          {/* Logo e Título */}
-          <div className="flex items-center gap-6 lg:gap-8 mb-8">
+          {/* Header com logo */}
+          <div className="flex items-center gap-6 lg:gap-8 mb-4">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-3_aa567132.webp"
               alt="10 Anos"
-              className="h-16 lg:h-20 w-auto flex-shrink-0"
+              className="h-14 lg:h-18 w-auto flex-shrink-0"
             />
-            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
-              Escala, presença e consistência operacional
-            </h1>
+            <div>
+              <h1 className="text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
+                Escala, presença e consistência operacional
+              </h1>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Contextualização */}
-      <section className="py-12 lg:py-16 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="max-w-5xl mx-auto text-center">
-          <p className="text-base lg:text-lg" style={{ color: '#666666' }}>
-            Os indicadores a seguir sintetizam a trajetória do Grupo Arqueo em escala, presença territorial, estrutura organizacional e capacidade de mobilização técnica.
+          <p className="text-sm lg:text-base mb-12 max-w-3xl" style={{ color: '#777' }}>
+            Os indicadores sintetizam a trajetória do Grupo Arqueo em escala, presença territorial, estrutura organizacional e capacidade de mobilização técnica.
           </p>
-        </div>
-      </section>
 
-      {/* Métricas Principais */}
-      <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Coluna Esquerda - Métricas Principais */}
-            <div className="space-y-8">
-              {/* Métrica Principal */}
-              <div
-                className={`p-8 rounded-2xl ${animateMetrics ? 'metric-fade-in metric-primary' : 'opacity-0'}`}
-                style={{
-                  backgroundColor: '#F5F5F5',
-                  borderLeft: '6px solid #EE7501',
-                }}
-              >
-                <div className="text-5xl lg:text-6xl font-black mb-2" style={{ color: '#EE7501' }}>
-                  10+
-                </div>
-                <div className="text-lg font-semibold" style={{ color: '#2A2A2A' }}>
-                  Anos de Atuação
-                </div>
-              </div>
-
-              {/* Métricas Secundárias */}
-              <div className="grid grid-cols-2 gap-6">
-                <div
-                  className={`p-6 rounded-xl text-center ${animateMetrics ? 'metric-fade-in metric-secondary-1' : 'opacity-0'}`}
-                  style={{
-                    backgroundColor: '#F5F5F5',
-                    borderTop: '4px solid #2C7EB3',
-                  }}
-                >
-                  <div className="text-4xl font-bold mb-1" style={{ color: '#2C7EB3' }}>
-                    {statsData.total_projetos}+
-                  </div>
-                  <div className="text-sm font-medium" style={{ color: '#666' }}>
-                    Projetos
-                  </div>
-                </div>
-
-                <div
-                  className={`p-6 rounded-xl text-center ${animateMetrics ? 'metric-fade-in metric-secondary-2' : 'opacity-0'}`}
-                  style={{
-                    backgroundColor: '#F5F5F5',
-                    borderTop: '4px solid #861720',
-                  }}
-                >
-                  <div className="text-4xl font-bold mb-1" style={{ color: '#861720' }}>
-                    23
-                  </div>
-                  <div className="text-sm font-medium" style={{ color: '#666' }}>
-                    e DF Estados
-                  </div>
-                </div>
-              </div>
+          {/* Grid de métricas — layout 3 colunas compacto */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            {/* Métrica destaque: Anos */}
+            <div
+              className={`p-6 lg:p-8 lg:col-span-2 row-span-2 flex flex-col justify-center ${animateMetrics ? 'metric-fade-in metric-d1' : 'opacity-0'}`}
+              style={{ backgroundColor: '#FFFFFF', borderLeft: '5px solid #EE7501', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
+            >
+              <div className="text-5xl lg:text-7xl font-black mb-1" style={{ color: '#EE7501' }}>10+</div>
+              <div className="text-base lg:text-lg font-semibold" style={{ color: '#2A2A2A' }}>Anos de Atuação</div>
+              <div className="text-xs mt-2" style={{ color: '#999' }}>Desde 2015, construindo referência no setor</div>
             </div>
 
-            {/* Coluna Direita - Métricas Complementares */}
-            <div className="space-y-4">
-              {[
-                { label: 'Profissionais', value: '50', color: '#2C7EB3', delay: 'metric-complementary-1' },
-                { label: 'Clientes Atendidos', value: '200', color: '#EE7501', delay: 'metric-complementary-2' },
-                { label: 'Regiões Cobertas', value: '4', color: '#5B8C3E', delay: 'metric-complementary-3' },
-                { label: 'Parcerias Estratégicas', value: '57', color: '#861720', delay: 'metric-complementary-4' },
-              ].map((metric, idx) => (
-                <div
-                  key={idx}
-                  className={`p-5 rounded-lg flex justify-between items-center ${animateMetrics ? `metric-fade-in ${metric.delay}` : 'opacity-0'}`}
-                  style={{
-                    backgroundColor: '#F9F9F9',
-                    borderLeft: `4px solid ${metric.color}`,
-                  }}
-                >
-                  <span style={{ color: '#666', fontWeight: 500 }}>{metric.label}</span>
-                  <span className="text-2xl font-bold" style={{ color: metric.color }}>
-                    {metric.value}+
-                  </span>
-                </div>
-              ))}
+            {/* Projetos */}
+            <div
+              className={`p-5 lg:p-6 text-center ${animateMetrics ? 'metric-fade-in metric-d2' : 'opacity-0'}`}
+              style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #2C7EB3', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
+            >
+              <div className="text-3xl lg:text-4xl font-bold" style={{ color: '#2C7EB3' }}>{statsData.total_projetos}+</div>
+              <div className="text-xs font-medium mt-1" style={{ color: '#666' }}>Projetos</div>
+            </div>
+
+            {/* Estados */}
+            <div
+              className={`p-5 lg:p-6 text-center ${animateMetrics ? 'metric-fade-in metric-d3' : 'opacity-0'}`}
+              style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #861720', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
+            >
+              <div className="text-3xl lg:text-4xl font-bold" style={{ color: '#861720' }}>23</div>
+              <div className="text-xs font-medium mt-1" style={{ color: '#666' }}>Estados e DF</div>
+            </div>
+
+            {/* Profissionais */}
+            <div
+              className={`p-5 lg:p-6 text-center ${animateMetrics ? 'metric-fade-in metric-d4' : 'opacity-0'}`}
+              style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #5B8C3E', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
+            >
+              <div className="text-3xl lg:text-4xl font-bold" style={{ color: '#5B8C3E' }}>50+</div>
+              <div className="text-xs font-medium mt-1" style={{ color: '#666' }}>Profissionais</div>
+            </div>
+
+            {/* Parcerias */}
+            <div
+              className={`p-5 lg:p-6 text-center ${animateMetrics ? 'metric-fade-in metric-d5' : 'opacity-0'}`}
+              style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #8B4789', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
+            >
+              <div className="text-3xl lg:text-4xl font-bold" style={{ color: '#8B4789' }}>57+</div>
+              <div className="text-xs font-medium mt-1" style={{ color: '#666' }}>Parcerias Estratégicas</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Distribuição por Tipo */}
-      <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
+      {/* ═══════════ BLOCO 2: PRESENÇA TERRITORIAL ═══════════ */}
+      <section className="py-16 lg:py-24 px-4 lg:px-8" style={{ backgroundColor: '#F9F8F6' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl lg:text-4xl font-bold mb-12 text-center" style={{ color: '#2A2A2A' }}>
-            Distribuição de Projetos por Tipo
+          {/* Título da seção */}
+          <div className="flex items-center gap-4 mb-3">
+            <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
+            <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#EE7501' }}>Território</span>
+          </div>
+          <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ color: '#2A2A2A' }}>
+            Atuação em <span style={{ color: '#EE7501' }}>23 estados</span> brasileiros e o <span style={{ color: '#EE7501' }}>DF</span>
           </h2>
-          <div className="space-y-6">
-            {segmentos.map((seg, idx) => (
-              <div key={idx} className={`${animateMetrics ? 'segment-bar' : 'opacity-0'}`}>
-                <div className="flex justify-between mb-2">
-                  <span className="font-semibold" style={{ color: '#2A2A2A' }}>
-                    {seg.name}
-                  </span>
-                  <span style={{ color: '#EE7501', fontWeight: 'bold' }}>
-                    {seg.count} projetos
-                  </span>
-                </div>
-                <div className="w-full h-3 rounded-full" style={{ backgroundColor: '#E0E0E0' }}>
-                  <div
-                    className="h-full rounded-full transition-all duration-700"
-                    style={{
-                      width: animateMetrics ? `${seg.percentage}%` : '0%',
-                      background: 'linear-gradient(90deg, #EE7501 0%, #FF9A3C 100%)',
-                    }}
-                  />
-                </div>
-              </div>
+          <p className="text-sm lg:text-base font-light leading-relaxed mb-10 max-w-2xl" style={{ color: '#666' }}>
+            Com escritórios em Brasília, Natal e São Paulo, o Grupo Arqueo possui presença estratégica para atender projetos em todas as regiões do Brasil.
+          </p>
+
+          {/* Distribuição por Região — inline acima do mapa */}
+          <div className="grid grid-cols-5 gap-3 lg:gap-4 mb-10">
+            {regioes.map((reg, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: i * 0.08 }}
+                className="p-3 lg:p-4 text-center"
+                style={{ backgroundColor: '#FFFFFF', borderTop: `3px solid ${reg.color}`, boxShadow: '0 1px 8px rgba(0,0,0,0.03)' }}
+              >
+                <span className="text-xl lg:text-2xl font-bold" style={{ color: reg.color }}>{reg.count}</span>
+                <p className="text-[10px] lg:text-xs font-medium mt-0.5" style={{ color: '#2A2A2A' }}>estados</p>
+                <p className="text-[10px] lg:text-xs font-light" style={{ color: '#888' }}>{reg.nome}</p>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Divisor */}
-      <div style={{ height: '1px', backgroundColor: '#E0E0E0' }} />
+          {/* Mapa + Info lateral */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10 items-start">
+            {/* Mapa — preservado integralmente */}
+            <div className="lg:col-span-3">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <MapaBrasilSVG
+                  selectedEstado={selectedEstado}
+                />
+              </motion.div>
+            </div>
 
-      {/* ═══════════════════ SEÇÃO 2: PRESENÇA TERRITORIAL ═══════════════════ */}
-      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
-        <div className="container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Left: Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-                <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#EE7501' }}>Território</span>
-              </div>
-              <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-                Atuação em <span style={{ color: '#EE7501' }}>23 estados</span> brasileiros e o <span style={{ color: '#EE7501' }}>DF</span>
-              </h1>
-              <p className="text-base lg:text-lg font-light leading-relaxed mb-8" style={{ color: '#555', maxWidth: '520px' }}>
-                Com escritórios em Brasília, Natal e São Paulo, o Grupo Arqueo possui presença estratégica para atender projetos em todas as regiões do Brasil, com destaque para o Nordeste, onde concentra a maior parte de sua atuação.
-              </p>
-
-              {/* Selected state info */}
+            {/* Painel lateral — estado selecionado + legenda */}
+            <div className="lg:col-span-2 space-y-6">
+              {/* Estado selecionado */}
               {selectedEstado ? (
                 <motion.div
                   key={selectedEstado.sigla}
@@ -300,59 +203,76 @@ export default function NumerosTerritori() {
                   </div>
                 </motion.div>
               ) : (
-                <p className="text-sm" style={{ color: '#999' }}>
-                  Clique em um estado no mapa para ver detalhes
-                </p>
+                <div className="p-4 rounded-lg" style={{ backgroundColor: 'rgba(134,23,32,0.04)', border: '1px dashed rgba(134,23,32,0.15)' }}>
+                  <p className="text-xs" style={{ color: '#888' }}>
+                    Clique em um estado no mapa para ver detalhes
+                  </p>
+                </div>
               )}
-            </motion.div>
 
-            {/* Right: Map */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <MapaBrasilSVG
-                selectedEstado={selectedEstado}
-              />
-            </motion.div>
+              {/* Legenda */}
+              <div className="flex items-center gap-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#861720' }} />
+                  <span className="text-xs" style={{ color: '#666' }}>Com atuação</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#C4C4C4' }} />
+                  <span className="text-xs" style={{ color: '#666' }}>Sem atuação</span>
+                </div>
+              </div>
+
+              {/* Escritórios */}
+              <div className="space-y-3">
+                <h4 className="text-xs font-semibold tracking-wider uppercase" style={{ color: '#999' }}>Escritórios</h4>
+                {[
+                  { city: "Brasília – DF", role: "Sede Administrativa" },
+                  { city: "Natal – RN", role: "Base Operacional" },
+                  { city: "São Paulo – SP", role: "Escritório Comercial" },
+                ].map((office, idx) => (
+                  <div key={idx} className="flex items-center gap-3 p-3 rounded-lg" style={{ backgroundColor: '#FFFFFF', boxShadow: '0 1px 6px rgba(0,0,0,0.03)' }}>
+                    <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: '#EE7501' }} />
+                    <div>
+                      <p className="text-xs font-semibold" style={{ color: '#2A2A2A' }}>{office.city}</p>
+                      <p className="text-[10px]" style={{ color: '#888' }}>{office.role}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Distribuição por Região */}
-      <section className="py-16 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl lg:text-4xl font-bold mb-12 text-center" style={{ color: '#2A2A2A' }}>
-            Distribuição por Região
+      {/* ═══════════ BLOCO 3: DISTRIBUIÇÃO POR TIPO (compacto) ═══════════ */}
+      <section className="py-14 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-xl lg:text-2xl font-bold mb-2 text-center" style={{ color: '#2A2A2A' }}>
+            Distribuição por Segmento
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {regioes.map((regiao, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="p-6 rounded-xl text-center"
-                style={{
-                  backgroundColor: '#F9F9F9',
-                  borderTop: `4px solid ${regiao.color}`,
-                }}
-              >
-                <div className="text-4xl font-bold mb-2" style={{ color: regiao.color }}>
-                  {regiao.count}
+          <p className="text-xs text-center mb-8" style={{ color: '#999' }}>Principais tipos de projetos realizados</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
+            {tiposData.map((seg, idx) => (
+              <div key={idx} className={`${animateMetrics ? 'metric-fade-in' : 'opacity-0'}`} style={{ animationDelay: `${0.1 + idx * 0.06}s` }}>
+                <div className="flex justify-between mb-1.5">
+                  <span className="text-xs font-medium" style={{ color: '#444' }}>{seg.name}</span>
+                  <span className="text-xs font-bold" style={{ color: '#EE7501' }}>{seg.count}</span>
                 </div>
-                <div className="text-sm font-medium" style={{ color: '#666' }}>
-                  {regiao.nome}
+                <div className="w-full h-2 rounded-full" style={{ backgroundColor: '#ECECEC' }}>
+                  <div
+                    className="h-full rounded-full transition-all duration-700"
+                    style={{
+                      width: animateMetrics ? `${Math.round((seg.count / maxCount) * 100)}%` : '0%',
+                      background: 'linear-gradient(90deg, #EE7501 0%, #FF9A3C 100%)',
+                    }}
+                  />
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
-
 
     </PortfolioLayout>
   );
