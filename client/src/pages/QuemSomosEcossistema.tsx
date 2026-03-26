@@ -506,6 +506,7 @@ export default function QuemSomosEcossistema() {
               {/* ROW 3 - 5 membros */}
               <div className="relative z-10 flex justify-center gap-8 lg:gap-12 flex-wrap">
                 {[
+                  { name: 'Analista de Geoprocessamento', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_4ce89876.webp' },
                   { name: 'Arqueóloga', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp' },
                   { name: 'Arqueóloga', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251054_4fb88472.webp' },
                   { name: 'Arqueólogo', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp' },
