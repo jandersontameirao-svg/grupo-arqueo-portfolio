@@ -409,6 +409,7 @@ export default function QuemSomos() {
 
             {/* Surrounding members */}
             {[
+              { top: '8%', left: '20%', size: 85, name: 'Analista de Geoprocessamento', img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_4ce89876.webp' },
               { top: '8%', left: '35%', size: 90, name: 'Arqueologia', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face' },
               { top: '12%', left: '60%', size: 80, name: 'Tecnologia', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face' },
               { top: '25%', left: '78%', size: 75, name: 'Gestão', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face' },
