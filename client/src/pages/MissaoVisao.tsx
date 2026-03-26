@@ -200,14 +200,22 @@ export default function MissaoVisao() {
                     boxShadow: isH ? `0 20px 50px ${p.color}22` : '0 2px 20px rgba(0,0,0,0.04)',
                     transform: isH ? 'translateY(-4px)' : 'translateY(0)',
                     transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
+                    backgroundImage: isFirst && isH ? 'url(https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/não_mude_mais_202603261130_27c0c1e3.webp)' : 'none',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
                   }}
                   onMouseEnter={() => setHoveredPilar(idx)}
                   onMouseLeave={() => setHoveredPilar(null)}
                 >
+                  {/* Overlay escuro para legibilidade quando imagem está visível */}
+                  {isFirst && isH && (
+                    <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }} />
+                  )}
+                  
                   {/* Accent top bar */}
                   <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: p.color, opacity: isH ? 0 : 0.6, transition: 'opacity 0.4s ease' }} />
 
-                  <div className="p-8 lg:p-9 xl:p-10">
+                  <div className="p-8 lg:p-9 xl:p-10 relative z-10">
                     <div className="flex items-center gap-4 mb-6">
                       <div
                         className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
