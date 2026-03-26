@@ -401,8 +401,7 @@ export default function Cases() {
                 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]"
                 style={{ color: '#1A1A1A', letterSpacing: '-0.025em', fontFamily: "'Playfair Display', Georgia, serif" }}
               >
-                Evidências concretas<br />
-                de capacidade e<br />
+                Evidências concretas de capacidade e<br />
                 <span style={{ color: '#6B2332' }}>execução comprovada</span>
               </h1>
             </div>
