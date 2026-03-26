@@ -46,7 +46,7 @@ export default function MissaoVisao() {
       <section className="relative overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
         <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(to right, #861720, #EE7501, #2C7EB3)' }} />
 
-        <div className="container py-20 lg:py-24">
+        <div className="container py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
             <div className="lg:col-span-8">
               <div className="flex items-center gap-8 lg:gap-12 mb-8">
@@ -81,7 +81,7 @@ export default function MissaoVisao() {
       </section>
 
       {/* ═══════════════════ 2. MISSÃO & VISÃO ═══════════════════ */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: '#FFFFFF' }}>
+      <section className="py-12 lg:py-16" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container">
           <div className="flex items-center gap-3 mb-12 lg:mb-16">
             <div className="w-8 h-[2px] rounded-full" style={{ backgroundColor: '#EE7501' }} />
@@ -165,7 +165,7 @@ export default function MissaoVisao() {
       </div>
 
       {/* ═══════════════════ 3. PILARES ESTRATÉGICOS ═══════════════════ */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: '#FAFAF8' }}>
+      <section className="py-16 lg:py-20" style={{ backgroundColor: '#FAFAF8' }}>
         <div className="container">
           {/* Header */}
           <div className="max-w-2xl mb-14 lg:mb-18">
