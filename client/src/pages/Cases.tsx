@@ -386,9 +386,6 @@ export default function Cases() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            {/* Logo 10 Anos */}
-            <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-14 lg:h-16 w-auto mb-6" />
-
             {/* Label institucional */}
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-[2px] rounded-full" style={{ backgroundColor: '#6B2332' }} />
@@ -397,15 +394,18 @@ export default function Cases() {
               </span>
             </div>
 
-            {/* Headline forte e institucional */}
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6"
-              style={{ color: '#1A1A1A', letterSpacing: '-0.025em', fontFamily: "'Playfair Display', Georgia, serif" }}
-            >
-              Evidências concretas<br />
-              de capacidade e<br />
-              <span style={{ color: '#6B2332' }}>execução comprovada</span>
-            </h1>
+            {/* Logo + Headline lado a lado */}
+            <div className="flex items-center gap-8 lg:gap-12 mb-6">
+              <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-30 lg:h-36 xl:h-42 w-auto flex-shrink-0" />
+              <h1
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]"
+                style={{ color: '#1A1A1A', letterSpacing: '-0.025em', fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                Evidências concretas<br />
+                de capacidade e<br />
+                <span style={{ color: '#6B2332' }}>execução comprovada</span>
+              </h1>
+            </div>
 
             {/* Subtítulo estratégico */}
             <p className="text-lg lg:text-xl leading-[1.8] max-w-2xl" style={{ color: '#555' }}>
