@@ -414,12 +414,7 @@ export default function Cases() {
         </div>
       </section>
 
-      {/* ═══════════════════ DIVIDER ═══════════════════ */}
-      <div className="relative py-12 lg:py-16">
-        <div className="container">
-          <div className="h-px" style={{ background: 'linear-gradient(to right, #6B2332, #D4A574, transparent)' }} />
-        </div>
-      </div>
+
 
       {/* ═══════════════════ FILTROS + CASES ═══════════════════ */}
       <section className="pb-20 lg:pb-32">
