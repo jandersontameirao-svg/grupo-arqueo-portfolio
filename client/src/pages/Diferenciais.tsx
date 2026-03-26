@@ -58,7 +58,7 @@ export default function Diferenciais() {
       nextLabel="Números"
     >
       {/* Hero Section — Similar to Home */}
-      <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative min-h-[350px] lg:min-h-[400px] flex items-center overflow-hidden py-8 lg:py-12">
         {/* Background image + gradient overlay */}
         <div className="absolute inset-0 -z-10">
           <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
@@ -83,10 +83,14 @@ export default function Diferenciais() {
               <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
               <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Vantagens Competitivas</span>
             </div>
-            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
-              O que nos torna{' '}
-              <span style={{ color: '#EE7501' }}>referência</span> no setor
-            </h1>
+            <div className="flex items-center gap-6 lg:gap-8">
+              <img src={ASSETS.logo10anos} alt="10 Anos" className="h-20 lg:h-24 xl:h-28 flex-shrink-0" />
+              <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
+                O que nos torna{' '}
+                <span style={{ color: '#EE7501' }}>referência</span> no setor
+              </h1>
+            </div>
+            <div className="mt-6"></div>
             <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '600px' }}>
               Nossos diferenciais são construídos sobre uma base sólida de competência técnica, inovação tecnológica e compromisso com a excelência operacional.
             </p>
