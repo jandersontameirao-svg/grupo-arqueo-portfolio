@@ -120,7 +120,7 @@ export default function DiferenciaisConformidade() {
               <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Vantagens Competitivas</span>
             </div>
             <div className="flex items-center gap-6 lg:gap-8 mb-6">
-              <img src={ASSETS.logo10anos} alt="10 Anos" className="h-20 lg:h-24 xl:h-28 flex-shrink-0" />
+              <img src={ASSETS.logo10anos} alt="10 Anos" className="h-[5.75rem] lg:h-[6.9rem] xl:h-[8.05rem] flex-shrink-0" />
               <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
                 <span className="whitespace-nowrap">O que nos torna</span><br />
                 <span style={{ color: '#EE7501' }}>referência</span> no setor
