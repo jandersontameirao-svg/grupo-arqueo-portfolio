@@ -19,7 +19,7 @@ const PARCEIROS_DESTAQUE = [
 
 export default function Parceiros() {
   const todosParceiros: { nome: string; logo?: string }[] = [
-    { nome: "2W Energia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/2w-energia_dedbe3fb.png" },
+    { nome: "2W Energia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/2w_cb61a07d.png" },
     { nome: "ACBMM", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/cbmm_a25acffd.png" },
     { nome: "AES Brasil", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/aesbrasil_51744356.jfif" },
     { nome: "Alamo Energia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/alamoenergia_66873cdb.png" },
@@ -78,14 +78,14 @@ export default function Parceiros() {
     { nome: "Solatio", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/solatio_65fa4957.webp" },
     { nome: "Sowitec", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/sowitec_3629a597.jfif" },
     { nome: "SPIC Brasil", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/spicbrasil_4a623c85.png" },
-    { nome: "Statkraft", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/statkraft_abb03745.png" },
-    { nome: "State Grid", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/state-grid_2f9eabc6.png" },
-    { nome: "Sunco Capital", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/sunco-capital_eb92beab.png" },
-    { nome: "Taesa", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/taesa_1244712f.png" },
-    { nome: "Triunfo Concetra", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/triunfo-concebra_a19238b2.png" },
-    { nome: "UP", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/up-urbanizadora_d47e149e.png" },
-    { nome: "Vestas", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/vestas_8a73412c.png" },
-    { nome: "Voltalia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/voltalia_2a3ecfe2.png" },
+    { nome: "Statkraft", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/statkraft_04986c25.jfif" },
+    { nome: "State Grid", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/stataegrid_4fcb6898.png" },
+    { nome: "Sunco Capital", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/suncocapital_b12326ba.png" },
+    { nome: "Taesa", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/taesa_76d36b81.png" },
+    { nome: "Triunfo Concetra", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/triunfoconcebra_a9f2b6ee.webp" },
+    { nome: "UP", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/up_c74bed34.png" },
+    { nome: "Vestas", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/vestas_bd14e7a7.png" },
+    { nome: "Voltalia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/voltalia_bde2495a.webp" },
   ].sort((a, b) => a.nome.localeCompare(b.nome));
 
   const parceirosDestaque = todosParceiros.filter(p => PARCEIROS_DESTAQUE.includes(p.nome));
