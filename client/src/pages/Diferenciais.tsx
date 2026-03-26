@@ -95,10 +95,10 @@ export default function Diferenciais() {
       </section>
 
       {/* Divider */}
-      <div className="h-px my-16 lg:my-24" style={{ backgroundColor: '#E6E6E6' }} />
+      <div className="h-px my-8 lg:my-12" style={{ backgroundColor: '#E6E6E6' }} />
 
       {/* Diferenciais grid */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 lg:py-16">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {diferenciais.map((dif, i) => {
@@ -137,7 +137,7 @@ export default function Diferenciais() {
       </section>
 
       {/* Quote strip */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: '#F3EFEA' }}>
+      <section className="py-12 lg:py-16" style={{ backgroundColor: '#F3EFEA' }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
