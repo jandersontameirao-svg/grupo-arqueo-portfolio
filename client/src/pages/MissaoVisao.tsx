@@ -200,7 +200,7 @@ export default function MissaoVisao() {
                     boxShadow: isH ? `0 20px 50px ${p.color}22` : '0 2px 20px rgba(0,0,0,0.04)',
                     transform: isH ? 'translateY(-4px)' : 'translateY(0)',
                     transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
-                    backgroundImage: (isFirst && isH) ? 'url(https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/não_mude_mais_202603261130_27c0c1e3.webp)' : (idx === 1 && isH) ? 'url(https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/aumente_a_qualidade_202603261402_80be33e1.webp)' : (idx === 2 && isH) ? 'url(https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/CRITICAL__THE_HANDS_202603261417_b1b802ef.webp)' : 'none',
+                    backgroundImage: (isFirst && isH) ? 'url(https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/não_mude_mais_202603261130_27c0c1e3.webp)' : (idx === 1 && isH) ? 'url(https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/aumente_a_qualidade_202603261402_80be33e1.webp)' : (idx === 2 && isH) ? 'url(https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/CRITICAL__THE_HANDS_202603261417_b1b802ef.webp)' : (idx === 3 && isH) ? 'url(https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/CRITICAL__THE_HAND_202603261424_91df27fa.webp)' : 'none',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                   }}
@@ -208,7 +208,7 @@ export default function MissaoVisao() {
                   onMouseLeave={() => setHoveredPilar(null)}
                 >
                   {/* Overlay escuro para legibilidade quando imagem está visível */}
-                  {((isFirst && isH) || (idx === 1 && isH) || (idx === 2 && isH)) && (
+                  {((isFirst && isH) || (idx === 1 && isH) || (idx === 2 && isH) || (idx === 3 && isH)) && (
                     <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }} />
                   )}
                   
