@@ -52,8 +52,8 @@ export default function MissaoVisao() {
               <div className="flex items-center gap-8 lg:gap-12 mb-8">
                 <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-20 lg:h-24 xl:h-28 w-auto flex-shrink-0" />
                 <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-bold leading-[1.2]" style={{ color: '#1A1A1A', letterSpacing: '-0.025em' }}>
-                  Os fundamentos que<br />
-                  orientam nossa <span style={{ color: '#EE7501' }}>atuação</span>
+                  Os fundamentos que orientam<br />
+                  nossa <span style={{ color: '#EE7501' }}>atuação</span>
                 </h1>
               </div>
 
