@@ -402,7 +402,7 @@ export default function Cases() {
                 style={{ color: '#1A1A1A', letterSpacing: '-0.025em', fontFamily: "'Playfair Display', Georgia, serif" }}
               >
                 Evidências concretas de capacidade e<br />
-                <span style={{ color: '#6B2332' }}>execução comprovada</span>
+                <span className="whitespace-nowrap" style={{ color: '#6B2332' }}>execução comprovada</span>
               </h1>
             </div>
 
