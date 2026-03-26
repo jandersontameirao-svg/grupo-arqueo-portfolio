@@ -12,7 +12,7 @@ const LOGO_10_ANOS = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/D
 
 /* ── Parceiros estratégicos de maior relevância (destaque) ── */
 const PARCEIROS_DESTAQUE = [
-  "Shell", "Raízen", "Neoenergia", "AES Brasil", "EDP Renewables",
+  "Shell", "Raízen", "Neoenergia", "AES Brasil", "Axia Energia", "EDP Renewables",
   "Statkraft", "State Grid", "PowerChina", "Rumo", "Taesa",
   "Elera Renováveis", "Voltalia", "Grupo Elecnor"
 ];
@@ -22,6 +22,7 @@ export default function Parceiros() {
     { nome: "2W Energia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/2w_cb61a07d.png" },
     { nome: "CBMM", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/cbmm_a25acffd.png" },
     { nome: "AES Brasil", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/aesbrasil_51744356.jfif" },
+    { nome: "Axia Energia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/axiar_fd340f21.jpg" },
     { nome: "AMBIA", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/ambiaconsultoria_f2c403a4.png" },
     { nome: "Ambientare", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/ambientare_2e7c39cf.png" },
     { nome: "Atlas Renewable Energy", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/atlas_0477ebd0.png" },
