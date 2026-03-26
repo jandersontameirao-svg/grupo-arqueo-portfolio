@@ -386,6 +386,9 @@ export default function Cases() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
+            {/* Logo 10 Anos */}
+            <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-14 lg:h-16 w-auto mb-6" />
+
             {/* Label institucional */}
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-[2px] rounded-full" style={{ backgroundColor: '#6B2332' }} />
