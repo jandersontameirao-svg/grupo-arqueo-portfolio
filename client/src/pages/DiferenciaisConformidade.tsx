@@ -1,6 +1,6 @@
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
-import { Cpu, Users, Clock, ShieldCheck, Layers, TrendingUp, Award, Shield, FileText, CheckCircle } from "lucide-react";
+import { Cpu, Users, Clock, ShieldCheck, Layers, TrendingUp, Shield, FileText, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 /**
@@ -47,30 +47,30 @@ const diferenciais = [
   },
 ];
 
-const certifications = [
+const estruturas = [
   {
-    title: "ISO 9001:2015",
-    description: "Gestão da Qualidade",
-    icon: Award,
-    details: "Sistema de gestão da qualidade para consultoria arqueológica"
-  },
-  {
-    title: "ISO 14001:2015",
-    description: "Gestão Ambiental",
+    title: "Governança e Compliance",
+    description: "Integridade institucional",
     icon: Shield,
-    details: "Compromisso com sustentabilidade e responsabilidade ambiental"
+    details: "Atuamos com diretrizes internas, políticas corporativas e compromisso contínuo com integridade, transparência e responsabilidade institucional. Essa base fortalece a confiança nas relações com clientes, equipes, parceiros e demais stakeholders."
   },
   {
-    title: "Licenciamento Ambiental",
-    description: "Conformidade Regulatória",
+    title: "Padronização Operacional",
+    description: "Consistência e controle",
     icon: FileText,
-    details: "Certificações e alinhamento com legislação ambiental brasileira"
+    details: "Nossos projetos são conduzidos por métodos, fluxos e rotinas estruturadas que ampliam consistência, controle e previsibilidade. A padronização operacional permite manter qualidade técnica mesmo em cenários complexos e escaláveis."
   },
   {
-    title: "Conformidade LGPD",
-    description: "Proteção de Dados",
-    icon: CheckCircle,
-    details: "Proteção de dados pessoais e privacidade conforme LGPD"
+    title: "Integração Multidisciplinar",
+    description: "Articulação de competências",
+    icon: Users,
+    details: "A entrega do Grupo Arqueo resulta da articulação entre arqueologia, licenciamento, patrimônio cultural, gestão e suporte técnico. Essa integração amplia a leitura dos contextos de projeto e fortalece respostas mais completas e coordenadas."
+  },
+  {
+    title: "Tecnologia e Inteligência Aplicada",
+    description: "Eficiência e rastreabilidade",
+    icon: Cpu,
+    details: "Utilizamos ferramentas, organização de dados, processos digitais e inteligência aplicada para ampliar eficiência, rastreabilidade e capacidade analítica. Essa estrutura reforça a gestão dos projetos e qualifica a tomada de decisão ao longo da execução."
   },
 ];
 
@@ -202,21 +202,22 @@ export default function DiferenciaisConformidade() {
           >
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
-              <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720' }}>Certificações</span>
+              <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720' }}>Estrutura Organizacional</span>
               <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to left, #861720, #EE7501)' }} />
             </div>
             <h2 className="text-3xl lg:text-5xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
-              Certificações e <span style={{ color: '#861720' }}>Acreditações</span>
+              Estruturas que sustentam <span style={{ color: '#861720' }}>nossa entrega</span>
             </h2>
             <p className="mt-6 text-base lg:text-lg font-light leading-relaxed max-w-3xl mx-auto" style={{ color: '#666' }}>
-              Mantemos as mais rigorosas certificações internacionais para garantir qualidade, segurança e conformidade em todas as operações.
+              A consistência das nossas entregas é resultado de bases organizacionais, técnicas e operacionais que reforçam qualidade, previsibilidade e capacidade de execução em diferentes contextos do licenciamento sociocultural.
             </p>
           </motion.div>
 
-          {/* Certifications Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {certifications.map((cert, i) => {
-              const Icon = cert.icon;
+          {/* Estruturas Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {estruturas.map((item, i) => {
+              const Icon = item.icon;
+              const colors = ['#861720', '#EE7501', '#2C7EB3', '#861720'];
               return (
                 <motion.div
                   key={i}
@@ -224,28 +225,28 @@ export default function DiferenciaisConformidade() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
-                  whileHover={{ y: -8 }}
-                  className="p-6 rounded-xl border transition-all duration-300"
+                  whileHover={{ y: -6 }}
+                  className="p-8 rounded-xl border-l-4 transition-all duration-300"
                   style={{
-                    borderColor: '#E0E0E0',
+                    borderLeftColor: colors[i],
                     backgroundColor: '#FFFFFF',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.06)'
                   }}
                 >
                   <div
-                    className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                    style={{ backgroundColor: cert.icon === Award ? '#861720' : cert.icon === Shield ? '#EE7501' : cert.icon === FileText ? '#2C7EB3' : '#861720', color: '#FFF' }}
+                    className="w-12 h-12 rounded-lg flex items-center justify-center mb-5"
+                    style={{ backgroundColor: colors[i], color: '#FFF' }}
                   >
                     <Icon size={24} />
                   </div>
-                  <h3 className="text-lg font-bold mb-2" style={{ color: '#2A2A2A' }}>
-                    {cert.title}
+                  <h3 className="text-xl font-bold mb-2" style={{ color: '#2A2A2A' }}>
+                    {item.title}
                   </h3>
-                  <p className="text-sm font-medium mb-3" style={{ color: '#861720' }}>
-                    {cert.description}
+                  <p className="text-sm font-semibold mb-3" style={{ color: colors[i] }}>
+                    {item.description}
                   </p>
-                  <p className="text-xs" style={{ color: '#666' }}>
-                    {cert.details}
+                  <p className="text-sm leading-relaxed" style={{ color: '#555' }}>
+                    {item.details}
                   </p>
                 </motion.div>
               );
@@ -255,7 +256,7 @@ export default function DiferenciaisConformidade() {
           {/* Policies Section */}
           <div className="bg-white rounded-xl p-8 lg:p-12">
             <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center" style={{ color: '#2A2A2A' }}>
-              Políticas Corporativas
+              Diretrizes <span style={{ color: '#861720' }}>institucionais</span>
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {policies.map((policy, idx) => (
