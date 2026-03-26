@@ -122,7 +122,7 @@ export default function DiferenciaisConformidade() {
             <div className="flex items-center gap-6 lg:gap-8 mb-6">
               <img src={ASSETS.logo10anos} alt="10 Anos" className="h-20 lg:h-24 xl:h-28 flex-shrink-0" />
               <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
-                O que nos torna{' '}
+                <span className="whitespace-nowrap">O que nos torna</span><br />
                 <span style={{ color: '#EE7501' }}>referência</span> no setor
               </h1>
             </div>
