@@ -14,7 +14,7 @@ const LOGO_10_ANOS = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/D
 const PARCEIROS_DESTAQUE = [
   "Shell", "Raízen", "Neoenergia", "AES Brasil", "EDP Renewables",
   "Statkraft", "State Grid", "PowerChina", "Rumo", "Taesa",
-  "Elera Renováveis", "Voltalia", "Axia Energia", "Grupo Elecnor"
+  "Elera Renováveis", "Voltalia", "Grupo Elecnor"
 ];
 
 export default function Parceiros() {
@@ -22,12 +22,10 @@ export default function Parceiros() {
     { nome: "2W Energia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/2w_cb61a07d.png" },
     { nome: "CBMM", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/cbmm_a25acffd.png" },
     { nome: "AES Brasil", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/aesbrasil_51744356.jfif" },
-      { nome: "Axia Energia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/axiar_47d535fc.jpg" },
     { nome: "AMBIA", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/ambiaconsultoria_f2c403a4.png" },
     { nome: "Ambientare", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/ambientare_2e7c39cf.png" },
     { nome: "Atlas Renewable Energy", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/atlas_0477ebd0.png" },
     { nome: "Aurora", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/aurora_97ef1d14.png" },
-    { nome: "Axia Energia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/axia_fb1300ee.jpg" },
     { nome: "BIenergia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/bienergia_253d3f02.jfif" },
     { nome: "CanadianSolar", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/canadiansolar_9c0d975b.png" },
     { nome: "CEI", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/ceienergia_0c15854e.jfif" },
