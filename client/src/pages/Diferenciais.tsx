@@ -95,7 +95,7 @@ export default function Diferenciais() {
       </section>
 
       {/* Divider */}
-      <div className="h-px my-8 lg:my-12" style={{ backgroundColor: '#E6E6E6' }} />
+      <div className="h-px my-2 lg:my-4" style={{ backgroundColor: '#E6E6E6' }} />
 
       {/* Diferenciais grid */}
       <section className="py-12 lg:py-16">
