@@ -40,7 +40,7 @@ export default function Parceiros() {
     { nome: "EDP Renewables", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/edprenewables_7725946d.webp" },
     { nome: "Eldorado Brasil", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/eldoradobrasil_11c9a07f.jpg" },
     { nome: "Elera Renováveis", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/elera_ac841e1d.png" },
-    { nome: "ENGEPLAN", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/engplan_cbbec40d.png" },
+    { nome: "ENGEPLAN", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603261118(1)_f3c740e8.webp" },
     { nome: "Faro Energy", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faroenergy_d4f40eb7.png" },
     { nome: "Ferreira Rocha", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_Uqv7X8_image_9a98c068.png" },
     { nome: "GDR", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/gdr_1cb3ea1d.webp" },
