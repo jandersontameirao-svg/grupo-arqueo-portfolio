@@ -445,7 +445,7 @@ export default function QuemSomosEcossistema() {
             {/* Section Title */}
             <div className="text-center mb-10">
               <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1A1A1A', fontFamily: 'serif' }}>
-                Um ecossistema, <span style={{ color: '#EE7501' }}>múltiplas</span> especialidades
+                Nosso Time
               </h2>
               <p className="text-sm lg:text-base leading-relaxed max-w-2xl mx-auto" style={{ color: '#999999' }}>
                 Uma equipe multidisciplinar dedicada à excelência em arqueologia, pesquisa e inovação
