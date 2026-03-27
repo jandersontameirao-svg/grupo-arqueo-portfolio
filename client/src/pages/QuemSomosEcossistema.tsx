@@ -53,19 +53,19 @@ export default function QuemSomosEcossistema() {
     },
     {
       year: "2022",
-      title: "ArqueoGIS",
-      desc: "Nasce a ArqueoGIS voltada a projetos de menor complexidade técnica",
-      icon: Globe,
-      badgeColor: "#EE7501",
-      arcColor: "#EE7501",
-    },
-    {
-      year: "2022",
       title: "ArqueoRede",
       desc: "Nasce nosso Blog de Notícias",
       icon: Globe,
       badgeColor: "#F4A460",
       arcColor: "#F4A460",
+    },
+    {
+      year: "2022",
+      title: "ArqueoGIS",
+      desc: "Nasce a ArqueoGIS voltada a projetos de menor complexidade técnica",
+      icon: Globe,
+      badgeColor: "#EE7501",
+      arcColor: "#EE7501",
     },
     {
       year: "2026",
