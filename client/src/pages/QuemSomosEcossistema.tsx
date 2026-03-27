@@ -37,11 +37,11 @@ export default function QuemSomosEcossistema() {
     },
     {
       year: "2020",
-      title: "Ecossistema",
-      desc: "Lançamento das submarcas ArqueoGIS, ArqueoOcean e ArqueoEduc, ampliando o portfólio de serviços.",
+      title: "ArqueoEduc",
+      desc: "Nascimento da nossa plataforma de educação Corporativa",
       icon: Lightbulb,
-      badgeColor: "#EE7501",
-      arcColor: "#EE7501",
+      badgeColor: "#F4D03F",
+      arcColor: "#F4D03F",
     },
     {
       year: "2021",
