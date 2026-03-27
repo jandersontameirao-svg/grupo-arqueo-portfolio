@@ -29,7 +29,7 @@ export default function QuemSomosEcossistema() {
     {
       year: "2018",
       title: "Expansão",
-      desc: "Abertura do escritório em Natal/RN e início da atuação em projetos de energia eólica no Nordeste.",
+      desc: "Assumimos nosso primeiro grande desafio, a LT Pirapora - Rio das Éguas com objetivo de finalizar o processo de licenciamento no IPHAN.",
       icon: Globe,
       badgeColor: "#2C7EB3",
       arcColor: "#2C7EB3",
