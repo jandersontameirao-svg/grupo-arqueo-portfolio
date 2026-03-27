@@ -60,6 +60,14 @@ export default function QuemSomosEcossistema() {
       arcColor: "#EE7501",
     },
     {
+      year: "2022",
+      title: "ArqueoRede",
+      desc: "Nasce nosso Blog de Notícias",
+      icon: Globe,
+      badgeColor: "#F4A460",
+      arcColor: "#F4A460",
+    },
+    {
       year: "2023",
       title: "Consolidação",
       desc: "Escritório em São Paulo, mais de 250 projetos gerenciados e presença em 16 estados.",
@@ -280,7 +288,7 @@ export default function QuemSomosEcossistema() {
               {/* Linha horizontal de conexão - mais visível */}
               <div className="hidden lg:block absolute top-[140px] left-[8%] right-[8%] h-[3px]" style={{ backgroundColor: '#D0CCCA' }} />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 lg:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-8 gap-8 lg:gap-8">
                 {timeline.map((item, idx) => {
                   const Icon = item.icon;
                   const isHovered = hoveredTimelineIdx === idx;
