@@ -36,12 +36,12 @@ export default function QuemSomosEcossistema() {
       arcColor: "#861720",
     },
     {
-      year: "2021",
-      title: "ArqueoOcean",
-      desc: "Nasce a ArqueoOcean voltada a pesquisas subaquáticas e litorâneas",
+      year: "2022",
+      title: "ArqueoGIS",
+      desc: "Nasce a ArqueoGIS voltada a projetos de menor complexidade técnica",
       icon: Globe,
-      badgeColor: "#2C7EB3",
-      arcColor: "#2C7EB3",
+      badgeColor: "#EE7501",
+      arcColor: "#EE7501",
     },
     {
       year: "2023",
