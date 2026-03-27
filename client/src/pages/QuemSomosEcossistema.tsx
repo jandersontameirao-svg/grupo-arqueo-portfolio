@@ -29,11 +29,11 @@ export default function QuemSomosEcossistema() {
     },
     {
       year: "2018",
-      title: "Expansão",
-      desc: "Assumimos nosso primeiro grande desafio, a LT Pirapora - Rio das Éguas com objetivo de finalizar o processo de licenciamento no IPHAN.",
+      title: "Inovação",
+      desc: "Desenvolvimento da ferramenta Sigepa",
       icon: Globe,
-      badgeColor: "#2C7EB3",
-      arcColor: "#2C7EB3",
+      badgeColor: "#861720",
+      arcColor: "#861720",
     },
     {
       year: "2020",
