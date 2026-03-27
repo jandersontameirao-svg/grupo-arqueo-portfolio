@@ -69,8 +69,8 @@ export default function QuemSomosEcossistema() {
     },
     {
       year: "2026",
-      title: "10 Anos",
-      desc: "Celebramos uma década de excelência em arqueologia, inovação e impacto social, consolidando nosso legado como referência nacional.",
+      title: "Consolidação do grupo arqueo",
+      desc: "Aperfeiçoamento e desenvolvimento de novas unidades de negócios",
       icon: Lightbulb,
       badgeColor: "#EE7501",
       arcColor: "#EE7501",
