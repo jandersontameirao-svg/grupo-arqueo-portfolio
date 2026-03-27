@@ -267,16 +267,22 @@ export default function QuemSomosEcossistema() {
                       transition={{ delay: idx * 0.15, duration: 0.6 }}
                       className="relative flex flex-col items-center text-center"
                     >
-                      {/* Círculo grande com ícone - AUMENTADO */}
+                      {/* Círculo grande com ícone ou texto - AUMENTADO */}
                       <div
-                        className="w-32 h-32 lg:w-36 lg:h-36 rounded-full flex items-center justify-center mb-8 relative z-10 transition-all duration-300 hover:shadow-xl"
+                        className="w-32 h-32 lg:w-36 lg:h-36 rounded-full flex items-center justify-center mb-8 relative z-10 transition-all duration-300 hover:shadow-xl p-4"
                         style={{
                           backgroundColor: '#FFFFFF',
                           border: '4px solid #E0DEDA',
                           boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
                         }}
                       >
-                        <Icon className="w-12 h-12 lg:w-14 lg:h-14" style={{ color: item.badgeColor, opacity: 0.85 }} />
+                        {item.year === '2018' ? (
+                          <p className="text-xs lg:text-sm font-semibold leading-tight text-center" style={{ color: '#666666' }}>
+                            Assumimos nosso primeiro grande desafio, a LT Pirapora - Rio das Éguas com objetivo de finalizar o processo de licenciamento no IPHAN.
+                          </p>
+                        ) : (
+                          <Icon className="w-12 h-12 lg:w-14 lg:h-14" style={{ color: item.badgeColor, opacity: 0.85 }} />
+                        )}
                       </div>
 
                       {/* Badge do ano */}
