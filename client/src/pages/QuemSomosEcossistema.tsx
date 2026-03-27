@@ -15,6 +15,7 @@ export default function QuemSomosEcossistema() {
   const [hoveredEmpresa, setHoveredEmpresa] = useState<string | null>(null);
   const [currentPilarIndex, setCurrentPilarIndex] = useState(0);
   const [diagramLoaded, setDiagramLoaded] = useState(false);
+  const [hoveredTimelineIdx, setHoveredTimelineIdx] = useState<number | null>(null);
   const diagramRef = useRef<HTMLDivElement>(null);
 
   const timeline = [
@@ -258,6 +259,7 @@ export default function QuemSomosEcossistema() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
                 {timeline.map((item, idx) => {
                   const Icon = item.icon;
+                  const isHovered = hoveredTimelineIdx === idx;
                   return (
                     <motion.div
                       key={idx}
@@ -266,18 +268,32 @@ export default function QuemSomosEcossistema() {
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.15, duration: 0.6 }}
                       className="relative flex flex-col items-center text-center"
+                      onMouseEnter={() => setHoveredTimelineIdx(idx)}
+                      onMouseLeave={() => setHoveredTimelineIdx(null)}
                     >
                       {/* Círculo grande com ícone - AUMENTADO */}
-                      <div
-                        className="w-32 h-32 lg:w-36 lg:h-36 rounded-full flex items-center justify-center mb-8 relative z-10 transition-all duration-300 hover:shadow-xl"
+                      <motion.div
+                        animate={{
+                          scale: isHovered ? 1.15 : 1,
+                        }}
+                        transition={{
+                          type: 'spring',
+                          stiffness: 300,
+                          damping: 20,
+                          duration: 0.3,
+                        }}
+                        className="w-32 h-32 lg:w-36 lg:h-36 rounded-full flex items-center justify-center mb-8 relative z-10"
                         style={{
                           backgroundColor: '#FFFFFF',
                           border: '4px solid #E0DEDA',
-                          boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+                          boxShadow: isHovered
+                            ? '0 12px 48px rgba(238, 117, 1, 0.25), 0 0 0 8px rgba(238, 117, 1, 0.1)'
+                            : '0 8px 32px rgba(0,0,0,0.08)',
+                          transition: 'box-shadow 0.3s ease-out',
                         }}
                       >
                         <Icon className="w-12 h-12 lg:w-14 lg:h-14" style={{ color: item.badgeColor, opacity: 0.85 }} />
-                      </div>
+                      </motion.div>
 
                       {/* Badge do ano */}
                       <div
