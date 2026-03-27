@@ -23,7 +23,7 @@ export default function QuemSomosEcossistema() {
       year: "2016",
       title: "Fundação",
       desc: "Criação da Arqueoproject em Brasília, com foco em consultoria arqueológica para licenciamento ambiental.",
-      icon: Building2,
+      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueoproject_832696c9.png",
       badgeColor: "#861720",
       arcColor: "#861720",
     },
@@ -31,7 +31,7 @@ export default function QuemSomosEcossistema() {
       year: "2018",
       title: "Inovação",
       desc: "Desenvolvimento da ferramenta Sigepa",
-      icon: Globe,
+      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotiposigepa_40f65c8b.png",
       badgeColor: "#861720",
       arcColor: "#861720",
     },
@@ -39,15 +39,15 @@ export default function QuemSomosEcossistema() {
       year: "2020",
       title: "ArqueoEduc",
       desc: "Nascimento da nossa plataforma de educação Corporativa",
-      icon: Lightbulb,
+      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueoeduc_53b598dc.png",
       badgeColor: "#F4D03F",
       arcColor: "#F4D03F",
     },
     {
       year: "2021",
       title: "ArqueoOcean",
-      desc: "Nasce a ArqueoOcean voltada a pesquisas subaquáticas e litorâneas",
-      icon: Globe,
+      desc: "Nasce a ArqueoOcean voltada a pesquisas subaquáticas e litorâneas",
+      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueocean_5677314a.png",
       badgeColor: "#2C7EB3",
       arcColor: "#2C7EB3",
     },
@@ -55,7 +55,7 @@ export default function QuemSomosEcossistema() {
       year: "2022",
       title: "ArqueoRede",
       desc: "Nasce nosso Blog de Notícias",
-      icon: Globe,
+      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueorede_475fe661.png",
       badgeColor: "#F4A460",
       arcColor: "#F4A460",
     },
@@ -63,7 +63,7 @@ export default function QuemSomosEcossistema() {
       year: "2022",
       title: "ArqueoGIS",
       desc: "Nasce a ArqueoGIS voltada a projetos de menor complexidade técnica",
-      icon: Globe,
+      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueogis_1d0612e0.png",
       badgeColor: "#EE7501",
       arcColor: "#EE7501",
     },
@@ -71,7 +71,7 @@ export default function QuemSomosEcossistema() {
       year: "2026",
       title: "Consolidação do grupo arqueo",
       desc: "Aperfeiçoamento e desenvolvimento de novas unidades de negócios",
-      icon: Lightbulb,
+      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logogrupoarqueo_197db654.png",
       badgeColor: "#EE7501",
       arcColor: "#EE7501",
     },
@@ -282,8 +282,8 @@ export default function QuemSomosEcossistema() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 lg:gap-8">
                 {timeline.map((item, idx) => {
-                  const Icon = item.icon;
                   const isHovered = hoveredTimelineIdx === idx;
+                  const isImageIcon = typeof item.icon === 'string';
                   return (
                     <motion.div
                       key={idx}
@@ -316,7 +316,14 @@ export default function QuemSomosEcossistema() {
                           transition: 'box-shadow 0.3s ease-out',
                         }}
                       >
-                        <Icon className="w-12 h-12 lg:w-14 lg:h-14" style={{ color: item.badgeColor, opacity: 0.85 }} />
+                        {isImageIcon ? (
+                          <img src={item.icon} alt={item.title} className="w-12 h-12 lg:w-14 lg:h-14 object-contain" />
+                        ) : (
+                          (() => {
+                            const Icon = item.icon as any;
+                            return <Icon className="w-12 h-12 lg:w-14 lg:h-14" style={{ color: item.badgeColor, opacity: 0.85 }} />;
+                          })()
+                        )}
                       </motion.div>
 
                       {/* Badge do ano */}
