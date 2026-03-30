@@ -165,11 +165,11 @@ export default function Contato() {
 
                 {/* Janderson */}
                 <div className="mb-10 pb-10" style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
-                  <p className="text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>Janderson</p>
-                  <p className="text-xs font-medium uppercase tracking-wider mb-6" style={{ color: '#999' }}>Direção Comercial</p>
+                  <p className="text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>Janderson Rubens Tameirão</p>
+                  <p className="text-xs font-medium uppercase tracking-wider mb-6" style={{ color: '#999' }}>Diretor</p>
                   <div className="space-y-5">
                     <a
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=janderson@grupoarqueo.com.br"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=jandersonrt@arqueoproject.com.br"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
@@ -179,11 +179,11 @@ export default function Contato() {
                       </div>
                       <div>
                         <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>E-mail</p>
-                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>janderson@grupoarqueo.com.br</p>
+                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>jandersonrt@arqueoproject.com.br</p>
                       </div>
                     </a>
                     <a
-                      href="tel:+5561911211508"
+                      href="tel:+5561982739955"
                       className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
                     >
                       <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl transition-colors duration-200" style={{ backgroundColor: '#EE7501' }}>
@@ -191,11 +191,11 @@ export default function Contato() {
                       </div>
                       <div>
                         <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>Telefone</p>
-                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>+55 61 91121-1508</p>
+                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>+55 (61) 98273-9955</p>
                       </div>
                     </a>
                     <a
-                      href="https://wa.me/5561911211508"
+                      href="https://wa.me/5561982739955"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
@@ -208,12 +208,12 @@ export default function Contato() {
                 </div>
 
                 {/* Fernanda */}
-                <div>
-                  <p className="text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>Fernanda</p>
-                  <p className="text-xs font-medium uppercase tracking-wider mb-6" style={{ color: '#999' }}>Gestão de Projetos</p>
+                <div className="mb-10 pb-10" style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+                  <p className="text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>Fernanda Tameirão</p>
+                  <p className="text-xs font-medium uppercase tracking-wider mb-6" style={{ color: '#999' }}>Diretora Administrativa</p>
                   <div className="space-y-5">
                     <a
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=Fernanda@arqueoproject.com.br"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=fernanda@arqueoproject.com.br"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
@@ -223,7 +223,7 @@ export default function Contato() {
                       </div>
                       <div>
                         <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>E-mail</p>
-                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>Fernanda@arqueoproject.com.br</p>
+                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>fernanda@arqueoproject.com.br</p>
                       </div>
                     </a>
                     <a
@@ -235,11 +235,55 @@ export default function Contato() {
                       </div>
                       <div>
                         <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>Telefone</p>
-                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>+55 61 98318-6264</p>
+                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>+55 (61) 98318-6264</p>
                       </div>
                     </a>
                     <a
                       href="https://wa.me/5561983186264"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+                      style={{ backgroundColor: '#25D366', color: 'white', letterSpacing: '0.08em' }}
+                    >
+                      <Send className="w-3.5 h-3.5" />
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+
+                {/* Samanta */}
+                <div>
+                  <p className="text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>Samanta Mondini</p>
+                  <p className="text-xs font-medium uppercase tracking-wider mb-6" style={{ color: '#999' }}>Coordenadora de Novos Negócios</p>
+                  <div className="space-y-5">
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=relacionamento@grupoarqueo.com.br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
+                    >
+                      <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl transition-colors duration-200" style={{ backgroundColor: '#EE7501' }}>
+                        <Mail className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>E-mail</p>
+                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>relacionamento@grupoarqueo.com.br</p>
+                      </div>
+                    </a>
+                    <a
+                      href="tel:+5561983579088"
+                      className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
+                    >
+                      <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl transition-colors duration-200" style={{ backgroundColor: '#EE7501' }}>
+                        <Phone className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>Telefone</p>
+                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>+55 (61) 98357-9088</p>
+                      </div>
+                    </a>
+                    <a
+                      href="https://wa.me/5561983579088"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
