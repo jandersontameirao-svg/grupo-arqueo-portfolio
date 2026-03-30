@@ -189,8 +189,8 @@ export default function Solucoes() {
 
                     {/* Title */}
                     <h3
-                      className="text-lg lg:text-xl font-bold mb-2 leading-tight"
-                      style={{ color: '#2A2A2A' }}
+                      className="text-lg lg:text-xl font-bold mb-2 leading-tight px-4 py-2 rounded-full inline-block text-white"
+                      style={{ backgroundColor: solution.blockColor }}
                     >
                       {solution.name}
                     </h3>
