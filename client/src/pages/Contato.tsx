@@ -178,8 +178,22 @@ export default function Contato() {
                         <Mail className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>E-mail</p>
+                        <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>E-mail Principal</p>
                         <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>jandersonrt@arqueoproject.com.br</p>
+                      </div>
+                    </a>
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=janderson@grupoarqueo.com.br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
+                    >
+                      <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl transition-colors duration-200" style={{ backgroundColor: '#EE7501' }}>
+                        <Mail className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>E-mail Alternativo</p>
+                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>janderson@grupoarqueo.com.br</p>
                       </div>
                     </a>
                     <a
