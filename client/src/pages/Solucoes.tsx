@@ -211,15 +211,7 @@ export default function Solucoes() {
                       {solution.blockDescription}
                     </p>
 
-                    {/* Badge - Featured indicator */}
-                    {solution.featured && (
-                      <div
-                        className="inline-block px-3 py-1.5 rounded-full text-xs font-medium text-white"
-                        style={{ backgroundColor: solution.blockColor }}
-                      >
-                        Solução Estratégica
-                      </div>
-                    )}
+
                   </div>
                 </motion.div>
               );
