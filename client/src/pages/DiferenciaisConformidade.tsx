@@ -126,8 +126,8 @@ export default function DiferenciaisConformidade() {
                 <span style={{ color: '#EE7501' }}>referência</span> no setor
               </h1>
             </div>
-            <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '600px' }}>
-              Nossos diferenciais são construídos sobre uma base sólida de competência técnica, inovação tecnológica e compromisso com a excelência operacional.
+            <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '700px' }}>
+              Mais do que executar estudos arqueológicos, o Grupo Arqueo integra estratégia, tecnologia, governança e especialização técnica para oferecer previsibilidade, conformidade e inteligência aplicada ao licenciamento e à gestão do patrimônio cultural.
             </p>
           </motion.div>
         </div>
@@ -209,7 +209,7 @@ export default function DiferenciaisConformidade() {
               Estruturas que sustentam <span style={{ color: '#861720' }}>nossa entrega</span>
             </h2>
             <p className="mt-6 text-base lg:text-lg font-light leading-relaxed max-w-3xl mx-auto" style={{ color: '#666' }}>
-              A consistência da nossa atuação é resultado de bases organizacionais, técnicas e operacionais que reforçam qualidade, previsibilidade e capacidade de execução em diferentes contextos do licenciamento e do patrimônio arqueológico.
+              A consistência da nossa atuação é resultado de bases organizacionais, técnicas e operacionais que reforçam qualidade, previsibilidade e capacidade de execução em diferentes contextos do licenciamento e do patrimônio cultural.
             </p>
           </motion.div>
 
