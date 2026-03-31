@@ -1,6 +1,6 @@
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
-import { Cpu, Users, Clock, ShieldCheck, Layers, TrendingUp, Shield, FileText, CheckCircle } from "lucide-react";
+import { Cpu, Users, Clock, Map, Layers, TrendingUp, Shield, FileText, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 /**
@@ -28,10 +28,10 @@ const diferenciais = [
     highlight: "Gestão estratégica de processos",
   },
   {
-    icon: ShieldCheck,
-    title: "Governança, Ética e Compliance",
-    desc: "Estrutura institucional apoiada em diretrizes internas, integridade corporativa, compromisso ético e mecanismos formais de conformidade.",
-    highlight: "Código de Conduta e Política Anticorrupção",
+    icon: Map,
+    title: "Inteligência Territorial e de Dados",
+    desc: "Análise integrada de dados territoriais, arqueológicos e ambientais para subsidiar decisões estratégicas, identificar oportunidades e mitigar riscos em projetos de patrimônio.",
+    highlight: "Inteligência aplicada ao território",
   },
   {
     icon: TrendingUp,
@@ -127,7 +127,7 @@ export default function DiferenciaisConformidade() {
               </h1>
             </div>
             <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '700px' }}>
-              Mais do que executar estudos arqueológicos, o Grupo Arqueo integra estratégia, tecnologia, governança e especialização técnica para oferecer previsibilidade, conformidade e inteligência aplicada ao licenciamento e à gestão do patrimônio cultural.
+              Diferenciais que ampliam previsibilidade, inteligência aplicada e capacidade de entrega em projetos de patrimônio cultural e arqueologia preventiva.
             </p>
           </motion.div>
         </div>
@@ -209,7 +209,7 @@ export default function DiferenciaisConformidade() {
               Estruturas que sustentam <span style={{ color: '#861720' }}>nossa entrega</span>
             </h2>
             <p className="mt-6 text-base lg:text-lg font-light leading-relaxed max-w-3xl mx-auto" style={{ color: '#666' }}>
-              A consistência da nossa atuação é resultado de bases organizacionais, técnicas e operacionais que reforçam qualidade, previsibilidade e capacidade de execução em diferentes contextos do licenciamento e do patrimônio cultural.
+              Bases organizacionais, técnicas e operacionais que asseguram consistência, controle e qualidade nas entregas.
             </p>
           </motion.div>
 
