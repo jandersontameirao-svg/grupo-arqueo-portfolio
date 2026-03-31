@@ -10,67 +10,67 @@ import { motion } from "framer-motion";
 
 const diferenciais = [
   {
-    icon: Cpu,
-    title: "Inovação Tecnológica",
-    desc: "Utilizamos tecnologias proprietárias e ferramentas de ponta em geoprocessamento, modelagem 3D e gestão de dados, garantindo precisão e eficiência em cada projeto.",
-    highlight: "Tecnologia proprietária ArqueoGIS",
-  },
-  {
-    icon: Users,
-    title: "Equipe Multidisciplinar",
-    desc: "Contamos com arqueólogos, historiadores, geógrafos, biólogos, educadores e especialistas em tecnologia, formando uma equipe completa e integrada.",
-    highlight: "Profissionais especializados em cada área",
-  },
-  {
-    icon: Clock,
-    title: "Agilidade Processual",
-    desc: "Gestão estratégica de prazos e processos junto ao IPHAN e órgãos estaduais, com acompanhamento proativo de condicionantes e entregas.",
-    highlight: "Cumprimento rigoroso de cronogramas",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Compliance e Governança",
-    desc: "Programa robusto de compliance com código de conduta, política anticorrupção e gestão de riscos, assegurando integridade em todas as operações.",
-    highlight: "Código de Conduta e Política Anticorrupção",
-  },
-  {
     icon: Layers,
-    title: "Ecossistema Integrado",
-    desc: "Quatro empresas especializadas operando de forma integrada, cobrindo desde a pesquisa de campo até educação patrimonial e arqueologia subaquática.",
+    title: "Ecossistema Integrado de Soluções",
+    desc: "Atuação articulada entre arqueologia, patrimônio cultural, educação, tecnologia, gestão e comunicação, com soluções complementares sob uma lógica integrada.",
     highlight: "Solução completa em um único grupo",
   },
   {
+    icon: Cpu,
+    title: "Tecnologia Proprietária Aplicada ao Campo",
+    desc: "Uso de tecnologia própria para padronizar dados, qualificar registros, aumentar rastreabilidade e tornar a operação técnica mais eficiente.",
+    highlight: "Tecnologia proprietária ArqueoGIS",
+  },
+  {
+    icon: Clock,
+    title: "Estratégia Processual com Visão de Negócio",
+    desc: "Integração entre licenciamento, gestão processual, análise de risco e suporte técnico para decisões mais seguras e melhor previsibilidade operacional.",
+    highlight: "Gestão estratégica de processos",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Governança, Ética e Compliance",
+    desc: "Estrutura institucional apoiada em diretrizes internas, integridade corporativa, compromisso ético e mecanismos formais de conformidade.",
+    highlight: "Código de Conduta e Política Anticorrupção",
+  },
+  {
     icon: TrendingUp,
-    title: "Experiência Comprovada",
-    desc: "Mais de 250 projetos gerenciados em 16 estados brasileiros, atendendo aos maiores empreendimentos de infraestrutura e energia do país.",
-    highlight: "250+ projetos em 10 anos",
+    title: "Especialização Técnica em Ambientes Complexos",
+    desc: "Capacidade de atuação em contextos técnicos diversos, inclusive situações de maior complexidade territorial, operacional e arqueológica.",
+    highlight: "Atuação em ambientes complexos",
+  },
+  {
+    icon: Users,
+    title: "Padronização com Capilaridade Nacional",
+    desc: "Presença ampliada e capacidade de mobilização combinadas com processos padronizados, coordenação técnica e consistência nas entregas.",
+    highlight: "Presença em 16 estados brasileiros",
   },
 ];
 
 const estruturas = [
   {
     title: "Governança e Compliance",
-    description: "Integridade institucional",
+    description: "Estrutura institucional apoiada em diretrizes internas",
     icon: Shield,
-    details: "Atuamos com diretrizes internas, políticas corporativas e compromisso contínuo com integridade, transparência e responsabilidade institucional. Essa base fortalece a confiança nas relações com clientes, equipes, parceiros e demais stakeholders."
+    details: "Atuação sustentada por políticas, processos, responsabilidades definidas e compromisso institucional com integridade e conformidade."
   },
   {
     title: "Padronização Operacional",
-    description: "Consistência e controle",
+    description: "Métodos, fluxos, rotinas e parâmetros técnicos",
     icon: FileText,
-    details: "Nossos projetos são conduzidos por métodos, fluxos e rotinas estruturadas que ampliam consistência, controle e previsibilidade. A padronização operacional permite manter qualidade técnica mesmo em cenários complexos e escaláveis."
+    details: "Processos padronizados que asseguram consistência, controle e qualidade técnica mesmo em cenários complexos e escaláveis."
   },
   {
     title: "Integração Multidisciplinar",
-    description: "Articulação de competências",
+    description: "Articulação entre arqueologia, gestão, patrimônio cultural, tecnologia e suporte técnico",
     icon: Users,
-    details: "A entrega do Grupo Arqueo resulta da articulação entre arqueologia, licenciamento, patrimônio cultural, gestão e suporte técnico. Essa integração amplia a leitura dos contextos de projeto e fortalece respostas mais completas e coordenadas."
+    details: "Soluções mais completas e coordenadas resultantes da integração entre diferentes áreas de especialização."
   },
   {
     title: "Tecnologia e Inteligência Aplicada",
-    description: "Eficiência e rastreabilidade",
+    description: "Uso de soluções digitais, organização de dados, inteligência operacional e instrumentos técnicos",
     icon: Cpu,
-    details: "Utilizamos ferramentas, organização de dados, processos digitais e inteligência aplicada para ampliar eficiência, rastreabilidade e capacidade analítica. Essa estrutura reforça a gestão dos projetos e qualifica a tomada de decisão ao longo da execução."
+    details: "Ferramentas e processos que ampliam eficiência, rastreabilidade e capacidade analítica para apoiar decisões e ampliar eficácia."
   },
 ];
 
@@ -209,7 +209,7 @@ export default function DiferenciaisConformidade() {
               Estruturas que sustentam <span style={{ color: '#861720' }}>nossa entrega</span>
             </h2>
             <p className="mt-6 text-base lg:text-lg font-light leading-relaxed max-w-3xl mx-auto" style={{ color: '#666' }}>
-              A consistência das nossas entregas é resultado de bases organizacionais, técnicas e operacionais que reforçam qualidade, previsibilidade e capacidade de execução em diferentes contextos do licenciamento sociocultural.
+              A consistência da nossa atuação é resultado de bases organizacionais, técnicas e operacionais que reforçam qualidade, previsibilidade e capacidade de execução em diferentes contextos do licenciamento e do patrimônio arqueológico.
             </p>
           </motion.div>
 
