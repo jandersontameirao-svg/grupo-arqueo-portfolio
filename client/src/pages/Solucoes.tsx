@@ -3,96 +3,265 @@
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
 import { motion } from "framer-motion";
-import { Search, FileText, Pickaxe, Monitor, GraduationCap, Anchor, Database, ClipboardCheck } from "lucide-react";
+import { Search, FileText, Pickaxe, Monitor, GraduationCap, Anchor, Database, ClipboardCheck, Shield, Users, Lightbulb, Zap } from "lucide-react";
 
 /**
- * SOLUÇÕES — Página 05 (Redesenhada com novo layout)
- * Design: Cards com borda lateral colorida, descrição, ícone, título e badge
- * - Conteúdo original mantido (5 blocos temáticos)
- * - Novo layout: borda lateral 4px colorida, ícone, título, descrição, badge
- * - Grid 3 colunas responsivo
- * - Cores do Grupo Arqueo
+ * SOLUÇÕES — Página 05 (Reestruturada com 3 blocos temáticos)
+ * 
+ * BLOCO 1: Consultoria e Assessoria (Estratégia)
+ * BLOCO 2: Serviços Arqueológicos (Execução)
+ * BLOCO 3: Soluções Complementares (Inovação)
+ * 
+ * Design: Cards com borda lateral colorida, ícone, título com fundo colorido, categoria e descrição
+ * Grid responsivo 3 colunas
+ * Cores do Grupo Arqueo: Azul, Bordo, Laranja, Amarelo
  */
 
-// Blocos temáticos com suas soluções - CONTEÚDO ORIGINAL
-const solutionBlocks = [
+// BLOCO 1: Consultoria e Assessoria
+const consultoriaServices = [
   {
-    id: "pesquisa",
-    title: "Pesquisa e Diagnóstico",
-    description: "Levantamentos especializados e avaliações técnicas para identificar potencial arqueológico e patrimônio cultural.",
+    name: "Gestão de Licenciamento",
+    description: "Planejamento e condução técnica do licenciamento com foco em segurança processual, previsibilidade e tomada de decisão.",
+    icon: ClipboardCheck,
     color: "#2C7EB3", // Azul
-    solutions: [
-      { name: "Diagnóstico Arqueológico", icon: Search, featured: true },
-      { name: "Prospecção e Resgate", icon: Pickaxe, featured: false },
-      { name: "Pesquisa Documental", icon: FileText, featured: false },
-    ],
+    category: "Consultoria e Assessoria"
   },
   {
-    id: "gestao",
-    title: "Gestão e Licenciamento",
-    description: "Gerenciamento completo de processos de licenciamento e conformidade regulatória junto ao IPHAN.",
-    color: "#861720", // Bordo
-    solutions: [
-      { name: "Gestão de Licenciamento", icon: ClipboardCheck, featured: true },
-      { name: "Laudos e Relatórios", icon: FileText, featured: false },
-      { name: "Conformidade Regulatória", icon: Monitor, featured: false },
-    ],
+    name: "Consultoria Técnica Arqueológica",
+    description: "Suporte especializado para orientar empreendimentos, equipes e instituições em demandas arqueológicas de diferentes níveis de complexidade.",
+    icon: Lightbulb,
+    color: "#2C7EB3",
+    category: "Consultoria e Assessoria"
   },
   {
-    id: "patrimonio",
-    title: "Patrimônio e Educação",
-    description: "Programas de preservação, educação patrimonial e comunicação social integrada.",
-    color: "#EE7501", // Laranja
-    solutions: [
-      { name: "Educação Patrimonial", icon: GraduationCap, featured: true },
-      { name: "Comunicação Social", icon: FileText, featured: false },
-      { name: "Preservação Comunitária", icon: Monitor, featured: false },
-    ],
+    name: "Assessoria e Gestão Processual",
+    description: "Acompanhamento técnico-administrativo de processos, documentos, prazos e interlocuções institucionais ao longo do licenciamento.",
+    icon: Shield,
+    color: "#2C7EB3",
+    category: "Consultoria e Assessoria"
   },
   {
-    id: "monitoramento",
-    title: "Monitoramento e Salvamento",
-    description: "Acompanhamento técnico durante obras e pesquisa especializada em patrimônio subaquático.",
-    color: "#F4C430", // Amarelo
-    solutions: [
-      { name: "Monitoramento Arqueológico", icon: Monitor, featured: true },
-      { name: "Arqueologia Subaquática", icon: Anchor, featured: false },
-      { name: "Resgate de Sítios", icon: Pickaxe, featured: false },
-    ],
+    name: "Conformidade Regulatória",
+    description: "Análise e adequação de projetos às exigências legais e normativas aplicáveis ao patrimônio cultural.",
+    icon: Monitor,
+    color: "#2C7EB3",
+    category: "Consultoria e Assessoria"
   },
   {
-    id: "tecnologia",
-    title: "Tecnologia e Suporte Técnico",
-    description: "Soluções geoespaciais avançadas e tecnologia aplicada à arqueologia e patrimônio cultural.",
-    color: "#EE7501", // Laranja
-    solutions: [
-      { name: "Geoprocessamento e SIG", icon: Database, featured: true },
-      { name: "Modelagem 3D", icon: Database, featured: false },
-      { name: "Sensoriamento Remoto", icon: Database, featured: false },
-    ],
+    name: "Diligência Processual e Suporte ao Contencioso",
+    description: "Apoio técnico em diligências, manifestações, respostas e situações sensíveis que exigem fundamentação especializada.",
+    icon: FileText,
+    color: "#2C7EB3",
+    category: "Consultoria e Assessoria"
   },
 ];
 
-// Flattened array de todas as soluções para novo layout
-const allSolutions = (() => {
-  const flattened = solutionBlocks.flatMap((block) =>
-    block.solutions.map((sol) => ({
-      ...sol,
-      blockTitle: block.title,
-      blockColor: block.color,
-      blockDescription: block.description,
-    }))
+// BLOCO 2: Serviços Arqueológicos
+const arqueologicosServices = [
+  {
+    name: "Diagnóstico Arqueológico e Pesquisa Documental",
+    description: "Levantamento técnico inicial com base em dados históricos, documentais e evidências territoriais para orientar a tomada de decisão.",
+    icon: Search,
+    color: "#861720", // Bordo
+    category: "Serviços Arqueológicos"
+  },
+  {
+    name: "FCA",
+    description: "Elaboração de ficha técnica inicial voltada ao enquadramento do empreendimento e ao suporte preliminar do licenciamento.",
+    icon: FileText,
+    color: "#861720",
+    category: "Serviços Arqueológicos"
+  },
+  {
+    name: "Avaliação de Potencial de Impacto",
+    description: "Estudo técnico para identificação de potencial arqueológico e análise preliminar de risco em áreas de interesse.",
+    icon: Monitor,
+    color: "#861720",
+    category: "Serviços Arqueológicos"
+  },
+  {
+    name: "Avaliação de Impacto ao Patrimônio Arqueológico",
+    description: "Análise dos efeitos do empreendimento sobre o patrimônio arqueológico, com base em critérios técnicos e normativos.",
+    icon: Pickaxe,
+    color: "#861720",
+    category: "Serviços Arqueológicos"
+  },
+  {
+    name: "Monitoramento e Acompanhamento Arqueológico",
+    description: "Supervisão técnica de atividades em campo para prevenção, registro e controle de ocorrências arqueológicas.",
+    icon: Monitor,
+    color: "#861720",
+    category: "Serviços Arqueológicos"
+  },
+  {
+    name: "Prospecção e Resgate Arqueológico",
+    description: "Execução de pesquisas de campo voltadas à identificação, registro, mitigação e salvaguarda de vestígios arqueológicos.",
+    icon: Pickaxe,
+    color: "#861720",
+    category: "Serviços Arqueológicos"
+  },
+  {
+    name: "Programa de Gestão do Patrimônio Arqueológico",
+    description: "Estruturação e execução de programas integrados para acompanhamento, proteção e gestão do patrimônio arqueológico.",
+    icon: Shield,
+    color: "#861720",
+    category: "Serviços Arqueológicos"
+  },
+  {
+    name: "Curadoria e Guarda Definitiva de Material Arqueológico",
+    description: "Organização, tratamento técnico, catalogação e destinação adequada de acervos e materiais arqueológicos.",
+    icon: Database,
+    color: "#861720",
+    category: "Serviços Arqueológicos"
+  },
+  {
+    name: "Arqueologia Subaquática e Litorânea",
+    description: "Estudos e intervenções em ambientes aquáticos e costeiros, com metodologia específica para contextos submersos e marginais.",
+    icon: Anchor,
+    color: "#861720",
+    category: "Serviços Arqueológicos"
+  },
+];
+
+// BLOCO 3: Soluções Complementares
+const complementaresServices = [
+  {
+    name: "Avaliação de Impacto a Bens Culturais Tombados",
+    description: "Estudos técnicos voltados à análise de interferências sobre bens protegidos e suas áreas de influência.",
+    icon: Monitor,
+    color: "#EE7501", // Laranja
+    category: "Soluções Complementares"
+  },
+  {
+    name: "Educação Patrimonial Integrada",
+    description: "Programas educativos conectados ao território, ao licenciamento e à valorização social do patrimônio cultural.",
+    icon: GraduationCap,
+    color: "#EE7501",
+    category: "Soluções Complementares"
+  },
+  {
+    name: "Comunicação Social e Pesquisas Culturais",
+    description: "Ações de diálogo, escuta e produção de conhecimento voltadas ao contexto sociocultural dos territórios de atuação.",
+    icon: Users,
+    color: "#EE7501",
+    category: "Soluções Complementares"
+  },
+  {
+    name: "Geotecnologias Aplicadas",
+    description: "Aplicação de geoprocessamento, SIG, sensoriamento remoto, geomapeamento e modelagem para suporte técnico e analítico.",
+    icon: Database,
+    color: "#EE7501",
+    category: "Soluções Complementares"
+  },
+  {
+    name: "Tecnologia para Gestão Arqueológica",
+    description: "Soluções digitais para organização de dados, rastreabilidade, padronização de processos e gestão de informações técnicas.",
+    icon: Zap,
+    color: "#EE7501",
+    category: "Soluções Complementares"
+  },
+  {
+    name: "Capacitação e Treinamentos Técnicos",
+    description: "Cursos, formações e treinamentos voltados ao desenvolvimento técnico de equipes, instituições e profissionais do setor.",
+    icon: GraduationCap,
+    color: "#EE7501",
+    category: "Soluções Complementares"
+  },
+];
+
+// Componente para renderizar um bloco de serviços
+function ServiceBlock({ title, subtitle, services }: { title: string; subtitle: string; services: typeof consultoriaServices }) {
+  return (
+    <section className="py-20 lg:py-28 border-t first:border-t-0">
+      <div className="container">
+        {/* Título e subtítulo do bloco */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '0px 0px -100px 0px' }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 lg:mb-20"
+        >
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4" style={{ color: '#2A2A2A' }}>
+            {title}
+          </h2>
+          <p className="text-lg lg:text-xl leading-relaxed max-w-3xl" style={{ color: '#666' }}>
+            {subtitle}
+          </p>
+        </motion.div>
+
+        {/* Grid de cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          {services.map((service, idx) => {
+            const Icon = service.icon;
+            
+            return (
+              <motion.div
+                key={service.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '0px 0px -50px 0px' }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: idx * 0.08,
+                  ease: 'easeOut'
+                }}
+                className="group"
+              >
+                {/* Card com borda lateral */}
+                <div
+                  className="h-full flex flex-col p-6 lg:p-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  style={{
+                    backgroundColor: '#FFFFFF',
+                    borderLeft: `4px solid ${service.color}`,
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+                  }}
+                >
+                  {/* Icon */}
+                  <div
+                    className="w-14 h-14 flex items-center justify-center rounded-lg mb-4 transition-all duration-300 group-hover:scale-110"
+                    style={{
+                      backgroundColor: `${service.color}15`,
+                    }}
+                  >
+                    <Icon
+                      className="w-7 h-7"
+                      style={{ color: service.color }}
+                    />
+                  </div>
+
+                  {/* Title com fundo colorido */}
+                  <h3
+                    className="text-lg lg:text-xl font-bold mb-2 leading-tight px-4 py-2 rounded-full inline-block text-white"
+                    style={{ backgroundColor: service.color }}
+                  >
+                    {service.name}
+                  </h3>
+
+                  {/* Category */}
+                  <p
+                    className="text-xs font-medium mb-4"
+                    style={{ color: service.color }}
+                  >
+                    {service.category}
+                  </p>
+
+                  {/* Description */}
+                  <p
+                    className="text-sm lg:text-base leading-relaxed flex-grow"
+                    style={{ color: '#666' }}
+                  >
+                    {service.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
-  
-  // Mover "Gestão de Licenciamento" para primeira linha
-  const gestaoIndex = flattened.findIndex(s => s.name === 'Gestão de Licenciamento');
-  if (gestaoIndex > -1) {
-    const [gestao] = flattened.splice(gestaoIndex, 1);
-    flattened.unshift(gestao);
-  }
-  
-  return flattened;
-})();
+}
 
 export default function Solucoes() {
   return (
@@ -156,80 +325,26 @@ export default function Solucoes() {
         </div>
       </section>
 
-      {/* Solutions Grid — Cards com borda lateral colorida */}
-      <section className="py-16 lg:py-24">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {allSolutions.map((solution, idx) => {
-              const Icon = solution.icon;
-              
-              return (
-                <motion.div
-                  key={`${solution.blockTitle}-${solution.name}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '0px 0px -50px 0px' }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: idx * 0.08,
-                    ease: 'easeOut'
-                  }}
-                  className="group"
-                >
-                  {/* Card com borda lateral */}
-                  <div
-                    className="h-full flex flex-col p-6 lg:p-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                    style={{
-                      backgroundColor: '#FFFFFF',
-                      borderLeft: `4px solid ${solution.blockColor}`,
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-                    }}
-                  >
-                    {/* Icon */}
-                    <div
-                      className="w-14 h-14 flex items-center justify-center rounded-lg mb-4 transition-all duration-300 group-hover:scale-110"
-                      style={{
-                        backgroundColor: `${solution.blockColor}15`,
-                      }}
-                    >
-                      <Icon
-                        className="w-7 h-7"
-                        style={{ color: solution.blockColor }}
-                      />
-                    </div>
+      {/* BLOCO 1: Consultoria e Assessoria */}
+      <ServiceBlock
+        title="Consultoria e Assessoria"
+        subtitle="Soluções estratégicas para orientar processos, reduzir riscos e dar suporte técnico qualificado ao licenciamento e à tomada de decisão."
+        services={consultoriaServices}
+      />
 
-                    {/* Title */}
-                    <h3
-                      className="text-lg lg:text-xl font-bold mb-2 leading-tight px-4 py-2 rounded-full inline-block text-white"
-                      style={{ backgroundColor: solution.blockColor }}
-                    >
-                      {solution.name}
-                    </h3>
+      {/* BLOCO 2: Serviços Arqueológicos */}
+      <ServiceBlock
+        title="Serviços Arqueológicos"
+        subtitle="Execução técnica estruturada para atender as diferentes etapas da arqueologia preventiva, da análise inicial à gestão do patrimônio arqueológico."
+        services={arqueologicosServices}
+      />
 
-                    {/* Block Category */}
-                    <p
-                      className="text-xs font-medium mb-3"
-                      style={{ color: solution.blockColor }}
-                    >
-                      {solution.blockTitle}
-                    </p>
-
-                    {/* Description */}
-                    <p
-                      className="text-sm lg:text-base leading-relaxed mb-6 flex-grow"
-                      style={{ color: '#666' }}
-                    >
-                      {solution.blockDescription}
-                    </p>
-
-
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      {/* BLOCO 3: Soluções Complementares */}
+      <ServiceBlock
+        title="Soluções Complementares"
+        subtitle="Serviços integrados que ampliam a capacidade técnica do Grupo Arqueo e agregam inteligência, tecnologia e valor territorial às entregas."
+        services={complementaresServices}
+      />
 
       {/* CTA Section */}
       <section className="py-16 lg:py-20 border-t">
