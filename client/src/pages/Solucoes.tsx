@@ -74,14 +74,25 @@ const solutionBlocks = [
 ];
 
 // Flattened array de todas as soluções para novo layout
-const allSolutions = solutionBlocks.flatMap((block) =>
-  block.solutions.map((sol) => ({
-    ...sol,
-    blockTitle: block.title,
-    blockColor: block.color,
-    blockDescription: block.description,
-  }))
-);
+const allSolutions = (() => {
+  const flattened = solutionBlocks.flatMap((block) =>
+    block.solutions.map((sol) => ({
+      ...sol,
+      blockTitle: block.title,
+      blockColor: block.color,
+      blockDescription: block.description,
+    }))
+  );
+  
+  // Mover "Gestão de Licenciamento" para primeira linha
+  const gestaoIndex = flattened.findIndex(s => s.name === 'Gestão de Licenciamento');
+  if (gestaoIndex > -1) {
+    const [gestao] = flattened.splice(gestaoIndex, 1);
+    flattened.unshift(gestao);
+  }
+  
+  return flattened;
+})();
 
 export default function Solucoes() {
   return (
