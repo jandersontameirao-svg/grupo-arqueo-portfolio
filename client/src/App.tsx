@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import CeoMessage from "./pages/CeoMessage";
 import QuemSomosEcossistema from "./pages/QuemSomosEcossistema";
 import Solucoes from "./pages/Solucoes";
+import Diferenciais from "./pages/Diferenciais";
 import DiferenciaisConformidade from "./pages/DiferenciaisConformidade";
 import NumerosTerritori from "./pages/NumerosTerritori";
 import Cases from "./pages/Cases";
@@ -26,7 +27,7 @@ function Router() {
       <Route path="/ecossistema" component={QuemSomosEcossistema} />
       <Route path="/missao-visao" component={MissaoVisao} />
       <Route path="/solucoes" component={Solucoes} />
-      <Route path="/diferenciais" component={DiferenciaisConformidade} />
+      <Route path="/diferenciais" component={Diferenciais} />
       <Route path="/conformidade" component={DiferenciaisConformidade} />
       <Route path="/numeros" component={NumerosTerritori} />
       <Route path="/numeros-territorio" component={NumerosTerritori} />
