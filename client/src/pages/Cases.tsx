@@ -25,7 +25,8 @@ const CASE_IMAGES = {
   rodovia: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/case-rodovia-br101-FF3Tvm49pnsToQWfYJ8pcg.webp',
   mineracao: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/case-mineracao-espinhaco-jq6sz7sgBCojXSrNFegSYf.webp',
   porto: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/case-porto-pecem-ccYV5LxZNgbQsQ87AteBFk.webp',
-  candiota: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_2ayIBO_image_b5365da3.png',
+  candiota: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_dJQqSS_image_f4da60f3.png',
+  cabuí: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_GSER2w_image_d3cd477d.png',
   rumo: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_cgFwww_image_febed7d7.png',
 };
 
@@ -135,7 +136,7 @@ const cases = [
     location: "Minas Gerais",
     year: "2023",
     client: "Confidencial",
-    image: CASE_IMAGES.rodovia,
+    image: CASE_IMAGES.cabuí,
     desc: "Reestabelecimento de confiança com CGLic, desenvolvimento de metodologia inovadora para pesquisa em área histórica e avaliação contenciosa qualificada sobre TAC.",
     services: ["Articulação Institucional", "Área Histórica", "Inovação Metodológica", "Contencioso Técnico"],
     tier: "standard" as const,
