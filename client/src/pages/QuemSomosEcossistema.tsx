@@ -426,10 +426,9 @@ export default function QuemSomosEcossistema() {
                   >
                     {/* Logo Grande no Topo */}
                     <div
-                      className="w-24 h-24 rounded-full flex items-center justify-center mb-8 mx-auto"
-                      style={{ backgroundColor: `${selectedEmpresaData.color}15`, border: `3px solid ${selectedEmpresaData.color}30` }}
+                      className="w-24 h-24 flex items-center justify-center mb-8 mx-auto"
                     >
-                      <img src={selectedEmpresaData.logo} alt={selectedEmpresaData.name} className="w-16 h-16 object-contain" />
+                      <img src={selectedEmpresaData.logo} alt={selectedEmpresaData.name} className="w-20 h-20 object-contain" />
                     </div>
 
                     {/* Nome e Subtítulo */}
