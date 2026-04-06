@@ -25,6 +25,7 @@ const CASE_IMAGES = {
   rodovia: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/case-rodovia-br101-FF3Tvm49pnsToQWfYJ8pcg.webp',
   mineracao: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/case-mineracao-espinhaco-jq6sz7sgBCojXSrNFegSYf.webp',
   porto: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/case-porto-pecem-ccYV5LxZNgbQsQ87AteBFk.webp',
+  candiota: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_2ayIBO_image_b5365da3.png',
 };
 
 const cases = [
@@ -100,7 +101,7 @@ const cases = [
     location: "Rio Grande do Sul",
     year: "2022",
     client: "Confidencial",
-    image: CASE_IMAGES.solar,
+    image: CASE_IMAGES.candiota,
     desc: "Análise metodológica arrojada que possibilitou avanço direto para fase de gestão, suprimindo necessidade de estudos preventivos através de aproveitamento técnico de estudos pretéritos.",
     services: ["Otimização do Licenciamento", "Inovação Metodológica", "Estudos Pretéritos", "Eficiência Processual"],
     tier: "standard" as const,
