@@ -135,50 +135,122 @@ export async function generatePortfolioPDF() {
   }
 
   // ============================================================
-  // PAGE 1 — CAPA
+  // PAGE 1 — CAPA (Réplica da Home do site)
   // ============================================================
   doc.setFillColor(...COLORS.fundo);
   doc.rect(0, 0, PAGE_W, PAGE_H, 'F');
 
-  // Top bar
-  doc.setFillColor(...COLORS.bordo);
-  doc.rect(0, 0, PAGE_W, 6, 'F');
-  doc.setFillColor(...COLORS.laranja);
-  doc.rect(0, 6, PAGE_W, 2, 'F');
+  // Subtle radial gradient effect (light circle on right side)
+  doc.setFillColor(245, 240, 235);
+  doc.circle(200, 105, 85, 'F');
+  doc.setFillColor(...COLORS.fundo);
+  doc.circle(200, 105, 82, 'F');
 
-  // Logo 10 anos
+  // ---- LEFT SIDE ----
+  // Logo 10 anos (top left)
   if (logoBase64) {
-    doc.addImage(logoBase64, 'PNG', PAGE_W / 2 - 35, 35, 70, 55);
+    doc.addImage(logoBase64, 'PNG', 18, 12, 52, 40);
   }
 
-  // Title
+  // Label
   doc.setFont('helvetica', 'bold');
-  doc.setFontSize(28);
-  doc.setTextColor(...COLORS.bordo);
-  doc.text('Portfólio Institucional', PAGE_W / 2, 110, { align: 'center' });
-
-  doc.setFont('helvetica', 'normal');
-  doc.setFontSize(14);
+  doc.setFontSize(7);
   doc.setTextColor(...COLORS.laranja);
-  doc.text('Consultoria estratégica em pesquisa e gestão', PAGE_W / 2, 122, { align: 'center' });
-  doc.text('do patrimônio sociocultural', PAGE_W / 2, 130, { align: 'center' });
+  doc.text('PATRIMÔNIO CULTURAL E ARQUEOLÓGICO', 20, 60);
 
-  // Divider
-  doc.setFillColor(...COLORS.laranja);
-  doc.rect(PAGE_W / 2 - 30, 138, 60, 0.8, 'F');
+  // Main title
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(24);
+  doc.setTextColor(...COLORS.charcoal);
+  doc.text('Consultoria', 20, 75);
+  doc.text('estratégica ', 20, 86);
+  doc.setTextColor(...COLORS.laranja);
+  doc.text('em', 20 + doc.getTextWidth('estratégica '), 86);
+  doc.setTextColor(...COLORS.laranja);
+  doc.text('pesquisa', 20, 97);
+  doc.setTextColor(...COLORS.charcoal);
+  doc.text(' e gestão do', 20 + doc.getTextWidth('pesquisa'), 97);
+  doc.text('patrimônio', 20, 108);
+  doc.setTextColor(...COLORS.laranja);
+  doc.text('sociocultural', 20, 119);
 
+  // Description text
   doc.setFont('helvetica', 'normal');
-  doc.setFontSize(10);
+  doc.setFontSize(8);
   doc.setTextColor(...COLORS.cinzaClaro);
-  doc.text('10 anos transformando patrimônio em legado', PAGE_W / 2, 148, { align: 'center' });
+  const descLines = doc.splitTextToSize('Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica e gestão estratégica para oferecer soluções completas em licenciamento sociocultural no Brasil.', 110);
+  doc.text(descLines, 20, 132);
+
+  // ---- RIGHT SIDE — Orbital diagram ----
+  const centerX = 200;
+  const centerY = 105;
+  const orbitR = 65;
+
+  // Orbit circle (subtle)
+  doc.setDrawColor(230, 210, 190);
+  doc.setLineWidth(0.3);
+  doc.circle(centerX, centerY, orbitR);
+  doc.setDrawColor(235, 215, 195);
+  doc.circle(centerX, centerY, orbitR - 3);
+
+  // Center logo circle
+  doc.setFillColor(...COLORS.branco);
+  doc.circle(centerX, centerY, 16, 'F');
+  doc.setDrawColor(240, 230, 220);
+  doc.setLineWidth(0.3);
+  doc.circle(centerX, centerY, 16);
+  if (logoGrupoBase64) {
+    doc.addImage(logoGrupoBase64, 'PNG', centerX - 10, centerY - 10, 20, 20);
+  }
+
+  // 9 orbital nodes
+  const sections = [
+    { num: '01', label: 'Mensagem\ndo CEO', color: COLORS.bordo },
+    { num: '02', label: 'Quem Somos &\nEcossistema', color: COLORS.azul },
+    { num: '03', label: 'Missão e\nValores', color: COLORS.laranja },
+    { num: '04', label: 'Soluções', color: COLORS.bordo },
+    { num: '05', label: 'Diferenciais &\nConformidade', color: COLORS.laranja },
+    { num: '06', label: 'Números &\nTerritório', color: COLORS.azul },
+    { num: '07', label: 'Cases', color: COLORS.bordo },
+    { num: '08', label: 'Nossos\nParceiros', color: COLORS.laranja },
+    { num: '09', label: 'Contato', color: COLORS.azul },
+  ];
+
+  sections.forEach((sec, i) => {
+    const angle = (i / sections.length) * Math.PI * 2 - Math.PI / 2;
+    const nx = centerX + Math.cos(angle) * orbitR;
+    const ny = centerY + Math.sin(angle) * orbitR;
+
+    // Node circle
+    doc.setFillColor(...sec.color);
+    doc.circle(nx, ny, 8, 'F');
+
+    // Number badge
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(5.5);
+    doc.setTextColor(...COLORS.branco);
+    doc.text(sec.num, nx, ny + 1.5, { align: 'center' });
+
+    // Label outside
+    const labelDist = 13;
+    const lx = nx + Math.cos(angle) * labelDist;
+    const ly = ny + Math.sin(angle) * labelDist;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(5.5);
+    doc.setTextColor(...COLORS.charcoal);
+    const labelLines = sec.label.split('\n');
+    labelLines.forEach((line, li) => {
+      doc.text(line, lx, ly + li * 4, { align: 'center' });
+    });
+  });
 
   // Bottom bar
   doc.setFillColor(...COLORS.bordo);
-  doc.rect(0, PAGE_H - 12, PAGE_W, 12, 'F');
+  doc.rect(0, PAGE_H - 10, PAGE_W, 10, 'F');
   doc.setFont('helvetica', 'normal');
-  doc.setFontSize(8);
+  doc.setFontSize(7);
   doc.setTextColor(...COLORS.branco);
-  doc.text('www.grupoarqueo.com.br', PAGE_W / 2, PAGE_H - 4, { align: 'center' });
+  doc.text('www.grupoarqueo.com.br', PAGE_W / 2, PAGE_H - 3.5, { align: 'center' });
 
   // ============================================================
   // PAGE 2 — MENSAGEM DO CEO
