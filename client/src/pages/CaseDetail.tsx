@@ -79,7 +79,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Gestão in situ de 09 sítios arqueológicos na ADA de uma LT com 90 km de extensão. Educação Patrimonial personalizada com a elaboração do Álbum Arqueológico, junto à coleção doméstica de bens arqueológicos da Professora Vera Lúcia.',
     result: 'Gestão qualificada de múltiplos sítios e educação patrimonial com engajamento comunitário.',
     competencies: ['Gestão In Situ', 'Educação Patrimonial', 'Empreendimento Linear', 'Patrimônio Local'],
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/lt-abdon-batista-hq-gzKxQkwXAua3z8y6vzRFR7.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_LLDXY1_image_14391220.png',
   },
   {
     title: 'Loteamento Maria Isabel (Maranhão)',
