@@ -153,17 +153,18 @@ export default function QuemSomosEcossistema() {
     {
       id: "arqueocean",
       name: "ArqueoOcean",
-      subtitle: "Arqueologia Marinha",
+      subtitle: "Arqueologia Marinha e Subaquática",
       color: "#0B7BA8",
       logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipo arqueocean_a76a6921.png",
       description:
-        "Pioneira em arqueologia marinha e subaquática no Brasil. Realiza prospecções, escavações e monitoramento em ambientes aquáticos, com expertise em patrimônio submerso.",
+        "Empresa do Grupo Arqueo especializada em projetos arqueológicos desenvolvidos em ambientes aquáticos, costeiros e submersos. Atua com metodologia específica para contextos de maior sensibilidade operacional, reunindo organização técnica, documentação qualificada e execução estruturada para atender demandas da arqueologia preventiva em meios marinhos e subaquáticos.",
       competencias: [
-        "Prospecção Subaquática",
-        "Escavação em Ambientes Aquáticos",
-        "Documentação Submarina",
-        "Conservação de Artefatos Aquáticos",
-        "Monitoramento Marinho",
+        "Ambientes Aquáticos",
+        "Arqueologia Subaquática",
+        "Operações Especializadas",
+        "Documentação Técnica",
+        "Monitoramento Aquático",
+        "Gestão de Vestígios",
       ],
       paperNoEcossistema:
         "Expande o escopo do grupo para ambientes marinhos, oferecendo serviços especializados em arqueologia subaquática.",
@@ -428,24 +429,24 @@ export default function QuemSomosEcossistema() {
                   >
                     {/* Logo Grande no Topo */}
                     <div
-                      className="w-28 h-28 flex items-center justify-center mb-10 mx-auto"
+                      className="w-32 h-32 flex items-center justify-center mb-12 mx-auto"
                     >
-                      <img src={selectedEmpresaData.logo} alt={selectedEmpresaData.name} className="w-24 h-24 object-contain" />
+                      <img src={selectedEmpresaData.logo} alt={selectedEmpresaData.name} className="w-28 h-28 object-contain" />
                     </div>
 
                     {/* Nome e Subtítulo */}
-                    <h3 className="text-2xl font-bold mb-2 text-center" style={{ color: selectedEmpresaData.color, letterSpacing: "-0.3px", lineHeight: "1.3" }}>
+                    <h3 className="text-2xl font-bold mb-3 text-center" style={{ color: selectedEmpresaData.color, letterSpacing: "-0.3px", lineHeight: "1.3" }}>
                       {selectedEmpresaData.name}
                     </h3>
-                    <p className="text-xs font-semibold tracking-widest uppercase mb-8 text-center" style={{ color: "#999999" }}>
+                    <p className="text-xs font-semibold tracking-widest uppercase mb-10 text-center" style={{ color: "#888888" }}>
                       {selectedEmpresaData.subtitle}
                     </p>
 
                     {/* Divisor */}
-                    <div className="h-px mb-8" style={{ backgroundColor: "#E6E6E6" }} />
+                    <div className="h-px mb-10" style={{ backgroundColor: "#E0E0E0" }} />
 
-                    {/* Descrição - CLARA E OBJETIVA */}
-                    <p className="text-sm leading-relaxed mb-8" style={{ color: "#555555", fontWeight: 400, lineHeight: "1.6" }}>
+                    {/* Descrição - TÉCNICA E SOFISTICADA */}
+                    <p className="text-sm leading-relaxed mb-10" style={{ color: "#555555", fontWeight: 400, lineHeight: "1.7" }}>
                       {selectedEmpresaData.description}
                     </p>
 
@@ -454,15 +455,15 @@ export default function QuemSomosEcossistema() {
                       <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "#999999" }}>
                         Competências
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2.5">
                         {selectedEmpresaData.competencias.map((comp, idx) => (
                           <span
                             key={idx}
-                            className="text-xs px-3 py-1.5 rounded-md font-medium transition-all duration-200 hover:shadow-sm"
+                            className="text-xs px-3.5 py-2 rounded-lg font-medium transition-all duration-200 hover:shadow-md"
                             style={{
-                              backgroundColor: `${selectedEmpresaData.color}10`,
+                              backgroundColor: `${selectedEmpresaData.color}08`,
                               color: selectedEmpresaData.color,
-                              border: `1px solid ${selectedEmpresaData.color}25`,
+                              border: `1.5px solid ${selectedEmpresaData.color}20`,
                             }}
                           >
                             {comp}
