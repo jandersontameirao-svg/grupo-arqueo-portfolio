@@ -107,7 +107,7 @@ export default function QuemSomosEcossistema() {
       name: "Arqueoproject",
       subtitle: "Pesquisa & Consultoria",
       color: "#861720",
-      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_EG7ssf_image_9e07bdd0.png",
+      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_4O3RZK_image_8830edc0.png",
       description:
         "Empresa-mãe do grupo, especializada em pesquisa arqueológica preventiva e consultoria para licenciamento sociocultural. Atua em todo o ciclo de gestão arqueológica, desde o diagnóstico até o resgate e monitoramento.",
       competencias: [
@@ -130,7 +130,7 @@ export default function QuemSomosEcossistema() {
       name: "ArqueoGIS",
       subtitle: "Tecnologia & Geoespacial",
       color: "#2C7EB3",
-      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_nAvpac_image_1d56ba05.png",
+      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_wZVVDO_image_2df2941e.png",
       description:
         "Especializada em geotecnologias aplicadas à arqueologia. Desenvolve soluções em SIG, mapeamento, modelagem 3D e análise espacial para otimizar diagnósticos e gestão de patrimônio.",
       competencias: [
@@ -153,7 +153,7 @@ export default function QuemSomosEcossistema() {
       name: "ArqueoOcean",
       subtitle: "Arqueologia Marinha",
       color: "#0B7BA8",
-      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_80907u_image_3a799d38.png",
+      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_4O3RZK_image_8830edc0.png",
       description:
         "Pioneira em arqueologia marinha e subaquática no Brasil. Realiza prospecções, escavações e monitoramento em ambientes aquáticos, com expertise em patrimônio submerso.",
       competencias: [
@@ -176,7 +176,7 @@ export default function QuemSomosEcossistema() {
       name: "ArqueoEduc",
       subtitle: "Educação & Divulgação",
       color: "#EE7501",
-      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_i99pGe_image_1cde261c.png",
+      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_4O3RZK_image_8830edc0.png",
       description:
         "Dedica-se à educação patrimonial e divulgação científica. Desenvolve programas educativos, exposições, conteúdos digitais e ações de engajamento comunitário.",
       competencias: [
@@ -199,7 +199,7 @@ export default function QuemSomosEcossistema() {
       name: "ArqueoRede",
       subtitle: "Comunicação & Redes",
       color: "#F4A460",
-      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_Xjh9rG_image_5b6165c8.png",
+      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_4O3RZK_image_8830edc0.png",
       description:
         "Responsável pela comunicação integrada do grupo e gestão de redes. Articula narrativas, conteúdos e relacionamentos que fortalecem a presença do Grupo Arqueo no mercado e na sociedade.",
       competencias: [
@@ -222,7 +222,7 @@ export default function QuemSomosEcossistema() {
       name: "Sigepa",
       subtitle: "Tecnologia & Inovação",
       color: "#EE7501",
-      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_CAqLM7_image_718202b1.png",
+      logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_4O3RZK_image_8830edc0.png",
       description:
         "Plataforma tecnológica proprietária do grupo que integra gestão de dados arqueológicos, processamento de informações e análises avançadas. Ferramenta central que potencializa todas as operações do ecossistema.",
       competencias: [
