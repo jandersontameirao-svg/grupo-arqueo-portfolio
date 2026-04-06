@@ -16,6 +16,17 @@ export default function QuemSomosEcossistema() {
   const [currentPilarIndex, setCurrentPilarIndex] = useState(0);
   const [diagramLoaded, setDiagramLoaded] = useState(false);
   const [hoveredTimelineIdx, setHoveredTimelineIdx] = useState<number | null>(null);
+  const [showProposalForm, setShowProposalForm] = useState(false);
+  const [selectedProposalCompany, setSelectedProposalCompany] = useState<string | null>(null);
+  const [proposalFormData, setProposalFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
+  });
+  const [proposalSubmitting, setProposalSubmitting] = useState(false);
+  const [proposalSuccess, setProposalSuccess] = useState(false);
   const diagramRef = useRef<HTMLDivElement>(null);
 
   const timeline = [
@@ -454,7 +465,7 @@ export default function QuemSomosEcossistema() {
                     </p>
 
                     {/* Competências */}
-                    <div>
+                    <div className="mb-10">
                       <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "#999999" }}>
                         Competências
                       </p>
@@ -474,6 +485,25 @@ export default function QuemSomosEcossistema() {
                         ))}
                       </div>
                     </div>
+
+                    {/* Divisor */}
+                    <div className="h-px mb-8" style={{ backgroundColor: "#E0E0E0" }} />
+
+                    {/* Botão CTA - Solicitar Proposta */}
+                    <button
+                      onClick={() => {
+                        setSelectedProposalCompany(selectedEmpresa);
+                        setShowProposalForm(true);
+                      }}
+                      className="w-full py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg active:scale-95"
+                      style={{
+                        backgroundColor: selectedEmpresaData.color,
+                        color: "#FFFFFF",
+                        letterSpacing: "0.3px",
+                      }}
+                    >
+                      Solicitar Proposta
+                    </button>
                   </div>
                 ) : (
                   <div
@@ -609,6 +639,164 @@ export default function QuemSomosEcossistema() {
           </div>
         </section>
       </div>
+
+      {/* MODAL - Formulário de Proposta */}
+      {showProposalForm && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8"
+          >
+            {/* Header */}
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold mb-2" style={{ color: '#1A1A1A' }}>
+                Solicitar Proposta
+              </h2>
+              <p className="text-sm" style={{ color: '#888888' }}>
+                Preencha seus dados e descreva sua necessidade
+              </p>
+            </div>
+
+            {/* Formulário */}
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                setProposalSubmitting(true);
+                
+                // Simular envio de dados
+                setTimeout(() => {
+                  console.log('Proposta enviada:', { ...proposalFormData, empresa: selectedProposalCompany });
+                  setProposalSuccess(true);
+                  setProposalSubmitting(false);
+                  
+                  // Fechar modal apos 2 segundos
+                  setTimeout(() => {
+                    setShowProposalForm(false);
+                    setProposalSuccess(false);
+                    setProposalFormData({ name: '', email: '', phone: '', company: '', message: '' });
+                  }, 2000);
+                }, 1500);
+              }}
+              className="space-y-4"
+            >
+              {/* Nome */}
+              <div>
+                <label className="block text-xs font-semibold mb-2" style={{ color: '#666666' }}>
+                  Nome
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={proposalFormData.name}
+                  onChange={(e) => setProposalFormData({ ...proposalFormData, name: e.target.value })}
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
+                  style={{ borderColor: '#E0E0E0' }}
+                  placeholder="Seu nome completo"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="block text-xs font-semibold mb-2" style={{ color: '#666666' }}>
+                  Email
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={proposalFormData.email}
+                  onChange={(e) => setProposalFormData({ ...proposalFormData, email: e.target.value })}
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
+                  style={{ borderColor: '#E0E0E0' }}
+                  placeholder="seu@email.com"
+                />
+              </div>
+
+              {/* Telefone */}
+              <div>
+                <label className="block text-xs font-semibold mb-2" style={{ color: '#666666' }}>
+                  Telefone
+                </label>
+                <input
+                  type="tel"
+                  value={proposalFormData.phone}
+                  onChange={(e) => setProposalFormData({ ...proposalFormData, phone: e.target.value })}
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
+                  style={{ borderColor: '#E0E0E0' }}
+                  placeholder="(11) 99999-9999"
+                />
+              </div>
+
+              {/* Empresa */}
+              <div>
+                <label className="block text-xs font-semibold mb-2" style={{ color: '#666666' }}>
+                  Sua Empresa
+                </label>
+                <input
+                  type="text"
+                  value={proposalFormData.company}
+                  onChange={(e) => setProposalFormData({ ...proposalFormData, company: e.target.value })}
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2"
+                  style={{ borderColor: '#E0E0E0' }}
+                  placeholder="Nome da empresa"
+                />
+              </div>
+
+              {/* Mensagem */}
+              <div>
+                <label className="block text-xs font-semibold mb-2" style={{ color: '#666666' }}>
+                  Descreva sua necessidade
+                </label>
+                <textarea
+                  required
+                  value={proposalFormData.message}
+                  onChange={(e) => setProposalFormData({ ...proposalFormData, message: e.target.value })}
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 resize-none"
+                  style={{ borderColor: '#E0E0E0' }}
+                  rows={4}
+                  placeholder="Conte-nos sobre seu projeto..."
+                />
+              </div>
+
+              {/* Botões */}
+              {!proposalSuccess ? (
+                <div className="flex gap-3 pt-4">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowProposalForm(false);
+                      setProposalFormData({ name: '', email: '', phone: '', company: '', message: '' });
+                    }}
+                    disabled={proposalSubmitting}
+                    className="flex-1 py-2 px-4 rounded-lg font-semibold transition-all disabled:opacity-50"
+                    style={{ backgroundColor: '#F5F5F5', color: '#666666' }}
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={proposalSubmitting}
+                    className="flex-1 py-2 px-4 rounded-lg font-semibold text-white transition-all hover:shadow-lg active:scale-95 disabled:opacity-75"
+                    style={{ backgroundColor: '#EE7501' }}
+                  >
+                    {proposalSubmitting ? 'Enviando...' : 'Enviar'}
+                  </button>
+                </div>
+              ) : (
+                <div className="p-4 rounded-lg text-center" style={{ backgroundColor: '#E8F5E9' }}>
+                  <p className="font-semibold" style={{ color: '#2E7D32' }}>
+                    ✓ Proposta enviada com sucesso!
+                  </p>
+                  <p className="text-xs mt-1" style={{ color: '#558B2F' }}>
+                    Entraremos em contato em breve
+                  </p>
+                </div>
+              )}
+            </form>
+          </motion.div>
+        </div>
+      )}
     </PortfolioLayout>
   );
 }
