@@ -67,6 +67,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Entrada no processo e estabelecimento de uma rotina de comunicação institucional mais assertiva com a CGLic, a fim de retomar confiança e previsibilidade técnica ao processo. Análise metodológica arrojada quanto ao desenvolvimento da pesquisa arqueológica em ambiente aquático compatível com a fase do processo do licenciamento ambiental.',
     result: 'Metodologia inovadora para pesquisa em ambiente aquático com previsibilidade técnica.',
     competencies: ['Articulação Institucional', 'Inovação Metodológica', 'Ambiente Aquático', 'Licenciamento Ambiental'],
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_kvIUHj_image_1e7d480e.png',
   },
   {
     title: 'LT 230kV Abdon Batista (Santa Catarina)',
