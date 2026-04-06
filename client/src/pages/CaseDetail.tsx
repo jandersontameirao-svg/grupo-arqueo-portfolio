@@ -54,7 +54,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Trabalho conceitual e técnico assertivo quanto à escolha de estruturas históricas, especialmente muros, que foram classificados como sítio arqueológico.',
     result: 'Classificação arqueológica precisa e segura de estruturas históricas.',
     competencies: ['Precisão Conceitual', 'Segurança Técnica', 'Estruturas Históricas', 'Classificação Arqueológica'],
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pch-canoas-hq-mLJSWGDdFWLT2NTQ8BL2K5.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_KcoCzi_image_15477b6a.png',
   },
   {
     title: 'Complexo Eólico Offshore Caucaia (Ceará)',
@@ -141,7 +141,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Entrada no processo e estabelecimento de uma rotina de comunicação institucional mais assertiva com a CGLic, a fim de retomar confiança e previsibilidade técnica ao processo. Análise metodológica arrojada quanto ao desenvolvimento da pesquisa arqueológica em área histórica compatível com a fase do processo do licenciamento ambiental. Avaliação técnica contenciosa quanto à possibilidade de não aplicação de TAC por parte do IPHAN.',
     result: 'Metodologia inovadora em área histórica com avaliação contenciosa qualificada.',
     competencies: ['Articulação Institucional', 'Área Histórica', 'Inovação Metodológica', 'Contencioso Técnico'],
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pch-cabui-hq-XAu2GhukVgtiqer7Gj9TVw.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_GSER2w_image_d3cd477d.png',
   },
   {
     title: 'Loteamento Fase 01 e 02 - Fazenda Paranoazinho (Distrito Federal)',
