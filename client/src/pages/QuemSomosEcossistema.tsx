@@ -201,17 +201,18 @@ export default function QuemSomosEcossistema() {
     {
       id: "arqueoconsult",
       name: "ArqueoRede",
-      subtitle: "Comunicação & Redes",
+      subtitle: "Comunicação Estratégica e Posicionamento Institucional",
       color: "#EE7501",
       logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipo arqueorede_5ea32f79.png",
       description:
-        "Responsável pela comunicação integrada do grupo e gestão de redes. Articula narrativas, conteúdos e relacionamentos que fortalecem a presença do Grupo Arqueo no mercado e na sociedade.",
+        "Empresa do Grupo Arqueo dedicada à construção de narrativas, gestão de presença institucional e articulação de relacionamentos estratégicos. Atua no fortalecimento da marca, na organização da comunicação integrada e na conexão entre o grupo, seus públicos de interesse e os ambientes em que sua atuação precisa gerar reconhecimento, confiança e influência.",
       competencias: [
-        "Comunicação Estratégica",
-        "Gestão de Redes e Relacionamentos",
-        "Conteúdo Digital",
-        "Assessoria de Imprensa",
-        "Engajamento de Stakeholders",
+        "Posicionamento Institucional",
+        "Narrativa Estratégica",
+        "Gestão de Marca",
+        "Relações Estratégicas",
+        "Presença Digital",
+        "Reputação e Engajamento",
       ],
       paperNoEcossistema:
         "Amplifica a voz do grupo, conectando as diferentes empresas e comunicando valor ao mercado.",
@@ -224,17 +225,18 @@ export default function QuemSomosEcossistema() {
     {
       id: "arqueolabs",
       name: "Sigepa",
-      subtitle: "Tecnologia & Inovação",
+      subtitle: "Plataforma de Inteligência e Gestão Operacional",
       color: "#EE7501",
       logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotiposigepa_9b34b495.png",
       description:
-        "Plataforma tecnológica proprietária do grupo que integra gestão de dados arqueológicos, processamento de informações e análises avançadas. Ferramenta central que potencializa todas as operações do ecossistema.",
+        "Plataforma proprietária do Grupo Arqueo desenvolvida para integrar dados, padronizar fluxos, automatizar rotinas e ampliar o controle sobre a operação. Atua como base tecnológica do ecossistema, conectando informações, processos e análises para gerar mais rastreabilidade, eficiência, consistência técnica e capacidade de gestão.",
       competencias: [
-        "Gestão de Dados Arqueológicos",
-        "Processamento de Informações",
-        "Análises Avançadas",
-        "Integração de Sistemas",
-        "Automação de Processos",
+        "Integração Sistêmica",
+        "Dados Estruturados",
+        "Automação de Rotinas",
+        "Rastreabilidade Operacional",
+        "Padronização Técnica",
+        "Inteligência Analítica",
       ],
       paperNoEcossistema:
         "Infraestrutura tecnológica que conecta e potencializa todas as empresas do grupo, garantindo eficiência operacional.",
