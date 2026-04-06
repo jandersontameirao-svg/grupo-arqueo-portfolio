@@ -105,7 +105,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Análise metodológica arrojada quanto à otimização do processo de licenciamento ambiental do empreendimento, em que foi possível avançar diretamente para a fase de gestão, suprimindo a necessidade de realização dos estudos preventivos, com base no aproveitamento de estudos técnicos pretéritos.',
     result: 'Otimização processual com ganho de eficiência e redução de fases desnecessárias.',
     competencies: ['Otimização do Licenciamento', 'Inovação Metodológica', 'Estudos Pretéritos', 'Eficiência Processual'],
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/se-candiota-hq-f5zwLp6EDXgSxjoMhMae59.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_rifsIP_image_8c7db124.png',
   },
   {
     title: 'LT 800kV Xingu - Terminal Rio',

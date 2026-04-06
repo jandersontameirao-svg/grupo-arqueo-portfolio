@@ -28,7 +28,7 @@ const CASE_IMAGES = {
   canoas: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pch-canoas-hq-mLJSWGDdFWLT2NTQ8BL2K5.webp',
   cabuí: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pch-cabui-hq-XAu2GhukVgtiqer7Gj9TVw.webp',
   rumo: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/ferrovia-rumo-hq-KUxJitH4ENtze9YyqztwhP.webp',
-  candiota: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/se-candiota-hq-f5zwLp6EDXgSxjoMhMae59.webp',
+  candiota: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_rifsIP_image_8c7db124.png',
   abdonBatista: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_LLDXY1_image_14391220.png',
   mariaIsabel: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/loteamento-maria-isabel-ma-CrAUBRQKG2z7BbAMz3SwRe.webp',
   belaVista: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/loteamento-bela-vista-sp-mUTBuadXC9WcvBCbvPCcYC.webp',
