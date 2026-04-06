@@ -3,6 +3,7 @@ import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
 import { useState } from "react";
 import { MapPin, Calendar, Building2, ChevronRight } from "lucide-react";
+import { Link } from "wouter";
 
 /**
  * CASES — Página 08
@@ -156,17 +157,19 @@ const sectors = ["Todos", ...Array.from(new Set(cases.map(c => c.sector)))];
 /*  CARD FEATURED — Case destaque principal (full width)             */
 /* ────────────────────────────────────────────────────────────────── */
 function FeaturedCard({ c, index }: { c: typeof cases[0]; index: number }) {
+  const caseUrl = `/cases/${c.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}`;
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group col-span-full rounded-xl overflow-hidden"
-      style={{
-        backgroundColor: '#FFFFFF',
-        boxShadow: '0 2px 24px rgba(0,0,0,0.08)',
-      }}
-    >
+    <Link href={caseUrl}>
+      <motion.article
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+        className="group col-span-full rounded-xl overflow-hidden cursor-pointer"
+        style={{
+          backgroundColor: '#FFFFFF',
+          boxShadow: '0 2px 24px rgba(0,0,0,0.08)',
+        }}
+      >
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Imagem de campo */}
         <div className="relative h-72 lg:h-full min-h-[400px] overflow-hidden">
@@ -237,10 +240,11 @@ function FeaturedCard({ c, index }: { c: typeof cases[0]; index: number }) {
             Ver detalhes do projeto <ChevronRight className="w-4 h-4" />
           </div>
         </div>
-      </div>
-    </motion.article>
-  );
-}
+        </div>
+      </motion.article>
+    </Link>
+    );
+  }
 
 /* ────────────────────────────────────────────────────────────────── */
 /*  CARD MEDIUM — Cases intermediários                               */
@@ -326,17 +330,19 @@ function MediumCard({ c, index }: { c: typeof cases[0]; index: number }) {
 /*  CARD STANDARD — Cases padrão refinados                           */
 /* ────────────────────────────────────────────────────────────────── */
 function StandardCard({ c, index }: { c: typeof cases[0]; index: number }) {
+  const caseUrl = `/cases/${c.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}`;
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
-      className="group rounded-xl overflow-hidden flex flex-col"
-      style={{
-        backgroundColor: '#FFFFFF',
-        boxShadow: '0 1px 12px rgba(0,0,0,0.05)',
-      }}
-    >
+    <Link href={caseUrl}>
+      <motion.article
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: index * 0.1 }}
+        className="group rounded-xl overflow-hidden flex flex-col cursor-pointer"
+        style={{
+          backgroundColor: '#FFFFFF',
+          boxShadow: '0 1px 12px rgba(0,0,0,0.05)',
+        }}
+      >
       {/* Imagem de campo */}
       <div className="relative h-44 lg:h-48 overflow-hidden">
         <img
@@ -393,10 +399,11 @@ function StandardCard({ c, index }: { c: typeof cases[0]; index: number }) {
         <div className="flex items-center gap-1 text-[11px] font-semibold transition-colors duration-300 group-hover:opacity-80 cursor-pointer" style={{ color: '#EE7501' }}>
           Ver detalhes <ChevronRight className="w-3 h-3" />
         </div>
-      </div>
-    </motion.article>
-  );
-}
+        </div>
+      </motion.article>
+    </Link>
+    );
+  }
 
 /* ────────────────────────────────────────────────────────────────── */
 /*  PÁGINA PRINCIPAL                                                 */
