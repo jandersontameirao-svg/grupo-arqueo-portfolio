@@ -128,18 +128,19 @@ export default function QuemSomosEcossistema() {
     },
     {
       id: "arqueogis",
-      name: "ArqueoGIS",
-      subtitle: "Tecnologia & Geoespacial",
+      name: "Arqueogis Arqueologia Preventiva",
+      subtitle: "Padronização, Agilidade e Gestão Simplificada",
       color: "#EE7501",
       logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipo arqueogis_d6fd1185.png",
       description:
-        "Especializada em geotecnologias aplicadas à arqueologia. Desenvolve soluções em SIG, mapeamento, modelagem 3D e análise espacial para otimizar diagnósticos e gestão de patrimônio.",
+        "Empresa do Grupo Arqueo especializada em arqueologia preventiva com foco em produtos padronizados, fluxos operacionais ágeis e documentação estruturada. Atua para oferecer ao cliente uma experiência de gestão mais simples, com entregas organizadas, tecnologia aplicada em todas as etapas e maior facilidade de acompanhamento, edição e condução dos processos.",
       competencias: [
-        "Sistemas de Informação Geográfica",
-        "Mapeamento e Sensoriamento Remoto",
-        "Modelagem 3D e Fotogrametria",
-        "Análise Espacial Avançada",
-        "Visualização de Dados",
+        "Soluções Padronizadas",
+        "Gestão Simplificada",
+        "Documentação Pré-Estruturada",
+        "Fluxos Ágeis",
+        "Tecnologia Aplicada",
+        "Entregas Escaláveis",
       ],
       paperNoEcossistema:
         "Fornece soluções tecnológicas que potencializam a capacidade diagnóstica do grupo, integrando dados espaciais complexos.",
@@ -433,7 +434,7 @@ export default function QuemSomosEcossistema() {
                     </div>
 
                     {/* Nome e Subtítulo */}
-                    <h3 className="text-3xl font-bold mb-3 text-center" style={{ color: selectedEmpresaData.color, letterSpacing: "-0.5px" }}>
+                    <h3 className="text-2xl font-bold mb-2 text-center" style={{ color: selectedEmpresaData.color, letterSpacing: "-0.3px", lineHeight: "1.3" }}>
                       {selectedEmpresaData.name}
                     </h3>
                     <p className="text-xs font-semibold tracking-widest uppercase mb-8 text-center" style={{ color: "#999999" }}>
@@ -443,8 +444,8 @@ export default function QuemSomosEcossistema() {
                     {/* Divisor */}
                     <div className="h-px mb-8" style={{ backgroundColor: "#E6E6E6" }} />
 
-                    {/* Descrição - MAIS ELEGANTE */}
-                    <p className="text-sm leading-relaxed mb-8" style={{ color: "#555555", fontWeight: 500, lineHeight: "1.7" }}>
+                    {/* Descrição - CLARA E OBJETIVA */}
+                    <p className="text-sm leading-relaxed mb-8" style={{ color: "#555555", fontWeight: 400, lineHeight: "1.6" }}>
                       {selectedEmpresaData.description}
                     </p>
 
@@ -453,15 +454,15 @@ export default function QuemSomosEcossistema() {
                       <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "#999999" }}>
                         Competências
                       </p>
-                      <div className="flex flex-wrap gap-3">
+                      <div className="flex flex-wrap gap-2">
                         {selectedEmpresaData.competencias.map((comp, idx) => (
                           <span
                             key={idx}
-                            className="text-xs px-4 py-2 rounded-full font-medium transition-all duration-200 hover:shadow-md"
+                            className="text-xs px-3 py-1.5 rounded-md font-medium transition-all duration-200 hover:shadow-sm"
                             style={{
-                              backgroundColor: `${selectedEmpresaData.color}12`,
+                              backgroundColor: `${selectedEmpresaData.color}10`,
                               color: selectedEmpresaData.color,
-                              border: `1.5px solid ${selectedEmpresaData.color}30`,
+                              border: `1px solid ${selectedEmpresaData.color}25`,
                             }}
                           >
                             {comp}
