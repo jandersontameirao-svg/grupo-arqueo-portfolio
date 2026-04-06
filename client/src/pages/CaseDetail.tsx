@@ -29,6 +29,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Entrada no processo e estabelecimento de uma rotina de comunicação institucional mais assertiva com o IPHAN-MT, a fim de retomar confiança e previsibilidade técnica ao processo. Desenvoltura de excelência na prospecção arqueológica, com realização de mais de 8.000 poços-teste em XX dias. Prova material do bom uso do SIGEPA como recurso técnico e tecnológico diferencial na coleta, sistematização e rastreabilidade dos dados de campo, conferindo transparência, metodologia e confiabilidade às informações da pesquisa.',
     result: 'Restabelecimento de confiança institucional, escala operacional comprovada e rastreabilidade total de dados via plataforma proprietária.',
     competencies: ['Articulação Institucional', 'Escala Operacional', 'SIGEPA', 'Rastreabilidade de Dados'],
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_cgFwww_image_febed7d7.png',
   },
   {
     title: 'LT 500kV Terminal Rio-Lagos (Neoenergia)',
@@ -53,7 +54,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Trabalho conceitual e técnico assertivo quanto à escolha de estruturas históricas, especialmente muros, que foram classificados como sítio arqueológico.',
     result: 'Classificação arqueológica precisa e segura de estruturas históricas.',
     competencies: ['Precisão Conceitual', 'Segurança Técnica', 'Estruturas Históricas', 'Classificação Arqueológica'],
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_dAH1YU_image_18817334.png',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_KcoCzi_image_15477b6a.png',
   },
   {
     title: 'Complexo Eólico Offshore Caucaia (Ceará)',
@@ -103,7 +104,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Análise metodológica arrojada quanto à otimização do processo de licenciamento ambiental do empreendimento, em que foi possível avançar diretamente para a fase de gestão, suprimindo a necessidade de realização dos estudos preventivos, com base no aproveitamento de estudos técnicos pretéritos.',
     result: 'Otimização processual com ganho de eficiência e redução de fases desnecessárias.',
     competencies: ['Otimização do Licenciamento', 'Inovação Metodológica', 'Estudos Pretéritos', 'Eficiência Processual'],
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_2ayIBO_image_b5365da3.png',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_dJQqSS_image_f4da60f3.png',
   },
   {
     title: 'LT 800kV Xingu - Terminal Rio',
@@ -140,7 +141,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Entrada no processo e estabelecimento de uma rotina de comunicação institucional mais assertiva com a CGLic, a fim de retomar confiança e previsibilidade técnica ao processo. Análise metodológica arrojada quanto ao desenvolvimento da pesquisa arqueológica em área histórica compatível com a fase do processo do licenciamento ambiental. Avaliação técnica contenciosa quanto à possibilidade de não aplicação de TAC por parte do IPHAN.',
     result: 'Metodologia inovadora em área histórica com avaliação contenciosa qualificada.',
     competencies: ['Articulação Institucional', 'Área Histórica', 'Inovação Metodológica', 'Contencioso Técnico'],
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_8I86si_image_0c868168.png',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_GSER2w_image_d3cd477d.png',
   },
   {
     title: 'Loteamento Fase 01 e 02 - Fazenda Paranoazinho (Distrito Federal)',
