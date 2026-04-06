@@ -177,17 +177,18 @@ export default function QuemSomosEcossistema() {
     {
       id: "arqueoeduc",
       name: "ArqueoEduc",
-      subtitle: "Educação & Divulgação",
+      subtitle: "Educação Patrimonial e Comunicação Cultural",
       color: "#EE7501",
       logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipo arqueoeduc_21b5e098.png",
       description:
-        "Dedica-se à educação patrimonial e divulgação científica. Desenvolve programas educativos, exposições, conteúdos digitais e ações de engajamento comunitário.",
+        "Empresa do Grupo Arqueo dedicada ao desenvolvimento de ações educativas, estratégias de comunicação e iniciativas de engajamento ligadas ao patrimônio cultural. Atua na tradução de conteúdos técnicos em experiências formativas, materiais acessíveis e projetos de aproximação entre conhecimento, território e sociedade.",
       competencias: [
-        "Programas de Educação Patrimonial",
-        "Produção de Conteúdo Científico",
-        "Desenvolvimento de Exposições",
-        "Engajamento Comunitário",
-        "Comunicação Científica",
+        "Programas Educativos",
+        "Formação Patrimonial",
+        "Comunicação Cultural",
+        "Conteúdo Estruturado",
+        "Ações Formativas",
+        "Engajamento Social",
       ],
       paperNoEcossistema:
         "Responsável pela comunicação do impacto social do grupo, aproximando a arqueologia da sociedade.",
@@ -445,7 +446,7 @@ export default function QuemSomosEcossistema() {
                     {/* Divisor */}
                     <div className="h-px mb-10" style={{ backgroundColor: "#E0E0E0" }} />
 
-                    {/* Descrição - TÉCNICA E SOFISTICADA */}
+                    {/* Descrição - CULTURAL E INSTITUCIONAL */}
                     <p className="text-sm leading-relaxed mb-10" style={{ color: "#555555", fontWeight: 400, lineHeight: "1.7" }}>
                       {selectedEmpresaData.description}
                     </p>
@@ -455,15 +456,15 @@ export default function QuemSomosEcossistema() {
                       <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "#999999" }}>
                         Competências
                       </p>
-                      <div className="flex flex-wrap gap-2.5">
+                      <div className="flex flex-wrap gap-2">
                         {selectedEmpresaData.competencias.map((comp, idx) => (
                           <span
                             key={idx}
-                            className="text-xs px-3.5 py-2 rounded-lg font-medium transition-all duration-200 hover:shadow-md"
+                            className="text-xs px-3 py-1.5 rounded-md font-medium transition-all duration-200 hover:shadow-sm"
                             style={{
-                              backgroundColor: `${selectedEmpresaData.color}08`,
+                              backgroundColor: `${selectedEmpresaData.color}10`,
                               color: selectedEmpresaData.color,
-                              border: `1.5px solid ${selectedEmpresaData.color}20`,
+                              border: `1px solid ${selectedEmpresaData.color}25`,
                             }}
                           >
                             {comp}
