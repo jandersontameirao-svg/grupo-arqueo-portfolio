@@ -30,6 +30,9 @@ const CASE_IMAGES = {
   rumo: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/ferrovia-rumo-hq-KUxJitH4ENtze9YyqztwhP.webp',
   candiota: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/se-candiota-hq-f5zwLp6EDXgSxjoMhMae59.webp',
   abdonBatista: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_LLDXY1_image_14391220.png',
+  mariaIsabel: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/loteamento-maria-isabel-ma-CrAUBRQKG2z7BbAMz3SwRe.webp',
+  belaVista: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/loteamento-bela-vista-sp-mUTBuadXC9WcvBCbvPCcYC.webp',
+  paranoazinho: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/loteamento-paranoazinho-df-6Sw2mMtWUr9FRRfXpa8vLg.webp',
 };
 
 const cases = [
@@ -94,7 +97,7 @@ const cases = [
     location: "Maranhão",
     year: "2021",
     client: "Confidencial",
-    image: CASE_IMAGES.mineracao,
+    image: CASE_IMAGES.mariaIsabel,
     desc: "Educação Patrimonial personalizada com participação de estudantes em visita guiada durante atividade de salvamento arqueológico, conectando aprendizado teórico à prática de campo.",
     services: ["Educação Patrimonial", "Engajamento Social", "Visita Guiada", "Salvamento Arqueológico"],
     tier: "standard" as const,
@@ -127,7 +130,7 @@ const cases = [
     location: "São Paulo",
     year: "2022",
     client: "Confidencial",
-    image: CASE_IMAGES.lt,
+    image: CASE_IMAGES.belaVista,
     desc: "Reestabelecimento de confiança com IPHAN-SP através de comunicação institucional assertiva. Avaliação técnica contenciosa que possibilitou análise qualificada sobre aplicabilidade de TAC.",
     services: ["Articulação Institucional", "Contencioso Técnico", "IPHAN-SP", "Previsibilidade Técnica"],
     tier: "standard" as const,
@@ -149,7 +152,7 @@ const cases = [
     location: "Distrito Federal",
     year: "2023",
     client: "Confidencial",
-    image: CASE_IMAGES.mineracao,
+    image: CASE_IMAGES.paranoazinho,
     desc: "Reestabelecimento de confiança com IPHAN-DF. Avaliação contenciosa que demonstrou desnecessidade de fase de gestão através de racionalidade técnica e análise de suficiência de estudos pretéritos.",
     services: ["Articulação Institucional", "Contencioso Técnico", "Fase de Gestão", "Racionalidade Metodológica"],
     tier: "standard" as const,
