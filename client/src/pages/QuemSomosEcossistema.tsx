@@ -417,19 +417,19 @@ export default function QuemSomosEcossistema() {
               <div className="lg:col-span-2">
                 {selectedEmpresaData ? (
                   <div
-                    className="panel-slide sticky top-8 p-7 lg:p-8 rounded-2xl"
+                    className="sticky top-8 p-8 rounded-2xl"
                     style={{
                       backgroundColor: "#FFFFFF",
                       border: `2px solid ${selectedEmpresaData.color}20`,
                       boxShadow: `0 12px 40px ${selectedEmpresaData.color}12`,
                     }}
                   >
-                    {/* Logo */}
+                    {/* Logo Grande no Topo */}
                     <div
-                      className="w-16 h-16 rounded-full flex items-center justify-center mb-5"
-                      style={{ backgroundColor: `${selectedEmpresaData.color}15` }}
+                      className="w-24 h-24 rounded-full flex items-center justify-center mb-8 mx-auto"
+                      style={{ backgroundColor: `${selectedEmpresaData.color}15`, border: `3px solid ${selectedEmpresaData.color}30` }}
                     >
-                      <img src={selectedEmpresaData.logo} alt={selectedEmpresaData.name} className="w-10 h-10 object-contain" />
+                      <img src={selectedEmpresaData.logo} alt={selectedEmpresaData.name} className="w-16 h-16 object-contain" />
                     </div>
 
                     {/* Nome e Subtítulo */}
