@@ -42,6 +42,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Entrada no processo e estabelecimento de uma rotina de comunicação institucional mais assertiva com a CGLic, a fim de retomar confiança e previsibilidade técnica ao processo. Avaliação técnica contenciosa quanto à possibilidade de não aplicação de TAC por parte do IPHAN.',
     result: 'Reestabelecimento de confiança institucional e análise contenciosa qualificada sobre TAC.',
     competencies: ['Articulação Institucional', 'Contencioso Técnico', 'CGLic', 'Previsibilidade Técnica'],
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_UfDa0V_image_562de634.png',
   },
   {
     title: 'PCH Canoas (Santa Catarina)',
