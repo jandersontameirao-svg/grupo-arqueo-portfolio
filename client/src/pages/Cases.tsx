@@ -258,12 +258,14 @@ function FeaturedCard({ c, index }: { c: typeof cases[0]; index: number }) {
 /*  CARD MEDIUM — Cases intermediários                               */
 /* ────────────────────────────────────────────────────────────────── */
 function MediumCard({ c, index }: { c: typeof cases[0]; index: number }) {
+  const caseUrl = `/cases/${c.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}`;
   return (
+    <Link href={caseUrl}>
     <motion.article
       initial={{ opacity: 0, y: 25 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group rounded-xl overflow-hidden flex flex-col"
+      className="group rounded-xl overflow-hidden flex flex-col cursor-pointer"
       style={{
         backgroundColor: '#FFFFFF',
         boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
@@ -331,6 +333,7 @@ function MediumCard({ c, index }: { c: typeof cases[0]; index: number }) {
         </div>
       </div>
     </motion.article>
+    </Link>
   );
 }
 
