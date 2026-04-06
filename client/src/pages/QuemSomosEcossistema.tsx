@@ -105,17 +105,18 @@ export default function QuemSomosEcossistema() {
     {
       id: "arqueoproject",
       name: "Arqueoproject",
-      subtitle: "Pesquisa & Consultoria",
+      subtitle: "Arqueologia Estratégica e Consultoria de Alta Complexidade",
       color: "#861720",
       logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipo arqueoproject_dc821965.png",
       description:
-        "Empresa-mãe do grupo, especializada em pesquisa arqueológica preventiva e consultoria para licenciamento sociocultural. Atua em todo o ciclo de gestão arqueológica, desde o diagnóstico até o resgate e monitoramento.",
+        "Empresa-mãe do Grupo Arqueo, especializada na condução de projetos arqueológicos de maior complexidade no contexto do licenciamento ambiental. Atua com foco em estratégia, articulação institucional, conformidade regulatória e coordenação técnica qualificada, assegurando entregas consistentes em cenários sensíveis e de alta exigência.",
       competencias: [
-        "Diagnóstico Arqueológico",
-        "Prospecção e Resgate",
-        "Monitoramento Arqueológico",
-        "Laudos e Relatórios Técnicos",
-        "Gestão de Acervo",
+        "Projetos Estratégicos",
+        "Licenciamento de Alta Complexidade",
+        "Articulação Institucional",
+        "Conformidade Regulatória",
+        "Governança Técnica",
+        "Gestão Integrada de Projetos",
       ],
       paperNoEcossistema:
         "Empresa-mãe que coordena a estratégia integrada do grupo, fornecendo expertise em pesquisa arqueológica e consultoria especializada.",
@@ -426,41 +427,41 @@ export default function QuemSomosEcossistema() {
                   >
                     {/* Logo Grande no Topo */}
                     <div
-                      className="w-24 h-24 flex items-center justify-center mb-8 mx-auto"
+                      className="w-28 h-28 flex items-center justify-center mb-10 mx-auto"
                     >
-                      <img src={selectedEmpresaData.logo} alt={selectedEmpresaData.name} className="w-20 h-20 object-contain" />
+                      <img src={selectedEmpresaData.logo} alt={selectedEmpresaData.name} className="w-24 h-24 object-contain" />
                     </div>
 
                     {/* Nome e Subtítulo */}
-                    <h3 className="text-2xl font-bold mb-2" style={{ color: selectedEmpresaData.color }}>
+                    <h3 className="text-3xl font-bold mb-3 text-center" style={{ color: selectedEmpresaData.color, letterSpacing: "-0.5px" }}>
                       {selectedEmpresaData.name}
                     </h3>
-                    <p className="text-xs font-semibold tracking-widest uppercase mb-5" style={{ color: "#999999" }}>
+                    <p className="text-xs font-semibold tracking-widest uppercase mb-8 text-center" style={{ color: "#999999" }}>
                       {selectedEmpresaData.subtitle}
                     </p>
 
                     {/* Divisor */}
-                    <div className="h-px mb-5" style={{ backgroundColor: "#E6E6E6" }} />
+                    <div className="h-px mb-8" style={{ backgroundColor: "#E6E6E6" }} />
 
                     {/* Descrição - MAIS ELEGANTE */}
-                    <p className="text-sm leading-relaxed mb-6" style={{ color: "#555555", fontWeight: 500 }}>
+                    <p className="text-sm leading-relaxed mb-8" style={{ color: "#555555", fontWeight: 500, lineHeight: "1.7" }}>
                       {selectedEmpresaData.description}
                     </p>
 
                     {/* Competências */}
-                    <div className="mb-6">
-                      <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "#999999" }}>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "#999999" }}>
                         Competências
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-3">
                         {selectedEmpresaData.competencias.map((comp, idx) => (
                           <span
                             key={idx}
-                            className="text-xs px-3 py-1.5 rounded-full font-medium"
+                            className="text-xs px-4 py-2 rounded-full font-medium transition-all duration-200 hover:shadow-md"
                             style={{
                               backgroundColor: `${selectedEmpresaData.color}12`,
                               color: selectedEmpresaData.color,
-                              border: `1px solid ${selectedEmpresaData.color}30`,
+                              border: `1.5px solid ${selectedEmpresaData.color}30`,
                             }}
                           >
                             {comp}
