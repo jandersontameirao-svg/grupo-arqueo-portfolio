@@ -26,6 +26,7 @@ const CASE_IMAGES = {
   mineracao: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/case-mineracao-espinhaco-jq6sz7sgBCojXSrNFegSYf.webp',
   porto: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/case-porto-pecem-ccYV5LxZNgbQsQ87AteBFk.webp',
   candiota: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_2ayIBO_image_b5365da3.png',
+  rumo: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/pasted_file_cgFwww_image_febed7d7.png',
 };
 
 const cases = [
@@ -35,7 +36,7 @@ const cases = [
     location: "Mato Grosso",
     year: "2023",
     client: "Rumo Logística",
-    image: CASE_IMAGES.eolico,
+    image: CASE_IMAGES.rumo,
     desc: "Reorganização institucional com IPHAN-MT e excelência operacional em prospecção arqueológica. Realização de mais de 8.000 poços-teste com rastreabilidade completa via SIGEPA, demonstrando escala operacional e metodologia diferenciada.",
     services: ["Articulação Institucional", "Escala Operacional", "SIGEPA", "Rastreabilidade de Dados"],
     tier: "featured" as const,
