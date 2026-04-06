@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { ASSETS } from "@/lib/assets";
+import { generatePortfolioPDF } from "@/lib/generatePortfolioPDF";
 import {
   User, Building2, Target, Globe, Lightbulb, Star,
   BarChart3, FolderOpen, MapPin, Mail, Download, ArrowRight, Users
@@ -27,6 +28,18 @@ const sections = [
 export default function Home() {
   const [hovered, setHovered] = useState<number | null>(null);
   const [rotation, setRotation] = useState(0);
+  const [generatingPDF, setGeneratingPDF] = useState(false);
+
+  const handleDownloadPDF = async () => {
+    setGeneratingPDF(true);
+    try {
+      await generatePortfolioPDF();
+    } catch (e) {
+      console.error('Erro ao gerar PDF:', e);
+    } finally {
+      setGeneratingPDF(false);
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -123,7 +136,8 @@ export default function Home() {
                 </div>
               ) : (
                 <button
-                  onClick={() => window.print()}
+                  onClick={handleDownloadPDF}
+                  disabled={generatingPDF}
                   className="group flex items-center gap-3 px-7 py-3 rounded-xl cursor-pointer"
                   style={{
                     background: 'linear-gradient(135deg, #EE7501 0%, #FF9A3C 100%)',
@@ -133,7 +147,7 @@ export default function Home() {
                   }}
                 >
                   <Download className="w-4 h-4" />
-                  <span className="text-sm font-bold tracking-wide">Baixar Portfólio em PDF</span>
+                  <span className="text-sm font-bold tracking-wide">{generatingPDF ? 'Gerando PDF...' : 'Baixar Portfólio em PDF'}</span>
                 </button>
               )}
             </div>
@@ -381,7 +395,8 @@ export default function Home() {
 
           {/* Download button mobile */}
           <button
-            onClick={() => window.print()}
+            onClick={handleDownloadPDF}
+                  disabled={generatingPDF}
             className="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl mb-8 cursor-pointer w-full sm:w-auto"
             style={{
               background: 'linear-gradient(135deg, #EE7501 0%, #FF9A3C 100%)',
@@ -390,7 +405,7 @@ export default function Home() {
             }}
           >
             <Download className="w-4 h-4" />
-            <span className="text-sm font-bold tracking-wide">Baixar Portfólio em PDF</span>
+            <span className="text-sm font-bold tracking-wide">{generatingPDF ? 'Gerando PDF...' : 'Baixar Portfólio em PDF'}</span>
           </button>
 
           {/* Mobile logo center */}
