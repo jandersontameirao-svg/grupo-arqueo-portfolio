@@ -129,7 +129,7 @@ export default function QuemSomosEcossistema() {
       id: "arqueogis",
       name: "ArqueoGIS",
       subtitle: "Tecnologia & Geoespacial",
-      color: "#861720",
+      color: "#EE7501",
       logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipo arqueogis_d6fd1185.png",
       description:
         "Especializada em geotecnologias aplicadas à arqueologia. Desenvolve soluções em SIG, mapeamento, modelagem 3D e análise espacial para otimizar diagnósticos e gestão de patrimônio.",
