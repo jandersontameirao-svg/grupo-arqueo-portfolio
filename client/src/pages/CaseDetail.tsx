@@ -92,6 +92,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Educação Patrimonial personalizada com a participação dos estudantes em uma visita guiada em plena atividade de salvamento arqueológico.',
     result: 'Educação patrimonial vivencial com engajamento social e comunitário.',
     competencies: ['Educação Patrimonial', 'Engajamento Social', 'Visita Guiada', 'Salvamento Arqueológico'],
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/loteamento-maria-isabel-ma-CrAUBRQKG2z7BbAMz3SwRe.webp',
   },
   {
     title: 'Ampliação da SE Candiota 2 (Rio Grande do Sul)',
@@ -129,6 +130,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Entrada no processo e estabelecimento de uma rotina de comunicação institucional mais assertiva com o IPHAN-SP, a fim de retomar confiança e previsibilidade técnica ao processo. Avaliação técnica contenciosa quanto à possibilidade de não aplicação de TAC por parte do IPHAN.',
     result: 'Recomposição de confiança institucional e análise contenciosa qualificada.',
     competencies: ['Articulação Institucional', 'Contencioso Técnico', 'IPHAN-SP', 'Previsibilidade Técnica'],
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/loteamento-bela-vista-sp-mUTBuadXC9WcvBCbvPCcYC.webp',
   },
   {
     title: 'PCH Cabuí',
@@ -154,6 +156,7 @@ const casesData: CaseData[] = [
     fullSummary: 'Entrada no processo e estabelecimento de uma rotina de comunicação institucional mais assertiva com o IPHAN-DF, a fim de retomar confiança e previsibilidade técnica ao processo. Avaliação técnica contenciosa quanto à não necessidade de execução da fase de Gestão, especialmente monitoramento arqueológico, uma vez que os estudos apresentados anteriormente se apresentavam suficientes e pela ausência de excepcionalidade estética e arquitetônica das edificações previstas na ADA para o contexto histórico do Distrito Federal.',
     result: 'Racionalidade técnica que afastou necessidade de fase de gestão.',
     competencies: ['Articulação Institucional', 'Contencioso Técnico', 'Fase de Gestão', 'Racionalidade Metodológica'],
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/loteamento-paranoazinho-df-6Sw2mMtWUr9FRRfXpa8vLg.webp',
   },
 ];
 
