@@ -1,9 +1,8 @@
 import { Link } from "wouter";
 import { ASSETS } from "@/lib/assets";
-import { generatePortfolioPDF } from "@/lib/generatePortfolioPDF";
 import {
   User, Building2, Target, Globe, Lightbulb, Star,
-  BarChart3, FolderOpen, MapPin, Mail, Download, ArrowRight, Users
+  BarChart3, FolderOpen, MapPin, Mail, ArrowRight, Users
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -28,18 +27,7 @@ const sections = [
 export default function Home() {
   const [hovered, setHovered] = useState<number | null>(null);
   const [rotation, setRotation] = useState(0);
-  const [generatingPDF, setGeneratingPDF] = useState(false);
 
-  const handleDownloadPDF = async () => {
-    setGeneratingPDF(true);
-    try {
-      await generatePortfolioPDF();
-    } catch (e) {
-      console.error('Erro ao gerar PDF:', e);
-    } finally {
-      setGeneratingPDF(false);
-    }
-  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -115,7 +103,7 @@ export default function Home() {
               sociocultural no Brasil.
             </p>
 
-            {/* Hover info / Download button */}
+            {/* Hover info */}
             <div className="h-14 flex items-center">
               {hovered !== null ? (
                 <div className="flex items-center gap-4">
@@ -134,22 +122,7 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-              ) : (
-                <button
-                  onClick={handleDownloadPDF}
-                  disabled={generatingPDF}
-                  className="group flex items-center gap-3 px-7 py-3 rounded-xl cursor-pointer"
-                  style={{
-                    background: 'linear-gradient(135deg, #EE7501 0%, #FF9A3C 100%)',
-                    color: '#FFFFFF',
-                    boxShadow: '0 4px 20px rgba(238,117,1,0.3), 0 1px 3px rgba(0,0,0,0.1)',
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  <Download className="w-4 h-4" />
-                  <span className="text-sm font-bold tracking-wide">{generatingPDF ? 'Gerando PDF...' : 'Baixar Portfólio em PDF'}</span>
-                </button>
-              )}
+              ) : null}
             </div>
           </div>
 
@@ -393,20 +366,7 @@ export default function Home() {
             sociocultural no Brasil.
           </p>
 
-          {/* Download button mobile */}
-          <button
-            onClick={handleDownloadPDF}
-                  disabled={generatingPDF}
-            className="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl mb-8 cursor-pointer w-full sm:w-auto"
-            style={{
-              background: 'linear-gradient(135deg, #EE7501 0%, #FF9A3C 100%)',
-              color: '#FFFFFF',
-              boxShadow: '0 4px 20px rgba(238,117,1,0.3)',
-            }}
-          >
-            <Download className="w-4 h-4" />
-            <span className="text-sm font-bold tracking-wide">{generatingPDF ? 'Gerando PDF...' : 'Baixar Portfólio em PDF'}</span>
-          </button>
+
 
           {/* Mobile logo center */}
           <div className="flex justify-center mb-8">
