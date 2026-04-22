@@ -159,7 +159,7 @@ const cases = [
   },
 ];
 
-const sectors = ["Todos", ...Array.from(new Set(cases.map(c => c.sector)))];
+const sectors = Array.from(new Set(cases.map(c => c.sector)));
 
 /* ────────────────────────────────────────────────────────────────── */
 /*  CARD FEATURED — Case destaque principal (full width)             */
@@ -420,8 +420,8 @@ function StandardCard({ c, index }: { c: typeof cases[0]; index: number }) {
 /*  PÁGINA PRINCIPAL                                                 */
 /* ────────────────────────────────────────────────────────────────── */
 export default function Cases() {
-  const [activeFilter, setActiveFilter] = useState("Todos");
-  const filtered = activeFilter === "Todos" ? cases : cases.filter(c => c.sector === activeFilter);
+  const [activeFilter, setActiveFilter] = useState(sectors[0]);
+  const filtered = cases.filter(c => c.sector === activeFilter);
 
   const featured = filtered.filter(c => c.tier === "featured");
   const medium = filtered.filter(c => c.tier === "medium");
@@ -492,25 +492,30 @@ export default function Cases() {
       {/* ═══════════════════ FILTROS + CASES ═══════════════════ */}
       <section className="pb-20 lg:pb-32">
         <div className="container">
-          {/* Filtros elegantes */}
+          {/* Filtros elegantes com layout melhorado */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-14 lg:mb-20"
+            className="mb-16 lg:mb-24"
           >
-            <div className="flex flex-wrap gap-2">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-xl lg:text-2xl font-bold" style={{ color: '#1A1A1A', fontFamily: "'Playfair Display', Georgia, serif" }}>Filtrar por Setor</h2>
+              <div className="w-12 h-[2px]" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
+            </div>
+            <div className="flex flex-wrap gap-3">
               {sectors.map((sector) => {
                 const isActive = activeFilter === sector;
                 return (
                   <button
                     key={sector}
                     onClick={() => setActiveFilter(sector)}
-                    className="px-4 py-2 text-[11px] font-medium tracking-[0.1em] uppercase transition-all duration-300 rounded"
+                    className="px-5 py-2.5 text-[12px] font-semibold tracking-[0.08em] uppercase transition-all duration-300 rounded-lg hover:shadow-md"
                     style={{
-                      backgroundColor: isActive ? '#861720' : 'transparent',
-                      color: isActive ? '#FFFFFF' : '#888',
-                      border: isActive ? '1px solid #861720' : '1px solid #DDD',
+                      backgroundColor: isActive ? '#861720' : '#F5F5F5',
+                      color: isActive ? '#FFFFFF' : '#666',
+                      border: isActive ? '2px solid #861720' : '2px solid transparent',
+                      transform: isActive ? 'translateY(-2px)' : 'translateY(0)',
                     }}
                   >
                     {sector}
