@@ -10,7 +10,10 @@ import { useState, useEffect } from "react";
  * HOME — Portfólio Digital Premium Grupo Arqueo
  * Design: Microsoft-style orbital navigation — clean, organized, premium
  * 9 nodes evenly distributed around center logo
+ * Video institucional integrado no hero
  */
+
+const VIDEO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/GRUPOARQUEOINSTITUCIONAL_c5cde311.mp4";
 
 const sections = [
   { id: "ceo", num: "01", label: "Mensagem do CEO", icon: User, path: "/ceo", color: "#861720" },
@@ -59,8 +62,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#F9F8F6]">
-      {/* ═══════════════════ HERO SECTION ═══════════════════ */}
-      <section className="relative min-h-screen lg:h-screen overflow-hidden flex flex-col">
+      {/* ═══════════════════ HERO SECTION (tudo integrado) ═══════════════════ */}
+      <section className="relative overflow-hidden bg-[#F9F8F6]">
         {/* Background image + gradient overlay */}
         <div className="absolute inset-0" style={{ zIndex: 0 }}>
           <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
@@ -74,322 +77,339 @@ export default function Home() {
 
         {/* ─── DESKTOP LAYOUT ─── */}
         <div
-          className="hidden lg:flex flex-1 max-w-[1440px] mx-auto px-8 xl:px-16"
-          style={{ position: 'relative', zIndex: 10 }}
+          className="hidden lg:block relative"
+          style={{ zIndex: 10 }}
         >
-          {/* LEFT — Text block */}
-          <div className="w-[40%] flex flex-col justify-start lg:justify-center pr-8 pt-16 lg:pt-0">
-            <img
-              src={ASSETS.logo10anos}
-              alt="Grupo Arqueo — 10 Anos"
-              className="mb-8"
-              style={{ height: '120px', width: 'auto', display: 'block', objectFit: 'contain', maxWidth: '400px' }}
-            />
-
-            <p className="text-[10px] xl:text-xs font-semibold tracking-[0.3em] uppercase mb-6 text-[#861720]">
-              Patrimônio Cultural e Arqueológico
-            </p>
-
-            <h1 className="text-3xl xl:text-4xl 2xl:text-5xl font-bold leading-[1.15] mb-6 text-[#2A2A2A]">
-              Consultoria estratégica{" "}
-              <span className="text-[#EE7501]">em pesquisa</span>{" "}
-              e gestão do patrimônio{" "}
-              <span className="text-[#861720]">sociocultural</span>
-            </h1>
-
-            <p className="text-base font-light leading-relaxed mb-8 text-[#555] max-w-md">
-              Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
-              e gestão estratégica para oferecer soluções completas em licenciamento
-              sociocultural no Brasil.
-            </p>
-
-            {/* Hover info */}
-            <div className="h-14 flex items-center">
-              {hovered !== null ? (
-                <div className="flex items-center gap-4">
-                  <span
-                    className="text-5xl font-black tracking-tight"
-                    style={{ color: sections[hovered].color }}
-                  >
-                    {sections[hovered].num}
-                  </span>
-                  <div className="flex flex-col">
-                    <span className="text-base font-bold text-[#2A2A2A]">
-                      {sections[hovered].label}
-                    </span>
-                    <span className="text-xs text-[#888] flex items-center gap-1 mt-0.5">
-                      Clique para explorar <ArrowRight className="w-3 h-3" />
-                    </span>
-                  </div>
-                </div>
-              ) : null}
-            </div>
-          </div>
-
-          {/* RIGHT — Orbital Navigation (Microsoft-style clean layout) */}
-          <div className="w-[60%] flex items-center justify-center">
-            <div
-              className="relative"
-              style={{
-                width: 'min(560px, 50vw)',
-                height: 'min(560px, 50vw)',
-              }}
-            >
-              {/* Soft radial glow */}
-              <div
-                className="absolute rounded-full pointer-events-none"
-                style={{
-                  inset: '-12%',
-                  background: 'radial-gradient(circle, rgba(249,248,246,1) 0%, rgba(249,248,246,0.97) 25%, rgba(249,248,246,0.85) 45%, rgba(249,248,246,0.5) 65%, transparent 80%)',
-                }}
+          {/* Top row: Text + Orbital side by side */}
+          <div className="flex max-w-[1440px] mx-auto px-8 xl:px-16" style={{ minHeight: '520px' }}>
+            {/* LEFT — Text block (compactado) */}
+            <div className="w-[40%] flex flex-col justify-center pr-8 py-10">
+              <img
+                src={ASSETS.logo10anos}
+                alt="Grupo Arqueo — 10 Anos"
+                className="mb-5"
+                style={{ height: '100px', width: 'auto', display: 'block', objectFit: 'contain', maxWidth: '360px' }}
               />
 
-              {/* Rotating decorative outer ring */}
-              <svg
-                className="absolute pointer-events-none"
-                style={{ inset: '-2%', width: '104%', height: '104%', transform: `rotate(${rotation}deg)` }}
-                viewBox="0 0 100 100"
+              <p className="text-[10px] xl:text-xs font-semibold tracking-[0.3em] uppercase mb-4 text-[#861720]">
+                Patrimônio Cultural e Arqueológico
+              </p>
+
+              <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-[1.15] mb-4 text-[#2A2A2A]">
+                Consultoria estratégica{" "}
+                <span className="text-[#EE7501]">em pesquisa</span>{" "}
+                e gestão do patrimônio{" "}
+                <span className="text-[#861720]">sociocultural</span>
+              </h1>
+
+              <p className="text-sm font-light leading-relaxed mb-5 text-[#555] max-w-md">
+                Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
+                e gestão estratégica para oferecer soluções completas em licenciamento
+                sociocultural no Brasil.
+              </p>
+
+              {/* Hover info */}
+              <div className="h-12 flex items-center">
+                {hovered !== null ? (
+                  <div className="flex items-center gap-4">
+                    <span
+                      className="text-4xl font-black tracking-tight"
+                      style={{ color: sections[hovered].color }}
+                    >
+                      {sections[hovered].num}
+                    </span>
+                    <div className="flex flex-col">
+                      <span className="text-sm font-bold text-[#2A2A2A]">
+                        {sections[hovered].label}
+                      </span>
+                      <span className="text-xs text-[#888] flex items-center gap-1 mt-0.5">
+                        Clique para explorar <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+
+            {/* RIGHT — Orbital Navigation */}
+            <div className="w-[60%] flex items-center justify-center">
+              <div
+                className="relative"
+                style={{
+                  width: 'min(460px, 42vw)',
+                  height: 'min(460px, 42vw)',
+                }}
               >
-                <circle cx="50" cy="50" r="49" fill="none" stroke="url(#outerGrad)" strokeWidth="0.25" strokeDasharray="2 5" />
-                <defs>
-                  <linearGradient id="outerGrad" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#EE7501" stopOpacity="0.35" />
-                    <stop offset="50%" stopColor="#2C7EB3" stopOpacity="0.15" />
-                    <stop offset="100%" stopColor="#861720" stopOpacity="0.35" />
-                  </linearGradient>
-                </defs>
-              </svg>
+                {/* Soft radial glow */}
+                <div
+                  className="absolute rounded-full pointer-events-none"
+                  style={{
+                    inset: '-12%',
+                    background: 'radial-gradient(circle, rgba(249,248,246,1) 0%, rgba(249,248,246,0.97) 25%, rgba(249,248,246,0.85) 45%, rgba(249,248,246,0.5) 65%, transparent 80%)',
+                  }}
+                />
 
-              {/* Main orbit ring */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
-                <circle cx={cx} cy={cy} r={orbR + 0.5} fill="none" stroke="rgba(238,117,1,0.18)" strokeWidth="0.4" />
-                <circle cx={cx} cy={cy} r={orbR * 0.5} fill="none" stroke="rgba(42,42,42,0.06)" strokeWidth="0.25" strokeDasharray="1.2 2.5" />
+                {/* Rotating decorative outer ring */}
+                <svg
+                  className="absolute pointer-events-none"
+                  style={{ inset: '-2%', width: '104%', height: '104%', transform: `rotate(${rotation}deg)` }}
+                  viewBox="0 0 100 100"
+                >
+                  <circle cx="50" cy="50" r="49" fill="none" stroke="url(#outerGrad)" strokeWidth="0.25" strokeDasharray="2 5" />
+                  <defs>
+                    <linearGradient id="outerGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#EE7501" stopOpacity="0.35" />
+                      <stop offset="50%" stopColor="#2C7EB3" stopOpacity="0.15" />
+                      <stop offset="100%" stopColor="#861720" stopOpacity="0.35" />
+                    </linearGradient>
+                  </defs>
+                </svg>
 
-                {/* Connection lines from center to each node */}
+                {/* Main orbit ring */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
+                  <circle cx={cx} cy={cy} r={orbR + 0.5} fill="none" stroke="rgba(238,117,1,0.18)" strokeWidth="0.4" />
+                  <circle cx={cx} cy={cy} r={orbR * 0.5} fill="none" stroke="rgba(42,42,42,0.06)" strokeWidth="0.25" strokeDasharray="1.2 2.5" />
+
+                  {/* Connection lines from center to each node */}
+                  {sections.map((s, i) => {
+                    const angle = (i * angleStep - 90) * (Math.PI / 180);
+                    const x = cx + orbR * Math.cos(angle);
+                    const y = cy + orbR * Math.sin(angle);
+                    const isH = hovered === i;
+                    return (
+                      <line
+                        key={s.id}
+                        x1={cx} y1={cy} x2={x} y2={y}
+                        stroke={isH ? s.color : 'rgba(42,42,42,0.1)'}
+                        strokeWidth={isH ? 0.4 : 0.15}
+                        strokeDasharray={isH ? "none" : "0.6 1.2"}
+                        style={{ transition: 'all 0.4s ease' }}
+                      />
+                    );
+                  })}
+                </svg>
+
+                {/* Center logo */}
+                <div
+                  className="absolute rounded-full flex items-center justify-center"
+                  style={{
+                    left: '50%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '18%',
+                    height: '18%',
+                    background: '#FFFFFF',
+                    border: '3px solid rgba(238,117,1,0.2)',
+                    boxShadow: '0 8px 40px rgba(42,42,42,0.08), 0 2px 8px rgba(238,117,1,0.06)',
+                    zIndex: 5,
+                  }}
+                >
+                  <img src={ASSETS.logoGrupoArqueoColorido} alt="Grupo Arqueo" style={{ height: '55%', width: 'auto' }} />
+                </div>
+
+                {/* ── Orbital Nodes ── */}
                 {sections.map((s, i) => {
-                  const angle = (i * angleStep - 90) * (Math.PI / 180);
-                  const x = cx + orbR * Math.cos(angle);
-                  const y = cy + orbR * Math.sin(angle);
+                  const Icon = s.icon;
+                  const angleDeg = i * angleStep - 90;
+                  const angleRad = angleDeg * (Math.PI / 180);
+                  const x = cx + orbR * Math.cos(angleRad);
+                  const y = cy + orbR * Math.sin(angleRad);
                   const isH = hovered === i;
+                  const labelPos = getLabelPosition(angleDeg + 90);
+
+                  // Compute label alignment styles
+                  const labelStyle: React.CSSProperties = {
+                    color: isH ? s.color : '#444',
+                    maxWidth: '120px',
+                    textShadow: '0 1px 6px rgba(249,248,246,1), 0 0 10px rgba(249,248,246,1), 0 0 16px rgba(249,248,246,0.9)',
+                    transition: 'color 0.3s ease',
+                    lineHeight: '1.25',
+                    fontSize: '11px',
+                    fontWeight: 600,
+                  };
+
+                  // Position label based on node angle to avoid overlaps
+                  let labelClass = "absolute whitespace-normal text-center";
+                  let labelPositionStyle: React.CSSProperties = {};
+
+                  if (labelPos.anchor === 'center') {
+                    // Top or bottom: center label below/above node
+                    labelClass = "absolute left-1/2 -translate-x-1/2 text-center";
+                    if (angleDeg + 90 < 180) {
+                      // Top half: label below
+                      labelPositionStyle = { top: '100%', marginTop: '8px' };
+                    } else {
+                      // Bottom half: label above
+                      labelPositionStyle = { bottom: '100%', marginBottom: '8px' };
+                    }
+                  } else if (labelPos.anchor === 'right') {
+                    // Right side: label to the right
+                    labelClass = "absolute text-left";
+                    labelPositionStyle = { left: '100%', marginLeft: '12px', top: '50%', transform: 'translateY(-50%)' };
+                  } else {
+                    // Left side: label to the left
+                    labelClass = "absolute text-right";
+                    labelPositionStyle = { right: '100%', marginRight: '12px', top: '50%', transform: 'translateY(-50%)' };
+                  }
+
                   return (
-                    <line
+                    <div
                       key={s.id}
-                      x1={cx} y1={cy} x2={x} y2={y}
-                      stroke={isH ? s.color : 'rgba(42,42,42,0.1)'}
-                      strokeWidth={isH ? 0.4 : 0.15}
-                      strokeDasharray={isH ? "none" : "0.6 1.2"}
-                      style={{ transition: 'all 0.4s ease' }}
+                      className="absolute"
+                      style={{
+                        left: `${x}%`,
+                        top: `${y}%`,
+                        transform: `translate(-50%, -50%) scale(${isH ? 1.12 : 1})`,
+                        transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        zIndex: isH ? 30 : 20,
+                      }}
+                      onMouseEnter={() => setHovered(i)}
+                      onMouseLeave={() => setHovered(null)}
+                    >
+                      <Link href={s.path}>
+                        <div className="relative cursor-pointer">
+                          {/* Node circle */}
+                          <div
+                            className="relative flex items-center justify-center rounded-full"
+                            style={{
+                              width: '64px',
+                              height: '64px',
+                              background: isH ? '#FFFFFF' : s.color,
+                              border: `2.5px solid ${s.color}`,
+                              boxShadow: isH
+                                ? `0 8px 28px ${s.color}50, 0 4px 10px rgba(0,0,0,0.15)`
+                                : `0 4px 16px ${s.color}40, 0 2px 6px rgba(0,0,0,0.1), 0 0 0 3px rgba(255,255,255,0.85)`,
+                              transition: 'all 0.3s ease',
+                            }}
+                          >
+                            {/* Number badge */}
+                            <span
+                              className="absolute -top-1 -right-1 w-[20px] h-[20px] rounded-full flex items-center justify-center text-[8px] font-black"
+                              style={{
+                                background: isH ? '#2A2A2A' : s.color,
+                                color: '#FFFFFF',
+                                boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+                                border: '1.5px solid #FFFFFF',
+                              }}
+                            >
+                              {s.num}
+                            </span>
+
+                            <Icon
+                              className="w-5 h-5"
+                              style={{
+                                color: isH ? s.color : '#FFFFFF',
+                                transition: 'color 0.3s ease',
+                              }}
+                              strokeWidth={1.8}
+                            />
+                          </div>
+
+                          {/* Label — positioned dynamically based on angle */}
+                          <span
+                            className={labelClass}
+                            style={{ ...labelStyle, ...labelPositionStyle }}
+                          >
+                            {s.label}
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                })}
+
+                {/* Floating micro-dots for visual depth */}
+                {[0, 60, 120, 180, 240, 300].map((deg, i) => {
+                  const angle = deg * (Math.PI / 180);
+                  const r = orbR * 0.58;
+                  const dotX = cx + r * Math.cos(angle);
+                  const dotY = cy + r * Math.sin(angle);
+                  const colors = ['#EE7501', '#2C7EB3', '#861720', '#EE7501', '#2C7EB3', '#861720'];
+                  return (
+                    <div
+                      key={`dot-${i}`}
+                      className="absolute pointer-events-none rounded-full animate-pulse"
+                      style={{
+                        left: `${dotX}%`,
+                        top: `${dotY}%`,
+                        width: '3px',
+                        height: '3px',
+                        backgroundColor: colors[i],
+                        opacity: 0.25,
+                        transform: 'translate(-50%, -50%)',
+                      }}
                     />
                   );
                 })}
-              </svg>
-
-              {/* Center logo */}
-              <div
-                className="absolute rounded-full flex items-center justify-center"
-                style={{
-                  left: '50%',
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '18%',
-                  height: '18%',
-                  background: '#FFFFFF',
-                  border: '3px solid rgba(238,117,1,0.2)',
-                  boxShadow: '0 8px 40px rgba(42,42,42,0.08), 0 2px 8px rgba(238,117,1,0.06)',
-                  zIndex: 5,
-                }}
-              >
-                <img src={ASSETS.logoGrupoArqueoColorido} alt="Grupo Arqueo" style={{ height: '55%', width: 'auto' }} />
               </div>
+            </div>
+          </div>
 
-              {/* ── Orbital Nodes ── */}
-              {sections.map((s, i) => {
-                const Icon = s.icon;
-                const angleDeg = i * angleStep - 90;
-                const angleRad = angleDeg * (Math.PI / 180);
-                const x = cx + orbR * Math.cos(angleRad);
-                const y = cy + orbR * Math.sin(angleRad);
-                const isH = hovered === i;
-                const labelPos = getLabelPosition(angleDeg + 90);
-
-                // Compute label alignment styles
-                const labelStyle: React.CSSProperties = {
-                  color: isH ? s.color : '#444',
-                  maxWidth: '120px',
-                  textShadow: '0 1px 6px rgba(249,248,246,1), 0 0 10px rgba(249,248,246,1), 0 0 16px rgba(249,248,246,0.9)',
-                  transition: 'color 0.3s ease',
-                  lineHeight: '1.25',
-                  fontSize: '11px',
-                  fontWeight: 600,
-                };
-
-                // Position label based on node angle to avoid overlaps
-                let labelClass = "absolute whitespace-normal text-center";
-                let labelPositionStyle: React.CSSProperties = {};
-
-                if (labelPos.anchor === 'center') {
-                  // Top or bottom: center label below/above node
-                  labelClass = "absolute left-1/2 -translate-x-1/2 text-center";
-                  if (angleDeg + 90 < 180) {
-                    // Top half: label below
-                    labelPositionStyle = { top: '100%', marginTop: '8px' };
-                  } else {
-                    // Bottom half: label above
-                    labelPositionStyle = { bottom: '100%', marginBottom: '8px' };
-                  }
-                } else if (labelPos.anchor === 'right') {
-                  // Right side: label to the right
-                  labelClass = "absolute text-left";
-                  labelPositionStyle = { left: '100%', marginLeft: '12px', top: '50%', transform: 'translateY(-50%)' };
-                } else {
-                  // Left side: label to the left
-                  labelClass = "absolute text-right";
-                  labelPositionStyle = { right: '100%', marginRight: '12px', top: '50%', transform: 'translateY(-50%)' };
-                }
-
-                return (
-                  <div
-                    key={s.id}
-                    className="absolute"
-                    style={{
-                      left: `${x}%`,
-                      top: `${y}%`,
-                      transform: `translate(-50%, -50%) scale(${isH ? 1.12 : 1})`,
-                      transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                      zIndex: isH ? 30 : 20,
-                    }}
-                    onMouseEnter={() => setHovered(i)}
-                    onMouseLeave={() => setHovered(null)}
-                  >
-                    <Link href={s.path}>
-                      <div className="relative cursor-pointer">
-                        {/* Node circle */}
-                        <div
-                          className="relative flex items-center justify-center rounded-full"
-                          style={{
-                            width: '72px',
-                            height: '72px',
-                            background: isH ? '#FFFFFF' : s.color,
-                            border: `2.5px solid ${s.color}`,
-                            boxShadow: isH
-                              ? `0 8px 28px ${s.color}50, 0 4px 10px rgba(0,0,0,0.15)`
-                              : `0 4px 16px ${s.color}40, 0 2px 6px rgba(0,0,0,0.1), 0 0 0 3px rgba(255,255,255,0.85)`,
-                            transition: 'all 0.3s ease',
-                          }}
-                        >
-                          {/* Number badge */}
-                          <span
-                            className="absolute -top-1 -right-1 w-[22px] h-[22px] rounded-full flex items-center justify-center text-[8px] font-black"
-                            style={{
-                              background: isH ? '#2A2A2A' : s.color,
-                              color: '#FFFFFF',
-                              boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
-                              border: '1.5px solid #FFFFFF',
-                            }}
-                          >
-                            {s.num}
-                          </span>
-
-                          <Icon
-                            className="w-6 h-6"
-                            style={{
-                              color: isH ? s.color : '#FFFFFF',
-                              transition: 'color 0.3s ease',
-                            }}
-                            strokeWidth={1.8}
-                          />
-                        </div>
-
-                        {/* Label — positioned dynamically based on angle */}
-                        <span
-                          className={labelClass}
-                          style={{ ...labelStyle, ...labelPositionStyle }}
-                        >
-                          {s.label}
-                        </span>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              })}
-
-              {/* Floating micro-dots for visual depth */}
-              {[0, 60, 120, 180, 240, 300].map((deg, i) => {
-                const angle = deg * (Math.PI / 180);
-                const r = orbR * 0.58;
-                const dotX = cx + r * Math.cos(angle);
-                const dotY = cy + r * Math.sin(angle);
-                const colors = ['#EE7501', '#2C7EB3', '#861720', '#EE7501', '#2C7EB3', '#861720'];
-                return (
-                  <div
-                    key={`dot-${i}`}
-                    className="absolute pointer-events-none rounded-full animate-pulse"
-                    style={{
-                      left: `${dotX}%`,
-                      top: `${dotY}%`,
-                      width: '3px',
-                      height: '3px',
-                      backgroundColor: colors[i],
-                      opacity: 0.25,
-                      transform: 'translate(-50%, -50%)',
-                    }}
-                  />
-                );
-              })}
+          {/* Video — dentro do hero, abaixo do conteúdo principal */}
+          <div className="max-w-[1440px] mx-auto px-8 xl:px-16 pb-12">
+            <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ aspectRatio: '16/9', maxHeight: '420px' }}>
+              <video
+                src={VIDEO_URL}
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+                style={{ display: 'block' }}
+              />
             </div>
           </div>
         </div>
 
         {/* ─── MOBILE LAYOUT ─── */}
-        <div className="lg:hidden relative flex flex-col justify-start py-16 px-4" style={{ zIndex: 10 }}>
+        <div className="lg:hidden relative flex flex-col justify-start py-12 px-4" style={{ zIndex: 10 }}>
           <img
             src={ASSETS.logo10anos}
             alt="Grupo Arqueo — 10 Anos"
-            className="mb-6"
-            style={{ maxHeight: '100px', width: 'auto', display: 'block' }}
+            className="mb-4"
+            style={{ maxHeight: '80px', width: 'auto', display: 'block' }}
           />
 
-          <p className="text-xs font-semibold tracking-[0.3em] uppercase mb-3 text-[#861720]">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase mb-2 text-[#861720]">
             Patrimônio Cultural e Arqueológico
           </p>
 
-          <h1 className="text-3xl sm:text-4xl font-bold leading-[1.08] mb-5 text-[#2A2A2A]">
+          <h1 className="text-2xl sm:text-3xl font-bold leading-[1.08] mb-3 text-[#2A2A2A]">
             Consultoria estratégica{" "}
             <span className="text-[#EE7501]">em pesquisa</span>{" "}
             e gestão do patrimônio{" "}
             <span className="text-[#861720]">sociocultural</span>
           </h1>
 
-          <p className="text-sm font-light leading-relaxed mb-8 text-[#555]">
+          <p className="text-sm font-light leading-relaxed mb-6 text-[#555]">
             Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
             e gestão estratégica para oferecer soluções completas em licenciamento
             sociocultural no Brasil.
           </p>
 
-
-
           {/* Mobile logo center */}
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-6">
             <div
-              className="w-20 h-20 rounded-full flex items-center justify-center"
+              className="w-16 h-16 rounded-full flex items-center justify-center"
               style={{
                 background: '#FFFFFF',
                 border: '2px solid rgba(238,117,1,0.15)',
                 boxShadow: '0 8px 32px rgba(42,42,42,0.08)',
               }}
             >
-              <img src={ASSETS.logoGrupoArqueoColorido} alt="Grupo Arqueo" className="h-9 w-auto" />
+              <img src={ASSETS.logoGrupoArqueoColorido} alt="Grupo Arqueo" className="h-7 w-auto" />
             </div>
           </div>
 
           {/* Mobile cards grid */}
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-2 mb-8">
             {sections.map((s) => {
               const Icon = s.icon;
               return (
                 <Link key={s.id} href={s.path}>
                   <div
-                    className="group p-3 text-center rounded-xl cursor-pointer"
+                    className="group p-2.5 text-center rounded-xl cursor-pointer"
                     style={{
                       background: '#FFFFFF',
                       border: '1px solid #E5E7EB',
@@ -398,7 +418,7 @@ export default function Home() {
                     }}
                   >
                     <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2"
+                      className="w-9 h-9 rounded-full flex items-center justify-center mx-auto mb-1.5"
                       style={{
                         background: s.color,
                         color: '#FFFFFF',
@@ -406,7 +426,7 @@ export default function Home() {
                     >
                       <Icon className="w-4 h-4" strokeWidth={1.8} />
                     </div>
-                    <span className="block text-[10px] font-semibold leading-tight text-[#2A2A2A]">
+                    <span className="block text-[9px] font-semibold leading-tight text-[#2A2A2A]">
                       {s.label}
                     </span>
                   </div>
@@ -414,19 +434,16 @@ export default function Home() {
               );
             })}
           </div>
-        </div>
-      </section>
 
-      {/* ═══════════════════ VIDEO SECTION ═══════════════════ */}
-      <section className="relative py-16 lg:py-20 bg-[#F9F8F6]">
-        <div className="container max-w-5xl">
+          {/* Mobile Video — dentro do hero */}
           <div className="relative rounded-lg overflow-hidden shadow-lg" style={{ aspectRatio: '16/9' }}>
             <video
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/GRUPOARQUEOINSTITUCIONAL_c5cde311.mp4"
+              src={VIDEO_URL}
               controls
               autoPlay
               muted
               loop
+              playsInline
               className="w-full h-full object-cover"
               style={{ display: 'block' }}
             />
