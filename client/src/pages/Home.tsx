@@ -81,7 +81,7 @@ export default function Home() {
           style={{ zIndex: 10 }}
         >
           {/* Top row: Text + Orbital side by side */}
-          <div className="flex max-w-[1440px] mx-auto px-8 xl:px-16" style={{ minHeight: '520px' }}>
+          <div className="flex max-w-[1440px] mx-auto px-8 xl:px-16" style={{ minHeight: '440px' }}>
             {/* LEFT — Text block (compactado) */}
             <div className="w-[40%] flex flex-col justify-center pr-8 py-10">
               <img
@@ -346,7 +346,7 @@ export default function Home() {
           </div>
 
           {/* Video — dentro do hero, abaixo do conteúdo principal, alinhado à esquerda com o texto */}
-          <div className="max-w-[1440px] mx-auto px-8 xl:px-16 pb-12">
+          <div className="max-w-[1440px] mx-auto px-8 xl:px-16 pb-12 -mt-4">
             <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ aspectRatio: '16/9', maxHeight: '336px', maxWidth: '560px' }}>
               <video
                 src={VIDEO_URL}
