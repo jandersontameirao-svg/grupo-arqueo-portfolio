@@ -346,8 +346,8 @@ export default function Home() {
           </div>
 
           {/* Video — dentro do hero, abaixo do conteúdo principal */}
-          <div className="max-w-[1440px] mx-auto px-8 xl:px-16 pb-12">
-            <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ aspectRatio: '16/9', maxHeight: '420px' }}>
+          <div className="max-w-[1150px] mx-auto px-8 xl:px-16 pb-12">
+            <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ aspectRatio: '16/9', maxHeight: '336px' }}>
               <video
                 src={VIDEO_URL}
                 controls
@@ -436,7 +436,7 @@ export default function Home() {
           </div>
 
           {/* Mobile Video — dentro do hero */}
-          <div className="relative rounded-lg overflow-hidden shadow-lg" style={{ aspectRatio: '16/9' }}>
+          <div className="relative rounded-lg overflow-hidden shadow-lg mx-auto" style={{ aspectRatio: '16/9', width: '80%' }}>
             <video
               src={VIDEO_URL}
               controls
