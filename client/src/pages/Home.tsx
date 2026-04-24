@@ -345,9 +345,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Video — dentro do hero, abaixo do conteúdo principal */}
-          <div className="max-w-[1150px] mx-auto px-8 xl:px-16 pb-12">
-            <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ aspectRatio: '16/9', maxHeight: '336px' }}>
+          {/* Video — dentro do hero, abaixo do conteúdo principal, alinhado à esquerda com o texto */}
+          <div className="max-w-[1440px] mx-auto px-8 xl:px-16 pb-12">
+            <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ aspectRatio: '16/9', maxHeight: '336px', maxWidth: '560px' }}>
               <video
                 src={VIDEO_URL}
                 controls
