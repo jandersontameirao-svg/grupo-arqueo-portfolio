@@ -437,7 +437,7 @@ export default function Cases() {
       nextLabel="Presença Territorial"
     >
       {/* ═══════════════════ HERO ═══════════════════ */}
-      <section className="relative min-h-[520px] lg:min-h-[620px] flex items-center overflow-hidden">
+      <section className="relative min-h-[420px] lg:min-h-[520px] flex items-start lg:items-center overflow-hidden pt-16 lg:pt-0">
         {/* Background com textura territorial */}
         <div className="absolute inset-0 -z-10">
           <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
@@ -468,8 +468,8 @@ export default function Cases() {
             </div>
 
             {/* Logo + Headline lado a lado */}
-            <div className="flex items-center gap-8 lg:gap-12 mb-6">
-              <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-30 lg:h-36 xl:h-42 w-auto flex-shrink-0" />
+            <div className="flex items-start lg:items-center gap-8 lg:gap-12 mb-6">
+              <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-24 lg:h-32 xl:h-40 w-auto flex-shrink-0 mt-0 lg:mt-0" />
               <h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]"
                 style={{ color: '#1A1A1A', letterSpacing: '-0.025em', fontFamily: "'Playfair Display', Georgia, serif" }}
