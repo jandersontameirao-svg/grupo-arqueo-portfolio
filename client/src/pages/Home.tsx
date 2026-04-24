@@ -81,7 +81,7 @@ export default function Home() {
           style={{ zIndex: 10 }}
         >
           {/* Top row: Text + Orbital side by side */}
-          <div className="flex max-w-[1440px] mx-auto px-8 xl:px-16" style={{ minHeight: '380px' }}>
+          <div className="flex max-w-[1440px] mx-auto px-8 xl:px-16" style={{ height: 'calc(100vh - 200px)' }}>
             {/* LEFT — Text block (compactado) */}
             <div className="w-[40%] flex flex-col justify-center pr-8 py-10">
               <img
@@ -136,8 +136,8 @@ export default function Home() {
               <div
                 className="relative"
                 style={{
-                  width: 'min(460px, 42vw)',
-                  height: 'min(460px, 42vw)',
+                  width: 'min(520px, 44vw)',
+                  height: 'min(520px, 44vw)',
                 }}
               >
                 {/* Soft radial glow */}
