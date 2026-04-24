@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#F9F8F6]">
       {/* ═══════════════════ HERO SECTION ═══════════════════ */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen lg:h-screen overflow-hidden flex flex-col">
         {/* Background image + gradient overlay */}
         <div className="absolute inset-0" style={{ zIndex: 0 }}>
           <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
@@ -74,11 +74,11 @@ export default function Home() {
 
         {/* ─── DESKTOP LAYOUT ─── */}
         <div
-          className="hidden lg:flex h-full max-w-[1440px] mx-auto px-8 xl:px-16"
+          className="hidden lg:flex flex-1 max-w-[1440px] mx-auto px-8 xl:px-16"
           style={{ position: 'relative', zIndex: 10 }}
         >
           {/* LEFT — Text block */}
-          <div className="w-[40%] flex flex-col justify-center pr-8">
+          <div className="w-[40%] flex flex-col justify-start lg:justify-center pr-8 pt-16 lg:pt-0">
             <img
               src={ASSETS.logo10anos}
               alt="Grupo Arqueo — 10 Anos"
@@ -341,7 +341,7 @@ export default function Home() {
         </div>
 
         {/* ─── MOBILE LAYOUT ─── */}
-        <div className="lg:hidden relative min-h-screen flex flex-col justify-center py-16 px-4" style={{ zIndex: 10 }}>
+        <div className="lg:hidden relative flex flex-col justify-start py-16 px-4" style={{ zIndex: 10 }}>
           <img
             src={ASSETS.logo10anos}
             alt="Grupo Arqueo — 10 Anos"
@@ -413,6 +413,23 @@ export default function Home() {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════ VIDEO SECTION ═══════════════════ */}
+      <section className="relative py-16 lg:py-20 bg-[#F9F8F6]">
+        <div className="container max-w-5xl">
+          <div className="relative rounded-lg overflow-hidden shadow-lg" style={{ aspectRatio: '16/9' }}>
+            <video
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/GRUPOARQUEOINSTITUCIONAL_c5cde311.mp4"
+              controls
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-cover"
+              style={{ display: 'block' }}
+            />
           </div>
         </div>
       </section>
