@@ -81,9 +81,9 @@ export default function Home() {
           style={{ zIndex: 10 }}
         >
           {/* Top row: Text + Orbital side by side */}
-          <div className="flex max-w-[1440px] mx-auto px-8 xl:px-16" style={{ height: 'calc(100vh - 200px)' }}>
+          <div className="flex max-w-[1440px] mx-auto px-8 xl:px-16" style={{ minHeight: 'calc(100vh - 60px)' }}>
             {/* LEFT — Text block (compactado) */}
-            <div className="w-[40%] flex flex-col justify-center pr-8 py-10">
+            <div className="w-[40%] flex flex-col justify-center pr-6 py-6">
               <img
                 src={ASSETS.logo10anos}
                 alt="Grupo Arqueo — 10 Anos"
@@ -109,11 +109,11 @@ export default function Home() {
               </p>
 
               {/* Hover info */}
-              <div className="h-12 flex items-center">
+              <div className="h-10 flex items-center">
                 {hovered !== null ? (
                   <div className="flex items-center gap-4">
                     <span
-                      className="text-4xl font-black tracking-tight"
+                      className="text-3xl font-black tracking-tight"
                       style={{ color: sections[hovered].color }}
                     >
                       {sections[hovered].num}
@@ -129,6 +129,20 @@ export default function Home() {
                   </div>
                 ) : null}
               </div>
+
+              {/* Video institucional — integrado na coluna esquerda */}
+              <div className="relative rounded-lg overflow-hidden shadow-xl mt-4" style={{ aspectRatio: '16/9', maxWidth: '420px' }}>
+                <video
+                  src={VIDEO_URL}
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                  style={{ display: 'block' }}
+                />
+              </div>
             </div>
 
             {/* RIGHT — Orbital Navigation */}
@@ -136,8 +150,8 @@ export default function Home() {
               <div
                 className="relative"
                 style={{
-                  width: 'min(520px, 44vw)',
-                  height: 'min(520px, 44vw)',
+                  width: 'min(560px, 46vw)',
+                  height: 'min(560px, 46vw)',
                 }}
               >
                 {/* Soft radial glow */}
@@ -345,21 +359,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Video — dentro do hero, abaixo do conteúdo principal, alinhado à esquerda com o texto */}
-          <div className="max-w-[1440px] mx-auto px-8 xl:px-16 pb-10 -mt-10">
-            <div className="relative rounded-lg overflow-hidden shadow-xl" style={{ aspectRatio: '16/9', maxHeight: '270px', maxWidth: '450px' }}>
-              <video
-                src={VIDEO_URL}
-                controls
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-                style={{ display: 'block' }}
-              />
-            </div>
-          </div>
+
         </div>
 
         {/* ─── MOBILE LAYOUT ─── */}
