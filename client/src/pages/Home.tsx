@@ -133,18 +133,17 @@ export default function Home() {
                 ) : null}
               </div>
 
-              {/* Video institucional — thumbnail com play que expande fullscreen */}
+              {/* Video institucional — thumbnail estática com play que expande fullscreen */}
               <div
                 className="relative rounded-lg overflow-hidden shadow-xl mt-4 cursor-pointer group"
                 style={{ aspectRatio: '16/9', maxWidth: '420px' }}
                 onClick={() => setVideoExpanded(true)}
               >
                 <video
-                  src={VIDEO_URL}
+                  src={VIDEO_URL + '#t=0.5'}
                   muted
-                  loop
                   playsInline
-                  autoPlay
+                  preload="metadata"
                   className="w-full h-full object-cover"
                   style={{ display: 'block' }}
                 />
@@ -447,18 +446,17 @@ export default function Home() {
             })}
           </div>
 
-          {/* Mobile Video — thumbnail com play que expande fullscreen */}
+          {/* Mobile Video — thumbnail estática com play que expande fullscreen */}
           <div
             className="relative rounded-lg overflow-hidden shadow-lg mx-auto cursor-pointer group"
             style={{ aspectRatio: '16/9', width: '80%' }}
             onClick={() => setVideoExpanded(true)}
           >
             <video
-              src={VIDEO_URL}
+              src={VIDEO_URL + '#t=0.5'}
               muted
-              loop
               playsInline
-              autoPlay
+              preload="metadata"
               className="w-full h-full object-cover"
               style={{ display: 'block' }}
             />
