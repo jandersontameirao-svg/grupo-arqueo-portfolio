@@ -49,10 +49,10 @@ export default function MissaoVisao() {
         <div className="container" style={{ paddingTop: 'var(--space-section)', paddingBottom: 'var(--space-section)' }}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
             <div className="lg:col-span-8">
-              <div className="flex items-center gap-8 lg:gap-12 mb-8">
-                <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-30 lg:h-36 xl:h-42 w-auto flex-shrink-0" />
-                <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-bold leading-[1.2]" style={{ color: '#1A1A1A', letterSpacing: '-0.025em' }}>
-                  Os fundamentos que orientam<br />
+              <div className="flex items-center gap-6 lg:gap-12 mb-8">
+                <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="w-auto flex-shrink-0" style={{ height: 'clamp(80px, 10vw, 168px)' }} />
+                <h1 className="font-bold leading-[1.15]" style={{ color: '#1A1A1A', letterSpacing: '-0.025em', fontSize: 'clamp(1.4rem, 3.2vw, 4.5rem)' }}>
+                  Os fundamentos que orientam
                   nossa <span style={{ color: '#EE7501' }}>atuação</span>
                 </h1>
               </div>
