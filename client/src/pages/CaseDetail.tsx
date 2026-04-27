@@ -211,7 +211,7 @@ export default function CaseDetail() {
         </div>
 
         {/* Hero Section */}
-        <section className="py-12 md:py-16 px-4 md:px-8 max-w-6xl mx-auto">
+        <section className="max-w-6xl mx-auto" style={{ padding: 'var(--space-section) var(--container-padding)' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -229,8 +229,8 @@ export default function CaseDetail() {
 
             {/* Título */}
             <h1
-              className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
-              style={{ color: '#1A1A1A' }}
+              className="font-bold mb-6 leading-tight"
+              style={{ fontSize: 'var(--text-hero)', color: '#1A1A1A' }}
             >
               {caseItem.title}
             </h1>
@@ -313,9 +313,9 @@ export default function CaseDetail() {
         </section>
 
         {/* CTA Proposta */}
-        <section className="py-12 md:py-16 px-4 md:px-8 border-t border-gray-200">
+        <section className="border-t border-gray-200" style={{ padding: 'var(--space-section) var(--container-padding)' }}>
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#1A1A1A' }}>
+            <h2 className="font-bold mb-4" style={{ color: '#1A1A1A', fontSize: 'var(--text-subtitle)' }}>
               Interessado em uma solução similar?
             </h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">

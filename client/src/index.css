@@ -171,6 +171,27 @@
   }
 }
 
+/* ═══════════════════ SISTEMA DE ESCALA RESPONSIVA ═══════════════════ */
+/* Escala proporcional para telas 1024px-1920px usando clamp() */
+:root {
+  /* Tipografia fluida */
+  --text-hero: clamp(1.75rem, 2.2vw, 2.75rem);       /* Título hero */
+  --text-section-title: clamp(1.5rem, 2vw, 2.25rem); /* Título seção */
+  --text-subtitle: clamp(1.1rem, 1.3vw, 1.5rem);     /* Subtítulo */
+  --text-body: clamp(0.85rem, 0.95vw, 1rem);          /* Corpo */
+  --text-small: clamp(0.75rem, 0.85vw, 0.875rem);     /* Texto menor */
+  --text-caption: clamp(0.65rem, 0.75vw, 0.8rem);     /* Legendas */
+
+  /* Espaçamentos fluidos */
+  --space-section: clamp(3rem, 5vw, 6rem);            /* Padding seção */
+  --space-block: clamp(1.5rem, 2.5vw, 3rem);          /* Gap entre blocos */
+  --space-element: clamp(0.75rem, 1.2vw, 1.5rem);     /* Gap entre elementos */
+
+  /* Containers fluidos */
+  --container-max: clamp(900px, 85vw, 1440px);        /* Max container */
+  --container-padding: clamp(1rem, 2.5vw, 4rem);      /* Padding lateral */
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

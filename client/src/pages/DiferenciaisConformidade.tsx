@@ -94,7 +94,7 @@ export default function DiferenciaisConformidade() {
       nextLabel="Números & Território"
     >
       {/* ═══════════════════ SEÇÃO 1: DIFERENCIAIS ═══════════════════ */}
-      <section className="relative min-h-[300px] lg:min-h-[380px] flex items-center overflow-hidden py-8 lg:py-10">
+      <section className="relative min-h-[300px] lg:min-h-[380px] flex items-center overflow-hidden" style={{ paddingTop: 'var(--space-block)', paddingBottom: 'var(--space-block)' }}>
         {/* Background image + gradient overlay */}
         <div className="absolute inset-0 -z-10">
           <img src={ASSETS.heroArqueologia} alt="" className="w-full h-full object-cover" />
@@ -121,7 +121,7 @@ export default function DiferenciaisConformidade() {
             </div>
             <div className="flex items-center gap-6 lg:gap-8 mb-6">
               <img src={ASSETS.logo10anos} alt="10 Anos" className="h-[5.75rem] lg:h-[6.9rem] xl:h-[8.05rem] flex-shrink-0" />
-              <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
+              <h1 className="font-bold leading-tight" style={{ color: '#2A2A2A', fontSize: 'var(--text-hero)' }}>
                 <span className="whitespace-nowrap">O que nos torna</span><br />
                 <span style={{ color: '#EE7501' }}>referência</span> no setor
               </h1>
@@ -137,7 +137,7 @@ export default function DiferenciaisConformidade() {
       <div className="h-px my-2 lg:my-4" style={{ backgroundColor: '#E6E6E6' }} />
 
       {/* Diferenciais Grid */}
-      <section className="py-20 lg:py-28 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
+      <section style={{ backgroundColor: '#FFFFFF', padding: 'var(--space-section) var(--container-padding)' }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {diferenciais.map((item, idx) => {
@@ -190,7 +190,7 @@ export default function DiferenciaisConformidade() {
       <div style={{ height: '1px', backgroundColor: '#E0E0E0' }} />
 
       {/* ═══════════════════ SEÇÃO 2: CONFORMIDADE ═══════════════════ */}
-      <section className="py-20 lg:py-28 px-4 lg:px-8" style={{ backgroundColor: '#F9F8F6' }}>
+      <section style={{ backgroundColor: '#F9F8F6', padding: 'var(--space-section) var(--container-padding)' }}>
         <div className="max-w-6xl mx-auto">
           {/* Section Title */}
           <motion.div
@@ -205,7 +205,7 @@ export default function DiferenciaisConformidade() {
               <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720' }}>Estrutura Organizacional</span>
               <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to left, #861720, #EE7501)' }} />
             </div>
-            <h2 className="text-3xl lg:text-5xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
+            <h2 className="font-bold leading-tight" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
               Estruturas que sustentam <span style={{ color: '#861720' }}>nossa entrega</span>
             </h2>
             <p className="mt-6 text-base lg:text-lg font-light leading-relaxed max-w-3xl mx-auto" style={{ color: '#666' }}>
@@ -255,7 +255,7 @@ export default function DiferenciaisConformidade() {
 
           {/* Policies Section */}
           <div className="bg-white rounded-xl p-8 lg:p-12">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center" style={{ color: '#2A2A2A' }}>
+            <h3 className="font-bold mb-8 text-center" style={{ color: '#2A2A2A', fontSize: 'var(--text-subtitle)' }}>
               Diretrizes <span style={{ color: '#861720' }}>institucionais</span>
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

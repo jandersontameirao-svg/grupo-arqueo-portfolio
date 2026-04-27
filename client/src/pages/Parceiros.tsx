@@ -133,7 +133,7 @@ export default function Parceiros() {
             transition={{ duration: 0.6, delay: 0.15 }}
             style={{ textAlign: 'center' }}
           >
-            <h1 style={{ fontSize: '40px', fontWeight: 700, lineHeight: 1.1, color: '#FFFFFF', letterSpacing: '-0.03em', margin: '0 0 8px' }}>
+            <h1 style={{ fontSize: 'var(--text-section-title)', fontWeight: 700, lineHeight: 1.1, color: '#FFFFFF', letterSpacing: '-0.03em', margin: '0 0 8px' }}>
               Relações que Constroem
               <br />
               <span style={{ color: '#D4A843' }}>o Futuro do Brasil</span>
@@ -190,7 +190,7 @@ export default function Parceiros() {
             <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase' as const, color: '#D4A843' }}>
               Parcerias de Referência
             </span>
-            <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#1A1A1A', margin: '8px 0 0', letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontSize: 'var(--text-subtitle)', fontWeight: 700, color: '#1A1A1A', margin: '8px 0 0', letterSpacing: '-0.02em' }}>
               Grandes Empresas que Confiam no Grupo Arqueo
             </h2>
           </motion.div>

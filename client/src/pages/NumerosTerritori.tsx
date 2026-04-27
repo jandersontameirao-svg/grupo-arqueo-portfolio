@@ -61,7 +61,7 @@ export default function NumerosTerritori() {
       <style>{animationStyles}</style>
 
       {/* ═══════════ BLOCO 1: INDICADORES PRINCIPAIS ═══════════ */}
-      <section className="py-16 lg:py-24 px-4 lg:px-8" style={{ backgroundColor: '#FAFAF9' }}>
+      <section style={{ backgroundColor: '#FAFAF9', padding: 'var(--space-section) var(--container-padding)' }}>
         <div className="max-w-6xl mx-auto">
           {/* Header com logo */}
           <div className="flex items-center gap-6 lg:gap-8 mb-4">
@@ -71,7 +71,7 @@ export default function NumerosTerritori() {
               className="h-14 lg:h-18 w-auto flex-shrink-0"
             />
             <div>
-              <h1 className="text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
+              <h1 className="font-bold leading-tight" style={{ color: '#1A1A1A', fontSize: 'var(--text-hero)' }}>
                 Escala, presença e consistência operacional
               </h1>
             </div>
@@ -132,14 +132,14 @@ export default function NumerosTerritori() {
       </section>
 
       {/* ═══════════ BLOCO 2: PRESENÇA TERRITORIAL ═══════════ */}
-      <section className="py-16 lg:py-24 px-4 lg:px-8" style={{ backgroundColor: '#F9F8F6' }}>
+      <section style={{ backgroundColor: '#F9F8F6', padding: 'var(--space-section) var(--container-padding)' }}>
         <div className="max-w-6xl mx-auto">
           {/* Título da seção */}
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
             <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#EE7501' }}>Território</span>
           </div>
-          <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ color: '#2A2A2A' }}>
+          <h2 className="font-bold mb-3" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
             Atuação em <span style={{ color: '#EE7501' }}>23 estados</span> brasileiros e o <span style={{ color: '#EE7501' }}>DF</span>
           </h2>
           <p className="text-sm lg:text-base font-light leading-relaxed mb-10 max-w-2xl" style={{ color: '#666' }}>
@@ -230,9 +230,9 @@ export default function NumerosTerritori() {
       </section>
 
       {/* ═══════════ BLOCO 3: DISTRIBUIÇÃO POR TIPO (compacto) ═══════════ */}
-      <section className="py-14 lg:py-20 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
+      <section style={{ backgroundColor: '#FFFFFF', padding: 'var(--space-section) var(--container-padding)' }}>
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-xl lg:text-2xl font-bold mb-2 text-center" style={{ color: '#2A2A2A' }}>
+          <h2 className="font-bold mb-2 text-center" style={{ color: '#2A2A2A', fontSize: 'var(--text-subtitle)' }}>
             Distribuição por Segmento
           </h2>
           <p className="text-xs text-center mb-8" style={{ color: '#999' }}>Principais tipos de projetos realizados</p>

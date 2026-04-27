@@ -205,7 +205,7 @@ function FeaturedCard({ c, index }: { c: typeof cases[0]; index: number }) {
           <div className="w-12 h-[3px] rounded-full mb-6" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
 
           {/* Título */}
-          <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold leading-[1.15] mb-5" style={{ color: '#1A1A1A', letterSpacing: '-0.02em', fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h3 className="font-bold leading-[1.15] mb-5" style={{ color: '#1A1A1A', letterSpacing: '-0.02em', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'var(--text-section-title)' }}>
             {c.title}
           </h3>
 
@@ -293,7 +293,7 @@ function MediumCard({ c, index }: { c: typeof cases[0]; index: number }) {
       <div className="p-7 lg:p-8 flex flex-col flex-1">
         <div className="w-8 h-[2px] rounded-full mb-4" style={{ background: 'linear-gradient(to right, #EE7501, #2C7EB3)' }} />
 
-        <h3 className="text-xl lg:text-2xl font-bold leading-[1.2] mb-4" style={{ color: '#1A1A1A', letterSpacing: '-0.01em', fontFamily: "'Playfair Display', Georgia, serif" }}>
+        <h3 className="font-bold leading-[1.2] mb-4" style={{ color: '#1A1A1A', letterSpacing: '-0.01em', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'var(--text-subtitle)' }}>
           {c.title}
         </h3>
 
@@ -471,8 +471,8 @@ export default function Cases() {
             <div className="flex items-start lg:items-center gap-8 lg:gap-12 mb-6">
               <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="h-24 lg:h-32 xl:h-40 w-auto flex-shrink-0 mt-0 lg:mt-0" />
               <h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]"
-                style={{ color: '#1A1A1A', letterSpacing: '-0.025em', fontFamily: "'Playfair Display', Georgia, serif" }}
+                className="font-bold leading-[1.1]"
+                style={{ fontSize: 'var(--text-hero)', color: '#1A1A1A', letterSpacing: '-0.025em', fontFamily: "'Playfair Display', Georgia, serif" }}
               >
                 Evidências concretas de capacidade e<br />
                 <span className="whitespace-nowrap" style={{ color: '#6B2332' }}>execução comprovada</span>
@@ -500,7 +500,7 @@ export default function Cases() {
             className="mb-16 lg:mb-24"
           >
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-xl lg:text-2xl font-bold" style={{ color: '#1A1A1A', fontFamily: "'Playfair Display', Georgia, serif" }}>Filtrar por Setor</h2>
+              <h2 className="font-bold" style={{ color: '#1A1A1A', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'var(--text-subtitle)' }}>Filtrar por Setor</h2>
               <div className="w-12 h-[2px]" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
             </div>
             <div className="flex flex-wrap gap-3">

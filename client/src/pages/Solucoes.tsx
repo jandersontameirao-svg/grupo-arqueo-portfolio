@@ -172,7 +172,7 @@ const complementaresServices = [
 // Componente para renderizar um bloco de serviços
 function ServiceBlock({ title, subtitle, services }: { title: string; subtitle: string; services: typeof consultoriaServices }) {
   return (
-    <section className="py-20 lg:py-28 border-t first:border-t-0">
+    <section className="border-t first:border-t-0" style={{ paddingTop: 'var(--space-section)', paddingBottom: 'var(--space-section)' }}>
       <div className="container">
         {/* Título e subtítulo do bloco */}
         <motion.div
@@ -182,7 +182,7 @@ function ServiceBlock({ title, subtitle, services }: { title: string; subtitle: 
           transition={{ duration: 0.6 }}
           className="mb-16 lg:mb-20"
         >
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4" style={{ color: '#2A2A2A' }}>
+          <h2 className="font-bold mb-4" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
             {title}
           </h2>
           <p className="text-lg lg:text-xl leading-relaxed max-w-3xl" style={{ color: '#666' }}>
@@ -312,7 +312,7 @@ export default function Solucoes() {
               transition={{ duration: 0.8 }}
               className="max-w-3xl"
             >
-              <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6" style={{ color: '#2A2A2A' }}>
+              <h1 className="font-bold leading-tight mb-6" style={{ color: '#2A2A2A', fontSize: 'var(--text-hero)' }}>
                 Soluções integradas para{' '}
                 <span style={{ color: '#EE7501' }}>patrimônio e arqueologia</span>
               </h1>
@@ -347,7 +347,7 @@ export default function Solucoes() {
       />
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-20 border-t">
+      <section className="border-t" style={{ paddingTop: 'var(--space-section)', paddingBottom: 'var(--space-section)' }}>
         <div className="container text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -355,7 +355,7 @@ export default function Solucoes() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#2A2A2A' }}>
+            <h2 className="font-bold mb-4" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
               Soluções customizadas
             </h2>
             <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: '#666' }}>

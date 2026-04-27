@@ -89,11 +89,11 @@ export default function Contato() {
                 alt="10 Anos Arqueo"
                 className="h-24 lg:h-32 xl:h-40 w-auto flex-shrink-0"
               />
-              <div className="text-5xl lg:text-7xl xl:text-8xl font-bold" style={{ color: '#EE7501' }}>Arqueo</div>
+              <div className="font-bold" style={{ color: '#EE7501', fontSize: 'var(--text-hero)' }}>Arqueo</div>
             </div>
 
             {/* Chamada institucional */}
-            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-6" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
+            <h1 className="font-bold leading-tight mb-6" style={{ color: '#1A1A1A', letterSpacing: '-0.02em', fontSize: 'var(--text-section-title)' }}>
               Vamos estruturar o seu projeto?
             </h1>
 
@@ -142,7 +142,7 @@ export default function Contato() {
 
 
       {/* ═══════════════════ CONTACT CONTENT ═══════════════════ */}
-      <section className="py-16 lg:py-28">
+      <section style={{ paddingTop: 'var(--space-section)', paddingBottom: 'var(--space-section)' }}>
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
 

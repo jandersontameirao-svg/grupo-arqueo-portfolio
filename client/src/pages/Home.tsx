@@ -84,28 +84,28 @@ export default function Home() {
           style={{ zIndex: 10 }}
         >
           {/* Top row: Text + Orbital side by side */}
-          <div className="flex max-w-[1440px] mx-auto px-8 xl:px-16" style={{ minHeight: 'calc(100vh - 60px)' }}>
+          <div className="flex mx-auto" style={{ minHeight: 'calc(100vh - 60px)', maxWidth: 'var(--container-max)', padding: '0 var(--container-padding)' }}>
             {/* LEFT — Text block (compactado) */}
             <div className="w-[40%] flex flex-col justify-center pr-6 py-6">
               <img
                 src={ASSETS.logo10anos}
                 alt="Grupo Arqueo — 10 Anos"
                 className="mb-5"
-                style={{ height: '100px', width: 'auto', display: 'block', objectFit: 'contain', maxWidth: '360px' }}
+                style={{ height: 'clamp(70px, 7vw, 100px)', width: 'auto', display: 'block', objectFit: 'contain', maxWidth: 'clamp(240px, 25vw, 360px)' }}
               />
 
-              <p className="text-[10px] xl:text-xs font-semibold tracking-[0.3em] uppercase mb-4 text-[#861720]">
+              <p className="font-semibold tracking-[0.3em] uppercase mb-4 text-[#861720]" style={{ fontSize: 'clamp(9px, 0.7vw, 12px)' }}>
                 Patrimônio Cultural e Arqueológico
               </p>
 
-              <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-[1.15] mb-4 text-[#2A2A2A]">
+              <h1 className="font-bold leading-[1.15] mb-4 text-[#2A2A2A]" style={{ fontSize: 'var(--text-hero)' }}>
                 Consultoria estratégica{" "}
                 <span className="text-[#EE7501]">em pesquisa</span>{" "}
                 e gestão do patrimônio{" "}
                 <span className="text-[#861720]">sociocultural</span>
               </h1>
 
-              <p className="text-sm font-light leading-relaxed mb-5 text-[#555] max-w-md">
+              <p className="font-light leading-relaxed mb-5 text-[#555]" style={{ fontSize: 'var(--text-body)', maxWidth: 'clamp(280px, 28vw, 420px)' }}>
                 Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
                 e gestão estratégica para oferecer soluções completas em licenciamento
                 sociocultural no Brasil.
@@ -136,7 +136,7 @@ export default function Home() {
               {/* Video institucional — thumbnail estática com play que expande fullscreen */}
               <div
                 className="relative rounded-lg overflow-hidden shadow-xl mt-4 cursor-pointer group"
-                style={{ aspectRatio: '16/9', maxWidth: '420px' }}
+                style={{ aspectRatio: '16/9', maxWidth: 'clamp(280px, 28vw, 420px)' }}
                 onClick={() => setVideoExpanded(true)}
               >
                 <video
@@ -161,8 +161,8 @@ export default function Home() {
               <div
                 className="relative"
                 style={{
-                  width: 'min(560px, 46vw)',
-                  height: 'min(560px, 46vw)',
+                  width: 'clamp(340px, 40vw, 560px)',
+                  height: 'clamp(340px, 40vw, 560px)',
                 }}
               >
                 {/* Soft radial glow */}
@@ -249,7 +249,7 @@ export default function Home() {
                     textShadow: '0 1px 6px rgba(249,248,246,1), 0 0 10px rgba(249,248,246,1), 0 0 16px rgba(249,248,246,0.9)',
                     transition: 'color 0.3s ease',
                     lineHeight: '1.25',
-                    fontSize: '11px',
+                    fontSize: 'clamp(9px, 0.85vw, 11px)',
                     fontWeight: 600,
                   };
 
@@ -297,8 +297,8 @@ export default function Home() {
                           <div
                             className="relative flex items-center justify-center rounded-full"
                             style={{
-                              width: '64px',
-                              height: '64px',
+                              width: 'clamp(44px, 4.5vw, 64px)',
+                              height: 'clamp(44px, 4.5vw, 64px)',
                               background: isH ? '#FFFFFF' : s.color,
                               border: `2.5px solid ${s.color}`,
                               boxShadow: isH

@@ -272,7 +272,7 @@ export default function QuemSomosEcossistema() {
     >
       <div className="w-full">
         {/* SEÇÃO 1B: QUEM SOMOS + TRAJETÓRIA - Hero Mesclado - REFINADO */}
-        <section className="py-12 lg:py-16 px-4 lg:px-8 relative overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
+        <section className="relative overflow-hidden" style={{ backgroundColor: '#FFFFFF', padding: 'var(--space-section) var(--container-padding)' }}>
           {/* Background sutil premium */}
           <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #861720 0%, transparent 50%), radial-gradient(circle at 80% 50%, #EE7501 0%, transparent 50%)' }} />
           
@@ -286,7 +286,7 @@ export default function QuemSomosEcossistema() {
               
               {/* Texto Principal */}
               <div>
-                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
+                <h2 className="font-bold leading-tight" style={{ color: '#1A1A1A', fontSize: 'var(--text-section-title)' }}>
                   O Grupo Arqueo é um hub de <span style={{ color: '#EE7501', fontWeight: 800 }}>soluções integradas</span> para <span style={{ color: '#EE7501', fontWeight: 800 }}>Arqueologia</span> e <span style={{ color: '#EE7501', fontWeight: 800 }}>Patrimônio cultural</span>.
                 </h2>
               </div>
@@ -369,16 +369,16 @@ export default function QuemSomosEcossistema() {
         </section>
 
         {/* SEÇÃO 3: TÍTULO DO ECOSSISTEMA */}
-        <section className="py-8 lg:py-12 px-4 lg:px-8" style={{ backgroundColor: '#FFFFFF' }}>
+        <section style={{ backgroundColor: '#FFFFFF', padding: 'var(--space-block) var(--container-padding)' }}>
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style={{ color: '#1A1A1A' }}>
+                <h2 className="font-bold leading-tight" style={{ color: '#1A1A1A', fontSize: 'var(--text-section-title)' }}>
               Um ecossistema, <span style={{ color: "#EE7501", fontWeight: 800 }}>múltiplas</span> especialidades
             </h2>
           </div>
         </section>
 
         {/* SEÇÃO 4: ECOSSISTEMA - Layout Principal - REFINADO */}
-        <section className="py-12 lg:py-16 px-4 lg:px-8" style={{ backgroundColor: "#FAFAF9" }}>
+        <section style={{ backgroundColor: "#FAFAF9", padding: 'var(--space-section) var(--container-padding)' }}>
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
               {/* Coluna Principal - Diagrama - COM MAIS PRESENÇA */}
@@ -522,11 +522,11 @@ export default function QuemSomosEcossistema() {
         </section>
 
         {/* ═════════════════ NOSSO TIME SECTION - GRID ORGANIZADO ═════════════════ */}
-        <section className="py-16 lg:py-20 relative" style={{ backgroundColor: '#FFFFFF' }}>
+        <section className="relative" style={{ backgroundColor: '#FFFFFF', padding: 'var(--space-section) var(--container-padding)' }}>
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             {/* Section Title */}
             <div className="text-center mb-10">
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1A1A1A', fontFamily: 'serif' }}>
+              <h2 className="font-bold leading-tight mb-4" style={{ color: '#1A1A1A', fontFamily: 'serif', fontSize: 'var(--text-section-title)' }}>
                 Nosso Time
               </h2>
               <p className="text-sm lg:text-base leading-relaxed max-w-2xl mx-auto" style={{ color: '#999999' }}>

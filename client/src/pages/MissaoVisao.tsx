@@ -46,7 +46,7 @@ export default function MissaoVisao() {
       <section className="relative overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
         <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(to right, #861720, #EE7501, #2C7EB3)' }} />
 
-        <div className="container py-12 lg:py-16">
+        <div className="container" style={{ paddingTop: 'var(--space-section)', paddingBottom: 'var(--space-section)' }}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
             <div className="lg:col-span-8">
               <div className="flex items-center gap-8 lg:gap-12 mb-8">
@@ -81,7 +81,7 @@ export default function MissaoVisao() {
       </section>
 
       {/* ═══════════════════ 2. MISSÃO & VISÃO ═══════════════════ */}
-      <section className="py-12 lg:py-16" style={{ backgroundColor: '#FFFFFF' }}>
+      <section style={{ backgroundColor: '#FFFFFF', paddingTop: 'var(--space-section)', paddingBottom: 'var(--space-section)' }}>
         <div className="container">
           <div className="flex items-center gap-3 mb-12 lg:mb-16">
             <div className="w-8 h-[2px] rounded-full" style={{ backgroundColor: '#EE7501' }} />
@@ -99,7 +99,7 @@ export default function MissaoVisao() {
                   </div>
                   <div>
                     <span className="text-[10px] font-semibold tracking-[0.2em] uppercase block" style={{ color: 'rgba(255,255,255,0.45)' }}>Nossa</span>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-white" style={{ letterSpacing: '-0.01em' }}>Missão</h2>
+                    <h2 className="font-bold text-white" style={{ letterSpacing: '-0.01em', fontSize: 'var(--text-section-title)' }}>Missão</h2>
                   </div>
                 </div>
 
@@ -133,7 +133,7 @@ export default function MissaoVisao() {
                   </div>
                   <div>
                     <span className="text-[10px] font-semibold tracking-[0.2em] uppercase block" style={{ color: '#AAA' }}>Nossa</span>
-                    <h2 className="text-3xl lg:text-4xl font-bold" style={{ color: '#1A1A1A', letterSpacing: '-0.01em' }}>Visão</h2>
+                    <h2 className="font-bold" style={{ color: '#1A1A1A', letterSpacing: '-0.01em', fontSize: 'var(--text-section-title)' }}>Visão</h2>
                   </div>
                 </div>
 
@@ -165,7 +165,7 @@ export default function MissaoVisao() {
       </div>
 
       {/* ═══════════════════ 3. PILARES ESTRATÉGICOS ═══════════════════ */}
-      <section className="py-16 lg:py-20" style={{ backgroundColor: '#FAFAF8' }}>
+      <section style={{ backgroundColor: '#FAFAF8', paddingTop: 'var(--space-section)', paddingBottom: 'var(--space-section)' }}>
         <div className="container">
           {/* Header */}
           <div className="max-w-2xl mb-14 lg:mb-18">
@@ -175,7 +175,7 @@ export default function MissaoVisao() {
                 Pilares Estratégicos
               </span>
             </div>
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.15] mb-5" style={{ color: '#1A1A1A', letterSpacing: '-0.02em' }}>
+            <h2 className="font-bold leading-[1.15] mb-5" style={{ color: '#1A1A1A', letterSpacing: '-0.02em', fontSize: 'var(--text-section-title)' }}>
               Princípios que orientam{' '}
               <span style={{ color: '#EE7501' }}>nosso crescimento</span>
             </h2>

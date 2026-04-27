@@ -90,7 +90,7 @@ export default function CeoMessage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: 0.3 }}
                 >
-                  <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style={{ color: '#861720' }}>
+                  <h2 className="font-bold leading-tight" style={{ color: '#861720', fontSize: 'var(--text-section-title)' }}>
                     O patrimônio cultural é um{" "}
                     <span style={{ color: '#EE7501' }}>ativo estratégico</span>{" "}
                     para o desenvolvimento sustentável do Brasil.
@@ -113,8 +113,9 @@ export default function CeoMessage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: 0.5 }}
-                  className="space-y-5 text-base lg:text-lg leading-[1.8] font-light"
-                  style={{ color: '#444' }}
+                  className="space-y-5 leading-[1.8] font-light"
+                  style={{ ...{ color: '#444' }, fontSize: 'var(--text-body)' }}
+
                 >
                   <p>
                     O projeto nasce a partir de um <strong style={{ color: '#861720', fontWeight: 600 }}>propósito claro</strong>: elevar o padrão da arqueologia preventiva no Brasil e entregar mais <strong style={{ color: '#861720', fontWeight: 600 }}>previsibilidade ao licenciamento ambiental</strong>. Desde o início assumimos um papel <strong style={{ color: '#EE7501', fontWeight: 600 }}>disruptivo</strong> ao combinar <strong style={{ color: '#861720', fontWeight: 600 }}>rigor técnico</strong>, visão de gestão e <strong style={{ color: '#861720', fontWeight: 600 }}>inovação aplicada</strong>, transformando exigências e complexidade em método, rastreabilidade e entregas consistentes.
@@ -157,8 +158,8 @@ export default function CeoMessage() {
             transition={{ duration: 0.8 }}
             className="mb-8 lg:mb-10"
           >
-            <p className="text-xs lg:text-sm font-semibold tracking-widest mb-4" style={{ color: '#EE7501' }}>NOSSOS PILARES</p>
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style={{ color: '#2A2A2A' }}>
+            <p className="font-semibold tracking-widest mb-4" style={{ color: '#EE7501', fontSize: 'var(--text-small)' }}>NOSSOS PILARES</p>
+            <h2 className="font-bold leading-tight" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
               Os fundamentos que guiam nossa atuação
             </h2>
           </motion.div>
