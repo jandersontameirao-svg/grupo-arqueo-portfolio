@@ -2,9 +2,10 @@ import { Link } from "wouter";
 import { ASSETS } from "@/lib/assets";
 import {
   User, Building2, Target, Globe, Lightbulb, Star,
-  BarChart3, FolderOpen, MapPin, Mail, ArrowRight, Users
+  BarChart3, FolderOpen, MapPin, Mail, ArrowRight, Users,
+  Play, X
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 /**
  * HOME — Portfólio Digital Premium Grupo Arqueo
@@ -30,6 +31,8 @@ const sections = [
 export default function Home() {
   const [hovered, setHovered] = useState<number | null>(null);
   const [rotation, setRotation] = useState(0);
+  const [videoExpanded, setVideoExpanded] = useState(false);
+  const expandedVideoRef = useRef<HTMLVideoElement>(null);
 
 
   useEffect(() => {
@@ -130,18 +133,27 @@ export default function Home() {
                 ) : null}
               </div>
 
-              {/* Video institucional — integrado na coluna esquerda */}
-              <div className="relative rounded-lg overflow-hidden shadow-xl mt-4" style={{ aspectRatio: '16/9', maxWidth: '420px' }}>
+              {/* Video institucional — thumbnail com play que expande fullscreen */}
+              <div
+                className="relative rounded-lg overflow-hidden shadow-xl mt-4 cursor-pointer group"
+                style={{ aspectRatio: '16/9', maxWidth: '420px' }}
+                onClick={() => setVideoExpanded(true)}
+              >
                 <video
                   src={VIDEO_URL}
-                  controls
-                  autoPlay
                   muted
                   loop
                   playsInline
+                  autoPlay
                   className="w-full h-full object-cover"
                   style={{ display: 'block' }}
                 />
+                {/* Play overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all duration-300">
+                  <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Play className="w-6 h-6 text-[#861720] ml-1" fill="#861720" />
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -435,21 +447,63 @@ export default function Home() {
             })}
           </div>
 
-          {/* Mobile Video — dentro do hero */}
-          <div className="relative rounded-lg overflow-hidden shadow-lg mx-auto" style={{ aspectRatio: '16/9', width: '80%' }}>
+          {/* Mobile Video — thumbnail com play que expande fullscreen */}
+          <div
+            className="relative rounded-lg overflow-hidden shadow-lg mx-auto cursor-pointer group"
+            style={{ aspectRatio: '16/9', width: '80%' }}
+            onClick={() => setVideoExpanded(true)}
+          >
             <video
               src={VIDEO_URL}
-              controls
-              autoPlay
               muted
               loop
               playsInline
+              autoPlay
               className="w-full h-full object-cover"
+              style={{ display: 'block' }}
+            />
+            {/* Play overlay */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                <Play className="w-5 h-5 text-[#861720] ml-0.5" fill="#861720" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════ VIDEO FULLSCREEN MODAL ═══════════════════ */}
+      {videoExpanded && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          onClick={() => setVideoExpanded(false)}
+        >
+          {/* Close button */}
+          <button
+            className="absolute top-6 right-6 z-[10000] w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors duration-200"
+            onClick={(e) => { e.stopPropagation(); setVideoExpanded(false); }}
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+
+          {/* Video container */}
+          <div
+            className="relative w-[92vw] max-w-[1200px]"
+            style={{ aspectRatio: '16/9' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              ref={expandedVideoRef}
+              src={VIDEO_URL}
+              controls
+              autoPlay
+              playsInline
+              className="w-full h-full rounded-lg object-contain"
               style={{ display: 'block' }}
             />
           </div>
         </div>
-      </section>
+      )}
     </div>
   );
 }
