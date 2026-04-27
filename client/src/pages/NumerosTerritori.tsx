@@ -76,7 +76,7 @@ export default function NumerosTerritori() {
               </h1>
             </div>
           </div>
-          <p className="mb-12 max-w-3xl" style={{ color: '#777', fontSize: 'var(--text-body)' }}>
+          <p className="mb-8 max-w-3xl" style={{ color: '#777', fontSize: 'var(--text-body)' }}>
             Os indicadores sintetizam a trajetória do Grupo Arqueo em escala, presença territorial, estrutura organizacional e capacidade de mobilização técnica.
           </p>
 

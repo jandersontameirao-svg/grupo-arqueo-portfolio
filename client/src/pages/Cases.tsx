@@ -490,14 +490,14 @@ export default function Cases() {
 
 
       {/* ═══════════════════ FILTROS + CASES ═══════════════════ */}
-      <section className="pb-20 lg:pb-32">
+      <section className="pb-12 lg:pb-20">
         <div className="container">
           {/* Filtros elegantes com layout melhorado */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16 lg:mb-24"
+            className="mb-10 lg:mb-14"
           >
             <div className="flex items-center justify-between mb-8">
               <h2 className="font-bold" style={{ color: '#1A1A1A', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'var(--text-subtitle)' }}>Filtrar por Setor</h2>
@@ -527,7 +527,7 @@ export default function Cases() {
 
           {/* ── CASES DESTAQUE ── */}
           {featured.length > 0 && (
-            <div className="mb-10 lg:mb-14">
+            <div className="mb-8 lg:mb-10">
               {featured.map((c, i) => (
                 <FeaturedCard key={c.title} c={c} index={i} />
               ))}
@@ -536,7 +536,7 @@ export default function Cases() {
 
           {/* ── CASES MÉDIOS ── */}
           {medium.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-10 lg:mb-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8 lg:mb-10">
               {medium.map((c, i) => (
                 <MediumCard key={c.title} c={c} index={i + featured.length} />
               ))}

@@ -180,7 +180,7 @@ function ServiceBlock({ title, subtitle, services }: { title: string; subtitle: 
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '0px 0px -100px 0px' }}
           transition={{ duration: 0.6 }}
-          className="mb-16 lg:mb-20"
+          className="mb-10 lg:mb-12"
         >
           <h2 className="font-bold mb-4" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
             {title}

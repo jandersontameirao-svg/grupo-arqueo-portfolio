@@ -83,7 +83,7 @@ export default function MissaoVisao() {
       {/* ═══════════════════ 2. MISSÃO & VISÃO ═══════════════════ */}
       <section style={{ backgroundColor: '#FFFFFF', paddingTop: 'var(--space-section)', paddingBottom: 'var(--space-section)' }}>
         <div className="container">
-          <div className="flex items-center gap-3 mb-12 lg:mb-16">
+          <div className="flex items-center gap-3 mb-8 lg:mb-10">
             <div className="w-8 h-[2px] rounded-full" style={{ backgroundColor: '#EE7501' }} />
             <span className="text-[11px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#999' }}>Propósito & Direção</span>
           </div>
@@ -168,7 +168,7 @@ export default function MissaoVisao() {
       <section style={{ backgroundColor: '#FAFAF8', paddingTop: 'var(--space-section)', paddingBottom: 'var(--space-section)' }}>
         <div className="container">
           {/* Header */}
-          <div className="max-w-2xl mb-14 lg:mb-18">
+          <div className="max-w-2xl mb-8 lg:mb-10">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-[2px] rounded-full" style={{ backgroundColor: '#EE7501' }} />
               <span className="text-[11px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#EE7501' }}>

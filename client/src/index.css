@@ -183,9 +183,9 @@
   --text-caption: clamp(0.65rem, 0.75vw, 0.8rem);     /* Legendas */
 
   /* Espaçamentos fluidos */
-  --space-section: clamp(3rem, 5vw, 6rem);            /* Padding seção */
-  --space-block: clamp(1.5rem, 2.5vw, 3rem);          /* Gap entre blocos */
-  --space-element: clamp(0.75rem, 1.2vw, 1.5rem);     /* Gap entre elementos */
+  --space-section: clamp(2rem, 3.5vw, 4rem);           /* Padding seção */
+  --space-block: clamp(1rem, 2vw, 2.5rem);             /* Gap entre blocos */
+  --space-element: clamp(0.5rem, 1vw, 1.25rem);        /* Gap entre elementos */
 
   /* Containers fluidos */
   --container-max: clamp(900px, 85vw, 1440px);        /* Max container */

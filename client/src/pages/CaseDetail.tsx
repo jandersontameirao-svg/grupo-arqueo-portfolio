@@ -257,7 +257,7 @@ export default function CaseDetail() {
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mb-12 rounded-lg overflow-hidden shadow-lg"
+                className="mb-8 rounded-lg overflow-hidden shadow-lg"
               >
                 <img
                   src={caseItem.imageUrl}
@@ -269,7 +269,7 @@ export default function CaseDetail() {
             )}
 
             {/* Tese do case */}
-            <div className="mb-12">
+            <div className="mb-8">
               <h2 className="font-semibold mb-3" style={{ color: '#861720', fontSize: 'var(--text-small)' }}>
                 Tese Central
               </h2>
@@ -277,7 +277,7 @@ export default function CaseDetail() {
             </div>
 
             {/* Resumo expandido */}
-            <div className="mb-12 p-6 rounded-lg" style={{ backgroundColor: '#F9F9F9' }}>
+            <div className="mb-8 p-6 rounded-lg" style={{ backgroundColor: '#F9F9F9' }}>
               <h2 className="font-semibold mb-3" style={{ color: '#861720', fontSize: 'var(--text-small)' }}>
                 Descrição Completa
               </h2>
@@ -285,7 +285,7 @@ export default function CaseDetail() {
             </div>
 
             {/* Resultado */}
-            <div className="mb-12 p-6 rounded-lg border-l-4" style={{ borderColor: '#EE7501', backgroundColor: '#FFF5EE' }}>
+            <div className="mb-8 p-6 rounded-lg border-l-4" style={{ borderColor: '#EE7501', backgroundColor: '#FFF5EE' }}>
               <h2 className="font-semibold mb-3" style={{ color: '#EE7501', fontSize: 'var(--text-small)' }}>
                 Resultado & Diferencial
               </h2>

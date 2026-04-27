@@ -199,7 +199,7 @@ export default function DiferenciaisConformidade() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
@@ -215,7 +215,7 @@ export default function DiferenciaisConformidade() {
           </motion.div>
 
           {/* Estruturas Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             {estruturas.map((item, i) => {
               const Icon = item.icon;
               const colors = ['#861720', '#EE7501', '#2C7EB3', '#861720'];

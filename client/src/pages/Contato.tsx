@@ -98,7 +98,7 @@ export default function Contato() {
             </h1>
 
             {/* Subtítulo estratégico */}
-            <p className="font-normal leading-relaxed mb-12" style={{ color: '#555', maxWidth: '650px', lineHeight: '1.75', fontSize: 'var(--text-body)' }}>
+            <p className="font-normal leading-relaxed mb-8" style={{ color: '#555', maxWidth: '650px', lineHeight: '1.75', fontSize: 'var(--text-body)' }}>
               Conectamos expertise em arqueologia, patrimônio cultural e licenciamento ambiental com soluções inovadoras. Fale com nossos especialistas e descubra como podemos viabilizar seu empreendimento.
             </p>
 

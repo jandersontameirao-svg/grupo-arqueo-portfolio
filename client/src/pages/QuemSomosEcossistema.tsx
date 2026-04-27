@@ -278,7 +278,7 @@ export default function QuemSomosEcossistema() {
           
           <div className="max-w-7xl mx-auto relative z-10">
             {/* Título Principal - Com Logo 10 Anos */}
-            <div className="mb-16 lg:mb-20 flex items-center justify-center gap-8">
+            <div className="mb-10 lg:mb-12 flex items-center justify-center gap-8">
               {/* Logo 10 Anos */}
               <div className="hidden lg:flex flex-shrink-0">
                 <img src={ASSETS.logo10anos} alt="10 Anos" className="w-64 h-64 object-contain" />
@@ -386,7 +386,7 @@ export default function QuemSomosEcossistema() {
                 {/* Diagrama Orbital - AUMENTADO */}
                 <div
                   ref={diagramRef}
-                  className="flex justify-center mb-14"
+                  className="flex justify-center mb-8"
                   style={{
                     opacity: diagramLoaded ? 1 : 0,
                     transform: diagramLoaded ? "scale(1) translateY(0)" : "scale(0.95) translateY(20px)",
