@@ -374,53 +374,53 @@ export default function Home() {
         </div>
 
         {/* ─── MOBILE LAYOUT ─── */}
-        <div className="lg:hidden relative flex flex-col justify-start py-12 px-4" style={{ zIndex: 10 }}>
+        <div className="lg:hidden relative flex flex-col justify-start pt-6 pb-8 px-4" style={{ zIndex: 10 }}>
           <img
             src={ASSETS.logo10anos}
             alt="Grupo Arqueo — 10 Anos"
-            className="mb-4"
-            style={{ maxHeight: '80px', width: 'auto', display: 'block' }}
+            className="mb-3"
+            style={{ height: 'clamp(50px, 8vw, 70px)', width: 'auto', display: 'block', objectFit: 'contain' }}
           />
 
-          <p className="text-xs font-semibold tracking-[0.3em] uppercase mb-2 text-[#861720]">
+          <p className="font-semibold tracking-[0.3em] uppercase mb-2 text-[#861720]" style={{ fontSize: 'clamp(8px, 1.2vw, 11px)' }}>
             Patrimônio Cultural e Arqueológico
           </p>
 
-          <h1 className="text-2xl sm:text-3xl font-bold leading-[1.08] mb-3 text-[#2A2A2A]">
+          <h1 className="font-bold leading-[1.1] mb-2 text-[#2A2A2A]" style={{ fontSize: 'clamp(1.15rem, 3.5vw, 1.75rem)' }}>
             Consultoria estratégica{" "}
             <span className="text-[#EE7501]">em pesquisa</span>{" "}
             e gestão do patrimônio{" "}
             <span className="text-[#861720]">sociocultural</span>
           </h1>
 
-          <p className="text-sm font-light leading-relaxed mb-6 text-[#555]">
+          <p className="font-light leading-relaxed mb-4 text-[#555]" style={{ fontSize: 'clamp(0.75rem, 1.8vw, 0.875rem)' }}>
             Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
             e gestão estratégica para oferecer soluções completas em licenciamento
             sociocultural no Brasil.
           </p>
 
           {/* Mobile logo center */}
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-4">
             <div
-              className="w-16 h-16 rounded-full flex items-center justify-center"
+              className="w-14 h-14 rounded-full flex items-center justify-center"
               style={{
                 background: '#FFFFFF',
                 border: '2px solid rgba(238,117,1,0.15)',
                 boxShadow: '0 8px 32px rgba(42,42,42,0.08)',
               }}
             >
-              <img src={ASSETS.logoGrupoArqueoColorido} alt="Grupo Arqueo" className="h-7 w-auto" />
+              <img src={ASSETS.logoGrupoArqueoColorido} alt="Grupo Arqueo" className="h-6 w-auto" />
             </div>
           </div>
 
           {/* Mobile cards grid */}
-          <div className="grid grid-cols-3 gap-2 mb-8">
+          <div className="grid grid-cols-3 gap-1.5 mb-6">
             {sections.map((s) => {
               const Icon = s.icon;
               return (
                 <Link key={s.id} href={s.path}>
                   <div
-                    className="group p-2.5 text-center rounded-xl cursor-pointer"
+                    className="group p-2 text-center rounded-xl cursor-pointer"
                     style={{
                       background: '#FFFFFF',
                       border: '1px solid #E5E7EB',
@@ -429,7 +429,7 @@ export default function Home() {
                     }}
                   >
                     <div
-                      className="w-9 h-9 rounded-full flex items-center justify-center mx-auto mb-1.5"
+                      className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-1"
                       style={{
                         background: s.color,
                         color: '#FFFFFF',
@@ -437,7 +437,7 @@ export default function Home() {
                     >
                       <Icon className="w-4 h-4" strokeWidth={1.8} />
                     </div>
-                    <span className="block text-[9px] font-semibold leading-tight text-[#2A2A2A]">
+                    <span className="block text-[8px] font-semibold leading-tight text-[#2A2A2A]">
                       {s.label}
                     </span>
                   </div>
@@ -449,7 +449,7 @@ export default function Home() {
           {/* Mobile Video — thumbnail estática com play que expande fullscreen */}
           <div
             className="relative rounded-lg overflow-hidden shadow-lg mx-auto cursor-pointer group"
-            style={{ aspectRatio: '16/9', width: '80%' }}
+            style={{ aspectRatio: '16/9', width: '75%' }}
             onClick={() => setVideoExpanded(true)}
           >
             <video
