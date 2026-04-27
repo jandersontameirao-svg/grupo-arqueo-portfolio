@@ -226,7 +226,7 @@ function FeaturedCard({ c, index }: { c: typeof cases[0]; index: number }) {
           </div>
 
           {/* Descrição */}
-          <p className="text-[15px] leading-[1.85] mb-8" style={{ color: '#555' }}>
+          <p className="leading-[1.85] mb-8" style={{ color: '#555', fontSize: 'var(--text-body)' }}>
             {c.desc}
           </p>
 
@@ -312,7 +312,7 @@ function MediumCard({ c, index }: { c: typeof cases[0]; index: number }) {
           </div>
         </div>
 
-        <p className="text-[14px] leading-[1.8] mb-6 flex-1" style={{ color: '#666' }}>
+        <p className="leading-[1.8] mb-6 flex-1" style={{ color: '#666', fontSize: 'var(--text-small)' }}>
           {c.desc}
         </p>
 
@@ -376,7 +376,7 @@ function StandardCard({ c, index }: { c: typeof cases[0]; index: number }) {
       <div className="p-6 flex flex-col flex-1">
         <div className="w-6 h-[2px] rounded-full mb-3" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
 
-        <h3 className="text-lg lg:text-xl font-bold leading-[1.2] mb-3" style={{ color: '#1A1A1A', letterSpacing: '-0.01em', fontFamily: "'Playfair Display', Georgia, serif" }}>
+        <h3 className="font-bold leading-[1.2] mb-3" style={{ color: '#1A1A1A', letterSpacing: '-0.01em', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'var(--text-subtitle)' }}>
           {c.title}
         </h3>
 
@@ -391,7 +391,7 @@ function StandardCard({ c, index }: { c: typeof cases[0]; index: number }) {
           </div>
         </div>
 
-        <p className="text-[13px] leading-[1.75] mb-5 flex-1" style={{ color: '#777' }}>
+        <p className="leading-[1.75] mb-5 flex-1" style={{ color: '#777', fontSize: 'var(--text-small)' }}>
           {c.desc}
         </p>
 
@@ -480,7 +480,7 @@ export default function Cases() {
             </div>
 
             {/* Subtítulo estratégico */}
-            <p className="text-lg lg:text-xl leading-[1.8] max-w-2xl" style={{ color: '#555' }}>
+            <p className="leading-[1.8] max-w-2xl" style={{ color: '#555', fontSize: 'var(--text-body)' }}>
               Cada projeto representa uma operação técnica real, conduzida com rigor metodológico, conformidade regulatória e compromisso com a preservação do patrimônio cultural brasileiro.
             </p>
           </motion.div>
@@ -555,7 +555,7 @@ export default function Cases() {
           {/* Mensagem quando filtro não encontra resultados */}
           {filtered.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-lg" style={{ color: '#999' }}>
+              <p style={{ color: '#999', fontSize: 'var(--text-body)' }}>
                 Nenhum projeto encontrado para este filtro.
               </p>
             </div>

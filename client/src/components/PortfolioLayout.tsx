@@ -33,7 +33,7 @@ export default function PortfolioLayout({
       <footer className="py-10" style={{ backgroundColor: '#2A2A2A' }}>
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
           <img src={ASSETS.logoGrupoArqueo} alt="Grupo Arqueo" className="h-8 w-auto brightness-0 invert" />
-          <p className="text-[11px] font-light" style={{ color: 'rgba(255,255,255,0.3)' }}>
+          <p className="font-light" style={{ color: 'rgba(255,255,255,0.3)', fontSize: 'var(--text-caption)' }}>
             &copy; 2016–2026 Grupo Arqueo. Todos os direitos reservados.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function PortfolioLayout({
           }}
         >
           <Home className="w-4 h-4 transition-all duration-300 group-hover:scale-110" style={{ color: '#888' }} />
-          <span className="text-xs font-medium transition-colors duration-300 group-hover:text-[#EE7501]" style={{ color: '#888' }}>
+          <span className="font-medium transition-colors duration-300 group-hover:text-[#EE7501]" style={{ color: '#888', fontSize: 'var(--text-caption)' }}>
             Voltar ao Índice
           </span>
         </motion.div>
@@ -79,10 +79,10 @@ export default function PortfolioLayout({
               border: '1px solid rgba(0,0,0,0.06)',
             }}
           >
-            <span className="text-[10px] font-medium tracking-wider uppercase transition-colors duration-300" style={{ color: '#888' }}>
+            <span className="font-medium tracking-wider uppercase transition-colors duration-300" style={{ color: '#888', fontSize: 'var(--text-caption)' }}>
               PRÓXIMO
             </span>
-            <span className="text-sm font-semibold transition-colors duration-300 group-hover:text-[#EE7501]" style={{ color: '#2A2A2A' }}>
+            <span className="font-semibold transition-colors duration-300 group-hover:text-[#EE7501]" style={{ color: '#2A2A2A', fontSize: 'var(--text-small)' }}>
               {nextLabel}
             </span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" style={{ color: '#EE7501' }} />

@@ -58,13 +58,13 @@ export default function CeoMessage() {
                   className="absolute -bottom-8 -right-8 lg:-bottom-12 lg:-right-12 rounded-lg shadow-xl p-4 lg:p-6 max-w-xs"
                   style={{ backgroundColor: '#FFFFFF' }}
                 >
-                  <p className="text-sm lg:text-base font-semibold" style={{ color: '#2A2A2A' }}>
+                  <p className="font-semibold" style={{ color: '#2A2A2A', fontSize: 'var(--text-body)' }}>
                     Janderson Tameirão
                   </p>
-                  <p className="text-xs lg:text-sm font-light mt-1" style={{ color: '#888' }}>
+                  <p className="font-light mt-1" style={{ color: '#888', fontSize: 'var(--text-small)' }}>
                     CEO & Fundador
                   </p>
-                  <p className="text-xs font-light mt-2" style={{ color: '#EE7501' }}>
+                  <p className="font-light mt-2" style={{ color: '#EE7501', fontSize: 'var(--text-caption)' }}>
                     Arqueólogo, Gestor e Visionário
                   </p>
                 </motion.div>
@@ -196,14 +196,14 @@ export default function CeoMessage() {
                   className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-xl transition-all"
                   style={{ backgroundColor: `${pillar.color}12` }}
                 >
-                  <p className="text-3xl lg:text-4xl">{pillar.icon}</p>
+                  <p style={{ fontSize: 'clamp(1.5rem, 2.2vw, 2.25rem)' }}>{pillar.icon}</p>
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="text-lg lg:text-xl font-bold mb-3 transition-colors" style={{ color: pillar.color }}>
+                <h3 className="font-bold mb-3 transition-colors" style={{ color: pillar.color, fontSize: 'var(--text-subtitle)' }}>
                   {pillar.title}
                 </h3>
-                <p className="text-sm lg:text-base font-light leading-relaxed" style={{ color: '#666' }}>
+                <p className="font-light leading-relaxed" style={{ color: '#666', fontSize: 'var(--text-body)' }}>
                   {pillar.desc}
                 </p>
 

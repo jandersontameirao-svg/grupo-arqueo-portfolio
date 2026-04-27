@@ -352,12 +352,12 @@ export default function QuemSomosEcossistema() {
                       </div>
 
                       {/* Título - DESTACADO */}
-                      <h5 className="text-lg lg:text-xl font-bold mb-3" style={{ color: '#1A1A1A' }}>
+                       <h5 className="font-bold mb-3" style={{ color: '#1A1A1A', fontSize: 'var(--text-subtitle)' }}>
                         {item.title}
                       </h5>
 
                       {/* Descrição - MELHOR LEGIBILIDADE */}
-                      <p className="text-sm lg:text-base leading-relaxed max-w-[240px]" style={{ color: '#666666' }}>
+                       <p className="leading-relaxed max-w-[240px]" style={{ color: '#666666', fontSize: 'var(--text-body)' }}>
                         {item.desc}
                       </p>
                     </motion.div>
@@ -419,10 +419,10 @@ export default function QuemSomosEcossistema() {
                         boxShadow: selectedEmpresa === emp.id ? `0 8px 24px ${emp.color}15` : "none",
                       }}
                     >
-                      <p className="font-bold text-sm lg:text-base" style={{ color: emp.color }}>
+                      <p className="font-bold" style={{ color: emp.color, fontSize: 'var(--text-body)' }}>
                         {emp.name}
                       </p>
-                      <p className="text-xs lg:text-sm mt-1.5" style={{ color: "#999999" }}>
+                      <p className="mt-1.5" style={{ color: "#999999", fontSize: 'var(--text-small)' }}>
                         {emp.subtitle}
                       </p>
                     </button>
@@ -449,10 +449,10 @@ export default function QuemSomosEcossistema() {
                     </div>
 
                     {/* Nome e Subtítulo */}
-                    <h3 className="text-2xl font-bold mb-3 text-center" style={{ color: selectedEmpresaData.color, letterSpacing: "-0.3px", lineHeight: "1.3" }}>
+                    <h3 className="font-bold mb-3 text-center" style={{ color: selectedEmpresaData.color, letterSpacing: "-0.3px", lineHeight: "1.3", fontSize: 'var(--text-subtitle)' }}>
                       {selectedEmpresaData.name}
                     </h3>
-                    <p className="text-xs font-semibold tracking-widest uppercase mb-10 text-center" style={{ color: "#888888" }}>
+                    <p className="font-semibold tracking-widest uppercase mb-10 text-center" style={{ color: "#888888", fontSize: 'var(--text-caption)' }}>
                       {selectedEmpresaData.subtitle}
                     </p>
 
@@ -460,13 +460,13 @@ export default function QuemSomosEcossistema() {
                     <div className="h-px mb-10" style={{ backgroundColor: "#E0E0E0" }} />
 
                     {/* Descrição - CULTURAL E INSTITUCIONAL */}
-                    <p className="text-sm leading-relaxed mb-10" style={{ color: "#555555", fontWeight: 400, lineHeight: "1.7" }}>
+                    <p className="leading-relaxed mb-10" style={{ color: "#555555", fontWeight: 400, lineHeight: "1.7", fontSize: 'var(--text-body)' }}>
                       {selectedEmpresaData.description}
                     </p>
 
                     {/* Competências */}
                     <div className="mb-10">
-                      <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "#999999" }}>
+                      <p className="font-semibold uppercase tracking-wider mb-4" style={{ color: "#999999", fontSize: 'var(--text-caption)' }}>
                         Competências
                       </p>
                       <div className="flex flex-wrap gap-2">
@@ -529,7 +529,7 @@ export default function QuemSomosEcossistema() {
               <h2 className="font-bold leading-tight mb-4" style={{ color: '#1A1A1A', fontFamily: 'serif', fontSize: 'var(--text-section-title)' }}>
                 Nosso Time
               </h2>
-              <p className="text-sm lg:text-base leading-relaxed max-w-2xl mx-auto" style={{ color: '#999999' }}>
+              <p className="leading-relaxed max-w-2xl mx-auto" style={{ color: '#999999', fontSize: 'var(--text-body)' }}>
                 Uma equipe multidisciplinar dedicada à excelência em arqueologia, pesquisa e inovação
               </p>
             </div>
@@ -631,8 +631,8 @@ export default function QuemSomosEcossistema() {
                   <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ backgroundColor: '#EE7501' }}>
                     <span className="text-white text-lg">{val.icon}</span>
                   </div>
-                  <h4 className="font-bold text-base mb-2" style={{ color: '#1A1A1A' }}>{val.title}</h4>
-                  <p className="text-sm leading-relaxed" style={{ color: '#888888' }}>{val.desc}</p>
+                  <h4 className="font-bold mb-2" style={{ color: '#1A1A1A', fontSize: 'var(--text-body)' }}>{val.title}</h4>
+                  <p className="leading-relaxed" style={{ color: '#888888', fontSize: 'var(--text-small)' }}>{val.desc}</p>
                 </div>
               ))}
             </div>
@@ -651,10 +651,10 @@ export default function QuemSomosEcossistema() {
           >
             {/* Header */}
             <div className="mb-6">
-              <h2 className="text-2xl font-bold mb-2" style={{ color: '#1A1A1A' }}>
+              <h2 className="font-bold mb-2" style={{ color: '#1A1A1A', fontSize: 'var(--text-subtitle)' }}>
                 Solicitar Proposta
               </h2>
-              <p className="text-sm" style={{ color: '#888888' }}>
+              <p style={{ color: '#888888', fontSize: 'var(--text-small)' }}>
                 Preencha seus dados e descreva sua necessidade
               </p>
             </div>

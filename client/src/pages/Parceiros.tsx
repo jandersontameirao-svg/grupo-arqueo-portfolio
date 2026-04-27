@@ -138,7 +138,7 @@ export default function Parceiros() {
               <br />
               <span style={{ color: '#D4A843' }}>o Futuro do Brasil</span>
             </h1>
-            <p style={{ fontSize: '15px', lineHeight: 1.8, color: 'rgba(255,255,255,0.5)', fontWeight: 300, maxWidth: '560px', margin: '12px auto 0' }}>
+            <p style={{ fontSize: 'var(--text-body)', lineHeight: 1.8, color: 'rgba(255,255,255,0.5)', fontWeight: 300, maxWidth: '560px', margin: '12px auto 0' }}>
               Ao longo de uma década, o Grupo Arqueo consolidou parcerias com empresas líderes
               nos setores de energia, infraestrutura e meio ambiente — construindo uma rede de
               confiança que impulsiona grandes projetos em todo o território nacional.
@@ -158,7 +158,7 @@ export default function Parceiros() {
               { valor: '26', label: 'Estados Atendidos', cor: '#FFFFFF' },
             ].map((m, i) => (
               <div key={i} style={{ textAlign: 'center' }}>
-                <span style={{ fontSize: '48px', fontWeight: 800, color: m.cor, display: 'block', lineHeight: 1, letterSpacing: '-0.03em' }}>
+                <span style={{ fontSize: 'clamp(1.8rem, 3vw, 3rem)', fontWeight: 800, color: m.cor, display: 'block', lineHeight: 1, letterSpacing: '-0.03em' }}>
                   {m.valor}
                 </span>
                 <span style={{ fontSize: '10px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.18em', color: 'rgba(255,255,255,0.35)', marginTop: '6px', display: 'block' }}>
@@ -261,7 +261,7 @@ export default function Parceiros() {
               </span>
               <div style={{ width: '40px', height: '1px', backgroundColor: '#D4A843' }} />
             </div>
-            <p style={{ fontSize: '13px', color: '#999', fontWeight: 300, margin: 0 }}>
+            <p style={{ fontSize: 'var(--text-small)', color: '#999', fontWeight: 300, margin: 0 }}>
               Todas as empresas e instituições que integram nossa rede de parcerias
             </p>
           </motion.div>
@@ -344,7 +344,7 @@ export default function Parceiros() {
             transition={{ duration: 0.5 }}
           >
             <div style={{ width: '40px', height: '3px', background: 'linear-gradient(to right, #D4A843, #EE7501)', borderRadius: '2px', margin: '0 auto 16px' }} />
-            <p style={{ fontSize: '15px', lineHeight: 1.9, color: '#666', fontWeight: 300, margin: '0 0 8px' }}>
+            <p style={{ fontSize: 'var(--text-body)', lineHeight: 1.9, color: '#666', fontWeight: 300, margin: '0 0 8px' }}>
               Cada parceria representa um compromisso mútuo com a excelência.
               O Grupo Arqueo tem orgulho de construir relações duradouras com empresas
               que lideram a transformação energética e o desenvolvimento sustentável do Brasil.

@@ -76,7 +76,7 @@ export default function NumerosTerritori() {
               </h1>
             </div>
           </div>
-          <p className="text-sm lg:text-base mb-12 max-w-3xl" style={{ color: '#777' }}>
+          <p className="mb-12 max-w-3xl" style={{ color: '#777', fontSize: 'var(--text-body)' }}>
             Os indicadores sintetizam a trajetória do Grupo Arqueo em escala, presença territorial, estrutura organizacional e capacidade de mobilização técnica.
           </p>
 
@@ -87,9 +87,9 @@ export default function NumerosTerritori() {
               className={`p-6 lg:p-8 lg:col-span-2 row-span-2 flex flex-col justify-center ${animateMetrics ? 'metric-fade-in metric-d1' : 'opacity-0'}`}
               style={{ backgroundColor: '#FFFFFF', borderLeft: '5px solid #EE7501', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
             >
-              <div className="text-5xl lg:text-7xl font-black mb-1" style={{ color: '#EE7501' }}>10+</div>
-              <div className="text-base lg:text-lg font-semibold" style={{ color: '#2A2A2A' }}>Anos de Atuação</div>
-              <div className="text-xs mt-2" style={{ color: '#999' }}>Desde 2015, construindo referência no setor</div>
+              <div className="font-black mb-1" style={{ color: '#EE7501', fontSize: 'clamp(2.5rem, 4.5vw, 4.5rem)' }}>10+</div>
+              <div className="font-semibold" style={{ color: '#2A2A2A', fontSize: 'var(--text-body)' }}>Anos de Atuação</div>
+              <div className="mt-2" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Desde 2015, construindo referência no setor</div>
             </div>
 
             {/* Projetos */}
@@ -97,8 +97,8 @@ export default function NumerosTerritori() {
               className={`p-5 lg:p-6 text-center ${animateMetrics ? 'metric-fade-in metric-d2' : 'opacity-0'}`}
               style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #2C7EB3', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
             >
-              <div className="text-3xl lg:text-4xl font-bold" style={{ color: '#2C7EB3' }}>{statsData.total_projetos}+</div>
-              <div className="text-xs font-medium mt-1" style={{ color: '#666' }}>Projetos</div>
+              <div className="font-bold" style={{ color: '#2C7EB3', fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)' }}>{statsData.total_projetos}+</div>
+              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>Projetos</div>
             </div>
 
             {/* Estados */}
@@ -106,8 +106,8 @@ export default function NumerosTerritori() {
               className={`p-5 lg:p-6 text-center ${animateMetrics ? 'metric-fade-in metric-d3' : 'opacity-0'}`}
               style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #861720', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
             >
-              <div className="text-3xl lg:text-4xl font-bold" style={{ color: '#861720' }}>23</div>
-              <div className="text-xs font-medium mt-1" style={{ color: '#666' }}>Estados e DF</div>
+              <div className="font-bold" style={{ color: '#861720', fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)' }}>23</div>
+              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>Estados e DF</div>
             </div>
 
             {/* Profissionais */}
@@ -115,8 +115,8 @@ export default function NumerosTerritori() {
               className={`p-5 lg:p-6 text-center ${animateMetrics ? 'metric-fade-in metric-d4' : 'opacity-0'}`}
               style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #5B8C3E', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
             >
-              <div className="text-3xl lg:text-4xl font-bold" style={{ color: '#5B8C3E' }}>50+</div>
-              <div className="text-xs font-medium mt-1" style={{ color: '#666' }}>Profissionais</div>
+              <div className="font-bold" style={{ color: '#5B8C3E', fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)' }}>50+</div>
+              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>Profissionais</div>
             </div>
 
             {/* Parcerias */}
@@ -124,8 +124,8 @@ export default function NumerosTerritori() {
               className={`p-5 lg:p-6 text-center ${animateMetrics ? 'metric-fade-in metric-d5' : 'opacity-0'}`}
               style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #8B4789', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
             >
-              <div className="text-3xl lg:text-4xl font-bold" style={{ color: '#8B4789' }}>57+</div>
-              <div className="text-xs font-medium mt-1" style={{ color: '#666' }}>Parcerias Estratégicas</div>
+              <div className="font-bold" style={{ color: '#8B4789', fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)' }}>57+</div>
+              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>Parcerias Estratégicas</div>
             </div>
           </div>
         </div>
@@ -137,12 +137,12 @@ export default function NumerosTerritori() {
           {/* Título da seção */}
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-            <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#EE7501' }}>Território</span>
+            <span className="font-medium tracking-[0.3em] uppercase" style={{ color: '#EE7501', fontSize: 'var(--text-caption)' }}>Território</span>
           </div>
           <h2 className="font-bold mb-3" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
             Atuação em <span style={{ color: '#EE7501' }}>23 estados</span> brasileiros e o <span style={{ color: '#EE7501' }}>DF</span>
           </h2>
-          <p className="text-sm lg:text-base font-light leading-relaxed mb-10 max-w-2xl" style={{ color: '#666' }}>
+          <p className="font-light leading-relaxed mb-10 max-w-2xl" style={{ color: '#666', fontSize: 'var(--text-body)' }}>
             Com escritórios em Brasília, Natal e São Paulo, o Grupo Arqueo possui presença estratégica para atender projetos em todas as regiões do Brasil.
           </p>
 
@@ -158,7 +158,7 @@ export default function NumerosTerritori() {
                 className="p-3 lg:p-4 text-center"
                 style={{ backgroundColor: '#FFFFFF', borderTop: `3px solid ${reg.color}`, boxShadow: '0 1px 8px rgba(0,0,0,0.03)' }}
               >
-                <span className="text-xl lg:text-2xl font-bold" style={{ color: reg.color }}>{reg.count}</span>
+                <span className="font-bold" style={{ color: reg.color, fontSize: 'var(--text-subtitle)' }}>{reg.count}</span>
                 <p className="text-[10px] lg:text-xs font-medium mt-0.5" style={{ color: '#2A2A2A' }}>estados</p>
                 <p className="text-[10px] lg:text-xs font-light" style={{ color: '#888' }}>{reg.nome}</p>
               </motion.div>
@@ -193,13 +193,13 @@ export default function NumerosTerritori() {
                   className="p-5 rounded-lg"
                   style={{ backgroundColor: '#FFFFFF', borderLeft: '4px solid #EE7501', boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}
                 >
-                  <div className="font-bold text-lg" style={{ color: '#2A2A2A' }}>
+                  <div className="font-bold" style={{ color: '#2A2A2A', fontSize: 'var(--text-subtitle)' }}>
                     {selectedEstado.nome}
                   </div>
-                  <div className="text-sm mt-2" style={{ color: '#666' }}>
+                  <div className="mt-2" style={{ color: '#666', fontSize: 'var(--text-small)' }}>
                     <strong>Região:</strong> {selectedEstado.regiao}
                   </div>
-                  <div className="text-sm" style={{ color: '#666' }}>
+                  <div style={{ color: '#666', fontSize: 'var(--text-small)' }}>
                     <strong>Projetos:</strong> {selectedEstado.projetos}
                   </div>
                 </motion.div>
@@ -235,7 +235,7 @@ export default function NumerosTerritori() {
           <h2 className="font-bold mb-2 text-center" style={{ color: '#2A2A2A', fontSize: 'var(--text-subtitle)' }}>
             Distribuição por Segmento
           </h2>
-          <p className="text-xs text-center mb-8" style={{ color: '#999' }}>Principais tipos de projetos realizados</p>
+          <p className="text-center mb-8" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Principais tipos de projetos realizados</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
             {tiposData.map((seg, idx) => (

@@ -179,7 +179,7 @@ export default function CaseDetail() {
     <PortfolioLayout chapterNum="08" chapterTitle="Case Detail" prevPath="/cases" prevLabel="Cases" nextPath="/cases" nextLabel="Cases">
       <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-2xl font-bold mb-4">Case não encontrado</h1>
+            <h1 className="font-bold mb-4" style={{ fontSize: 'var(--text-subtitle)' }}>Case não encontrado</h1>
             <button
               onClick={() => navigate('/cases')}
               className="px-6 py-2 rounded-lg text-white font-semibold"
@@ -201,8 +201,8 @@ export default function CaseDetail() {
           <div className="max-w-6xl mx-auto px-4 md:px-8 py-4">
             <button
               onClick={() => navigate('/cases')}
-              className="flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-70"
-              style={{ color: '#861720' }}
+              className="flex items-center gap-2 font-semibold transition-colors hover:opacity-70"
+              style={{ fontSize: 'var(--text-small)', color: '#861720' }}
             >
               <ChevronLeft className="w-4 h-4" />
               Voltar para Cases
@@ -220,8 +220,8 @@ export default function CaseDetail() {
             {/* Badge setor */}
             <div className="mb-6">
               <span
-                className="inline-block px-4 py-2 rounded-full text-xs font-semibold text-white"
-                style={{ backgroundColor: '#861720' }}
+                className="inline-block px-4 py-2 rounded-full font-semibold text-white"
+                style={{ fontSize: 'var(--text-caption)', backgroundColor: '#861720' }}
               >
                 {caseItem.sector}
               </span>
@@ -270,15 +270,15 @@ export default function CaseDetail() {
 
             {/* Tese do case */}
             <div className="mb-12">
-              <h2 className="text-sm font-semibold mb-3" style={{ color: '#861720' }}>
+              <h2 className="font-semibold mb-3" style={{ color: '#861720', fontSize: 'var(--text-small)' }}>
                 Tese Central
               </h2>
-              <p className="text-xl leading-relaxed text-gray-700">{caseItem.thesis}</p>
+              <p className="leading-relaxed text-gray-700" style={{ fontSize: 'var(--text-subtitle)' }}>{caseItem.thesis}</p>
             </div>
 
             {/* Resumo expandido */}
             <div className="mb-12 p-6 rounded-lg" style={{ backgroundColor: '#F9F9F9' }}>
-              <h2 className="text-sm font-semibold mb-3" style={{ color: '#861720' }}>
+              <h2 className="font-semibold mb-3" style={{ color: '#861720', fontSize: 'var(--text-small)' }}>
                 Descrição Completa
               </h2>
               <p className="text-gray-700 leading-relaxed">{caseItem.fullSummary}</p>
@@ -286,7 +286,7 @@ export default function CaseDetail() {
 
             {/* Resultado */}
             <div className="mb-12 p-6 rounded-lg border-l-4" style={{ borderColor: '#EE7501', backgroundColor: '#FFF5EE' }}>
-              <h2 className="text-sm font-semibold mb-3" style={{ color: '#EE7501' }}>
+              <h2 className="font-semibold mb-3" style={{ color: '#EE7501', fontSize: 'var(--text-small)' }}>
                 Resultado & Diferencial
               </h2>
               <p className="text-gray-700 leading-relaxed">{caseItem.result}</p>
@@ -294,15 +294,15 @@ export default function CaseDetail() {
 
             {/* Competências demonstradas */}
             <div>
-              <h2 className="text-sm font-semibold mb-4" style={{ color: '#861720' }}>
+              <h2 className="font-semibold mb-4" style={{ color: '#861720', fontSize: 'var(--text-small)' }}>
                 Competências Demonstradas
               </h2>
               <div className="flex flex-wrap gap-3">
                 {caseItem.competencies.map((comp) => (
                   <span
                     key={comp}
-                    className="px-4 py-2 rounded-full text-sm font-medium text-white"
-                    style={{ backgroundColor: '#EE7501' }}
+                    className="px-4 py-2 rounded-full font-medium text-white"
+                    style={{ fontSize: 'var(--text-small)', backgroundColor: '#EE7501' }}
                   >
                     {comp}
                   </span>

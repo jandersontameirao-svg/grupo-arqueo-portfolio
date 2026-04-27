@@ -117,7 +117,7 @@ export default function DiferenciaisConformidade() {
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-              <span className="text-xs font-medium tracking-[0.3em] uppercase" style={{ color: '#861720' }}>Vantagens Competitivas</span>
+              <span className="font-medium tracking-[0.3em] uppercase" style={{ color: '#861720', fontSize: 'var(--text-caption)' }}>Vantagens Competitivas</span>
             </div>
             <div className="flex items-center gap-6 lg:gap-8 mb-6">
               <img src={ASSETS.logo10anos} alt="10 Anos" className="h-[5.75rem] lg:h-[6.9rem] xl:h-[8.05rem] flex-shrink-0" />
@@ -126,7 +126,7 @@ export default function DiferenciaisConformidade() {
                 <span style={{ color: '#EE7501' }}>referência</span> no setor
               </h1>
             </div>
-            <p className="text-base lg:text-lg font-light leading-relaxed" style={{ color: '#555', maxWidth: '700px' }}>
+            <p className="font-light leading-relaxed" style={{ color: '#555', maxWidth: '700px', fontSize: 'var(--text-body)' }}>
               Diferenciais que ampliam previsibilidade, inteligência aplicada e capacidade de entrega em projetos de patrimônio cultural e arqueologia preventiva.
             </p>
           </motion.div>
@@ -164,15 +164,16 @@ export default function DiferenciaisConformidade() {
                   >
                     <Icon size={28} />
                   </div>
-                  <h3 className="text-xl font-bold mb-3" style={{ color: '#2A2A2A' }}>
+                  <h3 className="font-bold mb-3" style={{ color: '#2A2A2A', fontSize: 'var(--text-subtitle)' }}>
                     {item.title}
                   </h3>
-                  <p className="text-sm mb-4" style={{ color: '#666', lineHeight: '1.6' }}>
+                  <p className="mb-4" style={{ color: '#666', lineHeight: '1.6', fontSize: 'var(--text-small)' }}>
                     {item.desc}
                   </p>
                   <div
-                    className="text-xs font-semibold px-3 py-1 rounded-full inline-block"
+                    className="font-semibold px-3 py-1 rounded-full inline-block"
                     style={{
+                      fontSize: 'var(--text-caption)',
                       backgroundColor: idx % 3 === 0 ? '#861720' : idx % 3 === 1 ? '#EE7501' : '#2C7EB3',
                       color: '#FFFFFF'
                     }}
@@ -202,13 +203,13 @@ export default function DiferenciaisConformidade() {
           >
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
-              <span className="text-xs font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720' }}>Estrutura Organizacional</span>
+              <span className="font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720', fontSize: 'var(--text-caption)' }}>Estrutura Organizacional</span>
               <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to left, #861720, #EE7501)' }} />
             </div>
             <h2 className="font-bold leading-tight" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
               Estruturas que sustentam <span style={{ color: '#861720' }}>nossa entrega</span>
             </h2>
-            <p className="mt-6 text-base lg:text-lg font-light leading-relaxed max-w-3xl mx-auto" style={{ color: '#666' }}>
+            <p className="mt-6 font-light leading-relaxed max-w-3xl mx-auto" style={{ color: '#666', fontSize: 'var(--text-body)' }}>
               Bases organizacionais, técnicas e operacionais que asseguram consistência, controle e qualidade nas entregas.
             </p>
           </motion.div>
@@ -239,13 +240,13 @@ export default function DiferenciaisConformidade() {
                   >
                     <Icon size={24} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2" style={{ color: '#2A2A2A' }}>
+                  <h3 className="font-bold mb-2" style={{ color: '#2A2A2A', fontSize: 'var(--text-subtitle)' }}>
                     {item.title}
                   </h3>
-                  <p className="text-sm font-semibold mb-3" style={{ color: colors[i] }}>
+                  <p className="font-semibold mb-3" style={{ color: colors[i], fontSize: 'var(--text-small)' }}>
                     {item.description}
                   </p>
-                  <p className="text-sm leading-relaxed" style={{ color: '#555' }}>
+                  <p className="leading-relaxed" style={{ color: '#555', fontSize: 'var(--text-small)' }}>
                     {item.details}
                   </p>
                 </motion.div>

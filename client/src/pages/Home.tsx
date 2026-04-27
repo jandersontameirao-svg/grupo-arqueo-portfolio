@@ -116,16 +116,16 @@ export default function Home() {
                 {hovered !== null ? (
                   <div className="flex items-center gap-4">
                     <span
-                      className="text-3xl font-black tracking-tight"
-                      style={{ color: sections[hovered].color }}
+                      className="font-black tracking-tight"
+                      style={{ fontSize: 'clamp(1.2rem, 2vw, 1.875rem)', color: sections[hovered].color }}
                     >
                       {sections[hovered].num}
                     </span>
                     <div className="flex flex-col">
-                      <span className="text-sm font-bold text-[#2A2A2A]">
+                       <span className="font-bold text-[#2A2A2A]" style={{ fontSize: 'var(--text-body)' }}>
                         {sections[hovered].label}
                       </span>
-                      <span className="text-xs text-[#888] flex items-center gap-1 mt-0.5">
+                       <span className="text-[#888] flex items-center gap-1 mt-0.5" style={{ fontSize: 'var(--text-caption)' }}>
                         Clique para explorar <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>

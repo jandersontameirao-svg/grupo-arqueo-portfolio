@@ -98,7 +98,7 @@ export default function Contato() {
             </h1>
 
             {/* Subtítulo estratégico */}
-            <p className="text-lg lg:text-xl font-normal leading-relaxed mb-12" style={{ color: '#555', maxWidth: '650px', lineHeight: '1.75' }}>
+            <p className="font-normal leading-relaxed mb-12" style={{ color: '#555', maxWidth: '650px', lineHeight: '1.75', fontSize: 'var(--text-body)' }}>
               Conectamos expertise em arqueologia, patrimônio cultural e licenciamento ambiental com soluções inovadoras. Fale com nossos especialistas e descubra como podemos viabilizar seu empreendimento.
             </p>
 
@@ -160,13 +160,13 @@ export default function Contato() {
               >
                 <div className="flex items-center gap-3 mb-10">
                   <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#EE7501' }} />
-                  <h3 className="text-xs font-bold uppercase tracking-[0.25em]" style={{ color: '#999' }}>Atendimento Comercial</h3>
+                  <h3 className="font-bold uppercase tracking-[0.25em]" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Atendimento Comercial</h3>
                 </div>
 
                 {/* Janderson */}
                 <div className="mb-10 pb-10" style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
-                  <p className="text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>Janderson Rubens Tameirão</p>
-                  <p className="text-xs font-medium uppercase tracking-wider mb-6" style={{ color: '#999' }}>Diretor</p>
+                  <p className="font-bold mb-1" style={{ color: '#1A1A1A', fontSize: 'var(--text-subtitle)' }}>Janderson Rubens Tameirão</p>
+                  <p className="font-medium uppercase tracking-wider mb-6" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Diretor</p>
                   <div className="space-y-5">
                     <a
                       href="https://mail.google.com/mail/?view=cm&fs=1&to=jandersonrt@arqueoproject.com.br"
@@ -223,8 +223,8 @@ export default function Contato() {
 
                 {/* Fernanda */}
                 <div className="mb-10 pb-10" style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
-                  <p className="text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>Fernanda Tameirão</p>
-                  <p className="text-xs font-medium uppercase tracking-wider mb-6" style={{ color: '#999' }}>Diretora Administrativa</p>
+                  <p className="font-bold mb-1" style={{ color: '#1A1A1A', fontSize: 'var(--text-subtitle)' }}>Fernanda Tameirão</p>
+                  <p className="font-medium uppercase tracking-wider mb-6" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Diretora Administrativa</p>
                   <div className="space-y-5">
                     <a
                       href="https://mail.google.com/mail/?view=cm&fs=1&to=fernanda@arqueoproject.com.br"
@@ -267,8 +267,8 @@ export default function Contato() {
 
                 {/* Samanta */}
                 <div>
-                  <p className="text-lg font-bold mb-1" style={{ color: '#1A1A1A' }}>Samanta Mondini</p>
-                  <p className="text-xs font-medium uppercase tracking-wider mb-6" style={{ color: '#999' }}>Coordenadora de Novos Negócios</p>
+                  <p className="font-bold mb-1" style={{ color: '#1A1A1A', fontSize: 'var(--text-subtitle)' }}>Samanta Mondini</p>
+                  <p className="font-medium uppercase tracking-wider mb-6" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Coordenadora de Novos Negócios</p>
                   <div className="space-y-5">
                     <a
                       href="https://mail.google.com/mail/?view=cm&fs=1&to=relacionamento@grupoarqueo.com.br"
@@ -317,7 +317,7 @@ export default function Contato() {
               >
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#EE7501' }} />
-                  <h3 className="text-xs font-bold uppercase tracking-[0.25em]" style={{ color: '#999' }}>Redes Sociais</h3>
+                  <h3 className="font-bold uppercase tracking-[0.25em]" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Redes Sociais</h3>
                 </div>
                 <div className="flex gap-4">
                   <a href="https://www.linkedin.com/company/grupoarqueo" target="_blank" rel="noopener noreferrer"
@@ -349,7 +349,7 @@ export default function Contato() {
               >
                 <div className="flex items-center gap-3 mb-10">
                   <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#EE7501' }} />
-                  <h3 className="text-xs font-bold uppercase tracking-[0.25em]" style={{ color: '#999' }}>Nossa Sede</h3>
+                  <h3 className="font-bold uppercase tracking-[0.25em]" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Nossa Sede</h3>
                 </div>
 
                 {offices.map((office, i) => (
@@ -359,12 +359,12 @@ export default function Contato() {
                         <Building2 className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold" style={{ color: '#1A1A1A' }}>{office.city}</h4>
-                        <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: '#EE7501' }}>{office.role}</p>
+                        <h4 className="font-bold" style={{ color: '#1A1A1A', fontSize: 'var(--text-subtitle)' }}>{office.city}</h4>
+                        <p className="font-semibold uppercase tracking-wider" style={{ color: '#EE7501', fontSize: 'var(--text-caption)' }}>{office.role}</p>
                       </div>
                     </div>
                     <div className="ml-14">
-                      <p className="text-sm font-normal leading-relaxed mb-5" style={{ color: '#555', whiteSpace: 'pre-line', lineHeight: '1.8' }}>{office.address}</p>
+                      <p className="font-normal leading-relaxed mb-5" style={{ color: '#555', whiteSpace: 'pre-line', lineHeight: '1.8', fontSize: 'var(--text-small)' }}>{office.address}</p>
                       <a
                         href="https://maps.google.com/?q=QS+1+BLOCO+D+Aguas+Claras+Brasilia+DF+Connect+Towers"
                         target="_blank"
@@ -389,7 +389,7 @@ export default function Contato() {
                   <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl" style={{ backgroundColor: 'rgba(238,117,1,0.15)' }}>
                     <Clock className="w-5 h-5" style={{ color: '#EE7501' }} />
                   </div>
-                  <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-white">Horário de Atendimento</h3>
+                  <h3 className="font-bold uppercase tracking-[0.25em] text-white" style={{ fontSize: 'var(--text-caption)' }}>Horário de Atendimento</h3>
                 </div>
                 <div className="ml-14 space-y-4">
                   <div className="flex justify-between items-center pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>

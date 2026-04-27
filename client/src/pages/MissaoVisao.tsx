@@ -57,7 +57,7 @@ export default function MissaoVisao() {
                 </h1>
               </div>
 
-              <p className="text-lg lg:text-xl leading-[1.75] max-w-2xl" style={{ color: '#555', letterSpacing: '0.01em' }}>
+              <p className="leading-[1.75] max-w-2xl" style={{ color: '#555', letterSpacing: '0.01em', fontSize: 'var(--text-body)' }}>
                 Cada projeto, decisão e relacionamento institucional é guiado por princípios que integram{' '}
                 <strong style={{ color: '#1A1A1A', fontWeight: 600 }}>ética</strong>,{' '}
                 <strong style={{ color: '#1A1A1A', fontWeight: 600 }}>inovação</strong>,{' '}
@@ -105,7 +105,7 @@ export default function MissaoVisao() {
 
                 <div className="w-20 h-[2px] rounded-full mb-8" style={{ background: 'linear-gradient(to right, #EE7501, transparent)' }} />
 
-                <p className="text-lg lg:text-xl leading-[1.8] text-white mb-8 flex-1" style={{ opacity: 0.92, fontWeight: 300 }}>
+                <p className="leading-[1.8] text-white mb-8 flex-1" style={{ opacity: 0.92, fontWeight: 300, fontSize: 'var(--text-body)' }}>
                   Liderar o mercado de serviços na área de{' '}
                   <strong className="font-semibold text-white">patrimônio sociocultural e arqueológico</strong>{' '}
                   com estratégias inovadoras e adaptativas, alinhando nossas operações com as necessidades dinâmicas de nossos parceiros.
@@ -113,7 +113,7 @@ export default function MissaoVisao() {
 
                 <div className="flex items-start gap-3 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}>
                   <ArrowRight className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#EE7501' }} />
-                  <p className="text-sm lg:text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 300 }}>
+                  <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 300, fontSize: 'var(--text-small)' }}>
                     Contribuindo ativamente para a{' '}
                     <span style={{ color: '#EE7501' }} className="font-medium">sustentabilidade ambiental, social e econômica</span> do Brasil.
                   </p>
@@ -139,7 +139,7 @@ export default function MissaoVisao() {
 
                 <div className="w-20 h-[2px] rounded-full mb-8" style={{ background: 'linear-gradient(to right, #2C7EB3, transparent)' }} />
 
-                <p className="text-lg lg:text-xl leading-[1.8] mb-8 flex-1" style={{ color: '#333', fontWeight: 300 }}>
+                <p className="leading-[1.8] mb-8 flex-1" style={{ color: '#333', fontWeight: 300, fontSize: 'var(--text-body)' }}>
                   Solidificar nossa posição como o{' '}
                   <strong className="font-semibold" style={{ color: '#2C7EB3' }}>principal HUB do Brasil</strong>{' '}
                   em produtos e serviços socioculturais e arqueológicos.
@@ -147,7 +147,7 @@ export default function MissaoVisao() {
 
                 <div className="flex items-start gap-3 pt-8" style={{ borderTop: '1px solid rgba(44,126,179,0.1)' }}>
                   <ArrowRight className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#2C7EB3' }} />
-                  <p className="text-sm lg:text-base leading-relaxed" style={{ color: '#777', fontWeight: 300 }}>
+                  <p className="leading-relaxed" style={{ color: '#777', fontWeight: 300, fontSize: 'var(--text-small)' }}>
                     Estabelecendo um padrão de{' '}
                     <span style={{ color: '#EE7501' }} className="font-medium">excelência, eficiência e inovação</span>{' '}
                     que se torne referência no mercado nacional.
@@ -179,7 +179,7 @@ export default function MissaoVisao() {
               Princípios que orientam{' '}
               <span style={{ color: '#EE7501' }}>nosso crescimento</span>
             </h2>
-            <p className="text-base lg:text-lg leading-[1.8]" style={{ color: '#777' }}>
+            <p className="leading-[1.8]" style={{ color: '#777', fontSize: 'var(--text-body)' }}>
               Cada pilar representa um compromisso inegociável que orienta nossas decisões, fortalece nossos relacionamentos e sustenta a cultura organizacional do Grupo Arqueo.
             </p>
           </div>
@@ -240,8 +240,9 @@ export default function MissaoVisao() {
                           </span>
                         )}
                         <h3
-                          className="text-xl lg:text-2xl font-bold"
+                          className="font-bold"
                           style={{
+                            fontSize: 'var(--text-subtitle)',
                             color: isH ? '#FFF' : '#1A1A1A',
                             transition: 'color 0.4s ease',
                             letterSpacing: '-0.01em',
@@ -255,8 +256,9 @@ export default function MissaoVisao() {
                     <div className="w-12 h-[1.5px] rounded-full mb-5" style={{ backgroundColor: isH ? 'rgba(255,255,255,0.2)' : `${p.color}30`, transition: 'background-color 0.4s ease' }} />
 
                     <p
-                      className="text-[15px] lg:text-base leading-[1.75]"
+                      className="leading-[1.75]"
                       style={{
+                        fontSize: 'var(--text-body)',
                         color: isH ? 'rgba(255,255,255,0.9)' : '#666',
                         transition: 'color 0.4s ease',
                         fontWeight: 300,

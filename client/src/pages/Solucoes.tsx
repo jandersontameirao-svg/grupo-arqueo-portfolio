@@ -185,7 +185,7 @@ function ServiceBlock({ title, subtitle, services }: { title: string; subtitle: 
           <h2 className="font-bold mb-4" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
             {title}
           </h2>
-          <p className="text-lg lg:text-xl leading-relaxed max-w-3xl" style={{ color: '#666' }}>
+          <p className="leading-relaxed max-w-3xl" style={{ color: '#666', fontSize: 'var(--text-body)' }}>
             {subtitle}
           </p>
         </motion.div>
@@ -232,24 +232,24 @@ function ServiceBlock({ title, subtitle, services }: { title: string; subtitle: 
 
                   {/* Title com fundo colorido */}
                   <h3
-                    className="text-lg lg:text-xl font-bold mb-2 leading-tight px-4 py-2 rounded-full inline-block text-white"
-                    style={{ backgroundColor: service.color }}
+                    className="font-bold mb-2 leading-tight px-4 py-2 rounded-full inline-block text-white"
+                    style={{ fontSize: 'var(--text-subtitle)', backgroundColor: service.color }}
                   >
                     {service.name}
                   </h3>
 
                   {/* Category */}
                   <p
-                    className="text-xs font-medium mb-4"
-                    style={{ color: service.color }}
+                    className="font-medium mb-4"
+                    style={{ fontSize: 'var(--text-caption)', color: service.color }}
                   >
                     {service.category}
                   </p>
 
                   {/* Description */}
                   <p
-                    className="text-sm lg:text-base leading-relaxed flex-grow"
-                    style={{ color: '#666' }}
+                    className="leading-relaxed flex-grow"
+                    style={{ fontSize: 'var(--text-body)', color: '#666' }}
                   >
                     {service.description}
                   </p>
@@ -317,7 +317,7 @@ export default function Solucoes() {
                 <span style={{ color: '#EE7501' }}>patrimônio e arqueologia</span>
               </h1>
 
-              <p className="text-lg lg:text-xl leading-relaxed" style={{ color: '#666' }}>
+              <p className="leading-relaxed" style={{ color: '#666', fontSize: 'var(--text-body)' }}>
                 Um portfólio abrangente de serviços técnicos especializados, cobrindo todo o ciclo de pesquisa, gestão e preservação do patrimônio arqueológico e sociocultural.
               </p>
             </motion.div>
@@ -358,7 +358,7 @@ export default function Solucoes() {
             <h2 className="font-bold mb-4" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
               Soluções customizadas
             </h2>
-            <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: '#666' }}>
+            <p className="leading-relaxed max-w-2xl mx-auto" style={{ color: '#666', fontSize: 'var(--text-body)' }}>
               Além de nossos serviços principais, desenvolvemos soluções integradas e personalizadas conforme as necessidades específicas de cada projeto. Converse com nossos especialistas para conhecer as possibilidades.
             </p>
           </motion.div>
