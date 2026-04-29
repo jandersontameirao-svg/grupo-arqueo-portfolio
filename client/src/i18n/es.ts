@@ -250,6 +250,32 @@ export const es: Translations = {
     ctaTitle: "Soluciones a medida",
     ctaDescription: "Cada proyecto tiene características únicas. Nuestro equipo está preparado para desarrollar soluciones personalizadas que atiendan las necesidades específicas de su emprendimiento.",
     ctaButton: "Hable con nuestro equipo",
+    servicesConsultoria: [
+      { name: "Gestión de Licenciamiento", description: "Planificación y conducción técnica del licenciamiento con enfoque en seguridad procesal, previsibilidad y toma de decisiones." },
+      { name: "Consultoría Técnica Arqueológica", description: "Apoyo especializado para orientar emprendimientos, equipos e instituciones en demandas arqueológicas de diferentes niveles de complejidad." },
+      { name: "Asesoría y Gestión Procesal", description: "Seguimiento técnico-administrativo de procesos, documentos, plazos e interlocuciones institucionales a lo largo del licenciamiento." },
+      { name: "Cumplimiento Regulatorio", description: "Análisis y adecuación de proyectos a los requisitos legales y normativos aplicables al patrimonio cultural." },
+      { name: "Diligencia Procesal y Apoyo en Litigios", description: "Apoyo técnico en diligencias, manifestaciones, respuestas y situaciones sensibles que requieren fundamentación especializada." },
+    ],
+    servicesArqueologicos: [
+      { name: "Diagnóstico Arqueológico e Investigación Documental", description: "Levantamiento técnico inicial basado en datos históricos, documentales y evidencias territoriales para orientar la toma de decisiones." },
+      { name: "FCA", description: "Elaboración de ficha técnica inicial orientada al encuadramiento del emprendimiento y apoyo preliminar del licenciamiento." },
+      { name: "Evaluación de Potencial de Impacto", description: "Estudio técnico para identificación de potencial arqueológico y análisis preliminar de riesgo en áreas de interés." },
+      { name: "Evaluación de Impacto al Patrimonio Arqueológico", description: "Análisis de los efectos del emprendimiento sobre el patrimonio arqueológico, con base en criterios técnicos y normativos." },
+      { name: "Monitoreo y Acompañamiento Arqueológico", description: "Supervisión técnica de actividades en campo para prevención, registro y control de ocurrencias arqueológicas." },
+      { name: "Prospección y Rescate Arqueológico", description: "Ejecución de investigaciones de campo orientadas a la identificación, registro, mitigación y salvaguarda de vestigios arqueológicos." },
+      { name: "Programa de Gestión del Patrimonio Arqueológico", description: "Estructuración y ejecución de programas integrados para acompañamiento, protección y gestión del patrimonio arqueológico." },
+      { name: "Curación y Custodia Definitiva de Material Arqueológico", description: "Organización, tratamiento técnico, catalogación y destinación adecuada de acervos y materiales arqueológicos." },
+      { name: "Arqueología Subacuática y Costera", description: "Estudios e intervenciones en ambientes acuáticos y costeros, con metodología específica para contextos sumergidos y marginales." },
+    ],
+    servicesComplementares: [
+      { name: "Evaluación de Impacto en Bienes Culturales Protegidos", description: "Estudios técnicos orientados al análisis de interferencias sobre bienes protegidos y sus áreas de influencia." },
+      { name: "Educación Patrimonial Integrada", description: "Programas educativos conectados al territorio, al licenciamiento y a la valorización social del patrimonio cultural." },
+      { name: "Comunicación Social e Investigaciones Culturales", description: "Acciones de diálogo, escucha y producción de conocimiento orientadas al contexto sociocultural de los territorios de actuación." },
+      { name: "Geotecnologías Aplicadas", description: "Aplicación de geoprocesamiento, SIG, teledetección, geomapeo y modelado para apoyo técnico y analítico." },
+      { name: "Tecnología para Gestión Arqueológica", description: "Soluciones digitales para organización de datos, trazabilidad, estandarización de procesos y gestión de información técnica." },
+      { name: "Capacitación y Entrenamientos Técnicos", description: "Cursos, formaciones y entrenamientos orientados al desarrollo técnico de equipos, instituciones y profesionales del sector." },
+    ],
     services: {
       consultoria: [
         { name: "Diagnóstico Arqueológico", description: "Evaluación preliminar del potencial arqueológico del área de interés" },
@@ -355,6 +381,10 @@ export const es: Translations = {
     statesLabel: "estados",
     selectState: "Haga clic en un estado para ver detalles",
     projectsInState: "proyectos",
+    regionLabel: "Región",
+    withActivity: "Con actuación",
+    withoutActivity: "Sin actuación",
+    officeLocations: "Con oficinas en Brasília, Natal y São Paulo, Grupo Arqueo tiene presencia estratégica para atender proyectos en todas las regiones de Brasil.",
   },
 
   // ═══ CASES ═══

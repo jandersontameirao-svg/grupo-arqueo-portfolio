@@ -145,7 +145,7 @@ export default function NumerosTerritori() {
             {t.numeros.territoryDescription}
           </h2>
           <p className="font-light leading-relaxed mb-10 max-w-2xl" style={{ color: '#666', fontSize: 'var(--text-body)' }}>
-            Com escritórios em Brasília, Natal e São Paulo, o Grupo Arqueo possui presença estratégica para atender projetos em todas as regiões do Brasil.
+            {t.numeros.officeLocations}
           </p>
 
           {/* Distribuição por Região — inline acima do mapa */}
@@ -199,7 +199,7 @@ export default function NumerosTerritori() {
                     {selectedEstado.nome}
                   </div>
                   <div className="mt-2" style={{ color: '#666', fontSize: 'var(--text-small)' }}>
-                    <strong>{t.numeros.regions.norte === "Norte" ? "Região" : "Região"}:</strong> {selectedEstado.regiao}
+                    <strong>{t.numeros.regionLabel}:</strong> {selectedEstado.regiao}
                   </div>
                   <div style={{ color: '#666', fontSize: 'var(--text-small)' }}>
                     <strong>{t.numeros.stats.projects}:</strong> {selectedEstado.projetos}
@@ -217,11 +217,11 @@ export default function NumerosTerritori() {
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#861720' }} />
-                  <span className="text-xs" style={{ color: '#666' }}>Com atuação</span>
+                  <span className="text-xs" style={{ color: '#666' }}>{t.numeros.withActivity}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#C4C4C4' }} />
-                  <span className="text-xs" style={{ color: '#666' }}>Sem atuação</span>
+                  <span className="text-xs" style={{ color: '#666' }}>{t.numeros.withoutActivity}</span>
                 </div>
               </div>
 

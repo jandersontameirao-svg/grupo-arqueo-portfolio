@@ -116,156 +116,31 @@ export default function Solucoes() {
   const { t } = useI18n();
 
   // BLOCO 1: Consultoria e Assessoria
-  const consultoriaServices = [
-    {
-      name: "Gestão de Licenciamento",
-      description: "Planejamento e condução técnica do licenciamento com foco em segurança processual, previsibilidade e tomada de decisão.",
-      icon: ClipboardCheck,
-      color: "#2C7EB3",
-      category: t.solucoes.consultoriaTitle
-    },
-    {
-      name: "Consultoria Técnica Arqueológica",
-      description: "Suporte especializado para orientar empreendimentos, equipes e instituições em demandas arqueológicas de diferentes níveis de complexidade.",
-      icon: Lightbulb,
-      color: "#2C7EB3",
-      category: t.solucoes.consultoriaTitle
-    },
-    {
-      name: "Assessoria e Gestão Processual",
-      description: "Acompanhamento técnico-administrativo de processos, documentos, prazos e interlocuções institucionais ao longo do licenciamento.",
-      icon: Shield,
-      color: "#2C7EB3",
-      category: t.solucoes.consultoriaTitle
-    },
-    {
-      name: "Conformidade Regulatória",
-      description: "Análise e adequação de projetos às exigências legais e normativas aplicáveis ao patrimônio cultural.",
-      icon: Monitor,
-      color: "#2C7EB3",
-      category: t.solucoes.consultoriaTitle
-    },
-    {
-      name: "Diligência Processual e Suporte ao Contencioso",
-      description: "Apoio técnico em diligências, manifestações, respostas e situações sensíveis que exigem fundamentação especializada.",
-      icon: FileText,
-      color: "#2C7EB3",
-      category: t.solucoes.consultoriaTitle
-    },
-  ];
+  const consultoriaServices = t.solucoes.servicesConsultoria.map((service, idx) => ({
+    name: service.name,
+    description: service.description,
+    icon: [ClipboardCheck, Lightbulb, Shield, Monitor, FileText][idx],
+    color: "#2C7EB3",
+    category: t.solucoes.consultoriaTitle
+  }));
 
   // BLOCO 2: Serviços Arqueológicos
-  const arqueologicosServices = [
-    {
-      name: "Diagnóstico Arqueológico e Pesquisa Documental",
-      description: "Levantamento técnico inicial com base em dados históricos, documentais e evidências territoriais para orientar a tomada de decisão.",
-      icon: Search,
-      color: "#861720",
-      category: t.solucoes.arqueologicosTitle
-    },
-    {
-      name: "FCA",
-      description: "Elaboração de ficha técnica inicial voltada ao enquadramento do empreendimento e ao suporte preliminar do licenciamento.",
-      icon: FileText,
-      color: "#861720",
-      category: t.solucoes.arqueologicosTitle
-    },
-    {
-      name: "Avaliação de Potencial de Impacto",
-      description: "Estudo técnico para identificação de potencial arqueológico e análise preliminar de risco em áreas de interesse.",
-      icon: Monitor,
-      color: "#861720",
-      category: t.solucoes.arqueologicosTitle
-    },
-    {
-      name: "Avaliação de Impacto ao Patrimônio Arqueológico",
-      description: "Análise dos efeitos do empreendimento sobre o patrimônio arqueológico, com base em critérios técnicos e normativos.",
-      icon: Pickaxe,
-      color: "#861720",
-      category: t.solucoes.arqueologicosTitle
-    },
-    {
-      name: "Monitoramento e Acompanhamento Arqueológico",
-      description: "Supervisão técnica de atividades em campo para prevenção, registro e controle de ocorrências arqueológicas.",
-      icon: Monitor,
-      color: "#861720",
-      category: t.solucoes.arqueologicosTitle
-    },
-    {
-      name: "Prospecção e Resgate Arqueológico",
-      description: "Execução de pesquisas de campo voltadas à identificação, registro, mitigação e salvaguarda de vestígios arqueológicos.",
-      icon: Pickaxe,
-      color: "#861720",
-      category: t.solucoes.arqueologicosTitle
-    },
-    {
-      name: "Programa de Gestão do Patrimônio Arqueológico",
-      description: "Estruturação e execução de programas integrados para acompanhamento, proteção e gestão do patrimônio arqueológico.",
-      icon: Shield,
-      color: "#861720",
-      category: t.solucoes.arqueologicosTitle
-    },
-    {
-      name: "Curadoria e Guarda Definitiva de Material Arqueológico",
-      description: "Organização, tratamento técnico, catalogação e destinação adequada de acervos e materiais arqueológicos.",
-      icon: Database,
-      color: "#861720",
-      category: t.solucoes.arqueologicosTitle
-    },
-    {
-      name: "Arqueologia Subaquática e Litorânea",
-      description: "Estudos e intervenções em ambientes aquáticos e costeiros, com metodologia específica para contextos submersos e marginais.",
-      icon: Anchor,
-      color: "#861720",
-      category: t.solucoes.arqueologicosTitle
-    },
-  ];
+  const arqueologicosServices = t.solucoes.servicesArqueologicos.map((service, idx) => ({
+    name: service.name,
+    description: service.description,
+    icon: [Search, FileText, Monitor, Pickaxe, Monitor, Pickaxe, Shield, Database, Anchor][idx],
+    color: "#861720",
+    category: t.solucoes.arqueologicosTitle
+  }));
 
   // BLOCO 3: Soluções Complementares
-  const complementaresServices = [
-    {
-      name: "Avaliação de Impacto a Bens Culturais Tombados",
-      description: "Estudos técnicos voltados à análise de interferências sobre bens protegidos e suas áreas de influência.",
-      icon: Monitor,
-      color: "#EE7501",
-      category: t.solucoes.complementaresTitle
-    },
-    {
-      name: "Educação Patrimonial Integrada",
-      description: "Programas educativos conectados ao território, ao licenciamento e à valorização social do patrimônio cultural.",
-      icon: GraduationCap,
-      color: "#EE7501",
-      category: t.solucoes.complementaresTitle
-    },
-    {
-      name: "Comunicação Social e Pesquisas Culturais",
-      description: "Ações de diálogo, escuta e produção de conhecimento voltadas ao contexto sociocultural dos territórios de atuação.",
-      icon: Users,
-      color: "#EE7501",
-      category: t.solucoes.complementaresTitle
-    },
-    {
-      name: "Geotecnologias Aplicadas",
-      description: "Aplicação de geoprocessamento, SIG, sensoriamento remoto, geomapeamento e modelagem para suporte técnico e analítico.",
-      icon: Database,
-      color: "#EE7501",
-      category: t.solucoes.complementaresTitle
-    },
-    {
-      name: "Tecnologia para Gestão Arqueológica",
-      description: "Soluções digitais para organização de dados, rastreabilidade, padronização de processos e gestão de informações técnicas.",
-      icon: Zap,
-      color: "#EE7501",
-      category: t.solucoes.complementaresTitle
-    },
-    {
-      name: "Capacitação e Treinamentos Técnicos",
-      description: "Cursos, formações e treinamentos voltados ao desenvolvimento técnico de equipes, instituições e profissionais do setor.",
-      icon: GraduationCap,
-      color: "#EE7501",
-      category: t.solucoes.complementaresTitle
-    },
-  ];
+  const complementaresServices = t.solucoes.servicesComplementares.map((service, idx) => ({
+    name: service.name,
+    description: service.description,
+    icon: [Monitor, GraduationCap, Users, Database, Zap, GraduationCap][idx],
+    color: "#EE7501",
+    category: t.solucoes.complementaresTitle
+  }));
 
   return (
     <PortfolioLayout

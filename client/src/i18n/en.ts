@@ -250,6 +250,32 @@ export const en: Translations = {
     ctaTitle: "Customized solutions",
     ctaDescription: "Each project has unique characteristics. Our team is prepared to develop tailored solutions that meet the specific needs of your enterprise.",
     ctaButton: "Talk to our team",
+    servicesConsultoria: [
+      { name: "Licensing Management", description: "Technical planning and conduct of licensing with focus on procedural safety, predictability and decision-making." },
+      { name: "Archaeological Technical Consulting", description: "Specialized support to guide enterprises, teams and institutions in archaeological demands of different complexity levels." },
+      { name: "Advisory & Procedural Management", description: "Technical-administrative monitoring of processes, documents, deadlines and institutional interactions throughout licensing." },
+      { name: "Regulatory Compliance", description: "Analysis and adaptation of projects to legal and normative requirements applicable to cultural heritage." },
+      { name: "Procedural Diligence & Litigation Support", description: "Technical support in diligences, manifestations, responses and sensitive situations requiring specialized substantiation." },
+    ],
+    servicesArqueologicos: [
+      { name: "Archaeological Diagnosis & Documentary Research", description: "Initial technical survey based on historical data, documents and territorial evidence to guide decision-making." },
+      { name: "FCA", description: "Preparation of initial technical form aimed at framing the enterprise and preliminary licensing support." },
+      { name: "Impact Potential Assessment", description: "Technical study for identification of archaeological potential and preliminary risk analysis in areas of interest." },
+      { name: "Impact Assessment on Archaeological Heritage", description: "Analysis of enterprise effects on archaeological heritage, based on technical and normative criteria." },
+      { name: "Archaeological Monitoring & Accompaniment", description: "Technical supervision of field activities for prevention, recording and control of archaeological occurrences." },
+      { name: "Archaeological Prospection & Rescue", description: "Execution of field research aimed at identification, recording, mitigation and safeguarding of archaeological remains." },
+      { name: "Archaeological Heritage Management Program", description: "Structuring and execution of integrated programs for monitoring, protection and management of archaeological heritage." },
+      { name: "Curation & Definitive Custody of Archaeological Material", description: "Organization, technical treatment, cataloging and appropriate allocation of collections and archaeological materials." },
+      { name: "Underwater & Coastal Archaeology", description: "Studies and interventions in aquatic and coastal environments, with specific methodology for submerged and marginal contexts." },
+    ],
+    servicesComplementares: [
+      { name: "Impact Assessment on Protected Cultural Assets", description: "Technical studies aimed at analyzing interference on protected assets and their areas of influence." },
+      { name: "Integrated Heritage Education", description: "Educational programs connected to territory, licensing and social valorization of cultural heritage." },
+      { name: "Social Communication & Cultural Research", description: "Dialogue, listening and knowledge production actions aimed at sociocultural context of operation territories." },
+      { name: "Applied Geotechnologies", description: "Application of geoprocessing, GIS, remote sensing, geomapping and modeling for technical and analytical support." },
+      { name: "Technology for Archaeological Management", description: "Digital solutions for data organization, traceability, process standardization and technical information management." },
+      { name: "Technical Training & Capacity Building", description: "Courses, training and technical programs aimed at professional development of teams, institutions and sector professionals." },
+    ],
     services: {
       consultoria: [
         { name: "Archaeological Diagnosis", description: "Preliminary assessment of the archaeological potential of the area of interest" },
@@ -355,6 +381,10 @@ export const en: Translations = {
     statesLabel: "states",
     selectState: "Click on a state to see details",
     projectsInState: "projects",
+    regionLabel: "Region",
+    withActivity: "With operations",
+    withoutActivity: "No operations",
+    officeLocations: "With offices in Brasília, Natal and São Paulo, Grupo Arqueo has strategic presence to serve projects across all regions of Brazil.",
   },
 
   // ═══ CASES ═══

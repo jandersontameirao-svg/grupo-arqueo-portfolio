@@ -250,6 +250,32 @@ export const zh: Translations = {
     ctaTitle: "定制解决方案",
     ctaDescription: "每个项目都有独特的特征。我们的团队准备好开发满足您企业特定需求的定制解决方案。",
     ctaButton: "联系我们的团队",
+    servicesConsultoria: [
+      { name: "许可管理", description: "以程序安全、可预测性和决策为重点的许可技术规划和实施。" },
+      { name: "考古技术咨询", description: "为企业、团队和机构提供专业支持，应对不同复杂程度的考古需求。" },
+      { name: "咨询与程序管理", description: "对整个许可过程中的流程、文件、期限和机构互动进行技术-行政监督。" },
+      { name: "法规合规性", description: "分析和调整项目以符合适用于文化遗产的法律和规范要求。" },
+      { name: "程序尽职调查与诉讼支持", description: "在尽职调查、陈述、回复和需要专业实质支持的敏感情况中提供技术支持。" },
+    ],
+    servicesArqueologicos: [
+      { name: "考古诊断与文献研究", description: "基于历史数据、文献和领土证据的初步技术调查，为决策提供指导。" },
+      { name: "FCA", description: "初步技术表的编制，旨在框架化企业并为许可提供初步支持。" },
+      { name: "影响潜力评估", description: "识别考古潜力和目标区域初步风险分析的技术研究。" },
+      { name: "对考古遗产的影响评估", description: "基于技术和规范标准分析企业对考古遗产的影响。" },
+      { name: "考古监测与陪同", description: "对现场活动的技术监督，以预防、记录和控制考古事件。" },
+      { name: "考古勘探与抢救", description: "执行旨在识别、记录、缓解和保护考古遗迹的现场研究。" },
+      { name: "考古遗产管理计划", description: "结构化和执行综合计划，用于监测、保护和管理考古遗产。" },
+      { name: "考古材料的策展与最终保管", description: "对收藏品和考古材料进行组织、技术处理、编目和适当分配。" },
+      { name: "水下与沿海考古", description: "在水生和沿海环境中进行研究和干预，采用特定的水下和边际环境方法。" },
+    ],
+    servicesComplementares: [
+      { name: "对受保护文化资产的影响评估", description: "旨在分析对受保护资产及其影响区域的干扰的技术研究。" },
+      { name: "综合遗产教育", description: "与领土相关、许可和社会重视文化遗产相关的教育项目。" },
+      { name: "社会传播与文化研究", description: "针对运营领土社会文化背景的对话、倾听和知识生成行动。" },
+      { name: "应用地理技术", description: "地理信息系统处理、遥感、地图制作和建模的应用，用于技术和分析支持。" },
+      { name: "考古管理技术", description: "用于数据组织、可追溯性、流程标准化和技术信息管理的数字解决方案。" },
+      { name: "技术培训与能力建设", description: "旨在发展团队、机构和部门专业人员技术能力的课程、培训和技术课程。" },
+    ],
     services: {
       consultoria: [
         { name: "考古诊断", description: "对目标区域考古潜力的初步评估" },
@@ -355,6 +381,10 @@ export const zh: Translations = {
     statesLabel: "个州",
     selectState: "点击州查看详情",
     projectsInState: "个项目",
+    regionLabel: "地区",
+    withActivity: "有业务",
+    withoutActivity: "无业务",
+    officeLocations: "在巴西利亚、纳塔尔和圣保罗设有办事处，阿奇奥集团具有战略性布局，以服务巴西所有地区的项目。",
   },
 
   // ═══ CASES ═══
