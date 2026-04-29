@@ -136,14 +136,12 @@ export default function Parceiros() {
             style={{ textAlign: 'center' }}
           >
             <h1 style={{ fontSize: 'var(--text-section-title)', fontWeight: 700, lineHeight: 1.1, color: '#FFFFFF', letterSpacing: '-0.03em', margin: '0 0 8px' }}>
-              Relações que Constroem
+              {t.parceiros.heroTitle} {t.parceiros.heroHighlight}
               <br />
-              <span style={{ color: '#D4A843' }}>o Futuro do Brasil</span>
+              <span style={{ color: '#D4A843' }}>{t.parceiros.heroEnd}</span>
             </h1>
             <p style={{ fontSize: 'var(--text-body)', lineHeight: 1.8, color: 'rgba(255,255,255,0.5)', fontWeight: 300, maxWidth: '560px', margin: '12px auto 0' }}>
-              Ao longo de uma década, o Grupo Arqueo consolidou parcerias com empresas líderes
-              nos setores de energia, infraestrutura e meio ambiente — construindo uma rede de
-              confiança que impulsiona grandes projetos em todo o território nacional.
+              {t.parceiros.heroDescription}
             </p>
           </motion.div>
 
@@ -155,9 +153,9 @@ export default function Parceiros() {
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '48px', marginTop: '40px' }}
           >
             {[
-              { valor: `${todosParceiros.length}+`, label: 'Parceiros Ativos', cor: '#EE7501' },
-              { valor: '10', label: 'Anos de Mercado', cor: '#D4A843' },
-              { valor: '26', label: 'Estados Atendidos', cor: '#FFFFFF' },
+              { valor: `${todosParceiros.length}+`, label: t.parceiros.partnersCount, cor: '#EE7501' },
+              { valor: '10', label: t.parceiros.yearsPartnership, cor: '#D4A843' },
+              { valor: '26', label: t.parceiros.projectsTogether, cor: '#FFFFFF' },
             ].map((m, i) => (
               <div key={i} style={{ textAlign: 'center' }}>
                 <span style={{ fontSize: 'clamp(1.8rem, 3vw, 3rem)', fontWeight: 800, color: m.cor, display: 'block', lineHeight: 1, letterSpacing: '-0.03em' }}>
@@ -190,10 +188,10 @@ export default function Parceiros() {
             style={{ textAlign: 'center', marginBottom: '32px' }}
           >
             <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase' as const, color: '#D4A843' }}>
-              Parcerias de Referência
+              {t.parceiros.metricsTitle}
             </span>
             <h2 style={{ fontSize: 'var(--text-subtitle)', fontWeight: 700, color: '#1A1A1A', margin: '8px 0 0', letterSpacing: '-0.02em' }}>
-              Grandes Empresas que Confiam no Grupo Arqueo
+              {t.parceiros.partnersDescription}
             </h2>
           </motion.div>
 
@@ -259,12 +257,12 @@ export default function Parceiros() {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '4px' }}>
               <div style={{ width: '40px', height: '1px', backgroundColor: '#D4A843' }} />
               <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase' as const, color: '#D4A843' }}>
-                Rede Completa
+                {t.parceiros.partnersTitle}
               </span>
               <div style={{ width: '40px', height: '1px', backgroundColor: '#D4A843' }} />
             </div>
             <p style={{ fontSize: 'var(--text-small)', color: '#999', fontWeight: 300, margin: 0 }}>
-              Todas as empresas e instituições que integram nossa rede de parcerias
+              {t.parceiros.description}
             </p>
           </motion.div>
 
@@ -347,12 +345,10 @@ export default function Parceiros() {
           >
             <div style={{ width: '40px', height: '3px', background: 'linear-gradient(to right, #D4A843, #EE7501)', borderRadius: '2px', margin: '0 auto 16px' }} />
             <p style={{ fontSize: 'var(--text-body)', lineHeight: 1.9, color: '#666', fontWeight: 300, margin: '0 0 8px' }}>
-              Cada parceria representa um compromisso mútuo com a excelência.
-              O Grupo Arqueo tem orgulho de construir relações duradouras com empresas
-              que lideram a transformação energética e o desenvolvimento sustentável do Brasil.
+              {t.parceiros.heroDescription}
             </p>
             <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase' as const, color: '#D4A843' }}>
-              Autoridade construída com resultados
+              {t.parceiros.metricsTitle}
             </span>
           </motion.div>
         </div>

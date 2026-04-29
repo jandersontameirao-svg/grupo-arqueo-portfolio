@@ -165,7 +165,7 @@ const sectors = Array.from(new Set(cases.map(c => c.sector)));
 /* ────────────────────────────────────────────────────────────────── */
 /*  CARD FEATURED — Case destaque principal (full width)             */
 /* ────────────────────────────────────────────────────────────────── */
-function FeaturedCard({ c, index }: { c: typeof cases[0]; index: number }) {
+function FeaturedCard({ c, index, t }: { c: typeof cases[0]; index: number; t: any }) {
   const caseUrl = `/cases/${c.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}`;
   return (
     <Link href={caseUrl}>
@@ -246,7 +246,7 @@ function FeaturedCard({ c, index }: { c: typeof cases[0]; index: number }) {
 
           {/* CTA discreto */}
           <div className="flex items-center gap-1.5 text-[13px] font-semibold transition-colors duration-300 group-hover:opacity-80 cursor-pointer" style={{ color: '#EE7501' }}>
-            Ver detalhes do projeto <ChevronRight className="w-4 h-4" />
+            {t.cases.viewProject} <ChevronRight className="w-4 h-4" />
           </div>
         </div>
         </div>
@@ -258,7 +258,7 @@ function FeaturedCard({ c, index }: { c: typeof cases[0]; index: number }) {
 /* ────────────────────────────────────────────────────────────────── */
 /*  CARD MEDIUM — Cases intermediários                               */
 /* ────────────────────────────────────────────────────────────────── */
-function MediumCard({ c, index }: { c: typeof cases[0]; index: number }) {
+function MediumCard({ c, index, t }: { c: typeof cases[0]; index: number; t: any }) {
   const caseUrl = `/cases/${c.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}`;
   return (
     <Link href={caseUrl}>
@@ -330,7 +330,7 @@ function MediumCard({ c, index }: { c: typeof cases[0]; index: number }) {
         </div>
 
         <div className="flex items-center gap-1 text-[12px] font-semibold transition-colors duration-300 group-hover:opacity-80 cursor-pointer" style={{ color: '#EE7501' }}>
-          Ver detalhes <ChevronRight className="w-3.5 h-3.5" />
+          {t.cases.viewProject} <ChevronRight className="w-3.5 h-3.5" />
         </div>
       </div>
     </motion.article>
@@ -341,7 +341,7 @@ function MediumCard({ c, index }: { c: typeof cases[0]; index: number }) {
 /* ────────────────────────────────────────────────────────────────── */
 /*  CARD STANDARD — Cases padrão refinados                           */
 /* ────────────────────────────────────────────────────────────────── */
-function StandardCard({ c, index }: { c: typeof cases[0]; index: number }) {
+function StandardCard({ c, index, t }: { c: typeof cases[0]; index: number; t: any }) {
   const caseUrl = `/cases/${c.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}`;
   return (
     <Link href={caseUrl}>
@@ -409,7 +409,7 @@ function StandardCard({ c, index }: { c: typeof cases[0]; index: number }) {
         </div>
 
         <div className="flex items-center gap-1 text-[11px] font-semibold transition-colors duration-300 group-hover:opacity-80 cursor-pointer" style={{ color: '#EE7501' }}>
-          Ver detalhes <ChevronRight className="w-3 h-3" />
+          {t.cases.viewProject} <ChevronRight className="w-3 h-3" />
         </div>
         </div>
       </motion.article>
@@ -465,7 +465,7 @@ export default function Cases() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-[2px] rounded-full" style={{ backgroundColor: '#6B2332' }} />
               <span className="text-[11px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#6B2332' }}>
-                Portfólio de Projetos
+                {t.cases.badge}
               </span>
             </div>
 
@@ -476,14 +476,14 @@ export default function Cases() {
                 className="font-bold leading-[1.1]"
                 style={{ fontSize: 'var(--text-hero)', color: '#1A1A1A', letterSpacing: '-0.025em', fontFamily: "'Playfair Display', Georgia, serif" }}
               >
-                Evidências concretas de capacidade e<br />
-                <span className="whitespace-nowrap" style={{ color: '#6B2332' }}>execução comprovada</span>
+                {t.cases.heroTitle}{' '}<br />
+                <span className="whitespace-nowrap" style={{ color: '#6B2332' }}>{t.cases.heroHighlight}</span>
               </h1>
             </div>
 
             {/* Subtítulo estratégico */}
             <p className="leading-[1.8] max-w-2xl" style={{ color: '#555', fontSize: 'var(--text-body)' }}>
-              Cada projeto representa uma operação técnica real, conduzida com rigor metodológico, conformidade regulatória e compromisso com a preservação do patrimônio cultural brasileiro.
+              {t.cases.heroDescription}
             </p>
           </motion.div>
         </div>
@@ -531,7 +531,7 @@ export default function Cases() {
           {featured.length > 0 && (
             <div className="mb-8 lg:mb-10">
               {featured.map((c, i) => (
-                <FeaturedCard key={c.title} c={c} index={i} />
+                <FeaturedCard key={c.title} c={c} index={i} t={t} />
               ))}
             </div>
           )}
@@ -540,7 +540,7 @@ export default function Cases() {
           {medium.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8 lg:mb-10">
               {medium.map((c, i) => (
-                <MediumCard key={c.title} c={c} index={i + featured.length} />
+                <MediumCard key={c.title} c={c} index={i + featured.length} t={t} />
               ))}
             </div>
           )}
@@ -549,7 +549,7 @@ export default function Cases() {
           {standard.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
               {standard.map((c, i) => (
-                <StandardCard key={c.title} c={c} index={i + featured.length + medium.length} />
+                <StandardCard key={c.title} c={c} index={i + featured.length + medium.length} t={t} />
               ))}
             </div>
           )}

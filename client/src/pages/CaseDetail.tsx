@@ -187,7 +187,7 @@ export default function CaseDetail() {
               className="px-6 py-2 rounded-lg text-white font-semibold"
               style={{ backgroundColor: '#861720' }}
             >
-              Voltar para Cases
+              {t.cases.backToList}
             </button>
           </div>
         </div>
@@ -207,7 +207,7 @@ export default function CaseDetail() {
               style={{ fontSize: 'var(--text-small)', color: '#861720' }}
             >
               <ChevronLeft className="w-4 h-4" />
-              Voltar para Cases
+              {t.cases.backToList}
             </button>
           </div>
         </div>
@@ -281,7 +281,7 @@ export default function CaseDetail() {
             {/* Resumo expandido */}
             <div className="mb-8 p-6 rounded-lg" style={{ backgroundColor: '#F9F9F9' }}>
               <h2 className="font-semibold mb-3" style={{ color: '#861720', fontSize: 'var(--text-small)' }}>
-                Descrição Completa
+                {t.cases.projectDetails}
               </h2>
               <p className="text-gray-700 leading-relaxed">{caseItem.fullSummary}</p>
             </div>
@@ -289,7 +289,7 @@ export default function CaseDetail() {
             {/* Resultado */}
             <div className="mb-8 p-6 rounded-lg border-l-4" style={{ borderColor: '#EE7501', backgroundColor: '#FFF5EE' }}>
               <h2 className="font-semibold mb-3" style={{ color: '#EE7501', fontSize: 'var(--text-small)' }}>
-                Resultado & Diferencial
+                {t.cases.results}
               </h2>
               <p className="text-gray-700 leading-relaxed">{caseItem.result}</p>
             </div>
@@ -297,7 +297,7 @@ export default function CaseDetail() {
             {/* Competências demonstradas */}
             <div>
               <h2 className="font-semibold mb-4" style={{ color: '#861720', fontSize: 'var(--text-small)' }}>
-                Competências Demonstradas
+                {t.cases.scope}
               </h2>
               <div className="flex flex-wrap gap-3">
                 {caseItem.competencies.map((comp) => (

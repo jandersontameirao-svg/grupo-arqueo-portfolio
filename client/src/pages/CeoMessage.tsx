@@ -61,13 +61,13 @@ export default function CeoMessage() {
                   style={{ backgroundColor: '#FFFFFF' }}
                 >
                   <p className="font-semibold" style={{ color: '#2A2A2A', fontSize: 'var(--text-body)' }}>
-                    Janderson Tameirão
+                    {t.ceo.infoBadgeName}
                   </p>
                   <p className="font-light mt-1" style={{ color: '#888', fontSize: 'var(--text-small)' }}>
-                    CEO & Fundador
+                    {t.ceo.infoBadgeRole}
                   </p>
                   <p className="font-light mt-2" style={{ color: '#EE7501', fontSize: 'var(--text-caption)' }}>
-                    Arqueólogo, Gestor e Visionário
+                    {t.ceo.infoBadgeTagline}
                   </p>
                 </motion.div>
               </div>
@@ -93,9 +93,9 @@ export default function CeoMessage() {
                   transition={{ duration: 0.7, delay: 0.3 }}
                 >
                   <h2 className="font-bold leading-tight" style={{ color: '#861720', fontSize: 'var(--text-section-title)' }}>
-                    O patrimônio cultural é um{" "}
-                    <span style={{ color: '#EE7501' }}>ativo estratégico</span>{" "}
-                    para o desenvolvimento sustentável do Brasil.
+                    {t.ceo.heroTitle}{" "}
+                    <span style={{ color: '#EE7501' }}>{t.ceo.heroTitleHighlight}</span>{" "}
+                    {t.ceo.heroTitleEnd}
                   </h2>
                 </motion.div>
 
@@ -119,20 +119,14 @@ export default function CeoMessage() {
                   style={{ ...{ color: '#444' }, fontSize: 'var(--text-body)' }}
 
                 >
-                  <p>
-                    O projeto nasce a partir de um <strong style={{ color: '#861720', fontWeight: 600 }}>propósito claro</strong>: elevar o padrão da arqueologia preventiva no Brasil e entregar mais <strong style={{ color: '#861720', fontWeight: 600 }}>previsibilidade ao licenciamento ambiental</strong>. Desde o início assumimos um papel <strong style={{ color: '#EE7501', fontWeight: 600 }}>disruptivo</strong> ao combinar <strong style={{ color: '#861720', fontWeight: 600 }}>rigor técnico</strong>, visão de gestão e <strong style={{ color: '#861720', fontWeight: 600 }}>inovação aplicada</strong>, transformando exigências e complexidade em método, rastreabilidade e entregas consistentes.
-                  </p>
+                  <p dangerouslySetInnerHTML={{ __html: t.ceo.bodyP1.replace(/<b1>(.*?)<\/b1>/g, '<strong style="color:#861720;font-weight:600">$1</strong>').replace(/<b2>(.*?)<\/b2>/g, '<strong style="color:#EE7501;font-weight:600">$1</strong>').replace(/<b3>(.*?)<\/b3>/g, '<strong style="color:#2A2A2A;font-weight:600">$1</strong>') }} />
 
-                  <p>
-                    Ao longo dessa trajetória, a tecnologia deixou de ser um apoio pontual e passou a integrar nossa forma de operar. Investimos em <strong style={{ color: '#861720', fontWeight: 600 }}>padronização de processos</strong>, organização inteligente de dados, controles de qualidade e melhoria contínua, fortalecendo a capacidade de execução em projetos complexos e com alta demanda de conformidade.
-                  </p>
+                  <p dangerouslySetInnerHTML={{ __html: t.ceo.bodyP2.replace(/<b1>(.*?)<\/b1>/g, '<strong style="color:#861720;font-weight:600">$1</strong>').replace(/<b2>(.*?)<\/b2>/g, '<strong style="color:#EE7501;font-weight:600">$1</strong>').replace(/<b3>(.*?)<\/b3>/g, '<strong style="color:#2A2A2A;font-weight:600">$1</strong>') }} />
 
-                  <p>
-                    Com quase <strong style={{ color: '#EE7501', fontWeight: 700 }}>10 anos de história</strong>, inauguramos um novo ciclo e o <strong style={{ color: '#2A2A2A', fontWeight: 600 }}>Grupo Arqueo</strong> se projeta como nunca, para a era das <strong style={{ color: '#861720', fontWeight: 600 }}>IAs e da sustentabilidade</strong>, formalizando padrões, consolidando governança e incorporando <strong style={{ color: '#EE7501', fontWeight: 600 }}>inteligência artificial</strong> para padronizar fluxos, qualificar decisões e acelerar entregas com segurança, transparência e foco em resultados.
-                  </p>
+                  <p dangerouslySetInnerHTML={{ __html: t.ceo.bodyP3.replace(/<b1>(.*?)<\/b1>/g, '<strong style="color:#861720;font-weight:600">$1</strong>').replace(/<b2>(.*?)<\/b2>/g, '<strong style="color:#EE7501;font-weight:700">$1</strong>').replace(/<b3>(.*?)<\/b3>/g, '<strong style="color:#2A2A2A;font-weight:600">$1</strong>') }} />
 
                   <p className="pt-4 italic border-l-4" style={{ borderColor: '#861720', paddingLeft: '1.5rem', color: '#555' }}>
-                    “É assim que avançamos: rigor técnico, inovação aplicada e compromisso com resultados, hoje e nos próximos anos.”
+                    {t.ceo.bodyQuote}
                   </p>
                 </motion.div>
               </div>

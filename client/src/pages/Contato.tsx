@@ -96,12 +96,12 @@ export default function Contato() {
 
             {/* Chamada institucional */}
             <h1 className="font-bold leading-tight mb-6" style={{ color: '#1A1A1A', letterSpacing: '-0.02em', fontSize: 'var(--text-section-title)' }}>
-              Vamos estruturar o seu projeto?
+              {t.contato.heroTitle} <span style={{ color: '#EE7501' }}>{t.contato.heroHighlight}</span>
             </h1>
 
             {/* Subtítulo estratégico */}
             <p className="font-normal leading-relaxed mb-8" style={{ color: '#555', maxWidth: '650px', lineHeight: '1.75', fontSize: 'var(--text-body)' }}>
-              Conectamos expertise em arqueologia, patrimônio cultural e licenciamento ambiental com soluções inovadoras. Fale com nossos especialistas e descubra como podemos viabilizar seu empreendimento.
+              {t.contato.heroDescription}
             </p>
 
             {/* Bloco de ação */}
@@ -114,7 +114,7 @@ export default function Contato() {
                 style={{ backgroundColor: '#EE7501', letterSpacing: '0.1em' }}
               >
                 <FileText className="w-5 h-5" />
-                Solicitar Proposta
+                {t.contato.sendMessage}
               </a>
               <a
                 href="https://wa.me/5561911211508?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Grupo%20Arqueo."
@@ -124,7 +124,7 @@ export default function Contato() {
                 style={{ backgroundColor: '#25D366', letterSpacing: '0.1em' }}
               >
                 <MessageCircle className="w-5 h-5" />
-                Falar no WhatsApp
+                {t.contato.openWhatsapp}
               </a>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=janderson@grupoarqueo.com.br&su=Agendamento%20de%20Reuni%C3%A3o"
@@ -134,7 +134,7 @@ export default function Contato() {
                 style={{ backgroundColor: 'transparent', color: '#1A1A1A', border: '2px solid #1A1A1A', letterSpacing: '0.1em' }}
               >
                 <Calendar className="w-5 h-5" />
-                Agendar Reunião
+                {t.contato.callNow}
               </a>
             </div>
           </motion.div>
@@ -162,7 +162,7 @@ export default function Contato() {
               >
                 <div className="flex items-center gap-3 mb-10">
                   <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#EE7501' }} />
-                  <h3 className="font-bold uppercase tracking-[0.25em]" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Atendimento Comercial</h3>
+                  <h3 className="font-bold uppercase tracking-[0.25em]" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>{t.contato.commercialTitle}</h3>
                 </div>
 
                 {/* Janderson */}
@@ -351,7 +351,7 @@ export default function Contato() {
               >
                 <div className="flex items-center gap-3 mb-10">
                   <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#EE7501' }} />
-                  <h3 className="font-bold uppercase tracking-[0.25em]" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Nossa Sede</h3>
+                  <h3 className="font-bold uppercase tracking-[0.25em]" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>{t.contato.officeTitle}</h3>
                 </div>
 
                 {offices.map((office, i) => (

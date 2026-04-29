@@ -12,14 +12,6 @@ import { useI18n } from "@/i18n";
  * Blocos: 1) Indicadores principais  2) Presença territorial (mapa)  3) Distribuição por tipo
  */
 
-const regioes = [
-  { nome: "Nordeste", count: 8, color: "#EE7501" },
-  { nome: "Sudeste", count: 4, color: "#2C7EB3" },
-  { nome: "Centro-Oeste", count: 4, color: "#861720" },
-  { nome: "Norte", count: 5, color: "#5B8C3E" },
-  { nome: "Sul", count: 3, color: "#8B4789" },
-];
-
 export default function NumerosTerritori() {
   const { t } = useI18n();
   const [selectedEstado, setSelectedEstado] = useState<EstadoData | null>(null);
@@ -43,6 +35,14 @@ export default function NumerosTerritori() {
     .metric-d5 { animation-delay: 0.5s; }
   `;
 
+  const regioes = [
+    { nome: t.numeros.regions.nordeste, count: 8, color: "#EE7501" },
+    { nome: t.numeros.regions.sudeste, count: 4, color: "#2C7EB3" },
+    { nome: t.numeros.regions.centroOeste, count: 4, color: "#861720" },
+    { nome: t.numeros.regions.norte, count: 5, color: "#5B8C3E" },
+    { nome: t.numeros.regions.sul, count: 3, color: "#8B4789" },
+  ];
+
   // Top 8 segmentos para manter compacto
   const tiposData = Object.entries(statsData.tipos)
     .map(([name, count]) => ({ name, count: count as number }))
@@ -54,7 +54,7 @@ export default function NumerosTerritori() {
   return (
     <PortfolioLayout
       chapterNum="08"
-      chapterTitle={t.numeros.badge.replace('06 \u2014 ', '')}
+      chapterTitle={t.numeros.badge.replace('06 — ', '')}
       prevPath="/cases"
       prevLabel={t.home.sections.cases}
       nextPath="/parceiros"
@@ -74,12 +74,12 @@ export default function NumerosTerritori() {
             />
             <div>
               <h1 className="font-bold leading-tight" style={{ color: '#1A1A1A', fontSize: 'var(--text-hero)' }}>
-                Escala, presença e consistência operacional
+                {t.numeros.heroTitle} <span style={{ color: '#EE7501' }}>{t.numeros.heroHighlight}</span>
               </h1>
             </div>
           </div>
           <p className="mb-8 max-w-3xl" style={{ color: '#777', fontSize: 'var(--text-body)' }}>
-            Os indicadores sintetizam a trajetória do Grupo Arqueo em escala, presença territorial, estrutura organizacional e capacidade de mobilização técnica.
+            {t.numeros.heroDescription}
           </p>
 
           {/* Grid de métricas — layout 3 colunas compacto */}
@@ -90,7 +90,7 @@ export default function NumerosTerritori() {
               style={{ backgroundColor: '#FFFFFF', borderLeft: '5px solid #EE7501', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
             >
               <div className="font-black mb-1" style={{ color: '#EE7501', fontSize: 'clamp(2.5rem, 4.5vw, 4.5rem)' }}>10+</div>
-              <div className="font-semibold" style={{ color: '#2A2A2A', fontSize: 'var(--text-body)' }}>Anos de Atuação</div>
+              <div className="font-semibold" style={{ color: '#2A2A2A', fontSize: 'var(--text-body)' }}>{t.numeros.stats.years}</div>
               <div className="mt-2" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Desde 2015, construindo referência no setor</div>
             </div>
 
@@ -100,7 +100,7 @@ export default function NumerosTerritori() {
               style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #2C7EB3', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
             >
               <div className="font-bold" style={{ color: '#2C7EB3', fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)' }}>{statsData.total_projetos}+</div>
-              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>Projetos</div>
+              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>{t.numeros.stats.projects}</div>
             </div>
 
             {/* Estados */}
@@ -109,7 +109,7 @@ export default function NumerosTerritori() {
               style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #861720', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
             >
               <div className="font-bold" style={{ color: '#861720', fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)' }}>23</div>
-              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>Estados e DF</div>
+              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>{t.numeros.stats.states}</div>
             </div>
 
             {/* Profissionais */}
@@ -118,7 +118,7 @@ export default function NumerosTerritori() {
               style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #5B8C3E', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
             >
               <div className="font-bold" style={{ color: '#5B8C3E', fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)' }}>50+</div>
-              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>Profissionais</div>
+              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>{t.numeros.stats.professionals}</div>
             </div>
 
             {/* Parcerias */}
@@ -127,7 +127,7 @@ export default function NumerosTerritori() {
               style={{ backgroundColor: '#FFFFFF', borderTop: '4px solid #8B4789', boxShadow: '0 2px 16px rgba(0,0,0,0.04)' }}
             >
               <div className="font-bold" style={{ color: '#8B4789', fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)' }}>57+</div>
-              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>Parcerias Estratégicas</div>
+              <div className="font-medium mt-1" style={{ color: '#666', fontSize: 'var(--text-caption)' }}>{t.numeros.stats.partnerships}</div>
             </div>
           </div>
         </div>
@@ -139,10 +139,10 @@ export default function NumerosTerritori() {
           {/* Título da seção */}
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-            <span className="font-medium tracking-[0.3em] uppercase" style={{ color: '#EE7501', fontSize: 'var(--text-caption)' }}>Território</span>
+            <span className="font-medium tracking-[0.3em] uppercase" style={{ color: '#EE7501', fontSize: 'var(--text-caption)' }}>{t.numeros.territoryTitle}</span>
           </div>
           <h2 className="font-bold mb-3" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
-            Atuação em <span style={{ color: '#EE7501' }}>23 estados</span> brasileiros e o <span style={{ color: '#EE7501' }}>DF</span>
+            {t.numeros.territoryDescription}
           </h2>
           <p className="font-light leading-relaxed mb-10 max-w-2xl" style={{ color: '#666', fontSize: 'var(--text-body)' }}>
             Com escritórios em Brasília, Natal e São Paulo, o Grupo Arqueo possui presença estratégica para atender projetos em todas as regiões do Brasil.
@@ -161,7 +161,7 @@ export default function NumerosTerritori() {
                 style={{ backgroundColor: '#FFFFFF', borderTop: `3px solid ${reg.color}`, boxShadow: '0 1px 8px rgba(0,0,0,0.03)' }}
               >
                 <span className="font-bold" style={{ color: reg.color, fontSize: 'var(--text-subtitle)' }}>{reg.count}</span>
-                <p className="text-[10px] lg:text-xs font-medium mt-0.5" style={{ color: '#2A2A2A' }}>estados</p>
+                <p className="text-[10px] lg:text-xs font-medium mt-0.5" style={{ color: '#2A2A2A' }}>{t.numeros.statesLabel}</p>
                 <p className="text-[10px] lg:text-xs font-light" style={{ color: '#888' }}>{reg.nome}</p>
               </motion.div>
             ))}
@@ -199,16 +199,16 @@ export default function NumerosTerritori() {
                     {selectedEstado.nome}
                   </div>
                   <div className="mt-2" style={{ color: '#666', fontSize: 'var(--text-small)' }}>
-                    <strong>Região:</strong> {selectedEstado.regiao}
+                    <strong>{t.numeros.regions.norte === "Norte" ? "Região" : "Região"}:</strong> {selectedEstado.regiao}
                   </div>
                   <div style={{ color: '#666', fontSize: 'var(--text-small)' }}>
-                    <strong>Projetos:</strong> {selectedEstado.projetos}
+                    <strong>{t.numeros.stats.projects}:</strong> {selectedEstado.projetos}
                   </div>
                 </motion.div>
               ) : (
                 <div className="p-4 rounded-lg" style={{ backgroundColor: 'rgba(134,23,32,0.04)', border: '1px dashed rgba(134,23,32,0.15)' }}>
                   <p className="text-xs" style={{ color: '#888' }}>
-                    Clique em um estado no mapa para ver detalhes
+                    {t.numeros.selectState}
                   </p>
                 </div>
               )}
@@ -235,9 +235,9 @@ export default function NumerosTerritori() {
       <section style={{ backgroundColor: '#FFFFFF', padding: 'var(--space-section) var(--container-padding)' }}>
         <div className="max-w-5xl mx-auto">
           <h2 className="font-bold mb-2 text-center" style={{ color: '#2A2A2A', fontSize: 'var(--text-subtitle)' }}>
-            Distribuição por Segmento
+            {t.numeros.distributionTitle}
           </h2>
-          <p className="text-center mb-8" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Principais tipos de projetos realizados</p>
+          <p className="text-center mb-8" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>{t.numeros.distributionDescription}</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
             {tiposData.map((seg, idx) => (

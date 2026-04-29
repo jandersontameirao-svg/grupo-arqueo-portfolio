@@ -9,87 +9,77 @@ import { useI18n } from "@/i18n";
  * Design: Premium layout combining competitive advantages and compliance/certifications
  */
 
-const diferenciais = [
-  {
-    icon: Layers,
-    title: "Ecossistema Integrado de Soluções",
-    desc: "Atuação articulada entre arqueologia, patrimônio cultural, educação, tecnologia, gestão e comunicação, com soluções complementares sob uma lógica integrada.",
-    highlight: "Solução completa em um único grupo",
-  },
-  {
-    icon: Cpu,
-    title: "Tecnologia Proprietária Aplicada ao Campo",
-    desc: "Uso de tecnologia própria para padronizar dados, qualificar registros, aumentar rastreabilidade e tornar a operação técnica mais eficiente.",
-    highlight: "Tecnologia proprietária ArqueoGIS",
-  },
-  {
-    icon: Clock,
-    title: "Estratégia Processual com Visão de Negócio",
-    desc: "Integração entre licenciamento, gestão processual, análise de risco e suporte técnico para decisões mais seguras e melhor previsibilidade operacional.",
-    highlight: "Gestão estratégica de processos",
-  },
-  {
-    icon: Map,
-    title: "Inteligência Territorial e de Dados",
-    desc: "Análise integrada de dados territoriais, arqueológicos e ambientais para subsidiar decisões estratégicas, identificar oportunidades e mitigar riscos em projetos de patrimônio.",
-    highlight: "Inteligência aplicada ao território",
-  },
-  {
-    icon: TrendingUp,
-    title: "Especialização Técnica em Ambientes Complexos",
-    desc: "Capacidade de atuação em contextos técnicos diversos, inclusive situações de maior complexidade territorial, operacional e arqueológica.",
-    highlight: "Atuação em ambientes complexos",
-  },
-  {
-    icon: Users,
-    title: "Padronização com Capilaridade Nacional",
-    desc: "Presença ampliada e capacidade de mobilização combinadas com processos padronizados, coordenação técnica e consistência nas entregas.",
-    highlight: "Presença em 16 estados brasileiros",
-  },
-];
-
-const estruturas = [
-  {
-    title: "Governança e Compliance",
-    description: "Estrutura institucional apoiada em diretrizes internas",
-    icon: Shield,
-    details: "Atuação sustentada por políticas, processos, responsabilidades definidas e compromisso institucional com integridade e conformidade."
-  },
-  {
-    title: "Padronização Operacional",
-    description: "Métodos, fluxos, rotinas e parâmetros técnicos",
-    icon: FileText,
-    details: "Processos padronizados que asseguram consistência, controle e qualidade técnica mesmo em cenários complexos e escaláveis."
-  },
-  {
-    title: "Integração Multidisciplinar",
-    description: "Articulação entre arqueologia, gestão, patrimônio cultural, tecnologia e suporte técnico",
-    icon: Users,
-    details: "Soluções mais completas e coordenadas resultantes da integração entre diferentes áreas de especialização."
-  },
-  {
-    title: "Tecnologia e Inteligência Aplicada",
-    description: "Uso de soluções digitais, organização de dados, inteligência operacional e instrumentos técnicos",
-    icon: Cpu,
-    details: "Ferramentas e processos que ampliam eficiência, rastreabilidade e capacidade analítica para apoiar decisões e ampliar eficácia."
-  },
-];
-
-const policies = [
-  "Política de Compliance e Ética Corporativa",
-  "Política de Proteção de Dados e Privacidade",
-  "Política de Segurança da Informação",
-  "Política de Responsabilidade Social Corporativa",
-  "Código de Conduta Profissional",
-  "Política de Gestão de Riscos",
-];
-
 export default function DiferenciaisConformidade() {
   const { t } = useI18n();
+
+  const diferenciais = [
+    {
+      icon: Layers,
+      title: t.diferenciais.items.d1.title,
+      desc: t.diferenciais.items.d1.desc,
+      highlight: t.diferenciais.items.d1.highlight,
+    },
+    {
+      icon: Cpu,
+      title: t.diferenciais.items.d2.title,
+      desc: t.diferenciais.items.d2.desc,
+      highlight: t.diferenciais.items.d2.highlight,
+    },
+    {
+      icon: Clock,
+      title: t.diferenciais.items.d3.title,
+      desc: t.diferenciais.items.d3.desc,
+      highlight: t.diferenciais.items.d3.highlight,
+    },
+    {
+      icon: Map,
+      title: t.diferenciais.items.d4.title,
+      desc: t.diferenciais.items.d4.desc,
+      highlight: t.diferenciais.items.d4.highlight,
+    },
+    {
+      icon: TrendingUp,
+      title: t.diferenciais.items.d5.title,
+      desc: t.diferenciais.items.d5.desc,
+      highlight: t.diferenciais.items.d5.highlight,
+    },
+    {
+      icon: Users,
+      title: t.diferenciais.items.d6.title,
+      desc: t.diferenciais.items.d6.desc,
+      highlight: t.diferenciais.items.d6.highlight,
+    },
+  ];
+
+  const estruturas = [
+    {
+      title: t.diferenciais.structures.s1.title,
+      description: t.diferenciais.structures.s1.description,
+      icon: Shield,
+    },
+    {
+      title: t.diferenciais.structures.s2.title,
+      description: t.diferenciais.structures.s2.description,
+      icon: FileText,
+    },
+    {
+      title: t.diferenciais.structures.s3.title,
+      description: t.diferenciais.structures.s3.description,
+      icon: Users,
+    },
+    {
+      title: t.diferenciais.structures.s4.title,
+      description: t.diferenciais.structures.s4.description,
+      icon: Cpu,
+    },
+  ];
+
+  const policies = t.diferenciais.policies;
+
   return (
     <PortfolioLayout
       chapterNum="05"
-      chapterTitle={t.diferenciais.badge.replace('05 \u2014 ', '')}
+      chapterTitle={t.diferenciais.badge.replace('05 — ', '')}
       prevPath="/solucoes"
       prevLabel={t.home.sections.solucoes}
       nextPath="/numeros-territorio"
@@ -119,17 +109,17 @@ export default function DiferenciaisConformidade() {
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-8 h-0.5" style={{ backgroundColor: '#EE7501' }} />
-              <span className="font-medium tracking-[0.3em] uppercase" style={{ color: '#861720', fontSize: 'var(--text-caption)' }}>Vantagens Competitivas</span>
+              <span className="font-medium tracking-[0.3em] uppercase" style={{ color: '#861720', fontSize: 'var(--text-caption)' }}>{t.diferenciais.conformitySection.label}</span>
             </div>
             <div className="flex items-center gap-6 lg:gap-8 mb-6">
               <img src={ASSETS.logo10anos} alt="10 Anos" className="h-[5.75rem] lg:h-[6.9rem] xl:h-[8.05rem] flex-shrink-0" />
               <h1 className="font-bold leading-tight" style={{ color: '#2A2A2A', fontSize: 'var(--text-hero)' }}>
-                <span className="whitespace-nowrap">O que nos torna</span><br />
-                <span style={{ color: '#EE7501' }}>referência</span> no setor
+                <span className="whitespace-nowrap">{t.diferenciais.heroTitle}</span><br />
+                <span style={{ color: '#EE7501' }}>{t.diferenciais.heroHighlight}</span> {t.diferenciais.heroEnd}
               </h1>
             </div>
             <p className="font-light leading-relaxed" style={{ color: '#555', maxWidth: '700px', fontSize: 'var(--text-body)' }}>
-              Diferenciais que ampliam previsibilidade, inteligência aplicada e capacidade de entrega em projetos de patrimônio cultural e arqueologia preventiva.
+              {t.diferenciais.heroDescription}
             </p>
           </motion.div>
         </div>
@@ -205,14 +195,14 @@ export default function DiferenciaisConformidade() {
           >
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
-              <span className="font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720', fontSize: 'var(--text-caption)' }}>Estrutura Organizacional</span>
+              <span className="font-semibold tracking-[0.4em] uppercase" style={{ color: '#861720', fontSize: 'var(--text-caption)' }}>{t.diferenciais.conformitySection.label}</span>
               <div className="w-12 h-1 rounded-full" style={{ background: 'linear-gradient(to left, #861720, #EE7501)' }} />
             </div>
             <h2 className="font-bold leading-tight" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
-              Estruturas que sustentam <span style={{ color: '#861720' }}>nossa entrega</span>
+              {t.diferenciais.conformitySection.title}
             </h2>
             <p className="mt-6 font-light leading-relaxed max-w-3xl mx-auto" style={{ color: '#666', fontSize: 'var(--text-body)' }}>
-              Bases organizacionais, técnicas e operacionais que asseguram consistência, controle e qualidade nas entregas.
+              {t.diferenciais.conformitySection.description}
             </p>
           </motion.div>
 
@@ -245,11 +235,8 @@ export default function DiferenciaisConformidade() {
                   <h3 className="font-bold mb-2" style={{ color: '#2A2A2A', fontSize: 'var(--text-subtitle)' }}>
                     {item.title}
                   </h3>
-                  <p className="font-semibold mb-3" style={{ color: colors[i], fontSize: 'var(--text-small)' }}>
-                    {item.description}
-                  </p>
                   <p className="leading-relaxed" style={{ color: '#555', fontSize: 'var(--text-small)' }}>
-                    {item.details}
+                    {item.description}
                   </p>
                 </motion.div>
               );
@@ -259,7 +246,7 @@ export default function DiferenciaisConformidade() {
           {/* Policies Section */}
           <div className="bg-white rounded-xl p-8 lg:p-12">
             <h3 className="font-bold mb-8 text-center" style={{ color: '#2A2A2A', fontSize: 'var(--text-subtitle)' }}>
-              Diretrizes <span style={{ color: '#861720' }}>institucionais</span>
+              {t.diferenciais.policiesTitle}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {policies.map((policy, idx) => (

@@ -18,160 +18,8 @@ import { Search, FileText, Pickaxe, Monitor, GraduationCap, Anchor, Database, Cl
  * Cores do Grupo Arqueo: Azul, Bordo, Laranja, Amarelo
  */
 
-// BLOCO 1: Consultoria e Assessoria
-const consultoriaServices = [
-  {
-    name: "Gestão de Licenciamento",
-    description: "Planejamento e condução técnica do licenciamento com foco em segurança processual, previsibilidade e tomada de decisão.",
-    icon: ClipboardCheck,
-    color: "#2C7EB3", // Azul
-    category: "Consultoria e Assessoria"
-  },
-  {
-    name: "Consultoria Técnica Arqueológica",
-    description: "Suporte especializado para orientar empreendimentos, equipes e instituições em demandas arqueológicas de diferentes níveis de complexidade.",
-    icon: Lightbulb,
-    color: "#2C7EB3",
-    category: "Consultoria e Assessoria"
-  },
-  {
-    name: "Assessoria e Gestão Processual",
-    description: "Acompanhamento técnico-administrativo de processos, documentos, prazos e interlocuções institucionais ao longo do licenciamento.",
-    icon: Shield,
-    color: "#2C7EB3",
-    category: "Consultoria e Assessoria"
-  },
-  {
-    name: "Conformidade Regulatória",
-    description: "Análise e adequação de projetos às exigências legais e normativas aplicáveis ao patrimônio cultural.",
-    icon: Monitor,
-    color: "#2C7EB3",
-    category: "Consultoria e Assessoria"
-  },
-  {
-    name: "Diligência Processual e Suporte ao Contencioso",
-    description: "Apoio técnico em diligências, manifestações, respostas e situações sensíveis que exigem fundamentação especializada.",
-    icon: FileText,
-    color: "#2C7EB3",
-    category: "Consultoria e Assessoria"
-  },
-];
-
-// BLOCO 2: Serviços Arqueológicos
-const arqueologicosServices = [
-  {
-    name: "Diagnóstico Arqueológico e Pesquisa Documental",
-    description: "Levantamento técnico inicial com base em dados históricos, documentais e evidências territoriais para orientar a tomada de decisão.",
-    icon: Search,
-    color: "#861720", // Bordo
-    category: "Serviços Arqueológicos"
-  },
-  {
-    name: "FCA",
-    description: "Elaboração de ficha técnica inicial voltada ao enquadramento do empreendimento e ao suporte preliminar do licenciamento.",
-    icon: FileText,
-    color: "#861720",
-    category: "Serviços Arqueológicos"
-  },
-  {
-    name: "Avaliação de Potencial de Impacto",
-    description: "Estudo técnico para identificação de potencial arqueológico e análise preliminar de risco em áreas de interesse.",
-    icon: Monitor,
-    color: "#861720",
-    category: "Serviços Arqueológicos"
-  },
-  {
-    name: "Avaliação de Impacto ao Patrimônio Arqueológico",
-    description: "Análise dos efeitos do empreendimento sobre o patrimônio arqueológico, com base em critérios técnicos e normativos.",
-    icon: Pickaxe,
-    color: "#861720",
-    category: "Serviços Arqueológicos"
-  },
-  {
-    name: "Monitoramento e Acompanhamento Arqueológico",
-    description: "Supervisão técnica de atividades em campo para prevenção, registro e controle de ocorrências arqueológicas.",
-    icon: Monitor,
-    color: "#861720",
-    category: "Serviços Arqueológicos"
-  },
-  {
-    name: "Prospecção e Resgate Arqueológico",
-    description: "Execução de pesquisas de campo voltadas à identificação, registro, mitigação e salvaguarda de vestígios arqueológicos.",
-    icon: Pickaxe,
-    color: "#861720",
-    category: "Serviços Arqueológicos"
-  },
-  {
-    name: "Programa de Gestão do Patrimônio Arqueológico",
-    description: "Estruturação e execução de programas integrados para acompanhamento, proteção e gestão do patrimônio arqueológico.",
-    icon: Shield,
-    color: "#861720",
-    category: "Serviços Arqueológicos"
-  },
-  {
-    name: "Curadoria e Guarda Definitiva de Material Arqueológico",
-    description: "Organização, tratamento técnico, catalogação e destinação adequada de acervos e materiais arqueológicos.",
-    icon: Database,
-    color: "#861720",
-    category: "Serviços Arqueológicos"
-  },
-  {
-    name: "Arqueologia Subaquática e Litorânea",
-    description: "Estudos e intervenções em ambientes aquáticos e costeiros, com metodologia específica para contextos submersos e marginais.",
-    icon: Anchor,
-    color: "#861720",
-    category: "Serviços Arqueológicos"
-  },
-];
-
-// BLOCO 3: Soluções Complementares
-const complementaresServices = [
-  {
-    name: "Avaliação de Impacto a Bens Culturais Tombados",
-    description: "Estudos técnicos voltados à análise de interferências sobre bens protegidos e suas áreas de influência.",
-    icon: Monitor,
-    color: "#EE7501", // Laranja
-    category: "Soluções Complementares"
-  },
-  {
-    name: "Educação Patrimonial Integrada",
-    description: "Programas educativos conectados ao território, ao licenciamento e à valorização social do patrimônio cultural.",
-    icon: GraduationCap,
-    color: "#EE7501",
-    category: "Soluções Complementares"
-  },
-  {
-    name: "Comunicação Social e Pesquisas Culturais",
-    description: "Ações de diálogo, escuta e produção de conhecimento voltadas ao contexto sociocultural dos territórios de atuação.",
-    icon: Users,
-    color: "#EE7501",
-    category: "Soluções Complementares"
-  },
-  {
-    name: "Geotecnologias Aplicadas",
-    description: "Aplicação de geoprocessamento, SIG, sensoriamento remoto, geomapeamento e modelagem para suporte técnico e analítico.",
-    icon: Database,
-    color: "#EE7501",
-    category: "Soluções Complementares"
-  },
-  {
-    name: "Tecnologia para Gestão Arqueológica",
-    description: "Soluções digitais para organização de dados, rastreabilidade, padronização de processos e gestão de informações técnicas.",
-    icon: Zap,
-    color: "#EE7501",
-    category: "Soluções Complementares"
-  },
-  {
-    name: "Capacitação e Treinamentos Técnicos",
-    description: "Cursos, formações e treinamentos voltados ao desenvolvimento técnico de equipes, instituições e profissionais do setor.",
-    icon: GraduationCap,
-    color: "#EE7501",
-    category: "Soluções Complementares"
-  },
-];
-
 // Componente para renderizar um bloco de serviços
-function ServiceBlock({ title, subtitle, services }: { title: string; subtitle: string; services: typeof consultoriaServices }) {
+function ServiceBlock({ title, subtitle, services }: { title: string; subtitle: string; services: { name: string; description: string; icon: any; color: string; category: string }[] }) {
   return (
     <section className="border-t first:border-t-0" style={{ paddingTop: 'var(--space-section)', paddingBottom: 'var(--space-section)' }}>
       <div className="container">
@@ -266,10 +114,163 @@ function ServiceBlock({ title, subtitle, services }: { title: string; subtitle: 
 
 export default function Solucoes() {
   const { t } = useI18n();
+
+  // BLOCO 1: Consultoria e Assessoria
+  const consultoriaServices = [
+    {
+      name: "Gestão de Licenciamento",
+      description: "Planejamento e condução técnica do licenciamento com foco em segurança processual, previsibilidade e tomada de decisão.",
+      icon: ClipboardCheck,
+      color: "#2C7EB3",
+      category: t.solucoes.consultoriaTitle
+    },
+    {
+      name: "Consultoria Técnica Arqueológica",
+      description: "Suporte especializado para orientar empreendimentos, equipes e instituições em demandas arqueológicas de diferentes níveis de complexidade.",
+      icon: Lightbulb,
+      color: "#2C7EB3",
+      category: t.solucoes.consultoriaTitle
+    },
+    {
+      name: "Assessoria e Gestão Processual",
+      description: "Acompanhamento técnico-administrativo de processos, documentos, prazos e interlocuções institucionais ao longo do licenciamento.",
+      icon: Shield,
+      color: "#2C7EB3",
+      category: t.solucoes.consultoriaTitle
+    },
+    {
+      name: "Conformidade Regulatória",
+      description: "Análise e adequação de projetos às exigências legais e normativas aplicáveis ao patrimônio cultural.",
+      icon: Monitor,
+      color: "#2C7EB3",
+      category: t.solucoes.consultoriaTitle
+    },
+    {
+      name: "Diligência Processual e Suporte ao Contencioso",
+      description: "Apoio técnico em diligências, manifestações, respostas e situações sensíveis que exigem fundamentação especializada.",
+      icon: FileText,
+      color: "#2C7EB3",
+      category: t.solucoes.consultoriaTitle
+    },
+  ];
+
+  // BLOCO 2: Serviços Arqueológicos
+  const arqueologicosServices = [
+    {
+      name: "Diagnóstico Arqueológico e Pesquisa Documental",
+      description: "Levantamento técnico inicial com base em dados históricos, documentais e evidências territoriais para orientar a tomada de decisão.",
+      icon: Search,
+      color: "#861720",
+      category: t.solucoes.arqueologicosTitle
+    },
+    {
+      name: "FCA",
+      description: "Elaboração de ficha técnica inicial voltada ao enquadramento do empreendimento e ao suporte preliminar do licenciamento.",
+      icon: FileText,
+      color: "#861720",
+      category: t.solucoes.arqueologicosTitle
+    },
+    {
+      name: "Avaliação de Potencial de Impacto",
+      description: "Estudo técnico para identificação de potencial arqueológico e análise preliminar de risco em áreas de interesse.",
+      icon: Monitor,
+      color: "#861720",
+      category: t.solucoes.arqueologicosTitle
+    },
+    {
+      name: "Avaliação de Impacto ao Patrimônio Arqueológico",
+      description: "Análise dos efeitos do empreendimento sobre o patrimônio arqueológico, com base em critérios técnicos e normativos.",
+      icon: Pickaxe,
+      color: "#861720",
+      category: t.solucoes.arqueologicosTitle
+    },
+    {
+      name: "Monitoramento e Acompanhamento Arqueológico",
+      description: "Supervisão técnica de atividades em campo para prevenção, registro e controle de ocorrências arqueológicas.",
+      icon: Monitor,
+      color: "#861720",
+      category: t.solucoes.arqueologicosTitle
+    },
+    {
+      name: "Prospecção e Resgate Arqueológico",
+      description: "Execução de pesquisas de campo voltadas à identificação, registro, mitigação e salvaguarda de vestígios arqueológicos.",
+      icon: Pickaxe,
+      color: "#861720",
+      category: t.solucoes.arqueologicosTitle
+    },
+    {
+      name: "Programa de Gestão do Patrimônio Arqueológico",
+      description: "Estruturação e execução de programas integrados para acompanhamento, proteção e gestão do patrimônio arqueológico.",
+      icon: Shield,
+      color: "#861720",
+      category: t.solucoes.arqueologicosTitle
+    },
+    {
+      name: "Curadoria e Guarda Definitiva de Material Arqueológico",
+      description: "Organização, tratamento técnico, catalogação e destinação adequada de acervos e materiais arqueológicos.",
+      icon: Database,
+      color: "#861720",
+      category: t.solucoes.arqueologicosTitle
+    },
+    {
+      name: "Arqueologia Subaquática e Litorânea",
+      description: "Estudos e intervenções em ambientes aquáticos e costeiros, com metodologia específica para contextos submersos e marginais.",
+      icon: Anchor,
+      color: "#861720",
+      category: t.solucoes.arqueologicosTitle
+    },
+  ];
+
+  // BLOCO 3: Soluções Complementares
+  const complementaresServices = [
+    {
+      name: "Avaliação de Impacto a Bens Culturais Tombados",
+      description: "Estudos técnicos voltados à análise de interferências sobre bens protegidos e suas áreas de influência.",
+      icon: Monitor,
+      color: "#EE7501",
+      category: t.solucoes.complementaresTitle
+    },
+    {
+      name: "Educação Patrimonial Integrada",
+      description: "Programas educativos conectados ao território, ao licenciamento e à valorização social do patrimônio cultural.",
+      icon: GraduationCap,
+      color: "#EE7501",
+      category: t.solucoes.complementaresTitle
+    },
+    {
+      name: "Comunicação Social e Pesquisas Culturais",
+      description: "Ações de diálogo, escuta e produção de conhecimento voltadas ao contexto sociocultural dos territórios de atuação.",
+      icon: Users,
+      color: "#EE7501",
+      category: t.solucoes.complementaresTitle
+    },
+    {
+      name: "Geotecnologias Aplicadas",
+      description: "Aplicação de geoprocessamento, SIG, sensoriamento remoto, geomapeamento e modelagem para suporte técnico e analítico.",
+      icon: Database,
+      color: "#EE7501",
+      category: t.solucoes.complementaresTitle
+    },
+    {
+      name: "Tecnologia para Gestão Arqueológica",
+      description: "Soluções digitais para organização de dados, rastreabilidade, padronização de processos e gestão de informações técnicas.",
+      icon: Zap,
+      color: "#EE7501",
+      category: t.solucoes.complementaresTitle
+    },
+    {
+      name: "Capacitação e Treinamentos Técnicos",
+      description: "Cursos, formações e treinamentos voltados ao desenvolvimento técnico de equipes, instituições e profissionais do setor.",
+      icon: GraduationCap,
+      color: "#EE7501",
+      category: t.solucoes.complementaresTitle
+    },
+  ];
+
   return (
     <PortfolioLayout
       chapterNum="05"
-      chapterTitle={t.solucoes.badge.replace('04 \u2014 ', '')}
+      chapterTitle={t.solucoes.badge.replace('04 — ', '')}
       prevPath="/missao-visao"
       prevLabel={t.home.sections.missao}
       nextPath="/diferenciais"
@@ -289,7 +290,7 @@ export default function Solucoes() {
         </div>
 
         {/* Content */}
-        <div className="container relative z-10">
+        <div className="container relative z-10" style={{ padding: 'var(--space-section) var(--container-padding)' }}>
           <div className="flex items-start gap-8 lg:gap-12">
             {/* Logo 10 anos */}
             <motion.div
@@ -315,12 +316,12 @@ export default function Solucoes() {
               className="max-w-3xl"
             >
               <h1 className="font-bold leading-tight mb-6" style={{ color: '#2A2A2A', fontSize: 'var(--text-hero)' }}>
-                Soluções integradas para{' '}
-                <span style={{ color: '#EE7501' }}>patrimônio e arqueologia</span>
+                {t.solucoes.heroTitle}{' '}
+                <span style={{ color: '#EE7501' }}>{t.solucoes.heroHighlight}</span>
               </h1>
 
               <p className="leading-relaxed" style={{ color: '#666', fontSize: 'var(--text-body)' }}>
-                Um portfólio abrangente de serviços técnicos especializados, cobrindo todo o ciclo de pesquisa, gestão e preservação do patrimônio arqueológico e sociocultural.
+                {t.solucoes.heroDescription}
               </p>
             </motion.div>
           </div>
@@ -329,22 +330,22 @@ export default function Solucoes() {
 
       {/* BLOCO 1: Consultoria e Assessoria */}
       <ServiceBlock
-        title="Consultoria e Assessoria"
-        subtitle="Soluções estratégicas para orientar processos, reduzir riscos e dar suporte técnico qualificado ao licenciamento e à tomada de decisão."
+        title={t.solucoes.consultoriaTitle}
+        subtitle={t.solucoes.consultoriaSubtitle}
         services={consultoriaServices}
       />
 
       {/* BLOCO 2: Serviços Arqueológicos */}
       <ServiceBlock
-        title="Serviços Arqueológicos"
-        subtitle="Execução técnica estruturada para atender as diferentes etapas da arqueologia preventiva, da análise inicial à gestão do patrimônio arqueológico."
+        title={t.solucoes.arqueologicosTitle}
+        subtitle={t.solucoes.arqueologicosSubtitle}
         services={arqueologicosServices}
       />
 
       {/* BLOCO 3: Soluções Complementares */}
       <ServiceBlock
-        title="Soluções Complementares"
-        subtitle="Serviços integrados que ampliam a capacidade técnica do Grupo Arqueo e agregam inteligência, tecnologia e valor territorial às entregas."
+        title={t.solucoes.complementaresTitle}
+        subtitle={t.solucoes.complementaresSubtitle}
         services={complementaresServices}
       />
 
@@ -358,10 +359,10 @@ export default function Solucoes() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-bold mb-4" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
-              Soluções customizadas
+              {t.solucoes.ctaTitle}
             </h2>
             <p className="leading-relaxed max-w-2xl mx-auto" style={{ color: '#666', fontSize: 'var(--text-body)' }}>
-              Além de nossos serviços principais, desenvolvemos soluções integradas e personalizadas conforme as necessidades específicas de cada projeto. Converse com nossos especialistas para conhecer as possibilidades.
+              {t.solucoes.ctaDescription}
             </p>
           </motion.div>
         </div>
