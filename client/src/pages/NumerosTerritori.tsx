@@ -45,7 +45,10 @@ export default function NumerosTerritori() {
 
   // Top 8 segmentos para manter compacto
   const tiposData = Object.entries(statsData.tipos)
-    .map(([name, count]) => ({ name, count: count as number }))
+    .map(([name, count]) => ({
+      name: t.numeros.segmentTypes[name as keyof typeof t.numeros.segmentTypes] || name,
+      count: count as number
+    }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 8);
   

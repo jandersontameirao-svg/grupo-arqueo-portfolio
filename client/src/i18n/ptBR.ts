@@ -384,6 +384,23 @@ export const ptBR = {
     withActivity: "Com atuação",
     withoutActivity: "Sem atuação",
     officeLocations: "Com escritórios em Brasília, Natal e São Paulo, o Grupo Arqueo possui presença estratégica para atender projetos em todas as regiões do Brasil.",
+    segmentTypes: {
+      "Energia Solar": "Energia Solar",
+      "Empreendimento Imobiliário": "Empreendimento Imobiliário",
+      "Complexo Solar": "Complexo Solar",
+      "Linha de Transmissão 500kV": "Linha de Transmissão 500kV",
+      "Linha de Transmissão 230kV": "Linha de Transmissão 230kV",
+      "Geração de Energia Solar": "Geração de Energia Solar",
+      "Geração de Energia Hidrelétrica": "Geração de Energia Hidrelétrica",
+      "Complexo Eólico": "Complexo Eólico",
+      "Infraestrutura Urbana": "Infraestrutura Urbana",
+      "Mineração": "Mineração",
+      "Geração de Energia": "Geração de Energia",
+      "Fazenda": "Fazenda",
+      "Complexo Fotovoltaico": "Complexo Fotovoltaico",
+      "Rodovia": "Rodovia",
+      "N.A": "N.A",
+    },
   },
 
   // ═══ CASES ═══

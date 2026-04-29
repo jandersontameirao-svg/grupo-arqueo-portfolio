@@ -385,6 +385,23 @@ export const zh: Translations = {
     withActivity: "有业务",
     withoutActivity: "无业务",
     officeLocations: "在巴西利亚、纳塔尔和圣保罗设有办事处，阿奇奥集团具有战略性布局，以服务巴西所有地区的项目。",
+    segmentTypes: {
+      "Energia Solar": "太阳能",
+      "Empreendimento Imobiliário": "房地产开发",
+      "Complexo Solar": "太阳能综合体",
+      "Linha de Transmissão 500kV": "500kV输电线路",
+      "Linha de Transmissão 230kV": "230kV输电线路",
+      "Geração de Energia Solar": "太阳能发电",
+      "Geração de Energia Hidrelétrica": "水力发电",
+      "Complexo Eólico": "风电综合体",
+      "Infraestrutura Urbana": "城市基础设施",
+      "Mineração": "采矿",
+      "Geração de Energia": "发电",
+      "Fazenda": "农场",
+      "Complexo Fotovoltaico": "光伏综合体",
+      "Rodovia": "道路",
+      "N.A": "N.A",
+    },
   },
 
   // ═══ CASES ═══

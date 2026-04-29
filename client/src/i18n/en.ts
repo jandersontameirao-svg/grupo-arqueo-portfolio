@@ -385,6 +385,23 @@ export const en: Translations = {
     withActivity: "With operations",
     withoutActivity: "No operations",
     officeLocations: "With offices in Brasília, Natal and São Paulo, Grupo Arqueo has strategic presence to serve projects across all regions of Brazil.",
+    segmentTypes: {
+      "Energia Solar": "Solar Energy",
+      "Empreendimento Imobiliário": "Real Estate Development",
+      "Complexo Solar": "Solar Complex",
+      "Linha de Transmissão 500kV": "500kV Transmission Line",
+      "Linha de Transmissão 230kV": "230kV Transmission Line",
+      "Geração de Energia Solar": "Solar Power Generation",
+      "Geração de Energia Hidrelétrica": "Hydroelectric Power Generation",
+      "Complexo Eólico": "Wind Complex",
+      "Infraestrutura Urbana": "Urban Infrastructure",
+      "Mineração": "Mining",
+      "Geração de Energia": "Power Generation",
+      "Fazenda": "Farm",
+      "Complexo Fotovoltaico": "Photovoltaic Complex",
+      "Rodovia": "Highway",
+      "N.A": "N.A",
+    },
   },
 
   // ═══ CASES ═══
