@@ -2,6 +2,7 @@ import { useParams, useLocation } from 'wouter';
 import { motion } from 'framer-motion';
 import { ChevronLeft, MapPin, Calendar, Building2 } from 'lucide-react';
 import PortfolioLayout from '@/components/PortfolioLayout';
+import { useI18n } from '@/i18n';
 
 interface CaseData {
   title: string;
@@ -163,6 +164,7 @@ const casesData: CaseData[] = [
 ];
 
 export default function CaseDetail() {
+  const { t } = useI18n();
   const params = useParams();
   const [, navigate] = useLocation();
   const caseId = params.id;
@@ -176,7 +178,7 @@ export default function CaseDetail() {
 
   if (!caseItem) {
   return (
-    <PortfolioLayout chapterNum="08" chapterTitle="Case Detail" prevPath="/cases" prevLabel="Cases" nextPath="/cases" nextLabel="Cases">
+    <PortfolioLayout chapterNum="08" chapterTitle={t.cases.badge.replace('07 \u2014 ', '')} prevPath="/cases" prevLabel={t.home.sections.cases} nextPath="/cases" nextLabel={t.home.sections.cases}>
       <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
             <h1 className="font-bold mb-4" style={{ fontSize: 'var(--text-subtitle)' }}>Case não encontrado</h1>
@@ -194,7 +196,7 @@ export default function CaseDetail() {
   }
 
   return (
-    <PortfolioLayout chapterNum="08" chapterTitle="Case Detail" prevPath="/cases" prevLabel="Cases" nextPath="/cases" nextLabel="Cases">
+    <PortfolioLayout chapterNum="08" chapterTitle={t.cases.badge.replace('07 \u2014 ', '')} prevPath="/cases" prevLabel={t.home.sections.cases} nextPath="/cases" nextLabel={t.home.sections.cases}>
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         {/* Botão voltar */}
         <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-gray-200">

@@ -2,6 +2,7 @@
 
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
+import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 import { Search, FileText, Pickaxe, Monitor, GraduationCap, Anchor, Database, ClipboardCheck, Shield, Users, Lightbulb, Zap } from "lucide-react";
 
@@ -264,14 +265,15 @@ function ServiceBlock({ title, subtitle, services }: { title: string; subtitle: 
 }
 
 export default function Solucoes() {
+  const { t } = useI18n();
   return (
     <PortfolioLayout
       chapterNum="05"
-      chapterTitle="Soluções"
-      prevPath="/ecossistema"
-      prevLabel="Ecossistema do Grupo"
+      chapterTitle={t.solucoes.badge.replace('04 \u2014 ', '')}
+      prevPath="/missao-visao"
+      prevLabel={t.home.sections.missao}
       nextPath="/diferenciais"
-      nextLabel="Diferenciais"
+      nextLabel={t.home.sections.diferenciais}
     >
       {/* Hero Section — Limpo e forte */}
       <section className="relative min-h-[350px] lg:min-h-[420px] flex items-center overflow-hidden">

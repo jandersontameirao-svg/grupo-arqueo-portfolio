@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
+import { useI18n } from "@/i18n";
 
 /**
  * QUEM SOMOS & ECOSSISTEMA — Página 02
@@ -11,6 +12,7 @@ import { ASSETS } from "@/lib/assets";
  */
 
 export default function QuemSomosEcossistema() {
+  const { t } = useI18n();
   const [selectedEmpresa, setSelectedEmpresa] = useState<string | null>(null);
   const [hoveredEmpresa, setHoveredEmpresa] = useState<string | null>(null);
   const [currentPilarIndex, setCurrentPilarIndex] = useState(0);
@@ -264,11 +266,11 @@ export default function QuemSomosEcossistema() {
   return (
     <PortfolioLayout
       chapterNum="02"
-      chapterTitle="Quem Somos & Ecossistema"
-      prevPath="/quem-somos"
-      prevLabel="Voltar"
+      chapterTitle={t.quemSomos.badge.replace('02 \u2014 ', '')}
+      prevPath="/ceo"
+      prevLabel={t.home.sections.ceo}
       nextPath="/missao-visao"
-      nextLabel="Próximo"
+      nextLabel={t.home.sections.missao}
     >
       <div className="w-full">
         {/* SEÇÃO 1B: QUEM SOMOS + TRAJETÓRIA - Hero Mesclado - REFINADO */}

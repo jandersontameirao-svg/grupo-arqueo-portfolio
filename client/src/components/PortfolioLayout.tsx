@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ASSETS } from "@/lib/assets";
 import { Home, ArrowRight } from "lucide-react";
+import { useI18n } from "@/i18n";
 
 interface PortfolioLayoutProps {
   children: React.ReactNode;
@@ -22,6 +23,7 @@ export default function PortfolioLayout({
   nextPath,
   nextLabel,
 }: PortfolioLayoutProps) {
+  const { t } = useI18n();
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F9F8F6' }}>
       {/* CONTENT */}
@@ -34,14 +36,14 @@ export default function PortfolioLayout({
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
           <img src={ASSETS.logoGrupoArqueo} alt="Grupo Arqueo" className="h-8 w-auto brightness-0 invert" />
           <p className="font-light" style={{ color: 'rgba(255,255,255,0.3)', fontSize: 'var(--text-caption)' }}>
-            &copy; 2016–2026 Grupo Arqueo. Todos os direitos reservados.
+            {t.layout.copyright}
           </p>
         </div>
       </footer>
 
       {/* ═══════════ FLOATING NAVIGATION BUTTONS ═══════════ */}
 
-      {/* Voltar ao Índice — fixo canto inferior esquerdo */}
+      {/* {t.layout.backToIndex} — fixo canto inferior esquerdo */}
       <Link href="/">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -58,7 +60,7 @@ export default function PortfolioLayout({
         >
           <Home className="w-4 h-4 transition-all duration-300 group-hover:scale-110" style={{ color: '#888' }} />
           <span className="font-medium transition-colors duration-300 group-hover:text-[#EE7501]" style={{ color: '#888', fontSize: 'var(--text-caption)' }}>
-            Voltar ao Índice
+            {t.layout.backToIndex}
           </span>
         </motion.div>
       </Link>
@@ -80,7 +82,7 @@ export default function PortfolioLayout({
             }}
           >
             <span className="font-medium tracking-wider uppercase transition-colors duration-300" style={{ color: '#888', fontSize: 'var(--text-caption)' }}>
-              PRÓXIMO
+              {t.layout.next}
             </span>
             <span className="font-semibold transition-colors duration-300 group-hover:text-[#EE7501]" style={{ color: '#2A2A2A', fontSize: 'var(--text-small)' }}>
               {nextLabel}

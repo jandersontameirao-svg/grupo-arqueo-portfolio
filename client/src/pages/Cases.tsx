@@ -4,6 +4,7 @@ import { ASSETS } from "@/lib/assets";
 import { useState } from "react";
 import { MapPin, Calendar, Building2, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
+import { useI18n } from "@/i18n";
 
 /**
  * CASES — Página 08
@@ -420,6 +421,7 @@ function StandardCard({ c, index }: { c: typeof cases[0]; index: number }) {
 /*  PÁGINA PRINCIPAL                                                 */
 /* ────────────────────────────────────────────────────────────────── */
 export default function Cases() {
+  const { t } = useI18n();
   const [activeFilter, setActiveFilter] = useState(sectors[0]);
   const filtered = cases.filter(c => c.sector === activeFilter);
 
@@ -430,11 +432,11 @@ export default function Cases() {
   return (
     <PortfolioLayout
       chapterNum="08"
-      chapterTitle="Cases"
+      chapterTitle={t.cases.badge.replace('07 \u2014 ', '')}
       prevPath="/numeros"
-      prevLabel="Números"
-      nextPath="/territorio"
-      nextLabel="Presença Territorial"
+      prevLabel={t.home.sections.numeros}
+      nextPath="/parceiros"
+      nextLabel={t.home.sections.parceiros}
     >
       {/* ═══════════════════ HERO ═══════════════════ */}
       <section className="relative min-h-[420px] lg:min-h-[520px] flex items-start lg:items-center overflow-hidden pt-16 lg:pt-0">

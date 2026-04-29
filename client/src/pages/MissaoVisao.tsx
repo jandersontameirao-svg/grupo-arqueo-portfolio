@@ -4,6 +4,7 @@ import {
   Target, Eye, Shield, Lightbulb, Award, Users, Leaf, ArrowRight, Scale,
 } from "lucide-react";
 import { useState } from "react";
+import { useI18n } from "@/i18n";
 
 /**
  * MISSÃO, VISÃO E VALORES — Página 03
@@ -19,27 +20,30 @@ import { useState } from "react";
  * 5. Ritmo vertical fluido, transições suaves
  */
 
-const pilares = [
-  { icon: Shield, title: "Integridade", desc: "Firmeza nos compromissos assumidos, assegurando confiança em cada relação institucional.", color: "#861720", accent: "rgba(134,23,32,0.08)" },
-  { icon: Lightbulb, title: "Inovação", desc: "Estratégias adaptativas e soluções tecnológicas que antecipam as demandas do mercado.", color: "#EE7501", accent: "rgba(238,117,1,0.08)" },
-  { icon: Leaf, title: "Responsabilidade", desc: "Compromisso com o impacto positivo sobre o patrimônio cultural e as comunidades.", color: "#2C7EB3", accent: "rgba(44,126,179,0.08)" },
-  { icon: Award, title: "Excelência", desc: "Padrão operacional elevado em cada etapa, do diagnóstico à entrega final.", color: "#861720", accent: "rgba(134,23,32,0.08)" },
-  { icon: Users, title: "Colaboração", desc: "Unimos forças internas e externas, valorizando a contribuição única de cada parceiro.", color: "#EE7501", accent: "rgba(238,117,1,0.08)" },
-  { icon: Scale, title: "Diversidade", desc: "Reconhecemos e respeitamos as diferenças como fonte de enriquecimento e inovação.", color: "#2C7EB3", accent: "rgba(44,126,179,0.08)" },
-];
+// pilares definidos dentro do componente para acessar traduções
 
 
 export default function MissaoVisao() {
+  const { t } = useI18n();
   const [hoveredPilar, setHoveredPilar] = useState<number | null>(null);
+
+  const pilares = [
+    { icon: Shield, title: t.missao.principles.integrity, desc: t.missao.principles.integrityDesc, color: "#861720", accent: "rgba(134,23,32,0.08)" },
+    { icon: Lightbulb, title: t.missao.principles.innovation, desc: t.missao.principles.innovationDesc, color: "#EE7501", accent: "rgba(238,117,1,0.08)" },
+    { icon: Leaf, title: t.missao.principles.responsibility, desc: t.missao.principles.responsibilityDesc, color: "#2C7EB3", accent: "rgba(44,126,179,0.08)" },
+    { icon: Award, title: t.missao.principles.excellence, desc: t.missao.principles.excellenceDesc, color: "#861720", accent: "rgba(134,23,32,0.08)" },
+    { icon: Users, title: t.missao.principles.collaboration, desc: t.missao.principles.collaborationDesc, color: "#EE7501", accent: "rgba(238,117,1,0.08)" },
+    { icon: Scale, title: t.missao.principles.diversity, desc: t.missao.principles.diversityDesc, color: "#2C7EB3", accent: "rgba(44,126,179,0.08)" },
+  ];
 
   return (
     <PortfolioLayout
       chapterNum="03"
-      chapterTitle="Missão, Visão e Valores"
+      chapterTitle={t.missao.badge.replace('03 \u2014 ', '')}
       prevPath="/quem-somos"
-      prevLabel="Quem Somos"
+      prevLabel={t.home.sections.quemSomos}
       nextPath="/solucoes"
-      nextLabel="Soluções"
+      nextLabel={t.home.sections.solucoes}
     >
 
       {/* ═══════════════════ 1. HERO INSTITUCIONAL ═══════════════════ */}
@@ -52,17 +56,13 @@ export default function MissaoVisao() {
               <div className="flex items-center gap-6 lg:gap-12 mb-8">
                 <img src={ASSETS.logo10anos} alt="Grupo Arqueo 10 Anos" className="w-auto flex-shrink-0" style={{ height: 'clamp(80px, 10vw, 168px)' }} />
                 <h1 className="font-bold leading-[1.15]" style={{ color: '#1A1A1A', letterSpacing: '-0.025em', fontSize: 'clamp(1.4rem, 3.2vw, 4.5rem)' }}>
-                  Os fundamentos que orientam
-                  nossa <span style={{ color: '#EE7501' }}>atuação</span>
+                  {t.missao.title}{' '}
+                  <span style={{ color: '#EE7501' }}>{t.missao.titleHighlight}</span>
                 </h1>
               </div>
 
               <p className="leading-[1.75] max-w-2xl" style={{ color: '#555', letterSpacing: '0.01em', fontSize: 'var(--text-body)' }}>
-                Cada projeto, decisão e relacionamento institucional é guiado por princípios que integram{' '}
-                <strong style={{ color: '#1A1A1A', fontWeight: 600 }}>ética</strong>,{' '}
-                <strong style={{ color: '#1A1A1A', fontWeight: 600 }}>inovação</strong>,{' '}
-                <strong style={{ color: '#1A1A1A', fontWeight: 600 }}>responsabilidade</strong> e{' '}
-                <strong style={{ color: '#1A1A1A', fontWeight: 600 }}>excelência operacional</strong>.
+                {t.missao.description}
               </p>
             </div>
 
@@ -85,7 +85,7 @@ export default function MissaoVisao() {
         <div className="container">
           <div className="flex items-center gap-3 mb-8 lg:mb-10">
             <div className="w-8 h-[2px] rounded-full" style={{ backgroundColor: '#EE7501' }} />
-            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#999' }}>Propósito & Direção</span>
+            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase" style={{ color: '#999' }}>{t.missao.missionLabel}</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
@@ -98,24 +98,21 @@ export default function MissaoVisao() {
                     <Target className="w-7 h-7" style={{ color: '#EE7501' }} />
                   </div>
                   <div>
-                    <span className="text-[10px] font-semibold tracking-[0.2em] uppercase block" style={{ color: 'rgba(255,255,255,0.45)' }}>Nossa</span>
-                    <h2 className="font-bold text-white" style={{ letterSpacing: '-0.01em', fontSize: 'var(--text-section-title)' }}>Missão</h2>
+                    <span className="text-[10px] font-semibold tracking-[0.2em] uppercase block" style={{ color: 'rgba(255,255,255,0.45)' }}>{t.missao.missionLabel}</span>
+                    <h2 className="font-bold text-white" style={{ letterSpacing: '-0.01em', fontSize: 'var(--text-section-title)' }}>{t.missao.missionTitle}</h2>
                   </div>
                 </div>
 
                 <div className="w-20 h-[2px] rounded-full mb-8" style={{ background: 'linear-gradient(to right, #EE7501, transparent)' }} />
 
                 <p className="leading-[1.8] text-white mb-8 flex-1" style={{ opacity: 0.92, fontWeight: 300, fontSize: 'var(--text-body)' }}>
-                  Liderar o mercado de serviços na área de{' '}
-                  <strong className="font-semibold text-white">patrimônio sociocultural e arqueológico</strong>{' '}
-                  com estratégias inovadoras e adaptativas, alinhando nossas operações com as necessidades dinâmicas de nossos parceiros.
+                  {t.missao.missionText}
                 </p>
 
                 <div className="flex items-start gap-3 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}>
                   <ArrowRight className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#EE7501' }} />
                   <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 300, fontSize: 'var(--text-small)' }}>
-                    Contribuindo ativamente para a{' '}
-                    <span style={{ color: '#EE7501' }} className="font-medium">sustentabilidade ambiental, social e econômica</span> do Brasil.
+                    {t.missao.missionHighlight}
                   </p>
                 </div>
               </div>
@@ -132,25 +129,21 @@ export default function MissaoVisao() {
                     <Eye className="w-7 h-7" style={{ color: '#2C7EB3' }} />
                   </div>
                   <div>
-                    <span className="text-[10px] font-semibold tracking-[0.2em] uppercase block" style={{ color: '#AAA' }}>Nossa</span>
-                    <h2 className="font-bold" style={{ color: '#1A1A1A', letterSpacing: '-0.01em', fontSize: 'var(--text-section-title)' }}>Visão</h2>
+                    <span className="text-[10px] font-semibold tracking-[0.2em] uppercase block" style={{ color: '#AAA' }}>{t.missao.visionLabel}</span>
+                    <h2 className="font-bold" style={{ color: '#1A1A1A', letterSpacing: '-0.01em', fontSize: 'var(--text-section-title)' }}>{t.missao.visionTitle}</h2>
                   </div>
                 </div>
 
                 <div className="w-20 h-[2px] rounded-full mb-8" style={{ background: 'linear-gradient(to right, #2C7EB3, transparent)' }} />
 
                 <p className="leading-[1.8] mb-8 flex-1" style={{ color: '#333', fontWeight: 300, fontSize: 'var(--text-body)' }}>
-                  Solidificar nossa posição como o{' '}
-                  <strong className="font-semibold" style={{ color: '#2C7EB3' }}>principal HUB do Brasil</strong>{' '}
-                  em produtos e serviços socioculturais e arqueológicos.
+                  {t.missao.visionText}
                 </p>
 
                 <div className="flex items-start gap-3 pt-8" style={{ borderTop: '1px solid rgba(44,126,179,0.1)' }}>
                   <ArrowRight className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#2C7EB3' }} />
                   <p className="leading-relaxed" style={{ color: '#777', fontWeight: 300, fontSize: 'var(--text-small)' }}>
-                    Estabelecendo um padrão de{' '}
-                    <span style={{ color: '#EE7501' }} className="font-medium">excelência, eficiência e inovação</span>{' '}
-                    que se torne referência no mercado nacional.
+                    {t.missao.visionHighlight}
                   </p>
                 </div>
               </div>
@@ -176,11 +169,11 @@ export default function MissaoVisao() {
               </span>
             </div>
             <h2 className="font-bold leading-[1.15] mb-5" style={{ color: '#1A1A1A', letterSpacing: '-0.02em', fontSize: 'var(--text-section-title)' }}>
-              Princípios que orientam{' '}
-              <span style={{ color: '#EE7501' }}>nosso crescimento</span>
+              {t.missao.principlesTitle}{' '}
+              <span style={{ color: '#EE7501' }}>{t.missao.principlesTitleHighlight}</span>
             </h2>
             <p className="leading-[1.8]" style={{ color: '#777', fontSize: 'var(--text-body)' }}>
-              Cada pilar representa um compromisso inegociável que orienta nossas decisões, fortalece nossos relacionamentos e sustenta a cultura organizacional do Grupo Arqueo.
+              {t.missao.principlesDescription}
             </p>
           </div>
 

@@ -3,6 +3,7 @@ import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
 import { Mail, Phone, MapPin, Globe, Linkedin, Instagram, MessageCircle, X, Send, FileText, Calendar, Clock, Building2, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { useI18n } from "@/i18n";
 
 /**
  * CONTATO — Página 10 (Final)
@@ -51,14 +52,15 @@ const floatingButtons = [
 ];
 
 export default function Contato() {
+  const { t } = useI18n();
   const [fabOpen, setFabOpen] = useState(false);
 
   return (
     <PortfolioLayout
       chapterNum="10"
-      chapterTitle="Contato"
+      chapterTitle={t.contato.badge.replace('09 \u2014 ', '')}
       prevPath="/parceiros"
-      prevLabel="Nossos Parceiros"
+      prevLabel={t.home.sections.parceiros}
     >
       {/* ═══════════════════ HERO SECTION ═══════════════════ */}
       <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">

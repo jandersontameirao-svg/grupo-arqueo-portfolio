@@ -4,6 +4,7 @@ import MapaBrasilSVG, { type EstadoData } from "@/components/MapaBrasilSVG";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import statsData from "../data/stats.json";
+import { useI18n } from "@/i18n";
 
 /**
  * NÚMEROS & PRESENÇA TERRITORIAL — Página 08
@@ -20,6 +21,7 @@ const regioes = [
 ];
 
 export default function NumerosTerritori() {
+  const { t } = useI18n();
   const [selectedEstado, setSelectedEstado] = useState<EstadoData | null>(null);
   const [animateMetrics, setAnimateMetrics] = useState(false);
 
@@ -52,11 +54,11 @@ export default function NumerosTerritori() {
   return (
     <PortfolioLayout
       chapterNum="08"
-      chapterTitle="Números & Presença Territorial"
+      chapterTitle={t.numeros.badge.replace('06 \u2014 ', '')}
       prevPath="/cases"
-      prevLabel="Cases"
+      prevLabel={t.home.sections.cases}
       nextPath="/parceiros"
-      nextLabel="Nossos Parceiros"
+      nextLabel={t.home.sections.parceiros}
     >
       <style>{animationStyles}</style>
 

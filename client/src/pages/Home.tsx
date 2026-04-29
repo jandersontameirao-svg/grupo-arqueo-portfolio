@@ -6,6 +6,7 @@ import {
   Play, X
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { useI18n } from "@/i18n";
 
 /**
  * HOME — Portfólio Digital Premium Grupo Arqueo
@@ -16,23 +17,27 @@ import { useState, useEffect, useRef } from "react";
 
 const VIDEO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/GRUPOARQUEOINSTITUCIONAL_c5cde311.mp4";
 
-const sections = [
-  { id: "ceo", num: "01", label: "Mensagem do CEO", icon: User, path: "/ceo", color: "#861720" },
-  { id: "quem-somos-ecossistema", num: "02", label: "Quem Somos & Ecossistema", icon: Building2, path: "/quem-somos", color: "#2C7EB3" },
-  { id: "missao-visao", num: "03", label: "Missão e Valores", icon: Target, path: "/missao-visao", color: "#EE7501" },
-  { id: "solucoes", num: "04", label: "Soluções", icon: Lightbulb, path: "/solucoes", color: "#861720" },
-  { id: "diferenciais-conformidade", num: "05", label: "Diferenciais & Conformidade", icon: Star, path: "/diferenciais", color: "#EE7501" },
-  { id: "numeros-territorio", num: "06", label: "Números & Território", icon: BarChart3, path: "/numeros", color: "#2C7EB3" },
-  { id: "cases", num: "07", label: "Cases", icon: FolderOpen, path: "/cases", color: "#861720" },
-  { id: "parceiros", num: "08", label: "Nossos Parceiros", icon: Users, path: "/parceiros", color: "#EE7501" },
-  { id: "contato", num: "09", label: "Contato", icon: Mail, path: "/contato", color: "#2C7EB3" },
+const sectionsDef = [
+  { id: "ceo", num: "01", key: "ceo" as const, icon: User, path: "/ceo", color: "#861720" },
+  { id: "quem-somos-ecossistema", num: "02", key: "quemSomos" as const, icon: Building2, path: "/quem-somos", color: "#2C7EB3" },
+  { id: "missao-visao", num: "03", key: "missao" as const, icon: Target, path: "/missao-visao", color: "#EE7501" },
+  { id: "solucoes", num: "04", key: "solucoes" as const, icon: Lightbulb, path: "/solucoes", color: "#861720" },
+  { id: "diferenciais-conformidade", num: "05", key: "diferenciais" as const, icon: Star, path: "/diferenciais", color: "#EE7501" },
+  { id: "numeros-territorio", num: "06", key: "numeros" as const, icon: BarChart3, path: "/numeros", color: "#2C7EB3" },
+  { id: "cases", num: "07", key: "cases" as const, icon: FolderOpen, path: "/cases", color: "#861720" },
+  { id: "parceiros", num: "08", key: "parceiros" as const, icon: Users, path: "/parceiros", color: "#EE7501" },
+  { id: "contato", num: "09", key: "contato" as const, icon: Mail, path: "/contato", color: "#2C7EB3" },
 ];
 
 export default function Home() {
+  const { t } = useI18n();
   const [hovered, setHovered] = useState<number | null>(null);
   const [rotation, setRotation] = useState(0);
   const [videoExpanded, setVideoExpanded] = useState(false);
   const expandedVideoRef = useRef<HTMLVideoElement>(null);
+
+  // Build sections with translated labels
+  const sections = sectionsDef.map(s => ({ ...s, label: t.home.sections[s.key] }));
 
 
   useEffect(() => {
@@ -95,20 +100,18 @@ export default function Home() {
               />
 
               <p className="font-semibold tracking-[0.3em] uppercase mb-4 text-[#861720]" style={{ fontSize: 'clamp(9px, 0.7vw, 12px)' }}>
-                Patrimônio Cultural e Arqueológico
+                {t.home.badge}
               </p>
 
               <h1 className="font-bold leading-[1.15] mb-4 text-[#2A2A2A]" style={{ fontSize: 'var(--text-hero)' }}>
-                Consultoria estratégica{" "}
-                <span className="text-[#EE7501]">em pesquisa</span>{" "}
-                e gestão do patrimônio{" "}
-                <span className="text-[#861720]">sociocultural</span>
+                {t.home.title}{" "}
+                <span className="text-[#EE7501]">{t.home.titleHighlight1}</span>{" "}
+                {t.home.titleMiddle}{" "}
+                <span className="text-[#861720]">{t.home.titleHighlight2}</span>
               </h1>
 
               <p className="font-light leading-relaxed mb-5 text-[#555]" style={{ fontSize: 'var(--text-body)', maxWidth: 'clamp(280px, 28vw, 420px)' }}>
-                Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
-                e gestão estratégica para oferecer soluções completas em licenciamento
-                sociocultural no Brasil.
+                {t.home.description}
               </p>
 
               {/* Hover info */}
@@ -126,7 +129,7 @@ export default function Home() {
                         {sections[hovered].label}
                       </span>
                        <span className="text-[#888] flex items-center gap-1 mt-0.5" style={{ fontSize: 'var(--text-caption)' }}>
-                        Clique para explorar <ArrowRight className="w-3 h-3" />
+                        {t.home.clickToExplore} <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>
                   </div>
@@ -383,20 +386,18 @@ export default function Home() {
           />
 
           <p className="font-semibold tracking-[0.3em] uppercase mb-2 text-[#861720]" style={{ fontSize: 'clamp(8px, 1.2vw, 11px)' }}>
-            Patrimônio Cultural e Arqueológico
+            {t.home.badge}
           </p>
 
           <h1 className="font-bold leading-[1.1] mb-2 text-[#2A2A2A]" style={{ fontSize: 'clamp(1.15rem, 3.5vw, 1.75rem)' }}>
-            Consultoria estratégica{" "}
-            <span className="text-[#EE7501]">em pesquisa</span>{" "}
-            e gestão do patrimônio{" "}
-            <span className="text-[#861720]">sociocultural</span>
+            {t.home.title}{" "}
+            <span className="text-[#EE7501]">{t.home.titleHighlight1}</span>{" "}
+            {t.home.titleMiddle}{" "}
+            <span className="text-[#861720]">{t.home.titleHighlight2}</span>
           </h1>
 
           <p className="font-light leading-relaxed mb-4 text-[#555]" style={{ fontSize: 'clamp(0.75rem, 1.8vw, 0.875rem)' }}>
-            Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica
-            e gestão estratégica para oferecer soluções completas em licenciamento
-            sociocultural no Brasil.
+            {t.home.description}
           </p>
 
           {/* Mobile logo center */}

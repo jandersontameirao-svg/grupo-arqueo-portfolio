@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
+import { useI18n } from "@/i18n";
 
 /**
  * PARCEIROS — Página 11
@@ -18,6 +19,7 @@ const PARCEIROS_DESTAQUE = [
 ];
 
 export default function Parceiros() {
+  const { t } = useI18n();
   const todosParceiros: { nome: string; logo?: string }[] = [
     { nome: "2W Energia", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/2w_cb61a07d.png" },
     { nome: "CBMM", logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/cbmm_a25acffd.png" },
@@ -93,11 +95,11 @@ export default function Parceiros() {
   return (
     <PortfolioLayout
       chapterNum="11"
-      chapterTitle="Relações Estratégicas"
+      chapterTitle={t.parceiros.badge.replace('08 \u2014 ', '')}
       prevPath="/numeros-territorio"
-      prevLabel="Números & Território"
+      prevLabel={t.home.sections.numeros}
       nextPath="/contato"
-      nextLabel="Contato"
+      nextLabel={t.home.sections.contato}
     >
       {/* ═══════════════════════════════════════════════════════════════════
           SEÇÃO 1 — HERO INSTITUCIONAL

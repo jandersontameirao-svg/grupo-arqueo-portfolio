@@ -2,6 +2,7 @@ import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
 import { Cpu, Users, Clock, Map, Layers, TrendingUp, Shield, FileText, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { useI18n } from "@/i18n";
 
 /**
  * DIFERENCIAIS & CONFORMIDADE — Página 05
@@ -84,14 +85,15 @@ const policies = [
 ];
 
 export default function DiferenciaisConformidade() {
+  const { t } = useI18n();
   return (
     <PortfolioLayout
       chapterNum="05"
-      chapterTitle="Diferenciais & Conformidade"
+      chapterTitle={t.diferenciais.badge.replace('05 \u2014 ', '')}
       prevPath="/solucoes"
-      prevLabel="Soluções"
+      prevLabel={t.home.sections.solucoes}
       nextPath="/numeros-territorio"
-      nextLabel="Números & Território"
+      nextLabel={t.home.sections.numeros}
     >
       {/* ═══════════════════ SEÇÃO 1: DIFERENCIAIS ═══════════════════ */}
       <section className="relative min-h-[300px] lg:min-h-[380px] flex items-center overflow-hidden" style={{ paddingTop: 'var(--space-block)', paddingBottom: 'var(--space-block)' }}>

@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { Quote, ArrowRight } from "lucide-react";
+import { useI18n } from "@/i18n";
 
 const CEO_PHOTO = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo80_2ec49fb7.webp";
 
 export default function CeoMessage() {
+  const { t } = useI18n();
   return (
     <PortfolioLayout
       chapterNum="01"
-      chapterTitle="Mensagem do CEO"
+      chapterTitle={t.ceo.badge.replace('01 — ', '')}
       nextPath="/quem-somos"
-      nextLabel="Quem Somos"
+      nextLabel={t.home.sections.quemSomos}
     >
       {/* Hero Section com foto e overlay */}
       <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
@@ -158,18 +160,18 @@ export default function CeoMessage() {
             transition={{ duration: 0.8 }}
             className="mb-8 lg:mb-10"
           >
-            <p className="font-semibold tracking-widest mb-4" style={{ color: '#EE7501', fontSize: 'var(--text-small)' }}>NOSSOS PILARES</p>
+            <p className="font-semibold tracking-widest mb-4" style={{ color: '#EE7501', fontSize: 'var(--text-small)' }}>{t.ceo.pillars.toUpperCase()}</p>
             <h2 className="font-bold leading-tight" style={{ color: '#2A2A2A', fontSize: 'var(--text-section-title)' }}>
-              Os fundamentos que guiam nossa atuação
+              {t.ceo.pillars}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
-              { icon: '🔬', title: 'Competência Técnica', desc: 'Excelência em pesquisa e consultoria especializada', color: '#EE7501' },
-              { icon: '🤝', title: 'Integridade', desc: 'Transparência e ética em todas as relações', color: '#861720' },
-              { icon: '💡', title: 'Inovação', desc: 'Tecnologia e metodologias avançadas', color: '#2C7EB3' },
-              { icon: '⭐', title: 'Excelência', desc: 'Compromisso com a qualidade máxima', color: '#2A2A2A' },
+              { icon: '🔬', title: t.ceo.pillar1Title, desc: t.ceo.pillar1Desc, color: '#EE7501' },
+              { icon: '🤝', title: t.ceo.pillar2Title, desc: t.ceo.pillar2Desc, color: '#861720' },
+              { icon: '💡', title: t.ceo.pillar3Title, desc: t.ceo.pillar3Desc, color: '#2C7EB3' },
+              { icon: '⭐', title: t.ceo.pillar4Title, desc: t.ceo.pillar4Desc, color: '#2A2A2A' },
             ].map((pillar, idx) => (
               <motion.div
                 key={idx}
