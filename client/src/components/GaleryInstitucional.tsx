@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
-import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { useI18n } from "@/i18n";
 
 type GalleryCategory = "equipe" | "projetos" | "eventos" | "campo" | "institucional" | "bastidores";
@@ -174,6 +174,7 @@ export default function GaleryInstitucional() {
           className="max-w-4xl w-full p-0 border-0 bg-black/95"
           showCloseButton={false}
         >
+          <DialogTitle className="sr-only">Imagem ampliada da galeria</DialogTitle>
           <div className="relative w-full h-auto">
             {/* Imagem ampliada */}
             {selectedImage && (
