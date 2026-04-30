@@ -14,53 +14,33 @@ interface GalleryImage {
   alt: string;
 }
 
+// Ordem fixa (já embaralhada uma vez)
+const GALLERY_IMAGES: GalleryImage[] = [
+  { id: "1", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/eFPfHrGVuVZrcoDk.jpg", title: "", category: "equipe", alt: "Imagem 1" },
+  { id: "2", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/hTbJbJORtbEobnPI.jpeg", title: "", category: "eventos", alt: "Imagem 2" },
+  { id: "3", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/qwXlWvuViyDmaXXy.JPG", title: "", category: "equipe", alt: "Imagem 3" },
+  { id: "4", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/GDScJWQDZQkbePDR.webp", title: "", category: "campo", alt: "Imagem 4" },
+  { id: "5", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/sYFjgGdXBpIlQMPy.jpeg", title: "", category: "eventos", alt: "Imagem 5" },
+  { id: "6", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/AkSJvAEiPyeEssjQ.webp", title: "", category: "institucional", alt: "Imagem 6" },
+  { id: "7", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/RWIYXfqmpTNWGQsp.webp", title: "", category: "projetos", alt: "Imagem 7" },
+  { id: "8", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/VfEQGmcagCApBTmW.webp", title: "", category: "campo", alt: "Imagem 8" },
+  { id: "9", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/NeUPPsddBFBUsFbt.webp", title: "", category: "equipe", alt: "Imagem 9" },
+  { id: "10", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/fQuWDnbWldifPaQs.webp", title: "", category: "bastidores", alt: "Imagem 10" },
+  { id: "11", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/ihkYuBwrxIQwybOJ.webp", title: "", category: "institucional", alt: "Imagem 11" },
+  { id: "12", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/hjWNkGDwWkqRJMmb.jpeg", title: "", category: "eventos", alt: "Imagem 12" },
+  { id: "13", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/UJWFaVsOoevdQDqm.webp", title: "", category: "bastidores", alt: "Imagem 13" },
+  { id: "14", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/YKKfZAjYtWIhejOM.webp", title: "", category: "campo", alt: "Imagem 14" },
+  { id: "15", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/ggQHeKhSgffYXUvz.jpeg", title: "", category: "projetos", alt: "Imagem 15" },
+];
+
 export default function GaleryInstitucional() {
   const { t } = useI18n();
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  // URLs das 15 imagens do CDN
-  const imageUrls = [
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/qwXlWvuViyDmaXXy.JPG",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/eFPfHrGVuVZrcoDk.jpg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/hjWNkGDwWkqRJMmb.jpeg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/NeUPPsddBFBUsFbt.webp",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/VfEQGmcagCApBTmW.webp",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/UJWFaVsOoevdQDqm.webp",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/GDScJWQDZQkbePDR.webp",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/RWIYXfqmpTNWGQsp.webp",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/hTbJbJORtbEobnPI.jpeg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/sYFjgGdXBpIlQMPy.jpeg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/ggQHeKhSgffYXUvz.jpeg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/AkSJvAEiPyeEssjQ.webp",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/ihkYuBwrxIQwybOJ.webp",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/YKKfZAjYtWIhejOM.webp",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/fQuWDnbWldifPaQs.webp",
-  ];
-
-  // Embaralhar URLs aleatoriamente
-  const shuffledUrls = [...imageUrls].sort(() => Math.random() - 0.5);
-
-  // Dados de exemplo - 15 imagens com URLs embaralhadas
-  const galleryImages: GalleryImage[] = shuffledUrls.map((src, idx) => ({
-    id: String(idx + 1),
-    src,
-    title: "",
-    category: (["equipe", "campo", "eventos", "projetos", "institucional", "bastidores"] as const)[idx % 6],
-    alt: `Imagem ${idx + 1}`,
-  }));
-
   const handleImageClick = (image: GalleryImage) => {
     setSelectedImage(image);
     setIsOpen(true);
-  };
-
-  // Embaralhar novamente a cada renderização para garantir aleatoriedade
-  const randomizedImages = [...galleryImages].sort(() => Math.random() - 0.5);
-
-  const handleCloseModal = () => {
-    setIsOpen(false);
-    setSelectedImage(null);
   };
 
   return (
@@ -111,7 +91,7 @@ export default function GaleryInstitucional() {
 
         {/* Grid de Imagens - 3 colunas desktop, 2 tablet, 1 mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {randomizedImages.map((image, idx) => (
+          {GALLERY_IMAGES.map((image, idx) => (
             <motion.div
               key={image.id}
               initial={{ opacity: 0, y: 30 }}
@@ -121,9 +101,9 @@ export default function GaleryInstitucional() {
               className="group cursor-pointer"
               onClick={() => handleImageClick(image)}
             >
-              {/* Card com imagem */}
+              {/* Card com imagem — object-contain para não cortar nada */}
               <div
-                className="relative overflow-hidden rounded-lg shadow-md transition-all duration-300 group-hover:shadow-xl"
+                className="relative overflow-hidden rounded-lg shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center"
                 style={{
                   aspectRatio: "4/3",
                   backgroundColor: "#F5F5F5",
@@ -132,10 +112,8 @@ export default function GaleryInstitucional() {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-
-
 
                 {/* Ícone de zoom no hover */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -161,8 +139,6 @@ export default function GaleryInstitucional() {
                   </div>
                 </div>
               </div>
-
-
             </motion.div>
           ))}
         </div>
@@ -185,8 +161,6 @@ export default function GaleryInstitucional() {
                   className="w-full h-auto object-contain"
                   style={{ maxHeight: "80vh" }}
                 />
-
-
 
                 {/* Botão fechar */}
                 <DialogClose className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
