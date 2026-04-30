@@ -464,17 +464,17 @@ export default function QuemSomosEcossistema() {
               {/* ROW 1 - 5 membros */}
               <div className="relative z-10 flex justify-center gap-8 lg:gap-12 mb-8">
                 {[
-                  { name: t.quemSomos.teamRoles.ceo, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp' },
-                  { name: t.quemSomos.teamRoles.adminDirector, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp' },
-                  { name: t.quemSomos.teamRoles.treasurer, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp' },
-                  { name: t.quemSomos.teamRoles.strategyDirector, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp' },
-                  { name: t.quemSomos.teamRoles.cso, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp' },
+                  { name: t.quemSomos.teamRoles.ceo, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp', pos: 'center 15%' },
+                  { name: t.quemSomos.teamRoles.adminDirector, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp', pos: 'center 10%' },
+                  { name: t.quemSomos.teamRoles.treasurer, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp', pos: 'center 10%' },
+                  { name: t.quemSomos.teamRoles.strategyDirector, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp', pos: 'center 15%' },
+                  { name: t.quemSomos.teamRoles.cso, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp', pos: 'center 10%' },
                 ].map((member, idx) => (
                   <div key={idx} className="flex flex-col items-center group cursor-pointer">
-                    <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 120, height: 120, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)', position: 'relative' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.3), 0 0 30px rgba(238,117,1,0.6), 0 20px 40px rgba(0,0,0,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)'; }}>
-                      <img src={member.img} alt={member.name.split('\n')[0]} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                    <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 140, height: 140, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)', position: 'relative' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.3), 0 0 30px rgba(238,117,1,0.6), 0 20px 40px rgba(0,0,0,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)'; }}>
+                      <img src={member.img} alt={member.name.split('\n')[0]} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" style={{ objectPosition: member.pos, imageRendering: 'auto' }} />
                     </div>
-                    <span className="text-white font-semibold text-[10px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg transition-all duration-300 group-hover:text-yellow-100" style={{ whiteSpace: 'pre-line' }}>{member.name}</span>
+                    <span className="text-white font-semibold text-[10px] mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg transition-all duration-300 group-hover:text-yellow-100" style={{ whiteSpace: 'pre-line' }}>{member.name}</span>
                   </div>
                 ))}
               </div>
@@ -482,17 +482,17 @@ export default function QuemSomosEcossistema() {
               {/* ROW 2 - 5 membros */}
               <div className="relative z-10 flex justify-center gap-8 lg:gap-12 mb-8">
                 {[
-                  { name: t.quemSomos.teamRoles.legalAdvisor, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp' },
-                  { name: t.quemSomos.teamRoles.researchCoord, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp' },
-                  { name: t.quemSomos.teamRoles.projectManager, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/643-RIC_3179_73874ff3.webp', objectPos: 'object-top' },
-                  { name: t.quemSomos.teamRoles.commercialCoord, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp' },
-                  { name: t.quemSomos.teamRoles.opsCoord, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Lucas2portfolio_aa63d96d.webp' },
+                  { name: t.quemSomos.teamRoles.legalAdvisor, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp', pos: 'center 15%' },
+                  { name: t.quemSomos.teamRoles.researchCoord, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp', pos: 'center 10%' },
+                  { name: t.quemSomos.teamRoles.projectManager, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/643-RIC_3179_73874ff3.webp', pos: 'center 5%' },
+                  { name: t.quemSomos.teamRoles.commercialCoord, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp', pos: 'center 10%' },
+                  { name: t.quemSomos.teamRoles.opsCoord, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Lucas2portfolio_aa63d96d.webp', pos: 'center 10%' },
                 ].map((member, idx) => (
                   <div key={idx} className="flex flex-col items-center group cursor-pointer">
-                    <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 120, height: 120, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)', position: 'relative' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.3), 0 0 30px rgba(238,117,1,0.6), 0 20px 40px rgba(0,0,0,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)'; }}>
-                      <img src={member.img} alt={member.name.split('\n')[0]} className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 ${(member as any).objectPos || ''}`} />
+                    <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 140, height: 140, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)', position: 'relative' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.3), 0 0 30px rgba(238,117,1,0.6), 0 20px 40px rgba(0,0,0,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)'; }}>
+                      <img src={member.img} alt={member.name.split('\n')[0]} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" style={{ objectPosition: member.pos, imageRendering: 'auto' }} />
                     </div>
-                    <span className="text-white font-semibold text-[10px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg transition-all duration-300 group-hover:text-yellow-100" style={{ whiteSpace: 'pre-line' }}>{member.name}</span>
+                    <span className="text-white font-semibold text-[10px] mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg transition-all duration-300 group-hover:text-yellow-100" style={{ whiteSpace: 'pre-line' }}>{member.name}</span>
                   </div>
                 ))}
               </div>
@@ -500,17 +500,17 @@ export default function QuemSomosEcossistema() {
               {/* ROW 3 - 5 membros */}
               <div className="relative z-10 flex justify-center gap-8 lg:gap-12 flex-wrap">
                 {[
-                  { name: t.quemSomos.teamRoles.archaeologistF, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp' },
-                  { name: t.quemSomos.teamRoles.archaeologistF, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251054_4fb88472.webp' },
-                  { name: t.quemSomos.teamRoles.archaeologistM, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp' },
-                  { name: t.quemSomos.teamRoles.archaeologistM, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251052_bf77fd54.webp' },
-                  { name: t.quemSomos.teamRoles.researcher, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251118_aec2ebef.webp' },
+                  { name: t.quemSomos.teamRoles.archaeologistF, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp', pos: 'center 10%' },
+                  { name: t.quemSomos.teamRoles.archaeologistF, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251054_4fb88472.webp', pos: 'center 10%' },
+                  { name: t.quemSomos.teamRoles.archaeologistM, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp', pos: 'center 15%' },
+                  { name: t.quemSomos.teamRoles.archaeologistM, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251052_bf77fd54.webp', pos: 'center 10%' },
+                  { name: t.quemSomos.teamRoles.researcher, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251118_aec2ebef.webp', pos: 'center 10%' },
                 ].map((member, idx) => (
                   <div key={idx} className="flex flex-col items-center group cursor-pointer">
-                    <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 120, height: 120, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)', position: 'relative' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.3), 0 0 30px rgba(238,117,1,0.6), 0 20px 40px rgba(0,0,0,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)'; }}>
-                      <img src={member.img} alt={member.name.split('\n')[0]} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                    <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 140, height: 140, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)', position: 'relative' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.3), 0 0 30px rgba(238,117,1,0.6), 0 20px 40px rgba(0,0,0,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)'; }}>
+                      <img src={member.img} alt={member.name.split('\n')[0]} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" style={{ objectPosition: member.pos, imageRendering: 'auto' }} />
                     </div>
-                    <span className="text-white font-semibold text-[10px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg transition-all duration-300 group-hover:text-yellow-100" style={{ whiteSpace: 'pre-line' }}>{member.name}</span>
+                    <span className="text-white font-semibold text-[10px] mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg transition-all duration-300 group-hover:text-yellow-100" style={{ whiteSpace: 'pre-line' }}>{member.name}</span>
                   </div>
                 ))}  
               </div>
@@ -518,15 +518,15 @@ export default function QuemSomosEcossistema() {
               {/* ROW 4 - 3 membros */}
               <div className="relative z-10 flex justify-center gap-8 lg:gap-12 flex-wrap">
                 {[
-                  { name: t.quemSomos.teamRoles.geoAnalyst, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_4ce89876.webp' },
-                  { name: t.quemSomos.teamRoles.techArchaeologyM, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251103_53c6f31a.webp' },
-                  { name: t.quemSomos.teamRoles.techArchaeologyF, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251108_e4d33d44.webp' },
+                  { name: t.quemSomos.teamRoles.geoAnalyst, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_4ce89876.webp', pos: 'center 10%' },
+                  { name: t.quemSomos.teamRoles.techArchaeologyM, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251103_53c6f31a.webp', pos: 'center 10%' },
+                  { name: t.quemSomos.teamRoles.techArchaeologyF, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251108_e4d33d44.webp', pos: 'center 10%' },
                 ].map((member, idx) => (
                   <div key={idx} className="flex flex-col items-center group cursor-pointer">
-                    <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 120, height: 120, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)', position: 'relative' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.3), 0 0 30px rgba(238,117,1,0.6), 0 20px 40px rgba(0,0,0,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)'; }}>
-                      <img src={member.img} alt={member.name.split('\n')[0]} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                    <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110" style={{ width: 140, height: 140, border: '4px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)', position: 'relative' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.3), 0 0 30px rgba(238,117,1,0.6), 0 20px 40px rgba(0,0,0,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)'; }}>
+                      <img src={member.img} alt={member.name.split('\n')[0]} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" style={{ objectPosition: member.pos, imageRendering: 'auto' }} />
                     </div>
-                    <span className="text-white font-semibold text-[10px] mt-2 text-center leading-tight max-w-[110px] drop-shadow-lg transition-all duration-300 group-hover:text-yellow-100" style={{ whiteSpace: 'pre-line' }}>{member.name}</span>
+                    <span className="text-white font-semibold text-[10px] mt-2 text-center leading-tight max-w-[130px] drop-shadow-lg transition-all duration-300 group-hover:text-yellow-100" style={{ whiteSpace: 'pre-line' }}>{member.name}</span>
                   </div>
                 ))}
               </div>
