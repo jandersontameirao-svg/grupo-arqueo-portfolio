@@ -423,6 +423,15 @@ export const es: Translations = {
     duration: "Duración",
     client: "Cliente",
     results: "Resultados",
+    sectors: {
+      todos: "Todos",
+      ferrovia: "Ferrocarril",
+      linhaTransmissao: "Línea de Transmisión",
+      pchHidreletrica: "PCH / Hidroeléctrica",
+      eolicaOffshore: "Eólica Offshore",
+      subestacao: "Subestación",
+      urbanizacaoLoteamento: "Urbanización / Lote",
+    },
   },
 
   // ═══ PARCEIROS ═══

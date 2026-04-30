@@ -162,6 +162,21 @@ const cases = [
 
 const sectors = Array.from(new Set(cases.map(c => c.sector)));
 
+/* Mapeamento de nomes de setores para chaves de tradução */
+const sectorTranslationMap: Record<string, string> = {
+  'Ferrovia': 'ferrovia',
+  'Linha de Transmissão': 'linhaTransmissao',
+  'PCH / Hidrelétrica': 'pchHidreletrica',
+  'Eólica Offshore': 'eolicaOffshore',
+  'Subestação': 'subestacao',
+  'Urbanização / Loteamento': 'urbanizacaoLoteamento',
+};
+
+function getSectorLabel(sectorName: string, t: any): string {
+  const key = sectorTranslationMap[sectorName as keyof typeof sectorTranslationMap];
+  return key ? t.cases.sectors[key] : sectorName;
+}
+
 /* ────────────────────────────────────────────────────────────────── */
 /*  CARD FEATURED — Case destaque principal (full width)             */
 /* ────────────────────────────────────────────────────────────────── */
@@ -195,7 +210,7 @@ function FeaturedCard({ c, index, t }: { c: typeof cases[0]; index: number; t: a
               className="px-3 py-1.5 text-[10px] font-semibold tracking-[0.15em] uppercase rounded"
               style={{ backgroundColor: '#861720', color: '#FFFFFF' }}
             >
-              {c.sector}
+              {getSectorLabel(c.sector, t)}
             </span>
           </div>
         </div>
@@ -368,7 +383,7 @@ function StandardCard({ c, index, t }: { c: typeof cases[0]; index: number; t: a
             className="px-2 py-1 text-[9px] font-semibold tracking-[0.12em] uppercase rounded"
             style={{ backgroundColor: '#861720', color: '#FFFFFF' }}
           >
-            {c.sector}
+            {getSectorLabel(c.sector, t)}
           </span>
         </div>
       </div>
@@ -522,7 +537,7 @@ export default function Cases() {
                       transform: isActive ? 'translateY(-2px)' : 'translateY(0)',
                     }}
                   >
-                    {sector}
+                    {getSectorLabel(sector, t)}
                   </button>
                 );
               })}

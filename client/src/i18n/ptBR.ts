@@ -422,6 +422,15 @@ export const ptBR = {
     duration: "Duração",
     client: "Cliente",
     results: "Resultados",
+    sectors: {
+      todos: "Todos",
+      ferrovia: "Ferrovia",
+      linhaTransmissao: "Linha de Transmissão",
+      pchHidreletrica: "PCH / Hidrelétrica",
+      eolicaOffshore: "Eólica Offshore",
+      subestacao: "Subestação",
+      urbanizacaoLoteamento: "Urbanização / Loteamento",
+    },
   },
 
   // ═══ PARCEIROS ═══

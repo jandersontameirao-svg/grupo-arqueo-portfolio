@@ -423,6 +423,15 @@ export const zh: Translations = {
     duration: "工期",
     client: "客户",
     results: "成果",
+    sectors: {
+      todos: "全部",
+      ferrovia: "铁路",
+      linhaTransmissao: "输电线路",
+      pchHidreletrica: "小水电 / 水电",
+      eolicaOffshore: "海上风电",
+      subestacao: "变电站",
+      urbanizacaoLoteamento: "城市化 / 地块",
+    },
   },
 
   // ═══ PARCEIROS ═══
