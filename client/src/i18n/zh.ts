@@ -423,6 +423,8 @@ export const zh: Translations = {
     duration: "工期",
     client: "客户",
     results: "成果",
+    thesis: "中心计划",
+    competencies: "演示的能力",
     sectors: {
       todos: "全部",
       ferrovia: "铁路",

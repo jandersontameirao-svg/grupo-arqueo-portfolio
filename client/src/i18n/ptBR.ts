@@ -422,6 +422,8 @@ export const ptBR = {
     duration: "Duração",
     client: "Cliente",
     results: "Resultados",
+    thesis: "Tese Central",
+    competencies: "Competências Demonstradas",
     sectors: {
       todos: "Todos",
       ferrovia: "Ferrovia",

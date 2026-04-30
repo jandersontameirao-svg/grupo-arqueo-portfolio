@@ -423,6 +423,8 @@ export const es: Translations = {
     duration: "Duración",
     client: "Cliente",
     results: "Resultados",
+    thesis: "Tesis Central",
+    competencies: "Competencias Demostradas",
     sectors: {
       todos: "Todos",
       ferrovia: "Ferrocarril",

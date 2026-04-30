@@ -18,6 +18,21 @@ interface CaseData {
   imageUrl?: string;
 }
 
+/* Mapeamento de nomes de setores para chaves de tradução */
+const sectorTranslationMap: Record<string, string> = {
+  'Ferrovia': 'ferrovia',
+  'Linha de Transmissão': 'linhaTransmissao',
+  'PCH / Hidrelétrica': 'pchHidreletrica',
+  'Eólica Offshore': 'eolicaOffshore',
+  'Subestação': 'subestacao',
+  'Urbanização / Loteamento': 'urbanizacaoLoteamento',
+};
+
+function getSectorLabel(sectorName: string, t: any): string {
+  const key = sectorTranslationMap[sectorName as keyof typeof sectorTranslationMap];
+  return key ? t.cases.sectors[key] : sectorName;
+}
+
 const casesData: CaseData[] = [
   {
     title: 'Ferrovia Rumo',
@@ -225,7 +240,7 @@ export default function CaseDetail() {
                 className="inline-block px-4 py-2 rounded-full font-semibold text-white"
                 style={{ fontSize: 'var(--text-caption)', backgroundColor: '#861720' }}
               >
-                {caseItem.sector}
+                {getSectorLabel(caseItem.sector, t)}
               </span>
             </div>
 
@@ -273,7 +288,7 @@ export default function CaseDetail() {
             {/* Tese do case */}
             <div className="mb-8">
               <h2 className="font-semibold mb-3" style={{ color: '#861720', fontSize: 'var(--text-small)' }}>
-                Tese Central
+                {t.cases.thesis}
               </h2>
               <p className="leading-relaxed text-gray-700" style={{ fontSize: 'var(--text-subtitle)' }}>{caseItem.thesis}</p>
             </div>
@@ -297,7 +312,7 @@ export default function CaseDetail() {
             {/* Competências demonstradas */}
             <div>
               <h2 className="font-semibold mb-4" style={{ color: '#861720', fontSize: 'var(--text-small)' }}>
-                {t.cases.scope}
+                {t.cases.competencies}
               </h2>
               <div className="flex flex-wrap gap-3">
                 {caseItem.competencies.map((comp) => (
@@ -318,16 +333,16 @@ export default function CaseDetail() {
         <section className="border-t border-gray-200" style={{ padding: 'var(--space-section) var(--container-padding)' }}>
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="font-bold mb-4" style={{ color: '#1A1A1A', fontSize: 'var(--text-subtitle)' }}>
-              Interessado em uma solução similar?
+              {t.contato.title}
             </h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Conheça como o Grupo Arqueo pode aplicar essa expertise ao seu projeto.
+              {t.contato.description}
             </p>
             <button
               className="px-8 py-3 rounded-lg text-white font-semibold transition-all hover:shadow-lg"
               style={{ backgroundColor: '#861720' }}
             >
-              Solicitar Proposta
+              {t.contato.badge}
             </button>
           </div>
         </section>
