@@ -44,9 +44,9 @@ const cases = [
     year: "2023",
     client: "Rumo Logística",
     image: CASE_IMAGES.rumo,
-    desc: "Reorganização institucional com IPHAN-MT e excelência operacional em prospecção arqueológica. Realização de mais de 8.000 poços-teste com rastreabilidade completa via SIGEPA, demonstrando escala operacional e metodologia diferenciada.",
+    desc: "Reorganização institucional com IPHAN-MT e excelência operacional em prospectão arqueológica. Realização de mais de 8.000 poços-teste com rastreabilidade completa via SIGEPA, demonstrando escala operacional e metodologia diferenciada.",
     services: ["Articulação Institucional", "Escala Operacional", "SIGEPA", "Rastreabilidade de Dados"],
-    tier: "featured" as const,
+    tier: "standard" as const,
   },
   {
     title: "LT 500kV Terminal Rio-Lagos (Neoenergia)",
@@ -55,9 +55,9 @@ const cases = [
     year: "2023",
     client: "Neoenergia",
     image: CASE_IMAGES.lt,
-    desc: "Reestruturação da interlocução com CGLic e avaliação contenciosa qualificada sobre TAC. Reestabelecimento de confiança institucional com previsibilidade técnica.",
+    desc: "Reestruturação da interlocução com CGLic e avaliação contenciosa qualificada sobre TAC. Reestabelecimento de confiánça institucional com previsibilidade técnica.",
     services: ["Articulação Institucional", "Contencioso Técnico", "CGLic", "Previsibilidade Técnica"],
-    tier: "medium" as const,
+    tier: "standard" as const,
   },
   {
     title: "PCH Canoas (Santa Catarina)",
@@ -123,7 +123,7 @@ const cases = [
     image: CASE_IMAGES.eolico,
     desc: "Análise metodológica arrojada na triagem e escopo com descrição completa de estruturas primárias, possibilitando classificação arqueológica Nível I e antecipação de prazos para LP e LI.",
     services: ["Triagem e Escopo", "Otimização do Licenciamento", "Ganho de Prazo", "Classificação Nível I"],
-    tier: "secondary" as const,
+    tier: "standard" as const,
   },
   {
     title: "Loteamento Residencial Bela Vista (São Paulo)",
@@ -425,8 +425,6 @@ export default function Cases() {
   const [activeFilter, setActiveFilter] = useState(sectors[0]);
   const filtered = cases.filter(c => c.sector === activeFilter);
 
-  const featured = filtered.filter(c => c.tier === "featured");
-  const medium = filtered.filter(c => c.tier === "medium");
   const standard = filtered.filter(c => c.tier === "standard");
 
   return (
@@ -527,29 +525,11 @@ export default function Cases() {
             </div>
           </motion.div>
 
-          {/* ── CASES DESTAQUE ── */}
-          {featured.length > 0 && (
-            <div className="mb-8 lg:mb-10">
-              {featured.map((c, i) => (
-                <FeaturedCard key={c.title} c={c} index={i} t={t} />
-              ))}
-            </div>
-          )}
-
-          {/* ── CASES MÉDIOS ── */}
-          {medium.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8 lg:mb-10">
-              {medium.map((c, i) => (
-                <MediumCard key={c.title} c={c} index={i + featured.length} t={t} />
-              ))}
-            </div>
-          )}
-
           {/* ── CASES PADRÃO ── */}
           {standard.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
               {standard.map((c, i) => (
-                <StandardCard key={c.title} c={c} index={i + featured.length + medium.length} t={t} />
+                <StandardCard key={c.title} c={c} index={i} t={t} />
               ))}
             </div>
           )}
