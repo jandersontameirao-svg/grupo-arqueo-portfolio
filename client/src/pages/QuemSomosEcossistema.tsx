@@ -464,7 +464,7 @@ export default function QuemSomosEcossistema() {
               {/* ROW 1 - 5 membros */}
               <div className="relative z-10 flex justify-center gap-8 lg:gap-12 mb-8">
                 {[
-                  { name: t.quemSomos.teamRoles.ceo, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo78_d2742b35.webp', pos: 'center 20%', scale: 1.15 },
+                  { name: t.quemSomos.teamRoles.ceo, img: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/YVzvTJspnjgDgBXf.webp', pos: 'center 18%', scale: 1.12 },
                   { name: t.quemSomos.teamRoles.adminDirector, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp', pos: 'center 12%', scale: 1.1 },
                   { name: t.quemSomos.teamRoles.treasurer, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp', pos: 'center 8%', scale: 1.1 },
                   { name: t.quemSomos.teamRoles.strategyDirector, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp', pos: 'center 18%', scale: 1.15 },
