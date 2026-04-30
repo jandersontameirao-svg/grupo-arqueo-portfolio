@@ -466,7 +466,7 @@ export default function QuemSomosEcossistema() {
                 {[
                   { name: t.quemSomos.teamRoles.ceo, img: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/YVzvTJspnjgDgBXf.webp', pos: 'center 22%', scale: 1.45 },
                   { name: t.quemSomos.teamRoles.adminDirector, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/fernandamelhorada_f9facca9.webp', pos: 'center 20%', scale: 1.45 },
-                  { name: t.quemSomos.teamRoles.treasurer, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp', pos: 'center 18%', scale: 1.45 },
+                  { name: t.quemSomos.teamRoles.treasurer, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Laviniaportfolio2_a1d02cd0.webp', pos: 'center 30%', scale: 1.25 },
                   { name: t.quemSomos.teamRoles.strategyDirector, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Carlucioportfolio_797c4f70.webp', pos: 'center 18%', scale: 1.15 },
                   { name: t.quemSomos.teamRoles.cso, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Gerrson_0a84a91a.webp', pos: 'center 12%', scale: 1.1 },
                 ].map((member, idx) => (
