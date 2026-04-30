@@ -189,6 +189,18 @@ export const zh: Translations = {
       techArchaeologyM: "考古技术员(男)",
       techArchaeologyF: "考古技术员(女)",
     },
+    galeria: {
+      title: "机构图库",
+      subtitle: "展示我们发展历程、团队、项目和机构形象的影像记录。",
+      categories: {
+        equipe: "团队",
+        projetos: "项目",
+        eventos: "活动",
+        campo: "现场",
+        institucional: "机构",
+        bastidores: "幕后花絮",
+      },
+    },
   },
 
   // ═══ MISSÃO E VALORES ═══

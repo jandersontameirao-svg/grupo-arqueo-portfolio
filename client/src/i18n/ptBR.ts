@@ -188,6 +188,18 @@ export const ptBR = {
       techArchaeologyM: "Técnico em Arqueologia",
       techArchaeologyF: "Técnico em arqueologia",
     },
+    galeria: {
+      title: "Galeria Institucional",
+      subtitle: "Registros que representam nossa trajetória, equipe, projetos e presença institucional.",
+      categories: {
+        equipe: "Equipe",
+        projetos: "Projetos",
+        eventos: "Eventos",
+        campo: "Campo",
+        institucional: "Institucional",
+        bastidores: "Bastidores",
+      },
+    },
   },
 
   // ═══ MISSÃO E VALORES ═══

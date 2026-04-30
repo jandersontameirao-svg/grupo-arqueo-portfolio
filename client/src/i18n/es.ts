@@ -189,6 +189,18 @@ export const es: Translations = {
       techArchaeologyM: "Técnico en Arqueología",
       techArchaeologyF: "Técnica en Arqueología",
     },
+    galeria: {
+      title: "Galería Institucional",
+      subtitle: "Registros que representan nuestra trayectoria, equipo, proyectos y presencia institucional.",
+      categories: {
+        equipe: "Equipo",
+        projetos: "Proyectos",
+        eventos: "Eventos",
+        campo: "Campo",
+        institucional: "Institucional",
+        bastidores: "Detrás de Cámaras",
+      },
+    },
   },
 
   // ═══ MISSÃO E VALORES ═══

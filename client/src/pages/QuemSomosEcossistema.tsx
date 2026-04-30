@@ -2,6 +2,7 @@ import { Building2, Globe, BookOpen, Lightbulb, ChevronLeft, ChevronRight, X } f
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import PortfolioLayout from "@/components/PortfolioLayout";
+import GaleryInstitucional from "@/components/GaleryInstitucional";
 import { ASSETS } from "@/lib/assets";
 import { useI18n } from "@/i18n";
 
@@ -551,6 +552,9 @@ export default function QuemSomosEcossistema() {
           </div>
         </section>
       </div>
+
+      {/* SEÇÃO: GALERIA INSTITUCIONAL */}
+      <GaleryInstitucional />
 
       {/* MODAL - Formulário de Proposta */}
       {showProposalForm && (
