@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
@@ -37,10 +37,52 @@ export default function GaleryInstitucional() {
   const { t } = useI18n();
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
+  const [panPosition, setPanPosition] = useState({ x: 0, y: 0 });
+  const isDragging = useRef(false);
+  const lastPos = useRef({ x: 0, y: 0 });
 
   const handleImageClick = (image: GalleryImage) => {
     setSelectedImage(image);
     setIsOpen(true);
+    setZoomLevel(1);
+    setPanPosition({ x: 0, y: 0 });
+  };
+
+  const handleZoomToggle = () => {
+    if (zoomLevel === 1) {
+      setZoomLevel(2.5);
+    } else {
+      setZoomLevel(1);
+      setPanPosition({ x: 0, y: 0 });
+    }
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    const newZoom = Math.min(4, Math.max(1, zoomLevel - e.deltaY * 0.002));
+    setZoomLevel(newZoom);
+    if (newZoom === 1) setPanPosition({ x: 0, y: 0 });
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (zoomLevel > 1) {
+      isDragging.current = true;
+      lastPos.current = { x: e.clientX, y: e.clientY };
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging.current && zoomLevel > 1) {
+      const dx = e.clientX - lastPos.current.x;
+      const dy = e.clientY - lastPos.current.y;
+      setPanPosition((prev) => ({ x: prev.x + dx, y: prev.y + dy }));
+      lastPos.current = { x: e.clientX, y: e.clientY };
+    }
+  };
+
+  const handleMouseUp = () => {
+    isDragging.current = false;
   };
 
   return (
@@ -151,15 +193,29 @@ export default function GaleryInstitucional() {
           showCloseButton={false}
         >
           <DialogTitle className="sr-only">Imagem ampliada da galeria</DialogTitle>
-          <div className="relative w-full h-auto">
-            {/* Imagem ampliada */}
+          <div className="relative w-full h-auto overflow-hidden">
+            {/* Imagem ampliada com zoom */}
             {selectedImage && (
-              <div className="relative">
+              <div
+                className="relative select-none"
+                onWheel={handleWheel}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseUp}
+                style={{ cursor: zoomLevel > 1 ? "grab" : "zoom-in" }}
+              >
                 <img
                   src={selectedImage.src}
                   alt={selectedImage.alt}
                   className="w-full h-auto object-contain"
-                  style={{ maxHeight: "80vh" }}
+                  onClick={handleZoomToggle}
+                  style={{
+                    maxHeight: "80vh",
+                    transform: `scale(${zoomLevel}) translate(${panPosition.x / zoomLevel}px, ${panPosition.y / zoomLevel}px)`,
+                    transition: isDragging.current ? "none" : "transform 0.3s ease",
+                  }}
+                  draggable={false}
                 />
 
                 {/* Botão fechar */}
