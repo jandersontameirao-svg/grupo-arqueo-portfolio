@@ -3,7 +3,7 @@ import PortfolioLayout from "@/components/PortfolioLayout";
 import { Quote, ArrowRight } from "lucide-react";
 import { useI18n } from "@/i18n";
 
-const CEO_PHOTO = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Arqueo80_2ec49fb7.webp";
+const CEO_PHOTO = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/XgRpbvXNxEaMuCRz.webp";
 
 export default function CeoMessage() {
   const { t } = useI18n();
