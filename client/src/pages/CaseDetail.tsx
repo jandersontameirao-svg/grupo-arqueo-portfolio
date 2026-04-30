@@ -28,9 +28,28 @@ const sectorTranslationMap: Record<string, string> = {
   'Urbanização / Loteamento': 'urbanizacaoLoteamento',
 };
 
+/* Mapeamento de títulos de cases para chaves de tradução */
+const caseTranslationMap: Record<string, string> = {
+  'Ferrovia Rumo': 'ferroviaRumo',
+  'LT 500kV Terminal Rio-Lagos (Neoenergia)': 'lt500kv',
+  'PCH Canoas': 'pchCanoas',
+  'Complexo Eólico Caucaia (Neoenergia)': 'eolicaOffshore',
+  'LT 230kV Abdon Batista': 'lt230kv',
+  'Loteamento Maria Isabel (Maranhao)': 'loteamentoMariaIsabel',
+  'SE Candiota 2': 'seCandiota',
+  'LT 800kV Xingu - Terminal Rio (Neoenergia)': 'lt800kv',
+  'Loteamento Residencial Bela Vista (Sao Paulo)': 'loteamentoBelaVista',
+  'PCH Cabuí': 'pchCabui',
+  'Loteamento Fase 01 e 02 - Fazenda Paranoazinho (Distrito Federal)': 'loteamentoParanoazinho',
+};
+
 function getSectorLabel(sectorName: string, t: any): string {
   const key = sectorTranslationMap[sectorName as keyof typeof sectorTranslationMap];
   return key ? t.cases.sectors[key] : sectorName;
+}
+
+function getCaseTranslationKey(caseTitle: string): string {
+  return caseTranslationMap[caseTitle as keyof typeof caseTranslationMap] || '';
 }
 
 const casesData: CaseData[] = [
@@ -290,7 +309,13 @@ export default function CaseDetail() {
               <h2 className="font-semibold mb-3" style={{ color: '#861720', fontSize: 'var(--text-small)' }}>
                 {t.cases.thesis}
               </h2>
-              <p className="leading-relaxed text-gray-700" style={{ fontSize: 'var(--text-subtitle)' }}>{caseItem.thesis}</p>
+              <p className="leading-relaxed text-gray-700" style={{ fontSize: 'var(--text-subtitle)' }}>
+                {(() => {
+                  const caseKey = getCaseTranslationKey(caseItem.title);
+                  // @ts-ignore
+                  return caseKey && (t.cases.caseDetails as any)?.[caseKey as any]?.thesis ? t.cases.caseDetails[caseKey].thesis : caseItem.thesis;
+                })()}
+              </p>
             </div>
 
             {/* Resumo expandido */}
@@ -298,7 +323,13 @@ export default function CaseDetail() {
               <h2 className="font-semibold mb-3" style={{ color: '#861720', fontSize: 'var(--text-small)' }}>
                 {t.cases.projectDetails}
               </h2>
-              <p className="text-gray-700 leading-relaxed">{caseItem.fullSummary}</p>
+              <p className="text-gray-700 leading-relaxed">
+                {(() => {
+                  const caseKey = getCaseTranslationKey(caseItem.title);
+                  // @ts-ignore
+                  return caseKey && (t.cases.caseDetails as any)?.[caseKey as any]?.fullSummary ? t.cases.caseDetails[caseKey].fullSummary : caseItem.fullSummary;
+                })()}
+              </p>
             </div>
 
             {/* Resultado */}
@@ -306,7 +337,13 @@ export default function CaseDetail() {
               <h2 className="font-semibold mb-3" style={{ color: '#EE7501', fontSize: 'var(--text-small)' }}>
                 {t.cases.results}
               </h2>
-              <p className="text-gray-700 leading-relaxed">{caseItem.result}</p>
+              <p className="text-gray-700 leading-relaxed">
+                {(() => {
+                  const caseKey = getCaseTranslationKey(caseItem.title);
+                  // @ts-ignore
+                  return caseKey && (t.cases.caseDetails as any)?.[caseKey as any]?.result ? t.cases.caseDetails[caseKey].result : caseItem.result;
+                })()}
+              </p>
             </div>
 
             {/* Competências demonstradas */}

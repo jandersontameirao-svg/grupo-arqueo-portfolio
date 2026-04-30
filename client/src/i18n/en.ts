@@ -434,6 +434,63 @@ export const en: Translations = {
       subestacao: "Substation",
       urbanizacaoLoteamento: "Urbanization / Subdivision",
     },
+    caseDetails: {
+      ferroviaRumo: {
+        thesis: "Institutional reorganization with IPHAN-MT and operational excellence in archaeological prospection with data traceability via SIGEPA.",
+        fullSummary: "Entry into the process and establishment of a more assertive institutional communication routine with IPHAN-MT to restore confidence and technical predictability. Demonstrated excellence in archaeological prospection with over 8,000 test pits conducted in XX days. Concrete evidence of effective use of SIGEPA as a differential technical and technological resource for data collection, systematization, and field traceability, ensuring transparency, methodology, and reliability of research information.",
+        result: "Restoration of institutional confidence, proven operational scale, and complete data traceability via proprietary platform.",
+      },
+      lt500kv: {
+        thesis: "Restructuring of interaction with CGLic and qualified contentious evaluation on TAC.",
+        fullSummary: "Entry into the process and establishment of a more assertive institutional communication routine with CGLic to restore confidence and technical predictability. Qualified technical contentious evaluation regarding the possibility of non-application of TAC by IPHAN.",
+        result: "Restoration of institutional confidence and qualified contentious analysis on TAC.",
+      },
+      pchCanoas: {
+        thesis: "Conceptual precision and technical security in reading historical structures classified as archaeological site.",
+        fullSummary: "Assertive conceptual and technical work regarding the selection of historical structures, especially walls, classified as archaeological sites.",
+        result: "Precise and secure archaeological classification of historical structures.",
+      },
+      eolicaOffshore: {
+        thesis: "Rearticulation with CGLic and bold methodological construction for archaeological research in aquatic environments.",
+        fullSummary: "Entry into the process and establishment of a more assertive institutional communication routine with CGLic to restore confidence and technical predictability. Bold methodological analysis for developing archaeological research in aquatic environments compatible with the environmental licensing process phase.",
+        result: "Innovative methodology for aquatic environment research with technical predictability.",
+      },
+      lt230kv: {
+        thesis: "In situ management of archaeological sites in linear enterprise and personalized heritage education.",
+        fullSummary: "In situ management of 09 archaeological sites in the ADA of a transmission line with 90 km extension. Personalized heritage education with the development of the Archaeological Album, alongside the domestic collection of archaeological assets from Professor Vera Lúcia.",
+        result: "Qualified management of multiple sites and heritage education with community engagement.",
+      },
+      loteamentoMariaIsabel: {
+        thesis: "Heritage education connected to real field experience.",
+        fullSummary: "Personalized heritage education with student participation in a guided visit during active archaeological salvage activities.",
+        result: "Experiential heritage education with social and community engagement.",
+      },
+      seCandiota: {
+        thesis: "Methodological optimization of licensing with technical use of previous studies.",
+        fullSummary: "Bold methodological analysis regarding the optimization of the environmental licensing process, where it was possible to advance directly to the management phase, eliminating the need for preventive studies based on the use of previous technical studies.",
+        result: "Process optimization with efficiency gains and reduction of unnecessary phases.",
+      },
+      lt800kv: {
+        thesis: "Intelligence in screening and scope with concrete timeline gains for LP and LI.",
+        fullSummary: "Bold methodological analysis regarding the optimization of the environmental licensing process in the screening and scope phase, with proper description and presentation of all primary structures, which enabled archaeological classification as Level I for electrode lines. The case also highlights the advancement in timeline for obtaining LP and LI.",
+        result: "Concrete timeline gains in LP and LI through Level I archaeological classification.",
+      },
+      loteamentoBelaVista: {
+        thesis: "Restoration of institutional confidence with IPHAN-SP and contentious evaluation on TAC.",
+        fullSummary: "Entry into the process and establishment of a more assertive institutional communication routine with IPHAN-SP to restore confidence and technical predictability. Qualified technical contentious evaluation regarding the possibility of non-application of TAC by IPHAN.",
+        result: "Restoration of institutional confidence and qualified contentious analysis.",
+      },
+      pchCabui: {
+        thesis: "Articulation with CGLic, methodology in historical areas, and qualified contentious evaluation.",
+        fullSummary: "Entry into the process and establishment of a more assertive institutional communication routine with CGLic to restore confidence and technical predictability. Bold methodological analysis for developing archaeological research in historical areas compatible with the environmental licensing process phase. Qualified technical contentious evaluation regarding the possibility of non-application of TAC by IPHAN.",
+        result: "Innovative methodology in historical areas with qualified contentious evaluation.",
+      },
+      loteamentoParanoazinho: {
+        thesis: "Technical rationality and qualified contention to eliminate the need for management phase.",
+        fullSummary: "Entry into the process and establishment of a more assertive institutional communication routine with IPHAN-DF to restore confidence and technical predictability. Qualified technical contentious evaluation regarding the non-necessity of executing the management phase, especially archaeological monitoring, as previous studies were sufficient and due to the absence of aesthetic and architectural exceptionality of buildings planned in the ADA for the historical context of the Federal District.",
+        result: "Technical rationality that eliminated the need for management phase.",
+      },
+    },
   },
 
   // ═══ PARCEIROS ═══

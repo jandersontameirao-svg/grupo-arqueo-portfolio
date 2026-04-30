@@ -432,7 +432,64 @@ export const zh: Translations = {
       pchHidreletrica: "小水电 / 水电",
       eolicaOffshore: "海上风电",
       subestacao: "变电站",
-      urbanizacaoLoteamento: "城市化 / 地块",
+      urbanizacaoLoteamento: "城市化 / 住宅小区",
+    },
+    caseDetails: {
+      ferroviaRumo: {
+        thesis: "与IPHAN-MT的机构重组以及通过SIGEPA进行数据可追溯性的考古勘探卓越运营。",
+        fullSummary: "进入流程并与IPHAN-MT建立更有效的机构沟通例程。在考古勘探中展示了卓越的技术能力，并完成了超过8,000个勘探井。通过SIGEPA平台的有效使用作为技术和技术资源的实质证据。",
+        result: "机构信任恢复、已验证的运营规模且数据可追溯性完整。",
+      },
+      lt500kv: {
+        thesis: "与CGLic的机构互动重组以及关于TAC的合格争议评估。",
+        fullSummary: "进入流程并与CGLic建立更有效的机构沟通例程。关于IPHAN是否不需要应用TAC的合格技术争议评估。",
+        result: "机构信任恢复以及关于TAC的合格争议分析。",
+      },
+      pchCanoas: {
+        thesis: "对被分类为考古学遗址的历史结构的概念精确性以及技术安全性。",
+        fullSummary: "对历史结构选择的有效概念与技术工作。",
+        result: "历史结构的精确且安全的考古学分类。",
+      },
+      eolicaOffshore: {
+        thesis: "与CGLic的重新协商以及水上考古学研究的大胆方法论构建。",
+        fullSummary: "进入流程并与CGLic建立更有效的机构沟通例程。大胆的方法论分析用于开发与环境许可阶段兼容的水上考古学研究。",
+        result: "水上考古学研究的创新方法论以及技术预测性。",
+      },
+      lt230kv: {
+        thesis: "线性项目中考古学遗址的原位管理以及个性化遗产教育。",
+        fullSummary: "对长度90公里的输电线路影响区域内09个考古学遗址的原位管理。与Vera Lúcia教授的家庭考古收藏一起开发考古相册。",
+        result: "多个遗址的合格管理以及社区参与的遗产教育。",
+      },
+      loteamentoMariaIsabel: {
+        thesis: "与真实实地体验相联系的遗产教育。",
+        fullSummary: "学生参与考古学救援活动期间的学生实地辅导。",
+        result: "有事实的遗产教育以及社区参与。",
+      },
+      seCandiota: {
+        thesis: "许可流程优化以及先前研究的技术应用。",
+        fullSummary: "大胆的方法论分析用于优化环境许可流程。可以直接进入管理阶段，不需要预防性研究。",
+        result: "流程优化以及效率提高。",
+      },
+      lt800kv: {
+        thesis: "筛选和范围的智慧以获得LP和LI的具体时间收益。",
+        fullSummary: "大胆的方法论分析用于优化环境许可流程的筛选和范围阶段。对所有主要结构的适当描述与演示使得能够将电极线路分类为I级。",
+        result: "通过I级考古学分类获得LP和LI的具体时间收益。",
+      },
+      loteamentoBelaVista: {
+        thesis: "与IPHAN-SP的机构信任恢复以及关于TAC的争议评估。",
+        fullSummary: "进入流程并与IPHAN-SP建立更有效的机构沟通例程。关于IPHAN是否不需要应用TAC的合格技术争议评估。",
+        result: "机构信任恢复以及合格争议分析。",
+      },
+      pchCabui: {
+        thesis: "与CGLic的协调、历史地区的方法论以及合格争议评估。",
+        fullSummary: "进入流程并与CGLic建立更有效的机构沟通例程。大胆的方法论分析用于开发与环境许可阶段兼容的历史地区考古学研究。",
+        result: "历史地区的创新方法论以及合格争议评估。",
+      },
+      loteamentoParanoazinho: {
+        thesis: "技术理性与合格法律以消除管理阶段的必要性。",
+        fullSummary: "进入流程并与IPHAN-DF建立更有效的机构沟通例程。关于不需要执行管理阶段的合格技术争议评估。",
+        result: "技术理性消除了管理阶段的必要性。",
+      },
     },
   },
 

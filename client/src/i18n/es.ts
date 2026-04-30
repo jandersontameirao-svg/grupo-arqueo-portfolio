@@ -432,7 +432,64 @@ export const es: Translations = {
       pchHidreletrica: "PCH / Hidroeléctrica",
       eolicaOffshore: "Eólica Offshore",
       subestacao: "Subestación",
-      urbanizacaoLoteamento: "Urbanización / Lote",
+      urbanizacaoLoteamento: "Urbanización / Subdivisión",
+    },
+    caseDetails: {
+      ferroviaRumo: {
+        thesis: "Reorganización institucional con IPHAN-MT y excelencia operacional en prospección arqueológica con trazabilidad de datos vía SIGEPA.",
+        fullSummary: "Entrada en el proceso y establecimiento de una rutina de comunicación institucional más asertiva con IPHAN-MT para restaurar confianza y previsibilidad técnica. Excelencia demostrada en prospección arqueológica con más de 8.000 pozos de prueba realizados en XX días. Evidencia concreta del uso efectivo de SIGEPA como recurso técnico y tecnológico diferencial para recopilación de datos, sistematización y trazabilidad de campo.",
+        result: "Restauración de confianza institucional, escala operacional comprobada y trazabilidad completa de datos vía plataforma propietaria.",
+      },
+      lt500kv: {
+        thesis: "Reestructuración de la interacción con CGLic y evaluación contenciosa calificada sobre TAC.",
+        fullSummary: "Entrada en el proceso y establecimiento de una rutina de comunicación institucional más asertiva con CGLic para restaurar confianza y previsibilidad técnica. Evaluación técnica contenciosa calificada respecto a la posibilidad de no aplicación de TAC por parte de IPHAN.",
+        result: "Restauración de confianza institucional y análisis contencioso calificado sobre TAC.",
+      },
+      pchCanoas: {
+        thesis: "Precisión conceptual y seguridad técnica en la lectura de estructuras históricas clasificadas como sitio arqueológico.",
+        fullSummary: "Trabajo conceptual y técnico asertivo respecto a la selección de estructuras históricas, especialmente muros, clasificadas como sitios arqueológicos.",
+        result: "Clasificación arqueológica precisa y segura de estructuras históricas.",
+      },
+      eolicaOffshore: {
+        thesis: "Rearticulación con CGLic y construcción metodológica audaz para investigación arqueológica en ambientes acuáticos.",
+        fullSummary: "Entrada en el proceso y establecimiento de una rutina de comunicación institucional más asertiva con CGLic para restaurar confianza y previsibilidad técnica. Análisis metodológico audaz para desarrollar investigación arqueológica en ambientes acuáticos compatible con la fase del proceso de licenciamiento ambiental.",
+        result: "Metodología innovadora para investigación en ambientes acuáticos con previsibilidad técnica.",
+      },
+      lt230kv: {
+        thesis: "Gestión in situ de sitios arqueológicos en empresa lineal y educación patrimonial personalizada.",
+        fullSummary: "Gestión in situ de 09 sitios arqueológicos en el ADA de una línea de transmisión con 90 km de extensión. Educación patrimonial personalizada con el desarrollo del Álbum Arqueológico, junto a la colección doméstica de bienes arqueológicos de la Profesora Vera Lúcia.",
+        result: "Gestión calificada de múltiples sitios y educación patrimonial con participación comunitaria.",
+      },
+      loteamentoMariaIsabel: {
+        thesis: "Educación patrimonial conectada a la experiencia real de campo.",
+        fullSummary: "Educación patrimonial personalizada con participación de estudiantes en una visita guiada durante actividades activas de salvamento arqueológico.",
+        result: "Educación patrimonial experiencial con participación social y comunitaria.",
+      },
+      seCandiota: {
+        thesis: "Optimización metodológica del licenciamiento con uso técnico de estudios previos.",
+        fullSummary: "Análisis metodológico audaz respecto a la optimización del proceso de licenciamiento ambiental, donde fue posible avanzar directamente a la fase de gestión, eliminando la necesidad de estudios preventivos basándose en el uso de estudios técnicos previos.",
+        result: "Optimización de procesos con ganancias de eficiencia y reducción de fases innecesarias.",
+      },
+      lt800kv: {
+        thesis: "Inteligencia en cribado y alcance con ganancias concretas de cronograma para LP y LI.",
+        fullSummary: "Análisis metodológico audaz respecto a la optimización del proceso de licenciamiento ambiental en la fase de cribado y alcance, con descripción adecuada y presentación de todas las estructuras primarias, lo que permitió clasificación arqueológica como Nivel I para líneas de electrodos. El caso también destaca el avance en cronograma para obtener LP y LI.",
+        result: "Ganancias concretas de cronograma en LP y LI a través de clasificación arqueológica Nivel I.",
+      },
+      loteamentoBelaVista: {
+        thesis: "Restauración de confianza institucional con IPHAN-SP y evaluación contenciosa sobre TAC.",
+        fullSummary: "Entrada en el proceso y establecimiento de una rutina de comunicación institucional más asertiva con IPHAN-SP para restaurar confianza y previsibilidad técnica. Evaluación técnica contenciosa calificada respecto a la posibilidad de no aplicación de TAC por parte de IPHAN.",
+        result: "Restauración de confianza institucional y análisis contencioso calificado.",
+      },
+      pchCabui: {
+        thesis: "Articulación con CGLic, metodología en áreas históricas y evaluación contenciosa calificada.",
+        fullSummary: "Entrada en el proceso y establecimiento de una rutina de comunicación institucional más asertiva con CGLic para restaurar confianza y previsibilidad técnica. Análisis metodológico audaz para desarrollar investigación arqueológica en áreas históricas compatible con la fase del proceso de licenciamiento ambiental. Evaluación técnica contenciosa calificada respecto a la posibilidad de no aplicación de TAC por parte de IPHAN.",
+        result: "Metodología innovadora en áreas históricas con evaluación contenciosa calificada.",
+      },
+      loteamentoParanoazinho: {
+        thesis: "Racionalidad técnica y contención calificada para eliminar la necesidad de fase de gestión.",
+        fullSummary: "Entrada en el proceso y establecimiento de una rutina de comunicación institucional más asertiva con IPHAN-DF para restaurar confianza y previsibilidad técnica. Evaluación técnica contenciosa calificada respecto a la no necesidad de ejecutar la fase de gestión, especialmente monitoreo arqueológico, ya que los estudios previos eran suficientes y por la ausencia de excepcionalidad estética y arquitectónica de edificios planeados en el ADA para el contexto histórico del Distrito Federal.",
+        result: "Racionalidad técnica que eliminó la necesidad de fase de gestión.",
+      },
     },
   },
 
