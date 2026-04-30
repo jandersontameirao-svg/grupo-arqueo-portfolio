@@ -356,7 +356,7 @@ function StandardCard({ c, index, t }: { c: typeof cases[0]; index: number; t: a
         }}
       >
       {/* Imagem de campo */}
-      <div className="relative h-44 lg:h-48 overflow-hidden">
+      <div className="relative h-48 lg:h-56 overflow-hidden">
         <img
           src={c.image}
           alt={c.title}
@@ -375,13 +375,13 @@ function StandardCard({ c, index, t }: { c: typeof cases[0]; index: number; t: a
 
       {/* Conteúdo */}
       <div className="p-6 flex flex-col flex-1">
-        <div className="w-6 h-[2px] rounded-full mb-3" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
+        <div className="w-8 h-[2px] rounded-full mb-4" style={{ background: 'linear-gradient(to right, #861720, #EE7501)' }} />
 
-        <h3 className="font-bold leading-[1.2] mb-3" style={{ color: '#1A1A1A', letterSpacing: '-0.01em', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'var(--text-subtitle)' }}>
+        <h3 className="font-bold leading-[1.2] mb-4" style={{ color: '#1A1A1A', letterSpacing: '-0.01em', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'var(--text-subtitle)' }}>
           {c.title}
         </h3>
 
-        <div className="flex flex-wrap items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #F0ECE7' }}>
+        <div className="flex flex-wrap items-center gap-3 mb-4 pb-4" style={{ borderBottom: '1px solid #F0ECE7' }}>
           <div className="flex items-center gap-1">
             <MapPin className="w-3 h-3" style={{ color: '#AAA' }} />
             <span className="text-[11px]" style={{ color: '#999' }}>{c.location}</span>
@@ -389,6 +389,10 @@ function StandardCard({ c, index, t }: { c: typeof cases[0]; index: number; t: a
           <div className="flex items-center gap-1">
             <Calendar className="w-3 h-3" style={{ color: '#AAA' }} />
             <span className="text-[11px]" style={{ color: '#999' }}>{c.year}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <Building2 className="w-3 h-3" style={{ color: '#AAA' }} />
+            <span className="text-[11px]" style={{ color: '#999' }}>{c.client}</span>
           </div>
         </div>
 
