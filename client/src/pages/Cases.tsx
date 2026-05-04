@@ -116,17 +116,6 @@ const cases = [
     tier: "standard" as const,
   },
   {
-    title: "LT 800kV Xingu - Terminal Rio",
-    sector: "Linha de Transmissão",
-    location: "PA / RJ",
-    year: "2023",
-    client: "Confidencial",
-    image: CASE_IMAGES.eolico,
-    desc: "Análise metodológica arrojada na triagem e escopo com descrição completa de estruturas primárias, possibilitando classificação arqueológica Nível I e antecipação de prazos para LP e LI.",
-    services: ["Triagem e Escopo", "Otimização do Licenciamento", "Ganho de Prazo", "Classificação Nível I"],
-    tier: "standard" as const,
-  },
-  {
     title: "Loteamento Residencial Bela Vista (São Paulo)",
     sector: "Urbanização / Loteamento",
     location: "São Paulo",
