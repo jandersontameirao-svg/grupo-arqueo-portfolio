@@ -18,7 +18,6 @@ interface GalleryImage {
 const GALLERY_IMAGES: GalleryImage[] = [
   { id: "1", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/eFPfHrGVuVZrcoDk.jpg", title: "", category: "equipe", alt: "Imagem 1" },
   { id: "2", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/hTbJbJORtbEobnPI.jpeg", title: "", category: "eventos", alt: "Imagem 2" },
-  { id: "3", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/qwXlWvuViyDmaXXy.JPG", title: "", category: "equipe", alt: "Imagem 3" },
   { id: "4", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/GDScJWQDZQkbePDR.webp", title: "", category: "campo", alt: "Imagem 4" },
   { id: "5", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/sYFjgGdXBpIlQMPy.jpeg", title: "", category: "eventos", alt: "Imagem 5" },
   { id: "6", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/AkSJvAEiPyeEssjQ.webp", title: "", category: "institucional", alt: "Imagem 6" },
@@ -27,8 +26,7 @@ const GALLERY_IMAGES: GalleryImage[] = [
   { id: "9", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/NeUPPsddBFBUsFbt.webp", title: "", category: "equipe", alt: "Imagem 9" },
   { id: "10", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/fQuWDnbWldifPaQs.webp", title: "", category: "bastidores", alt: "Imagem 10" },
   { id: "11", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/ihkYuBwrxIQwybOJ.webp", title: "", category: "institucional", alt: "Imagem 11" },
-  { id: "12", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/hjWNkGDwWkqRJMmb.jpeg", title: "", category: "eventos", alt: "Imagem 12" },
-  { id: "13", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/UJWFaVsOoevdQDqm.webp", title: "", category: "bastidores", alt: "Imagem 13" },
+  { id: "12", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/UJWFaVsOoevdQDqm.webp", title: "", category: "bastidores", alt: "Imagem 12" },
   { id: "14", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/YKKfZAjYtWIhejOM.webp", title: "", category: "campo", alt: "Imagem 14" },
   { id: "15", src: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/ggQHeKhSgffYXUvz.jpeg", title: "", category: "projetos", alt: "Imagem 15" },
 ];
