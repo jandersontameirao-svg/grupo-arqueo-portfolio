@@ -74,12 +74,12 @@ const cases = [
   {
     title: "Parque Eólico Caucaia",
     sector: "Eólica Offshore",
-    location: "Ceará",
-    year: "2023",
-    client: "Confidencial",
+    location: "Caucaia, Ceará",
+    year: "2020",
+    client: "BI Energia",
     image: CASE_IMAGES.caucaia,
-    desc: "Reestabelecimento de confiança com CGLic e desenvolvimento de metodologia inovadora para pesquisa arqueológica em ambiente aquático, alinhada às fases do licenciamento ambiental.",
-    services: ["Articulação Institucional", "Inovação Metodológica", "Ambiente Aquático", "Licenciamento Ambiental"],
+    desc: "Desenvolvimento de metodologia inovadora para pesquisa arqueológica submarítima no primeiro projeto eólico offshore do Brasil submetido a audiência pública pelo IBAMA. Complexo de 48 aerogeradores com capacidade de 576 MW, demandando estudos de impacto em patrimônio cultural submerso na costa cearense.",
+    services: ["Arqueologia Submarítima", "Licenciamento IBAMA", "EIA/RIMA", "Patrimônio Submerso"],
     tier: "secondary" as const,
   },
   {
