@@ -446,6 +446,7 @@ export default function Cases() {
   const filtered = cases.filter(c => c.sector === activeFilter);
 
   const standard = filtered.filter(c => c.tier === "standard");
+  const secondary = filtered.filter(c => c.tier === "secondary");
 
   return (
     <PortfolioLayout
@@ -549,6 +550,15 @@ export default function Cases() {
           {standard.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
               {standard.map((c, i) => (
+                <StandardCard key={c.title} c={c} index={i} t={t} />
+              ))}
+            </div>
+          )}
+
+          {/* ── CASES SECUNDÁRIOS ── */}
+          {secondary.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 mt-8">
+              {secondary.map((c, i) => (
                 <StandardCard key={c.title} c={c} index={i} t={t} />
               ))}
             </div>
