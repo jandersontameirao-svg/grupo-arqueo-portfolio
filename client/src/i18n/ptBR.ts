@@ -448,18 +448,18 @@ export const ptBR = {
     caseDetails: {
       ferroviaRumo: {
         thesis: "Reorganização institucional com o IPHAN-MT e excelência operacional em prospecção arqueológica com rastreabilidade de dados via SIGEPA.",
-        fullSummary: "Entrada no processo e estabelecimento de uma rotina de comunicação institucional mais assertiva com o IPHAN-MT, a fim de retomar confiança e previsibilidade técnica ao processo. Desenvoltura de excelência na prospecção arqueológica, com realização de mais de 8.000 poços-teste em XX dias. Prova material do bom uso do SIGEPA como recurso técnico e tecnológico diferencial na coleta, sistematização e rastreabilidade dos dados de campo, conferindo transparência, metodologia e confiabilidade às informações da pesquisa.",
-        result: "Restabelecimento de confiança institucional, escala operacional comprovada e rastreabilidade total de dados via plataforma proprietária.",
+        fullSummary: "Os dados de arqueologia e patrimônio imaterial apresentados ao IPHAN-MT estavam desorganizados, gerando insegurança institucional, risco ao patrimônio e ao licenciamento ambiental do empreendimento. Assumimos o processo e refizemos a pesquisa arqueológica com base em parecer técnico específico do órgão: mais de 8.000 poços-teste em 60 dias, com acompanhamento diário do cliente via SIGEPA, sistema de gestão de dados arqueológicos desenvolvido pelo próprio Grupo Arqueo.",
+        result: "Confiança institucional restabelecida e Licença de Instalação obtida dentro do cronograma estratégico da Rumo.",
       },
       lt500kv: {
         thesis: "Reestruturação da interlocução com a CGLic e avaliação contenciosa qualificada sobre TAC.",
-        fullSummary: "Entrada no processo e estabelecimento de uma rotina de comunicação institucional mais assertiva com a CGLic, a fim de retomar confiança e previsibilidade técnica ao processo. Avaliação técnica contenciosa quanto à possibilidade de não aplicação de TAC por parte do IPHAN.",
-        result: "Reestabelecimento de confiança institucional e análise contenciosa qualificada sobre TAC.",
+        fullSummary: "Herdamos um processo com gestão confusa de áreas liberadas e bloqueadas, o que resultou na instalação de duas torres antes da conclusão dos estudos arqueológicos. Assumimos o processo, organizamos e corrigimos os dados existentes e comprovamos, com levantamento de campo repetido por duas equipes técnicas, que o imprevisto não causou dano ao patrimônio arqueológico.",
+        result: "O IPHAN reconheceu a não aplicabilidade de Termo de Ajustamento de Conduta (TAC) para as duas torres, em um empreendimento de cerca de 1.100 torres distribuídas por três estados.",
       },
       pchCanoas: {
         thesis: "Precisão conceitual e segurança técnica na leitura de estruturas históricas classificadas como sítio arqueológico.",
-        fullSummary: "Trabalho conceitual e técnico assertivo quanto à escolha de estruturas históricas, especialmente muros, que foram classificados como sítio arqueológico.",
-        result: "Classificação arqueológica precisa e segura de estruturas históricas.",
+        fullSummary: "Na região da Coxilha Rica (SC), com tombamento aberto desde 2012 para o conjunto dos Caminhos de Tropas, muros de taipa e trilhas históricas tendem a gerar dúvida sobre seu enquadramento como sítio arqueológico. Aplicamos critérios técnicos objetivos — função, conservação, contexto, cronologia — cruzados com precedentes do próprio IPHAN-SC em processos similares na região.",
+        result: "4 sítios arqueológicos corretamente identificados e 5 estruturas dispensadas de medidas mitigatórias, garantindo previsibilidade para a fase de Licença de Instalação.",
       },
       eolicaOffshore: {
         thesis: "Rearticulação com a CGLic e construção metodológica arrojada para pesquisa arqueológica em ambiente aquático.",
@@ -493,8 +493,8 @@ export const ptBR = {
       },
       pchCabui: {
         thesis: "Articulação com a CGLic, metodologia em área histórica e avaliação contenciosa qualificada.",
-        fullSummary: "Entrada no processo e estabelecimento de uma rotina de comunicação institucional mais assertiva com a CGLic, a fim de retomar confiança e previsibilidade técnica ao processo. Análise metodológica arrojada quanto ao desenvolvimento da pesquisa arqueológica em área histórica compatível com a fase do processo do licenciamento ambiental. Avaliação técnica contenciosa quanto à possibilidade de não aplicação de TAC por parte do IPHAN.",
-        result: "Metodologia inovadora em área histórica com avaliação contenciosa qualificada.",
+        fullSummary: "O processo da PCH Cabuí tramitava no IPHAN há mais de uma década. Os estudos originais haviam sido realizados por outra consultoria. Assumimos o processo em setembro de 2021 nessa fase: com o licenciamento parado e exigências pendentes cuja real necessidade era questionável. Contestamos o escopo das obrigações junto ao IPHAN, o qual acolheu parcialmente os argumentos: reduziu as exigências a uma única atividade de campo (a escavação no perímetro da antiga sede da Fazenda Cabuí) e dispensou as demais condicionantes. Com o escopo redefinido, elaboramos e submetemos o projeto de pesquisa complementar. Os trabalhos de campo foram realizados e nenhum vestígio arqueológico foi identificado. A etapa de resgate, prevista em projeto, não precisou ser executada.",
+        result: "O relatório foi aprovado pelo IPHAN em janeiro de 2022, com manifestação pela emissão da Licença de Operação. Um processo com mais de dez anos de tramitação encerrou-se em menos de quatro meses.",
       },
       loteamentoParanoazinho: {
         thesis: "Racionalidade técnica e contencioso qualificado para afastar a necessidade da fase de gestão.",
