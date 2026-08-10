@@ -266,50 +266,6 @@ export default function Contato() {
                     </a>
                   </div>
                 </div>
-
-                {/* Samanta */}
-                <div>
-                  <p className="font-bold mb-1" style={{ color: '#1A1A1A', fontSize: 'var(--text-subtitle)' }}>Samanta Mondini</p>
-                  <p className="font-medium uppercase tracking-wider mb-6" style={{ color: '#999', fontSize: 'var(--text-caption)' }}>Coordenadora de Novos Negócios</p>
-                  <div className="space-y-5">
-                    <a
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=relacionamento@grupoarqueo.com.br"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
-                    >
-                      <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl transition-colors duration-200" style={{ backgroundColor: '#EE7501' }}>
-                        <Mail className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>E-mail</p>
-                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>relacionamento@grupoarqueo.com.br</p>
-                      </div>
-                    </a>
-                    <a
-                      href="tel:+5561983579088"
-                      className="flex gap-4 items-center group transition-all duration-200 hover:translate-x-1"
-                    >
-                      <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl transition-colors duration-200" style={{ backgroundColor: '#EE7501' }}>
-                        <Phone className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-[11px] font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#AAA' }}>Telefone</p>
-                        <p className="text-sm font-semibold group-hover:text-[#EE7501] transition-colors" style={{ color: '#1A1A1A' }}>+55 (61) 98357-9088</p>
-                      </div>
-                    </a>
-                    <a
-                      href="https://wa.me/5561983579088"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
-                      style={{ backgroundColor: '#25D366', color: 'white', letterSpacing: '0.08em' }}
-                    >
-                      <Send className="w-3.5 h-3.5" />
-                      WhatsApp
-                    </a>
-                  </div>
-                </div>
               </div>
 
               {/* Redes Sociais */}

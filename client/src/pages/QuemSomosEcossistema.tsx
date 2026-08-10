@@ -486,7 +486,6 @@ export default function QuemSomosEcossistema() {
                   { name: t.quemSomos.teamRoles.legalAdvisor, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/SilvioPortfolio2_d43b29f1.webp', pos: 'center 18%', scale: 1.15 },
                   { name: t.quemSomos.teamRoles.researchCoord, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/S%C3%A2mara_d6e3d226.webp', pos: 'center 12%', scale: 1.1 },
                   { name: t.quemSomos.teamRoles.projectManager, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/643-RIC_3179_73874ff3.webp', pos: 'center 5%', scale: 1.15 },
-                  { name: t.quemSomos.teamRoles.commercialCoord, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Samantaportfolio(2)_0f24cb85.webp', pos: 'center 10%', scale: 1.1 },
                   { name: t.quemSomos.teamRoles.opsCoord, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Lucas2portfolio_aa63d96d.webp', pos: 'center 12%', scale: 1.1 },
                 ].map((member, idx) => (
                   <div key={idx} className="flex flex-col items-center group cursor-pointer">

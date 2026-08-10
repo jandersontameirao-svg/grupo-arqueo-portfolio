@@ -817,10 +817,9 @@ export async function generatePortfolioPDF() {
   const contacts = [
     { name: 'Janderson Rubens Tameirão', role: 'CEO & Fundador', email: 'janderson@grupoarqueo.com.br' },
     { name: 'Fernanda Tameirão', role: 'Diretora Administrativa', email: 'fernanda@grupoarqueo.com.br' },
-    { name: 'Samanta Melo', role: 'Gerente de Relacionamento', email: 'relacionamento@grupoarqueo.com.br' },
   ];
 
-  const contactColW = CONTENT_W / 3;
+  const contactColW = CONTENT_W / contacts.length;
   contacts.forEach((c, i) => {
     const cx = MARGIN + i * contactColW;
 
