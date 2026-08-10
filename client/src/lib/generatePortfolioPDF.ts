@@ -40,6 +40,41 @@ async function loadImageAsBase64(url: string): Promise<string> {
   });
 }
 
+// Carrega imagem recortada em "cover" para o aspecto alvo (evita distorção)
+async function loadImageCover(url: string, targetW: number, targetH: number): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      const targetRatio = targetW / targetH;
+      const imgRatio = img.naturalWidth / img.naturalHeight;
+      let sw = img.naturalWidth, sh = img.naturalHeight, sx = 0, sy = 0;
+      if (imgRatio > targetRatio) {
+        sw = img.naturalHeight * targetRatio;
+        sx = (img.naturalWidth - sw) / 2;
+      } else {
+        sh = img.naturalWidth / targetRatio;
+        sy = (img.naturalHeight - sh) / 2;
+      }
+      const scale = 3; // qualidade
+      const canvas = document.createElement('canvas');
+      canvas.width = targetW * scale;
+      canvas.height = targetH * scale;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) { reject('No context'); return; }
+      ctx.drawImage(img, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+      resolve(canvas.toDataURL('image/jpeg', 0.9));
+    };
+    img.onerror = () => reject(`Failed to load: ${url}`);
+    img.src = url;
+  });
+}
+
+// Tenta carregar; retorna null em caso de falha (não quebra o PDF)
+async function tryCover(url: string, w: number, h: number): Promise<string | null> {
+  try { return await loadImageCover(url, w, h); } catch (e) { console.warn('img cover fail', url, e); return null; }
+}
+
 function drawTopBar(doc: jsPDF) {
   doc.setFillColor(...COLORS.bordo);
   doc.rect(0, 0, PAGE_W, 4, 'F');
@@ -134,6 +169,25 @@ export async function generatePortfolioPDF() {
     console.warn('Could not load grupo logo', e);
   }
 
+  const CDN = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/';
+  // Imagens (recortadas em cover) carregadas em paralelo
+  const [heroCover, ecoCover, numbersCover, casesCover] = await Promise.all([
+    tryCover(CDN + 'hero-arqueologia-premium-Ks45A3dKUW9xwyHBL4TLX3.webp', 125, 175),
+    tryCover(CDN + 'ecossistema-visual-3sRRNuHp9GJTUsfajvNYaF.webp', 257, 40),
+    tryCover(CDN + 'numbers-background-m6DiJd3MzdPudxVKexexJb.webp', 257, 45),
+    tryCover(CDN + 'hero-arqueologia-premium-Ks45A3dKUW9xwyHBL4TLX3.webp', 257, 38),
+  ]);
+  const tryPng = (u: string) => loadImageAsBase64(u).catch(() => null);
+  const [logoAP, logoGIS, logoOcean, logoEduc] = await Promise.all([
+    tryPng(CDN + 'logo-arqueoproject_33a2b072.png'),
+    tryPng(CDN + 'logo-arqueogis_ec9e6836.png'),
+    tryPng(CDN + 'logo-arqueocean_83b3af7e.png'),
+    tryPng(CDN + 'logo-arqueoeduc_c6c4dcad.png'),
+  ]);
+  const empLogoMap: Record<string, string | null> = {
+    'Arqueoproject': logoAP, 'ArqueoGIS': logoGIS, 'ArqueoOcean': logoOcean, 'ArqueoEduc': logoEduc,
+  };
+
   // ============================================================
   // PAGE 1 — CAPA (Réplica da Home do site)
   // ============================================================
@@ -145,6 +199,27 @@ export async function generatePortfolioPDF() {
   doc.circle(200, 105, 85, 'F');
   doc.setFillColor(...COLORS.fundo);
   doc.circle(200, 105, 82, 'F');
+
+  // ---- RIGHT SIDE — Painel com foto real (cover) ----
+  const panelX = 152, panelY = 15, panelW = 125, panelH = 180;
+  if (heroCover) {
+    doc.addImage(heroCover, 'JPEG', panelX, panelY, panelW, panelH);
+    // Faixa inferior translúcida (bordô) com selo 10 anos
+    doc.setFillColor(...COLORS.bordo);
+    doc.rect(panelX, panelY + panelH - 26, panelW, 26, 'F');
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.setTextColor(...COLORS.branco);
+    doc.text('10 ANOS DE EXCELÊNCIA', panelX + panelW / 2, panelY + panelH - 15, { align: 'center' });
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(7);
+    doc.setTextColor(255, 210, 180);
+    doc.text('Patrimônio Cultural e Arqueológico', panelX + panelW / 2, panelY + panelH - 8, { align: 'center' });
+    // Moldura
+    doc.setDrawColor(...COLORS.laranja);
+    doc.setLineWidth(1);
+    doc.rect(panelX, panelY, panelW, panelH);
+  }
 
   // ---- LEFT SIDE ----
   // Logo 10 anos (top left)
@@ -181,67 +256,25 @@ export async function generatePortfolioPDF() {
   const descLines = doc.splitTextToSize('Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica e gestão estratégica para oferecer soluções completas em licenciamento sociocultural no Brasil.', 110);
   doc.text(descLines, 20, 132);
 
-  // ---- RIGHT SIDE — Orbital diagram ----
-  const centerX = 200;
-  const centerY = 105;
-  const orbitR = 65;
-
-  // Orbit circle (subtle)
-  doc.setDrawColor(230, 210, 190);
-  doc.setLineWidth(0.3);
-  doc.circle(centerX, centerY, orbitR);
-  doc.setDrawColor(235, 215, 195);
-  doc.circle(centerX, centerY, orbitR - 3);
-
-  // Center logo circle
-  doc.setFillColor(...COLORS.branco);
-  doc.circle(centerX, centerY, 16, 'F');
-  doc.setDrawColor(240, 230, 220);
-  doc.setLineWidth(0.3);
-  doc.circle(centerX, centerY, 16);
-  if (logoGrupoBase64) {
-    doc.addImage(logoGrupoBase64, 'PNG', centerX - 10, centerY - 10, 20, 20);
-  }
-
-  // 9 orbital nodes
-  const sections = [
-    { num: '01', label: 'Mensagem\ndo CEO', color: COLORS.bordo },
-    { num: '02', label: 'Quem Somos &\nEcossistema', color: COLORS.azul },
-    { num: '03', label: 'Missão e\nValores', color: COLORS.laranja },
-    { num: '04', label: 'Soluções', color: COLORS.bordo },
-    { num: '05', label: 'Diferenciais &\nConformidade', color: COLORS.laranja },
-    { num: '06', label: 'Números &\nTerritório', color: COLORS.azul },
-    { num: '07', label: 'Cases', color: COLORS.bordo },
-    { num: '08', label: 'Nossos\nParceiros', color: COLORS.laranja },
-    { num: '09', label: 'Contato', color: COLORS.azul },
+  // Sumário do portfólio (lado esquerdo, abaixo da descrição)
+  const sumItems = [
+    '01  Mensagem do CEO', '02  Quem Somos & Ecossistema', '03  Missão e Valores',
+    '04  Soluções', '05  Diferenciais & Conformidade', '06  Números & Território',
+    '07  Cases', '08  Nossos Parceiros', '09  Contato',
   ];
-
-  sections.forEach((sec, i) => {
-    const angle = (i / sections.length) * Math.PI * 2 - Math.PI / 2;
-    const nx = centerX + Math.cos(angle) * orbitR;
-    const ny = centerY + Math.sin(angle) * orbitR;
-
-    // Node circle
-    doc.setFillColor(...sec.color);
-    doc.circle(nx, ny, 8, 'F');
-
-    // Number badge
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(5.5);
-    doc.setTextColor(...COLORS.branco);
-    doc.text(sec.num, nx, ny + 1.5, { align: 'center' });
-
-    // Label outside
-    const labelDist = 13;
-    const lx = nx + Math.cos(angle) * labelDist;
-    const ly = ny + Math.sin(angle) * labelDist;
+  let sumY = 150;
+  const sumColW = 66;
+  sumItems.forEach((s, i) => {
+    const col = i % 2;
+    const row = Math.floor(i / 2);
+    const sxi = 20 + col * sumColW;
+    const syi = sumY + row * 8;
+    doc.setFillColor(...COLORS.laranja);
+    doc.circle(sxi + 1, syi - 1.3, 0.9, 'F');
     doc.setFont('helvetica', 'normal');
-    doc.setFontSize(5.5);
+    doc.setFontSize(7.5);
     doc.setTextColor(...COLORS.charcoal);
-    const labelLines = sec.label.split('\n');
-    labelLines.forEach((line, li) => {
-      doc.text(line, lx, ly + li * 4, { align: 'center' });
-    });
+    doc.text(s, sxi + 5, syi);
   });
 
   // Bottom bar
@@ -378,6 +411,14 @@ export async function generatePortfolioPDF() {
 
   y = drawSectionTitle(doc, 'Ecossistema de Empresas', 20, '6 unidades especializadas atuando de forma integrada');
 
+  if (ecoCover) {
+    doc.addImage(ecoCover, 'JPEG', MARGIN, y, CONTENT_W, 24);
+    doc.setDrawColor(...COLORS.laranja);
+    doc.setLineWidth(0.5);
+    doc.rect(MARGIN, y, CONTENT_W, 24);
+    y += 30;
+  }
+
   const empresas = [
     { name: 'Arqueoproject', sub: 'Pesquisa & Consultoria', desc: 'Empresa-mãe do grupo, especializada em pesquisa arqueológica preventiva e consultoria para licenciamento sociocultural.', color: COLORS.bordo },
     { name: 'ArqueoGIS', sub: 'Tecnologia & Dados', desc: 'Plataforma de tecnologia e gestão de dados geoespaciais aplicados à arqueologia e geoprocessamento.', color: COLORS.azul },
@@ -403,6 +444,12 @@ export async function generatePortfolioPDF() {
     // Left accent
     doc.setFillColor(...emp.color);
     doc.rect(ex, ey, 2.5, rowH, 'F');
+
+    // Logo da empresa (canto superior direito), quando disponível
+    const empLogo = empLogoMap[emp.name];
+    if (empLogo) {
+      doc.addImage(empLogo, 'PNG', ex + colW - 26, ey + 5, 20, 12);
+    }
 
     // Company name
     doc.setFont('helvetica', 'bold');
@@ -585,6 +632,15 @@ export async function generatePortfolioPDF() {
 
   y = drawSectionTitle(doc, 'Números e Território', 20, 'Uma década de resultados consistentes');
 
+  // Faixa de imagem
+  if (numbersCover) {
+    doc.addImage(numbersCover, 'JPEG', MARGIN, y, CONTENT_W, 30);
+    doc.setDrawColor(...COLORS.laranja);
+    doc.setLineWidth(0.5);
+    doc.rect(MARGIN, y, CONTENT_W, 30);
+    y += 38;
+  }
+
   const numeros = [
     { value: '10+', label: 'Anos de Atuação' },
     { value: '397+', label: 'Projetos Realizados' },
@@ -634,6 +690,14 @@ export async function generatePortfolioPDF() {
   drawFooter(doc, 9);
 
   y = drawSectionTitle(doc, 'Cases de Destaque', 20, 'Projetos que demonstram nossa capacidade técnica e operacional');
+
+  if (casesCover) {
+    doc.addImage(casesCover, 'JPEG', MARGIN, y, CONTENT_W, 22);
+    doc.setDrawColor(...COLORS.laranja);
+    doc.setLineWidth(0.5);
+    doc.rect(MARGIN, y, CONTENT_W, 22);
+    y += 28;
+  }
 
   const cases1 = [
     {
