@@ -107,6 +107,7 @@ export const en: Translations = {
       t2022: { title: "Launch of ArqueoRede", desc: "Strategic communication and institutional positioning" },
       t2024: { title: "Launch of Sigepa", desc: "Proprietary intelligence and operational management platform" },
       t2026: { title: "Consolidation of Grupo Arqueo", desc: "Enhancement and development of new business units" },
+      tUTU: { title: "UTU Arqueologia", desc: "Archaeology and cultural heritage in Mozambique" },
     },
     pilares: {
       p1: { title: "Technical Integration", desc: "Complementary solutions that mutually enhance each other" },
@@ -150,6 +151,12 @@ export const en: Translations = {
         subtitle: "Intelligence and Operational Management Platform",
         description: "Grupo Arqueo's proprietary platform developed to integrate data, standardize flows, automate routines and expand operational control. Serves as the ecosystem's technological foundation, connecting information, processes and analyses to generate more traceability, efficiency, technical consistency and management capacity.",
         competencias: ["Systemic Integration", "Structured Data", "Routine Automation", "Operational Traceability", "Technical Standardization", "Analytical Intelligence"],
+      },
+      utu: {
+        name: "UTU Arqueologia",
+        subtitle: "Archaeology and cultural heritage management in Mozambique.",
+        description: "UTU Arqueologia is a Mozambican company with equity participation from Grupo Arqueo. Its team carries out archaeological research and cultural heritage studies to support the planning and execution of projects. In the field, it combines archaeological investigation with geophysical techniques, such as ground-penetrating radar, which allows the identification of subsurface structures before excavation. The results help project teams define where to deepen studies and what measures to adopt to protect heritage.",
+        competencias: ["Archaeological Research", "Cultural Heritage", "Geophysics & GPR", "Subsurface Prospecting", "Project Support", "Operations in Mozambique"],
       },
     },
     proposalForm: {

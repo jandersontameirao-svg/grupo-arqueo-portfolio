@@ -107,6 +107,7 @@ export const es: Translations = {
       t2022: { title: "Lanzamiento de ArqueoRede", desc: "Comunicación estratégica y posicionamiento institucional" },
       t2024: { title: "Lanzamiento de Sigepa", desc: "Plataforma propietaria de inteligencia y gestión operacional" },
       t2026: { title: "Consolidación de Grupo Arqueo", desc: "Potenciación y desarrollo de nuevas unidades de negocio" },
+      tUTU: { title: "UTU Arqueologia", desc: "Arqueología y patrimonio cultural en Mozambique" },
     },
     pilares: {
       p1: { title: "Integración Técnica", desc: "Soluciones complementarias que se potencian mutuamente" },
@@ -150,6 +151,12 @@ export const es: Translations = {
         subtitle: "Plataforma de Inteligencia y Gestión Operacional",
         description: "Plataforma propietaria del Grupo Arqueo desarrollada para integrar datos, estandarizar flujos, automatizar rutinas y ampliar el control operacional. Sirve como base tecnológica del ecosistema, conectando información, procesos y análisis para generar más trazabilidad, eficiencia y capacidad de gestión.",
         competencias: ["Integración Sistémica", "Datos Estructurados", "Automatización de Rutinas", "Trazabilidad Operacional", "Estandarización Técnica", "Inteligencia Analítica"],
+      },
+      utu: {
+        name: "UTU Arqueologia",
+        subtitle: "Arqueología y gestión del patrimonio cultural en Mozambique.",
+        description: "UTU Arqueologia es una empresa mozambiqueña con participación societaria de Grupo Arqueo. Su equipo realiza investigaciones arqueológicas y estudios de patrimonio cultural para apoyar la planificación y ejecución de emprendimientos. En campo, combina la investigación arqueológica con técnicas de geofísica, como el georradar, que permite identificar indicios de estructuras en el subsuelo antes de una excavación. Los resultados ayudan a los equipos de proyecto a definir dónde profundizar los estudios y qué medidas adoptar para proteger el patrimonio.",
+        competencias: ["Investigación Arqueológica", "Patrimonio Cultural", "Geofísica y Georradar", "Prospección del Subsuelo", "Apoyo a Emprendimientos", "Operación en Mozambique"],
       },
     },
     proposalForm: {

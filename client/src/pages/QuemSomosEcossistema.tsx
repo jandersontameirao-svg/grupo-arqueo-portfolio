@@ -43,38 +43,6 @@ export default function QuemSomosEcossistema() {
     },
     {
       year: "2018",
-      title: t.quemSomos.timeline.t2018.title,
-      desc: t.quemSomos.timeline.t2018.desc,
-      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueogis_1d0612e0.png",
-      badgeColor: "#861720",
-      arcColor: "#861720",
-    },
-    {
-      year: "2020",
-      title: t.quemSomos.timeline.t2019.title,
-      desc: t.quemSomos.timeline.t2019.desc,
-      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueoeduc_53b598dc.png",
-      badgeColor: "#F4D03F",
-      arcColor: "#F4D03F",
-    },
-    {
-      year: "2021",
-      title: t.quemSomos.timeline.t2020.title,
-      desc: t.quemSomos.timeline.t2020.desc,
-      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueocean_5677314a.png",
-      badgeColor: "#2C7EB3",
-      arcColor: "#2C7EB3",
-    },
-    {
-      year: "2022",
-      title: t.quemSomos.timeline.t2022.title,
-      desc: t.quemSomos.timeline.t2022.desc,
-      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueorede_475fe661.png",
-      badgeColor: "#F4A460",
-      arcColor: "#F4A460",
-    },
-    {
-      year: "2022",
       title: t.quemSomos.timeline.t2024.title,
       desc: t.quemSomos.timeline.t2024.desc,
       icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotiposigepa_40f65c8b.png",
@@ -82,12 +50,44 @@ export default function QuemSomosEcossistema() {
       arcColor: "#EE7501",
     },
     {
-      year: "2026",
-      title: t.quemSomos.timeline.t2026.title,
-      desc: t.quemSomos.timeline.t2026.desc,
-      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logogrupoarqueo_197db654.png",
-      badgeColor: "#EE7501",
-      arcColor: "#EE7501",
+      year: "2020",
+      title: t.quemSomos.timeline.t2018.title,
+      desc: t.quemSomos.timeline.t2018.desc,
+      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueogis_1d0612e0.png",
+      badgeColor: "#861720",
+      arcColor: "#861720",
+    },
+    {
+      year: "•",
+      title: t.quemSomos.timeline.t2019.title,
+      desc: t.quemSomos.timeline.t2019.desc,
+      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueoeduc_53b598dc.png",
+      badgeColor: "#F4D03F",
+      arcColor: "#F4D03F",
+    },
+    {
+      year: "•",
+      title: t.quemSomos.timeline.t2020.title,
+      desc: t.quemSomos.timeline.t2020.desc,
+      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueocean_5677314a.png",
+      badgeColor: "#2C7EB3",
+      arcColor: "#2C7EB3",
+    },
+    {
+      year: "•",
+      title: t.quemSomos.timeline.t2022.title,
+      desc: t.quemSomos.timeline.t2022.desc,
+      icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueorede_475fe661.png",
+      badgeColor: "#F4A460",
+      arcColor: "#F4A460",
+    },
+    {
+      year: "Jun/2026",
+      title: t.quemSomos.timeline.tUTU.title,
+      desc: t.quemSomos.timeline.tUTU.desc,
+      icon: "/utu-arqueologia.png",
+      badgeColor: "#861720",
+      arcColor: "#861720",
     },
   ];
 
@@ -114,7 +114,7 @@ export default function QuemSomosEcossistema() {
     },
   ];
 
-  // 6 empresas no ecossistema
+  // 7 empresas no ecossistema
   const empresas = [
     {
       id: "arqueoproject",
@@ -169,6 +169,15 @@ export default function QuemSomosEcossistema() {
       logo: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotiposigepa_9b34b495.png",
       description: t.quemSomos.empresas.sigepa.description,
       competencias: t.quemSomos.empresas.sigepa.competencias,
+    },
+    {
+      id: "utu",
+      name: t.quemSomos.empresas.utu.name,
+      subtitle: t.quemSomos.empresas.utu.subtitle,
+      color: "#861720",
+      logo: "/utu-arqueologia.png",
+      description: t.quemSomos.empresas.utu.description,
+      competencias: t.quemSomos.empresas.utu.competencias,
     },
   ];
 

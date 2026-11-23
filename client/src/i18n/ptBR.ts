@@ -106,6 +106,7 @@ export const ptBR = {
       t2022: { title: "Lançamento da ArqueoRede", desc: "Comunicação estratégica e posicionamento institucional" },
       t2024: { title: "Lançamento do Sigepa", desc: "Plataforma proprietária de inteligência e gestão operacional" },
       t2026: { title: "Consolidação do grupo arqueo", desc: "Aperfeiçoamento e desenvolvimento de novas unidades de negócios" },
+      tUTU: { title: "UTU Arqueologia", desc: "Arqueologia e património cultural em Moçambique" },
     },
     pilares: {
       p1: { title: "Integração Técnica", desc: "Soluções complementares que se potencializam mutuamente" },
@@ -149,6 +150,12 @@ export const ptBR = {
         subtitle: "Plataforma de Inteligência e Gestão Operacional",
         description: "Plataforma proprietária do Grupo Arqueo desenvolvida para integrar dados, padronizar fluxos, automatizar rotinas e ampliar o controle sobre a operação. Atua como base tecnológica do ecossistema, conectando informações, processos e análises para gerar mais rastreabilidade, eficiência, consistência técnica e capacidade de gestão.",
         competencias: ["Integração Sistêmica", "Dados Estruturados", "Automação de Rotinas", "Rastreabilidade Operacional", "Padronização Técnica", "Inteligência Analítica"],
+      },
+      utu: {
+        name: "UTU Arqueologia",
+        subtitle: "Arqueologia e gestão do património cultural em Moçambique.",
+        description: "A UTU Arqueologia é uma empresa moçambicana com participação societária do Grupo Arqueo. A sua equipa realiza pesquisas arqueológicas e estudos de património cultural para apoiar o planeamento e a execução de empreendimentos. Em campo, combina a investigação arqueológica com técnicas de geofísica, como o georradar, que permite identificar indícios de estruturas no subsolo antes de uma escavação. Os resultados ajudam as equipas de projecto a definir onde aprofundar os estudos e que medidas adoptar para proteger o património.",
+        competencias: ["Pesquisa Arqueológica", "Património Cultural", "Geofísica e Georradar", "Prospecção de Subsolo", "Apoio a Empreendimentos", "Atuação em Moçambique"],
       },
     },
     proposalForm: {

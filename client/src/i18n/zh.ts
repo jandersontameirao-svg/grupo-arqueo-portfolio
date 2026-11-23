@@ -107,6 +107,7 @@ export const zh: Translations = {
       t2022: { title: "ArqueoRede 推出", desc: "战略传播和机构定位" },
       t2024: { title: "Sigepa 推出", desc: "自主智能和运营管理平台" },
       t2026: { title: "Grupo Arqueo 整合", desc: "新业务单元的赋能和发展" },
+      tUTU: { title: "UTU Arqueologia", desc: "莫桑比克的考古与文化遗产" },
     },
     pilares: {
       p1: { title: "技术整合", desc: "互补的解决方案相互增强" },
@@ -150,6 +151,12 @@ export const zh: Translations = {
         subtitle: "智能与运营管理平台",
         description: "Grupo Arqueo 自主开发的平台，旨在整合数据、标准化流程、自动化例行工作并扩大运营控制。作为生态系统的技术基础，连接信息、流程和分析，以产生更多可追溯性、效率和管理能力。",
         competencias: ["系统整合", "结构化数据", "例行自动化", "运营可追溯", "技术标准化", "分析智能"],
+      },
+      utu: {
+        name: "UTU Arqueologia",
+        subtitle: "莫桑比克的考古与文化遗产管理。",
+        description: "UTU Arqueologia 是一家莫桑比克公司，Grupo Arqueo 持有其股权。其团队开展考古研究和文化遗产研究，以支持项目的规划与实施。在现场，结合考古调查与地球物理技术（如探地雷达），在开挖前识别地下结构的迹象。研究结果帮助项目团队确定深入研究的区域以及保护遗产应采取的措施。",
+        competencias: ["考古研究", "文化遗产", "地球物理与探地雷达", "地下勘探", "项目支持", "莫桑比克业务"],
       },
     },
     proposalForm: {
