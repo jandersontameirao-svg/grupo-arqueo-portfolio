@@ -514,9 +514,10 @@ export default function QuemSomosEcossistema() {
                 ))}  
               </div>
 
-              {/* ROW 4 - 3 membros */}
+              {/* ROW 4 - 4 membros */}
               <div className="relative z-10 flex justify-center flex-wrap gap-3 sm:gap-5 lg:gap-12">
                 {[
+                  { name: 'Assistente\nAdministrativa', img: '/assistente-administrativa.jpg', pos: 'center 20%', scale: 1.1 },
                   { name: t.quemSomos.teamRoles.techArchaeologyM, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251103_53c6f31a.webp', pos: 'center 10%', scale: 1.12 },
                   { name: t.quemSomos.teamRoles.techArchaeologyF, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251108_e4d33d44.webp', pos: 'center 10%', scale: 1.12 },
                   { name: 'Analista de Relacionamento\ne Vendas', img: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/rIuuVVEXIxwCLeLD.webp', pos: 'center 15%', scale: 1.15 },
