@@ -6,7 +6,7 @@ export const ptBR = {
     titleHighlight1: "em pesquisa",
     titleMiddle: "e gestão do patrimônio",
     titleHighlight2: "sociocultural",
-    description: "Há 10 anos, o Grupo Arqueo une competência técnica, inovação tecnológica e gestão estratégica para oferecer soluções completas em licenciamento sociocultural no Brasil.",
+    description: "Nesta edição de 10 anos, reunimos projetos que mostram como nossa equipe pesquisa, protege e valoriza o patrimônio cultural em diferentes territórios.",
     sections: {
       ceo: "Mensagem do CEO",
       quemSomos: "Quem Somos & Ecossistema",

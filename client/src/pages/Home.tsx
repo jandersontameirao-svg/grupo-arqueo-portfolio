@@ -3,24 +3,10 @@ import { ASSETS } from "@/lib/assets";
 import {
   User, Building2, Target, Globe, Lightbulb, Star,
   BarChart3, FolderOpen, MapPin, Mail, ArrowRight, Users,
-  Play, X, Download
+  Play, X
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useI18n } from "@/i18n";
-import { generatePortfolioPDF } from "@/lib/generatePortfolioPDF";
-
-const PDF_LABEL: Record<string, string> = {
-  "pt-BR": "Baixar Portfólio (PDF)",
-  en: "Download Portfolio (PDF)",
-  es: "Descargar Portafolio (PDF)",
-  zh: "下载作品集 (PDF)",
-};
-const PDF_LABEL_LOADING: Record<string, string> = {
-  "pt-BR": "Gerando PDF...",
-  en: "Generating PDF...",
-  es: "Generando PDF...",
-  zh: "正在生成 PDF...",
-};
 
 /**
  * HOME — Portfólio Digital Premium Grupo Arqueo
@@ -44,21 +30,8 @@ const sectionsDef = [
 ];
 
 export default function Home() {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const [hovered, setHovered] = useState<number | null>(null);
-  const [pdfLoading, setPdfLoading] = useState(false);
-
-  const handleDownloadPDF = async () => {
-    if (pdfLoading) return;
-    setPdfLoading(true);
-    try {
-      await generatePortfolioPDF();
-    } catch (e) {
-      console.error("Erro ao gerar PDF:", e);
-    } finally {
-      setPdfLoading(false);
-    }
-  };
   const [rotation, setRotation] = useState(0);
   const [videoExpanded, setVideoExpanded] = useState(false);
   const expandedVideoRef = useRef<HTMLVideoElement>(null);
@@ -140,17 +113,6 @@ export default function Home() {
               <p className="font-light leading-relaxed mb-5 text-[#555]" style={{ fontSize: 'var(--text-body)', maxWidth: 'clamp(280px, 28vw, 420px)' }}>
                 {t.home.description}
               </p>
-
-              {/* Botão download portfólio PDF estático */}
-              <button
-                onClick={handleDownloadPDF}
-                disabled={pdfLoading}
-                className="inline-flex items-center gap-2 px-5 py-3 mb-2 rounded-lg font-bold uppercase tracking-wider text-white transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-wait"
-                style={{ backgroundColor: '#EE7501', fontSize: 'var(--text-caption)', letterSpacing: '0.06em' }}
-              >
-                <Download className={`w-4 h-4 ${pdfLoading ? 'animate-bounce' : ''}`} />
-                {pdfLoading ? (PDF_LABEL_LOADING[locale] || PDF_LABEL_LOADING["pt-BR"]) : (PDF_LABEL[locale] || PDF_LABEL["pt-BR"])}
-              </button>
 
               {/* Hover info */}
               <div className="h-10 flex items-center">
