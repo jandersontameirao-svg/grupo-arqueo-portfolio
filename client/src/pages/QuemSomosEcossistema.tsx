@@ -497,12 +497,13 @@ export default function QuemSomosEcossistema() {
                 ))}
               </div>
 
-              {/* ROW 3 - 3 membros */}
+              {/* ROW 3 - 4 membros */}
               <div className="relative z-10 flex justify-center flex-wrap gap-3 sm:gap-5 lg:gap-12 mb-8">
                 {[
                   { name: t.quemSomos.teamRoles.archaeologistF, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/FabianaPortfolio_918325e1.webp', pos: 'center 8%', scale: 1.12 },
                   { name: t.quemSomos.teamRoles.archaeologistF, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251054_4fb88472.webp', pos: 'center 10%', scale: 1.12 },
                   { name: t.quemSomos.teamRoles.archaeologistM, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/carlosfabianoportfolio_683faf41.webp', pos: 'center 15%', scale: 1.12 },
+                  { name: t.quemSomos.teamRoles.geoAnalyst, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_4ce89876.webp', pos: 'center 12%', scale: 1.15 },
                 ].map((member, idx) => (
                   <div key={idx} className="flex flex-col items-center group cursor-pointer">
                     <div className="rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-110 w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] lg:w-[140px] lg:h-[140px]" style={{ border: '3px solid rgba(255,255,255,0.45)', boxShadow: '0 0 0 4px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)', position: 'relative' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 0 6px rgba(255,255,255,0.3), 0 0 30px rgba(238,117,1,0.6), 0 20px 40px rgba(0,0,0,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 0 4px rgba(255,255,255,0.12), 0 10px 30px rgba(0,0,0,0.25)'; }}>
@@ -516,7 +517,6 @@ export default function QuemSomosEcossistema() {
               {/* ROW 4 - 3 membros */}
               <div className="relative z-10 flex justify-center flex-wrap gap-3 sm:gap-5 lg:gap-12">
                 {[
-                  { name: t.quemSomos.teamRoles.geoAnalyst, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Brunonakagomiportfolio_4ce89876.webp', pos: 'center 12%', scale: 1.15 },
                   { name: t.quemSomos.teamRoles.techArchaeologyM, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251103_53c6f31a.webp', pos: 'center 10%', scale: 1.12 },
                   { name: t.quemSomos.teamRoles.techArchaeologyF, img: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/faça_essa_imagem_202603251108_e4d33d44.webp', pos: 'center 10%', scale: 1.12 },
                   { name: 'Analista de Relacionamento\ne Vendas', img: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028979380/rIuuVVEXIxwCLeLD.webp', pos: 'center 15%', scale: 1.15 },
