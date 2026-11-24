@@ -85,7 +85,7 @@ export default function QuemSomosEcossistema() {
       year: "2026",
       title: t.quemSomos.timeline.tUTU.title,
       desc: t.quemSomos.timeline.tUTU.desc,
-      icon: "/utu-arqueologia.png",
+      icon: "/utu-simbolo.png",
       badgeColor: "#861720",
       arcColor: "#861720",
     },
