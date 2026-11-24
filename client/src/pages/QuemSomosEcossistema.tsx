@@ -58,7 +58,7 @@ export default function QuemSomosEcossistema() {
       arcColor: "#861720",
     },
     {
-      year: "•",
+      year: "2022",
       title: t.quemSomos.timeline.t2019.title,
       desc: t.quemSomos.timeline.t2019.desc,
       icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueoeduc_53b598dc.png",
@@ -66,7 +66,7 @@ export default function QuemSomosEcossistema() {
       arcColor: "#F4D03F",
     },
     {
-      year: "•",
+      year: "2022",
       title: t.quemSomos.timeline.t2020.title,
       desc: t.quemSomos.timeline.t2020.desc,
       icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueocean_5677314a.png",
@@ -74,7 +74,7 @@ export default function QuemSomosEcossistema() {
       arcColor: "#2C7EB3",
     },
     {
-      year: "•",
+      year: "2022",
       title: t.quemSomos.timeline.t2022.title,
       desc: t.quemSomos.timeline.t2022.desc,
       icon: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/logotipoarqueorede_475fe661.png",
@@ -82,7 +82,7 @@ export default function QuemSomosEcossistema() {
       arcColor: "#F4A460",
     },
     {
-      year: "Jun/2026",
+      year: "2026",
       title: t.quemSomos.timeline.tUTU.title,
       desc: t.quemSomos.timeline.tUTU.desc,
       icon: "/utu-arqueologia.png",
