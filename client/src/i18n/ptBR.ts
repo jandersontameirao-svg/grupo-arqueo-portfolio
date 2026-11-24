@@ -1,11 +1,11 @@
 export const ptBR = {
   // ═══ HOME ═══
   home: {
-    badge: "Patrimônio Cultural e Arqueológico",
-    title: "Consultoria estratégica",
-    titleHighlight1: "em pesquisa",
-    titleMiddle: "e gestão do patrimônio",
-    titleHighlight2: "sociocultural",
+    badge: "GRUPO ARQUEO · PORTFÓLIO 2026",
+    title: "Soluções integradas para",
+    titleHighlight1: "arqueologia, patrimônio",
+    titleMiddle: "e licenciamento em",
+    titleHighlight2: "projetos complexos",
     description: "Nesta edição de 10 anos, reunimos projetos que mostram como nossa equipe pesquisa, protege e valoriza o patrimônio cultural em diferentes territórios.",
     sections: {
       ceo: "Mensagem do CEO",

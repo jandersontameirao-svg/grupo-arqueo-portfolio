@@ -3,11 +3,11 @@ import type { Translations } from "./ptBR";
 export const es: Translations = {
   // ═══ HOME ═══
   home: {
-    badge: "Patrimonio Cultural y Arqueológico",
-    title: "Consultoría estratégica",
-    titleHighlight1: "en investigación",
-    titleMiddle: "y gestión del patrimonio",
-    titleHighlight2: "sociocultural",
+    badge: "GRUPO ARQUEO · PORTAFOLIO 2026",
+    title: "Soluciones integradas para",
+    titleHighlight1: "arqueología, patrimonio",
+    titleMiddle: "y licenciamiento en",
+    titleHighlight2: "proyectos complejos",
     description: "Desde hace 10 años, Grupo Arqueo combina competencia técnica, innovación tecnológica y gestión estratégica para ofrecer soluciones integrales en licenciamiento sociocultural en Brasil.",
     sections: {
       ceo: "Mensaje del CEO",

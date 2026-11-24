@@ -43,14 +43,15 @@ export default function NumerosTerritori() {
     { nome: t.numeros.regions.sul, count: 3, color: "#8B4789" },
   ];
 
-  // Top 8 segmentos para manter compacto
+  // Setores atendidos (exclui placeholder "N.A"); mantém Mineração entre os exibidos
   const tiposData = Object.entries(statsData.tipos)
+    .filter(([name]) => name !== "N.A")
     .map(([name, count]) => ({
       name: t.numeros.segmentTypes[name as keyof typeof t.numeros.segmentTypes] || name,
       count: count as number
     }))
     .sort((a, b) => b.count - a.count)
-    .slice(0, 8);
+    .slice(0, 12);
   
   const maxCount = Math.max(...tiposData.map(t => t.count));
 

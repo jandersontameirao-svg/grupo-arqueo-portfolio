@@ -3,11 +3,11 @@ import type { Translations } from "./ptBR";
 export const zh: Translations = {
   // ═══ HOME ═══
   home: {
-    badge: "文化与考古遗产",
-    title: "战略咨询",
-    titleHighlight1: "研究",
-    titleMiddle: "与社会文化遗产",
-    titleHighlight2: "管理",
+    badge: "GRUPO ARQUEO · 作品集 2026",
+    title: "面向复杂项目的",
+    titleHighlight1: "考古、遗产",
+    titleMiddle: "与许可",
+    titleHighlight2: "一体化解决方案",
     description: "十年来，Grupo Arqueo 将技术能力、科技创新与战略管理相结合，为巴西社会文化许可提供全面的解决方案。",
     sections: {
       ceo: "CEO寄语",
