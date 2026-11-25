@@ -1,7 +1,7 @@
 import PortfolioLayout from "@/components/PortfolioLayout";
 import { ASSETS } from "@/lib/assets";
 import {
-  Target, Eye, Shield, Lightbulb, Award, Users, Leaf, ArrowRight, Scale,
+  Target, Eye, Shield, Lightbulb, Award, Users, Leaf, Scale,
 } from "lucide-react";
 import { useState } from "react";
 import { useI18n } from "@/i18n";
@@ -105,16 +105,9 @@ export default function MissaoVisao() {
 
                 <div className="w-20 h-[2px] rounded-full mb-8" style={{ background: 'linear-gradient(to right, #EE7501, transparent)' }} />
 
-                <p className="leading-[1.8] text-white mb-8 flex-1" style={{ opacity: 0.92, fontWeight: 300, fontSize: 'var(--text-body)' }}>
+                <p className="leading-[1.8] text-white flex-1" style={{ opacity: 0.92, fontWeight: 300, fontSize: 'var(--text-body)' }}>
                   {t.missao.missionText}
                 </p>
-
-                <div className="flex items-start gap-3 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-                  <ArrowRight className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#EE7501' }} />
-                  <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 300, fontSize: 'var(--text-small)' }}>
-                    {t.missao.missionHighlight}
-                  </p>
-                </div>
               </div>
             </div>
 
@@ -136,16 +129,9 @@ export default function MissaoVisao() {
 
                 <div className="w-20 h-[2px] rounded-full mb-8" style={{ background: 'linear-gradient(to right, #2C7EB3, transparent)' }} />
 
-                <p className="leading-[1.8] mb-8 flex-1" style={{ color: '#333', fontWeight: 300, fontSize: 'var(--text-body)' }}>
+                <p className="leading-[1.8] flex-1" style={{ color: '#333', fontWeight: 300, fontSize: 'var(--text-body)' }}>
                   {t.missao.visionText}
                 </p>
-
-                <div className="flex items-start gap-3 pt-8" style={{ borderTop: '1px solid rgba(44,126,179,0.1)' }}>
-                  <ArrowRight className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#2C7EB3' }} />
-                  <p className="leading-relaxed" style={{ color: '#777', fontWeight: 300, fontSize: 'var(--text-small)' }}>
-                    {t.missao.visionHighlight}
-                  </p>
-                </div>
               </div>
             </div>
           </div>
