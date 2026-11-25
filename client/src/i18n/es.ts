@@ -8,7 +8,7 @@ export const es: Translations = {
     titleHighlight1: "arqueología, patrimonio",
     titleMiddle: "y licenciamiento en",
     titleHighlight2: "proyectos complejos",
-    description: "Desde hace 10 años, Grupo Arqueo combina competencia técnica, innovación tecnológica y gestión estratégica para ofrecer soluciones integrales en licenciamiento sociocultural en Brasil.",
+    description: "En esta edición de 10 años, reunimos proyectos que muestran cómo nuestro equipo investiga, protege y valora el patrimonio cultural en diferentes territorios.",
     sections: {
       ceo: "Mensaje del CEO",
       quemSomos: "Quiénes Somos y Ecosistema",

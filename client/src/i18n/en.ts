@@ -8,7 +8,7 @@ export const en: Translations = {
     titleHighlight1: "archaeology, heritage",
     titleMiddle: "and licensing in",
     titleHighlight2: "complex projects",
-    description: "For 10 years, Grupo Arqueo has combined technical expertise, technological innovation, and strategic management to deliver comprehensive solutions in sociocultural licensing across Brazil.",
+    description: "In this 10-year edition, we bring together projects that show how our team researches, protects, and values cultural heritage across different territories.",
     sections: {
       ceo: "CEO's Message",
       quemSomos: "About Us & Ecosystem",

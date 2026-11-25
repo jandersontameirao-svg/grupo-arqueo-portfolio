@@ -8,7 +8,7 @@ export const zh: Translations = {
     titleHighlight1: "考古、遗产",
     titleMiddle: "与许可",
     titleHighlight2: "一体化解决方案",
-    description: "十年来，Grupo Arqueo 将技术能力、科技创新与战略管理相结合，为巴西社会文化许可提供全面的解决方案。",
+    description: "在这个十周年特辑中，我们汇集了一批项目，展示我们的团队如何在不同地区研究、保护并彰显文化遗产的价值。",
     sections: {
       ceo: "CEO寄语",
       quemSomos: "关于我们与生态系统",
