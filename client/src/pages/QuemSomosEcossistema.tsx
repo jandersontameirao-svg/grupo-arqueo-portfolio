@@ -315,13 +315,28 @@ export default function QuemSomosEcossistema() {
                     transition: "opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
                   }}
                 >
-                  <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-6_5e5eb982.webp"
-                    alt="Diagrama Orbital Grupo Arqueo"
-                    className="w-full max-w-2xl h-auto drop-shadow-xl"
-                    onLoad={() => setDiagramLoaded(true)}
-                    style={{ pointerEvents: "none" }}
-                  />
+                  <div className="relative w-full max-w-2xl">
+                    <img
+                      src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028979380/DVKCzaTYsaV36sGCkFNuAx/Semtítulo-6_5e5eb982.webp"
+                      alt="Diagrama Orbital Grupo Arqueo"
+                      className="w-full h-auto drop-shadow-xl"
+                      onLoad={() => setDiagramLoaded(true)}
+                      style={{ pointerEvents: "none" }}
+                    />
+                    {/* Logo UTU no vão central inferior do orbital (entre ArqueoEduc e SIGEPA) */}
+                    <img
+                      src="/utu-arqueologia.png"
+                      alt="UTU Arqueologia"
+                      className="absolute"
+                      style={{
+                        left: "50%",
+                        top: "84%",
+                        transform: "translate(-50%, -50%)",
+                        width: "17%",
+                        pointerEvents: "none",
+                      }}
+                    />
+                  </div>
                 </div>
 
                 {/* Navegação Inferior - Cards Refinados */}

@@ -1,6 +1,5 @@
 import PortfolioLayout from "@/components/PortfolioLayout";
-import MapaBrasilSVG, { type EstadoData } from "@/components/MapaBrasilSVG";
-import { useState } from "react";
+import MapaBrasilSVG from "@/components/MapaBrasilSVG";
 import { motion } from "framer-motion";
 import statsData from "../data/stats.json";
 import { useI18n } from "@/i18n";
@@ -16,7 +15,6 @@ import { useI18n } from "@/i18n";
 export default function NumerosTerritori() {
   const { t } = useI18n();
   const p = t.numeros.proto;
-  const [selectedEstado, setSelectedEstado] = useState<EstadoData | null>(null);
 
   return (
     <PortfolioLayout
@@ -75,10 +73,7 @@ export default function NumerosTerritori() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <MapaBrasilSVG
-              onEstadoSelect={setSelectedEstado}
-              selectedEstado={selectedEstado}
-            />
+            <MapaBrasilSVG flat />
           </motion.div>
         </div>
       </section>

@@ -303,6 +303,8 @@ const estadosData: EstadoData[] = [
 interface MapaBrasilSVGProps {
   onEstadoSelect?: (estado: EstadoData) => void;
   selectedEstado?: EstadoData | null;
+  /** Modo chapado: cor única, sem hover, sem clique, sem tooltip */
+  flat?: boolean;
 }
 
 // Ordem geográfica para animação: Norte → Nordeste → Centro-Oeste → Sudeste → Sul
@@ -314,7 +316,7 @@ const animationOrder: string[] = [
   'PR', 'SC', 'RS',
 ];
 
-export default function MapaBrasilSVG({ onEstadoSelect, selectedEstado }: MapaBrasilSVGProps) {
+export default function MapaBrasilSVG({ onEstadoSelect, selectedEstado, flat = false }: MapaBrasilSVGProps) {
   const [hoveredEstado, setHoveredEstado] = useState<string | null>(null);
   const [visibleStates, setVisibleStates] = useState<Set<string>>(new Set());
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -378,19 +380,21 @@ export default function MapaBrasilSVG({ onEstadoSelect, selectedEstado }: MapaBr
   }, [hoveredEstado]);
 
   const getColor = (sigla: string, ativo: boolean): string => {
+    if (flat) return ativo ? '#861720' : '#C4C4C4';
     if (selectedEstado?.sigla === sigla) return '#EE7501';
     if (hoveredEstado === sigla) return ativo ? '#A52030' : '#999999';
     return ativo ? '#861720' : '#C4C4C4';
   };
 
   const getStroke = (sigla: string): string => {
+    if (flat) return '#FFFFFF';
     if (selectedEstado?.sigla === sigla) return '#D66A00';
     if (hoveredEstado === sigla) return '#EE7501';
     return '#FFFFFF';
   };
 
   const getStrokeWidth = (sigla: string): string => {
-    if (selectedEstado?.sigla === sigla || hoveredEstado === sigla) return '2';
+    if (!flat && (selectedEstado?.sigla === sigla || hoveredEstado === sigla)) return '2';
     return '1.2';
   };
 
@@ -437,18 +441,18 @@ export default function MapaBrasilSVG({ onEstadoSelect, selectedEstado }: MapaBr
             return (
               <g
                 key={estado.sigla}
-                onMouseEnter={() => setHoveredEstado(estado.sigla)}
-                onMouseLeave={() => setHoveredEstado(null)}
-                onClick={() => onEstadoSelect?.(estado)}
+                onMouseEnter={flat ? undefined : () => setHoveredEstado(estado.sigla)}
+                onMouseLeave={flat ? undefined : () => setHoveredEstado(null)}
+                onClick={flat ? undefined : () => onEstadoSelect?.(estado)}
                 style={{
-                  cursor: 'pointer',
+                  cursor: flat ? 'default' : 'pointer',
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'scale(1)' : 'scale(0.85)',
                   transformOrigin: `${estado.tx}px ${estado.ty}px`,
                   transition: `opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)`,
                 }}
                 filter={
-                  selectedEstado?.sigla === estado.sigla || hoveredEstado === estado.sigla
+                  !flat && (selectedEstado?.sigla === estado.sigla || hoveredEstado === estado.sigla)
                     ? 'url(#glow)'
                     : undefined
                 }
@@ -505,7 +509,7 @@ export default function MapaBrasilSVG({ onEstadoSelect, selectedEstado }: MapaBr
 
       {/* Floating Tooltip */}
       <AnimatePresence>
-        {hoveredData && (
+        {!flat && hoveredData && (
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
