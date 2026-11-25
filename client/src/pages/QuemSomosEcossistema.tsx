@@ -323,16 +323,16 @@ export default function QuemSomosEcossistema() {
                       onLoad={() => setDiagramLoaded(true)}
                       style={{ pointerEvents: "none" }}
                     />
-                    {/* Logo UTU no vão central inferior do orbital (entre ArqueoEduc e SIGEPA) */}
+                    {/* Logo UTU no vão central inferior do orbital (7º nó, entre ArqueoEduc e SIGEPA) */}
                     <img
                       src="/utu-arqueologia.png"
                       alt="UTU Arqueologia"
                       className="absolute"
                       style={{
-                        left: "50%",
-                        top: "84%",
+                        left: "48%",
+                        top: "92%",
                         transform: "translate(-50%, -50%)",
-                        width: "17%",
+                        width: "18%",
                         pointerEvents: "none",
                       }}
                     />
