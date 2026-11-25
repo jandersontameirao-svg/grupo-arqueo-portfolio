@@ -421,6 +421,18 @@ export const es: Translations = {
       "Rodovia": "Carretera",
       "N.A": "N.A",
     },
+    proto: {
+      heroPrefix: "Más de",
+      projectsNoun: "proyectos",
+      heroSuffix: "en las cinco regiones de Brasil",
+      lede: "Desde hace más de una década, el Grupo Arqueo desarrolla proyectos de arqueología y patrimonio cultural en diferentes territorios del país.",
+      whereTitle: "Dónde ya actuamos",
+      statesAndDF: "23 estados y el Distrito Federal",
+      withoutActivityNote: "Sin actuación hasta el momento",
+      noActivityStates: "Acre, Roraima y Sergipe",
+      sectorsTitle: "Sectores atendidos",
+      sectors: ["Energía solar", "Transmisión de energía", "Generación hidroeléctrica", "Energía eólica", "Emprendimientos inmobiliarios", "Minería"],
+    },
   },
 
   // ═══ CASES ═══

@@ -420,6 +420,18 @@ export const ptBR = {
       "Rodovia": "Rodovia",
       "N.A": "N.A",
     },
+    proto: {
+      heroPrefix: "Mais de",
+      projectsNoun: "projetos",
+      heroSuffix: "nas cinco regiões do Brasil",
+      lede: "Há mais de uma década, o Grupo Arqueo desenvolve projetos de arqueologia e patrimônio cultural em diferentes territórios do país.",
+      whereTitle: "Onde já atuamos",
+      statesAndDF: "23 estados e o Distrito Federal",
+      withoutActivityNote: "Sem atuação até o momento",
+      noActivityStates: "Acre, Roraima e Sergipe",
+      sectorsTitle: "Setores atendidos",
+      sectors: ["Energia solar", "Transmissão de energia", "Geração hidrelétrica", "Energia eólica", "Empreendimentos imobiliários", "Mineração"],
+    },
   },
 
   // ═══ CASES ═══

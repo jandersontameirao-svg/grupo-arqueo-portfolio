@@ -421,6 +421,18 @@ export const zh: Translations = {
       "Rodovia": "道路",
       "N.A": "N.A",
     },
+    proto: {
+      heroPrefix: "超过",
+      projectsNoun: "个项目",
+      heroSuffix: "遍布巴西五大区域",
+      lede: "十余年来，阿尔克奥集团在全国不同地区开展考古与文化遗产项目。",
+      whereTitle: "我们的足迹",
+      statesAndDF: "23个州及联邦区",
+      withoutActivityNote: "暂未开展",
+      noActivityStates: "阿克里、罗赖马和塞尔希培",
+      sectorsTitle: "服务领域",
+      sectors: ["太阳能", "输电线路", "水电发电", "风能", "房地产开发", "采矿"],
+    },
   },
 
   // ═══ CASES ═══
