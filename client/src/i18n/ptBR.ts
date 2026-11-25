@@ -340,7 +340,7 @@ export const ptBR = {
     items: {
       d1: { title: "Tecnologia Proprietária", desc: "Plataforma Sigepa integrada para gestão, rastreabilidade e automação de processos", highlight: "Sigepa" },
       d2: { title: "Equipe Multidisciplinar", desc: "Profissionais especializados em arqueologia, gestão, tecnologia e educação patrimonial", highlight: "50+ especialistas" },
-      d3: { title: "Cobertura Nacional", desc: "Presença em todas as regiões do Brasil com capacidade de mobilização rápida", highlight: "26 estados + DF" },
+      d3: { title: "Cobertura Nacional", desc: "Presença em todas as regiões do Brasil com capacidade de mobilização rápida", highlight: "23 estados + DF" },
       d4: { title: "Metodologia Consolidada", desc: "Processos padronizados e validados ao longo de uma década de operação", highlight: "10 anos" },
       d5: { title: "Inovação Aplicada", desc: "Incorporação de IA, geoprocessamento avançado e análise de dados em todos os projetos", highlight: "IA + GIS" },
       d6: { title: "Conformidade Total", desc: "Aderência integral às normas do IPHAN, IBAMA e órgãos estaduais de patrimônio", highlight: "100% compliance" },

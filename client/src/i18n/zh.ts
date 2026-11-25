@@ -341,7 +341,7 @@ export const zh: Translations = {
     items: {
       d1: { title: "自主技术", desc: "Sigepa 集成平台用于管理、可追溯和流程自动化", highlight: "Sigepa" },
       d2: { title: "多学科团队", desc: "考古、管理、技术和遗产教育领域的专业人才", highlight: "50+专家" },
-      d3: { title: "全国覆盖", desc: "覆盖巴西所有地区，具备快速调动能力", highlight: "26州+联邦区" },
+      d3: { title: "全国覆盖", desc: "覆盖巴西所有地区，具备快速调动能力", highlight: "23州+联邦区" },
       d4: { title: "成熟方法论", desc: "经过十年运营验证的标准化流程", highlight: "10年" },
       d5: { title: "应用创新", desc: "在所有项目中融入AI、高级地理信息处理和数据分析", highlight: "AI+GIS" },
       d6: { title: "全面合规", desc: "完全遵守IPHAN、IBAMA和各州遗产机构的规范", highlight: "100%合规" },

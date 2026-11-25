@@ -341,7 +341,7 @@ export const es: Translations = {
     items: {
       d1: { title: "Tecnología Propietaria", desc: "Plataforma Sigepa integrada para gestión, trazabilidad y automatización de procesos", highlight: "Sigepa" },
       d2: { title: "Equipo Multidisciplinario", desc: "Profesionales especializados en arqueología, gestión, tecnología y educación patrimonial", highlight: "50+ especialistas" },
-      d3: { title: "Cobertura Nacional", desc: "Presencia en todas las regiones de Brasil con capacidad de movilización rápida", highlight: "26 estados + DF" },
+      d3: { title: "Cobertura Nacional", desc: "Presencia en todas las regiones de Brasil con capacidad de movilización rápida", highlight: "23 estados + DF" },
       d4: { title: "Metodología Consolidada", desc: "Procesos estandarizados y validados a lo largo de una década de operación", highlight: "10 años" },
       d5: { title: "Innovación Aplicada", desc: "Incorporación de IA, geoprocesamiento avanzado y análisis de datos en todos los proyectos", highlight: "IA + SIG" },
       d6: { title: "Conformidad Total", desc: "Adherencia completa a las normas de IPHAN, IBAMA y órganos estaduales de patrimonio", highlight: "100% conformidad" },

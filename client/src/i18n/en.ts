@@ -341,7 +341,7 @@ export const en: Translations = {
     items: {
       d1: { title: "Proprietary Technology", desc: "Integrated Sigepa platform for management, traceability and process automation", highlight: "Sigepa" },
       d2: { title: "Multidisciplinary Team", desc: "Professionals specialized in archaeology, management, technology and heritage education", highlight: "50+ specialists" },
-      d3: { title: "National Coverage", desc: "Presence in all regions of Brazil with rapid mobilization capacity", highlight: "26 states + DF" },
+      d3: { title: "National Coverage", desc: "Presence in all regions of Brazil with rapid mobilization capacity", highlight: "23 states + DF" },
       d4: { title: "Consolidated Methodology", desc: "Standardized and validated processes over a decade of operation", highlight: "10 years" },
       d5: { title: "Applied Innovation", desc: "Incorporation of AI, advanced geoprocessing and data analysis in all projects", highlight: "AI + GIS" },
       d6: { title: "Full Compliance", desc: "Complete adherence to IPHAN, IBAMA and state heritage agency standards", highlight: "100% compliance" },
